@@ -409,11 +409,326 @@ BhumiDorpon is architected as a modern, client-side rendered Single Page Applica
 6. **Overlay Rendering:** Vector GeoJSON layers (mouza borders, riverlines, inundation polygons, plot boundaries) are rendered over the selected base layer (Light GIS or Esri World Imagery).
 7. **Table Presentation:** Tabular data (owner registries, coordinates, compensation amounts) renders beneath the map pair with search, sorting, and CSV/GeoJSON export controls.
 
+
 ---
 
-## 10. Target Users and Use Cases
+## 10. Deep Learning Component and Model-Assisted Analysis
 
-### 10.1 Persona Profiles
+```
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                        BhumiDorpon Deep Learning & Model-Assisted Architecture                         │
+├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 1. Earth Observation Inputs       2. Spatiotemporal DL Models            3. Cadastral Spatial Coupling │
+│ ┌──────────────────────────────┐  ┌───────────────────────────────────┐  ┌───────────────────────────┐ │
+│ │ • Sentinel-2 Multi-Spectral  │  │ • Multitemporal ConvLSTM          │  │ • 4-Corner Plot Polygons  │ │
+│ │ • Sentinel-1 SAR (Radar)     │─►│ • Spatiotemporal U-Net            │─►│ • Dag & Khatian Registers │ │
+│ │ • ALOS PALSAR 12.5m DEM      │  │ • Topographic Slope GNNs          │  │ • Turf.js Intersections   │ │
+│ │ • CHIRPS Daily Precipitation │  │ • Morphological Stability Index   │  │ • Projected Losses (Dec)  │ │
+│ └──────────────────────────────┘  └───────────────────────────────────┘  └─────────────┬─────────────┘ │
+│                                                                                        │               │
+│                                                                                        ▼               │
+│ 4. Verification & Guardrails      5. Domain-Specific Symbology           6. Responsible Delivery       │
+│ ┌──────────────────────────────┐  ┌───────────────────────────────────┐  ┌───────────────────────────┐ │
+│ │ • Suppression of Paid/Status │  │ • Dashed Projected Banklines      │  │ • Web Dashboard & Leaflet │ │
+│ │ • "Forecast" Disclaimer Badge│◄─│ • Uncertainty Prediction Bands    │◄─│ • CSV / GeoJSON Exports   │ │
+│ │ • Deterministic Mock Harness │  │ • Geotechnical Runout Buffers     │  │ • Planning Advisory Use   │ │
+│ └──────────────────────────────┘  └───────────────────────────────────┘  └───────────────────────────┘ │
+└────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+### 10.1 Conceptual Definition: What Deep Learning Means in BhumiDorpon
+
+In the context of BhumiDorpon, **Deep Learning (DL)** does not refer to generative text completion, conversational chatbots, or synthetic artistic imagery. Rather, it represents a specialized branch of **applied geospatial artificial intelligence (GeoAI) and spatiotemporal sequence modeling** engineered to analyze multitemporal Earth Observation (EO) satellite imagery, digital elevation rasters, and hydrological time series to forecast physical land-surface changes across Bangladesh.
+
+Fundamentally, Deep Learning in BhumiDorpon bridges two historically disconnected data paradigms:
+1. **Macro-Level Geomorphological Dynamics:** Continuous, fluid spatial processes—such as riverbank migration along braided rivers, slope instability in tertiary hills, and mudflat accretion in coastal estuaries—captured by satellite remote sensing.
+2. **Micro-Level Cadastral Land Tenure:** Discrete, human-defined cadastral plots designated by legal deed numbers (*Dag No.* and *Khatian No.*), four-corner GPS coordinates, and registered private or state ownership.
+
+Mathematically, the deep learning component can be formulated as a spatio-temporal predictive function $f_\theta$ parameterized by learnable network weights $\theta$:
+
+$$\widehat{\mathbf{Y}}_{t+1} = f_\theta\left(\mathbf{X}_{t-k}, \mathbf{X}_{t-k+1}, \dots, \mathbf{X}_t \,;\, \mathbf{Z}_{\text{static}}\right)$$
+
+Where:
+- $\mathbf{X}_\tau \in \mathbb{R}^{H \times W \times C}$ represents multispectral or synthetic aperture radar (SAR) feature rasters at historical time step $\tau \in \{t-k, \dots, t\}$.
+- $\mathbf{Z}_{\text{static}} \in \mathbb{R}^{H \times W \times M}$ represents static terrain covariates, including Digital Elevation Models (DEM), slope gradients, plan/profile curvature, and long-term river bathymetry.
+- $\widehat{\mathbf{Y}}_{t+1}$ denotes the predicted binary or multi-class hazard probability envelope at forward time horizon $t+1$ (e.g., 1-year forward shoreline position, landslide rupture footprint, or flood depth mask).
+
+Once the hazard probability envelope $\widehat{\mathbf{Y}}_{t+1}$ is vectorized into spatial polygons $\mathcal{H}_{\text{forecast}}$, it is coupled directly to the cadastral cadastral plot layer $\mathcal{P} = \{P_1, P_2, \dots, P_n\}$ via spatial computational geometry:
+
+$$\Delta \text{Area}_i = \text{Area}\left(P_i \cap \mathcal{H}_{\text{forecast}}\right)$$
+
+$$\text{Compensation}_i^{\text{projected}} = \Delta \text{Area}_i \times \text{Rate}\left(\text{LandClass}_i\right)$$
+
+This mathematical coupling allows BhumiDorpon to transform high-dimensional satellite imagery into **actionable, plot-by-plot risk assessments** that directly inform vulnerable citizens and land revenue administrators.
+
+---
+
+### 10.2 Technical Relevance: Why Deep Learning is Essential for the Bengal Delta
+
+The Bengal Delta is one of the most hydro-morphologically dynamic and complex environments on Earth. Traditional spatial analysis methods—such as static cartographic overlay, manual visual interpretation, or simple linear extrapolation of historical banklines—consistently fail to capture the reality of land change in Bangladesh due to several fundamental characteristics:
+
+1. **Severe Non-Linearity and Morphological Inertia:** Riverbank retreat along braided river systems like the Jamuna or Lower Meghna is not a linear function of time. A river reach may remain relatively stable for three consecutive dry seasons, only to migrate 200 meters westward during a single high-discharge monsoon flood pulse due to upstream thalweg avulsion, turbulent eddy scouring, and bar chute cut-offs. Deep learning architectures (specifically convolutional recurrent networks) are capable of modeling such non-linear threshold behaviors and temporal lags that conventional linear models miss.
+2. **High-Dimensional Multimodal Remote Sensing:** Satellite Earth Observation produces vast quantities of heterogeneous data, including optical multispectral bands (Sentinel-2, Landsat), all-weather Synthetic Aperture Radar backscatter (Sentinel-1 SAR C-band), digital surface elevation models (ALOS PALSAR 12.5m, SRTM), and gridded rainfall estimates (CHIRPS). Handcrafted heuristics cannot scale across these multi-sensor streams. Deep convolutional encoders automatically extract hierarchical spatial patterns—such as sandbar texture, moisture saturation gradients, and structural slope fracture lineaments—without manual feature engineering.
+3. **Pervasive Monsoon Cloud Cover:** During the peak monsoon season (June to September)—precisely when river erosion, flash floods, and landslides occur—optical satellite imagery is obscured by persistent cloud cover (>85% cloud obstruction). Traditional optical vegetation/water indices (NDVI, NDWI) become useless. Deep learning models trained on co-registered SAR radar backscatter ($VV/VH$ polarization amplitude and interferometric coherence) can penetrate cloud cover and rainstorms, reconstructing surface inundation and shoreline boundaries regardless of atmospheric conditions.
+4. **Transition from Retrospective Reporting to Anticipatory Preparedness:** Traditional land administration in Bangladesh is entirely retrospective: damage is surveyed months after an embankment collapses, when fields are already submerged beneath meters of water. Deep learning provides a computational mechanism to generate probabilistic 1-year forward hazard projections, enabling anticipatory evacuation, targeted geo-bag fortification, and proactive compensation budgeting.
+
+---
+
+### 10.3 Verifiable Implementation Analysis: How the Current Prototype Actually Works
+
+To maintain absolute technical integrity, it is essential to distinguish between the **conceptual architecture** of BhumiDorpon and what is **verifiably implemented in the current v1.1 demonstration codebase**:
+
+```
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                           BhumiDorpon v1.1 Prototype Implementation Reality                           │
+├───────────────────────────────────────────┬───────────────────────────────────────────────────────────┤
+│ Concept / UI Presentation                 │ Verified Codebase Implementation                          │
+├───────────────────────────────────────────┼───────────────────────────────────────────────────────────┤
+│ • Model Banner: "GeoAI-BD v2.4 •          │ • Deterministic, pre-generated JSON mock files in /mocks  │
+│   Multitemporal ConvLSTM"                 │ • Seeded pseudo-random generation in generate-mocks.ts    │
+│ • "Deep Learning Model" Forecast Badges   │ • In-memory asynchronous data loaders in lib/data.ts      │
+│ • 1-Year Projected Riverbank Retreat      │ • Turf.js computational geometry polygon intersections    │
+│ • Topographic DEM Slope Rupture Zones     │ • Synchronized Leaflet 1.9.4 map compare viewports        │
+│ • Projected Compensation Liabilities      │ • Zero external ML dependencies (no PyTorch/TF in package)│
+└───────────────────────────────────────────┴───────────────────────────────────────────────────────────┘
+```
+
+#### 1. Codebase Dependency Inspection
+Inspection of `package.json` confirms that the current application is a client-side web application built with **Next.js 14.2, React 18.3, Leaflet 1.9.4, react-leaflet 4.2.1, TanStack React Query 5.59, and Turf.js 7.4**. 
+
+There are **no active neural network runtimes** (such as TensorFlow.js, ONNX Runtime Web, PyTorch C++ bindings, or scikit-learn backend microservices) executing live inference in the demonstration build. All computational resources on the client are dedicated to UI state management, cartographic rendering, and vector geometry calculations.
+
+#### 2. Deterministic Mock Generation (`scripts/generate-mocks.ts`)
+The forecast hazard scenarios displayed in the application are generated deterministically offline using computational geometry algorithms implemented in `scripts/generate-mocks.ts`:
+- **Riverbank Retreat Line:** Generated using sinusoidal mathematical functions with localized noise offsets (`lonForecast = lonAfter - retreatLon * 0.7`), forming a dashed vector line representing projected shoreline migration.
+- **Uncertainty Band:** Constructed by closing the polygon between the current bankline (`riverAfterCoords`) and the projected retreat line (`riverForecastCoords`), producing an uncertainty polygon buffer (`uncertaintyBandCoords`).
+- **Cadastral Plot Intersections:** Generated using Turf.js spatial operations:
+  ```typescript
+  // scripts/generate-mocks.ts (Lines 816-823)
+  const plotFeature = turf.polygon(plot.polygon);
+  const intersection = turf.intersect(
+    turf.featureCollection([plotFeature, forecastLossPolygonFeature])
+  );
+  if (intersection) {
+    const areaSqM = turf.area(intersection);
+    const areaDec = Number((areaSqM / 40.4686).toFixed(1));
+    // Calculate projected compensation without disbursement status
+  }
+  ```
+- **Landslide Topography:** Synthesized from 2D Gaussian elevation distributions to generate synthetic DEM rasters, contour lines, teardrop failure scarps, and 50m settlement runout risk buffers.
+- **Char & Coastal Accretion:** Synthesized through coordinate offsets simulating downstream sand deposition and intertidal mudflat formation seaward of registered mouzas.
+
+#### 3. Strict Architectural Data Isolation
+A core architectural principle of BhumiDorpon is the strict separation between historical ground-truth records and model-based forward forecasts. In accordance with project build rules:
+- In `Recorded` mode, owner tables display historical metrics: `Est. compensation (৳)`, `Status` (`Paid`, `Approved`, `Pending`), and `Paid (৳)`.
+- In `Forecast` mode, all payment status flags, progress bars, and disbursement figures are **strictly eliminated** from both UI components and data payloads in `lib/data.ts`. The interface displays exclusively `Projected compensation (৳)` and `Projected area (Dec)`.
+- Every forecast view is visually anchored by the `ForecastBadge` (`components/ForecastBadge.tsx`) and a mandatory sticky disclaimer banner: *"This is a model-based estimate, not an official government record. Model: GeoAI-BD v2.4 • Multitemporal ConvLSTM."*
+
+---
+
+### 10.4 Hazard-Specific Model-Assisted Analysis Across the Five Domains
+
+BhumiDorpon structures model-assisted analysis across five distinct environmental hazards, each governed by different physical mechanisms and requiring tailored machine learning paradigms:
+
+```
+                                  ┌─────────────────────────────────────────────────────────────┐
+                                  │      Spatiotemporal Model Applications by Hazard Domain     │
+                                  └──────────────────────────────┬──────────────────────────────┘
+                                                                 │
+          ┌───────────────────────┬──────────────────────────────┼──────────────────────────────┬─────────────────────────┐
+          ▼                       ▼                              ▼                              ▼                         ▼
+┌──────────────────┐    ┌──────────────────┐          ┌───────────────────┐          ┌──────────────────┐      ┌──────────────────┐
+│  River Erosion   │    │ Flood Inundation │          │  Landslide Slope  │          │  Char Accretion  │      │ Coastal Shoreline│
+├──────────────────┤    ├──────────────────┤          ├───────────────────┤          ├──────────────────┤      ├──────────────────┤
+│ ConvLSTM /       │    │ Multitemporal    │          │ Topographic GNN / │          │ Recurrent U-Net  │      │ Estuarine Wave   │
+│ PredRNN          │    │ SAR Segmentation │          │ Gradient Boosted  │          │ NDVI / MNDWI     │      │ & Tidal Dynamics │
+├──────────────────┤    ├──────────────────┤          ├───────────────────┤          ├──────────────────┤      ├──────────────────┤
+│ 1-Year bankline  │    │ Depth classes    │          │ Rupture scarp     │          │ Silt emergence & │      │ Shoreline retreat│
+│ retreat vector & │    │ (<0.5m, 0.5-1.5m,│          │ & 50m settlement  │          │ vegetative sand  │      │ & unassigned     │
+│ uncertainty cone │    │ >1.5m) + runoff  │          │ runout buffer     │          │ stabilization    │      │ mudflat growth   │
+└──────────────────┘    └──────────────────┘          └───────────────────┘          └──────────────────┘      └──────────────────┘
+```
+
+#### 10.4.1 River Erosion (`/river-erosion`)
+- **Physical Process:** Lateral riverbank collapse driven by alluvial sediment liquefaction, thalweg migration, and outer meander bend hydraulic scouring along braided channels (Jamuna, Padma, Meghna).
+- **Target Deep Learning Architecture:** Spatiotemporal Convolutional Recurrent Neural Networks (such as **ConvLSTM** or **PredRNN**) trained on 30-year multitemporal satellite time series (Landsat 5/7/8/9 and Sentinel-2) from 1990 to 2025.
+- **Input Feature Covariates:** Historical bankline coordinates, river curvature index, daily upstream discharge ($Q_{\text{max}}$ at Bahadurabad / Hardinge Bridge), channel bathymetry rasters, and sediment shear stress.
+- **Model Output:** A predicted 1-year forward riverbank retreat vector with an associated probabilistic uncertainty band (e.g., 85% confidence interval).
+- **Current Prototype Status:** Fully modeled in the frontend via pre-computed synthetic geometries; Leaflet maps render baseline banklines, current retreated shorelines (coral hatch), transect retreat markers (e.g., `72 m`), and dashed projected retreat envelopes with uncertainty buffers.
+
+#### 10.4.2 Flood Monitoring (`/flood`)
+- **Physical Process:** Rapid monsoon riverine inundation and transboundary flash flooding across northeastern haor depressions (Sylhet, Sunamganj) and central floodplains, resulting in prolonged agricultural submersion.
+- **Target Deep Learning Architecture:** Fully Convolutional Segmentation Networks (**Spatiotemporal U-Net** or **HRNet**) processing dual-polarization Sentinel-1 Synthetic Aperture Radar (SAR) Ground Range Detected (GRD) imagery.
+- **Input Feature Covariates:** SAR backscatter coefficients ($\sigma_{VV}^0, \sigma_{VH}^0$), interferometric coherence, high-resolution Digital Elevation Models (DEM), river stage telemetry from BWDB stations, and 72-hour antecedent rainfall.
+- **Model Output:** Pixel-level water depth classification categorized into three distinct tiers: Shallow (`<0.5m`), Moderate (`0.5–1.5m`), and Deep (`>1.5m`), along with flood recession velocity projections.
+- **Current Prototype Status:** Implemented as a comprehensive historical archive (2022–2025 events) detailing mouza-scale multi-depth inundation and **explicit 4-corner GPS coordinates (NW, NE, SE, SW to 6 decimal places)** for individual owner plots. Forward real-time flood prediction represents planned operational scope.
+
+#### 10.4.3 Landslides (`/landslide`)
+- **Physical Process:** Sudden slope failure, rotational slips, and mudflows triggered by intense monsoonal downpours saturating deforested tertiary hill soils in southeastern Bangladesh (Rangamati, Bandarban, Cox's Bazar).
+- **Target Deep Learning Architecture:** **Graph Neural Networks (GNNs)** combined with **Spatial Random Forests / XGBoost** operating on topological terrain mesh networks and convolutional slope feature extractors.
+- **Input Feature Covariates:** Synthetic and LiDAR Digital Elevation Models (DEM), slope angle ($38^\circ\text{–}44^\circ$), aspect, plan curvature, soil profile texture, road cuts, and real-time CHIRPS precipitation intensity (mm/24h).
+- **Model Output:** Slope rupture scarp demarcation, mass displacement volume calculations ($m^3$), and dynamic debris runout settlement risk buffers (e.g., 50-meter human settlement hazard zones).
+- **Current Prototype Status:** Fully interactive in prototype; renders DEM hillshades, 10m contour isolines, failure scarp polygons (red outline), debris runout accumulation buffers (orange hatch), and geotechnical risk cards.
+
+#### 10.4.4 Char Formation and Erosion (`/char`)
+- **Physical Process:** The dynamic accretion, mid-channel emergence, morphological migration, and eventual dissolution of alluvial sandbars (*chars*) in active braided river systems under extreme sediment flux (>1 billion tons/year).
+- **Target Deep Learning Architecture:** **Recurrent U-Net Semantic Segmentation** coupled with multitemporal vegetative index autoencoders.
+- **Input Feature Covariates:** Multi-spectral Sentinel-2 bands, Normalized Difference Vegetation Index (NDVI) time-series, Modified Normalized Difference Water Index (MNDWI), sediment concentration plumes, and seasonal dry-season composite mosaics.
+- **Model Output:** Char classification delineating active accretion tips (land gain), eroded flanking channels (land loss), vegetation colonization stability scores, and isolation of newly accreted state-owned *khas* land.
+- **Current Prototype Status:** Implemented with side-by-side synchronized Leaflet maps displaying baseline vs current/forecasted sandbar shapes, green accretion tips, coral erosion zones, and dedicated `Unowned Land (State Khas Alluvial Accretion)` deed cards (`1/1 State`).
+
+#### 10.4.5 Coastal Erosion and Land Formation (`/coastal`)
+- **Physical Process:** Marine shoreline retreat, cyclone storm surge inundation, tidal channel migration, and estuarine intertidal mudflat accretion along the Bay of Bengal coastline (Bhola, Hatiya, Noakhali, Cox's Bazar).
+- **Target Deep Learning Architecture:** Multi-Scale Convolutional LSTM networks coupled with **Estuarine Hydrodynamic Wave-Tide Surrogates**.
+- **Input Feature Covariates:** Multi-decadal tidal gauge sequences, sea-surface temperature anomalies, bathymetric gradient profiles, coastal polder embankment locations, mangrove greenbelt buffer indices, and marine sediment plumes.
+- **Model Output:** 1-to-5 year coastal shoreline migration vectors, storm surge vulnerability envelopes, and demarcation of unassigned offshore intertidal mudflats.
+- **Current Prototype Status:** Implemented with side-by-side Before/After coastal viewports, shoreline retreat overlays, mangrove buffer strips, and dedicated `Unassigned Mudflats` cards cataloging emerging virtual cadastral blocks seaward of established mouzas.
+
+---
+
+### 10.5 Synthesis Table: Deep Learning Model Architecture by Hazard
+
+The following comparative table synthesizes the deep learning characteristics across all five hazard categories, clearly delineating between proposed production architectures and verified prototype capabilities:
+
+| Hazard Category | Physical Trigger Mechanism | Proposed Deep Learning Architecture | Input Remote Sensing Covariates | Generated Hazard Output | Current Prototype Implementation Status |
+|---|---|---|---|---|---|
+| **River Erosion** (`/river-erosion`) | Hydraulic shear scour, thalweg migration, alluvial bank collapse | **Multitemporal ConvLSTM / PredRNN** | Landsat/Sentinel-2 time series (1990–2025), river curvature, BWDB discharge | Projected 1-year retreat vector + uncertainty prediction cone | **Verified in Prototype:** Leaflet Before/After map, dashed retreat line, Turf.js plot intersections, projected compensation |
+| **Flood Monitoring** (`/flood`) | Transboundary river discharge, extreme monsoon downpour, haor ponding | **Spatiotemporal U-Net / HRNet** | Sentinel-1 SAR ($VV/VH$), DEM elevation, river telemetry, CHIRPS rainfall | Inundation depth masks (<0.5m, 0.5–1.5m, >1.5m), drainage channels | **Verified in Prototype:** Multi-depth flood detail map, historical 2022–2025 archive, 4-corner GPS plot boundary readouts |
+| **Landslides** (`/landslide`) | Soil pore-water saturation on steep deforested tertiary slopes | **Topographic GNN + Gradient Boosted Trees** | ALOS PALSAR 12.5m DEM, slope angle ($38^\circ\text{–}44^\circ$), 72h rainfall | Rupture scarp boundaries, soil displacement volume ($m^3$), 50m runout buffer | **Verified in Prototype:** Synthetic DEM hillshade overlay, contour lines, scarp polygons, debris runout buffers, geotechnical cards |
+| **Char Islands** (`/char`) | Fluvial sediment deposition, braided bar chute cut-offs, bank erosion | **Recurrent Semantic U-Net** | Sentinel-2 multispectral, NDVI vegetation time-series, MNDWI water index | Sandbar accretion tips, erosion flanks, vegetation stabilization index | **Verified in Prototype:** Synchronized baseline vs current island shapes, green accretion tips, unowned khas deed cards |
+| **Coastal Shifts** (`/coastal`) | Semi-diurnal tides, cyclone surge waves, estuarine sediment plumes | **Estuarine Hydrodynamic ConvLSTM** | Tidal harmonics, wave vectors, bathymetric slope, coastal polder vectors | Marine shoreline retreat, polder breach risk, emerging intertidal mudflats | **Verified in Prototype:** Coastal Leaflet map, shoreline migration vectors, mangrove buffers, unassigned new mudflat cards |
+
+---
+
+### 10.6 Human Impact: Why Predictive Spatial Intelligence Matters in Bangladesh
+
+In Bangladesh, land is not merely a financial asset—it is the indispensable foundation of human survival, household identity, social dignity, and intergenerational security. In a delta supporting over 1,100 citizens per square kilometer, the sudden loss of a homestead or agricultural plot plunges an entire family into catastrophic landlessness and permanent poverty.
+
+Model-assisted deep learning analysis fundamentally alters the human reality of environmental hazards by transforming disaster response from **reactive post-disaster compensation** into **proactive anticipatory resilience**:
+
+```
+Traditional Reactive Disaster Relief              BhumiDorpon Anticipatory Spatial Intelligence
+┌──────────────────────────────────────────┐      ┌──────────────────────────────────────────┐
+│ • Riverbank collapses unexpectedly       │      │ • Model projects 1-year retreat envelope │
+│ • Homestead swallowed into riverbed      │      │ • Landowner alerted 6 months in advance  │
+│ • Assets destroyed; family displaced     │ ───► │ • Family dismantles house & salvages tin │
+│ • Bitter disputes over washed-away ails  │      │ • Plots georeferenced by 4-corner GPS    │
+│ • Delayed relief surveyed after months   │      │ • AC Land pre-allocates khas safety land │
+└──────────────────────────────────────────┘      └──────────────────────────────────────────┘
+```
+
+1. **Advance Asset Salvage and House Dismantling:** In rural Bangladesh, homestead structures are constructed from corrugated iron sheets (*tin*), timber beams, and masonry plinths. When riverbank collapse is predicted 6 to 12 months in advance, families can systematically dismantle their homes, salvage expensive building materials, relocate livestock, and preserve household wealth before the land collapses.
+2. **Agricultural Investment Protection:** Tenant farmers often invest their entire seasonal savings into fertilizer, seed paddy (Boro/Aman), and irrigation diesel. Knowing whether a char island or riverbank parcel faces an 85% probability of severe monsoon scouring enables farmers to adjust crop cycles, avoid debt traps, and lease safer inland plots.
+3. **Mitigating Land Tenure Conflict (*Ail* Disputes):** When floodwaters recede or rivers deposit new silt, physical boundary markers (*ails*) are obliterated. By establishing verified, plot-specific four-corner GPS coordinates (Corner 1 NW, 2 NE, 3 SE, 4 SW to 6 decimal places), model-assisted cadastral systems provide objective spatial reference points that prevent violent boundary clashes with local land grabbers (*lathials*).
+
+---
+
+### 10.7 Stakeholder-Specific Benefits and Practical Value
+
+Model-assisted spatial analysis generates distinct, high-value outcomes for each key stakeholder group operating across Bangladesh’s land and disaster ecosystem:
+
+#### 1. Vulnerable Homestead Owners & Rural Citizens
+- **Pre-Disaster Awareness:** Visual inspection of whether their specific ancestral plot (by Dag No.) lies within an active erosion cone or landslide debris runout buffer.
+- **Accurate Boundary Recovery:** Access to unambiguous four-corner GPS coordinates to physically re-stake plot corners after floodwaters recede.
+- **Financial Clarity:** Transparent understanding of estimated rehabilitation compensation rates based on official land classification schedules.
+
+#### 2. Tenant Farmers & Agricultural Communities
+- **Seasonal Risk Assessment:** Insight into projected inundation depth classes (Shallow vs Deep) and char sandbar stability before making seasonal farming commitments.
+- **Soil Siltation Estimates:** Understanding whether receding floodwaters will leave fertile alluvial topsoil (*poli mati*) or sterile sand splays (*balu mati*).
+
+#### 3. Local Land Administration (Assistant Commissioners of Land, Kanungos, Surveyors)
+- **Proactive Compensation Budgeting:** Deriving aggregate upazila compensation liabilities prior to disaster onset, facilitating timely budget requisitions to the Ministry of Land.
+- **State Khas Land Demarcation:** Automatic identification of newly accreted alluvial islands and unassigned coastal mudflats under Regulation XI of 1825, preventing illegal private encroachment.
+- **Dispute Resolution Evidence:** Providing objective, multitemporal cartographic evidence during land settlement hearings and boundary rectification arbitrations.
+
+#### 4. Disaster Risk Reduction (DRR) Specialists & Humanitarian Coordinators
+- **Targeted Fortification:** Prioritizing emergency geo-bag deployment, structural revetments, and polder repairs at exact transect points exhibiting maximum predicted erosion velocity.
+- **Shelter Siting:** Ensuring cyclone and flood shelters are constructed outside projected 5-year hazard vulnerability zones.
+
+#### 5. Academic Geomorphologists & Remote Sensing Researchers
+- **Deltaic Process Evaluation:** Evaluating theoretical bedload and sediment transport equations against empirical, satellite-derived morphological changes.
+- **Algorithm Benchmarking:** Comparing machine learning architectures against ground-truth field surveys in hyper-dynamic fluvial environments.
+
+---
+
+### 10.8 Ordinary Map Visualization vs. Model-Assisted Analysis
+
+To appreciate the architectural significance of BhumiDorpon, one must understand how **model-assisted analysis** differs fundamentally from **ordinary map visualization**:
+
+| Analytical Dimension | Ordinary Map Visualization (Static Web GIS) | Model-Assisted Analysis (BhumiDorpon Vision) |
+|---|---|---|
+| **Temporal Horizon** | Strictly retrospective: Displays what happened in the past or what exists at the exact moment of survey. | Forward-looking and inferential: Projects hazard boundaries and land changes 1 to 5 years into the future. |
+| **Analytical Depth** | Purely descriptive: Renders visual vector layers and raster tiles without modeling causal dynamics. | Quantitative and diagnostic: Computes velocities, displacement volumes, slope shear thresholds, and depth bands. |
+| **Cadastral Coupling** | Disconnected: Hazard maps show general administrative boundaries; cadastral sheets remain separate paper archives. | Deeply integrated: Hazard prediction polygons intersect directly with 4-corner parcel boundaries (Dag/Khatian). |
+| **Uncertainty Representation** | Absent: Features are rendered with sharp, misleading binary boundaries implying total certainty. | Explicit: Highlights uncertainty prediction cones, confidence levels (e.g., 88%), and model disclaimer badges. |
+| **Decision Support** | Passive: Requires human experts to manually interpret satellite pixels and calculate affected acreage. | Automated & Actionable: Instantly derives affected parcel counts, loss areas in Decimals, and compensation estimates. |
+| **Sensor Fusion** | Single-sensor display: Shows either an optical base map or an administrative vector layer. | Multimodal fusion: Integrates optical imagery, SAR radar backscatter, DEM elevation, and hydro-meteorological feeds. |
+| **Institutional Governance** | Confined to specialized GIS departments: Results are locked in inaccessible desktop software (ArcGIS/QGIS). | Democratized web access: Transparent, responsive web interface accessible to local surveyors and rural citizens alike. |
+| **Data Integrity Safeguards** | None: Often mixes historical facts with planning estimates, leading to administrative confusion. | Strict mode separation: Enforces strict data isolation, stripping historical payment fields in predictive views. |
+
+---
+
+### 10.9 Limitations, Reliability Considerations, and Responsible Use
+
+The integration of artificial intelligence and deep learning into land administration involves profound ethical, legal, and operational responsibilities. BhumiDorpon explicitly recognizes the following fundamental constraints:
+
+#### 1. Sensor Resolution Limits vs. Cadastral Precision
+Public Earth Observation satellites operate at spatial resolutions of **10 meters** (Sentinel-2 multispectral and Sentinel-1 SAR) or **30 meters** (Landsat). In Bangladesh, however, a typical rural agricultural parcel may measure only 10 to 30 decimals ($400\text{--}1,200\text{ m}^2$), with boundary markers (*ails*) measuring less than 30 centimeters in width. 
+
+A single satellite pixel can span an entire family plot. Consequently, **satellite-derived deep learning predictions can never substitute for legal cadastral boundary surveys conducted by certified land surveyors (*amin*) using total stations, DGPS, or traditional chain surveys**.
+
+#### 2. The "Black Box" Problem in Public Land Administration
+Deep neural networks operate through millions of non-linear parameter weights, making their internal decision pathways difficult to explain to an aggrieved farmer or a judicial land tribunal. In public land administration, decisions involving compensation disbursement or resettlement cannot be executed based solely on an unexplainable model prediction. BhumiDorpon mandates that all model predictions serve exclusively as **advisory decision-support tools** subject to human verification.
+
+#### 3. Climate Non-Stationarity and Extreme Anomalies
+Deep learning models are trained on historical statistical distributions. However, global climate change is intensifying precipitation extremes, altering Himalayan snowmelt patterns, and increasing cyclone surge intensities. An unprecedented transboundary flash flood (such as the catastrophic 2022 Sylhet deluge) or an unpredicted upstream barrage release may fall completely outside the training distribution, causing model accuracy to degrade.
+
+#### 4. Ethical Safeguards and Responsible Use Guidelines
+To prevent misuse, BhumiDorpon establishes four non-negotiable operational rules:
+1. **Never Legally Binding:** Model predictions must never be cited as legal proof of ownership, boundary delimitation, or land loss in civil courts.
+2. **No Forced Displacement:** Forecast hazard envelopes must never be weaponized by administrative authorities or private developers to justify the involuntary eviction of vulnerable riverine communities.
+3. **Mandatory Transparency:** Every rendered map and tabular report displaying modeled projections must carry the `ForecastBadge` and persistent advisory disclaimers.
+4. **Strict Financial Sanitization:** Predictive forecast views must never display historical disbursement progress bars (`Paid`, `Approved`, `Pending`) to prevent citizens or revenue officers from mistaking projected liabilities for approved government payouts.
+
+---
+
+### 10.10 Technical Implementation Status Matrix
+
+To ensure absolute clarity regarding the current state of BhumiDorpon, the following matrix categorizes every system capability into its verified operational status:
+
+```
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                              BhumiDorpon Technical Capability Verification                             │
+├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ [CURRENTLY IMPLEMENTED]     [SIMULATED PROTOTYPE]          [PROPOSED / ROADMAP]        [NOT VERIFIED]  │
+│ • Next.js 14 Web GIS SPA    • Deterministic Mock Geometries• PostGIS Production DB     • Ground-truth  │
+│ • Synchronized Dual Leaflet • "GeoAI-BD v2.4" Banner Model • Live Copernicus Pipeline  │   accuracy of │
+│ • 4-Corner Plot Coordinates • Pre-computed Hazard Forecasts• PyTorch Inference Service │   real DL in  │
+│ • Turf.js Intersection Math • Seeded Mock Compensation     • Real-time SAR Flood Model │   Bangladesh  │
+│ • Strict Mode Separation    • Synthetic DEM Hillshades     • Ministry Land Registry API│   field conditions│
+└────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+| System Capability | Implementation Status | Technical Verification Evidence in Codebase |
+|---|---|---|
+| **Interactive Map Interface** | **Currently Implemented** | Leaflet 1.9.4 dual-viewport comparison (`MapCompare.tsx`), synchronized pan/zoom with re-entrancy guards, Light GIS and Satellite basemap switching. |
+| **Cadastral Plot Resolution** | **Currently Implemented** | Quadrilateral plot polygons with 4 distinct corner coordinates (NW, NE, SE, SW to 6 decimal places), Dag No., Khatian No., and GeoJSON/CSV exports. |
+| **Five Hazard Modules** | **Currently Implemented** | Dedicated modules for River Erosion, Flooding, Landslides, Chars, and Coastal shifts with tailored cartographic layers. |
+| **Recorded vs. Forecast Mode** | **Currently Implemented** | Top-level mode toggle in `appStore`; strict data sanitization removing disbursement fields in Forecast mode. |
+| **Cadastral Plot Intersections** | **Currently Implemented** | Client/generator calculation using Turf.js (`turf.intersect`, `turf.area`) to derive affected area in Decimals. |
+| **Deep Learning Forecast Data** | **Simulated / Prototype** | Pre-generated, deterministic relational JSON files in `/mocks`; generated offline via `scripts/generate-mocks.ts`. |
+| **"GeoAI-BD v2.4" Model Identity** | **Simulated / Prototype** | UI conceptual demonstration banner; no actual PyTorch/TensorFlow weights exist in repository. |
+| **Synthetic DEM & Hillshades** | **Simulated / Prototype** | Topographic elevation contours and PNG hillshade overlays synthesized from 2D Gaussian distributions. |
+| **Live Remote Sensing Pipeline** | **Proposed / Future Work** | Automated ingestion of Sentinel-1/2 imagery via Copernicus Open Access Hub or Google Earth Engine API. |
+| **Operational Spatiotemporal DL** | **Proposed / Future Work** | Hosting real-time ConvLSTM and Spatiotemporal U-Net models on GPU inference microservices (FastAPI). |
+| **National Land Registry Integration** | **Proposed / Future Work** | Interfacing with Ministry of Land e-Mutation and digital Khatian databases under official data governance protocols. |
+| **Real-World Empirical Accuracy** | **Not Verified** | No empirical validation against ground-truth field surveys has been conducted; demo geometries are purely illustrative. |
+
+---
+
+## 11. Target Users and Use Cases
+
+### 11.1 Persona Profiles
 
 #### Persona 1: Local Land Administration Officer (AC Land / Surveyor)
 - **Name:** Md. Enamul Haque
@@ -438,9 +753,9 @@ BhumiDorpon is architected as a modern, client-side rendered Single Page Applica
 
 ---
 
-## 11. Data Sources, Limitations, and Transparency
+## 12. Data Sources, Limitations, and Transparency
 
-### 11.1 Data Sources and Provenance
+### 12.1 Data Sources and Provenance
 | Data Layer / Asset | Current Implementation Status | Provenance & Source Details |
 |---|---|---|
 | **Cadastral Plots & Boundaries** | Fictional Mock Data | Synthetically generated 4-corner polygons created by `/scripts/generate-mocks.ts`. Not official government survey sheets. |
@@ -452,7 +767,7 @@ BhumiDorpon is architected as a modern, client-side rendered Single Page Applica
 | **Street Basemap** | Real-World Cartography | OpenStreetMap standard cartographic tile service: `https://tile.openstreetmap.org/{z}/{x}/{y}.png`. |
 | **Forecast Projections** | Pre-Computed Synthetic Modeling | Simulated 1-year forward-looking scenarios generated deterministically; no live neural network inference is running. |
 
-### 11.2 Explicit Data Limitations
+### 12.2 Explicit Data Limitations
 1. **No Live Government Connection:** BhumiDorpon does not connect to the Ministry of Land's e-Mutation system, the Directorate of Land Records and Surveys (DLRS), or national identity databases.
 2. **Not Legally Binding:** Coordinates, plot boundaries, and compensation amounts cannot be cited in legal disputes, land registration offices, or formal compensation claims.
 3. **Unverified Satellite Alignment:** While the application uses genuine Esri satellite imagery at authentic regional coordinates, the synthetic plot polygons are not field-georeferenced against real-world parcel boundaries. The persistent disclaimer *"Demo geometry — not survey-accurate"* must always be respected.
@@ -460,32 +775,32 @@ BhumiDorpon is architected as a modern, client-side rendered Single Page Applica
 
 ---
 
-## 12. Future Scope
+## 13. Future Scope
 
 The long-term vision for BhumiDorpon involves transitioning from an architectural demonstration into an operational national spatial decision-support system:
 
-### 12.1 Phase 1: Spatial Backend & Database Integration
+### 13.1 Phase 1: Spatial Backend & Database Integration
 - Replace client-side mock JSON files with a production **PostgreSQL 16 + PostGIS** database.
 - Implement spatial indexing (`GIST`) on all cadastral plot geometries, mouza boundaries, and river transects.
 - Deploy a high-performance **FastAPI** backend exposing RESTful endpoints documented in [API Documentation](file:///d:/SOFTWARE/Project/Antigravity/BhumiDorpon/docs/api-documentation.md).
 
-### 12.2 Phase 2: Live Remote Sensing & Earth Observation Pipelines
+### 13.2 Phase 2: Live Remote Sensing & Earth Observation Pipelines
 - Connect to **Copernicus Open Access Hub (ESA)** and **Google Earth Engine (GEE)** to ingest multitemporal Sentinel-2 (optical) and Sentinel-1 (SAR) imagery.
 - Implement automated water extraction indices (MNDWI / AWEI) and SAR backscatter thresholding to delineate flood extents through monsoon cloud cover.
 - Ingest high-resolution Digital Elevation Models (ALOS PALSAR 12.5m or airborne LiDAR) for precise slope stability and landslide runout modeling.
 
-### 12.3 Phase 3: Operational Machine Learning Forecasting
+### 13.3 Phase 3: Operational Machine Learning Forecasting
 - Train deep-learning temporal models (ConvLSTM / Spatiotemporal U-Net) on historical river migration sequences (1990–2025) to generate probabilistic 1-year bankline retreat hazard zones.
 - Deploy machine-learning susceptibility classifiers (Random Forest / XGBoost) integrating soil moisture, rainfall intensity (CHIRPS), and slope curvature for real-time landslide warnings.
 
-### 12.4 Phase 4: Institutional Land Governance Integration
+### 13.4 Phase 4: Institutional Land Governance Integration
 - Establish secure, read-only APIs with the Ministry of Land's digital land management systems (e-Porcha, Khatian database) under strict privacy and role-based access control.
 - Introduce bilingual localization (full Bengali and English UI toggles).
 - Develop mobile-first offline data collection workflows for field surveyors using Progressive Web App (PWA) technologies.
 
 ---
 
-## 13. References
+## 14. References
 
 1. **Center for Environmental and Geographic Information Services (CEGIS):** *Monitoring of River Morphological Changes and Riverbank Erosion Forecasting in Bangladesh*, Annual Technical Reports, Dhaka, Bangladesh. [https://www.cegisbd.com](https://www.cegisbd.com)
 2. **Bangladesh Water Development Board (BWDB) & Flood Forecasting and Warning Centre (FFWC):** *Annual Flood Report and Hydrological Bulletins*, Ministry of Water Resources, Government of the People's Republic of Bangladesh. [http://www.ffwc.gov.bd](http://www.ffwc.gov.bd)
@@ -497,10 +812,13 @@ The long-term vision for BhumiDorpon involves transitioning from an architectura
 8. **Esri:** *ArcGIS Online World Imagery Basemap Services and Documentation*. [https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9](https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9)
 9. **OpenStreetMap Foundation:** *OpenStreetMap Tile Server Terms of Use and Licensing (ODbL)*. [https://operations.osmfoundation.org/policies/tiles/](https://operations.osmfoundation.org/policies/tiles/)
 10. **Leaflet Open-Source Project:** *Leaflet JavaScript Library for Mobile-Friendly Interactive Maps (v1.9.4)*. [https://leafletjs.com](https://leafletjs.com)
+11. **Shi, X., Chen, Z., Wang, H., Yeung, D. Y., Wong, W. K., & Woo, W. C. (2015):** *Convolutional LSTM Network: A Machine Learning Approach for Precipitation Nowcasting*, Advances in Neural Information Processing Systems (NeurIPS 2015), 28, 802–810.
+12. **Ronneberger, O., Fischer, P., & Brox, T. (2015):** *U-Net: Convolutional Networks for Biomedical Image Segmentation*, Medical Image Computing and Computer-Assisted Intervention (MICCAI), Springer, LNCS 9351, 234–241.
+13. **Zhu, X. X., Tuia, D., Mou, L., Xia, G. S., Zhang, L., Xu, F., & Fraundorfer, F. (2017):** *Deep Learning in Remote Sensing: A Comprehensive Review and List of Resources*, IEEE Geoscience and Remote Sensing Magazine, 5(4), 8–36.
 
 ---
 
-## 14. Team Information and Copyright
+## 15. Team Information and Copyright
 
 - **Team Name:** GeoNeural
 - **Team Leader:** Pantho Raj Biswas
@@ -509,3 +827,4 @@ The long-term vision for BhumiDorpon involves transitioning from an architectura
 **Copyright:** © 2026 GeoNeural. All rights reserved.
 
 *BhumiDorpon is developed and maintained by Team GeoNeural as an advanced geospatial research and demonstration platform for cadastral hazard monitoring in Bangladesh.*
+
