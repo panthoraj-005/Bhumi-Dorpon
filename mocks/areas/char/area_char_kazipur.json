@@ -1,0 +1,2546 @@
+{
+  "areaId": "area_char_kazipur",
+  "hazard": "char",
+  "mode": "recorded",
+  "bounds": [
+    89.63,
+    24.56,
+    89.68,
+    24.61
+  ],
+  "basemap": {
+    "land": [
+      [
+        [
+          89.63,
+          24.56
+        ],
+        [
+          89.68,
+          24.56
+        ],
+        [
+          89.68,
+          24.61
+        ],
+        [
+          89.63,
+          24.61
+        ],
+        [
+          89.63,
+          24.56
+        ]
+      ]
+    ],
+    "landuse": [
+      {
+        "type": "farmland",
+        "polygon": [
+          [
+            [
+              89.64,
+              24.564549
+            ],
+            [
+              89.6454,
+              24.564749
+            ],
+            [
+              89.646,
+              24.568149
+            ],
+            [
+              89.6403,
+              24.568549
+            ],
+            [
+              89.64,
+              24.564549
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "vegetation",
+        "polygon": [
+          [
+            [
+              89.644,
+              24.567549
+            ],
+            [
+              89.6465,
+              24.567749
+            ],
+            [
+              89.6462,
+              24.569349
+            ],
+            [
+              89.6442,
+              24.569149
+            ],
+            [
+              89.644,
+              24.567549
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "settlement",
+        "polygon": [
+          [
+            [
+              89.64,
+              24.567049
+            ],
+            [
+              89.6415,
+              24.567149
+            ],
+            [
+              89.6416,
+              24.568349
+            ],
+            [
+              89.6401,
+              24.568249
+            ],
+            [
+              89.64,
+              24.567049
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "farmland",
+        "polygon": [
+          [
+            [
+              89.645958,
+              24.576761
+            ],
+            [
+              89.651358,
+              24.576961
+            ],
+            [
+              89.651958,
+              24.580361
+            ],
+            [
+              89.646258,
+              24.580761
+            ],
+            [
+              89.645958,
+              24.576761
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "vegetation",
+        "polygon": [
+          [
+            [
+              89.649958,
+              24.579761
+            ],
+            [
+              89.652458,
+              24.579961
+            ],
+            [
+              89.652158,
+              24.581561
+            ],
+            [
+              89.650158,
+              24.581361
+            ],
+            [
+              89.649958,
+              24.579761
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "settlement",
+        "polygon": [
+          [
+            [
+              89.645958,
+              24.579261
+            ],
+            [
+              89.647458,
+              24.579361
+            ],
+            [
+              89.647558,
+              24.580561
+            ],
+            [
+              89.646058,
+              24.580461
+            ],
+            [
+              89.645958,
+              24.579261
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "farmland",
+        "polygon": [
+          [
+            [
+              89.651458,
+              24.589103
+            ],
+            [
+              89.656858,
+              24.589303
+            ],
+            [
+              89.657458,
+              24.592703
+            ],
+            [
+              89.651758,
+              24.593103
+            ],
+            [
+              89.651458,
+              24.589103
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "vegetation",
+        "polygon": [
+          [
+            [
+              89.655458,
+              24.592103
+            ],
+            [
+              89.657958,
+              24.592303
+            ],
+            [
+              89.657658,
+              24.593903
+            ],
+            [
+              89.655658,
+              24.593703
+            ],
+            [
+              89.655458,
+              24.592103
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "settlement",
+        "polygon": [
+          [
+            [
+              89.651458,
+              24.591603
+            ],
+            [
+              89.652958,
+              24.591703
+            ],
+            [
+              89.653058,
+              24.592903
+            ],
+            [
+              89.651558,
+              24.592803
+            ],
+            [
+              89.651458,
+              24.591603
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "farmland",
+        "polygon": [
+          [
+            [
+              89.64,
+              24.601457
+            ],
+            [
+              89.6454,
+              24.601657
+            ],
+            [
+              89.646,
+              24.605057
+            ],
+            [
+              89.6403,
+              24.605457
+            ],
+            [
+              89.64,
+              24.601457
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "vegetation",
+        "polygon": [
+          [
+            [
+              89.644,
+              24.604457
+            ],
+            [
+              89.6465,
+              24.604657
+            ],
+            [
+              89.6462,
+              24.606257
+            ],
+            [
+              89.6442,
+              24.606057
+            ],
+            [
+              89.644,
+              24.604457
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "settlement",
+        "polygon": [
+          [
+            [
+              89.64,
+              24.603957
+            ],
+            [
+              89.6415,
+              24.604057
+            ],
+            [
+              89.6416,
+              24.605257
+            ],
+            [
+              89.6401,
+              24.605157
+            ],
+            [
+              89.64,
+              24.603957
+            ]
+          ]
+        ]
+      }
+    ],
+    "water": [
+      {
+        "type": "river",
+        "polygon": [
+          [
+            [
+              89.662,
+              24.56
+            ],
+            [
+              89.68,
+              24.56
+            ],
+            [
+              89.68,
+              24.61
+            ],
+            [
+              89.662,
+              24.61
+            ],
+            [
+              89.662,
+              24.56
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "beel",
+        "polygon": [
+          [
+            [
+              89.641,
+              24.5815
+            ],
+            [
+              89.6443,
+              24.5817
+            ],
+            [
+              89.6437,
+              24.5837
+            ],
+            [
+              89.6409,
+              24.5834
+            ],
+            [
+              89.641,
+              24.5815
+            ]
+          ]
+        ]
+      }
+    ],
+    "waterlines": [
+      {
+        "type": "canal",
+        "line": [
+          [
+            89.632,
+            24.563
+          ],
+          [
+            89.638,
+            24.567
+          ],
+          [
+            89.644,
+            24.568
+          ]
+        ]
+      },
+      {
+        "type": "canal",
+        "line": [
+          [
+            89.6425,
+            24.5825
+          ],
+          [
+            89.6485,
+            24.5865
+          ],
+          [
+            89.676,
+            24.5885
+          ]
+        ]
+      }
+    ],
+    "roads": [
+      {
+        "type": "major",
+        "line": [
+          [
+            89.63,
+            24.583
+          ],
+          [
+            89.65,
+            24.586
+          ],
+          [
+            89.677,
+            24.587
+          ]
+        ]
+      },
+      {
+        "type": "minor",
+        "line": [
+          [
+            89.635,
+            24.562
+          ],
+          [
+            89.636,
+            24.586
+          ],
+          [
+            89.638,
+            24.607
+          ]
+        ]
+      },
+      {
+        "type": "minor",
+        "line": [
+          [
+            89.642,
+            24.586
+          ],
+          [
+            89.645,
+            24.608
+          ]
+        ]
+      }
+    ],
+    "embankments": [
+      {
+        "line": [
+          [
+            89.638,
+            24.561
+          ],
+          [
+            89.639,
+            24.585
+          ],
+          [
+            89.6385,
+            24.609
+          ]
+        ]
+      }
+    ],
+    "buildings": [
+      {
+        "polygon": [
+          [
+            [
+              89.6427,
+              24.566349
+            ],
+            [
+              89.6433,
+              24.566349
+            ],
+            [
+              89.6433,
+              24.566749
+            ],
+            [
+              89.6427,
+              24.566749
+            ],
+            [
+              89.6427,
+              24.566349
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              89.6436,
+              24.566349
+            ],
+            [
+              89.6442,
+              24.566349
+            ],
+            [
+              89.6442,
+              24.566749
+            ],
+            [
+              89.6436,
+              24.566749
+            ],
+            [
+              89.6436,
+              24.566349
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              89.648658,
+              24.578561
+            ],
+            [
+              89.649258,
+              24.578561
+            ],
+            [
+              89.649258,
+              24.578961
+            ],
+            [
+              89.648658,
+              24.578961
+            ],
+            [
+              89.648658,
+              24.578561
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              89.649558,
+              24.578561
+            ],
+            [
+              89.650158,
+              24.578561
+            ],
+            [
+              89.650158,
+              24.578961
+            ],
+            [
+              89.649558,
+              24.578961
+            ],
+            [
+              89.649558,
+              24.578561
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              89.654158,
+              24.590903
+            ],
+            [
+              89.654758,
+              24.590903
+            ],
+            [
+              89.654758,
+              24.591303
+            ],
+            [
+              89.654158,
+              24.591303
+            ],
+            [
+              89.654158,
+              24.590903
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              89.655058,
+              24.590903
+            ],
+            [
+              89.655658,
+              24.590903
+            ],
+            [
+              89.655658,
+              24.591303
+            ],
+            [
+              89.655058,
+              24.591303
+            ],
+            [
+              89.655058,
+              24.590903
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              89.6427,
+              24.603257
+            ],
+            [
+              89.6433,
+              24.603257
+            ],
+            [
+              89.6433,
+              24.603657
+            ],
+            [
+              89.6427,
+              24.603657
+            ],
+            [
+              89.6427,
+              24.603257
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              89.6436,
+              24.603257
+            ],
+            [
+              89.6442,
+              24.603257
+            ],
+            [
+              89.6442,
+              24.603657
+            ],
+            [
+              89.6436,
+              24.603657
+            ],
+            [
+              89.6436,
+              24.603257
+            ]
+          ]
+        ]
+      }
+    ],
+    "pois": [
+      {
+        "name": "Char Girish SCHOOL",
+        "type": "school",
+        "coordinates": [
+          89.6445,
+          24.565349
+        ]
+      },
+      {
+        "name": "Mansurnagar MOSQUE",
+        "type": "mosque",
+        "coordinates": [
+          89.650458,
+          24.577561
+        ]
+      },
+      {
+        "name": "Tekani MARKET",
+        "type": "market",
+        "coordinates": [
+          89.655958,
+          24.589903
+        ]
+      },
+      {
+        "name": "Khasrajbari HEALTH CENTER",
+        "type": "health_center",
+        "coordinates": [
+          89.6445,
+          24.602257
+        ]
+      }
+    ],
+    "upazila": [
+      [
+        [
+          89.628,
+          24.558
+        ],
+        [
+          89.682,
+          24.558
+        ],
+        [
+          89.682,
+          24.612
+        ],
+        [
+          89.628,
+          24.612
+        ],
+        [
+          89.628,
+          24.558
+        ]
+      ]
+    ],
+    "mouzas": [
+      {
+        "id": "mouza_kazipur_1",
+        "name": "Char Girish Mouza",
+        "jlNo": "JL-70",
+        "labelAnchor": [
+          89.643,
+          24.566549
+        ],
+        "areaDecimal": 116263,
+        "polygon": [
+          [
+            [
+              89.632,
+              24.56
+            ],
+            [
+              89.64289,
+              24.56
+            ],
+            [
+              89.65411,
+              24.56
+            ],
+            [
+              89.665,
+              24.56
+            ],
+            [
+              89.665,
+              24.565
+            ],
+            [
+              89.665,
+              24.5725
+            ],
+            [
+              89.65411,
+              24.572436
+            ],
+            [
+              89.64289,
+              24.573098
+            ],
+            [
+              89.632,
+              24.5725
+            ],
+            [
+              89.632,
+              24.56
+            ]
+          ]
+        ]
+      },
+      {
+        "id": "mouza_kazipur_2",
+        "name": "Mansurnagar Mouza",
+        "jlNo": "JL-74",
+        "labelAnchor": [
+          89.648958,
+          24.578761
+        ],
+        "areaDecimal": 111748.5,
+        "polygon": [
+          [
+            [
+              89.632,
+              24.5725
+            ],
+            [
+              89.64289,
+              24.573098
+            ],
+            [
+              89.65411,
+              24.572436
+            ],
+            [
+              89.665,
+              24.5725
+            ],
+            [
+              89.665,
+              24.58
+            ],
+            [
+              89.665,
+              24.585
+            ],
+            [
+              89.65411,
+              24.584517
+            ],
+            [
+              89.64289,
+              24.585085
+            ],
+            [
+              89.632,
+              24.585
+            ],
+            [
+              89.632,
+              24.5725
+            ]
+          ]
+        ]
+      },
+      {
+        "id": "mouza_kazipur_3",
+        "name": "Tekani Mouza",
+        "jlNo": "JL-78",
+        "labelAnchor": [
+          89.654458,
+          24.591103
+        ],
+        "areaDecimal": 114599.9,
+        "polygon": [
+          [
+            [
+              89.632,
+              24.585
+            ],
+            [
+              89.64289,
+              24.585085
+            ],
+            [
+              89.65411,
+              24.584517
+            ],
+            [
+              89.665,
+              24.585
+            ],
+            [
+              89.665,
+              24.59
+            ],
+            [
+              89.665,
+              24.5975
+            ],
+            [
+              89.65411,
+              24.597689
+            ],
+            [
+              89.64289,
+              24.596913
+            ],
+            [
+              89.632,
+              24.5975
+            ],
+            [
+              89.632,
+              24.585
+            ]
+          ]
+        ]
+      },
+      {
+        "id": "mouza_kazipur_4",
+        "name": "Khasrajbari Mouza",
+        "jlNo": "JL-82",
+        "labelAnchor": [
+          89.643,
+          24.603457
+        ],
+        "areaDecimal": 115810.7,
+        "polygon": [
+          [
+            [
+              89.632,
+              24.5975
+            ],
+            [
+              89.64289,
+              24.596913
+            ],
+            [
+              89.65411,
+              24.597689
+            ],
+            [
+              89.665,
+              24.5975
+            ],
+            [
+              89.665,
+              24.605
+            ],
+            [
+              89.665,
+              24.61
+            ],
+            [
+              89.65411,
+              24.61
+            ],
+            [
+              89.64289,
+              24.61
+            ],
+            [
+              89.632,
+              24.61
+            ],
+            [
+              89.632,
+              24.5975
+            ]
+          ]
+        ]
+      }
+    ],
+    "labels": [
+      {
+        "text": "Braided Channels",
+        "type": "river",
+        "bearing": 75,
+        "coordinates": [
+          89.677,
+          24.585
+        ]
+      }
+    ]
+  },
+  "mouzas": [
+    {
+      "id": "mouza_kazipur_1",
+      "name": "Char Girish Mouza",
+      "jlNo": "JL-70",
+      "areaDecimal": 116263,
+      "lossDecimal": 112.5,
+      "gainDecimal": 168,
+      "percent": 0.2,
+      "labelAnchor": [
+        89.643,
+        24.566549
+      ],
+      "affectedOwnersCount": 16,
+      "polygon": [
+        [
+          [
+            89.632,
+            24.56
+          ],
+          [
+            89.64289,
+            24.56
+          ],
+          [
+            89.65411,
+            24.56
+          ],
+          [
+            89.665,
+            24.56
+          ],
+          [
+            89.665,
+            24.565
+          ],
+          [
+            89.665,
+            24.5725
+          ],
+          [
+            89.65411,
+            24.572436
+          ],
+          [
+            89.64289,
+            24.573098
+          ],
+          [
+            89.632,
+            24.5725
+          ],
+          [
+            89.632,
+            24.56
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_kazipur_2",
+      "name": "Mansurnagar Mouza",
+      "jlNo": "JL-74",
+      "areaDecimal": 111748.5,
+      "lossDecimal": 34.7,
+      "gainDecimal": 39.5,
+      "percent": 0.1,
+      "labelAnchor": [
+        89.648958,
+        24.578761
+      ],
+      "affectedOwnersCount": 19,
+      "polygon": [
+        [
+          [
+            89.632,
+            24.5725
+          ],
+          [
+            89.64289,
+            24.573098
+          ],
+          [
+            89.65411,
+            24.572436
+          ],
+          [
+            89.665,
+            24.5725
+          ],
+          [
+            89.665,
+            24.58
+          ],
+          [
+            89.665,
+            24.585
+          ],
+          [
+            89.65411,
+            24.584517
+          ],
+          [
+            89.64289,
+            24.585085
+          ],
+          [
+            89.632,
+            24.585
+          ],
+          [
+            89.632,
+            24.5725
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_kazipur_3",
+      "name": "Tekani Mouza",
+      "jlNo": "JL-78",
+      "areaDecimal": 114599.9,
+      "lossDecimal": 35.8,
+      "gainDecimal": 29.7,
+      "percent": 0.1,
+      "labelAnchor": [
+        89.654458,
+        24.591103
+      ],
+      "affectedOwnersCount": 19,
+      "polygon": [
+        [
+          [
+            89.632,
+            24.585
+          ],
+          [
+            89.64289,
+            24.585085
+          ],
+          [
+            89.65411,
+            24.584517
+          ],
+          [
+            89.665,
+            24.585
+          ],
+          [
+            89.665,
+            24.59
+          ],
+          [
+            89.665,
+            24.5975
+          ],
+          [
+            89.65411,
+            24.597689
+          ],
+          [
+            89.64289,
+            24.596913
+          ],
+          [
+            89.632,
+            24.5975
+          ],
+          [
+            89.632,
+            24.585
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_kazipur_4",
+      "name": "Khasrajbari Mouza",
+      "jlNo": "JL-82",
+      "areaDecimal": 115810.7,
+      "lossDecimal": 32.9,
+      "gainDecimal": 42.3,
+      "percent": 0.1,
+      "labelAnchor": [
+        89.643,
+        24.603457
+      ],
+      "affectedOwnersCount": 13,
+      "polygon": [
+        [
+          [
+            89.632,
+            24.5975
+          ],
+          [
+            89.64289,
+            24.596913
+          ],
+          [
+            89.65411,
+            24.597689
+          ],
+          [
+            89.665,
+            24.5975
+          ],
+          [
+            89.665,
+            24.605
+          ],
+          [
+            89.665,
+            24.61
+          ],
+          [
+            89.65411,
+            24.61
+          ],
+          [
+            89.64289,
+            24.61
+          ],
+          [
+            89.632,
+            24.61
+          ],
+          [
+            89.632,
+            24.5975
+          ]
+        ]
+      ]
+    }
+  ],
+  "hazardLayers": {
+    "islands": [
+      [
+        [
+          [
+            89.662,
+            24.56
+          ],
+          [
+            89.68,
+            24.56
+          ],
+          [
+            89.68,
+            24.61
+          ],
+          [
+            89.662,
+            24.61
+          ],
+          [
+            89.662,
+            24.56
+          ]
+        ]
+      ]
+    ],
+    "accretionTips": [
+      [
+        [
+          [
+            89.662,
+            24.56
+          ],
+          [
+            89.68,
+            24.56
+          ],
+          [
+            89.68,
+            24.61
+          ],
+          [
+            89.662,
+            24.61
+          ],
+          [
+            89.662,
+            24.56
+          ]
+        ]
+      ]
+    ],
+    "erosionFlanks": [
+      [
+        [
+          [
+            89.662,
+            24.56
+          ],
+          [
+            89.68,
+            24.56
+          ],
+          [
+            89.68,
+            24.61
+          ],
+          [
+            89.662,
+            24.61
+          ],
+          [
+            89.662,
+            24.56
+          ]
+        ]
+      ]
+    ],
+    "unownedKhasLand": [
+      [
+        [
+          [
+            89.662,
+            24.56
+          ],
+          [
+            89.68,
+            24.56
+          ],
+          [
+            89.68,
+            24.61
+          ],
+          [
+            89.662,
+            24.61
+          ],
+          [
+            89.662,
+            24.56
+          ]
+        ]
+      ]
+    ]
+  },
+  "context": {
+    "type": "char",
+    "activeChannelWidthM": 2150,
+    "charAreaCurrentDec": 420.5,
+    "charAreaPreviousDec": 388.2,
+    "netChangeDec": 32.3,
+    "isProjected": false
+  },
+  "owners": [
+    {
+      "id": "impact_char_recorded_mouza_kazipur_1_1",
+      "name": "Fatema Begum",
+      "dagNo": "101",
+      "khatianNo": "RS-201",
+      "plotNo": "101",
+      "mouzaId": "mouza_kazipur_1",
+      "upazilaId": "kazipur",
+      "districtId": "sirajganj",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 169200,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        89.643,
+        24.566549
+      ],
+      "colorIndex": 1
+    },
+    {
+      "id": "impact_char_recorded_mouza_kazipur_1_2",
+      "name": "Nurul Huda Mia",
+      "dagNo": "102",
+      "khatianNo": "RS-202",
+      "plotNo": "102",
+      "mouzaId": "mouza_kazipur_1",
+      "upazilaId": "kazipur",
+      "districtId": "sirajganj",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 169200,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        89.643,
+        24.566549
+      ],
+      "colorIndex": 4
+    },
+    {
+      "id": "impact_char_recorded_mouza_kazipur_1_3",
+      "name": "Anwar Parvez",
+      "dagNo": "103",
+      "khatianNo": "RS-203",
+      "plotNo": "103",
+      "mouzaId": "mouza_kazipur_1",
+      "upazilaId": "kazipur",
+      "districtId": "sirajganj",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 169200,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        89.643,
+        24.566549
+      ],
+      "colorIndex": 7
+    },
+    {
+      "id": "impact_char_recorded_mouza_kazipur_1_4",
+      "name": "Shahana Akter",
+      "dagNo": "104",
+      "khatianNo": "RS-204",
+      "plotNo": "104",
+      "mouzaId": "mouza_kazipur_1",
+      "upazilaId": "kazipur",
+      "districtId": "sirajganj",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 169200,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        89.643,
+        24.566549
+      ],
+      "colorIndex": 10
+    },
+    {
+      "id": "impact_char_recorded_mouza_kazipur_1_5",
+      "name": "Abdul Matin",
+      "dagNo": "105",
+      "khatianNo": "RS-205",
+      "plotNo": "105",
+      "mouzaId": "mouza_kazipur_1",
+      "upazilaId": "kazipur",
+      "districtId": "sirajganj",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 169200,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        89.643,
+        24.566549
+      ],
+      "colorIndex": 1
+    },
+    {
+      "id": "impact_char_recorded_mouza_kazipur_1_6",
+      "name": "Zubair Ahmed",
+      "dagNo": "106",
+      "khatianNo": "RS-206",
+      "plotNo": "106",
+      "mouzaId": "mouza_kazipur_1",
+      "upazilaId": "kazipur",
+      "districtId": "sirajganj",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 169200,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        89.643,
+        24.566549
+      ],
+      "colorIndex": 4
+    },
+    {
+      "id": "impact_char_recorded_mouza_kazipur_1_7",
+      "name": "Sultana Razia",
+      "dagNo": "107",
+      "khatianNo": "RS-207",
+      "plotNo": "107",
+      "mouzaId": "mouza_kazipur_1",
+      "upazilaId": "kazipur",
+      "districtId": "sirajganj",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 169200,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        89.643,
+        24.566549
+      ],
+      "colorIndex": 7
+    },
+    {
+      "id": "impact_char_recorded_mouza_kazipur_1_8",
+      "name": "Sirajul Islam",
+      "dagNo": "108",
+      "khatianNo": "RS-208",
+      "plotNo": "108",
+      "mouzaId": "mouza_kazipur_1",
+      "upazilaId": "kazipur",
+      "districtId": "sirajganj",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 13.8,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 165600,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        89.643,
+        24.566549
+      ],
+      "colorIndex": 10
+    },
+    {
+      "id": "impact_char_recorded_mouza_kazipur_2_1",
+      "name": "Kamal Uddin Ahmed",
+      "dagNo": "109",
+      "khatianNo": "RS-209",
+      "plotNo": "109",
+      "mouzaId": "mouza_kazipur_2",
+      "upazilaId": "kazipur",
+      "districtId": "sirajganj",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 11.6,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 139200,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        89.648958,
+        24.578761
+      ],
+      "colorIndex": 9
+    },
+    {
+      "id": "impact_char_recorded_mouza_kazipur_2_2",
+      "name": "Taslima Nasrin",
+      "dagNo": "110",
+      "khatianNo": "RS-210",
+      "plotNo": "110",
+      "mouzaId": "mouza_kazipur_2",
+      "upazilaId": "kazipur",
+      "districtId": "sirajganj",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 11.6,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 139200,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        89.648958,
+        24.578761
+      ],
+      "colorIndex": 0
+    },
+    {
+      "id": "impact_char_recorded_mouza_kazipur_2_3",
+      "name": "Faridul Islam",
+      "dagNo": "111",
+      "khatianNo": "RS-211",
+      "plotNo": "111",
+      "mouzaId": "mouza_kazipur_2",
+      "upazilaId": "kazipur",
+      "districtId": "sirajganj",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 11.5,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 138000,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        89.648958,
+        24.578761
+      ],
+      "colorIndex": 3
+    },
+    {
+      "id": "impact_char_recorded_mouza_kazipur_3_1",
+      "name": "Taslima Nasrin",
+      "dagNo": "112",
+      "khatianNo": "RS-212",
+      "plotNo": "112",
+      "mouzaId": "mouza_kazipur_3",
+      "upazilaId": "kazipur",
+      "districtId": "sirajganj",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 11.9,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 142800,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        89.654458,
+        24.591103
+      ],
+      "colorIndex": 0
+    },
+    {
+      "id": "impact_char_recorded_mouza_kazipur_3_2",
+      "name": "Faridul Islam",
+      "dagNo": "113",
+      "khatianNo": "RS-213",
+      "plotNo": "113",
+      "mouzaId": "mouza_kazipur_3",
+      "upazilaId": "kazipur",
+      "districtId": "sirajganj",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 11.9,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 142800,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        89.654458,
+        24.591103
+      ],
+      "colorIndex": 3
+    },
+    {
+      "id": "impact_char_recorded_mouza_kazipur_3_3",
+      "name": "Monirul Huq",
+      "dagNo": "114",
+      "khatianNo": "RS-214",
+      "plotNo": "114",
+      "mouzaId": "mouza_kazipur_3",
+      "upazilaId": "kazipur",
+      "districtId": "sirajganj",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 144000,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        89.654458,
+        24.591103
+      ],
+      "colorIndex": 6
+    },
+    {
+      "id": "impact_char_recorded_mouza_kazipur_4_1",
+      "name": "Faridul Islam",
+      "dagNo": "115",
+      "khatianNo": "RS-215",
+      "plotNo": "115",
+      "mouzaId": "mouza_kazipur_4",
+      "upazilaId": "kazipur",
+      "districtId": "sirajganj",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 11,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 132000,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        89.643,
+        24.603457
+      ],
+      "colorIndex": 3
+    },
+    {
+      "id": "impact_char_recorded_mouza_kazipur_4_2",
+      "name": "Monirul Huq",
+      "dagNo": "116",
+      "khatianNo": "RS-216",
+      "plotNo": "116",
+      "mouzaId": "mouza_kazipur_4",
+      "upazilaId": "kazipur",
+      "districtId": "sirajganj",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 11,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 132000,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        89.643,
+        24.603457
+      ],
+      "colorIndex": 6
+    },
+    {
+      "id": "impact_char_recorded_mouza_kazipur_4_3",
+      "name": "Bilkis Banu",
+      "dagNo": "117",
+      "khatianNo": "RS-217",
+      "plotNo": "117",
+      "mouzaId": "mouza_kazipur_4",
+      "upazilaId": "kazipur",
+      "districtId": "sirajganj",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 10.9,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 130800,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        89.643,
+        24.603457
+      ],
+      "colorIndex": 9
+    }
+  ],
+  "mouzasRecorded": [
+    {
+      "id": "mouza_kazipur_1",
+      "name": "Char Girish Mouza",
+      "jlNo": "JL-70",
+      "areaDecimal": 116263,
+      "lossDecimal": 112.5,
+      "gainDecimal": 168,
+      "percent": 0.2,
+      "labelAnchor": [
+        89.643,
+        24.566549
+      ],
+      "affectedOwnersCount": 16,
+      "polygon": [
+        [
+          [
+            89.632,
+            24.56
+          ],
+          [
+            89.64289,
+            24.56
+          ],
+          [
+            89.65411,
+            24.56
+          ],
+          [
+            89.665,
+            24.56
+          ],
+          [
+            89.665,
+            24.565
+          ],
+          [
+            89.665,
+            24.5725
+          ],
+          [
+            89.65411,
+            24.572436
+          ],
+          [
+            89.64289,
+            24.573098
+          ],
+          [
+            89.632,
+            24.5725
+          ],
+          [
+            89.632,
+            24.56
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_kazipur_2",
+      "name": "Mansurnagar Mouza",
+      "jlNo": "JL-74",
+      "areaDecimal": 111748.5,
+      "lossDecimal": 34.7,
+      "gainDecimal": 39.5,
+      "percent": 0.1,
+      "labelAnchor": [
+        89.648958,
+        24.578761
+      ],
+      "affectedOwnersCount": 19,
+      "polygon": [
+        [
+          [
+            89.632,
+            24.5725
+          ],
+          [
+            89.64289,
+            24.573098
+          ],
+          [
+            89.65411,
+            24.572436
+          ],
+          [
+            89.665,
+            24.5725
+          ],
+          [
+            89.665,
+            24.58
+          ],
+          [
+            89.665,
+            24.585
+          ],
+          [
+            89.65411,
+            24.584517
+          ],
+          [
+            89.64289,
+            24.585085
+          ],
+          [
+            89.632,
+            24.585
+          ],
+          [
+            89.632,
+            24.5725
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_kazipur_3",
+      "name": "Tekani Mouza",
+      "jlNo": "JL-78",
+      "areaDecimal": 114599.9,
+      "lossDecimal": 35.8,
+      "gainDecimal": 29.7,
+      "percent": 0.1,
+      "labelAnchor": [
+        89.654458,
+        24.591103
+      ],
+      "affectedOwnersCount": 19,
+      "polygon": [
+        [
+          [
+            89.632,
+            24.585
+          ],
+          [
+            89.64289,
+            24.585085
+          ],
+          [
+            89.65411,
+            24.584517
+          ],
+          [
+            89.665,
+            24.585
+          ],
+          [
+            89.665,
+            24.59
+          ],
+          [
+            89.665,
+            24.5975
+          ],
+          [
+            89.65411,
+            24.597689
+          ],
+          [
+            89.64289,
+            24.596913
+          ],
+          [
+            89.632,
+            24.5975
+          ],
+          [
+            89.632,
+            24.585
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_kazipur_4",
+      "name": "Khasrajbari Mouza",
+      "jlNo": "JL-82",
+      "areaDecimal": 115810.7,
+      "lossDecimal": 32.9,
+      "gainDecimal": 42.3,
+      "percent": 0.1,
+      "labelAnchor": [
+        89.643,
+        24.603457
+      ],
+      "affectedOwnersCount": 13,
+      "polygon": [
+        [
+          [
+            89.632,
+            24.5975
+          ],
+          [
+            89.64289,
+            24.596913
+          ],
+          [
+            89.65411,
+            24.597689
+          ],
+          [
+            89.665,
+            24.5975
+          ],
+          [
+            89.665,
+            24.605
+          ],
+          [
+            89.665,
+            24.61
+          ],
+          [
+            89.65411,
+            24.61
+          ],
+          [
+            89.64289,
+            24.61
+          ],
+          [
+            89.632,
+            24.61
+          ],
+          [
+            89.632,
+            24.5975
+          ]
+        ]
+      ]
+    }
+  ],
+  "mouzasForecast": [
+    {
+      "id": "mouza_kazipur_1",
+      "name": "Char Girish Mouza",
+      "jlNo": "JL-70",
+      "areaDecimal": 116263,
+      "lossDecimal": 96,
+      "gainDecimal": 193,
+      "percent": 0.2,
+      "labelAnchor": [
+        89.643,
+        24.566549
+      ],
+      "affectedOwnersCount": 20,
+      "polygon": [
+        [
+          [
+            89.632,
+            24.56
+          ],
+          [
+            89.64289,
+            24.56
+          ],
+          [
+            89.65411,
+            24.56
+          ],
+          [
+            89.665,
+            24.56
+          ],
+          [
+            89.665,
+            24.565
+          ],
+          [
+            89.665,
+            24.5725
+          ],
+          [
+            89.65411,
+            24.572436
+          ],
+          [
+            89.64289,
+            24.573098
+          ],
+          [
+            89.632,
+            24.5725
+          ],
+          [
+            89.632,
+            24.56
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_kazipur_2",
+      "name": "Mansurnagar Mouza",
+      "jlNo": "JL-74",
+      "areaDecimal": 111748.5,
+      "lossDecimal": 29,
+      "gainDecimal": 45,
+      "percent": 0.1,
+      "labelAnchor": [
+        89.648958,
+        24.578761
+      ],
+      "affectedOwnersCount": 19,
+      "polygon": [
+        [
+          [
+            89.632,
+            24.5725
+          ],
+          [
+            89.64289,
+            24.573098
+          ],
+          [
+            89.65411,
+            24.572436
+          ],
+          [
+            89.665,
+            24.5725
+          ],
+          [
+            89.665,
+            24.58
+          ],
+          [
+            89.665,
+            24.585
+          ],
+          [
+            89.65411,
+            24.584517
+          ],
+          [
+            89.64289,
+            24.585085
+          ],
+          [
+            89.632,
+            24.585
+          ],
+          [
+            89.632,
+            24.5725
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_kazipur_3",
+      "name": "Tekani Mouza",
+      "jlNo": "JL-78",
+      "areaDecimal": 114599.9,
+      "lossDecimal": 30,
+      "gainDecimal": 34,
+      "percent": 0.1,
+      "labelAnchor": [
+        89.654458,
+        24.591103
+      ],
+      "affectedOwnersCount": 17,
+      "polygon": [
+        [
+          [
+            89.632,
+            24.585
+          ],
+          [
+            89.64289,
+            24.585085
+          ],
+          [
+            89.65411,
+            24.584517
+          ],
+          [
+            89.665,
+            24.585
+          ],
+          [
+            89.665,
+            24.59
+          ],
+          [
+            89.665,
+            24.5975
+          ],
+          [
+            89.65411,
+            24.597689
+          ],
+          [
+            89.64289,
+            24.596913
+          ],
+          [
+            89.632,
+            24.5975
+          ],
+          [
+            89.632,
+            24.585
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_kazipur_4",
+      "name": "Khasrajbari Mouza",
+      "jlNo": "JL-82",
+      "areaDecimal": 115810.7,
+      "lossDecimal": 28,
+      "gainDecimal": 49,
+      "percent": 0.1,
+      "labelAnchor": [
+        89.643,
+        24.603457
+      ],
+      "affectedOwnersCount": 14,
+      "polygon": [
+        [
+          [
+            89.632,
+            24.5975
+          ],
+          [
+            89.64289,
+            24.596913
+          ],
+          [
+            89.65411,
+            24.597689
+          ],
+          [
+            89.665,
+            24.5975
+          ],
+          [
+            89.665,
+            24.605
+          ],
+          [
+            89.665,
+            24.61
+          ],
+          [
+            89.65411,
+            24.61
+          ],
+          [
+            89.64289,
+            24.61
+          ],
+          [
+            89.632,
+            24.61
+          ],
+          [
+            89.632,
+            24.5975
+          ]
+        ]
+      ]
+    }
+  ],
+  "contextRecorded": {
+    "type": "char",
+    "activeChannelWidthM": 2150,
+    "charAreaCurrentDec": 420.5,
+    "charAreaPreviousDec": 388.2,
+    "netChangeDec": 32.3,
+    "isProjected": false
+  },
+  "contextForecast": {
+    "type": "char",
+    "activeChannelWidthM": 2280,
+    "charAreaCurrentDec": 465,
+    "charAreaPreviousDec": 420.5,
+    "netChangeDec": 44.5,
+    "isProjected": true
+  },
+  "ownersForecast": [
+    {
+      "id": "impact_char_forecast_mouza_kazipur_1_1",
+      "name": "Fatema Begum",
+      "dagNo": "101",
+      "khatianNo": "RS-201",
+      "plotNo": "101",
+      "mouzaId": "mouza_kazipur_1",
+      "upazilaId": "kazipur",
+      "districtId": "sirajganj",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12,
+      "gainDecimal": 0,
+      "coordinates": [
+        89.643,
+        24.566549
+      ],
+      "colorIndex": 1
+    },
+    {
+      "id": "impact_char_forecast_mouza_kazipur_1_2",
+      "name": "Nurul Huda Mia",
+      "dagNo": "102",
+      "khatianNo": "RS-202",
+      "plotNo": "102",
+      "mouzaId": "mouza_kazipur_1",
+      "upazilaId": "kazipur",
+      "districtId": "sirajganj",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12,
+      "gainDecimal": 0,
+      "coordinates": [
+        89.643,
+        24.566549
+      ],
+      "colorIndex": 4
+    },
+    {
+      "id": "impact_char_forecast_mouza_kazipur_1_3",
+      "name": "Anwar Parvez",
+      "dagNo": "103",
+      "khatianNo": "RS-203",
+      "plotNo": "103",
+      "mouzaId": "mouza_kazipur_1",
+      "upazilaId": "kazipur",
+      "districtId": "sirajganj",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12,
+      "gainDecimal": 0,
+      "coordinates": [
+        89.643,
+        24.566549
+      ],
+      "colorIndex": 7
+    },
+    {
+      "id": "impact_char_forecast_mouza_kazipur_1_4",
+      "name": "Shahana Akter",
+      "dagNo": "104",
+      "khatianNo": "RS-204",
+      "plotNo": "104",
+      "mouzaId": "mouza_kazipur_1",
+      "upazilaId": "kazipur",
+      "districtId": "sirajganj",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12,
+      "gainDecimal": 0,
+      "coordinates": [
+        89.643,
+        24.566549
+      ],
+      "colorIndex": 10
+    },
+    {
+      "id": "impact_char_forecast_mouza_kazipur_1_5",
+      "name": "Abdul Matin",
+      "dagNo": "105",
+      "khatianNo": "RS-205",
+      "plotNo": "105",
+      "mouzaId": "mouza_kazipur_1",
+      "upazilaId": "kazipur",
+      "districtId": "sirajganj",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12,
+      "gainDecimal": 0,
+      "coordinates": [
+        89.643,
+        24.566549
+      ],
+      "colorIndex": 1
+    },
+    {
+      "id": "impact_char_forecast_mouza_kazipur_1_6",
+      "name": "Zubair Ahmed",
+      "dagNo": "106",
+      "khatianNo": "RS-206",
+      "plotNo": "106",
+      "mouzaId": "mouza_kazipur_1",
+      "upazilaId": "kazipur",
+      "districtId": "sirajganj",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12,
+      "gainDecimal": 0,
+      "coordinates": [
+        89.643,
+        24.566549
+      ],
+      "colorIndex": 4
+    },
+    {
+      "id": "impact_char_forecast_mouza_kazipur_1_7",
+      "name": "Sultana Razia",
+      "dagNo": "107",
+      "khatianNo": "RS-207",
+      "plotNo": "107",
+      "mouzaId": "mouza_kazipur_1",
+      "upazilaId": "kazipur",
+      "districtId": "sirajganj",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12,
+      "gainDecimal": 0,
+      "coordinates": [
+        89.643,
+        24.566549
+      ],
+      "colorIndex": 7
+    },
+    {
+      "id": "impact_char_forecast_mouza_kazipur_1_8",
+      "name": "Sirajul Islam",
+      "dagNo": "108",
+      "khatianNo": "RS-208",
+      "plotNo": "108",
+      "mouzaId": "mouza_kazipur_1",
+      "upazilaId": "kazipur",
+      "districtId": "sirajganj",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12,
+      "gainDecimal": 0,
+      "coordinates": [
+        89.643,
+        24.566549
+      ],
+      "colorIndex": 10
+    },
+    {
+      "id": "impact_char_forecast_mouza_kazipur_2_1",
+      "name": "Kamal Uddin Ahmed",
+      "dagNo": "109",
+      "khatianNo": "RS-209",
+      "plotNo": "109",
+      "mouzaId": "mouza_kazipur_2",
+      "upazilaId": "kazipur",
+      "districtId": "sirajganj",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14.5,
+      "gainDecimal": 0,
+      "coordinates": [
+        89.648958,
+        24.578761
+      ],
+      "colorIndex": 9
+    },
+    {
+      "id": "impact_char_forecast_mouza_kazipur_2_2",
+      "name": "Taslima Nasrin",
+      "dagNo": "110",
+      "khatianNo": "RS-210",
+      "plotNo": "110",
+      "mouzaId": "mouza_kazipur_2",
+      "upazilaId": "kazipur",
+      "districtId": "sirajganj",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14.5,
+      "gainDecimal": 0,
+      "coordinates": [
+        89.648958,
+        24.578761
+      ],
+      "colorIndex": 0
+    },
+    {
+      "id": "impact_char_forecast_mouza_kazipur_3_1",
+      "name": "Mizanur Rahman",
+      "dagNo": "111",
+      "khatianNo": "RS-211",
+      "plotNo": "111",
+      "mouzaId": "mouza_kazipur_3",
+      "upazilaId": "kazipur",
+      "districtId": "sirajganj",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 10,
+      "gainDecimal": 0,
+      "coordinates": [
+        89.654458,
+        24.591103
+      ],
+      "colorIndex": 11
+    },
+    {
+      "id": "impact_char_forecast_mouza_kazipur_3_2",
+      "name": "Laila Arjumand",
+      "dagNo": "112",
+      "khatianNo": "RS-212",
+      "plotNo": "112",
+      "mouzaId": "mouza_kazipur_3",
+      "upazilaId": "kazipur",
+      "districtId": "sirajganj",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 10,
+      "gainDecimal": 0,
+      "coordinates": [
+        89.654458,
+        24.591103
+      ],
+      "colorIndex": 2
+    },
+    {
+      "id": "impact_char_forecast_mouza_kazipur_3_3",
+      "name": "Hosne Ara Begum",
+      "dagNo": "113",
+      "khatianNo": "RS-213",
+      "plotNo": "113",
+      "mouzaId": "mouza_kazipur_3",
+      "upazilaId": "kazipur",
+      "districtId": "sirajganj",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 10,
+      "gainDecimal": 0,
+      "coordinates": [
+        89.654458,
+        24.591103
+      ],
+      "colorIndex": 5
+    },
+    {
+      "id": "impact_char_forecast_mouza_kazipur_4_1",
+      "name": "Laila Arjumand",
+      "dagNo": "114",
+      "khatianNo": "RS-214",
+      "plotNo": "114",
+      "mouzaId": "mouza_kazipur_4",
+      "upazilaId": "kazipur",
+      "districtId": "sirajganj",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14,
+      "gainDecimal": 0,
+      "coordinates": [
+        89.643,
+        24.603457
+      ],
+      "colorIndex": 2
+    },
+    {
+      "id": "impact_char_forecast_mouza_kazipur_4_2",
+      "name": "Hosne Ara Begum",
+      "dagNo": "115",
+      "khatianNo": "RS-215",
+      "plotNo": "115",
+      "mouzaId": "mouza_kazipur_4",
+      "upazilaId": "kazipur",
+      "districtId": "sirajganj",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14,
+      "gainDecimal": 0,
+      "coordinates": [
+        89.643,
+        24.603457
+      ],
+      "colorIndex": 5
+    }
+  ]
+}

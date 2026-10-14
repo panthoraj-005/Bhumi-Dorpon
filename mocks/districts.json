@@ -1,0 +1,145 @@
+[
+  {
+    "id": "sirajganj",
+    "name": "Sirajganj",
+    "division": "Rajshahi",
+    "isCoastal": false,
+    "isHilly": false,
+    "hasChars": true,
+    "primaryHazards": [
+      "river_erosion",
+      "char",
+      "flood"
+    ]
+  },
+  {
+    "id": "kurigram",
+    "name": "Kurigram",
+    "division": "Rangpur",
+    "isCoastal": false,
+    "isHilly": false,
+    "hasChars": true,
+    "primaryHazards": [
+      "river_erosion",
+      "char",
+      "flood"
+    ]
+  },
+  {
+    "id": "shariatpur",
+    "name": "Shariatpur",
+    "division": "Dhaka",
+    "isCoastal": false,
+    "isHilly": false,
+    "hasChars": true,
+    "primaryHazards": [
+      "river_erosion",
+      "char"
+    ]
+  },
+  {
+    "id": "chandpur",
+    "name": "Chandpur",
+    "division": "Chattogram",
+    "isCoastal": false,
+    "isHilly": false,
+    "hasChars": true,
+    "primaryHazards": [
+      "river_erosion",
+      "char"
+    ]
+  },
+  {
+    "id": "bhola",
+    "name": "Bhola",
+    "division": "Barishal",
+    "isCoastal": true,
+    "isHilly": false,
+    "hasChars": true,
+    "primaryHazards": [
+      "coastal",
+      "char",
+      "river_erosion"
+    ]
+  },
+  {
+    "id": "sunamganj",
+    "name": "Sunamganj",
+    "division": "Sylhet",
+    "isCoastal": false,
+    "isHilly": false,
+    "hasChars": false,
+    "primaryHazards": [
+      "flood"
+    ]
+  },
+  {
+    "id": "sylhet",
+    "name": "Sylhet",
+    "division": "Sylhet",
+    "isCoastal": false,
+    "isHilly": true,
+    "hasChars": false,
+    "primaryHazards": [
+      "flood",
+      "landslide"
+    ]
+  },
+  {
+    "id": "rangamati",
+    "name": "Rangamati",
+    "division": "Chattogram",
+    "isCoastal": false,
+    "isHilly": true,
+    "hasChars": false,
+    "primaryHazards": [
+      "landslide"
+    ]
+  },
+  {
+    "id": "bandarban",
+    "name": "Bandarban",
+    "division": "Chattogram",
+    "isCoastal": false,
+    "isHilly": true,
+    "hasChars": false,
+    "primaryHazards": [
+      "landslide"
+    ]
+  },
+  {
+    "id": "coxs_bazar",
+    "name": "Cox's Bazar",
+    "division": "Chattogram",
+    "isCoastal": true,
+    "isHilly": true,
+    "hasChars": false,
+    "primaryHazards": [
+      "coastal",
+      "landslide"
+    ]
+  },
+  {
+    "id": "noakhali",
+    "name": "Noakhali",
+    "division": "Chattogram",
+    "isCoastal": true,
+    "isHilly": false,
+    "hasChars": true,
+    "primaryHazards": [
+      "coastal",
+      "char"
+    ]
+  },
+  {
+    "id": "khulna",
+    "name": "Khulna",
+    "division": "Khulna",
+    "isCoastal": true,
+    "isHilly": false,
+    "hasChars": false,
+    "primaryHazards": [
+      "coastal"
+    ]
+  }
+]

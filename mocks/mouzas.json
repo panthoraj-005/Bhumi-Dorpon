@@ -1,0 +1,4034 @@
+[
+  {
+    "id": "mouza_kazipur_1",
+    "name": "Natuarpara Mouza",
+    "jlNo": "JL-78",
+    "upazilaId": "kazipur",
+    "districtId": "sirajganj",
+    "riverId": "jamuna",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 29,
+    "centroid": [
+      89.635,
+      24.56
+    ],
+    "boundary": [
+      [
+        89.627,
+        24.555
+      ],
+      [
+        89.643,
+        24.555
+      ],
+      [
+        89.643,
+        24.565
+      ],
+      [
+        89.627,
+        24.565
+      ],
+      [
+        89.627,
+        24.555
+      ]
+    ]
+  },
+  {
+    "id": "mouza_kazipur_2",
+    "name": "Girishpur Mouza",
+    "jlNo": "JL-90",
+    "upazilaId": "kazipur",
+    "districtId": "sirajganj",
+    "riverId": "jamuna",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 31,
+    "centroid": [
+      89.65,
+      24.57
+    ],
+    "boundary": [
+      [
+        89.642,
+        24.565
+      ],
+      [
+        89.658,
+        24.565
+      ],
+      [
+        89.658,
+        24.575
+      ],
+      [
+        89.642,
+        24.575
+      ],
+      [
+        89.642,
+        24.565
+      ]
+    ]
+  },
+  {
+    "id": "mouza_kazipur_3",
+    "name": "Kalyanpur Mouza",
+    "jlNo": "JL-59",
+    "upazilaId": "kazipur",
+    "districtId": "sirajganj",
+    "riverId": "jamuna",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 28,
+    "centroid": [
+      89.665,
+      24.58
+    ],
+    "boundary": [
+      [
+        89.657,
+        24.575
+      ],
+      [
+        89.673,
+        24.575
+      ],
+      [
+        89.673,
+        24.585
+      ],
+      [
+        89.657,
+        24.585
+      ],
+      [
+        89.657,
+        24.575
+      ]
+    ]
+  },
+  {
+    "id": "mouza_sirajganj_sadar_1",
+    "name": "Tengrakhali Mouza",
+    "jlNo": "JL-94",
+    "upazilaId": "sirajganj_sadar",
+    "districtId": "sirajganj",
+    "riverId": "jamuna",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 29,
+    "centroid": [
+      89.685,
+      24.44
+    ],
+    "boundary": [
+      [
+        89.677,
+        24.435
+      ],
+      [
+        89.693,
+        24.435
+      ],
+      [
+        89.693,
+        24.445
+      ],
+      [
+        89.677,
+        24.445
+      ],
+      [
+        89.677,
+        24.435
+      ]
+    ]
+  },
+  {
+    "id": "mouza_sirajganj_sadar_2",
+    "name": "Bhairabnagar Mouza",
+    "jlNo": "JL-67",
+    "upazilaId": "sirajganj_sadar",
+    "districtId": "sirajganj",
+    "riverId": "jamuna",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 28,
+    "centroid": [
+      89.7,
+      24.45
+    ],
+    "boundary": [
+      [
+        89.692,
+        24.445
+      ],
+      [
+        89.708,
+        24.445
+      ],
+      [
+        89.708,
+        24.455
+      ],
+      [
+        89.692,
+        24.455
+      ],
+      [
+        89.692,
+        24.445
+      ]
+    ]
+  },
+  {
+    "id": "mouza_sirajganj_sadar_3",
+    "name": "Jaflong Mouza",
+    "jlNo": "JL-39",
+    "upazilaId": "sirajganj_sadar",
+    "districtId": "sirajganj",
+    "riverId": "jamuna",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 31,
+    "centroid": [
+      89.715,
+      24.46
+    ],
+    "boundary": [
+      [
+        89.707,
+        24.455
+      ],
+      [
+        89.723,
+        24.455
+      ],
+      [
+        89.723,
+        24.465
+      ],
+      [
+        89.707,
+        24.465
+      ],
+      [
+        89.707,
+        24.455
+      ]
+    ]
+  },
+  {
+    "id": "mouza_belkuchi_1",
+    "name": "Durgapur Mouza",
+    "jlNo": "JL-26",
+    "upazilaId": "belkuchi",
+    "districtId": "sirajganj",
+    "riverId": "jamuna",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 28,
+    "centroid": [
+      89.685,
+      24.28
+    ],
+    "boundary": [
+      [
+        89.677,
+        24.275
+      ],
+      [
+        89.693,
+        24.275
+      ],
+      [
+        89.693,
+        24.285
+      ],
+      [
+        89.677,
+        24.285
+      ],
+      [
+        89.677,
+        24.275
+      ]
+    ]
+  },
+  {
+    "id": "mouza_belkuchi_2",
+    "name": "Monpura South Mouza",
+    "jlNo": "JL-62",
+    "upazilaId": "belkuchi",
+    "districtId": "sirajganj",
+    "riverId": "jamuna",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 34,
+    "centroid": [
+      89.7,
+      24.29
+    ],
+    "boundary": [
+      [
+        89.692,
+        24.285
+      ],
+      [
+        89.708,
+        24.285
+      ],
+      [
+        89.708,
+        24.295
+      ],
+      [
+        89.692,
+        24.295
+      ],
+      [
+        89.692,
+        24.285
+      ]
+    ]
+  },
+  {
+    "id": "mouza_belkuchi_3",
+    "name": "Ghagra Mouza",
+    "jlNo": "JL-70",
+    "upazilaId": "belkuchi",
+    "districtId": "sirajganj",
+    "riverId": "jamuna",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "centroid": [
+      89.715,
+      24.3
+    ],
+    "boundary": [
+      [
+        89.707,
+        24.295
+      ],
+      [
+        89.723,
+        24.295
+      ],
+      [
+        89.723,
+        24.305
+      ],
+      [
+        89.707,
+        24.305
+      ],
+      [
+        89.707,
+        24.295
+      ]
+    ]
+  },
+  {
+    "id": "mouza_chilmari_1",
+    "name": "Ilisha Mouza",
+    "jlNo": "JL-68",
+    "upazilaId": "chilmari",
+    "districtId": "kurigram",
+    "riverId": "brahmaputra",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 33,
+    "centroid": [
+      89.655,
+      25.55
+    ],
+    "boundary": [
+      [
+        89.647,
+        25.545
+      ],
+      [
+        89.663,
+        25.545
+      ],
+      [
+        89.663,
+        25.555
+      ],
+      [
+        89.647,
+        25.555
+      ],
+      [
+        89.647,
+        25.545
+      ]
+    ]
+  },
+  {
+    "id": "mouza_chilmari_2",
+    "name": "Bholaganj Mouza",
+    "jlNo": "JL-17",
+    "upazilaId": "chilmari",
+    "districtId": "kurigram",
+    "riverId": "brahmaputra",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 31,
+    "centroid": [
+      89.67,
+      25.56
+    ],
+    "boundary": [
+      [
+        89.662,
+        25.555
+      ],
+      [
+        89.678,
+        25.555
+      ],
+      [
+        89.678,
+        25.565
+      ],
+      [
+        89.662,
+        25.565
+      ],
+      [
+        89.662,
+        25.555
+      ]
+    ]
+  },
+  {
+    "id": "mouza_chilmari_3",
+    "name": "Chilmari Ghat Mouza",
+    "jlNo": "JL-23",
+    "upazilaId": "chilmari",
+    "districtId": "kurigram",
+    "riverId": "brahmaputra",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 32,
+    "centroid": [
+      89.685,
+      25.57
+    ],
+    "boundary": [
+      [
+        89.677,
+        25.565
+      ],
+      [
+        89.693,
+        25.565
+      ],
+      [
+        89.693,
+        25.575
+      ],
+      [
+        89.677,
+        25.575
+      ],
+      [
+        89.677,
+        25.565
+      ]
+    ]
+  },
+  {
+    "id": "mouza_rowmari_1",
+    "name": "Rustampur Mouza",
+    "jlNo": "JL-18",
+    "upazilaId": "rowmari",
+    "districtId": "kurigram",
+    "riverId": "brahmaputra",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 33,
+    "centroid": [
+      89.835,
+      25.55
+    ],
+    "boundary": [
+      [
+        89.827,
+        25.545
+      ],
+      [
+        89.843,
+        25.545
+      ],
+      [
+        89.843,
+        25.555
+      ],
+      [
+        89.827,
+        25.555
+      ],
+      [
+        89.827,
+        25.545
+      ]
+    ]
+  },
+  {
+    "id": "mouza_rowmari_2",
+    "name": "Kutubdia Para Mouza",
+    "jlNo": "JL-38",
+    "upazilaId": "rowmari",
+    "districtId": "kurigram",
+    "riverId": "brahmaputra",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 28,
+    "centroid": [
+      89.85,
+      25.56
+    ],
+    "boundary": [
+      [
+        89.842,
+        25.555
+      ],
+      [
+        89.858,
+        25.555
+      ],
+      [
+        89.858,
+        25.565
+      ],
+      [
+        89.842,
+        25.565
+      ],
+      [
+        89.842,
+        25.555
+      ]
+    ]
+  },
+  {
+    "id": "mouza_rowmari_3",
+    "name": "Panchapalli Mouza",
+    "jlNo": "JL-79",
+    "upazilaId": "rowmari",
+    "districtId": "kurigram",
+    "riverId": "brahmaputra",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 36,
+    "centroid": [
+      89.865,
+      25.57
+    ],
+    "boundary": [
+      [
+        89.857,
+        25.565
+      ],
+      [
+        89.873,
+        25.565
+      ],
+      [
+        89.873,
+        25.575
+      ],
+      [
+        89.857,
+        25.575
+      ],
+      [
+        89.857,
+        25.565
+      ]
+    ]
+  },
+  {
+    "id": "mouza_ulipur_1",
+    "name": "Vedvedi Mouza",
+    "jlNo": "JL-15",
+    "upazilaId": "ulipur",
+    "districtId": "kurigram",
+    "riverId": "brahmaputra",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 33,
+    "centroid": [
+      89.605,
+      25.65
+    ],
+    "boundary": [
+      [
+        89.597,
+        25.645
+      ],
+      [
+        89.613,
+        25.645
+      ],
+      [
+        89.613,
+        25.655
+      ],
+      [
+        89.597,
+        25.655
+      ],
+      [
+        89.597,
+        25.645
+      ]
+    ]
+  },
+  {
+    "id": "mouza_ulipur_2",
+    "name": "Naria Bazar Mouza",
+    "jlNo": "JL-55",
+    "upazilaId": "ulipur",
+    "districtId": "kurigram",
+    "riverId": "brahmaputra",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "centroid": [
+      89.62,
+      25.66
+    ],
+    "boundary": [
+      [
+        89.612,
+        25.655
+      ],
+      [
+        89.628,
+        25.655
+      ],
+      [
+        89.628,
+        25.665
+      ],
+      [
+        89.612,
+        25.665
+      ],
+      [
+        89.612,
+        25.655
+      ]
+    ]
+  },
+  {
+    "id": "mouza_ulipur_3",
+    "name": "Tahirpur Haor Mouza",
+    "jlNo": "JL-25",
+    "upazilaId": "ulipur",
+    "districtId": "kurigram",
+    "riverId": "brahmaputra",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 32,
+    "centroid": [
+      89.635,
+      25.67
+    ],
+    "boundary": [
+      [
+        89.627,
+        25.665
+      ],
+      [
+        89.643,
+        25.665
+      ],
+      [
+        89.643,
+        25.675
+      ],
+      [
+        89.627,
+        25.675
+      ],
+      [
+        89.627,
+        25.665
+      ]
+    ]
+  },
+  {
+    "id": "mouza_naria_1",
+    "name": "Ramna Mouza",
+    "jlNo": "JL-71",
+    "upazilaId": "naria",
+    "districtId": "shariatpur",
+    "riverId": "padma",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 29,
+    "centroid": [
+      90.375,
+      23.29
+    ],
+    "boundary": [
+      [
+        90.367,
+        23.285
+      ],
+      [
+        90.383,
+        23.285
+      ],
+      [
+        90.383,
+        23.295
+      ],
+      [
+        90.367,
+        23.295
+      ],
+      [
+        90.367,
+        23.285
+      ]
+    ]
+  },
+  {
+    "id": "mouza_naria_2",
+    "name": "Derai Sadar Mouza",
+    "jlNo": "JL-36",
+    "upazilaId": "naria",
+    "districtId": "shariatpur",
+    "riverId": "padma",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 31,
+    "centroid": [
+      90.39,
+      23.3
+    ],
+    "boundary": [
+      [
+        90.382,
+        23.295
+      ],
+      [
+        90.398,
+        23.295
+      ],
+      [
+        90.398,
+        23.305
+      ],
+      [
+        90.382,
+        23.305
+      ],
+      [
+        90.382,
+        23.295
+      ]
+    ]
+  },
+  {
+    "id": "mouza_naria_3",
+    "name": "Gandhail Mouza",
+    "jlNo": "JL-31",
+    "upazilaId": "naria",
+    "districtId": "shariatpur",
+    "riverId": "padma",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 32,
+    "centroid": [
+      90.405,
+      23.31
+    ],
+    "boundary": [
+      [
+        90.397,
+        23.305
+      ],
+      [
+        90.413,
+        23.305
+      ],
+      [
+        90.413,
+        23.315
+      ],
+      [
+        90.397,
+        23.315
+      ],
+      [
+        90.397,
+        23.305
+      ]
+    ]
+  },
+  {
+    "id": "mouza_zajira_1",
+    "name": "Haimchar Coastal Mouza",
+    "jlNo": "JL-67",
+    "upazilaId": "zajira",
+    "districtId": "shariatpur",
+    "riverId": "padma",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 31,
+    "centroid": [
+      90.205,
+      23.34
+    ],
+    "boundary": [
+      [
+        90.197,
+        23.335
+      ],
+      [
+        90.213,
+        23.335
+      ],
+      [
+        90.213,
+        23.345
+      ],
+      [
+        90.197,
+        23.345
+      ],
+      [
+        90.197,
+        23.335
+      ]
+    ]
+  },
+  {
+    "id": "mouza_zajira_2",
+    "name": "Natuarpara Mouza",
+    "jlNo": "JL-12",
+    "upazilaId": "zajira",
+    "districtId": "shariatpur",
+    "riverId": "padma",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "centroid": [
+      90.22,
+      23.35
+    ],
+    "boundary": [
+      [
+        90.212,
+        23.345
+      ],
+      [
+        90.228,
+        23.345
+      ],
+      [
+        90.228,
+        23.355
+      ],
+      [
+        90.212,
+        23.355
+      ],
+      [
+        90.212,
+        23.345
+      ]
+    ]
+  },
+  {
+    "id": "mouza_zajira_3",
+    "name": "Girishpur Mouza",
+    "jlNo": "JL-40",
+    "upazilaId": "zajira",
+    "districtId": "shariatpur",
+    "riverId": "padma",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "centroid": [
+      90.235,
+      23.36
+    ],
+    "boundary": [
+      [
+        90.227,
+        23.355
+      ],
+      [
+        90.243,
+        23.355
+      ],
+      [
+        90.243,
+        23.365
+      ],
+      [
+        90.227,
+        23.365
+      ],
+      [
+        90.227,
+        23.355
+      ]
+    ]
+  },
+  {
+    "id": "mouza_bhedarganj_1",
+    "name": "Meghai Mouza",
+    "jlNo": "JL-77",
+    "upazilaId": "bhedarganj",
+    "districtId": "shariatpur",
+    "riverId": "padma",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 36,
+    "centroid": [
+      90.485,
+      23.19
+    ],
+    "boundary": [
+      [
+        90.477,
+        23.185
+      ],
+      [
+        90.493,
+        23.185
+      ],
+      [
+        90.493,
+        23.195
+      ],
+      [
+        90.477,
+        23.195
+      ],
+      [
+        90.477,
+        23.185
+      ]
+    ]
+  },
+  {
+    "id": "mouza_bhedarganj_2",
+    "name": "Tengrakhali Mouza",
+    "jlNo": "JL-83",
+    "upazilaId": "bhedarganj",
+    "districtId": "shariatpur",
+    "riverId": "padma",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 34,
+    "centroid": [
+      90.5,
+      23.2
+    ],
+    "boundary": [
+      [
+        90.492,
+        23.195
+      ],
+      [
+        90.508,
+        23.195
+      ],
+      [
+        90.508,
+        23.205
+      ],
+      [
+        90.492,
+        23.205
+      ],
+      [
+        90.492,
+        23.195
+      ]
+    ]
+  },
+  {
+    "id": "mouza_bhedarganj_3",
+    "name": "Bhairabnagar Mouza",
+    "jlNo": "JL-66",
+    "upazilaId": "bhedarganj",
+    "districtId": "shariatpur",
+    "riverId": "padma",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 34,
+    "centroid": [
+      90.515,
+      23.21
+    ],
+    "boundary": [
+      [
+        90.507,
+        23.205
+      ],
+      [
+        90.523,
+        23.205
+      ],
+      [
+        90.523,
+        23.215
+      ],
+      [
+        90.507,
+        23.215
+      ],
+      [
+        90.507,
+        23.205
+      ]
+    ]
+  },
+  {
+    "id": "mouza_haimchar_1",
+    "name": "Shubhagachha Mouza",
+    "jlNo": "JL-21",
+    "upazilaId": "haimchar",
+    "districtId": "chandpur",
+    "riverId": "meghna",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 34,
+    "centroid": [
+      90.625,
+      23.06
+    ],
+    "boundary": [
+      [
+        90.617,
+        23.055
+      ],
+      [
+        90.633,
+        23.055
+      ],
+      [
+        90.633,
+        23.065
+      ],
+      [
+        90.617,
+        23.065
+      ],
+      [
+        90.617,
+        23.055
+      ]
+    ]
+  },
+  {
+    "id": "mouza_haimchar_2",
+    "name": "Durgapur Mouza",
+    "jlNo": "JL-55",
+    "upazilaId": "haimchar",
+    "districtId": "chandpur",
+    "riverId": "meghna",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 38,
+    "centroid": [
+      90.64,
+      23.07
+    ],
+    "boundary": [
+      [
+        90.632,
+        23.065
+      ],
+      [
+        90.648,
+        23.065
+      ],
+      [
+        90.648,
+        23.075
+      ],
+      [
+        90.632,
+        23.075
+      ],
+      [
+        90.632,
+        23.065
+      ]
+    ]
+  },
+  {
+    "id": "mouza_haimchar_3",
+    "name": "Monpura South Mouza",
+    "jlNo": "JL-89",
+    "upazilaId": "haimchar",
+    "districtId": "chandpur",
+    "riverId": "meghna",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 36,
+    "centroid": [
+      90.655,
+      23.08
+    ],
+    "boundary": [
+      [
+        90.647,
+        23.075
+      ],
+      [
+        90.663,
+        23.075
+      ],
+      [
+        90.663,
+        23.085
+      ],
+      [
+        90.647,
+        23.085
+      ],
+      [
+        90.647,
+        23.075
+      ]
+    ]
+  },
+  {
+    "id": "mouza_chandpur_sadar_1",
+    "name": "Balia Mouza",
+    "jlNo": "JL-24",
+    "upazilaId": "chandpur_sadar",
+    "districtId": "chandpur",
+    "riverId": "meghna",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 36,
+    "centroid": [
+      90.635,
+      23.22
+    ],
+    "boundary": [
+      [
+        90.627,
+        23.215
+      ],
+      [
+        90.643,
+        23.215
+      ],
+      [
+        90.643,
+        23.225
+      ],
+      [
+        90.627,
+        23.225
+      ],
+      [
+        90.627,
+        23.215
+      ]
+    ]
+  },
+  {
+    "id": "mouza_chandpur_sadar_2",
+    "name": "Ilisha Mouza",
+    "jlNo": "JL-46",
+    "upazilaId": "chandpur_sadar",
+    "districtId": "chandpur",
+    "riverId": "meghna",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 34,
+    "centroid": [
+      90.65,
+      23.23
+    ],
+    "boundary": [
+      [
+        90.642,
+        23.225
+      ],
+      [
+        90.658,
+        23.225
+      ],
+      [
+        90.658,
+        23.235
+      ],
+      [
+        90.642,
+        23.235
+      ],
+      [
+        90.642,
+        23.225
+      ]
+    ]
+  },
+  {
+    "id": "mouza_chandpur_sadar_3",
+    "name": "Bholaganj Mouza",
+    "jlNo": "JL-38",
+    "upazilaId": "chandpur_sadar",
+    "districtId": "chandpur",
+    "riverId": "meghna",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 28,
+    "centroid": [
+      90.665,
+      23.24
+    ],
+    "boundary": [
+      [
+        90.657,
+        23.235
+      ],
+      [
+        90.673,
+        23.235
+      ],
+      [
+        90.673,
+        23.245
+      ],
+      [
+        90.657,
+        23.245
+      ],
+      [
+        90.657,
+        23.235
+      ]
+    ]
+  },
+  {
+    "id": "mouza_matlab_dakshin_1",
+    "name": "Kalyanpur Mouza",
+    "jlNo": "JL-92",
+    "upazilaId": "matlab_dakshin",
+    "districtId": "chandpur",
+    "riverId": "meghna",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "centroid": [
+      90.695,
+      23.34
+    ],
+    "boundary": [
+      [
+        90.687,
+        23.335
+      ],
+      [
+        90.703,
+        23.335
+      ],
+      [
+        90.703,
+        23.345
+      ],
+      [
+        90.687,
+        23.345
+      ],
+      [
+        90.687,
+        23.335
+      ]
+    ]
+  },
+  {
+    "id": "mouza_matlab_dakshin_2",
+    "name": "Rustampur Mouza",
+    "jlNo": "JL-38",
+    "upazilaId": "matlab_dakshin",
+    "districtId": "chandpur",
+    "riverId": "meghna",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "centroid": [
+      90.71,
+      23.35
+    ],
+    "boundary": [
+      [
+        90.702,
+        23.345
+      ],
+      [
+        90.718,
+        23.345
+      ],
+      [
+        90.718,
+        23.355
+      ],
+      [
+        90.702,
+        23.355
+      ],
+      [
+        90.702,
+        23.345
+      ]
+    ]
+  },
+  {
+    "id": "mouza_matlab_dakshin_3",
+    "name": "Kutubdia Para Mouza",
+    "jlNo": "JL-60",
+    "upazilaId": "matlab_dakshin",
+    "districtId": "chandpur",
+    "riverId": "meghna",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 37,
+    "centroid": [
+      90.725,
+      23.36
+    ],
+    "boundary": [
+      [
+        90.717,
+        23.355
+      ],
+      [
+        90.733,
+        23.355
+      ],
+      [
+        90.733,
+        23.365
+      ],
+      [
+        90.717,
+        23.365
+      ],
+      [
+        90.717,
+        23.355
+      ]
+    ]
+  },
+  {
+    "id": "mouza_char_fasson_1",
+    "name": "Jaflong Mouza",
+    "jlNo": "JL-65",
+    "upazilaId": "char_fasson",
+    "districtId": "bhola",
+    "riverId": "meghna",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 28,
+    "centroid": [
+      90.695,
+      22.18
+    ],
+    "boundary": [
+      [
+        90.687,
+        22.175
+      ],
+      [
+        90.703,
+        22.175
+      ],
+      [
+        90.703,
+        22.185
+      ],
+      [
+        90.687,
+        22.185
+      ],
+      [
+        90.687,
+        22.175
+      ]
+    ]
+  },
+  {
+    "id": "mouza_char_fasson_2",
+    "name": "Vedvedi Mouza",
+    "jlNo": "JL-67",
+    "upazilaId": "char_fasson",
+    "districtId": "bhola",
+    "riverId": "meghna",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 29,
+    "centroid": [
+      90.71,
+      22.19
+    ],
+    "boundary": [
+      [
+        90.702,
+        22.185
+      ],
+      [
+        90.718,
+        22.185
+      ],
+      [
+        90.718,
+        22.195
+      ],
+      [
+        90.702,
+        22.195
+      ],
+      [
+        90.702,
+        22.185
+      ]
+    ]
+  },
+  {
+    "id": "mouza_char_fasson_3",
+    "name": "Unassigned new land (Naria Bazar Sector-3)",
+    "jlNo": "V-03",
+    "upazilaId": "char_fasson",
+    "districtId": "bhola",
+    "riverId": "meghna",
+    "kind": "unassigned",
+    "isVirtual": true,
+    "totalPlots": 36,
+    "centroid": [
+      90.725,
+      22.2
+    ],
+    "boundary": [
+      [
+        90.717,
+        22.195
+      ],
+      [
+        90.733,
+        22.195
+      ],
+      [
+        90.733,
+        22.205
+      ],
+      [
+        90.717,
+        22.205
+      ],
+      [
+        90.717,
+        22.195
+      ]
+    ]
+  },
+  {
+    "id": "mouza_bhola_sadar_1",
+    "name": "Ghagra Mouza",
+    "jlNo": "JL-15",
+    "upazilaId": "bhola_sadar",
+    "districtId": "bhola",
+    "riverId": "meghna",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 32,
+    "centroid": [
+      90.635,
+      22.68
+    ],
+    "boundary": [
+      [
+        90.627,
+        22.675
+      ],
+      [
+        90.643,
+        22.675
+      ],
+      [
+        90.643,
+        22.685
+      ],
+      [
+        90.627,
+        22.685
+      ],
+      [
+        90.627,
+        22.675
+      ]
+    ]
+  },
+  {
+    "id": "mouza_bhola_sadar_2",
+    "name": "Ramna Mouza",
+    "jlNo": "JL-42",
+    "upazilaId": "bhola_sadar",
+    "districtId": "bhola",
+    "riverId": "meghna",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 37,
+    "centroid": [
+      90.65,
+      22.69
+    ],
+    "boundary": [
+      [
+        90.642,
+        22.685
+      ],
+      [
+        90.658,
+        22.685
+      ],
+      [
+        90.658,
+        22.695
+      ],
+      [
+        90.642,
+        22.695
+      ],
+      [
+        90.642,
+        22.685
+      ]
+    ]
+  },
+  {
+    "id": "mouza_bhola_sadar_3",
+    "name": "Derai Sadar Mouza",
+    "jlNo": "JL-85",
+    "upazilaId": "bhola_sadar",
+    "districtId": "bhola",
+    "riverId": "meghna",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 37,
+    "centroid": [
+      90.665,
+      22.7
+    ],
+    "boundary": [
+      [
+        90.657,
+        22.695
+      ],
+      [
+        90.673,
+        22.695
+      ],
+      [
+        90.673,
+        22.705
+      ],
+      [
+        90.657,
+        22.705
+      ],
+      [
+        90.657,
+        22.695
+      ]
+    ]
+  },
+  {
+    "id": "mouza_monpura_1",
+    "name": "Chilmari Ghat Mouza",
+    "jlNo": "JL-84",
+    "upazilaId": "monpura",
+    "districtId": "bhola",
+    "riverId": "meghna",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "centroid": [
+      90.955,
+      22.29
+    ],
+    "boundary": [
+      [
+        90.947,
+        22.285
+      ],
+      [
+        90.963,
+        22.285
+      ],
+      [
+        90.963,
+        22.295
+      ],
+      [
+        90.947,
+        22.295
+      ],
+      [
+        90.947,
+        22.285
+      ]
+    ]
+  },
+  {
+    "id": "mouza_monpura_2",
+    "name": "Haimchar Coastal Mouza",
+    "jlNo": "JL-81",
+    "upazilaId": "monpura",
+    "districtId": "bhola",
+    "riverId": "meghna",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "centroid": [
+      90.97,
+      22.3
+    ],
+    "boundary": [
+      [
+        90.962,
+        22.295
+      ],
+      [
+        90.978,
+        22.295
+      ],
+      [
+        90.978,
+        22.305
+      ],
+      [
+        90.962,
+        22.305
+      ],
+      [
+        90.962,
+        22.295
+      ]
+    ]
+  },
+  {
+    "id": "mouza_monpura_3",
+    "name": "Unassigned new land (Natuarpara Sector-3)",
+    "jlNo": "V-03",
+    "upazilaId": "monpura",
+    "districtId": "bhola",
+    "riverId": "meghna",
+    "kind": "unassigned",
+    "isVirtual": true,
+    "totalPlots": 33,
+    "centroid": [
+      90.985,
+      22.31
+    ],
+    "boundary": [
+      [
+        90.977,
+        22.305
+      ],
+      [
+        90.993,
+        22.305
+      ],
+      [
+        90.993,
+        22.315
+      ],
+      [
+        90.977,
+        22.315
+      ],
+      [
+        90.977,
+        22.305
+      ]
+    ]
+  },
+  {
+    "id": "mouza_sunamganj_sadar_1",
+    "name": "Panchapalli Mouza",
+    "jlNo": "JL-34",
+    "upazilaId": "sunamganj_sadar",
+    "districtId": "sunamganj",
+    "riverId": "surma",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "centroid": [
+      91.385,
+      25.06
+    ],
+    "boundary": [
+      [
+        91.377,
+        25.055
+      ],
+      [
+        91.393,
+        25.055
+      ],
+      [
+        91.393,
+        25.065
+      ],
+      [
+        91.377,
+        25.065
+      ],
+      [
+        91.377,
+        25.055
+      ]
+    ]
+  },
+  {
+    "id": "mouza_sunamganj_sadar_2",
+    "name": "Meghai Mouza",
+    "jlNo": "JL-19",
+    "upazilaId": "sunamganj_sadar",
+    "districtId": "sunamganj",
+    "riverId": "surma",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 36,
+    "centroid": [
+      91.4,
+      25.07
+    ],
+    "boundary": [
+      [
+        91.392,
+        25.065
+      ],
+      [
+        91.408,
+        25.065
+      ],
+      [
+        91.408,
+        25.075
+      ],
+      [
+        91.392,
+        25.075
+      ],
+      [
+        91.392,
+        25.065
+      ]
+    ]
+  },
+  {
+    "id": "mouza_sunamganj_sadar_3",
+    "name": "Tengrakhali Mouza",
+    "jlNo": "JL-73",
+    "upazilaId": "sunamganj_sadar",
+    "districtId": "sunamganj",
+    "riverId": "surma",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 32,
+    "centroid": [
+      91.415,
+      25.08
+    ],
+    "boundary": [
+      [
+        91.407,
+        25.075
+      ],
+      [
+        91.423,
+        25.075
+      ],
+      [
+        91.423,
+        25.085
+      ],
+      [
+        91.407,
+        25.085
+      ],
+      [
+        91.407,
+        25.075
+      ]
+    ]
+  },
+  {
+    "id": "mouza_derai_1",
+    "name": "Tahirpur Haor Mouza",
+    "jlNo": "JL-67",
+    "upazilaId": "derai",
+    "districtId": "sunamganj",
+    "riverId": "surma",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 33,
+    "centroid": [
+      91.335,
+      24.77
+    ],
+    "boundary": [
+      [
+        91.327,
+        24.765
+      ],
+      [
+        91.343,
+        24.765
+      ],
+      [
+        91.343,
+        24.775
+      ],
+      [
+        91.327,
+        24.775
+      ],
+      [
+        91.327,
+        24.765
+      ]
+    ]
+  },
+  {
+    "id": "mouza_derai_2",
+    "name": "Shubhagachha Mouza",
+    "jlNo": "JL-77",
+    "upazilaId": "derai",
+    "districtId": "sunamganj",
+    "riverId": "surma",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 32,
+    "centroid": [
+      91.35,
+      24.78
+    ],
+    "boundary": [
+      [
+        91.342,
+        24.775
+      ],
+      [
+        91.358,
+        24.775
+      ],
+      [
+        91.358,
+        24.785
+      ],
+      [
+        91.342,
+        24.785
+      ],
+      [
+        91.342,
+        24.775
+      ]
+    ]
+  },
+  {
+    "id": "mouza_derai_3",
+    "name": "Durgapur Mouza",
+    "jlNo": "JL-83",
+    "upazilaId": "derai",
+    "districtId": "sunamganj",
+    "riverId": "surma",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 36,
+    "centroid": [
+      91.365,
+      24.79
+    ],
+    "boundary": [
+      [
+        91.357,
+        24.785
+      ],
+      [
+        91.373,
+        24.785
+      ],
+      [
+        91.373,
+        24.795
+      ],
+      [
+        91.357,
+        24.795
+      ],
+      [
+        91.357,
+        24.785
+      ]
+    ]
+  },
+  {
+    "id": "mouza_tahirpur_1",
+    "name": "Gandhail Mouza",
+    "jlNo": "JL-75",
+    "upazilaId": "tahirpur",
+    "districtId": "sunamganj",
+    "riverId": "jadukata",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "centroid": [
+      91.165,
+      25.09
+    ],
+    "boundary": [
+      [
+        91.157,
+        25.085
+      ],
+      [
+        91.173,
+        25.085
+      ],
+      [
+        91.173,
+        25.095
+      ],
+      [
+        91.157,
+        25.095
+      ],
+      [
+        91.157,
+        25.085
+      ]
+    ]
+  },
+  {
+    "id": "mouza_tahirpur_2",
+    "name": "Balia Mouza",
+    "jlNo": "JL-60",
+    "upazilaId": "tahirpur",
+    "districtId": "sunamganj",
+    "riverId": "jadukata",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 33,
+    "centroid": [
+      91.18,
+      25.1
+    ],
+    "boundary": [
+      [
+        91.172,
+        25.095
+      ],
+      [
+        91.188,
+        25.095
+      ],
+      [
+        91.188,
+        25.105
+      ],
+      [
+        91.172,
+        25.105
+      ],
+      [
+        91.172,
+        25.095
+      ]
+    ]
+  },
+  {
+    "id": "mouza_tahirpur_3",
+    "name": "Ilisha Mouza",
+    "jlNo": "JL-20",
+    "upazilaId": "tahirpur",
+    "districtId": "sunamganj",
+    "riverId": "jadukata",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 33,
+    "centroid": [
+      91.195,
+      25.11
+    ],
+    "boundary": [
+      [
+        91.187,
+        25.105
+      ],
+      [
+        91.203,
+        25.105
+      ],
+      [
+        91.203,
+        25.115
+      ],
+      [
+        91.187,
+        25.115
+      ],
+      [
+        91.187,
+        25.105
+      ]
+    ]
+  },
+  {
+    "id": "mouza_jamalganj_1",
+    "name": "Girishpur Mouza",
+    "jlNo": "JL-66",
+    "upazilaId": "jamalganj",
+    "districtId": "sunamganj",
+    "riverId": "surma",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "centroid": [
+      91.215,
+      24.96
+    ],
+    "boundary": [
+      [
+        91.207,
+        24.955
+      ],
+      [
+        91.223,
+        24.955
+      ],
+      [
+        91.223,
+        24.965
+      ],
+      [
+        91.207,
+        24.965
+      ],
+      [
+        91.207,
+        24.955
+      ]
+    ]
+  },
+  {
+    "id": "mouza_jamalganj_2",
+    "name": "Kalyanpur Mouza",
+    "jlNo": "JL-47",
+    "upazilaId": "jamalganj",
+    "districtId": "sunamganj",
+    "riverId": "surma",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 33,
+    "centroid": [
+      91.23,
+      24.97
+    ],
+    "boundary": [
+      [
+        91.222,
+        24.965
+      ],
+      [
+        91.238,
+        24.965
+      ],
+      [
+        91.238,
+        24.975
+      ],
+      [
+        91.222,
+        24.975
+      ],
+      [
+        91.222,
+        24.965
+      ]
+    ]
+  },
+  {
+    "id": "mouza_jamalganj_3",
+    "name": "Rustampur Mouza",
+    "jlNo": "JL-43",
+    "upazilaId": "jamalganj",
+    "districtId": "sunamganj",
+    "riverId": "surma",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "centroid": [
+      91.245,
+      24.98
+    ],
+    "boundary": [
+      [
+        91.237,
+        24.975
+      ],
+      [
+        91.253,
+        24.975
+      ],
+      [
+        91.253,
+        24.985
+      ],
+      [
+        91.237,
+        24.985
+      ],
+      [
+        91.237,
+        24.975
+      ]
+    ]
+  },
+  {
+    "id": "mouza_gowainghat_1",
+    "name": "Bhairabnagar Mouza",
+    "jlNo": "JL-86",
+    "upazilaId": "gowainghat",
+    "districtId": "sylhet",
+    "riverId": "sari_goyain",
+    "hillId": "jaflong_hill",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 31,
+    "centroid": [
+      91.985,
+      25.12
+    ],
+    "boundary": [
+      [
+        91.977,
+        25.115
+      ],
+      [
+        91.993,
+        25.115
+      ],
+      [
+        91.993,
+        25.125
+      ],
+      [
+        91.977,
+        25.125
+      ],
+      [
+        91.977,
+        25.115
+      ]
+    ]
+  },
+  {
+    "id": "mouza_gowainghat_2",
+    "name": "Jaflong Mouza",
+    "jlNo": "JL-35",
+    "upazilaId": "gowainghat",
+    "districtId": "sylhet",
+    "riverId": "sari_goyain",
+    "hillId": "jaflong_hill",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 33,
+    "centroid": [
+      92,
+      25.13
+    ],
+    "boundary": [
+      [
+        91.992,
+        25.125
+      ],
+      [
+        92.008,
+        25.125
+      ],
+      [
+        92.008,
+        25.135
+      ],
+      [
+        91.992,
+        25.135
+      ],
+      [
+        91.992,
+        25.125
+      ]
+    ]
+  },
+  {
+    "id": "mouza_gowainghat_3",
+    "name": "Vedvedi Mouza",
+    "jlNo": "JL-44",
+    "upazilaId": "gowainghat",
+    "districtId": "sylhet",
+    "riverId": "sari_goyain",
+    "hillId": "jaflong_hill",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 31,
+    "centroid": [
+      92.015,
+      25.14
+    ],
+    "boundary": [
+      [
+        92.007,
+        25.135
+      ],
+      [
+        92.023,
+        25.135
+      ],
+      [
+        92.023,
+        25.145
+      ],
+      [
+        92.007,
+        25.145
+      ],
+      [
+        92.007,
+        25.135
+      ]
+    ]
+  },
+  {
+    "id": "mouza_companiganj_1",
+    "name": "Monpura South Mouza",
+    "jlNo": "JL-28",
+    "upazilaId": "companiganj",
+    "districtId": "sylhet",
+    "riverId": "dholai",
+    "hillId": "bholaganj_spur",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 38,
+    "centroid": [
+      91.735,
+      25.07
+    ],
+    "boundary": [
+      [
+        91.727,
+        25.065
+      ],
+      [
+        91.743,
+        25.065
+      ],
+      [
+        91.743,
+        25.075
+      ],
+      [
+        91.727,
+        25.075
+      ],
+      [
+        91.727,
+        25.065
+      ]
+    ]
+  },
+  {
+    "id": "mouza_companiganj_2",
+    "name": "Ghagra Mouza",
+    "jlNo": "JL-85",
+    "upazilaId": "companiganj",
+    "districtId": "sylhet",
+    "riverId": "dholai",
+    "hillId": "bholaganj_spur",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "centroid": [
+      91.75,
+      25.08
+    ],
+    "boundary": [
+      [
+        91.742,
+        25.075
+      ],
+      [
+        91.758,
+        25.075
+      ],
+      [
+        91.758,
+        25.085
+      ],
+      [
+        91.742,
+        25.085
+      ],
+      [
+        91.742,
+        25.075
+      ]
+    ]
+  },
+  {
+    "id": "mouza_companiganj_3",
+    "name": "Ramna Mouza",
+    "jlNo": "JL-44",
+    "upazilaId": "companiganj",
+    "districtId": "sylhet",
+    "riverId": "dholai",
+    "hillId": "bholaganj_spur",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 36,
+    "centroid": [
+      91.765,
+      25.09
+    ],
+    "boundary": [
+      [
+        91.757,
+        25.085
+      ],
+      [
+        91.773,
+        25.085
+      ],
+      [
+        91.773,
+        25.095
+      ],
+      [
+        91.757,
+        25.095
+      ],
+      [
+        91.757,
+        25.085
+      ]
+    ]
+  },
+  {
+    "id": "mouza_beanibazar_1",
+    "name": "Bholaganj Mouza",
+    "jlNo": "JL-56",
+    "upazilaId": "beanibazar",
+    "districtId": "sylhet",
+    "riverId": "kushiyara",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 34,
+    "centroid": [
+      92.145,
+      24.82
+    ],
+    "boundary": [
+      [
+        92.137,
+        24.815
+      ],
+      [
+        92.153,
+        24.815
+      ],
+      [
+        92.153,
+        24.825
+      ],
+      [
+        92.137,
+        24.825
+      ],
+      [
+        92.137,
+        24.815
+      ]
+    ]
+  },
+  {
+    "id": "mouza_beanibazar_2",
+    "name": "Chilmari Ghat Mouza",
+    "jlNo": "JL-24",
+    "upazilaId": "beanibazar",
+    "districtId": "sylhet",
+    "riverId": "kushiyara",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 37,
+    "centroid": [
+      92.16,
+      24.83
+    ],
+    "boundary": [
+      [
+        92.152,
+        24.825
+      ],
+      [
+        92.168,
+        24.825
+      ],
+      [
+        92.168,
+        24.835
+      ],
+      [
+        92.152,
+        24.835
+      ],
+      [
+        92.152,
+        24.825
+      ]
+    ]
+  },
+  {
+    "id": "mouza_beanibazar_3",
+    "name": "Haimchar Coastal Mouza",
+    "jlNo": "JL-83",
+    "upazilaId": "beanibazar",
+    "districtId": "sylhet",
+    "riverId": "kushiyara",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 34,
+    "centroid": [
+      92.175,
+      24.84
+    ],
+    "boundary": [
+      [
+        92.167,
+        24.835
+      ],
+      [
+        92.183,
+        24.835
+      ],
+      [
+        92.183,
+        24.845
+      ],
+      [
+        92.167,
+        24.845
+      ],
+      [
+        92.167,
+        24.835
+      ]
+    ]
+  },
+  {
+    "id": "mouza_kawkhali_1",
+    "name": "Kutubdia Para Mouza",
+    "jlNo": "JL-71",
+    "upazilaId": "kawkhali",
+    "districtId": "rangamati",
+    "riverId": "ichamati",
+    "hillId": "ghagra",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 31,
+    "centroid": [
+      92.015,
+      22.55
+    ],
+    "boundary": [
+      [
+        92.007,
+        22.545
+      ],
+      [
+        92.023,
+        22.545
+      ],
+      [
+        92.023,
+        22.555
+      ],
+      [
+        92.007,
+        22.555
+      ],
+      [
+        92.007,
+        22.545
+      ]
+    ]
+  },
+  {
+    "id": "mouza_kawkhali_2",
+    "name": "Panchapalli Mouza",
+    "jlNo": "JL-69",
+    "upazilaId": "kawkhali",
+    "districtId": "rangamati",
+    "riverId": "ichamati",
+    "hillId": "ghagra",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 33,
+    "centroid": [
+      92.03,
+      22.56
+    ],
+    "boundary": [
+      [
+        92.022,
+        22.555
+      ],
+      [
+        92.038,
+        22.555
+      ],
+      [
+        92.038,
+        22.565
+      ],
+      [
+        92.022,
+        22.565
+      ],
+      [
+        92.022,
+        22.555
+      ]
+    ]
+  },
+  {
+    "id": "mouza_kawkhali_3",
+    "name": "Meghai Mouza",
+    "jlNo": "JL-62",
+    "upazilaId": "kawkhali",
+    "districtId": "rangamati",
+    "riverId": "ichamati",
+    "hillId": "ghagra",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 31,
+    "centroid": [
+      92.045,
+      22.57
+    ],
+    "boundary": [
+      [
+        92.037,
+        22.565
+      ],
+      [
+        92.053,
+        22.565
+      ],
+      [
+        92.053,
+        22.575
+      ],
+      [
+        92.037,
+        22.575
+      ],
+      [
+        92.037,
+        22.565
+      ]
+    ]
+  },
+  {
+    "id": "mouza_rangamati_sadar_1",
+    "name": "Naria Bazar Mouza",
+    "jlNo": "JL-26",
+    "upazilaId": "rangamati_sadar",
+    "districtId": "rangamati",
+    "riverId": "karnafuli",
+    "hillId": "furamon",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 28,
+    "centroid": [
+      92.165,
+      22.64
+    ],
+    "boundary": [
+      [
+        92.157,
+        22.635
+      ],
+      [
+        92.173,
+        22.635
+      ],
+      [
+        92.173,
+        22.645
+      ],
+      [
+        92.157,
+        22.645
+      ],
+      [
+        92.157,
+        22.635
+      ]
+    ]
+  },
+  {
+    "id": "mouza_rangamati_sadar_2",
+    "name": "Tahirpur Haor Mouza",
+    "jlNo": "JL-94",
+    "upazilaId": "rangamati_sadar",
+    "districtId": "rangamati",
+    "riverId": "karnafuli",
+    "hillId": "furamon",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 31,
+    "centroid": [
+      92.18,
+      22.65
+    ],
+    "boundary": [
+      [
+        92.172,
+        22.645
+      ],
+      [
+        92.188,
+        22.645
+      ],
+      [
+        92.188,
+        22.655
+      ],
+      [
+        92.172,
+        22.655
+      ],
+      [
+        92.172,
+        22.645
+      ]
+    ]
+  },
+  {
+    "id": "mouza_rangamati_sadar_3",
+    "name": "Shubhagachha Mouza",
+    "jlNo": "JL-80",
+    "upazilaId": "rangamati_sadar",
+    "districtId": "rangamati",
+    "riverId": "karnafuli",
+    "hillId": "furamon",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 33,
+    "centroid": [
+      92.195,
+      22.66
+    ],
+    "boundary": [
+      [
+        92.187,
+        22.655
+      ],
+      [
+        92.203,
+        22.655
+      ],
+      [
+        92.203,
+        22.665
+      ],
+      [
+        92.187,
+        22.665
+      ],
+      [
+        92.187,
+        22.655
+      ]
+    ]
+  },
+  {
+    "id": "mouza_baghaichhari_1",
+    "name": "Derai Sadar Mouza",
+    "jlNo": "JL-60",
+    "upazilaId": "baghaichhari",
+    "districtId": "rangamati",
+    "riverId": "kachalong",
+    "hillId": "sajek_ridge",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 32,
+    "centroid": [
+      92.185,
+      23.15
+    ],
+    "boundary": [
+      [
+        92.177,
+        23.145
+      ],
+      [
+        92.193,
+        23.145
+      ],
+      [
+        92.193,
+        23.155
+      ],
+      [
+        92.177,
+        23.155
+      ],
+      [
+        92.177,
+        23.145
+      ]
+    ]
+  },
+  {
+    "id": "mouza_baghaichhari_2",
+    "name": "Gandhail Mouza",
+    "jlNo": "JL-71",
+    "upazilaId": "baghaichhari",
+    "districtId": "rangamati",
+    "riverId": "kachalong",
+    "hillId": "sajek_ridge",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 28,
+    "centroid": [
+      92.2,
+      23.16
+    ],
+    "boundary": [
+      [
+        92.192,
+        23.155
+      ],
+      [
+        92.208,
+        23.155
+      ],
+      [
+        92.208,
+        23.165
+      ],
+      [
+        92.192,
+        23.165
+      ],
+      [
+        92.192,
+        23.155
+      ]
+    ]
+  },
+  {
+    "id": "mouza_baghaichhari_3",
+    "name": "Balia Mouza",
+    "jlNo": "JL-43",
+    "upazilaId": "baghaichhari",
+    "districtId": "rangamati",
+    "riverId": "kachalong",
+    "hillId": "sajek_ridge",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "centroid": [
+      92.215,
+      23.17
+    ],
+    "boundary": [
+      [
+        92.207,
+        23.165
+      ],
+      [
+        92.223,
+        23.165
+      ],
+      [
+        92.223,
+        23.175
+      ],
+      [
+        92.207,
+        23.175
+      ],
+      [
+        92.207,
+        23.165
+      ]
+    ]
+  },
+  {
+    "id": "mouza_bandarban_sadar_1",
+    "name": "Natuarpara Mouza",
+    "jlNo": "JL-77",
+    "upazilaId": "bandarban_sadar",
+    "districtId": "bandarban",
+    "riverId": "sangu",
+    "hillId": "chimbuk",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 29,
+    "centroid": [
+      92.205,
+      22.19
+    ],
+    "boundary": [
+      [
+        92.197,
+        22.185
+      ],
+      [
+        92.213,
+        22.185
+      ],
+      [
+        92.213,
+        22.195
+      ],
+      [
+        92.197,
+        22.195
+      ],
+      [
+        92.197,
+        22.185
+      ]
+    ]
+  },
+  {
+    "id": "mouza_bandarban_sadar_2",
+    "name": "Girishpur Mouza",
+    "jlNo": "JL-42",
+    "upazilaId": "bandarban_sadar",
+    "districtId": "bandarban",
+    "riverId": "sangu",
+    "hillId": "chimbuk",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 28,
+    "centroid": [
+      92.22,
+      22.2
+    ],
+    "boundary": [
+      [
+        92.212,
+        22.195
+      ],
+      [
+        92.228,
+        22.195
+      ],
+      [
+        92.228,
+        22.205
+      ],
+      [
+        92.212,
+        22.205
+      ],
+      [
+        92.212,
+        22.195
+      ]
+    ]
+  },
+  {
+    "id": "mouza_bandarban_sadar_3",
+    "name": "Kalyanpur Mouza",
+    "jlNo": "JL-44",
+    "upazilaId": "bandarban_sadar",
+    "districtId": "bandarban",
+    "riverId": "sangu",
+    "hillId": "chimbuk",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 31,
+    "centroid": [
+      92.235,
+      22.21
+    ],
+    "boundary": [
+      [
+        92.227,
+        22.205
+      ],
+      [
+        92.243,
+        22.205
+      ],
+      [
+        92.243,
+        22.215
+      ],
+      [
+        92.227,
+        22.215
+      ],
+      [
+        92.227,
+        22.205
+      ]
+    ]
+  },
+  {
+    "id": "mouza_lama_1",
+    "name": "Tengrakhali Mouza",
+    "jlNo": "JL-56",
+    "upazilaId": "lama",
+    "districtId": "bandarban",
+    "riverId": "matamuhuri",
+    "hillId": "mirinja",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 29,
+    "centroid": [
+      92.185,
+      21.77
+    ],
+    "boundary": [
+      [
+        92.177,
+        21.765
+      ],
+      [
+        92.193,
+        21.765
+      ],
+      [
+        92.193,
+        21.775
+      ],
+      [
+        92.177,
+        21.775
+      ],
+      [
+        92.177,
+        21.765
+      ]
+    ]
+  },
+  {
+    "id": "mouza_lama_2",
+    "name": "Bhairabnagar Mouza",
+    "jlNo": "JL-18",
+    "upazilaId": "lama",
+    "districtId": "bandarban",
+    "riverId": "matamuhuri",
+    "hillId": "mirinja",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 31,
+    "centroid": [
+      92.2,
+      21.78
+    ],
+    "boundary": [
+      [
+        92.192,
+        21.775
+      ],
+      [
+        92.208,
+        21.775
+      ],
+      [
+        92.208,
+        21.785
+      ],
+      [
+        92.192,
+        21.785
+      ],
+      [
+        92.192,
+        21.775
+      ]
+    ]
+  },
+  {
+    "id": "mouza_lama_3",
+    "name": "Jaflong Mouza",
+    "jlNo": "JL-15",
+    "upazilaId": "lama",
+    "districtId": "bandarban",
+    "riverId": "matamuhuri",
+    "hillId": "mirinja",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 38,
+    "centroid": [
+      92.215,
+      21.79
+    ],
+    "boundary": [
+      [
+        92.207,
+        21.785
+      ],
+      [
+        92.223,
+        21.785
+      ],
+      [
+        92.223,
+        21.795
+      ],
+      [
+        92.207,
+        21.795
+      ],
+      [
+        92.207,
+        21.785
+      ]
+    ]
+  },
+  {
+    "id": "mouza_rowangchhari_1",
+    "name": "Durgapur Mouza",
+    "jlNo": "JL-49",
+    "upazilaId": "rowangchhari",
+    "districtId": "bandarban",
+    "riverId": "sangu",
+    "hillId": "keokradong",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "centroid": [
+      92.325,
+      22.16
+    ],
+    "boundary": [
+      [
+        92.317,
+        22.155
+      ],
+      [
+        92.333,
+        22.155
+      ],
+      [
+        92.333,
+        22.165
+      ],
+      [
+        92.317,
+        22.165
+      ],
+      [
+        92.317,
+        22.155
+      ]
+    ]
+  },
+  {
+    "id": "mouza_rowangchhari_2",
+    "name": "Monpura South Mouza",
+    "jlNo": "JL-79",
+    "upazilaId": "rowangchhari",
+    "districtId": "bandarban",
+    "riverId": "sangu",
+    "hillId": "keokradong",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "centroid": [
+      92.34,
+      22.17
+    ],
+    "boundary": [
+      [
+        92.332,
+        22.165
+      ],
+      [
+        92.348,
+        22.165
+      ],
+      [
+        92.348,
+        22.175
+      ],
+      [
+        92.332,
+        22.175
+      ],
+      [
+        92.332,
+        22.165
+      ]
+    ]
+  },
+  {
+    "id": "mouza_rowangchhari_3",
+    "name": "Ghagra Mouza",
+    "jlNo": "JL-27",
+    "upazilaId": "rowangchhari",
+    "districtId": "bandarban",
+    "riverId": "sangu",
+    "hillId": "keokradong",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 36,
+    "centroid": [
+      92.355,
+      22.18
+    ],
+    "boundary": [
+      [
+        92.347,
+        22.175
+      ],
+      [
+        92.363,
+        22.175
+      ],
+      [
+        92.363,
+        22.185
+      ],
+      [
+        92.347,
+        22.185
+      ],
+      [
+        92.347,
+        22.175
+      ]
+    ]
+  },
+  {
+    "id": "mouza_coxs_bazar_sadar_1",
+    "name": "Ilisha Mouza",
+    "jlNo": "JL-72",
+    "upazilaId": "coxs_bazar_sadar",
+    "districtId": "coxs_bazar",
+    "riverId": "bakkhali",
+    "hillId": "himchari",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 33,
+    "centroid": [
+      91.965,
+      21.42
+    ],
+    "boundary": [
+      [
+        91.957,
+        21.415
+      ],
+      [
+        91.973,
+        21.415
+      ],
+      [
+        91.973,
+        21.425
+      ],
+      [
+        91.957,
+        21.425
+      ],
+      [
+        91.957,
+        21.415
+      ]
+    ]
+  },
+  {
+    "id": "mouza_coxs_bazar_sadar_2",
+    "name": "Bholaganj Mouza",
+    "jlNo": "JL-43",
+    "upazilaId": "coxs_bazar_sadar",
+    "districtId": "coxs_bazar",
+    "riverId": "bakkhali",
+    "hillId": "himchari",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 37,
+    "centroid": [
+      91.98,
+      21.43
+    ],
+    "boundary": [
+      [
+        91.972,
+        21.425
+      ],
+      [
+        91.988,
+        21.425
+      ],
+      [
+        91.988,
+        21.435
+      ],
+      [
+        91.972,
+        21.435
+      ],
+      [
+        91.972,
+        21.425
+      ]
+    ]
+  },
+  {
+    "id": "mouza_coxs_bazar_sadar_3",
+    "name": "Chilmari Ghat Mouza",
+    "jlNo": "JL-68",
+    "upazilaId": "coxs_bazar_sadar",
+    "districtId": "coxs_bazar",
+    "riverId": "bakkhali",
+    "hillId": "himchari",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 33,
+    "centroid": [
+      91.995,
+      21.44
+    ],
+    "boundary": [
+      [
+        91.987,
+        21.435
+      ],
+      [
+        92.003,
+        21.435
+      ],
+      [
+        92.003,
+        21.445
+      ],
+      [
+        91.987,
+        21.445
+      ],
+      [
+        91.987,
+        21.435
+      ]
+    ]
+  },
+  {
+    "id": "mouza_teknaf_1",
+    "name": "Rustampur Mouza",
+    "jlNo": "JL-48",
+    "upazilaId": "teknaf",
+    "districtId": "coxs_bazar",
+    "riverId": "naf",
+    "hillId": "teknaf_ridge",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 38,
+    "centroid": [
+      92.285,
+      20.86
+    ],
+    "boundary": [
+      [
+        92.277,
+        20.855
+      ],
+      [
+        92.293,
+        20.855
+      ],
+      [
+        92.293,
+        20.865
+      ],
+      [
+        92.277,
+        20.865
+      ],
+      [
+        92.277,
+        20.855
+      ]
+    ]
+  },
+  {
+    "id": "mouza_teknaf_2",
+    "name": "Kutubdia Para Mouza",
+    "jlNo": "JL-43",
+    "upazilaId": "teknaf",
+    "districtId": "coxs_bazar",
+    "riverId": "naf",
+    "hillId": "teknaf_ridge",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 33,
+    "centroid": [
+      92.3,
+      20.87
+    ],
+    "boundary": [
+      [
+        92.292,
+        20.865
+      ],
+      [
+        92.308,
+        20.865
+      ],
+      [
+        92.308,
+        20.875
+      ],
+      [
+        92.292,
+        20.875
+      ],
+      [
+        92.292,
+        20.865
+      ]
+    ]
+  },
+  {
+    "id": "mouza_teknaf_3",
+    "name": "Panchapalli Mouza",
+    "jlNo": "JL-67",
+    "upazilaId": "teknaf",
+    "districtId": "coxs_bazar",
+    "riverId": "naf",
+    "hillId": "teknaf_ridge",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 33,
+    "centroid": [
+      92.315,
+      20.88
+    ],
+    "boundary": [
+      [
+        92.307,
+        20.875
+      ],
+      [
+        92.323,
+        20.875
+      ],
+      [
+        92.323,
+        20.885
+      ],
+      [
+        92.307,
+        20.885
+      ],
+      [
+        92.307,
+        20.875
+      ]
+    ]
+  },
+  {
+    "id": "mouza_ukhia_1",
+    "name": "Vedvedi Mouza",
+    "jlNo": "JL-82",
+    "upazilaId": "ukhia",
+    "districtId": "coxs_bazar",
+    "riverId": "naf",
+    "hillId": "inani_range",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "centroid": [
+      92.125,
+      21.23
+    ],
+    "boundary": [
+      [
+        92.117,
+        21.225
+      ],
+      [
+        92.133,
+        21.225
+      ],
+      [
+        92.133,
+        21.235
+      ],
+      [
+        92.117,
+        21.235
+      ],
+      [
+        92.117,
+        21.225
+      ]
+    ]
+  },
+  {
+    "id": "mouza_ukhia_2",
+    "name": "Naria Bazar Mouza",
+    "jlNo": "JL-32",
+    "upazilaId": "ukhia",
+    "districtId": "coxs_bazar",
+    "riverId": "naf",
+    "hillId": "inani_range",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "centroid": [
+      92.14,
+      21.24
+    ],
+    "boundary": [
+      [
+        92.132,
+        21.235
+      ],
+      [
+        92.148,
+        21.235
+      ],
+      [
+        92.148,
+        21.245
+      ],
+      [
+        92.132,
+        21.245
+      ],
+      [
+        92.132,
+        21.235
+      ]
+    ]
+  },
+  {
+    "id": "mouza_ukhia_3",
+    "name": "Tahirpur Haor Mouza",
+    "jlNo": "JL-44",
+    "upazilaId": "ukhia",
+    "districtId": "coxs_bazar",
+    "riverId": "naf",
+    "hillId": "inani_range",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 31,
+    "centroid": [
+      92.155,
+      21.25
+    ],
+    "boundary": [
+      [
+        92.147,
+        21.245
+      ],
+      [
+        92.163,
+        21.245
+      ],
+      [
+        92.163,
+        21.255
+      ],
+      [
+        92.147,
+        21.255
+      ],
+      [
+        92.147,
+        21.245
+      ]
+    ]
+  },
+  {
+    "id": "mouza_maheshkhali_1",
+    "name": "Ramna Mouza",
+    "jlNo": "JL-43",
+    "upazilaId": "maheshkhali",
+    "districtId": "coxs_bazar",
+    "riverId": "kohelia",
+    "hillId": "adinath_hill",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "centroid": [
+      91.935,
+      21.51
+    ],
+    "boundary": [
+      [
+        91.927,
+        21.505
+      ],
+      [
+        91.943,
+        21.505
+      ],
+      [
+        91.943,
+        21.515
+      ],
+      [
+        91.927,
+        21.515
+      ],
+      [
+        91.927,
+        21.505
+      ]
+    ]
+  },
+  {
+    "id": "mouza_maheshkhali_2",
+    "name": "Derai Sadar Mouza",
+    "jlNo": "JL-93",
+    "upazilaId": "maheshkhali",
+    "districtId": "coxs_bazar",
+    "riverId": "kohelia",
+    "hillId": "adinath_hill",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 33,
+    "centroid": [
+      91.95,
+      21.52
+    ],
+    "boundary": [
+      [
+        91.942,
+        21.515
+      ],
+      [
+        91.958,
+        21.515
+      ],
+      [
+        91.958,
+        21.525
+      ],
+      [
+        91.942,
+        21.525
+      ],
+      [
+        91.942,
+        21.515
+      ]
+    ]
+  },
+  {
+    "id": "mouza_maheshkhali_3",
+    "name": "Gandhail Mouza",
+    "jlNo": "JL-43",
+    "upazilaId": "maheshkhali",
+    "districtId": "coxs_bazar",
+    "riverId": "kohelia",
+    "hillId": "adinath_hill",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 28,
+    "centroid": [
+      91.965,
+      21.53
+    ],
+    "boundary": [
+      [
+        91.957,
+        21.525
+      ],
+      [
+        91.973,
+        21.525
+      ],
+      [
+        91.973,
+        21.535
+      ],
+      [
+        91.957,
+        21.535
+      ],
+      [
+        91.957,
+        21.525
+      ]
+    ]
+  },
+  {
+    "id": "mouza_hatiya_1",
+    "name": "Haimchar Coastal Mouza",
+    "jlNo": "JL-45",
+    "upazilaId": "hatiya",
+    "districtId": "noakhali",
+    "riverId": "meghna_channel",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 37,
+    "centroid": [
+      91.085,
+      22.36
+    ],
+    "boundary": [
+      [
+        91.077,
+        22.355
+      ],
+      [
+        91.093,
+        22.355
+      ],
+      [
+        91.093,
+        22.365
+      ],
+      [
+        91.077,
+        22.365
+      ],
+      [
+        91.077,
+        22.355
+      ]
+    ]
+  },
+  {
+    "id": "mouza_hatiya_2",
+    "name": "Natuarpara Mouza",
+    "jlNo": "JL-12",
+    "upazilaId": "hatiya",
+    "districtId": "noakhali",
+    "riverId": "meghna_channel",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 34,
+    "centroid": [
+      91.1,
+      22.37
+    ],
+    "boundary": [
+      [
+        91.092,
+        22.365
+      ],
+      [
+        91.108,
+        22.365
+      ],
+      [
+        91.108,
+        22.375
+      ],
+      [
+        91.092,
+        22.375
+      ],
+      [
+        91.092,
+        22.365
+      ]
+    ]
+  },
+  {
+    "id": "mouza_hatiya_3",
+    "name": "Girishpur Mouza",
+    "jlNo": "JL-89",
+    "upazilaId": "hatiya",
+    "districtId": "noakhali",
+    "riverId": "meghna_channel",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 28,
+    "centroid": [
+      91.115,
+      22.38
+    ],
+    "boundary": [
+      [
+        91.107,
+        22.375
+      ],
+      [
+        91.123,
+        22.375
+      ],
+      [
+        91.123,
+        22.385
+      ],
+      [
+        91.107,
+        22.385
+      ],
+      [
+        91.107,
+        22.375
+      ]
+    ]
+  },
+  {
+    "id": "mouza_subarnachar_1",
+    "name": "Meghai Mouza",
+    "jlNo": "JL-20",
+    "upazilaId": "subarnachar",
+    "districtId": "noakhali",
+    "riverId": "little_feni",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 34,
+    "centroid": [
+      91.115,
+      22.67
+    ],
+    "boundary": [
+      [
+        91.107,
+        22.665
+      ],
+      [
+        91.123,
+        22.665
+      ],
+      [
+        91.123,
+        22.675
+      ],
+      [
+        91.107,
+        22.675
+      ],
+      [
+        91.107,
+        22.665
+      ]
+    ]
+  },
+  {
+    "id": "mouza_subarnachar_2",
+    "name": "Tengrakhali Mouza",
+    "jlNo": "JL-91",
+    "upazilaId": "subarnachar",
+    "districtId": "noakhali",
+    "riverId": "little_feni",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 29,
+    "centroid": [
+      91.13,
+      22.68
+    ],
+    "boundary": [
+      [
+        91.122,
+        22.675
+      ],
+      [
+        91.138,
+        22.675
+      ],
+      [
+        91.138,
+        22.685
+      ],
+      [
+        91.122,
+        22.685
+      ],
+      [
+        91.122,
+        22.675
+      ]
+    ]
+  },
+  {
+    "id": "mouza_subarnachar_3",
+    "name": "Bhairabnagar Mouza",
+    "jlNo": "JL-48",
+    "upazilaId": "subarnachar",
+    "districtId": "noakhali",
+    "riverId": "little_feni",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 34,
+    "centroid": [
+      91.145,
+      22.69
+    ],
+    "boundary": [
+      [
+        91.137,
+        22.685
+      ],
+      [
+        91.153,
+        22.685
+      ],
+      [
+        91.153,
+        22.695
+      ],
+      [
+        91.137,
+        22.695
+      ],
+      [
+        91.137,
+        22.685
+      ]
+    ]
+  },
+  {
+    "id": "mouza_koyra_1",
+    "name": "Shubhagachha Mouza",
+    "jlNo": "JL-22",
+    "upazilaId": "koyra",
+    "districtId": "khulna",
+    "riverId": "shibsa",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 38,
+    "centroid": [
+      89.285,
+      22.33
+    ],
+    "boundary": [
+      [
+        89.277,
+        22.325
+      ],
+      [
+        89.293,
+        22.325
+      ],
+      [
+        89.293,
+        22.335
+      ],
+      [
+        89.277,
+        22.335
+      ],
+      [
+        89.277,
+        22.325
+      ]
+    ]
+  },
+  {
+    "id": "mouza_koyra_2",
+    "name": "Durgapur Mouza",
+    "jlNo": "JL-64",
+    "upazilaId": "koyra",
+    "districtId": "khulna",
+    "riverId": "shibsa",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 36,
+    "centroid": [
+      89.3,
+      22.34
+    ],
+    "boundary": [
+      [
+        89.292,
+        22.335
+      ],
+      [
+        89.308,
+        22.335
+      ],
+      [
+        89.308,
+        22.345
+      ],
+      [
+        89.292,
+        22.345
+      ],
+      [
+        89.292,
+        22.335
+      ]
+    ]
+  },
+  {
+    "id": "mouza_koyra_3",
+    "name": "Monpura South Mouza",
+    "jlNo": "JL-63",
+    "upazilaId": "koyra",
+    "districtId": "khulna",
+    "riverId": "shibsa",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 29,
+    "centroid": [
+      89.315,
+      22.35
+    ],
+    "boundary": [
+      [
+        89.307,
+        22.345
+      ],
+      [
+        89.323,
+        22.345
+      ],
+      [
+        89.323,
+        22.355
+      ],
+      [
+        89.307,
+        22.355
+      ],
+      [
+        89.307,
+        22.345
+      ]
+    ]
+  },
+  {
+    "id": "mouza_dacope_1",
+    "name": "Balia Mouza",
+    "jlNo": "JL-22",
+    "upazilaId": "dacope",
+    "districtId": "khulna",
+    "riverId": "pasur",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 36,
+    "centroid": [
+      89.495,
+      22.56
+    ],
+    "boundary": [
+      [
+        89.487,
+        22.555
+      ],
+      [
+        89.503,
+        22.555
+      ],
+      [
+        89.503,
+        22.565
+      ],
+      [
+        89.487,
+        22.565
+      ],
+      [
+        89.487,
+        22.555
+      ]
+    ]
+  },
+  {
+    "id": "mouza_dacope_2",
+    "name": "Ilisha Mouza",
+    "jlNo": "JL-68",
+    "upazilaId": "dacope",
+    "districtId": "khulna",
+    "riverId": "pasur",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "centroid": [
+      89.51,
+      22.57
+    ],
+    "boundary": [
+      [
+        89.502,
+        22.565
+      ],
+      [
+        89.518,
+        22.565
+      ],
+      [
+        89.518,
+        22.575
+      ],
+      [
+        89.502,
+        22.575
+      ],
+      [
+        89.502,
+        22.565
+      ]
+    ]
+  },
+  {
+    "id": "mouza_dacope_3",
+    "name": "Bholaganj Mouza",
+    "jlNo": "JL-25",
+    "upazilaId": "dacope",
+    "districtId": "khulna",
+    "riverId": "pasur",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 29,
+    "centroid": [
+      89.525,
+      22.58
+    ],
+    "boundary": [
+      [
+        89.517,
+        22.575
+      ],
+      [
+        89.533,
+        22.575
+      ],
+      [
+        89.533,
+        22.585
+      ],
+      [
+        89.517,
+        22.585
+      ],
+      [
+        89.517,
+        22.575
+      ]
+    ]
+  }
+]

@@ -1,0 +1,63 @@
+<svg viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans Bengali, Inter, Arial, sans-serif">
+  <rect width="900" height="560" fill="#FAFAF7"/>
+  <text x="450" y="36" text-anchor="middle" font-size="20" font-weight="700" fill="#1A1D1A">ভূমিদর্পণ — সিস্টেম আর্কিটেকচার</text>
+
+  <!-- Client -->
+  <rect x="40" y="70" width="820" height="90" rx="14" fill="#FFFFFF" stroke="#E4E6DF"/>
+  <text x="60" y="95" font-size="13" font-weight="700" fill="#6B7168">CLIENT</text>
+  <rect x="60" y="106" width="230" height="40" rx="10" fill="#F1F4EA" stroke="#C9D8A8"/>
+  <text x="175" y="131" text-anchor="middle" font-size="13" fill="#1A1D1A">Next.js (SSR + React)</text>
+  <rect x="310" y="106" width="230" height="40" rx="10" fill="#F1F4EA" stroke="#C9D8A8"/>
+  <text x="425" y="131" text-anchor="middle" font-size="13" fill="#1A1D1A">MapLibre GL (ম্যাপ + তুলনা)</text>
+  <rect x="560" y="106" width="280" height="40" rx="10" fill="#F1F4EA" stroke="#C9D8A8"/>
+  <text x="700" y="131" text-anchor="middle" font-size="13" fill="#1A1D1A">Recharts + shadcn/ui + next-intl</text>
+
+  <!-- arrow -->
+  <line x1="450" y1="160" x2="450" y2="200" stroke="#6B7168" stroke-width="2"/>
+  <polygon points="444,196 456,196 450,208" fill="#6B7168"/>
+  <text x="462" y="188" font-size="12" fill="#6B7168">HTTPS / REST (JSON, GeoJSON)</text>
+
+  <!-- API -->
+  <rect x="40" y="210" width="820" height="110" rx="14" fill="#FFFFFF" stroke="#E4E6DF"/>
+  <text x="60" y="235" font-size="13" font-weight="700" fill="#6B7168">BACKEND (FastAPI)</text>
+  <rect x="60" y="246" width="170" height="56" rx="10" fill="#EEF3F8" stroke="#BCCFE3"/>
+  <text x="145" y="270" text-anchor="middle" font-size="13" fill="#1A1D1A">Geo / Selector API</text>
+  <text x="145" y="288" text-anchor="middle" font-size="11" fill="#6B7168">জেলা, উপজেলা, মৌজা</text>
+  <rect x="245" y="246" width="170" height="56" rx="10" fill="#EEF3F8" stroke="#BCCFE3"/>
+  <text x="330" y="270" text-anchor="middle" font-size="13" fill="#1A1D1A">Hazard API</text>
+  <text x="330" y="288" text-anchor="middle" font-size="11" fill="#6B7168">৫ মডিউল, A/B মোড</text>
+  <rect x="430" y="246" width="170" height="56" rx="10" fill="#EEF3F8" stroke="#BCCFE3"/>
+  <text x="515" y="270" text-anchor="middle" font-size="13" fill="#1A1D1A">Owner / Compensation</text>
+  <text x="515" y="288" text-anchor="middle" font-size="11" fill="#6B7168">হিসাব ও অবস্থা</text>
+  <rect x="615" y="246" width="225" height="56" rx="10" fill="#EEF3F8" stroke="#BCCFE3"/>
+  <text x="727" y="270" text-anchor="middle" font-size="13" fill="#1A1D1A">Data Adapter (seed | live)</text>
+  <text x="727" y="288" text-anchor="middle" font-size="11" fill="#6B7168">DATA_MODE কনফিগ</text>
+
+  <!-- arrows down -->
+  <line x1="250" y1="320" x2="250" y2="360" stroke="#6B7168" stroke-width="2"/>
+  <polygon points="244,356 256,356 250,368" fill="#6B7168"/>
+  <line x1="650" y1="320" x2="650" y2="360" stroke="#6B7168" stroke-width="2"/>
+  <polygon points="644,356 656,356 650,368" fill="#6B7168"/>
+
+  <!-- Data layer -->
+  <rect x="40" y="370" width="400" height="80" rx="14" fill="#FFFFFF" stroke="#E4E6DF"/>
+  <text x="60" y="395" font-size="13" font-weight="700" fill="#6B7168">ডাটা স্টোর</text>
+  <rect x="60" y="404" width="170" height="34" rx="9" fill="#FBF3E6" stroke="#E6CFA0"/>
+  <text x="145" y="426" text-anchor="middle" font-size="12" fill="#1A1D1A">PostgreSQL + PostGIS</text>
+  <rect x="245" y="404" width="180" height="34" rx="9" fill="#FBF3E6" stroke="#E6CFA0"/>
+  <text x="335" y="426" text-anchor="middle" font-size="12" fill="#1A1D1A">Object Storage (COG/PNG)</text>
+
+  <rect x="460" y="370" width="400" height="80" rx="14" fill="#FFFFFF" stroke="#E4E6DF"/>
+  <text x="480" y="395" font-size="13" font-weight="700" fill="#6B7168">টাইল সার্ভিস</text>
+  <rect x="480" y="404" width="170" height="34" rx="9" fill="#FBF3E6" stroke="#E6CFA0"/>
+  <text x="565" y="426" text-anchor="middle" font-size="12" fill="#1A1D1A">TiTiler / XYZ টাইল</text>
+  <rect x="665" y="404" width="180" height="34" rx="9" fill="#FBF3E6" stroke="#E6CFA0"/>
+  <text x="755" y="426" text-anchor="middle" font-size="12" fill="#1A1D1A">Redis ক্যাশ (ঐচ্ছিক)</text>
+
+  <!-- ML offline -->
+  <line x1="240" y1="450" x2="240" y2="486" stroke="#6B7168" stroke-width="2" stroke-dasharray="5 4"/>
+  <polygon points="234,452 246,452 240,440" fill="#6B7168"/>
+  <rect x="40" y="488" width="820" height="56" rx="14" fill="#F3F1FA" stroke="#CFC8E8" stroke-dasharray="6 4"/>
+  <text x="60" y="510" font-size="13" font-weight="700" fill="#6B7168">অফলাইন ML পাইপলাইন (বছরে একবার)</text>
+  <text x="60" y="532" font-size="12" fill="#1A1D1A">Sentinel-1/2 → প্রি-প্রসেস → U-Net সেগমেন্টেশন → ConvLSTM পূর্বাভাস → দাগ/মালিকের সাথে Intersection → ডাটাবেসে লেখা</text>
+</svg>

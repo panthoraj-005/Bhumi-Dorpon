@@ -1,0 +1,450 @@
+[
+  {
+    "id": "jamuna_river",
+    "name": "Jamuna River",
+    "upazilaIds": [
+      "kazipur",
+      "sirajganj_sadar",
+      "belkuchi"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 56
+  },
+  {
+    "id": "ichhamati_river",
+    "name": "Ichhamati River",
+    "upazilaIds": [
+      "kazipur"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 84
+  },
+  {
+    "id": "karatoa_river",
+    "name": "Karatoa River",
+    "upazilaIds": [
+      "sirajganj_sadar"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 71
+  },
+  {
+    "id": "hurasagar_river",
+    "name": "Hurasagar River",
+    "upazilaIds": [
+      "belkuchi"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 81
+  },
+  {
+    "id": "brahmaputra_river",
+    "name": "Brahmaputra River",
+    "upazilaIds": [
+      "chilmari",
+      "rowmari",
+      "ulipur"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 49
+  },
+  {
+    "id": "dharla_river",
+    "name": "Dharla River",
+    "upazilaIds": [
+      "chilmari"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 59
+  },
+  {
+    "id": "jinjiram_river",
+    "name": "Jinjiram River",
+    "upazilaIds": [
+      "rowmari"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 35
+  },
+  {
+    "id": "dudhkumar_river",
+    "name": "Dudhkumar River",
+    "upazilaIds": [
+      "ulipur"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 37
+  },
+  {
+    "id": "padma_river",
+    "name": "Padma River",
+    "upazilaIds": [
+      "naria",
+      "zajira",
+      "bhedarganj"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 49
+  },
+  {
+    "id": "kirtinasha_river",
+    "name": "Kirtinasha River",
+    "upazilaIds": [
+      "naria"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 70
+  },
+  {
+    "id": "apal_river",
+    "name": "Apal River",
+    "upazilaIds": [
+      "zajira"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 58
+  },
+  {
+    "id": "meghna_river",
+    "name": "Meghna River",
+    "upazilaIds": [
+      "bhedarganj",
+      "haimchar",
+      "chandpur_sadar",
+      "matlab_dakshin",
+      "bhola_sadar"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 55
+  },
+  {
+    "id": "dakatia_river",
+    "name": "Dakatia River",
+    "upazilaIds": [
+      "haimchar",
+      "chandpur_sadar",
+      "subarnachar"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 78
+  },
+  {
+    "id": "dhanagoda_river",
+    "name": "Dhanagoda River",
+    "upazilaIds": [
+      "matlab_dakshin"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 59
+  },
+  {
+    "id": "meghna_estuary",
+    "name": "Meghna Estuary",
+    "upazilaIds": [
+      "char_fasson",
+      "monpura",
+      "hatiya",
+      "subarnachar"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 69
+  },
+  {
+    "id": "tentulia_river",
+    "name": "Tentulia River",
+    "upazilaIds": [
+      "char_fasson",
+      "bhola_sadar"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 58
+  },
+  {
+    "id": "bay_channel",
+    "name": "Bay Channel",
+    "upazilaIds": [
+      "monpura"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 37
+  },
+  {
+    "id": "surma_river",
+    "name": "Surma River",
+    "upazilaIds": [
+      "sunamganj_sadar",
+      "derai",
+      "jamalganj",
+      "beanibazar"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 73
+  },
+  {
+    "id": "rongapani_river",
+    "name": "Rongapani River",
+    "upazilaIds": [
+      "sunamganj_sadar"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 44
+  },
+  {
+    "id": "piyain_river",
+    "name": "Piyain River",
+    "upazilaIds": [
+      "derai",
+      "companiganj",
+      "gowainghat"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 52
+  },
+  {
+    "id": "jadukata_river",
+    "name": "Jadukata River",
+    "upazilaIds": [
+      "tahirpur"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 55
+  },
+  {
+    "id": "baulai_river",
+    "name": "Baulai River",
+    "upazilaIds": [
+      "tahirpur",
+      "jamalganj"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 95
+  },
+  {
+    "id": "dholai_river",
+    "name": "Dholai River",
+    "upazilaIds": [
+      "companiganj"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 40
+  },
+  {
+    "id": "sari_goyain_river",
+    "name": "Sari-Goyain River",
+    "upazilaIds": [
+      "gowainghat"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 50
+  },
+  {
+    "id": "kushiara_river",
+    "name": "Kushiara River",
+    "upazilaIds": [
+      "beanibazar"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 85
+  },
+  {
+    "id": "karnafuli_river",
+    "name": "Karnafuli River",
+    "upazilaIds": [
+      "rangamati_sadar"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 37
+  },
+  {
+    "id": "chengi_river",
+    "name": "Chengi River",
+    "upazilaIds": [
+      "rangamati_sadar"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 36
+  },
+  {
+    "id": "ghagra_stream",
+    "name": "Ghagra Stream",
+    "upazilaIds": [
+      "kawkhali"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 45
+  },
+  {
+    "id": "dhapchhari_chhara",
+    "name": "Dhapchhari Chhara",
+    "upazilaIds": [
+      "kawkhali"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 94
+  },
+  {
+    "id": "kasalong_river",
+    "name": "Kasalong River",
+    "upazilaIds": [
+      "baghaichhari"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 59
+  },
+  {
+    "id": "maini_river",
+    "name": "Maini River",
+    "upazilaIds": [
+      "baghaichhari"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 95
+  },
+  {
+    "id": "sangu_river",
+    "name": "Sangu River",
+    "upazilaIds": [
+      "bandarban_sadar",
+      "rowangchhari"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 44
+  },
+  {
+    "id": "recha_chhara",
+    "name": "Recha Chhara",
+    "upazilaIds": [
+      "bandarban_sadar"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 95
+  },
+  {
+    "id": "matamuhuri_river",
+    "name": "Matamuhuri River",
+    "upazilaIds": [
+      "lama"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 81
+  },
+  {
+    "id": "lama_chhara",
+    "name": "Lama Chhara",
+    "upazilaIds": [
+      "lama"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 52
+  },
+  {
+    "id": "tara_chhara",
+    "name": "Tara Chhara",
+    "upazilaIds": [
+      "rowangchhari"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 37
+  },
+  {
+    "id": "bakkhali_river",
+    "name": "Bakkhali River",
+    "upazilaIds": [
+      "coxs_bazar_sadar",
+      "ukhia"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 86
+  },
+  {
+    "id": "moheshkhali_channel",
+    "name": "Moheshkhali Channel",
+    "upazilaIds": [
+      "coxs_bazar_sadar",
+      "maheshkhali"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 44
+  },
+  {
+    "id": "naf_river",
+    "name": "Naf River",
+    "upazilaIds": [
+      "teknaf"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 35
+  },
+  {
+    "id": "bay_of_bengal",
+    "name": "Bay of Bengal",
+    "upazilaIds": [
+      "teknaf"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 82
+  },
+  {
+    "id": "reju_canal",
+    "name": "Reju Canal",
+    "upazilaIds": [
+      "ukhia"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 70
+  },
+  {
+    "id": "kohelia_river",
+    "name": "Kohelia River",
+    "upazilaIds": [
+      "maheshkhali"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 67
+  },
+  {
+    "id": "sandwip_channel",
+    "name": "Sandwip Channel",
+    "upazilaIds": [
+      "hatiya"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 64
+  },
+  {
+    "id": "shibsa_river",
+    "name": "Shibsa River",
+    "upazilaIds": [
+      "koyra"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 39
+  },
+  {
+    "id": "kopotakkho_river",
+    "name": "Kopotakkho River",
+    "upazilaIds": [
+      "koyra"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 51
+  },
+  {
+    "id": "passur_river",
+    "name": "Passur River",
+    "upazilaIds": [
+      "dacope"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 53
+  },
+  {
+    "id": "daki_river",
+    "name": "Daki River",
+    "upazilaIds": [
+      "dacope"
+    ],
+    "erosionTendency": "Meandering active bank scour",
+    "averageLossRateDecPerYear": 75
+  }
+]

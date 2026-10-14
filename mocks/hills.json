@@ -1,0 +1,98 @@
+[
+  {
+    "id": "ghagra",
+    "name": "Ghagra Hill Corridor",
+    "upazilaId": "kawkhali",
+    "slopeAngleDeg": 42,
+    "soilType": "Colluvial sandy clay loam",
+    "riskLevel": "Extreme"
+  },
+  {
+    "id": "furamon",
+    "name": "Furamon Peak Ridge",
+    "upazilaId": "rangamati_sadar",
+    "slopeAngleDeg": 38,
+    "soilType": "Tertiary sandstone weathered shale",
+    "riskLevel": "High"
+  },
+  {
+    "id": "vedvedi",
+    "name": "Vedvedi Urban Hill Slope",
+    "upazilaId": "rangamati_sadar",
+    "slopeAngleDeg": 35,
+    "soilType": "Residual silt loam",
+    "riskLevel": "Moderate"
+  },
+  {
+    "id": "sajek_ridge",
+    "name": "Sajek Valley Escarpment",
+    "upazilaId": "baghaichhari",
+    "slopeAngleDeg": 46,
+    "soilType": "Steep shale terrace",
+    "riskLevel": "High"
+  },
+  {
+    "id": "chimbuk",
+    "name": "Chimbuk Hill Crest",
+    "upazilaId": "bandarban_sadar",
+    "slopeAngleDeg": 44,
+    "soilType": "Weathered metamorphic clay",
+    "riskLevel": "Extreme"
+  },
+  {
+    "id": "nilgiri",
+    "name": "Nilgiri Plateau Descent",
+    "upazilaId": "bandarban_sadar",
+    "slopeAngleDeg": 40,
+    "soilType": "Compact laterite sandy loam",
+    "riskLevel": "High"
+  },
+  {
+    "id": "mirinja",
+    "name": "Mirinja Ridge",
+    "upazilaId": "lama",
+    "slopeAngleDeg": 39,
+    "soilType": "Silty sandstone colluvium",
+    "riskLevel": "High"
+  },
+  {
+    "id": "keokradong",
+    "name": "Keokradong Foot Range",
+    "upazilaId": "rowangchhari",
+    "slopeAngleDeg": 48,
+    "soilType": "Friable shale slope",
+    "riskLevel": "Extreme"
+  },
+  {
+    "id": "himchari",
+    "name": "Himchari Coastal Hill Slopes",
+    "upazilaId": "coxs_bazar_sadar",
+    "slopeAngleDeg": 41,
+    "soilType": "Marine sandstone terrace",
+    "riskLevel": "High"
+  },
+  {
+    "id": "teknaf_ridge",
+    "name": "Teknaf Peninsula Ridge",
+    "upazilaId": "teknaf",
+    "slopeAngleDeg": 43,
+    "soilType": "Unconsolidated sandy sediment",
+    "riskLevel": "Extreme"
+  },
+  {
+    "id": "inani_range",
+    "name": "Inani Protected Hill Range",
+    "upazilaId": "ukhia",
+    "slopeAngleDeg": 37,
+    "soilType": "Lateritic red soil",
+    "riskLevel": "Moderate"
+  },
+  {
+    "id": "jaflong_hill",
+    "name": "Jaflong Border Escarpment",
+    "upazilaId": "gowainghat",
+    "slopeAngleDeg": 36,
+    "soilType": "Piedmont boulder clay",
+    "riskLevel": "Moderate"
+  }
+]

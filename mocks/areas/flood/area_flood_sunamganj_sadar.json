@@ -1,0 +1,2353 @@
+{
+  "areaId": "area_flood_sunamganj_sadar",
+  "hazard": "flood",
+  "mode": "recorded",
+  "bounds": [
+    91.37,
+    25.04,
+    91.43,
+    25.09
+  ],
+  "basemap": {
+    "land": [
+      [
+        [
+          91.37,
+          25.04
+        ],
+        [
+          91.43,
+          25.04
+        ],
+        [
+          91.43,
+          25.09
+        ],
+        [
+          91.37,
+          25.09
+        ],
+        [
+          91.37,
+          25.04
+        ]
+      ]
+    ],
+    "landuse": [
+      {
+        "type": "farmland",
+        "polygon": [
+          [
+            [
+              91.384333,
+              25.044549
+            ],
+            [
+              91.389733,
+              25.044749
+            ],
+            [
+              91.390333,
+              25.048149
+            ],
+            [
+              91.384633,
+              25.048549
+            ],
+            [
+              91.384333,
+              25.044549
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "vegetation",
+        "polygon": [
+          [
+            [
+              91.388333,
+              25.047549
+            ],
+            [
+              91.390833,
+              25.047749
+            ],
+            [
+              91.390533,
+              25.049349
+            ],
+            [
+              91.388533,
+              25.049149
+            ],
+            [
+              91.388333,
+              25.047549
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "settlement",
+        "polygon": [
+          [
+            [
+              91.384333,
+              25.047049
+            ],
+            [
+              91.385833,
+              25.047149
+            ],
+            [
+              91.385933,
+              25.048349
+            ],
+            [
+              91.384433,
+              25.048249
+            ],
+            [
+              91.384333,
+              25.047049
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "farmland",
+        "polygon": [
+          [
+            [
+              91.406694,
+              25.056585
+            ],
+            [
+              91.412094,
+              25.056785
+            ],
+            [
+              91.412694,
+              25.060185
+            ],
+            [
+              91.406994,
+              25.060585
+            ],
+            [
+              91.406694,
+              25.056585
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "vegetation",
+        "polygon": [
+          [
+            [
+              91.410694,
+              25.059585
+            ],
+            [
+              91.413194,
+              25.059785
+            ],
+            [
+              91.412894,
+              25.061385
+            ],
+            [
+              91.410894,
+              25.061185
+            ],
+            [
+              91.410694,
+              25.059585
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "settlement",
+        "polygon": [
+          [
+            [
+              91.406694,
+              25.059085
+            ],
+            [
+              91.408194,
+              25.059185
+            ],
+            [
+              91.408294,
+              25.060385
+            ],
+            [
+              91.406794,
+              25.060285
+            ],
+            [
+              91.406694,
+              25.059085
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "farmland",
+        "polygon": [
+          [
+            [
+              91.399667,
+              25.069103
+            ],
+            [
+              91.405067,
+              25.069303
+            ],
+            [
+              91.405667,
+              25.072703
+            ],
+            [
+              91.399967,
+              25.073103
+            ],
+            [
+              91.399667,
+              25.069103
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "vegetation",
+        "polygon": [
+          [
+            [
+              91.403667,
+              25.072103
+            ],
+            [
+              91.406167,
+              25.072303
+            ],
+            [
+              91.405867,
+              25.073903
+            ],
+            [
+              91.403867,
+              25.073703
+            ],
+            [
+              91.403667,
+              25.072103
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "settlement",
+        "polygon": [
+          [
+            [
+              91.399667,
+              25.071603
+            ],
+            [
+              91.401167,
+              25.071703
+            ],
+            [
+              91.401267,
+              25.072903
+            ],
+            [
+              91.399767,
+              25.072803
+            ],
+            [
+              91.399667,
+              25.071603
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "farmland",
+        "polygon": [
+          [
+            [
+              91.384333,
+              25.081457
+            ],
+            [
+              91.389733,
+              25.081657
+            ],
+            [
+              91.390333,
+              25.085057
+            ],
+            [
+              91.384633,
+              25.085457
+            ],
+            [
+              91.384333,
+              25.081457
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "vegetation",
+        "polygon": [
+          [
+            [
+              91.388333,
+              25.084457
+            ],
+            [
+              91.390833,
+              25.084657
+            ],
+            [
+              91.390533,
+              25.086257
+            ],
+            [
+              91.388533,
+              25.086057
+            ],
+            [
+              91.388333,
+              25.084457
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "settlement",
+        "polygon": [
+          [
+            [
+              91.384333,
+              25.083957
+            ],
+            [
+              91.385833,
+              25.084057
+            ],
+            [
+              91.385933,
+              25.085257
+            ],
+            [
+              91.384433,
+              25.085157
+            ],
+            [
+              91.384333,
+              25.083957
+            ]
+          ]
+        ]
+      }
+    ],
+    "water": [
+      {
+        "type": "river",
+        "polygon": [
+          [
+            [
+              91.416,
+              25.04
+            ],
+            [
+              91.43,
+              25.04
+            ],
+            [
+              91.43,
+              25.09
+            ],
+            [
+              91.416,
+              25.09
+            ],
+            [
+              91.416,
+              25.04
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "beel",
+        "polygon": [
+          [
+            [
+              91.3835,
+              25.0615
+            ],
+            [
+              91.3868,
+              25.0617
+            ],
+            [
+              91.3862,
+              25.0637
+            ],
+            [
+              91.3834,
+              25.0634
+            ],
+            [
+              91.3835,
+              25.0615
+            ]
+          ]
+        ]
+      }
+    ],
+    "waterlines": [
+      {
+        "type": "canal",
+        "line": [
+          [
+            91.372,
+            25.043
+          ],
+          [
+            91.378,
+            25.047
+          ],
+          [
+            91.384,
+            25.048
+          ]
+        ]
+      },
+      {
+        "type": "canal",
+        "line": [
+          [
+            91.385,
+            25.0625
+          ],
+          [
+            91.391,
+            25.0665
+          ],
+          [
+            91.426,
+            25.0685
+          ]
+        ]
+      }
+    ],
+    "roads": [
+      {
+        "type": "major",
+        "line": [
+          [
+            91.37,
+            25.063
+          ],
+          [
+            91.394,
+            25.066
+          ],
+          [
+            91.427,
+            25.067
+          ]
+        ]
+      },
+      {
+        "type": "minor",
+        "line": [
+          [
+            91.375,
+            25.042
+          ],
+          [
+            91.376,
+            25.066
+          ],
+          [
+            91.378,
+            25.087
+          ]
+        ]
+      },
+      {
+        "type": "minor",
+        "line": [
+          [
+            91.382,
+            25.066
+          ],
+          [
+            91.385,
+            25.088
+          ]
+        ]
+      }
+    ],
+    "embankments": [
+      {
+        "line": [
+          [
+            91.378,
+            25.041
+          ],
+          [
+            91.379,
+            25.065
+          ],
+          [
+            91.3785,
+            25.089
+          ]
+        ]
+      }
+    ],
+    "buildings": [
+      {
+        "polygon": [
+          [
+            [
+              91.387033,
+              25.046349
+            ],
+            [
+              91.387633,
+              25.046349
+            ],
+            [
+              91.387633,
+              25.046749
+            ],
+            [
+              91.387033,
+              25.046749
+            ],
+            [
+              91.387033,
+              25.046349
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              91.387933,
+              25.046349
+            ],
+            [
+              91.388533,
+              25.046349
+            ],
+            [
+              91.388533,
+              25.046749
+            ],
+            [
+              91.387933,
+              25.046749
+            ],
+            [
+              91.387933,
+              25.046349
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              91.409394,
+              25.058385
+            ],
+            [
+              91.409994,
+              25.058385
+            ],
+            [
+              91.409994,
+              25.058785
+            ],
+            [
+              91.409394,
+              25.058785
+            ],
+            [
+              91.409394,
+              25.058385
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              91.410294,
+              25.058385
+            ],
+            [
+              91.410894,
+              25.058385
+            ],
+            [
+              91.410894,
+              25.058785
+            ],
+            [
+              91.410294,
+              25.058785
+            ],
+            [
+              91.410294,
+              25.058385
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              91.402367,
+              25.070903
+            ],
+            [
+              91.402967,
+              25.070903
+            ],
+            [
+              91.402967,
+              25.071303
+            ],
+            [
+              91.402367,
+              25.071303
+            ],
+            [
+              91.402367,
+              25.070903
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              91.403267,
+              25.070903
+            ],
+            [
+              91.403867,
+              25.070903
+            ],
+            [
+              91.403867,
+              25.071303
+            ],
+            [
+              91.403267,
+              25.071303
+            ],
+            [
+              91.403267,
+              25.070903
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              91.387033,
+              25.083257
+            ],
+            [
+              91.387633,
+              25.083257
+            ],
+            [
+              91.387633,
+              25.083657
+            ],
+            [
+              91.387033,
+              25.083657
+            ],
+            [
+              91.387033,
+              25.083257
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              91.387933,
+              25.083257
+            ],
+            [
+              91.388533,
+              25.083257
+            ],
+            [
+              91.388533,
+              25.083657
+            ],
+            [
+              91.387933,
+              25.083657
+            ],
+            [
+              91.387933,
+              25.083257
+            ]
+          ]
+        ]
+      }
+    ],
+    "pois": [
+      {
+        "name": "Mohanpur SCHOOL",
+        "type": "school",
+        "coordinates": [
+          91.388833,
+          25.045349
+        ]
+      },
+      {
+        "name": "Surma Basin MOSQUE",
+        "type": "mosque",
+        "coordinates": [
+          91.411194,
+          25.057385
+        ]
+      },
+      {
+        "name": "Rangarchar MARKET",
+        "type": "market",
+        "coordinates": [
+          91.404167,
+          25.069903
+        ]
+      },
+      {
+        "name": "Gaurarang HEALTH CENTER",
+        "type": "health_center",
+        "coordinates": [
+          91.388833,
+          25.082257
+        ]
+      }
+    ],
+    "upazila": [
+      [
+        [
+          91.368,
+          25.038
+        ],
+        [
+          91.432,
+          25.038
+        ],
+        [
+          91.432,
+          25.092
+        ],
+        [
+          91.368,
+          25.092
+        ],
+        [
+          91.368,
+          25.038
+        ]
+      ]
+    ],
+    "mouzas": [
+      {
+        "id": "mouza_sunamganj_sadar_1",
+        "name": "Mohanpur Mouza",
+        "jlNo": "JL-37",
+        "labelAnchor": [
+          91.387333,
+          25.046549
+        ],
+        "areaDecimal": 161437.3,
+        "polygon": [
+          [
+            [
+              91.372,
+              25.04
+            ],
+            [
+              91.38718,
+              25.04
+            ],
+            [
+              91.40282,
+              25.04
+            ],
+            [
+              91.418,
+              25.04
+            ],
+            [
+              91.418,
+              25.045
+            ],
+            [
+              91.418,
+              25.0525
+            ],
+            [
+              91.40282,
+              25.052436
+            ],
+            [
+              91.38718,
+              25.053098
+            ],
+            [
+              91.372,
+              25.0525
+            ],
+            [
+              91.372,
+              25.04
+            ]
+          ]
+        ]
+      },
+      {
+        "id": "mouza_sunamganj_sadar_2",
+        "name": "Surma Basin Mouza",
+        "jlNo": "JL-41",
+        "labelAnchor": [
+          91.409694,
+          25.058585
+        ],
+        "areaDecimal": 155168.3,
+        "polygon": [
+          [
+            [
+              91.372,
+              25.0525
+            ],
+            [
+              91.38718,
+              25.053098
+            ],
+            [
+              91.40282,
+              25.052436
+            ],
+            [
+              91.418,
+              25.0525
+            ],
+            [
+              91.418,
+              25.06
+            ],
+            [
+              91.418,
+              25.065
+            ],
+            [
+              91.40282,
+              25.064517
+            ],
+            [
+              91.38718,
+              25.065085
+            ],
+            [
+              91.372,
+              25.065
+            ],
+            [
+              91.372,
+              25.0525
+            ]
+          ]
+        ]
+      },
+      {
+        "id": "mouza_sunamganj_sadar_3",
+        "name": "Rangarchar Mouza",
+        "jlNo": "JL-45",
+        "labelAnchor": [
+          91.402667,
+          25.071103
+        ],
+        "areaDecimal": 159127.3,
+        "polygon": [
+          [
+            [
+              91.372,
+              25.065
+            ],
+            [
+              91.38718,
+              25.065085
+            ],
+            [
+              91.40282,
+              25.064517
+            ],
+            [
+              91.418,
+              25.065
+            ],
+            [
+              91.418,
+              25.07
+            ],
+            [
+              91.418,
+              25.0775
+            ],
+            [
+              91.40282,
+              25.077689
+            ],
+            [
+              91.38718,
+              25.076913
+            ],
+            [
+              91.372,
+              25.0775
+            ],
+            [
+              91.372,
+              25.065
+            ]
+          ]
+        ]
+      },
+      {
+        "id": "mouza_sunamganj_sadar_4",
+        "name": "Gaurarang Mouza",
+        "jlNo": "JL-49",
+        "labelAnchor": [
+          91.387333,
+          25.083457
+        ],
+        "areaDecimal": 160808.1,
+        "polygon": [
+          [
+            [
+              91.372,
+              25.0775
+            ],
+            [
+              91.38718,
+              25.076913
+            ],
+            [
+              91.40282,
+              25.077689
+            ],
+            [
+              91.418,
+              25.0775
+            ],
+            [
+              91.418,
+              25.085
+            ],
+            [
+              91.418,
+              25.09
+            ],
+            [
+              91.40282,
+              25.09
+            ],
+            [
+              91.38718,
+              25.09
+            ],
+            [
+              91.372,
+              25.09
+            ],
+            [
+              91.372,
+              25.0775
+            ]
+          ]
+        ]
+      }
+    ],
+    "labels": [
+      {
+        "text": "Surma Basin",
+        "type": "river",
+        "bearing": 75,
+        "coordinates": [
+          91.427,
+          25.065
+        ]
+      }
+    ]
+  },
+  "mouzas": [
+    {
+      "id": "mouza_sunamganj_sadar_1",
+      "name": "Mohanpur Mouza",
+      "jlNo": "JL-37",
+      "areaDecimal": 161437.3,
+      "lossDecimal": 10371.2,
+      "gainDecimal": 0,
+      "percent": 6.4,
+      "labelAnchor": [
+        91.387333,
+        25.046549
+      ],
+      "affectedOwnersCount": 11,
+      "polygon": [
+        [
+          [
+            91.372,
+            25.04
+          ],
+          [
+            91.38718,
+            25.04
+          ],
+          [
+            91.40282,
+            25.04
+          ],
+          [
+            91.418,
+            25.04
+          ],
+          [
+            91.418,
+            25.045
+          ],
+          [
+            91.418,
+            25.0525
+          ],
+          [
+            91.40282,
+            25.052436
+          ],
+          [
+            91.38718,
+            25.053098
+          ],
+          [
+            91.372,
+            25.0525
+          ],
+          [
+            91.372,
+            25.04
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_sunamganj_sadar_2",
+      "name": "Surma Basin Mouza",
+      "jlNo": "JL-41",
+      "areaDecimal": 155168.3,
+      "lossDecimal": 9811.7,
+      "gainDecimal": 0,
+      "percent": 6.3,
+      "labelAnchor": [
+        91.409694,
+        25.058585
+      ],
+      "affectedOwnersCount": 10,
+      "polygon": [
+        [
+          [
+            91.372,
+            25.0525
+          ],
+          [
+            91.38718,
+            25.053098
+          ],
+          [
+            91.40282,
+            25.052436
+          ],
+          [
+            91.418,
+            25.0525
+          ],
+          [
+            91.418,
+            25.06
+          ],
+          [
+            91.418,
+            25.065
+          ],
+          [
+            91.40282,
+            25.064517
+          ],
+          [
+            91.38718,
+            25.065085
+          ],
+          [
+            91.372,
+            25.065
+          ],
+          [
+            91.372,
+            25.0525
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_sunamganj_sadar_3",
+      "name": "Rangarchar Mouza",
+      "jlNo": "JL-45",
+      "areaDecimal": 159127.3,
+      "lossDecimal": 7991.4,
+      "gainDecimal": 0,
+      "percent": 5,
+      "labelAnchor": [
+        91.402667,
+        25.071103
+      ],
+      "affectedOwnersCount": 11,
+      "polygon": [
+        [
+          [
+            91.372,
+            25.065
+          ],
+          [
+            91.38718,
+            25.065085
+          ],
+          [
+            91.40282,
+            25.064517
+          ],
+          [
+            91.418,
+            25.065
+          ],
+          [
+            91.418,
+            25.07
+          ],
+          [
+            91.418,
+            25.0775
+          ],
+          [
+            91.40282,
+            25.077689
+          ],
+          [
+            91.38718,
+            25.076913
+          ],
+          [
+            91.372,
+            25.0775
+          ],
+          [
+            91.372,
+            25.065
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_sunamganj_sadar_4",
+      "name": "Gaurarang Mouza",
+      "jlNo": "JL-49",
+      "areaDecimal": 160808.1,
+      "lossDecimal": 13416.2,
+      "gainDecimal": 0,
+      "percent": 8.3,
+      "labelAnchor": [
+        91.387333,
+        25.083457
+      ],
+      "affectedOwnersCount": 14,
+      "polygon": [
+        [
+          [
+            91.372,
+            25.0775
+          ],
+          [
+            91.38718,
+            25.076913
+          ],
+          [
+            91.40282,
+            25.077689
+          ],
+          [
+            91.418,
+            25.0775
+          ],
+          [
+            91.418,
+            25.085
+          ],
+          [
+            91.418,
+            25.09
+          ],
+          [
+            91.40282,
+            25.09
+          ],
+          [
+            91.38718,
+            25.09
+          ],
+          [
+            91.372,
+            25.09
+          ],
+          [
+            91.372,
+            25.0775
+          ]
+        ]
+      ]
+    }
+  ],
+  "hazardLayers": {
+    "shallowZone": [
+      [
+        [
+          [
+            91.416,
+            25.04
+          ],
+          [
+            91.43,
+            25.04
+          ],
+          [
+            91.43,
+            25.09
+          ],
+          [
+            91.416,
+            25.09
+          ],
+          [
+            91.416,
+            25.04
+          ]
+        ]
+      ]
+    ],
+    "moderateZone": [
+      [
+        [
+          [
+            91.416,
+            25.04
+          ],
+          [
+            91.43,
+            25.04
+          ],
+          [
+            91.43,
+            25.09
+          ],
+          [
+            91.416,
+            25.09
+          ],
+          [
+            91.416,
+            25.04
+          ]
+        ]
+      ]
+    ],
+    "deepZone": [
+      [
+        [
+          [
+            91.416,
+            25.04
+          ],
+          [
+            91.43,
+            25.04
+          ],
+          [
+            91.43,
+            25.09
+          ],
+          [
+            91.416,
+            25.09
+          ],
+          [
+            91.416,
+            25.04
+          ]
+        ]
+      ]
+    ]
+  },
+  "context": {
+    "type": "flood",
+    "peakWaterLevelDiffM": 1.45,
+    "durationDays": 14,
+    "percentFlooded": 68.5
+  },
+  "owners": [
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_1_2911",
+      "name": "Mizanur Rahman",
+      "dagNo": "2911",
+      "khatianNo": "RS-239",
+      "plotNo": "2911",
+      "mouzaId": "mouza_sunamganj_sadar_1",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 1084.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 13009200,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.375565,
+        25.041808
+      ],
+      "colorIndex": 0
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_1_2912",
+      "name": "Taslima Nasrin",
+      "dagNo": "2912",
+      "khatianNo": "RS-750",
+      "plotNo": "2912",
+      "mouzaId": "mouza_sunamganj_sadar_1",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 1053.3,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 12639600,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.381315,
+        25.041808
+      ],
+      "colorIndex": 1
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_1_2913",
+      "name": "Abdul Matin",
+      "dagNo": "2913",
+      "khatianNo": "RS-573",
+      "plotNo": "2913",
+      "mouzaId": "mouza_sunamganj_sadar_1",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "homestead",
+      "changeKind": "loss",
+      "lossDecimal": 526.8,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 6321600,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.387065,
+        25.041808
+      ],
+      "colorIndex": 2
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_1_2914",
+      "name": "Laila Arjumand",
+      "dagNo": "2914",
+      "khatianNo": "RS-222",
+      "plotNo": "2914",
+      "mouzaId": "mouza_sunamganj_sadar_1",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "pond",
+      "changeKind": "loss",
+      "lossDecimal": 904,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 10848000,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.392815,
+        25.041808
+      ],
+      "colorIndex": 3
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_1_2915",
+      "name": "Faridul Islam",
+      "dagNo": "2915",
+      "khatianNo": "RS-581",
+      "plotNo": "2915",
+      "mouzaId": "mouza_sunamganj_sadar_1",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "pond",
+      "changeKind": "loss",
+      "lossDecimal": 763.6,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 9163200,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.398565,
+        25.041808
+      ],
+      "colorIndex": 4
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_1_2916",
+      "name": "Zubair Ahmed",
+      "dagNo": "2916",
+      "khatianNo": "RS-197",
+      "plotNo": "2916",
+      "mouzaId": "mouza_sunamganj_sadar_1",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 738.6,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 8863200,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.404315,
+        25.041808
+      ],
+      "colorIndex": 5
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_1_2917",
+      "name": "Hosne Ara Begum",
+      "dagNo": "2917",
+      "khatianNo": "RS-723",
+      "plotNo": "2917",
+      "mouzaId": "mouza_sunamganj_sadar_1",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "homestead",
+      "changeKind": "loss",
+      "lossDecimal": 1190.2,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 14282400,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.410065,
+        25.041808
+      ],
+      "colorIndex": 6
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_1_2918",
+      "name": "Monirul Huq",
+      "dagNo": "2918",
+      "khatianNo": "RS-481",
+      "plotNo": "2918",
+      "mouzaId": "mouza_sunamganj_sadar_1",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "homestead",
+      "changeKind": "loss",
+      "lossDecimal": 933.3,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 11199600,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.375565,
+        25.043117
+      ],
+      "colorIndex": 7
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_1_2919",
+      "name": "Sultana Razia",
+      "dagNo": "2919",
+      "khatianNo": "RS-448",
+      "plotNo": "2919",
+      "mouzaId": "mouza_sunamganj_sadar_1",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "commercial",
+      "changeKind": "loss",
+      "lossDecimal": 1198.7,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 14384400,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.381315,
+        25.043117
+      ],
+      "colorIndex": 8
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_1_2920",
+      "name": "Jalal Uddin Rumi",
+      "dagNo": "2920",
+      "khatianNo": "RS-128",
+      "plotNo": "2920",
+      "mouzaId": "mouza_sunamganj_sadar_1",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "homestead",
+      "changeKind": "loss",
+      "lossDecimal": 811.8,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 9741600,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.387065,
+        25.043117
+      ],
+      "colorIndex": 9
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_1_2921",
+      "name": "Bilkis Banu",
+      "dagNo": "2921",
+      "khatianNo": "RS-211",
+      "plotNo": "2921",
+      "mouzaId": "mouza_sunamganj_sadar_1",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 1166.8,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 14001600,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.392815,
+        25.043117
+      ],
+      "colorIndex": 10
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_2_2943",
+      "name": "Ayesha Siddiqua",
+      "dagNo": "2943",
+      "khatianNo": "RS-757",
+      "plotNo": "2943",
+      "mouzaId": "mouza_sunamganj_sadar_2",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "commercial",
+      "changeKind": "loss",
+      "lossDecimal": 767.7,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 9212400,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.375565,
+        25.054376
+      ],
+      "colorIndex": 0
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_2_2944",
+      "name": "Nurul Huda Mia",
+      "dagNo": "2944",
+      "khatianNo": "RS-292",
+      "plotNo": "2944",
+      "mouzaId": "mouza_sunamganj_sadar_2",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "commercial",
+      "changeKind": "loss",
+      "lossDecimal": 1275.5,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 15306000,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.381315,
+        25.054376
+      ],
+      "colorIndex": 1
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_2_2945",
+      "name": "Shamsul Alam Sarker",
+      "dagNo": "2945",
+      "khatianNo": "RS-437",
+      "plotNo": "2945",
+      "mouzaId": "mouza_sunamganj_sadar_2",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "commercial",
+      "changeKind": "loss",
+      "lossDecimal": 806.6,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 9679200,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.387065,
+        25.054376
+      ],
+      "colorIndex": 2
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_2_2946",
+      "name": "Begum Rokeya Khatun",
+      "dagNo": "2946",
+      "khatianNo": "RS-337",
+      "plotNo": "2946",
+      "mouzaId": "mouza_sunamganj_sadar_2",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 1267.2,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 15206400,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.392815,
+        25.054376
+      ],
+      "colorIndex": 3
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_2_2947",
+      "name": "Anwar Parvez",
+      "dagNo": "2947",
+      "khatianNo": "RS-800",
+      "plotNo": "2947",
+      "mouzaId": "mouza_sunamganj_sadar_2",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 1285.7,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 15428400,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.398565,
+        25.054376
+      ],
+      "colorIndex": 4
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_2_2948",
+      "name": "Nasreen Jahan",
+      "dagNo": "2948",
+      "khatianNo": "RS-879",
+      "plotNo": "2948",
+      "mouzaId": "mouza_sunamganj_sadar_2",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "homestead",
+      "changeKind": "loss",
+      "lossDecimal": 738.2,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 8858400,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.404315,
+        25.054376
+      ],
+      "colorIndex": 5
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_2_2949",
+      "name": "Kamal Uddin Ahmed",
+      "dagNo": "2949",
+      "khatianNo": "RS-550",
+      "plotNo": "2949",
+      "mouzaId": "mouza_sunamganj_sadar_2",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "homestead",
+      "changeKind": "loss",
+      "lossDecimal": 1098.9,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 13186800,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.410065,
+        25.054376
+      ],
+      "colorIndex": 6
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_2_2950",
+      "name": "Shahana Akter",
+      "dagNo": "2950",
+      "khatianNo": "RS-750",
+      "plotNo": "2950",
+      "mouzaId": "mouza_sunamganj_sadar_2",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 918.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 11017200,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.375565,
+        25.055781
+      ],
+      "colorIndex": 7
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_2_2951",
+      "name": "Mizanur Rahman",
+      "dagNo": "2951",
+      "khatianNo": "RS-808",
+      "plotNo": "2951",
+      "mouzaId": "mouza_sunamganj_sadar_2",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 658.8,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 7905600,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.381315,
+        25.055781
+      ],
+      "colorIndex": 8
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_2_2952",
+      "name": "Taslima Nasrin",
+      "dagNo": "2952",
+      "khatianNo": "RS-715",
+      "plotNo": "2952",
+      "mouzaId": "mouza_sunamganj_sadar_2",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 995,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 11940000,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.387065,
+        25.055781
+      ],
+      "colorIndex": 9
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_3_2972",
+      "name": "Rafiqul Bari",
+      "dagNo": "2972",
+      "khatianNo": "RS-271",
+      "plotNo": "2972",
+      "mouzaId": "mouza_sunamganj_sadar_3",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 882.3,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 10587600,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.375565,
+        25.066169
+      ],
+      "colorIndex": 0
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_3_2973",
+      "name": "Ferdousi Begum",
+      "dagNo": "2973",
+      "khatianNo": "RS-240",
+      "plotNo": "2973",
+      "mouzaId": "mouza_sunamganj_sadar_3",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 1050.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 12601200,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.381315,
+        25.066169
+      ],
+      "colorIndex": 1
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_3_2974",
+      "name": "Kazi Nazmul Huda",
+      "dagNo": "2974",
+      "khatianNo": "RS-189",
+      "plotNo": "2974",
+      "mouzaId": "mouza_sunamganj_sadar_3",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 619,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 7428000,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.387065,
+        25.066169
+      ],
+      "colorIndex": 2
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_3_2975",
+      "name": "Rowshan Ara",
+      "dagNo": "2975",
+      "khatianNo": "RS-569",
+      "plotNo": "2975",
+      "mouzaId": "mouza_sunamganj_sadar_3",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "pond",
+      "changeKind": "loss",
+      "lossDecimal": 623.6,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 7483200,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.392815,
+        25.066169
+      ],
+      "colorIndex": 3
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_3_2976",
+      "name": "Enamul Haque",
+      "dagNo": "2976",
+      "khatianNo": "RS-429",
+      "plotNo": "2976",
+      "mouzaId": "mouza_sunamganj_sadar_3",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 862.3,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 10347600,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.398565,
+        25.066169
+      ],
+      "colorIndex": 4
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_3_2977",
+      "name": "Momtaz Mahal",
+      "dagNo": "2977",
+      "khatianNo": "RS-306",
+      "plotNo": "2977",
+      "mouzaId": "mouza_sunamganj_sadar_3",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 590.6,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 7087200,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.404315,
+        25.066169
+      ],
+      "colorIndex": 5
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_3_2978",
+      "name": "Tariqul Islam",
+      "dagNo": "2978",
+      "khatianNo": "RS-610",
+      "plotNo": "2978",
+      "mouzaId": "mouza_sunamganj_sadar_3",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 575.2,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 6902400,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.410065,
+        25.066169
+      ],
+      "colorIndex": 6
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_3_2979",
+      "name": "Shirin Akter",
+      "dagNo": "2979",
+      "khatianNo": "RS-577",
+      "plotNo": "2979",
+      "mouzaId": "mouza_sunamganj_sadar_3",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "pond",
+      "changeKind": "loss",
+      "lossDecimal": 853.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 10237200,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.375565,
+        25.067367
+      ],
+      "colorIndex": 7
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_3_2980",
+      "name": "Rahim Chowdhury",
+      "dagNo": "2980",
+      "khatianNo": "RS-761",
+      "plotNo": "2980",
+      "mouzaId": "mouza_sunamganj_sadar_3",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "commercial",
+      "changeKind": "loss",
+      "lossDecimal": 865.5,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 10386000,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.381315,
+        25.067367
+      ],
+      "colorIndex": 8
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_3_2981",
+      "name": "Fatema Begum",
+      "dagNo": "2981",
+      "khatianNo": "RS-610",
+      "plotNo": "2981",
+      "mouzaId": "mouza_sunamganj_sadar_3",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "commercial",
+      "changeKind": "loss",
+      "lossDecimal": 518.7,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 6224400,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.387065,
+        25.067367
+      ],
+      "colorIndex": 9
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_3_2982",
+      "name": "Kabir Hossain Dewan",
+      "dagNo": "2982",
+      "khatianNo": "RS-711",
+      "plotNo": "2982",
+      "mouzaId": "mouza_sunamganj_sadar_3",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 551,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 6612000,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.392815,
+        25.067367
+      ],
+      "colorIndex": 10
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_4_3009",
+      "name": "Hasina Mumtaz",
+      "dagNo": "3009",
+      "khatianNo": "RS-831",
+      "plotNo": "3009",
+      "mouzaId": "mouza_sunamganj_sadar_4",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 1135.4,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 13624800,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.375565,
+        25.07892
+      ],
+      "colorIndex": 0
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_4_3010",
+      "name": "Golam Mostafa",
+      "dagNo": "3010",
+      "khatianNo": "RS-654",
+      "plotNo": "3010",
+      "mouzaId": "mouza_sunamganj_sadar_4",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 639.3,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 7671600,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.381315,
+        25.07892
+      ],
+      "colorIndex": 1
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_4_3011",
+      "name": "Salma Khatun",
+      "dagNo": "3011",
+      "khatianNo": "RS-590",
+      "plotNo": "3011",
+      "mouzaId": "mouza_sunamganj_sadar_4",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "homestead",
+      "changeKind": "loss",
+      "lossDecimal": 627.7,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 7532400,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.387065,
+        25.07892
+      ],
+      "colorIndex": 2
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_4_3012",
+      "name": "Rafiqul Bari",
+      "dagNo": "3012",
+      "khatianNo": "RS-863",
+      "plotNo": "3012",
+      "mouzaId": "mouza_sunamganj_sadar_4",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "homestead",
+      "changeKind": "loss",
+      "lossDecimal": 564.2,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 6770400,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.392815,
+        25.07892
+      ],
+      "colorIndex": 3
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_4_3013",
+      "name": "Ferdousi Begum",
+      "dagNo": "3013",
+      "khatianNo": "RS-134",
+      "plotNo": "3013",
+      "mouzaId": "mouza_sunamganj_sadar_4",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 1274.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 15289200,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.398565,
+        25.07892
+      ],
+      "colorIndex": 4
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_4_3014",
+      "name": "Kazi Nazmul Huda",
+      "dagNo": "3014",
+      "khatianNo": "RS-743",
+      "plotNo": "3014",
+      "mouzaId": "mouza_sunamganj_sadar_4",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 1015.3,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 12183600,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.404315,
+        25.07892
+      ],
+      "colorIndex": 5
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_4_3015",
+      "name": "Rowshan Ara",
+      "dagNo": "3015",
+      "khatianNo": "RS-405",
+      "plotNo": "3015",
+      "mouzaId": "mouza_sunamganj_sadar_4",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 939.5,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 11274000,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.410065,
+        25.07892
+      ],
+      "colorIndex": 6
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_4_3016",
+      "name": "Enamul Haque",
+      "dagNo": "3016",
+      "khatianNo": "RS-849",
+      "plotNo": "3016",
+      "mouzaId": "mouza_sunamganj_sadar_4",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "pond",
+      "changeKind": "loss",
+      "lossDecimal": 1139.5,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 13674000,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.375565,
+        25.080374
+      ],
+      "colorIndex": 7
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_4_3017",
+      "name": "Momtaz Mahal",
+      "dagNo": "3017",
+      "khatianNo": "RS-550",
+      "plotNo": "3017",
+      "mouzaId": "mouza_sunamganj_sadar_4",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "homestead",
+      "changeKind": "loss",
+      "lossDecimal": 1036.6,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 12439200,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.381315,
+        25.080374
+      ],
+      "colorIndex": 8
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_4_3018",
+      "name": "Tariqul Islam",
+      "dagNo": "3018",
+      "khatianNo": "RS-751",
+      "plotNo": "3018",
+      "mouzaId": "mouza_sunamganj_sadar_4",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "commercial",
+      "changeKind": "loss",
+      "lossDecimal": 781.9,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 9382800,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.387065,
+        25.080374
+      ],
+      "colorIndex": 9
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_4_3019",
+      "name": "Shirin Akter",
+      "dagNo": "3019",
+      "khatianNo": "RS-715",
+      "plotNo": "3019",
+      "mouzaId": "mouza_sunamganj_sadar_4",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 963.6,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 11563200,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.392815,
+        25.080374
+      ],
+      "colorIndex": 10
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_4_3020",
+      "name": "Rahim Chowdhury",
+      "dagNo": "3020",
+      "khatianNo": "RS-226",
+      "plotNo": "3020",
+      "mouzaId": "mouza_sunamganj_sadar_4",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 741.2,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 8894400,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.398565,
+        25.080374
+      ],
+      "colorIndex": 11
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_4_3021",
+      "name": "Fatema Begum",
+      "dagNo": "3021",
+      "khatianNo": "RS-227",
+      "plotNo": "3021",
+      "mouzaId": "mouza_sunamganj_sadar_4",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 1307,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 15684000,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.404315,
+        25.080374
+      ],
+      "colorIndex": 0
+    },
+    {
+      "id": "fl_owner_plot_mouza_sunamganj_sadar_4_3022",
+      "name": "Kabir Hossain Dewan",
+      "dagNo": "3022",
+      "khatianNo": "RS-445",
+      "plotNo": "3022",
+      "mouzaId": "mouza_sunamganj_sadar_4",
+      "upazilaId": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "hazard": "flood",
+      "landClass": "homestead",
+      "changeKind": "loss",
+      "lossDecimal": 1250.9,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 15010800,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.410065,
+        25.080374
+      ],
+      "colorIndex": 1
+    }
+  ]
+}

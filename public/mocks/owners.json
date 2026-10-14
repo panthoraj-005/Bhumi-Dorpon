@@ -1,0 +1,282 @@
+[
+  {
+    "id": "owner_1",
+    "name": "Rahim Chowdhury",
+    "phone": "+880 1716402706",
+    "nid": "19855859503156",
+    "colorIndex": 0
+  },
+  {
+    "id": "owner_2",
+    "name": "Fatema Begum",
+    "phone": "+880 1714038027",
+    "nid": "19856013142236",
+    "colorIndex": 1
+  },
+  {
+    "id": "owner_3",
+    "name": "Kabir Hossain Dewan",
+    "phone": "+880 1715682868",
+    "nid": "19855401382213",
+    "colorIndex": 2
+  },
+  {
+    "id": "owner_4",
+    "name": "Ayesha Siddiqua",
+    "phone": "+880 1715661601",
+    "nid": "19856243032634",
+    "colorIndex": 3
+  },
+  {
+    "id": "owner_5",
+    "name": "Nurul Huda Mia",
+    "phone": "+880 1719083002",
+    "nid": "19858328225043",
+    "colorIndex": 4
+  },
+  {
+    "id": "owner_6",
+    "name": "Shamsul Alam Sarker",
+    "phone": "+880 1719203355",
+    "nid": "19858514022588",
+    "colorIndex": 5
+  },
+  {
+    "id": "owner_7",
+    "name": "Begum Rokeya Khatun",
+    "phone": "+880 1715283567",
+    "nid": "19857754863146",
+    "colorIndex": 6
+  },
+  {
+    "id": "owner_8",
+    "name": "Anwar Parvez",
+    "phone": "+880 1716171837",
+    "nid": "19855015308327",
+    "colorIndex": 7
+  },
+  {
+    "id": "owner_9",
+    "name": "Nasreen Jahan",
+    "phone": "+880 1712509766",
+    "nid": "19853427574585",
+    "colorIndex": 8
+  },
+  {
+    "id": "owner_10",
+    "name": "Kamal Uddin Ahmed",
+    "phone": "+880 1718395963",
+    "nid": "19852777529579",
+    "colorIndex": 9
+  },
+  {
+    "id": "owner_11",
+    "name": "Shahana Akter",
+    "phone": "+880 1714489839",
+    "nid": "19856957159546",
+    "colorIndex": 10
+  },
+  {
+    "id": "owner_12",
+    "name": "Mizanur Rahman",
+    "phone": "+880 1713008322",
+    "nid": "19854372390985",
+    "colorIndex": 11
+  },
+  {
+    "id": "owner_13",
+    "name": "Taslima Nasrin",
+    "phone": "+880 1716073726",
+    "nid": "19857388215048",
+    "colorIndex": 0
+  },
+  {
+    "id": "owner_14",
+    "name": "Abdul Matin",
+    "phone": "+880 1711862504",
+    "nid": "19856508808589",
+    "colorIndex": 1
+  },
+  {
+    "id": "owner_15",
+    "name": "Laila Arjumand",
+    "phone": "+880 1719848892",
+    "nid": "19852300547449",
+    "colorIndex": 2
+  },
+  {
+    "id": "owner_16",
+    "name": "Faridul Islam",
+    "phone": "+880 1714545304",
+    "nid": "19851297201480",
+    "colorIndex": 3
+  },
+  {
+    "id": "owner_17",
+    "name": "Zubair Ahmed",
+    "phone": "+880 1718354546",
+    "nid": "19853627323189",
+    "colorIndex": 4
+  },
+  {
+    "id": "owner_18",
+    "name": "Hosne Ara Begum",
+    "phone": "+880 1717547050",
+    "nid": "19858080787772",
+    "colorIndex": 5
+  },
+  {
+    "id": "owner_19",
+    "name": "Monirul Huq",
+    "phone": "+880 1711088667",
+    "nid": "19858498864538",
+    "colorIndex": 6
+  },
+  {
+    "id": "owner_20",
+    "name": "Sultana Razia",
+    "phone": "+880 1719371326",
+    "nid": "19855408621049",
+    "colorIndex": 7
+  },
+  {
+    "id": "owner_21",
+    "name": "Jalal Uddin Rumi",
+    "phone": "+880 1715117541",
+    "nid": "19851108251256",
+    "colorIndex": 8
+  },
+  {
+    "id": "owner_22",
+    "name": "Bilkis Banu",
+    "phone": "+880 1719979237",
+    "nid": "19855569313094",
+    "colorIndex": 9
+  },
+  {
+    "id": "owner_23",
+    "name": "Sirajul Islam",
+    "phone": "+880 1715693402",
+    "nid": "19851382738081",
+    "colorIndex": 10
+  },
+  {
+    "id": "owner_24",
+    "name": "Parveen Sultana",
+    "phone": "+880 1718347634",
+    "nid": "19858292092245",
+    "colorIndex": 11
+  },
+  {
+    "id": "owner_25",
+    "name": "Mahbubur Rahman",
+    "phone": "+880 1717016508",
+    "nid": "19854510622267",
+    "colorIndex": 0
+  },
+  {
+    "id": "owner_26",
+    "name": "Afroza Khanam",
+    "phone": "+880 1712717348",
+    "nid": "19851559914042",
+    "colorIndex": 1
+  },
+  {
+    "id": "owner_27",
+    "name": "Shahidul Alam",
+    "phone": "+880 1719806696",
+    "nid": "19854639183412",
+    "colorIndex": 2
+  },
+  {
+    "id": "owner_28",
+    "name": "Rehana Parveen",
+    "phone": "+880 1715784888",
+    "nid": "19857870064883",
+    "colorIndex": 3
+  },
+  {
+    "id": "owner_29",
+    "name": "Zakir Hossain",
+    "phone": "+880 1719402174",
+    "nid": "19856559831054",
+    "colorIndex": 4
+  },
+  {
+    "id": "owner_30",
+    "name": "Hasina Mumtaz",
+    "phone": "+880 1712575229",
+    "nid": "19852009101279",
+    "colorIndex": 5
+  },
+  {
+    "id": "owner_31",
+    "name": "Golam Mostafa",
+    "phone": "+880 1719807376",
+    "nid": "19858371534913",
+    "colorIndex": 6
+  },
+  {
+    "id": "owner_32",
+    "name": "Salma Khatun",
+    "phone": "+880 1717205215",
+    "nid": "19858970243450",
+    "colorIndex": 7
+  },
+  {
+    "id": "owner_33",
+    "name": "Rafiqul Bari",
+    "phone": "+880 1717540554",
+    "nid": "19858876061044",
+    "colorIndex": 8
+  },
+  {
+    "id": "owner_34",
+    "name": "Ferdousi Begum",
+    "phone": "+880 1717817919",
+    "nid": "19857802851981",
+    "colorIndex": 9
+  },
+  {
+    "id": "owner_35",
+    "name": "Kazi Nazmul Huda",
+    "phone": "+880 1715707433",
+    "nid": "19855924679436",
+    "colorIndex": 10
+  },
+  {
+    "id": "owner_36",
+    "name": "Rowshan Ara",
+    "phone": "+880 1716689361",
+    "nid": "19851187433482",
+    "colorIndex": 11
+  },
+  {
+    "id": "owner_37",
+    "name": "Enamul Haque",
+    "phone": "+880 1715500228",
+    "nid": "19859177945797",
+    "colorIndex": 0
+  },
+  {
+    "id": "owner_38",
+    "name": "Momtaz Mahal",
+    "phone": "+880 1717734980",
+    "nid": "19857124786990",
+    "colorIndex": 1
+  },
+  {
+    "id": "owner_39",
+    "name": "Tariqul Islam",
+    "phone": "+880 1717448991",
+    "nid": "19857714126135",
+    "colorIndex": 2
+  },
+  {
+    "id": "owner_40",
+    "name": "Shirin Akter",
+    "phone": "+880 1711340516",
+    "nid": "19859416187318",
+    "colorIndex": 3
+  }
+]

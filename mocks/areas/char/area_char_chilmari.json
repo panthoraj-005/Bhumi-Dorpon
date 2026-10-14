@@ -1,0 +1,2480 @@
+{
+  "areaId": "area_char_chilmari",
+  "hazard": "char",
+  "mode": "recorded",
+  "bounds": [
+    89.66,
+    25.54,
+    89.71,
+    25.59
+  ],
+  "basemap": {
+    "land": [
+      [
+        [
+          89.66,
+          25.54
+        ],
+        [
+          89.71,
+          25.54
+        ],
+        [
+          89.71,
+          25.59
+        ],
+        [
+          89.66,
+          25.59
+        ],
+        [
+          89.66,
+          25.54
+        ]
+      ]
+    ],
+    "landuse": [
+      {
+        "type": "farmland",
+        "polygon": [
+          [
+            [
+              89.67,
+              25.544549
+            ],
+            [
+              89.6754,
+              25.544749
+            ],
+            [
+              89.676,
+              25.548149
+            ],
+            [
+              89.6703,
+              25.548549
+            ],
+            [
+              89.67,
+              25.544549
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "vegetation",
+        "polygon": [
+          [
+            [
+              89.674,
+              25.547549
+            ],
+            [
+              89.6765,
+              25.547749
+            ],
+            [
+              89.6762,
+              25.549349
+            ],
+            [
+              89.6742,
+              25.549149
+            ],
+            [
+              89.674,
+              25.547549
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "settlement",
+        "polygon": [
+          [
+            [
+              89.67,
+              25.547049
+            ],
+            [
+              89.6715,
+              25.547149
+            ],
+            [
+              89.6716,
+              25.548349
+            ],
+            [
+              89.6701,
+              25.548249
+            ],
+            [
+              89.67,
+              25.547049
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "farmland",
+        "polygon": [
+          [
+            [
+              89.675958,
+              25.55676
+            ],
+            [
+              89.681358,
+              25.55696
+            ],
+            [
+              89.681958,
+              25.56036
+            ],
+            [
+              89.676258,
+              25.56076
+            ],
+            [
+              89.675958,
+              25.55676
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "vegetation",
+        "polygon": [
+          [
+            [
+              89.679958,
+              25.55976
+            ],
+            [
+              89.682458,
+              25.55996
+            ],
+            [
+              89.682158,
+              25.56156
+            ],
+            [
+              89.680158,
+              25.56136
+            ],
+            [
+              89.679958,
+              25.55976
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "settlement",
+        "polygon": [
+          [
+            [
+              89.675958,
+              25.55926
+            ],
+            [
+              89.677458,
+              25.55936
+            ],
+            [
+              89.677558,
+              25.56056
+            ],
+            [
+              89.676058,
+              25.56046
+            ],
+            [
+              89.675958,
+              25.55926
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "farmland",
+        "polygon": [
+          [
+            [
+              89.681458,
+              25.569103
+            ],
+            [
+              89.686858,
+              25.569303
+            ],
+            [
+              89.687458,
+              25.572703
+            ],
+            [
+              89.681758,
+              25.573103
+            ],
+            [
+              89.681458,
+              25.569103
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "vegetation",
+        "polygon": [
+          [
+            [
+              89.685458,
+              25.572103
+            ],
+            [
+              89.687958,
+              25.572303
+            ],
+            [
+              89.687658,
+              25.573903
+            ],
+            [
+              89.685658,
+              25.573703
+            ],
+            [
+              89.685458,
+              25.572103
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "settlement",
+        "polygon": [
+          [
+            [
+              89.681458,
+              25.571603
+            ],
+            [
+              89.682958,
+              25.571703
+            ],
+            [
+              89.683058,
+              25.572903
+            ],
+            [
+              89.681558,
+              25.572803
+            ],
+            [
+              89.681458,
+              25.571603
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "farmland",
+        "polygon": [
+          [
+            [
+              89.67,
+              25.581457
+            ],
+            [
+              89.6754,
+              25.581657
+            ],
+            [
+              89.676,
+              25.585057
+            ],
+            [
+              89.6703,
+              25.585457
+            ],
+            [
+              89.67,
+              25.581457
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "vegetation",
+        "polygon": [
+          [
+            [
+              89.674,
+              25.584457
+            ],
+            [
+              89.6765,
+              25.584657
+            ],
+            [
+              89.6762,
+              25.586257
+            ],
+            [
+              89.6742,
+              25.586057
+            ],
+            [
+              89.674,
+              25.584457
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "settlement",
+        "polygon": [
+          [
+            [
+              89.67,
+              25.583957
+            ],
+            [
+              89.6715,
+              25.584057
+            ],
+            [
+              89.6716,
+              25.585257
+            ],
+            [
+              89.6701,
+              25.585157
+            ],
+            [
+              89.67,
+              25.583957
+            ]
+          ]
+        ]
+      }
+    ],
+    "water": [
+      {
+        "type": "river",
+        "polygon": [
+          [
+            [
+              89.692,
+              25.54
+            ],
+            [
+              89.71,
+              25.54
+            ],
+            [
+              89.71,
+              25.59
+            ],
+            [
+              89.692,
+              25.59
+            ],
+            [
+              89.692,
+              25.54
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "beel",
+        "polygon": [
+          [
+            [
+              89.671,
+              25.5615
+            ],
+            [
+              89.6743,
+              25.5617
+            ],
+            [
+              89.6737,
+              25.5637
+            ],
+            [
+              89.6709,
+              25.5634
+            ],
+            [
+              89.671,
+              25.5615
+            ]
+          ]
+        ]
+      }
+    ],
+    "waterlines": [
+      {
+        "type": "canal",
+        "line": [
+          [
+            89.662,
+            25.543
+          ],
+          [
+            89.668,
+            25.547
+          ],
+          [
+            89.674,
+            25.548
+          ]
+        ]
+      },
+      {
+        "type": "canal",
+        "line": [
+          [
+            89.6725,
+            25.5625
+          ],
+          [
+            89.6785,
+            25.5665
+          ],
+          [
+            89.706,
+            25.5685
+          ]
+        ]
+      }
+    ],
+    "roads": [
+      {
+        "type": "major",
+        "line": [
+          [
+            89.66,
+            25.563
+          ],
+          [
+            89.68,
+            25.566
+          ],
+          [
+            89.707,
+            25.567
+          ]
+        ]
+      },
+      {
+        "type": "minor",
+        "line": [
+          [
+            89.665,
+            25.542
+          ],
+          [
+            89.666,
+            25.566
+          ],
+          [
+            89.668,
+            25.587
+          ]
+        ]
+      },
+      {
+        "type": "minor",
+        "line": [
+          [
+            89.672,
+            25.566
+          ],
+          [
+            89.675,
+            25.588
+          ]
+        ]
+      }
+    ],
+    "embankments": [
+      {
+        "line": [
+          [
+            89.668,
+            25.541
+          ],
+          [
+            89.669,
+            25.565
+          ],
+          [
+            89.6685,
+            25.589
+          ]
+        ]
+      }
+    ],
+    "buildings": [
+      {
+        "polygon": [
+          [
+            [
+              89.6727,
+              25.546349
+            ],
+            [
+              89.6733,
+              25.546349
+            ],
+            [
+              89.6733,
+              25.546749
+            ],
+            [
+              89.6727,
+              25.546749
+            ],
+            [
+              89.6727,
+              25.546349
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              89.6736,
+              25.546349
+            ],
+            [
+              89.6742,
+              25.546349
+            ],
+            [
+              89.6742,
+              25.546749
+            ],
+            [
+              89.6736,
+              25.546749
+            ],
+            [
+              89.6736,
+              25.546349
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              89.678658,
+              25.55856
+            ],
+            [
+              89.679258,
+              25.55856
+            ],
+            [
+              89.679258,
+              25.55896
+            ],
+            [
+              89.678658,
+              25.55896
+            ],
+            [
+              89.678658,
+              25.55856
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              89.679558,
+              25.55856
+            ],
+            [
+              89.680158,
+              25.55856
+            ],
+            [
+              89.680158,
+              25.55896
+            ],
+            [
+              89.679558,
+              25.55896
+            ],
+            [
+              89.679558,
+              25.55856
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              89.684158,
+              25.570903
+            ],
+            [
+              89.684758,
+              25.570903
+            ],
+            [
+              89.684758,
+              25.571303
+            ],
+            [
+              89.684158,
+              25.571303
+            ],
+            [
+              89.684158,
+              25.570903
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              89.685058,
+              25.570903
+            ],
+            [
+              89.685658,
+              25.570903
+            ],
+            [
+              89.685658,
+              25.571303
+            ],
+            [
+              89.685058,
+              25.571303
+            ],
+            [
+              89.685058,
+              25.570903
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              89.6727,
+              25.583257
+            ],
+            [
+              89.6733,
+              25.583257
+            ],
+            [
+              89.6733,
+              25.583657
+            ],
+            [
+              89.6727,
+              25.583657
+            ],
+            [
+              89.6727,
+              25.583257
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              89.6736,
+              25.583257
+            ],
+            [
+              89.6742,
+              25.583257
+            ],
+            [
+              89.6742,
+              25.583657
+            ],
+            [
+              89.6736,
+              25.583657
+            ],
+            [
+              89.6736,
+              25.583257
+            ]
+          ]
+        ]
+      }
+    ],
+    "pois": [
+      {
+        "name": "Char Chilmari SCHOOL",
+        "type": "school",
+        "coordinates": [
+          89.6745,
+          25.545349
+        ]
+      },
+      {
+        "name": "Boalmari MOSQUE",
+        "type": "mosque",
+        "coordinates": [
+          89.680458,
+          25.55756
+        ]
+      },
+      {
+        "name": "Shakhahati MARKET",
+        "type": "market",
+        "coordinates": [
+          89.685958,
+          25.569903
+        ]
+      },
+      {
+        "name": "Narchhar HEALTH CENTER",
+        "type": "health_center",
+        "coordinates": [
+          89.6745,
+          25.582257
+        ]
+      }
+    ],
+    "upazila": [
+      [
+        [
+          89.658,
+          25.538
+        ],
+        [
+          89.712,
+          25.538
+        ],
+        [
+          89.712,
+          25.592
+        ],
+        [
+          89.658,
+          25.592
+        ],
+        [
+          89.658,
+          25.538
+        ]
+      ]
+    ],
+    "mouzas": [
+      {
+        "id": "mouza_chilmari_1",
+        "name": "Char Chilmari Mouza",
+        "jlNo": "JL-81",
+        "labelAnchor": [
+          89.673,
+          25.546549
+        ],
+        "areaDecimal": 115337,
+        "polygon": [
+          [
+            [
+              89.662,
+              25.54
+            ],
+            [
+              89.67289,
+              25.54
+            ],
+            [
+              89.68411,
+              25.54
+            ],
+            [
+              89.695,
+              25.54
+            ],
+            [
+              89.695,
+              25.545
+            ],
+            [
+              89.695,
+              25.5525
+            ],
+            [
+              89.68411,
+              25.552436
+            ],
+            [
+              89.67289,
+              25.553098
+            ],
+            [
+              89.662,
+              25.5525
+            ],
+            [
+              89.662,
+              25.54
+            ]
+          ]
+        ]
+      },
+      {
+        "id": "mouza_chilmari_2",
+        "name": "Boalmari Mouza",
+        "jlNo": "JL-85",
+        "labelAnchor": [
+          89.678958,
+          25.55876
+        ],
+        "areaDecimal": 110858,
+        "polygon": [
+          [
+            [
+              89.662,
+              25.5525
+            ],
+            [
+              89.67289,
+              25.553098
+            ],
+            [
+              89.68411,
+              25.552436
+            ],
+            [
+              89.695,
+              25.5525
+            ],
+            [
+              89.695,
+              25.56
+            ],
+            [
+              89.695,
+              25.565
+            ],
+            [
+              89.68411,
+              25.564517
+            ],
+            [
+              89.67289,
+              25.565085
+            ],
+            [
+              89.662,
+              25.565
+            ],
+            [
+              89.662,
+              25.5525
+            ]
+          ]
+        ]
+      },
+      {
+        "id": "mouza_chilmari_3",
+        "name": "Shakhahati Mouza",
+        "jlNo": "JL-89",
+        "labelAnchor": [
+          89.684458,
+          25.571103
+        ],
+        "areaDecimal": 113686.2,
+        "polygon": [
+          [
+            [
+              89.662,
+              25.565
+            ],
+            [
+              89.67289,
+              25.565085
+            ],
+            [
+              89.68411,
+              25.564517
+            ],
+            [
+              89.695,
+              25.565
+            ],
+            [
+              89.695,
+              25.57
+            ],
+            [
+              89.695,
+              25.5775
+            ],
+            [
+              89.68411,
+              25.577689
+            ],
+            [
+              89.67289,
+              25.576913
+            ],
+            [
+              89.662,
+              25.5775
+            ],
+            [
+              89.662,
+              25.565
+            ]
+          ]
+        ]
+      },
+      {
+        "id": "mouza_chilmari_4",
+        "name": "Narchhar Mouza",
+        "jlNo": "JL-93",
+        "labelAnchor": [
+          89.673,
+          25.583457
+        ],
+        "areaDecimal": 114886.7,
+        "polygon": [
+          [
+            [
+              89.662,
+              25.5775
+            ],
+            [
+              89.67289,
+              25.576913
+            ],
+            [
+              89.68411,
+              25.577689
+            ],
+            [
+              89.695,
+              25.5775
+            ],
+            [
+              89.695,
+              25.585
+            ],
+            [
+              89.695,
+              25.59
+            ],
+            [
+              89.68411,
+              25.59
+            ],
+            [
+              89.67289,
+              25.59
+            ],
+            [
+              89.662,
+              25.59
+            ],
+            [
+              89.662,
+              25.5775
+            ]
+          ]
+        ]
+      }
+    ],
+    "labels": [
+      {
+        "text": "Braided Channels",
+        "type": "river",
+        "bearing": 75,
+        "coordinates": [
+          89.707,
+          25.565
+        ]
+      }
+    ]
+  },
+  "mouzas": [
+    {
+      "id": "mouza_chilmari_1",
+      "name": "Char Chilmari Mouza",
+      "jlNo": "JL-81",
+      "areaDecimal": 115337,
+      "lossDecimal": 112.5,
+      "gainDecimal": 168,
+      "percent": 0.2,
+      "labelAnchor": [
+        89.673,
+        25.546549
+      ],
+      "affectedOwnersCount": 20,
+      "polygon": [
+        [
+          [
+            89.662,
+            25.54
+          ],
+          [
+            89.67289,
+            25.54
+          ],
+          [
+            89.68411,
+            25.54
+          ],
+          [
+            89.695,
+            25.54
+          ],
+          [
+            89.695,
+            25.545
+          ],
+          [
+            89.695,
+            25.5525
+          ],
+          [
+            89.68411,
+            25.552436
+          ],
+          [
+            89.67289,
+            25.553098
+          ],
+          [
+            89.662,
+            25.5525
+          ],
+          [
+            89.662,
+            25.54
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_chilmari_2",
+      "name": "Boalmari Mouza",
+      "jlNo": "JL-85",
+      "areaDecimal": 110858,
+      "lossDecimal": 33.1,
+      "gainDecimal": 74.9,
+      "percent": 0.1,
+      "labelAnchor": [
+        89.678958,
+        25.55876
+      ],
+      "affectedOwnersCount": 10,
+      "polygon": [
+        [
+          [
+            89.662,
+            25.5525
+          ],
+          [
+            89.67289,
+            25.553098
+          ],
+          [
+            89.68411,
+            25.552436
+          ],
+          [
+            89.695,
+            25.5525
+          ],
+          [
+            89.695,
+            25.56
+          ],
+          [
+            89.695,
+            25.565
+          ],
+          [
+            89.68411,
+            25.564517
+          ],
+          [
+            89.67289,
+            25.565085
+          ],
+          [
+            89.662,
+            25.565
+          ],
+          [
+            89.662,
+            25.5525
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_chilmari_3",
+      "name": "Shakhahati Mouza",
+      "jlNo": "JL-89",
+      "areaDecimal": 113686.2,
+      "lossDecimal": 26.6,
+      "gainDecimal": 70.7,
+      "percent": 0.1,
+      "labelAnchor": [
+        89.684458,
+        25.571103
+      ],
+      "affectedOwnersCount": 9,
+      "polygon": [
+        [
+          [
+            89.662,
+            25.565
+          ],
+          [
+            89.67289,
+            25.565085
+          ],
+          [
+            89.68411,
+            25.564517
+          ],
+          [
+            89.695,
+            25.565
+          ],
+          [
+            89.695,
+            25.57
+          ],
+          [
+            89.695,
+            25.5775
+          ],
+          [
+            89.68411,
+            25.577689
+          ],
+          [
+            89.67289,
+            25.576913
+          ],
+          [
+            89.662,
+            25.5775
+          ],
+          [
+            89.662,
+            25.565
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_chilmari_4",
+      "name": "Narchhar Mouza",
+      "jlNo": "JL-93",
+      "areaDecimal": 114886.7,
+      "lossDecimal": 20.4,
+      "gainDecimal": 72.9,
+      "percent": 0.1,
+      "labelAnchor": [
+        89.673,
+        25.583457
+      ],
+      "affectedOwnersCount": 19,
+      "polygon": [
+        [
+          [
+            89.662,
+            25.5775
+          ],
+          [
+            89.67289,
+            25.576913
+          ],
+          [
+            89.68411,
+            25.577689
+          ],
+          [
+            89.695,
+            25.5775
+          ],
+          [
+            89.695,
+            25.585
+          ],
+          [
+            89.695,
+            25.59
+          ],
+          [
+            89.68411,
+            25.59
+          ],
+          [
+            89.67289,
+            25.59
+          ],
+          [
+            89.662,
+            25.59
+          ],
+          [
+            89.662,
+            25.5775
+          ]
+        ]
+      ]
+    }
+  ],
+  "hazardLayers": {
+    "islands": [
+      [
+        [
+          [
+            89.692,
+            25.54
+          ],
+          [
+            89.71,
+            25.54
+          ],
+          [
+            89.71,
+            25.59
+          ],
+          [
+            89.692,
+            25.59
+          ],
+          [
+            89.692,
+            25.54
+          ]
+        ]
+      ]
+    ],
+    "accretionTips": [
+      [
+        [
+          [
+            89.692,
+            25.54
+          ],
+          [
+            89.71,
+            25.54
+          ],
+          [
+            89.71,
+            25.59
+          ],
+          [
+            89.692,
+            25.59
+          ],
+          [
+            89.692,
+            25.54
+          ]
+        ]
+      ]
+    ],
+    "erosionFlanks": [
+      [
+        [
+          [
+            89.692,
+            25.54
+          ],
+          [
+            89.71,
+            25.54
+          ],
+          [
+            89.71,
+            25.59
+          ],
+          [
+            89.692,
+            25.59
+          ],
+          [
+            89.692,
+            25.54
+          ]
+        ]
+      ]
+    ],
+    "unownedKhasLand": [
+      [
+        [
+          [
+            89.692,
+            25.54
+          ],
+          [
+            89.71,
+            25.54
+          ],
+          [
+            89.71,
+            25.59
+          ],
+          [
+            89.692,
+            25.59
+          ],
+          [
+            89.692,
+            25.54
+          ]
+        ]
+      ]
+    ]
+  },
+  "context": {
+    "type": "char",
+    "activeChannelWidthM": 2150,
+    "charAreaCurrentDec": 420.5,
+    "charAreaPreviousDec": 388.2,
+    "netChangeDec": 32.3,
+    "isProjected": false
+  },
+  "owners": [
+    {
+      "id": "impact_char_recorded_mouza_chilmari_1_1",
+      "name": "Fatema Begum",
+      "dagNo": "101",
+      "khatianNo": "RS-201",
+      "plotNo": "101",
+      "mouzaId": "mouza_chilmari_1",
+      "upazilaId": "chilmari",
+      "districtId": "kurigram",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 169200,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        89.673,
+        25.546549
+      ],
+      "colorIndex": 1
+    },
+    {
+      "id": "impact_char_recorded_mouza_chilmari_1_2",
+      "name": "Nurul Huda Mia",
+      "dagNo": "102",
+      "khatianNo": "RS-202",
+      "plotNo": "102",
+      "mouzaId": "mouza_chilmari_1",
+      "upazilaId": "chilmari",
+      "districtId": "kurigram",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 169200,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        89.673,
+        25.546549
+      ],
+      "colorIndex": 4
+    },
+    {
+      "id": "impact_char_recorded_mouza_chilmari_1_3",
+      "name": "Anwar Parvez",
+      "dagNo": "103",
+      "khatianNo": "RS-203",
+      "plotNo": "103",
+      "mouzaId": "mouza_chilmari_1",
+      "upazilaId": "chilmari",
+      "districtId": "kurigram",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 169200,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        89.673,
+        25.546549
+      ],
+      "colorIndex": 7
+    },
+    {
+      "id": "impact_char_recorded_mouza_chilmari_1_4",
+      "name": "Shahana Akter",
+      "dagNo": "104",
+      "khatianNo": "RS-204",
+      "plotNo": "104",
+      "mouzaId": "mouza_chilmari_1",
+      "upazilaId": "chilmari",
+      "districtId": "kurigram",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 169200,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        89.673,
+        25.546549
+      ],
+      "colorIndex": 10
+    },
+    {
+      "id": "impact_char_recorded_mouza_chilmari_1_5",
+      "name": "Abdul Matin",
+      "dagNo": "105",
+      "khatianNo": "RS-205",
+      "plotNo": "105",
+      "mouzaId": "mouza_chilmari_1",
+      "upazilaId": "chilmari",
+      "districtId": "kurigram",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 169200,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        89.673,
+        25.546549
+      ],
+      "colorIndex": 1
+    },
+    {
+      "id": "impact_char_recorded_mouza_chilmari_1_6",
+      "name": "Zubair Ahmed",
+      "dagNo": "106",
+      "khatianNo": "RS-206",
+      "plotNo": "106",
+      "mouzaId": "mouza_chilmari_1",
+      "upazilaId": "chilmari",
+      "districtId": "kurigram",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 169200,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        89.673,
+        25.546549
+      ],
+      "colorIndex": 4
+    },
+    {
+      "id": "impact_char_recorded_mouza_chilmari_1_7",
+      "name": "Sultana Razia",
+      "dagNo": "107",
+      "khatianNo": "RS-207",
+      "plotNo": "107",
+      "mouzaId": "mouza_chilmari_1",
+      "upazilaId": "chilmari",
+      "districtId": "kurigram",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 169200,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        89.673,
+        25.546549
+      ],
+      "colorIndex": 7
+    },
+    {
+      "id": "impact_char_recorded_mouza_chilmari_1_8",
+      "name": "Sirajul Islam",
+      "dagNo": "108",
+      "khatianNo": "RS-208",
+      "plotNo": "108",
+      "mouzaId": "mouza_chilmari_1",
+      "upazilaId": "chilmari",
+      "districtId": "kurigram",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 13.8,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 165600,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        89.673,
+        25.546549
+      ],
+      "colorIndex": 10
+    },
+    {
+      "id": "impact_char_recorded_mouza_chilmari_2_1",
+      "name": "Kamal Uddin Ahmed",
+      "dagNo": "109",
+      "khatianNo": "RS-209",
+      "plotNo": "109",
+      "mouzaId": "mouza_chilmari_2",
+      "upazilaId": "chilmari",
+      "districtId": "kurigram",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 11,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 132000,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        89.678958,
+        25.55876
+      ],
+      "colorIndex": 9
+    },
+    {
+      "id": "impact_char_recorded_mouza_chilmari_2_2",
+      "name": "Taslima Nasrin",
+      "dagNo": "110",
+      "khatianNo": "RS-210",
+      "plotNo": "110",
+      "mouzaId": "mouza_chilmari_2",
+      "upazilaId": "chilmari",
+      "districtId": "kurigram",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 11,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 132000,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        89.678958,
+        25.55876
+      ],
+      "colorIndex": 0
+    },
+    {
+      "id": "impact_char_recorded_mouza_chilmari_2_3",
+      "name": "Faridul Islam",
+      "dagNo": "111",
+      "khatianNo": "RS-211",
+      "plotNo": "111",
+      "mouzaId": "mouza_chilmari_2",
+      "upazilaId": "chilmari",
+      "districtId": "kurigram",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 11.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 133200,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        89.678958,
+        25.55876
+      ],
+      "colorIndex": 3
+    },
+    {
+      "id": "impact_char_recorded_mouza_chilmari_3_1",
+      "name": "Taslima Nasrin",
+      "dagNo": "112",
+      "khatianNo": "RS-212",
+      "plotNo": "112",
+      "mouzaId": "mouza_chilmari_3",
+      "upazilaId": "chilmari",
+      "districtId": "kurigram",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 13.3,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 159600,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        89.684458,
+        25.571103
+      ],
+      "colorIndex": 0
+    },
+    {
+      "id": "impact_char_recorded_mouza_chilmari_3_2",
+      "name": "Faridul Islam",
+      "dagNo": "113",
+      "khatianNo": "RS-213",
+      "plotNo": "113",
+      "mouzaId": "mouza_chilmari_3",
+      "upazilaId": "chilmari",
+      "districtId": "kurigram",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 13.3,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 159600,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        89.684458,
+        25.571103
+      ],
+      "colorIndex": 3
+    },
+    {
+      "id": "impact_char_recorded_mouza_chilmari_4_1",
+      "name": "Laila Arjumand",
+      "dagNo": "114",
+      "khatianNo": "RS-214",
+      "plotNo": "114",
+      "mouzaId": "mouza_chilmari_4",
+      "upazilaId": "chilmari",
+      "districtId": "kurigram",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 10.2,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 122400,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        89.673,
+        25.583457
+      ],
+      "colorIndex": 2
+    },
+    {
+      "id": "impact_char_recorded_mouza_chilmari_4_2",
+      "name": "Hosne Ara Begum",
+      "dagNo": "115",
+      "khatianNo": "RS-215",
+      "plotNo": "115",
+      "mouzaId": "mouza_chilmari_4",
+      "upazilaId": "chilmari",
+      "districtId": "kurigram",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 10.2,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 122400,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        89.673,
+        25.583457
+      ],
+      "colorIndex": 5
+    }
+  ],
+  "mouzasRecorded": [
+    {
+      "id": "mouza_chilmari_1",
+      "name": "Char Chilmari Mouza",
+      "jlNo": "JL-81",
+      "areaDecimal": 115337,
+      "lossDecimal": 112.5,
+      "gainDecimal": 168,
+      "percent": 0.2,
+      "labelAnchor": [
+        89.673,
+        25.546549
+      ],
+      "affectedOwnersCount": 20,
+      "polygon": [
+        [
+          [
+            89.662,
+            25.54
+          ],
+          [
+            89.67289,
+            25.54
+          ],
+          [
+            89.68411,
+            25.54
+          ],
+          [
+            89.695,
+            25.54
+          ],
+          [
+            89.695,
+            25.545
+          ],
+          [
+            89.695,
+            25.5525
+          ],
+          [
+            89.68411,
+            25.552436
+          ],
+          [
+            89.67289,
+            25.553098
+          ],
+          [
+            89.662,
+            25.5525
+          ],
+          [
+            89.662,
+            25.54
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_chilmari_2",
+      "name": "Boalmari Mouza",
+      "jlNo": "JL-85",
+      "areaDecimal": 110858,
+      "lossDecimal": 33.1,
+      "gainDecimal": 74.9,
+      "percent": 0.1,
+      "labelAnchor": [
+        89.678958,
+        25.55876
+      ],
+      "affectedOwnersCount": 10,
+      "polygon": [
+        [
+          [
+            89.662,
+            25.5525
+          ],
+          [
+            89.67289,
+            25.553098
+          ],
+          [
+            89.68411,
+            25.552436
+          ],
+          [
+            89.695,
+            25.5525
+          ],
+          [
+            89.695,
+            25.56
+          ],
+          [
+            89.695,
+            25.565
+          ],
+          [
+            89.68411,
+            25.564517
+          ],
+          [
+            89.67289,
+            25.565085
+          ],
+          [
+            89.662,
+            25.565
+          ],
+          [
+            89.662,
+            25.5525
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_chilmari_3",
+      "name": "Shakhahati Mouza",
+      "jlNo": "JL-89",
+      "areaDecimal": 113686.2,
+      "lossDecimal": 26.6,
+      "gainDecimal": 70.7,
+      "percent": 0.1,
+      "labelAnchor": [
+        89.684458,
+        25.571103
+      ],
+      "affectedOwnersCount": 9,
+      "polygon": [
+        [
+          [
+            89.662,
+            25.565
+          ],
+          [
+            89.67289,
+            25.565085
+          ],
+          [
+            89.68411,
+            25.564517
+          ],
+          [
+            89.695,
+            25.565
+          ],
+          [
+            89.695,
+            25.57
+          ],
+          [
+            89.695,
+            25.5775
+          ],
+          [
+            89.68411,
+            25.577689
+          ],
+          [
+            89.67289,
+            25.576913
+          ],
+          [
+            89.662,
+            25.5775
+          ],
+          [
+            89.662,
+            25.565
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_chilmari_4",
+      "name": "Narchhar Mouza",
+      "jlNo": "JL-93",
+      "areaDecimal": 114886.7,
+      "lossDecimal": 20.4,
+      "gainDecimal": 72.9,
+      "percent": 0.1,
+      "labelAnchor": [
+        89.673,
+        25.583457
+      ],
+      "affectedOwnersCount": 19,
+      "polygon": [
+        [
+          [
+            89.662,
+            25.5775
+          ],
+          [
+            89.67289,
+            25.576913
+          ],
+          [
+            89.68411,
+            25.577689
+          ],
+          [
+            89.695,
+            25.5775
+          ],
+          [
+            89.695,
+            25.585
+          ],
+          [
+            89.695,
+            25.59
+          ],
+          [
+            89.68411,
+            25.59
+          ],
+          [
+            89.67289,
+            25.59
+          ],
+          [
+            89.662,
+            25.59
+          ],
+          [
+            89.662,
+            25.5775
+          ]
+        ]
+      ]
+    }
+  ],
+  "mouzasForecast": [
+    {
+      "id": "mouza_chilmari_1",
+      "name": "Char Chilmari Mouza",
+      "jlNo": "JL-81",
+      "areaDecimal": 115337,
+      "lossDecimal": 96,
+      "gainDecimal": 193,
+      "percent": 0.2,
+      "labelAnchor": [
+        89.673,
+        25.546549
+      ],
+      "affectedOwnersCount": 16,
+      "polygon": [
+        [
+          [
+            89.662,
+            25.54
+          ],
+          [
+            89.67289,
+            25.54
+          ],
+          [
+            89.68411,
+            25.54
+          ],
+          [
+            89.695,
+            25.54
+          ],
+          [
+            89.695,
+            25.545
+          ],
+          [
+            89.695,
+            25.5525
+          ],
+          [
+            89.68411,
+            25.552436
+          ],
+          [
+            89.67289,
+            25.553098
+          ],
+          [
+            89.662,
+            25.5525
+          ],
+          [
+            89.662,
+            25.54
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_chilmari_2",
+      "name": "Boalmari Mouza",
+      "jlNo": "JL-85",
+      "areaDecimal": 110858,
+      "lossDecimal": 28,
+      "gainDecimal": 86,
+      "percent": 0.1,
+      "labelAnchor": [
+        89.678958,
+        25.55876
+      ],
+      "affectedOwnersCount": 12,
+      "polygon": [
+        [
+          [
+            89.662,
+            25.5525
+          ],
+          [
+            89.67289,
+            25.553098
+          ],
+          [
+            89.68411,
+            25.552436
+          ],
+          [
+            89.695,
+            25.5525
+          ],
+          [
+            89.695,
+            25.56
+          ],
+          [
+            89.695,
+            25.565
+          ],
+          [
+            89.68411,
+            25.564517
+          ],
+          [
+            89.67289,
+            25.565085
+          ],
+          [
+            89.662,
+            25.565
+          ],
+          [
+            89.662,
+            25.5525
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_chilmari_3",
+      "name": "Shakhahati Mouza",
+      "jlNo": "JL-89",
+      "areaDecimal": 113686.2,
+      "lossDecimal": 23,
+      "gainDecimal": 81,
+      "percent": 0.1,
+      "labelAnchor": [
+        89.684458,
+        25.571103
+      ],
+      "affectedOwnersCount": 20,
+      "polygon": [
+        [
+          [
+            89.662,
+            25.565
+          ],
+          [
+            89.67289,
+            25.565085
+          ],
+          [
+            89.68411,
+            25.564517
+          ],
+          [
+            89.695,
+            25.565
+          ],
+          [
+            89.695,
+            25.57
+          ],
+          [
+            89.695,
+            25.5775
+          ],
+          [
+            89.68411,
+            25.577689
+          ],
+          [
+            89.67289,
+            25.576913
+          ],
+          [
+            89.662,
+            25.5775
+          ],
+          [
+            89.662,
+            25.565
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_chilmari_4",
+      "name": "Narchhar Mouza",
+      "jlNo": "JL-93",
+      "areaDecimal": 114886.7,
+      "lossDecimal": 17,
+      "gainDecimal": 84,
+      "percent": 0.1,
+      "labelAnchor": [
+        89.673,
+        25.583457
+      ],
+      "affectedOwnersCount": 8,
+      "polygon": [
+        [
+          [
+            89.662,
+            25.5775
+          ],
+          [
+            89.67289,
+            25.576913
+          ],
+          [
+            89.68411,
+            25.577689
+          ],
+          [
+            89.695,
+            25.5775
+          ],
+          [
+            89.695,
+            25.585
+          ],
+          [
+            89.695,
+            25.59
+          ],
+          [
+            89.68411,
+            25.59
+          ],
+          [
+            89.67289,
+            25.59
+          ],
+          [
+            89.662,
+            25.59
+          ],
+          [
+            89.662,
+            25.5775
+          ]
+        ]
+      ]
+    }
+  ],
+  "contextRecorded": {
+    "type": "char",
+    "activeChannelWidthM": 2150,
+    "charAreaCurrentDec": 420.5,
+    "charAreaPreviousDec": 388.2,
+    "netChangeDec": 32.3,
+    "isProjected": false
+  },
+  "contextForecast": {
+    "type": "char",
+    "activeChannelWidthM": 2280,
+    "charAreaCurrentDec": 465,
+    "charAreaPreviousDec": 420.5,
+    "netChangeDec": 44.5,
+    "isProjected": true
+  },
+  "ownersForecast": [
+    {
+      "id": "impact_char_forecast_mouza_chilmari_1_1",
+      "name": "Fatema Begum",
+      "dagNo": "101",
+      "khatianNo": "RS-201",
+      "plotNo": "101",
+      "mouzaId": "mouza_chilmari_1",
+      "upazilaId": "chilmari",
+      "districtId": "kurigram",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12,
+      "gainDecimal": 0,
+      "coordinates": [
+        89.673,
+        25.546549
+      ],
+      "colorIndex": 1
+    },
+    {
+      "id": "impact_char_forecast_mouza_chilmari_1_2",
+      "name": "Nurul Huda Mia",
+      "dagNo": "102",
+      "khatianNo": "RS-202",
+      "plotNo": "102",
+      "mouzaId": "mouza_chilmari_1",
+      "upazilaId": "chilmari",
+      "districtId": "kurigram",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12,
+      "gainDecimal": 0,
+      "coordinates": [
+        89.673,
+        25.546549
+      ],
+      "colorIndex": 4
+    },
+    {
+      "id": "impact_char_forecast_mouza_chilmari_1_3",
+      "name": "Anwar Parvez",
+      "dagNo": "103",
+      "khatianNo": "RS-203",
+      "plotNo": "103",
+      "mouzaId": "mouza_chilmari_1",
+      "upazilaId": "chilmari",
+      "districtId": "kurigram",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12,
+      "gainDecimal": 0,
+      "coordinates": [
+        89.673,
+        25.546549
+      ],
+      "colorIndex": 7
+    },
+    {
+      "id": "impact_char_forecast_mouza_chilmari_1_4",
+      "name": "Shahana Akter",
+      "dagNo": "104",
+      "khatianNo": "RS-204",
+      "plotNo": "104",
+      "mouzaId": "mouza_chilmari_1",
+      "upazilaId": "chilmari",
+      "districtId": "kurigram",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12,
+      "gainDecimal": 0,
+      "coordinates": [
+        89.673,
+        25.546549
+      ],
+      "colorIndex": 10
+    },
+    {
+      "id": "impact_char_forecast_mouza_chilmari_1_5",
+      "name": "Abdul Matin",
+      "dagNo": "105",
+      "khatianNo": "RS-205",
+      "plotNo": "105",
+      "mouzaId": "mouza_chilmari_1",
+      "upazilaId": "chilmari",
+      "districtId": "kurigram",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12,
+      "gainDecimal": 0,
+      "coordinates": [
+        89.673,
+        25.546549
+      ],
+      "colorIndex": 1
+    },
+    {
+      "id": "impact_char_forecast_mouza_chilmari_1_6",
+      "name": "Zubair Ahmed",
+      "dagNo": "106",
+      "khatianNo": "RS-206",
+      "plotNo": "106",
+      "mouzaId": "mouza_chilmari_1",
+      "upazilaId": "chilmari",
+      "districtId": "kurigram",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12,
+      "gainDecimal": 0,
+      "coordinates": [
+        89.673,
+        25.546549
+      ],
+      "colorIndex": 4
+    },
+    {
+      "id": "impact_char_forecast_mouza_chilmari_1_7",
+      "name": "Sultana Razia",
+      "dagNo": "107",
+      "khatianNo": "RS-207",
+      "plotNo": "107",
+      "mouzaId": "mouza_chilmari_1",
+      "upazilaId": "chilmari",
+      "districtId": "kurigram",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12,
+      "gainDecimal": 0,
+      "coordinates": [
+        89.673,
+        25.546549
+      ],
+      "colorIndex": 7
+    },
+    {
+      "id": "impact_char_forecast_mouza_chilmari_1_8",
+      "name": "Sirajul Islam",
+      "dagNo": "108",
+      "khatianNo": "RS-208",
+      "plotNo": "108",
+      "mouzaId": "mouza_chilmari_1",
+      "upazilaId": "chilmari",
+      "districtId": "kurigram",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12,
+      "gainDecimal": 0,
+      "coordinates": [
+        89.673,
+        25.546549
+      ],
+      "colorIndex": 10
+    },
+    {
+      "id": "impact_char_forecast_mouza_chilmari_2_1",
+      "name": "Kamal Uddin Ahmed",
+      "dagNo": "109",
+      "khatianNo": "RS-209",
+      "plotNo": "109",
+      "mouzaId": "mouza_chilmari_2",
+      "upazilaId": "chilmari",
+      "districtId": "kurigram",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14,
+      "gainDecimal": 0,
+      "coordinates": [
+        89.678958,
+        25.55876
+      ],
+      "colorIndex": 9
+    },
+    {
+      "id": "impact_char_forecast_mouza_chilmari_2_2",
+      "name": "Taslima Nasrin",
+      "dagNo": "110",
+      "khatianNo": "RS-210",
+      "plotNo": "110",
+      "mouzaId": "mouza_chilmari_2",
+      "upazilaId": "chilmari",
+      "districtId": "kurigram",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14,
+      "gainDecimal": 0,
+      "coordinates": [
+        89.678958,
+        25.55876
+      ],
+      "colorIndex": 0
+    },
+    {
+      "id": "impact_char_forecast_mouza_chilmari_3_1",
+      "name": "Mizanur Rahman",
+      "dagNo": "111",
+      "khatianNo": "RS-211",
+      "plotNo": "111",
+      "mouzaId": "mouza_chilmari_3",
+      "upazilaId": "chilmari",
+      "districtId": "kurigram",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 11.5,
+      "gainDecimal": 0,
+      "coordinates": [
+        89.684458,
+        25.571103
+      ],
+      "colorIndex": 11
+    },
+    {
+      "id": "impact_char_forecast_mouza_chilmari_3_2",
+      "name": "Laila Arjumand",
+      "dagNo": "112",
+      "khatianNo": "RS-212",
+      "plotNo": "112",
+      "mouzaId": "mouza_chilmari_3",
+      "upazilaId": "chilmari",
+      "districtId": "kurigram",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 11.5,
+      "gainDecimal": 0,
+      "coordinates": [
+        89.684458,
+        25.571103
+      ],
+      "colorIndex": 2
+    },
+    {
+      "id": "impact_char_forecast_mouza_chilmari_4_1",
+      "name": "Abdul Matin",
+      "dagNo": "113",
+      "khatianNo": "RS-213",
+      "plotNo": "113",
+      "mouzaId": "mouza_chilmari_4",
+      "upazilaId": "chilmari",
+      "districtId": "kurigram",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 8.5,
+      "gainDecimal": 0,
+      "coordinates": [
+        89.673,
+        25.583457
+      ],
+      "colorIndex": 1
+    },
+    {
+      "id": "impact_char_forecast_mouza_chilmari_4_2",
+      "name": "Zubair Ahmed",
+      "dagNo": "114",
+      "khatianNo": "RS-214",
+      "plotNo": "114",
+      "mouzaId": "mouza_chilmari_4",
+      "upazilaId": "chilmari",
+      "districtId": "kurigram",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 8.5,
+      "gainDecimal": 0,
+      "coordinates": [
+        89.673,
+        25.583457
+      ],
+      "colorIndex": 4
+    }
+  ]
+}

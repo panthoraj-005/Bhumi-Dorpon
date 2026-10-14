@@ -1,0 +1,1188 @@
+{
+  "districts": [
+    {
+      "id": "sirajganj",
+      "name": "Sirajganj",
+      "division": "Rajshahi",
+      "isCoastal": false,
+      "isHilly": false,
+      "hasChars": true,
+      "primaryHazards": [
+        "river_erosion",
+        "char",
+        "flood"
+      ]
+    },
+    {
+      "id": "kurigram",
+      "name": "Kurigram",
+      "division": "Rangpur",
+      "isCoastal": false,
+      "isHilly": false,
+      "hasChars": true,
+      "primaryHazards": [
+        "river_erosion",
+        "char",
+        "flood"
+      ]
+    },
+    {
+      "id": "shariatpur",
+      "name": "Shariatpur",
+      "division": "Dhaka",
+      "isCoastal": false,
+      "isHilly": false,
+      "hasChars": true,
+      "primaryHazards": [
+        "river_erosion",
+        "char"
+      ]
+    },
+    {
+      "id": "chandpur",
+      "name": "Chandpur",
+      "division": "Chattogram",
+      "isCoastal": false,
+      "isHilly": false,
+      "hasChars": true,
+      "primaryHazards": [
+        "river_erosion",
+        "char"
+      ]
+    },
+    {
+      "id": "bhola",
+      "name": "Bhola",
+      "division": "Barishal",
+      "isCoastal": true,
+      "isHilly": false,
+      "hasChars": true,
+      "primaryHazards": [
+        "coastal",
+        "char",
+        "river_erosion"
+      ]
+    },
+    {
+      "id": "sunamganj",
+      "name": "Sunamganj",
+      "division": "Sylhet",
+      "isCoastal": false,
+      "isHilly": false,
+      "hasChars": false,
+      "primaryHazards": [
+        "flood"
+      ]
+    },
+    {
+      "id": "sylhet",
+      "name": "Sylhet",
+      "division": "Sylhet",
+      "isCoastal": false,
+      "isHilly": true,
+      "hasChars": false,
+      "primaryHazards": [
+        "flood",
+        "landslide"
+      ]
+    },
+    {
+      "id": "rangamati",
+      "name": "Rangamati",
+      "division": "Chattogram",
+      "isCoastal": false,
+      "isHilly": true,
+      "hasChars": false,
+      "primaryHazards": [
+        "landslide"
+      ]
+    },
+    {
+      "id": "bandarban",
+      "name": "Bandarban",
+      "division": "Chattogram",
+      "isCoastal": false,
+      "isHilly": true,
+      "hasChars": false,
+      "primaryHazards": [
+        "landslide"
+      ]
+    },
+    {
+      "id": "coxs_bazar",
+      "name": "Cox's Bazar",
+      "division": "Chattogram",
+      "isCoastal": true,
+      "isHilly": true,
+      "hasChars": false,
+      "primaryHazards": [
+        "coastal",
+        "landslide"
+      ]
+    },
+    {
+      "id": "noakhali",
+      "name": "Noakhali",
+      "division": "Chattogram",
+      "isCoastal": true,
+      "isHilly": false,
+      "hasChars": true,
+      "primaryHazards": [
+        "coastal",
+        "char"
+      ]
+    },
+    {
+      "id": "khulna",
+      "name": "Khulna",
+      "division": "Khulna",
+      "isCoastal": true,
+      "isHilly": false,
+      "hasChars": false,
+      "primaryHazards": [
+        "coastal"
+      ]
+    }
+  ],
+  "upazilas": [
+    {
+      "id": "kazipur",
+      "districtId": "sirajganj",
+      "name": "Kazipur",
+      "centerCoordinates": [
+        89.65,
+        24.57
+      ],
+      "rivers": [
+        "jamuna",
+        "karatoa"
+      ],
+      "hasChars": true,
+      "hasHills": false
+    },
+    {
+      "id": "sirajganj_sadar",
+      "districtId": "sirajganj",
+      "name": "Sirajganj Sadar",
+      "centerCoordinates": [
+        89.7,
+        24.45
+      ],
+      "rivers": [
+        "jamuna",
+        "hurasagar"
+      ],
+      "hasChars": true,
+      "hasHills": false
+    },
+    {
+      "id": "belkuchi",
+      "districtId": "sirajganj",
+      "name": "Belkuchi",
+      "centerCoordinates": [
+        89.7,
+        24.29
+      ],
+      "rivers": [
+        "jamuna",
+        "phuljhor"
+      ],
+      "hasChars": true,
+      "hasHills": false
+    },
+    {
+      "id": "chilmari",
+      "districtId": "kurigram",
+      "name": "Chilmari",
+      "centerCoordinates": [
+        89.67,
+        25.56
+      ],
+      "rivers": [
+        "brahmaputra",
+        "teesta"
+      ],
+      "hasChars": true,
+      "hasHills": false
+    },
+    {
+      "id": "rowmari",
+      "districtId": "kurigram",
+      "name": "Rowmari",
+      "centerCoordinates": [
+        89.85,
+        25.56
+      ],
+      "rivers": [
+        "brahmaputra",
+        "jinjiram"
+      ],
+      "hasChars": true,
+      "hasHills": false
+    },
+    {
+      "id": "ulipur",
+      "districtId": "kurigram",
+      "name": "Ulipur",
+      "centerCoordinates": [
+        89.62,
+        25.66
+      ],
+      "rivers": [
+        "brahmaputra",
+        "dharla"
+      ],
+      "hasChars": true,
+      "hasHills": false
+    },
+    {
+      "id": "naria",
+      "districtId": "shariatpur",
+      "name": "Naria",
+      "centerCoordinates": [
+        90.39,
+        23.3
+      ],
+      "rivers": [
+        "padma",
+        "kirtinasha"
+      ],
+      "hasChars": true,
+      "hasHills": false
+    },
+    {
+      "id": "zajira",
+      "districtId": "shariatpur",
+      "name": "Zajira",
+      "centerCoordinates": [
+        90.22,
+        23.35
+      ],
+      "rivers": [
+        "padma",
+        "arial_khan"
+      ],
+      "hasChars": true,
+      "hasHills": false
+    },
+    {
+      "id": "bhedarganj",
+      "districtId": "shariatpur",
+      "name": "Bhedarganj",
+      "centerCoordinates": [
+        90.5,
+        23.2
+      ],
+      "rivers": [
+        "padma",
+        "meghna"
+      ],
+      "hasChars": true,
+      "hasHills": false
+    },
+    {
+      "id": "haimchar",
+      "districtId": "chandpur",
+      "name": "Haimchar",
+      "centerCoordinates": [
+        90.64,
+        23.07
+      ],
+      "rivers": [
+        "meghna",
+        "dakatia"
+      ],
+      "hasChars": true,
+      "hasHills": false
+    },
+    {
+      "id": "chandpur_sadar",
+      "districtId": "chandpur",
+      "name": "Chandpur Sadar",
+      "centerCoordinates": [
+        90.65,
+        23.23
+      ],
+      "rivers": [
+        "meghna",
+        "dakatia"
+      ],
+      "hasChars": true,
+      "hasHills": false
+    },
+    {
+      "id": "matlab_dakshin",
+      "districtId": "chandpur",
+      "name": "Matlab Dakshin",
+      "centerCoordinates": [
+        90.71,
+        23.35
+      ],
+      "rivers": [
+        "meghna",
+        "dhonagoda"
+      ],
+      "hasChars": true,
+      "hasHills": false
+    },
+    {
+      "id": "char_fasson",
+      "districtId": "bhola",
+      "name": "Char Fasson",
+      "centerCoordinates": [
+        90.71,
+        22.19
+      ],
+      "rivers": [
+        "meghna",
+        "tentulia"
+      ],
+      "hasChars": true,
+      "hasHills": false
+    },
+    {
+      "id": "bhola_sadar",
+      "districtId": "bhola",
+      "name": "Bhola Sadar",
+      "centerCoordinates": [
+        90.65,
+        22.69
+      ],
+      "rivers": [
+        "meghna",
+        "tentulia"
+      ],
+      "hasChars": true,
+      "hasHills": false
+    },
+    {
+      "id": "monpura",
+      "districtId": "bhola",
+      "name": "Monpura",
+      "centerCoordinates": [
+        90.97,
+        22.3
+      ],
+      "rivers": [
+        "meghna",
+        "tentulia"
+      ],
+      "hasChars": true,
+      "hasHills": false
+    },
+    {
+      "id": "sunamganj_sadar",
+      "districtId": "sunamganj",
+      "name": "Sunamganj Sadar",
+      "centerCoordinates": [
+        91.4,
+        25.07
+      ],
+      "rivers": [
+        "surma",
+        "dhamalia"
+      ],
+      "hasChars": false,
+      "hasHills": false
+    },
+    {
+      "id": "derai",
+      "districtId": "sunamganj",
+      "name": "Derai",
+      "centerCoordinates": [
+        91.35,
+        24.78
+      ],
+      "rivers": [
+        "surma",
+        "piyain"
+      ],
+      "hasChars": false,
+      "hasHills": false
+    },
+    {
+      "id": "tahirpur",
+      "districtId": "sunamganj",
+      "name": "Tahirpur",
+      "centerCoordinates": [
+        91.18,
+        25.1
+      ],
+      "rivers": [
+        "jadukata",
+        "baulai"
+      ],
+      "hasChars": false,
+      "hasHills": false
+    },
+    {
+      "id": "jamalganj",
+      "districtId": "sunamganj",
+      "name": "Jamalganj",
+      "centerCoordinates": [
+        91.23,
+        24.97
+      ],
+      "rivers": [
+        "surma",
+        "baulai"
+      ],
+      "hasChars": false,
+      "hasHills": false
+    },
+    {
+      "id": "gowainghat",
+      "districtId": "sylhet",
+      "name": "Gowainghat",
+      "centerCoordinates": [
+        92,
+        25.13
+      ],
+      "rivers": [
+        "sari_goyain",
+        "piyain"
+      ],
+      "hasChars": false,
+      "hasHills": true
+    },
+    {
+      "id": "companiganj",
+      "districtId": "sylhet",
+      "name": "Companiganj",
+      "centerCoordinates": [
+        91.75,
+        25.08
+      ],
+      "rivers": [
+        "dholai",
+        "piyain"
+      ],
+      "hasChars": false,
+      "hasHills": true
+    },
+    {
+      "id": "beanibazar",
+      "districtId": "sylhet",
+      "name": "Beanibazar",
+      "centerCoordinates": [
+        92.16,
+        24.83
+      ],
+      "rivers": [
+        "kushiyara",
+        "sonai"
+      ],
+      "hasChars": false,
+      "hasHills": false
+    },
+    {
+      "id": "kawkhali",
+      "districtId": "rangamati",
+      "name": "Kawkhali",
+      "centerCoordinates": [
+        92.03,
+        22.56
+      ],
+      "rivers": [
+        "ichamati",
+        "karnafuli"
+      ],
+      "hasChars": false,
+      "hasHills": true
+    },
+    {
+      "id": "rangamati_sadar",
+      "districtId": "rangamati",
+      "name": "Rangamati Sadar",
+      "centerCoordinates": [
+        92.18,
+        22.65
+      ],
+      "rivers": [
+        "karnafuli",
+        "chengi"
+      ],
+      "hasChars": false,
+      "hasHills": true
+    },
+    {
+      "id": "baghaichhari",
+      "districtId": "rangamati",
+      "name": "Baghaichhari",
+      "centerCoordinates": [
+        92.2,
+        23.16
+      ],
+      "rivers": [
+        "kachalong",
+        "maini"
+      ],
+      "hasChars": false,
+      "hasHills": true
+    },
+    {
+      "id": "bandarban_sadar",
+      "districtId": "bandarban",
+      "name": "Bandarban Sadar",
+      "centerCoordinates": [
+        92.22,
+        22.2
+      ],
+      "rivers": [
+        "sangu",
+        "bakkhali"
+      ],
+      "hasChars": false,
+      "hasHills": true
+    },
+    {
+      "id": "lama",
+      "districtId": "bandarban",
+      "name": "Lama",
+      "centerCoordinates": [
+        92.2,
+        21.78
+      ],
+      "rivers": [
+        "matamuhuri",
+        "sangu"
+      ],
+      "hasChars": false,
+      "hasHills": true
+    },
+    {
+      "id": "rowangchhari",
+      "districtId": "bandarban",
+      "name": "Rowangchhari",
+      "centerCoordinates": [
+        92.34,
+        22.17
+      ],
+      "rivers": [
+        "sangu",
+        "taraisa"
+      ],
+      "hasChars": false,
+      "hasHills": true
+    },
+    {
+      "id": "coxs_bazar_sadar",
+      "districtId": "coxs_bazar",
+      "name": "Cox's Bazar Sadar",
+      "centerCoordinates": [
+        91.98,
+        21.43
+      ],
+      "rivers": [
+        "bakkhali"
+      ],
+      "hasChars": false,
+      "hasHills": true
+    },
+    {
+      "id": "teknaf",
+      "districtId": "coxs_bazar",
+      "name": "Teknaf",
+      "centerCoordinates": [
+        92.3,
+        20.87
+      ],
+      "rivers": [
+        "naf"
+      ],
+      "hasChars": false,
+      "hasHills": true
+    },
+    {
+      "id": "ukhia",
+      "districtId": "coxs_bazar",
+      "name": "Ukhia",
+      "centerCoordinates": [
+        92.14,
+        21.24
+      ],
+      "rivers": [
+        "naf",
+        "reju"
+      ],
+      "hasChars": false,
+      "hasHills": true
+    },
+    {
+      "id": "maheshkhali",
+      "districtId": "coxs_bazar",
+      "name": "Maheshkhali",
+      "centerCoordinates": [
+        91.95,
+        21.52
+      ],
+      "rivers": [
+        "kohelia",
+        "maheshkhali_channel"
+      ],
+      "hasChars": false,
+      "hasHills": true
+    },
+    {
+      "id": "hatiya",
+      "districtId": "noakhali",
+      "name": "Hatiya",
+      "centerCoordinates": [
+        91.1,
+        22.37
+      ],
+      "rivers": [
+        "meghna_channel",
+        "shahbazpur"
+      ],
+      "hasChars": true,
+      "hasHills": false
+    },
+    {
+      "id": "subarnachar",
+      "districtId": "noakhali",
+      "name": "Subarnachar",
+      "centerCoordinates": [
+        91.13,
+        22.68
+      ],
+      "rivers": [
+        "little_feni",
+        "meghna"
+      ],
+      "hasChars": true,
+      "hasHills": false
+    },
+    {
+      "id": "koyra",
+      "districtId": "khulna",
+      "name": "Koyra",
+      "centerCoordinates": [
+        89.3,
+        22.34
+      ],
+      "rivers": [
+        "shibsa",
+        "kobadak"
+      ],
+      "hasChars": false,
+      "hasHills": false
+    },
+    {
+      "id": "dacope",
+      "districtId": "khulna",
+      "name": "Dacope",
+      "centerCoordinates": [
+        89.51,
+        22.57
+      ],
+      "rivers": [
+        "pasur",
+        "shibsa"
+      ],
+      "hasChars": false,
+      "hasHills": false
+    }
+  ],
+  "rivers": [
+    {
+      "id": "jamuna",
+      "name": "Jamuna River",
+      "upazilaIds": [
+        "kazipur",
+        "sirajganj_sadar",
+        "belkuchi"
+      ],
+      "erosionTendency": "Severe braided bank retreat",
+      "averageLossRateDecPerYear": 98.4
+    },
+    {
+      "id": "brahmaputra",
+      "name": "Brahmaputra River",
+      "upazilaIds": [
+        "chilmari",
+        "rowmari",
+        "ulipur"
+      ],
+      "erosionTendency": "Intense monsoonal bank scour",
+      "averageLossRateDecPerYear": 86.2
+    },
+    {
+      "id": "padma",
+      "name": "Padma River",
+      "upazilaIds": [
+        "naria",
+        "zajira",
+        "bhedarganj"
+      ],
+      "erosionTendency": "Active meander bend migration",
+      "averageLossRateDecPerYear": 112.5
+    },
+    {
+      "id": "meghna",
+      "name": "Meghna River",
+      "upazilaIds": [
+        "haimchar",
+        "chandpur_sadar",
+        "matlab_dakshin",
+        "char_fasson",
+        "bhola_sadar",
+        "monpura"
+      ],
+      "erosionTendency": "Estuarine scouring and high hydraulic shear",
+      "averageLossRateDecPerYear": 91
+    },
+    {
+      "id": "surma",
+      "name": "Surma River",
+      "upazilaIds": [
+        "sunamganj_sadar",
+        "derai",
+        "gowainghat"
+      ],
+      "erosionTendency": "Monsoon flash-flood bank spill",
+      "averageLossRateDecPerYear": 42.1
+    },
+    {
+      "id": "sari_goyain",
+      "name": "Sari-Goyain River",
+      "upazilaIds": [
+        "gowainghat"
+      ],
+      "erosionTendency": "Rapid piedmont sedimentation",
+      "averageLossRateDecPerYear": 38
+    },
+    {
+      "id": "dholai",
+      "name": "Dholai River",
+      "upazilaIds": [
+        "companiganj"
+      ],
+      "erosionTendency": "Transboundary flash flow with gravel wash",
+      "averageLossRateDecPerYear": 34.5
+    },
+    {
+      "id": "karnafuli",
+      "name": "Karnafuli River",
+      "upazilaIds": [
+        "kawkhali",
+        "rangamati_sadar"
+      ],
+      "erosionTendency": "Hilly channel downcutting",
+      "averageLossRateDecPerYear": 28
+    },
+    {
+      "id": "sangu",
+      "name": "Sangu River",
+      "upazilaIds": [
+        "bandarban_sadar",
+        "rowangchhari"
+      ],
+      "erosionTendency": "High-gradient mountain torrent",
+      "averageLossRateDecPerYear": 22.5
+    },
+    {
+      "id": "naf",
+      "name": "Naf River",
+      "upazilaIds": [
+        "teknaf",
+        "ukhia"
+      ],
+      "erosionTendency": "Tidal border channel migration",
+      "averageLossRateDecPerYear": 31
+    },
+    {
+      "id": "tentulia",
+      "name": "Tentulia River",
+      "upazilaIds": [
+        "bhola_sadar",
+        "char_fasson",
+        "monpura"
+      ],
+      "erosionTendency": "High tidal estuarine flow",
+      "averageLossRateDecPerYear": 52
+    },
+    {
+      "id": "dakatia",
+      "name": "Dakatia River",
+      "upazilaIds": [
+        "chandpur_sadar",
+        "haimchar"
+      ],
+      "erosionTendency": "Moderate tributary meander",
+      "averageLossRateDecPerYear": 26
+    }
+  ],
+  "hills": [
+    {
+      "id": "ghagra",
+      "name": "Ghagra Hill Corridor",
+      "upazilaId": "kawkhali",
+      "slopeAngleDeg": 42,
+      "soilType": "Colluvial sandy clay loam",
+      "riskLevel": "Extreme"
+    },
+    {
+      "id": "furamon",
+      "name": "Furamon Peak Ridge",
+      "upazilaId": "rangamati_sadar",
+      "slopeAngleDeg": 38,
+      "soilType": "Tertiary sandstone weathered shale",
+      "riskLevel": "High"
+    },
+    {
+      "id": "vedvedi",
+      "name": "Vedvedi Urban Hill Slope",
+      "upazilaId": "rangamati_sadar",
+      "slopeAngleDeg": 35,
+      "soilType": "Residual silt loam",
+      "riskLevel": "Moderate"
+    },
+    {
+      "id": "sajek_ridge",
+      "name": "Sajek Valley Escarpment",
+      "upazilaId": "baghaichhari",
+      "slopeAngleDeg": 46,
+      "soilType": "Steep shale terrace",
+      "riskLevel": "High"
+    },
+    {
+      "id": "chimbuk",
+      "name": "Chimbuk Hill Crest",
+      "upazilaId": "bandarban_sadar",
+      "slopeAngleDeg": 44,
+      "soilType": "Weathered metamorphic clay",
+      "riskLevel": "Extreme"
+    },
+    {
+      "id": "nilgiri",
+      "name": "Nilgiri Plateau Descent",
+      "upazilaId": "bandarban_sadar",
+      "slopeAngleDeg": 40,
+      "soilType": "Compact laterite sandy loam",
+      "riskLevel": "High"
+    },
+    {
+      "id": "mirinja",
+      "name": "Mirinja Ridge",
+      "upazilaId": "lama",
+      "slopeAngleDeg": 39,
+      "soilType": "Silty sandstone colluvium",
+      "riskLevel": "High"
+    },
+    {
+      "id": "keokradong",
+      "name": "Keokradong Foot Range",
+      "upazilaId": "rowangchhari",
+      "slopeAngleDeg": 48,
+      "soilType": "Friable shale slope",
+      "riskLevel": "Extreme"
+    },
+    {
+      "id": "himchari",
+      "name": "Himchari Coastal Hill Slopes",
+      "upazilaId": "coxs_bazar_sadar",
+      "slopeAngleDeg": 41,
+      "soilType": "Marine sandstone terrace",
+      "riskLevel": "High"
+    },
+    {
+      "id": "teknaf_ridge",
+      "name": "Teknaf Peninsula Ridge",
+      "upazilaId": "teknaf",
+      "slopeAngleDeg": 43,
+      "soilType": "Unconsolidated sandy sediment",
+      "riskLevel": "Extreme"
+    },
+    {
+      "id": "inani_range",
+      "name": "Inani Protected Hill Range",
+      "upazilaId": "ukhia",
+      "slopeAngleDeg": 37,
+      "soilType": "Lateritic red soil",
+      "riskLevel": "Moderate"
+    },
+    {
+      "id": "jaflong_hill",
+      "name": "Jaflong Border Escarpment",
+      "upazilaId": "gowainghat",
+      "slopeAngleDeg": 36,
+      "soilType": "Piedmont boulder clay",
+      "riskLevel": "Moderate"
+    }
+  ],
+  "summary": {
+    "recorded": {
+      "mode": "recorded",
+      "totalLossDecimal": 1967668,
+      "totalGainDecimal": 20096,
+      "netChangeDecimal": -1947572,
+      "affectedOwnersCount": 43,
+      "totalCompensationBDT": 17821143400,
+      "paidCompensationBDT": 664831900,
+      "approvedCompensationBDT": 16632982600,
+      "pendingCompensationBDT": 219282000,
+      "trendSeries": [
+        {
+          "year": "2019",
+          "loss": 275474,
+          "gain": 2412
+        },
+        {
+          "year": "2020",
+          "loss": 334504,
+          "gain": 3014
+        },
+        {
+          "year": "2021",
+          "loss": 314827,
+          "gain": 3617
+        },
+        {
+          "year": "2022",
+          "loss": 432887,
+          "gain": 3818
+        },
+        {
+          "year": "2023",
+          "loss": 373857,
+          "gain": 4220
+        },
+        {
+          "year": "2024",
+          "loss": 472240,
+          "gain": 4622
+        }
+      ],
+      "hazardBreakdown": [
+        {
+          "hazard": "river_erosion",
+          "label": "River Erosion",
+          "lossDecimal": 252049,
+          "gainDecimal": 1016,
+          "color": "#E4604A"
+        },
+        {
+          "hazard": "flood",
+          "label": "Monsoon Flood",
+          "lossDecimal": 1696963,
+          "gainDecimal": 0,
+          "color": "#3B82F6"
+        },
+        {
+          "hazard": "coastal",
+          "label": "Coastal Shift",
+          "lossDecimal": 13824,
+          "gainDecimal": 10260,
+          "color": "#2F9E62"
+        },
+        {
+          "hazard": "landslide",
+          "label": "Hilly Landslide",
+          "lossDecimal": 1053,
+          "gainDecimal": 0,
+          "color": "#D97706"
+        },
+        {
+          "hazard": "char",
+          "label": "Char Formation/Loss",
+          "lossDecimal": 3780,
+          "gainDecimal": 8820,
+          "color": "#8B5CF6"
+        }
+      ],
+      "topDistricts": [
+        {
+          "rank": 1,
+          "districtId": "kurigram",
+          "name": "Kurigram",
+          "lossDecimal": 586350,
+          "gainDecimal": 205223,
+          "percentOfTotal": 29.8,
+          "changeRate": 12.5,
+          "isIncrease": true
+        },
+        {
+          "rank": 2,
+          "districtId": "sunamganj",
+          "name": "Sunamganj",
+          "lossDecimal": 575911,
+          "gainDecimal": 201569,
+          "percentOfTotal": 29.3,
+          "changeRate": 10.4,
+          "isIncrease": true
+        },
+        {
+          "rank": 3,
+          "districtId": "sylhet",
+          "name": "Sylhet",
+          "lossDecimal": 345366,
+          "gainDecimal": 120878,
+          "percentOfTotal": 17.6,
+          "changeRate": 8.3,
+          "isIncrease": true
+        },
+        {
+          "rank": 4,
+          "districtId": "sirajganj",
+          "name": "Sirajganj",
+          "lossDecimal": 273597,
+          "gainDecimal": 95759,
+          "percentOfTotal": 13.9,
+          "changeRate": 6.2,
+          "isIncrease": true
+        },
+        {
+          "rank": 5,
+          "districtId": "bhola",
+          "name": "Bhola",
+          "lossDecimal": 69119,
+          "gainDecimal": 24191,
+          "percentOfTotal": 3.5,
+          "changeRate": 4.1,
+          "isIncrease": true
+        }
+      ],
+      "nowLiveStats": {
+        "activeErosionPoints": 24,
+        "sensorLiveMouzas": 114,
+        "highestRiskDistrict": "Sirajganj (Jamuna Basin)",
+        "criticalAlertsCount": 6
+      }
+    },
+    "forecast": {
+      "mode": "forecast",
+      "totalLossDecimal": 2459585,
+      "totalGainDecimal": 23111,
+      "netChangeDecimal": -2436474,
+      "affectedOwnersCount": 52,
+      "totalCompensationBDT": 22811063552,
+      "trendSeries": [
+        {
+          "year": "2022",
+          "loss": 432887,
+          "gain": 3818
+        },
+        {
+          "year": "2023",
+          "loss": 373857,
+          "gain": 4220
+        },
+        {
+          "year": "2024",
+          "loss": 472240,
+          "gain": 4622
+        },
+        {
+          "year": "2025 (F)",
+          "loss": 1180601,
+          "gain": 10400,
+          "forecastLoss": 1180601,
+          "forecastGain": 10400
+        },
+        {
+          "year": "2026 (F)",
+          "loss": 1278984,
+          "gain": 12711,
+          "forecastLoss": 1278984,
+          "forecastGain": 12711
+        }
+      ],
+      "hazardBreakdown": [
+        {
+          "hazard": "river_erosion",
+          "label": "River Erosion",
+          "lossDecimal": 315061,
+          "gainDecimal": 1168,
+          "color": "#E4604A"
+        },
+        {
+          "hazard": "flood",
+          "label": "Monsoon Flood",
+          "lossDecimal": 2121204,
+          "gainDecimal": 0,
+          "color": "#3B82F6"
+        },
+        {
+          "hazard": "coastal",
+          "label": "Coastal Shift",
+          "lossDecimal": 17280,
+          "gainDecimal": 11799,
+          "color": "#2F9E62"
+        },
+        {
+          "hazard": "landslide",
+          "label": "Hilly Landslide",
+          "lossDecimal": 1316,
+          "gainDecimal": 0,
+          "color": "#D97706"
+        },
+        {
+          "hazard": "char",
+          "label": "Char Formation/Loss",
+          "lossDecimal": 4725,
+          "gainDecimal": 10143,
+          "color": "#8B5CF6"
+        }
+      ],
+      "topDistricts": [
+        {
+          "rank": 1,
+          "districtId": "kurigram",
+          "name": "Kurigram",
+          "lossDecimal": 732938,
+          "gainDecimal": 236006,
+          "percentOfTotal": 29.8,
+          "changeRate": 12.5,
+          "isIncrease": true
+        },
+        {
+          "rank": 2,
+          "districtId": "sunamganj",
+          "name": "Sunamganj",
+          "lossDecimal": 719889,
+          "gainDecimal": 231804,
+          "percentOfTotal": 29.3,
+          "changeRate": 10.4,
+          "isIncrease": true
+        },
+        {
+          "rank": 3,
+          "districtId": "sylhet",
+          "name": "Sylhet",
+          "lossDecimal": 431708,
+          "gainDecimal": 139010,
+          "percentOfTotal": 17.6,
+          "changeRate": 8.3,
+          "isIncrease": true
+        },
+        {
+          "rank": 4,
+          "districtId": "sirajganj",
+          "name": "Sirajganj",
+          "lossDecimal": 341996,
+          "gainDecimal": 110123,
+          "percentOfTotal": 13.9,
+          "changeRate": 6.2,
+          "isIncrease": true
+        },
+        {
+          "rank": 5,
+          "districtId": "bhola",
+          "name": "Bhola",
+          "lossDecimal": 86399,
+          "gainDecimal": 27820,
+          "percentOfTotal": 3.5,
+          "changeRate": 4.1,
+          "isIncrease": true
+        }
+      ],
+      "nowLiveStats": {
+        "activeErosionPoints": 31,
+        "sensorLiveMouzas": 142,
+        "highestRiskDistrict": "Kurigram & Sirajganj",
+        "criticalAlertsCount": 9
+      }
+    }
+  }
+}

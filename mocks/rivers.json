@@ -1,0 +1,129 @@
+[
+  {
+    "id": "jamuna",
+    "name": "Jamuna River",
+    "upazilaIds": [
+      "kazipur",
+      "sirajganj_sadar",
+      "belkuchi"
+    ],
+    "erosionTendency": "Severe braided bank retreat",
+    "averageLossRateDecPerYear": 98.4
+  },
+  {
+    "id": "brahmaputra",
+    "name": "Brahmaputra River",
+    "upazilaIds": [
+      "chilmari",
+      "rowmari",
+      "ulipur"
+    ],
+    "erosionTendency": "Intense monsoonal bank scour",
+    "averageLossRateDecPerYear": 86.2
+  },
+  {
+    "id": "padma",
+    "name": "Padma River",
+    "upazilaIds": [
+      "naria",
+      "zajira",
+      "bhedarganj"
+    ],
+    "erosionTendency": "Active meander bend migration",
+    "averageLossRateDecPerYear": 112.5
+  },
+  {
+    "id": "meghna",
+    "name": "Meghna River",
+    "upazilaIds": [
+      "haimchar",
+      "chandpur_sadar",
+      "matlab_dakshin",
+      "char_fasson",
+      "bhola_sadar",
+      "monpura"
+    ],
+    "erosionTendency": "Estuarine scouring and high hydraulic shear",
+    "averageLossRateDecPerYear": 91
+  },
+  {
+    "id": "surma",
+    "name": "Surma River",
+    "upazilaIds": [
+      "sunamganj_sadar",
+      "derai",
+      "gowainghat"
+    ],
+    "erosionTendency": "Monsoon flash-flood bank spill",
+    "averageLossRateDecPerYear": 42.1
+  },
+  {
+    "id": "sari_goyain",
+    "name": "Sari-Goyain River",
+    "upazilaIds": [
+      "gowainghat"
+    ],
+    "erosionTendency": "Rapid piedmont sedimentation",
+    "averageLossRateDecPerYear": 38
+  },
+  {
+    "id": "dholai",
+    "name": "Dholai River",
+    "upazilaIds": [
+      "companiganj"
+    ],
+    "erosionTendency": "Transboundary flash flow with gravel wash",
+    "averageLossRateDecPerYear": 34.5
+  },
+  {
+    "id": "karnafuli",
+    "name": "Karnafuli River",
+    "upazilaIds": [
+      "kawkhali",
+      "rangamati_sadar"
+    ],
+    "erosionTendency": "Hilly channel downcutting",
+    "averageLossRateDecPerYear": 28
+  },
+  {
+    "id": "sangu",
+    "name": "Sangu River",
+    "upazilaIds": [
+      "bandarban_sadar",
+      "rowangchhari"
+    ],
+    "erosionTendency": "High-gradient mountain torrent",
+    "averageLossRateDecPerYear": 22.5
+  },
+  {
+    "id": "naf",
+    "name": "Naf River",
+    "upazilaIds": [
+      "teknaf",
+      "ukhia"
+    ],
+    "erosionTendency": "Tidal border channel migration",
+    "averageLossRateDecPerYear": 31
+  },
+  {
+    "id": "tentulia",
+    "name": "Tentulia River",
+    "upazilaIds": [
+      "bhola_sadar",
+      "char_fasson",
+      "monpura"
+    ],
+    "erosionTendency": "High tidal estuarine flow",
+    "averageLossRateDecPerYear": 52
+  },
+  {
+    "id": "dakatia",
+    "name": "Dakatia River",
+    "upazilaIds": [
+      "chandpur_sadar",
+      "haimchar"
+    ],
+    "erosionTendency": "Moderate tributary meander",
+    "averageLossRateDecPerYear": 26
+  }
+]

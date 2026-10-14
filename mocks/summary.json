@@ -1,0 +1,274 @@
+{
+  "recorded": {
+    "mode": "recorded",
+    "totalLossDecimal": 1967668,
+    "totalGainDecimal": 20096,
+    "netChangeDecimal": -1947572,
+    "affectedOwnersCount": 43,
+    "totalCompensationBDT": 17821143400,
+    "paidCompensationBDT": 664831900,
+    "approvedCompensationBDT": 16632982600,
+    "pendingCompensationBDT": 219282000,
+    "trendSeries": [
+      {
+        "year": "2019",
+        "loss": 275474,
+        "gain": 2412
+      },
+      {
+        "year": "2020",
+        "loss": 334504,
+        "gain": 3014
+      },
+      {
+        "year": "2021",
+        "loss": 314827,
+        "gain": 3617
+      },
+      {
+        "year": "2022",
+        "loss": 432887,
+        "gain": 3818
+      },
+      {
+        "year": "2023",
+        "loss": 373857,
+        "gain": 4220
+      },
+      {
+        "year": "2024",
+        "loss": 472240,
+        "gain": 4622
+      }
+    ],
+    "hazardBreakdown": [
+      {
+        "hazard": "river_erosion",
+        "label": "River Erosion",
+        "lossDecimal": 252049,
+        "gainDecimal": 1016,
+        "color": "#E4604A"
+      },
+      {
+        "hazard": "flood",
+        "label": "Monsoon Flood",
+        "lossDecimal": 1696963,
+        "gainDecimal": 0,
+        "color": "#3B82F6"
+      },
+      {
+        "hazard": "coastal",
+        "label": "Coastal Shift",
+        "lossDecimal": 13824,
+        "gainDecimal": 10260,
+        "color": "#2F9E62"
+      },
+      {
+        "hazard": "landslide",
+        "label": "Hilly Landslide",
+        "lossDecimal": 1053,
+        "gainDecimal": 0,
+        "color": "#D97706"
+      },
+      {
+        "hazard": "char",
+        "label": "Char Formation/Loss",
+        "lossDecimal": 3780,
+        "gainDecimal": 8820,
+        "color": "#8B5CF6"
+      }
+    ],
+    "topDistricts": [
+      {
+        "rank": 1,
+        "districtId": "kurigram",
+        "name": "Kurigram",
+        "lossDecimal": 586350,
+        "gainDecimal": 205223,
+        "percentOfTotal": 29.8,
+        "changeRate": 12.5,
+        "isIncrease": true
+      },
+      {
+        "rank": 2,
+        "districtId": "sunamganj",
+        "name": "Sunamganj",
+        "lossDecimal": 575911,
+        "gainDecimal": 201569,
+        "percentOfTotal": 29.3,
+        "changeRate": 10.4,
+        "isIncrease": true
+      },
+      {
+        "rank": 3,
+        "districtId": "sylhet",
+        "name": "Sylhet",
+        "lossDecimal": 345366,
+        "gainDecimal": 120878,
+        "percentOfTotal": 17.6,
+        "changeRate": 8.3,
+        "isIncrease": true
+      },
+      {
+        "rank": 4,
+        "districtId": "sirajganj",
+        "name": "Sirajganj",
+        "lossDecimal": 273597,
+        "gainDecimal": 95759,
+        "percentOfTotal": 13.9,
+        "changeRate": 6.2,
+        "isIncrease": true
+      },
+      {
+        "rank": 5,
+        "districtId": "bhola",
+        "name": "Bhola",
+        "lossDecimal": 69119,
+        "gainDecimal": 24191,
+        "percentOfTotal": 3.5,
+        "changeRate": 4.1,
+        "isIncrease": true
+      }
+    ],
+    "nowLiveStats": {
+      "activeErosionPoints": 24,
+      "sensorLiveMouzas": 114,
+      "highestRiskDistrict": "Sirajganj (Jamuna Basin)",
+      "criticalAlertsCount": 6
+    }
+  },
+  "forecast": {
+    "mode": "forecast",
+    "totalLossDecimal": 2459585,
+    "totalGainDecimal": 23111,
+    "netChangeDecimal": -2436474,
+    "affectedOwnersCount": 52,
+    "totalCompensationBDT": 22811063552,
+    "trendSeries": [
+      {
+        "year": "2022",
+        "loss": 432887,
+        "gain": 3818
+      },
+      {
+        "year": "2023",
+        "loss": 373857,
+        "gain": 4220
+      },
+      {
+        "year": "2024",
+        "loss": 472240,
+        "gain": 4622
+      },
+      {
+        "year": "2025 (F)",
+        "loss": 1180601,
+        "gain": 10400,
+        "forecastLoss": 1180601,
+        "forecastGain": 10400
+      },
+      {
+        "year": "2026 (F)",
+        "loss": 1278984,
+        "gain": 12711,
+        "forecastLoss": 1278984,
+        "forecastGain": 12711
+      }
+    ],
+    "hazardBreakdown": [
+      {
+        "hazard": "river_erosion",
+        "label": "River Erosion",
+        "lossDecimal": 315061,
+        "gainDecimal": 1168,
+        "color": "#E4604A"
+      },
+      {
+        "hazard": "flood",
+        "label": "Monsoon Flood",
+        "lossDecimal": 2121204,
+        "gainDecimal": 0,
+        "color": "#3B82F6"
+      },
+      {
+        "hazard": "coastal",
+        "label": "Coastal Shift",
+        "lossDecimal": 17280,
+        "gainDecimal": 11799,
+        "color": "#2F9E62"
+      },
+      {
+        "hazard": "landslide",
+        "label": "Hilly Landslide",
+        "lossDecimal": 1316,
+        "gainDecimal": 0,
+        "color": "#D97706"
+      },
+      {
+        "hazard": "char",
+        "label": "Char Formation/Loss",
+        "lossDecimal": 4725,
+        "gainDecimal": 10143,
+        "color": "#8B5CF6"
+      }
+    ],
+    "topDistricts": [
+      {
+        "rank": 1,
+        "districtId": "kurigram",
+        "name": "Kurigram",
+        "lossDecimal": 732938,
+        "gainDecimal": 236006,
+        "percentOfTotal": 29.8,
+        "changeRate": 12.5,
+        "isIncrease": true
+      },
+      {
+        "rank": 2,
+        "districtId": "sunamganj",
+        "name": "Sunamganj",
+        "lossDecimal": 719889,
+        "gainDecimal": 231804,
+        "percentOfTotal": 29.3,
+        "changeRate": 10.4,
+        "isIncrease": true
+      },
+      {
+        "rank": 3,
+        "districtId": "sylhet",
+        "name": "Sylhet",
+        "lossDecimal": 431708,
+        "gainDecimal": 139010,
+        "percentOfTotal": 17.6,
+        "changeRate": 8.3,
+        "isIncrease": true
+      },
+      {
+        "rank": 4,
+        "districtId": "sirajganj",
+        "name": "Sirajganj",
+        "lossDecimal": 341996,
+        "gainDecimal": 110123,
+        "percentOfTotal": 13.9,
+        "changeRate": 6.2,
+        "isIncrease": true
+      },
+      {
+        "rank": 5,
+        "districtId": "bhola",
+        "name": "Bhola",
+        "lossDecimal": 86399,
+        "gainDecimal": 27820,
+        "percentOfTotal": 3.5,
+        "changeRate": 4.1,
+        "isIncrease": true
+      }
+    ],
+    "nowLiveStats": {
+      "activeErosionPoints": 31,
+      "sensorLiveMouzas": 142,
+      "highestRiskDistrict": "Kurigram & Sirajganj",
+      "criticalAlertsCount": 9
+    }
+  }
+}

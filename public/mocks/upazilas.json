@@ -1,0 +1,540 @@
+[
+  {
+    "id": "kazipur",
+    "districtId": "sirajganj",
+    "name": "Kazipur",
+    "centerCoordinates": [
+      89.65,
+      24.57
+    ],
+    "rivers": [
+      "jamuna",
+      "karatoa"
+    ],
+    "hasChars": true,
+    "hasHills": false
+  },
+  {
+    "id": "sirajganj_sadar",
+    "districtId": "sirajganj",
+    "name": "Sirajganj Sadar",
+    "centerCoordinates": [
+      89.7,
+      24.45
+    ],
+    "rivers": [
+      "jamuna",
+      "hurasagar"
+    ],
+    "hasChars": true,
+    "hasHills": false
+  },
+  {
+    "id": "belkuchi",
+    "districtId": "sirajganj",
+    "name": "Belkuchi",
+    "centerCoordinates": [
+      89.7,
+      24.29
+    ],
+    "rivers": [
+      "jamuna",
+      "phuljhor"
+    ],
+    "hasChars": true,
+    "hasHills": false
+  },
+  {
+    "id": "chilmari",
+    "districtId": "kurigram",
+    "name": "Chilmari",
+    "centerCoordinates": [
+      89.67,
+      25.56
+    ],
+    "rivers": [
+      "brahmaputra",
+      "teesta"
+    ],
+    "hasChars": true,
+    "hasHills": false
+  },
+  {
+    "id": "rowmari",
+    "districtId": "kurigram",
+    "name": "Rowmari",
+    "centerCoordinates": [
+      89.85,
+      25.56
+    ],
+    "rivers": [
+      "brahmaputra",
+      "jinjiram"
+    ],
+    "hasChars": true,
+    "hasHills": false
+  },
+  {
+    "id": "ulipur",
+    "districtId": "kurigram",
+    "name": "Ulipur",
+    "centerCoordinates": [
+      89.62,
+      25.66
+    ],
+    "rivers": [
+      "brahmaputra",
+      "dharla"
+    ],
+    "hasChars": true,
+    "hasHills": false
+  },
+  {
+    "id": "naria",
+    "districtId": "shariatpur",
+    "name": "Naria",
+    "centerCoordinates": [
+      90.39,
+      23.3
+    ],
+    "rivers": [
+      "padma",
+      "kirtinasha"
+    ],
+    "hasChars": true,
+    "hasHills": false
+  },
+  {
+    "id": "zajira",
+    "districtId": "shariatpur",
+    "name": "Zajira",
+    "centerCoordinates": [
+      90.22,
+      23.35
+    ],
+    "rivers": [
+      "padma",
+      "arial_khan"
+    ],
+    "hasChars": true,
+    "hasHills": false
+  },
+  {
+    "id": "bhedarganj",
+    "districtId": "shariatpur",
+    "name": "Bhedarganj",
+    "centerCoordinates": [
+      90.5,
+      23.2
+    ],
+    "rivers": [
+      "padma",
+      "meghna"
+    ],
+    "hasChars": true,
+    "hasHills": false
+  },
+  {
+    "id": "haimchar",
+    "districtId": "chandpur",
+    "name": "Haimchar",
+    "centerCoordinates": [
+      90.64,
+      23.07
+    ],
+    "rivers": [
+      "meghna",
+      "dakatia"
+    ],
+    "hasChars": true,
+    "hasHills": false
+  },
+  {
+    "id": "chandpur_sadar",
+    "districtId": "chandpur",
+    "name": "Chandpur Sadar",
+    "centerCoordinates": [
+      90.65,
+      23.23
+    ],
+    "rivers": [
+      "meghna",
+      "dakatia"
+    ],
+    "hasChars": true,
+    "hasHills": false
+  },
+  {
+    "id": "matlab_dakshin",
+    "districtId": "chandpur",
+    "name": "Matlab Dakshin",
+    "centerCoordinates": [
+      90.71,
+      23.35
+    ],
+    "rivers": [
+      "meghna",
+      "dhonagoda"
+    ],
+    "hasChars": true,
+    "hasHills": false
+  },
+  {
+    "id": "char_fasson",
+    "districtId": "bhola",
+    "name": "Char Fasson",
+    "centerCoordinates": [
+      90.71,
+      22.19
+    ],
+    "rivers": [
+      "meghna",
+      "tentulia"
+    ],
+    "hasChars": true,
+    "hasHills": false
+  },
+  {
+    "id": "bhola_sadar",
+    "districtId": "bhola",
+    "name": "Bhola Sadar",
+    "centerCoordinates": [
+      90.65,
+      22.69
+    ],
+    "rivers": [
+      "meghna",
+      "tentulia"
+    ],
+    "hasChars": true,
+    "hasHills": false
+  },
+  {
+    "id": "monpura",
+    "districtId": "bhola",
+    "name": "Monpura",
+    "centerCoordinates": [
+      90.97,
+      22.3
+    ],
+    "rivers": [
+      "meghna",
+      "tentulia"
+    ],
+    "hasChars": true,
+    "hasHills": false
+  },
+  {
+    "id": "sunamganj_sadar",
+    "districtId": "sunamganj",
+    "name": "Sunamganj Sadar",
+    "centerCoordinates": [
+      91.4,
+      25.07
+    ],
+    "rivers": [
+      "surma",
+      "dhamalia"
+    ],
+    "hasChars": false,
+    "hasHills": false
+  },
+  {
+    "id": "derai",
+    "districtId": "sunamganj",
+    "name": "Derai",
+    "centerCoordinates": [
+      91.35,
+      24.78
+    ],
+    "rivers": [
+      "surma",
+      "piyain"
+    ],
+    "hasChars": false,
+    "hasHills": false
+  },
+  {
+    "id": "tahirpur",
+    "districtId": "sunamganj",
+    "name": "Tahirpur",
+    "centerCoordinates": [
+      91.18,
+      25.1
+    ],
+    "rivers": [
+      "jadukata",
+      "baulai"
+    ],
+    "hasChars": false,
+    "hasHills": false
+  },
+  {
+    "id": "jamalganj",
+    "districtId": "sunamganj",
+    "name": "Jamalganj",
+    "centerCoordinates": [
+      91.23,
+      24.97
+    ],
+    "rivers": [
+      "surma",
+      "baulai"
+    ],
+    "hasChars": false,
+    "hasHills": false
+  },
+  {
+    "id": "gowainghat",
+    "districtId": "sylhet",
+    "name": "Gowainghat",
+    "centerCoordinates": [
+      92,
+      25.13
+    ],
+    "rivers": [
+      "sari_goyain",
+      "piyain"
+    ],
+    "hasChars": false,
+    "hasHills": true
+  },
+  {
+    "id": "companiganj",
+    "districtId": "sylhet",
+    "name": "Companiganj",
+    "centerCoordinates": [
+      91.75,
+      25.08
+    ],
+    "rivers": [
+      "dholai",
+      "piyain"
+    ],
+    "hasChars": false,
+    "hasHills": true
+  },
+  {
+    "id": "beanibazar",
+    "districtId": "sylhet",
+    "name": "Beanibazar",
+    "centerCoordinates": [
+      92.16,
+      24.83
+    ],
+    "rivers": [
+      "kushiyara",
+      "sonai"
+    ],
+    "hasChars": false,
+    "hasHills": false
+  },
+  {
+    "id": "kawkhali",
+    "districtId": "rangamati",
+    "name": "Kawkhali",
+    "centerCoordinates": [
+      92.03,
+      22.56
+    ],
+    "rivers": [
+      "ichamati",
+      "karnafuli"
+    ],
+    "hasChars": false,
+    "hasHills": true
+  },
+  {
+    "id": "rangamati_sadar",
+    "districtId": "rangamati",
+    "name": "Rangamati Sadar",
+    "centerCoordinates": [
+      92.18,
+      22.65
+    ],
+    "rivers": [
+      "karnafuli",
+      "chengi"
+    ],
+    "hasChars": false,
+    "hasHills": true
+  },
+  {
+    "id": "baghaichhari",
+    "districtId": "rangamati",
+    "name": "Baghaichhari",
+    "centerCoordinates": [
+      92.2,
+      23.16
+    ],
+    "rivers": [
+      "kachalong",
+      "maini"
+    ],
+    "hasChars": false,
+    "hasHills": true
+  },
+  {
+    "id": "bandarban_sadar",
+    "districtId": "bandarban",
+    "name": "Bandarban Sadar",
+    "centerCoordinates": [
+      92.22,
+      22.2
+    ],
+    "rivers": [
+      "sangu",
+      "bakkhali"
+    ],
+    "hasChars": false,
+    "hasHills": true
+  },
+  {
+    "id": "lama",
+    "districtId": "bandarban",
+    "name": "Lama",
+    "centerCoordinates": [
+      92.2,
+      21.78
+    ],
+    "rivers": [
+      "matamuhuri",
+      "sangu"
+    ],
+    "hasChars": false,
+    "hasHills": true
+  },
+  {
+    "id": "rowangchhari",
+    "districtId": "bandarban",
+    "name": "Rowangchhari",
+    "centerCoordinates": [
+      92.34,
+      22.17
+    ],
+    "rivers": [
+      "sangu",
+      "taraisa"
+    ],
+    "hasChars": false,
+    "hasHills": true
+  },
+  {
+    "id": "coxs_bazar_sadar",
+    "districtId": "coxs_bazar",
+    "name": "Cox's Bazar Sadar",
+    "centerCoordinates": [
+      91.98,
+      21.43
+    ],
+    "rivers": [
+      "bakkhali"
+    ],
+    "hasChars": false,
+    "hasHills": true
+  },
+  {
+    "id": "teknaf",
+    "districtId": "coxs_bazar",
+    "name": "Teknaf",
+    "centerCoordinates": [
+      92.3,
+      20.87
+    ],
+    "rivers": [
+      "naf"
+    ],
+    "hasChars": false,
+    "hasHills": true
+  },
+  {
+    "id": "ukhia",
+    "districtId": "coxs_bazar",
+    "name": "Ukhia",
+    "centerCoordinates": [
+      92.14,
+      21.24
+    ],
+    "rivers": [
+      "naf",
+      "reju"
+    ],
+    "hasChars": false,
+    "hasHills": true
+  },
+  {
+    "id": "maheshkhali",
+    "districtId": "coxs_bazar",
+    "name": "Maheshkhali",
+    "centerCoordinates": [
+      91.95,
+      21.52
+    ],
+    "rivers": [
+      "kohelia",
+      "maheshkhali_channel"
+    ],
+    "hasChars": false,
+    "hasHills": true
+  },
+  {
+    "id": "hatiya",
+    "districtId": "noakhali",
+    "name": "Hatiya",
+    "centerCoordinates": [
+      91.1,
+      22.37
+    ],
+    "rivers": [
+      "meghna_channel",
+      "shahbazpur"
+    ],
+    "hasChars": true,
+    "hasHills": false
+  },
+  {
+    "id": "subarnachar",
+    "districtId": "noakhali",
+    "name": "Subarnachar",
+    "centerCoordinates": [
+      91.13,
+      22.68
+    ],
+    "rivers": [
+      "little_feni",
+      "meghna"
+    ],
+    "hasChars": true,
+    "hasHills": false
+  },
+  {
+    "id": "koyra",
+    "districtId": "khulna",
+    "name": "Koyra",
+    "centerCoordinates": [
+      89.3,
+      22.34
+    ],
+    "rivers": [
+      "shibsa",
+      "kobadak"
+    ],
+    "hasChars": false,
+    "hasHills": false
+  },
+  {
+    "id": "dacope",
+    "districtId": "khulna",
+    "name": "Dacope",
+    "centerCoordinates": [
+      89.51,
+      22.57
+    ],
+    "rivers": [
+      "pasur",
+      "shibsa"
+    ],
+    "hasChars": false,
+    "hasHills": false
+  }
+]

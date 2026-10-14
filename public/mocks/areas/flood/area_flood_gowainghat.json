@@ -1,0 +1,2752 @@
+{
+  "areaId": "area_flood_gowainghat",
+  "hazard": "flood",
+  "mode": "recorded",
+  "bounds": [
+    91.97,
+    25.1,
+    92.03,
+    25.15
+  ],
+  "basemap": {
+    "land": [
+      [
+        [
+          91.97,
+          25.1
+        ],
+        [
+          92.03,
+          25.1
+        ],
+        [
+          92.03,
+          25.15
+        ],
+        [
+          91.97,
+          25.15
+        ],
+        [
+          91.97,
+          25.1
+        ]
+      ]
+    ],
+    "landuse": [
+      {
+        "type": "farmland",
+        "polygon": [
+          [
+            [
+              91.984333,
+              25.103299
+            ],
+            [
+              91.989733,
+              25.103499
+            ],
+            [
+              91.990333,
+              25.106899
+            ],
+            [
+              91.984633,
+              25.107299
+            ],
+            [
+              91.984333,
+              25.103299
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "vegetation",
+        "polygon": [
+          [
+            [
+              91.988333,
+              25.106299
+            ],
+            [
+              91.990833,
+              25.106499
+            ],
+            [
+              91.990533,
+              25.108099
+            ],
+            [
+              91.988533,
+              25.107899
+            ],
+            [
+              91.988333,
+              25.106299
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "settlement",
+        "polygon": [
+          [
+            [
+              91.984333,
+              25.105799
+            ],
+            [
+              91.985833,
+              25.105899
+            ],
+            [
+              91.985933,
+              25.107099
+            ],
+            [
+              91.984433,
+              25.106999
+            ],
+            [
+              91.984333,
+              25.105799
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "farmland",
+        "polygon": [
+          [
+            [
+              92.00925,
+              25.11287
+            ],
+            [
+              92.01465,
+              25.11307
+            ],
+            [
+              92.01525,
+              25.11647
+            ],
+            [
+              92.00955,
+              25.11687
+            ],
+            [
+              92.00925,
+              25.11287
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "vegetation",
+        "polygon": [
+          [
+            [
+              92.01325,
+              25.11587
+            ],
+            [
+              92.01575,
+              25.11607
+            ],
+            [
+              92.01545,
+              25.11767
+            ],
+            [
+              92.01345,
+              25.11747
+            ],
+            [
+              92.01325,
+              25.11587
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "settlement",
+        "polygon": [
+          [
+            [
+              92.00925,
+              25.11537
+            ],
+            [
+              92.01075,
+              25.11547
+            ],
+            [
+              92.01085,
+              25.11667
+            ],
+            [
+              92.00935,
+              25.11657
+            ],
+            [
+              92.00925,
+              25.11537
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "farmland",
+        "polygon": [
+          [
+            [
+              91.999667,
+              25.122853
+            ],
+            [
+              92.005067,
+              25.123053
+            ],
+            [
+              92.005667,
+              25.126453
+            ],
+            [
+              91.999967,
+              25.126853
+            ],
+            [
+              91.999667,
+              25.122853
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "vegetation",
+        "polygon": [
+          [
+            [
+              92.003667,
+              25.125853
+            ],
+            [
+              92.006167,
+              25.126053
+            ],
+            [
+              92.005867,
+              25.127653
+            ],
+            [
+              92.003867,
+              25.127453
+            ],
+            [
+              92.003667,
+              25.125853
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "settlement",
+        "polygon": [
+          [
+            [
+              91.999667,
+              25.125353
+            ],
+            [
+              92.001167,
+              25.125453
+            ],
+            [
+              92.001267,
+              25.126653
+            ],
+            [
+              91.999767,
+              25.126553
+            ],
+            [
+              91.999667,
+              25.125353
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "farmland",
+        "polygon": [
+          [
+            [
+              91.987528,
+              25.132771
+            ],
+            [
+              91.992928,
+              25.132971
+            ],
+            [
+              91.993528,
+              25.136371
+            ],
+            [
+              91.987828,
+              25.136771
+            ],
+            [
+              91.987528,
+              25.132771
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "vegetation",
+        "polygon": [
+          [
+            [
+              91.991528,
+              25.135771
+            ],
+            [
+              91.994028,
+              25.135971
+            ],
+            [
+              91.993728,
+              25.137571
+            ],
+            [
+              91.991728,
+              25.137371
+            ],
+            [
+              91.991528,
+              25.135771
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "settlement",
+        "polygon": [
+          [
+            [
+              91.987528,
+              25.135271
+            ],
+            [
+              91.989028,
+              25.135371
+            ],
+            [
+              91.989128,
+              25.136571
+            ],
+            [
+              91.987628,
+              25.136471
+            ],
+            [
+              91.987528,
+              25.135271
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "farmland",
+        "polygon": [
+          [
+            [
+              91.983694,
+              25.142916
+            ],
+            [
+              91.989094,
+              25.143116
+            ],
+            [
+              91.989694,
+              25.146516
+            ],
+            [
+              91.983994,
+              25.146916
+            ],
+            [
+              91.983694,
+              25.142916
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "vegetation",
+        "polygon": [
+          [
+            [
+              91.987694,
+              25.145916
+            ],
+            [
+              91.990194,
+              25.146116
+            ],
+            [
+              91.989894,
+              25.147716
+            ],
+            [
+              91.987894,
+              25.147516
+            ],
+            [
+              91.987694,
+              25.145916
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "settlement",
+        "polygon": [
+          [
+            [
+              91.983694,
+              25.145416
+            ],
+            [
+              91.985194,
+              25.145516
+            ],
+            [
+              91.985294,
+              25.146716
+            ],
+            [
+              91.983794,
+              25.146616
+            ],
+            [
+              91.983694,
+              25.145416
+            ]
+          ]
+        ]
+      }
+    ],
+    "water": [
+      {
+        "type": "river",
+        "polygon": [
+          [
+            [
+              92.016,
+              25.1
+            ],
+            [
+              92.03,
+              25.1
+            ],
+            [
+              92.03,
+              25.15
+            ],
+            [
+              92.016,
+              25.15
+            ],
+            [
+              92.016,
+              25.1
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "beel",
+        "polygon": [
+          [
+            [
+              91.9835,
+              25.1215
+            ],
+            [
+              91.9868,
+              25.1217
+            ],
+            [
+              91.9862,
+              25.1237
+            ],
+            [
+              91.9834,
+              25.1234
+            ],
+            [
+              91.9835,
+              25.1215
+            ]
+          ]
+        ]
+      }
+    ],
+    "waterlines": [
+      {
+        "type": "canal",
+        "line": [
+          [
+            91.972,
+            25.103
+          ],
+          [
+            91.978,
+            25.107
+          ],
+          [
+            91.984,
+            25.108
+          ]
+        ]
+      },
+      {
+        "type": "canal",
+        "line": [
+          [
+            91.985,
+            25.1225
+          ],
+          [
+            91.991,
+            25.1265
+          ],
+          [
+            92.026,
+            25.1285
+          ]
+        ]
+      }
+    ],
+    "roads": [
+      {
+        "type": "major",
+        "line": [
+          [
+            91.97,
+            25.123
+          ],
+          [
+            91.994,
+            25.126
+          ],
+          [
+            92.027,
+            25.127
+          ]
+        ]
+      },
+      {
+        "type": "minor",
+        "line": [
+          [
+            91.975,
+            25.102
+          ],
+          [
+            91.976,
+            25.126
+          ],
+          [
+            91.978,
+            25.147
+          ]
+        ]
+      },
+      {
+        "type": "minor",
+        "line": [
+          [
+            91.982,
+            25.126
+          ],
+          [
+            91.985,
+            25.148
+          ]
+        ]
+      }
+    ],
+    "embankments": [
+      {
+        "line": [
+          [
+            91.978,
+            25.101
+          ],
+          [
+            91.979,
+            25.125
+          ],
+          [
+            91.9785,
+            25.149
+          ]
+        ]
+      }
+    ],
+    "buildings": [
+      {
+        "polygon": [
+          [
+            [
+              91.987033,
+              25.105099
+            ],
+            [
+              91.987633,
+              25.105099
+            ],
+            [
+              91.987633,
+              25.105499
+            ],
+            [
+              91.987033,
+              25.105499
+            ],
+            [
+              91.987033,
+              25.105099
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              91.987933,
+              25.105099
+            ],
+            [
+              91.988533,
+              25.105099
+            ],
+            [
+              91.988533,
+              25.105499
+            ],
+            [
+              91.987933,
+              25.105499
+            ],
+            [
+              91.987933,
+              25.105099
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              92.01195,
+              25.11467
+            ],
+            [
+              92.01255,
+              25.11467
+            ],
+            [
+              92.01255,
+              25.11507
+            ],
+            [
+              92.01195,
+              25.11507
+            ],
+            [
+              92.01195,
+              25.11467
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              92.01285,
+              25.11467
+            ],
+            [
+              92.01345,
+              25.11467
+            ],
+            [
+              92.01345,
+              25.11507
+            ],
+            [
+              92.01285,
+              25.11507
+            ],
+            [
+              92.01285,
+              25.11467
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              92.002367,
+              25.124653
+            ],
+            [
+              92.002967,
+              25.124653
+            ],
+            [
+              92.002967,
+              25.125053
+            ],
+            [
+              92.002367,
+              25.125053
+            ],
+            [
+              92.002367,
+              25.124653
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              92.003267,
+              25.124653
+            ],
+            [
+              92.003867,
+              25.124653
+            ],
+            [
+              92.003867,
+              25.125053
+            ],
+            [
+              92.003267,
+              25.125053
+            ],
+            [
+              92.003267,
+              25.124653
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              91.990228,
+              25.134571
+            ],
+            [
+              91.990828,
+              25.134571
+            ],
+            [
+              91.990828,
+              25.134971
+            ],
+            [
+              91.990228,
+              25.134971
+            ],
+            [
+              91.990228,
+              25.134571
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              91.991128,
+              25.134571
+            ],
+            [
+              91.991728,
+              25.134571
+            ],
+            [
+              91.991728,
+              25.134971
+            ],
+            [
+              91.991128,
+              25.134971
+            ],
+            [
+              91.991128,
+              25.134571
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              91.986394,
+              25.144716
+            ],
+            [
+              91.986994,
+              25.144716
+            ],
+            [
+              91.986994,
+              25.145116
+            ],
+            [
+              91.986394,
+              25.145116
+            ],
+            [
+              91.986394,
+              25.144716
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              91.987294,
+              25.144716
+            ],
+            [
+              91.987894,
+              25.144716
+            ],
+            [
+              91.987894,
+              25.145116
+            ],
+            [
+              91.987294,
+              25.145116
+            ],
+            [
+              91.987294,
+              25.144716
+            ]
+          ]
+        ]
+      }
+    ],
+    "pois": [
+      {
+        "name": "Jaflong SCHOOL",
+        "type": "school",
+        "coordinates": [
+          91.988833,
+          25.104099
+        ]
+      },
+      {
+        "name": "Rustampur MOSQUE",
+        "type": "mosque",
+        "coordinates": [
+          92.01375,
+          25.11367
+        ]
+      },
+      {
+        "name": "Lengura MARKET",
+        "type": "market",
+        "coordinates": [
+          92.004167,
+          25.123653
+        ]
+      },
+      {
+        "name": "Fatehpur HEALTH CENTER",
+        "type": "health_center",
+        "coordinates": [
+          91.992028,
+          25.133571
+        ]
+      }
+    ],
+    "upazila": [
+      [
+        [
+          91.968,
+          25.098
+        ],
+        [
+          92.032,
+          25.098
+        ],
+        [
+          92.032,
+          25.152
+        ],
+        [
+          91.968,
+          25.152
+        ],
+        [
+          91.968,
+          25.098
+        ]
+      ]
+    ],
+    "mouzas": [
+      {
+        "id": "mouza_gowainghat_1",
+        "name": "Jaflong Mouza",
+        "jlNo": "JL-15",
+        "labelAnchor": [
+          91.987333,
+          25.105299
+        ],
+        "areaDecimal": 129543.2,
+        "polygon": [
+          [
+            [
+              91.972,
+              25.1
+            ],
+            [
+              91.98718,
+              25.1
+            ],
+            [
+              92.00282,
+              25.1
+            ],
+            [
+              92.018,
+              25.1
+            ],
+            [
+              92.018,
+              25.105
+            ],
+            [
+              92.018,
+              25.11
+            ],
+            [
+              92.00282,
+              25.109936
+            ],
+            [
+              91.98718,
+              25.110598
+            ],
+            [
+              91.972,
+              25.11
+            ],
+            [
+              91.972,
+              25.1
+            ]
+          ]
+        ]
+      },
+      {
+        "id": "mouza_gowainghat_2",
+        "name": "Rustampur Mouza",
+        "jlNo": "JL-19",
+        "labelAnchor": [
+          92.01225,
+          25.11487
+        ],
+        "areaDecimal": 123283,
+        "polygon": [
+          [
+            [
+              91.972,
+              25.11
+            ],
+            [
+              91.98718,
+              25.110598
+            ],
+            [
+              92.00282,
+              25.109936
+            ],
+            [
+              92.018,
+              25.11
+            ],
+            [
+              92.018,
+              25.115
+            ],
+            [
+              92.018,
+              25.12
+            ],
+            [
+              92.00282,
+              25.119517
+            ],
+            [
+              91.98718,
+              25.120085
+            ],
+            [
+              91.972,
+              25.12
+            ],
+            [
+              91.972,
+              25.11
+            ]
+          ]
+        ]
+      },
+      {
+        "id": "mouza_gowainghat_3",
+        "name": "Lengura Mouza",
+        "jlNo": "JL-23",
+        "labelAnchor": [
+          92.002667,
+          25.124853
+        ],
+        "areaDecimal": 127245.9,
+        "polygon": [
+          [
+            [
+              91.972,
+              25.12
+            ],
+            [
+              91.98718,
+              25.120085
+            ],
+            [
+              92.00282,
+              25.119517
+            ],
+            [
+              92.018,
+              25.12
+            ],
+            [
+              92.018,
+              25.125
+            ],
+            [
+              92.018,
+              25.13
+            ],
+            [
+              92.00282,
+              25.130189
+            ],
+            [
+              91.98718,
+              25.129413
+            ],
+            [
+              91.972,
+              25.13
+            ],
+            [
+              91.972,
+              25.12
+            ]
+          ]
+        ]
+      },
+      {
+        "id": "mouza_gowainghat_4",
+        "name": "Fatehpur Mouza",
+        "jlNo": "JL-27",
+        "labelAnchor": [
+          91.990528,
+          25.134771
+        ],
+        "areaDecimal": 130069.9,
+        "polygon": [
+          [
+            [
+              91.972,
+              25.13
+            ],
+            [
+              91.98718,
+              25.129413
+            ],
+            [
+              92.00282,
+              25.130189
+            ],
+            [
+              92.018,
+              25.13
+            ],
+            [
+              92.018,
+              25.135
+            ],
+            [
+              92.018,
+              25.14
+            ],
+            [
+              92.00282,
+              25.140435
+            ],
+            [
+              91.98718,
+              25.139832
+            ],
+            [
+              91.972,
+              25.14
+            ],
+            [
+              91.972,
+              25.13
+            ]
+          ]
+        ]
+      },
+      {
+        "id": "mouza_gowainghat_5",
+        "name": "Alirgaon Mouza",
+        "jlNo": "JL-31",
+        "labelAnchor": [
+          91.986694,
+          25.144916
+        ],
+        "areaDecimal": 126086.9,
+        "polygon": [
+          [
+            [
+              91.972,
+              25.14
+            ],
+            [
+              91.98718,
+              25.139832
+            ],
+            [
+              92.00282,
+              25.140435
+            ],
+            [
+              92.018,
+              25.14
+            ],
+            [
+              92.018,
+              25.145
+            ],
+            [
+              92.018,
+              25.15
+            ],
+            [
+              92.00282,
+              25.15
+            ],
+            [
+              91.98718,
+              25.15
+            ],
+            [
+              91.972,
+              25.15
+            ],
+            [
+              91.972,
+              25.14
+            ]
+          ]
+        ]
+      }
+    ],
+    "labels": [
+      {
+        "text": "Surma Basin",
+        "type": "river",
+        "bearing": 75,
+        "coordinates": [
+          92.027,
+          25.125
+        ]
+      }
+    ]
+  },
+  "mouzas": [
+    {
+      "id": "mouza_gowainghat_1",
+      "name": "Jaflong Mouza",
+      "jlNo": "JL-15",
+      "areaDecimal": 129543.2,
+      "lossDecimal": 10218.4,
+      "gainDecimal": 0,
+      "percent": 7.9,
+      "labelAnchor": [
+        91.987333,
+        25.105299
+      ],
+      "affectedOwnersCount": 14,
+      "polygon": [
+        [
+          [
+            91.972,
+            25.1
+          ],
+          [
+            91.98718,
+            25.1
+          ],
+          [
+            92.00282,
+            25.1
+          ],
+          [
+            92.018,
+            25.1
+          ],
+          [
+            92.018,
+            25.105
+          ],
+          [
+            92.018,
+            25.11
+          ],
+          [
+            92.00282,
+            25.109936
+          ],
+          [
+            91.98718,
+            25.110598
+          ],
+          [
+            91.972,
+            25.11
+          ],
+          [
+            91.972,
+            25.1
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_gowainghat_2",
+      "name": "Rustampur Mouza",
+      "jlNo": "JL-19",
+      "areaDecimal": 123283,
+      "lossDecimal": 7028.5,
+      "gainDecimal": 0,
+      "percent": 5.7,
+      "labelAnchor": [
+        92.01225,
+        25.11487
+      ],
+      "affectedOwnersCount": 9,
+      "polygon": [
+        [
+          [
+            91.972,
+            25.11
+          ],
+          [
+            91.98718,
+            25.110598
+          ],
+          [
+            92.00282,
+            25.109936
+          ],
+          [
+            92.018,
+            25.11
+          ],
+          [
+            92.018,
+            25.115
+          ],
+          [
+            92.018,
+            25.12
+          ],
+          [
+            92.00282,
+            25.119517
+          ],
+          [
+            91.98718,
+            25.120085
+          ],
+          [
+            91.972,
+            25.12
+          ],
+          [
+            91.972,
+            25.11
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_gowainghat_3",
+      "name": "Lengura Mouza",
+      "jlNo": "JL-23",
+      "areaDecimal": 127245.9,
+      "lossDecimal": 6230.6,
+      "gainDecimal": 0,
+      "percent": 4.9,
+      "labelAnchor": [
+        92.002667,
+        25.124853
+      ],
+      "affectedOwnersCount": 9,
+      "polygon": [
+        [
+          [
+            91.972,
+            25.12
+          ],
+          [
+            91.98718,
+            25.120085
+          ],
+          [
+            92.00282,
+            25.119517
+          ],
+          [
+            92.018,
+            25.12
+          ],
+          [
+            92.018,
+            25.125
+          ],
+          [
+            92.018,
+            25.13
+          ],
+          [
+            92.00282,
+            25.130189
+          ],
+          [
+            91.98718,
+            25.129413
+          ],
+          [
+            91.972,
+            25.13
+          ],
+          [
+            91.972,
+            25.12
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_gowainghat_4",
+      "name": "Fatehpur Mouza",
+      "jlNo": "JL-27",
+      "areaDecimal": 130069.9,
+      "lossDecimal": 8248.9,
+      "gainDecimal": 0,
+      "percent": 6.3,
+      "labelAnchor": [
+        91.990528,
+        25.134771
+      ],
+      "affectedOwnersCount": 12,
+      "polygon": [
+        [
+          [
+            91.972,
+            25.13
+          ],
+          [
+            91.98718,
+            25.129413
+          ],
+          [
+            92.00282,
+            25.130189
+          ],
+          [
+            92.018,
+            25.13
+          ],
+          [
+            92.018,
+            25.135
+          ],
+          [
+            92.018,
+            25.14
+          ],
+          [
+            92.00282,
+            25.140435
+          ],
+          [
+            91.98718,
+            25.139832
+          ],
+          [
+            91.972,
+            25.14
+          ],
+          [
+            91.972,
+            25.13
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_gowainghat_5",
+      "name": "Alirgaon Mouza",
+      "jlNo": "JL-31",
+      "areaDecimal": 126086.9,
+      "lossDecimal": 4911.3,
+      "gainDecimal": 0,
+      "percent": 3.9,
+      "labelAnchor": [
+        91.986694,
+        25.144916
+      ],
+      "affectedOwnersCount": 9,
+      "polygon": [
+        [
+          [
+            91.972,
+            25.14
+          ],
+          [
+            91.98718,
+            25.139832
+          ],
+          [
+            92.00282,
+            25.140435
+          ],
+          [
+            92.018,
+            25.14
+          ],
+          [
+            92.018,
+            25.145
+          ],
+          [
+            92.018,
+            25.15
+          ],
+          [
+            92.00282,
+            25.15
+          ],
+          [
+            91.98718,
+            25.15
+          ],
+          [
+            91.972,
+            25.15
+          ],
+          [
+            91.972,
+            25.14
+          ]
+        ]
+      ]
+    }
+  ],
+  "hazardLayers": {
+    "shallowZone": [
+      [
+        [
+          [
+            92.016,
+            25.1
+          ],
+          [
+            92.03,
+            25.1
+          ],
+          [
+            92.03,
+            25.15
+          ],
+          [
+            92.016,
+            25.15
+          ],
+          [
+            92.016,
+            25.1
+          ]
+        ]
+      ]
+    ],
+    "moderateZone": [
+      [
+        [
+          [
+            92.016,
+            25.1
+          ],
+          [
+            92.03,
+            25.1
+          ],
+          [
+            92.03,
+            25.15
+          ],
+          [
+            92.016,
+            25.15
+          ],
+          [
+            92.016,
+            25.1
+          ]
+        ]
+      ]
+    ],
+    "deepZone": [
+      [
+        [
+          [
+            92.016,
+            25.1
+          ],
+          [
+            92.03,
+            25.1
+          ],
+          [
+            92.03,
+            25.15
+          ],
+          [
+            92.016,
+            25.15
+          ],
+          [
+            92.016,
+            25.1
+          ]
+        ]
+      ]
+    ]
+  },
+  "context": {
+    "type": "flood",
+    "peakWaterLevelDiffM": 1.45,
+    "durationDays": 14,
+    "percentFlooded": 68.5
+  },
+  "owners": [
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_1_2602",
+      "name": "Sirajul Islam",
+      "dagNo": "2602",
+      "khatianNo": "RS-216",
+      "plotNo": "2602",
+      "mouzaId": "mouza_gowainghat_1",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "commercial",
+      "changeKind": "loss",
+      "lossDecimal": 807.5,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 9690000,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.975565,
+        25.101463
+      ],
+      "colorIndex": 0
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_1_2603",
+      "name": "Parveen Sultana",
+      "dagNo": "2603",
+      "khatianNo": "RS-149",
+      "plotNo": "2603",
+      "mouzaId": "mouza_gowainghat_1",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "pond",
+      "changeKind": "loss",
+      "lossDecimal": 408.5,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 4902000,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.981315,
+        25.101463
+      ],
+      "colorIndex": 1
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_1_2604",
+      "name": "Mahbubur Rahman",
+      "dagNo": "2604",
+      "khatianNo": "RS-244",
+      "plotNo": "2604",
+      "mouzaId": "mouza_gowainghat_1",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 756.2,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 9074400,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.987065,
+        25.101463
+      ],
+      "colorIndex": 2
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_1_2605",
+      "name": "Afroza Khanam",
+      "dagNo": "2605",
+      "khatianNo": "RS-729",
+      "plotNo": "2605",
+      "mouzaId": "mouza_gowainghat_1",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 713.6,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 8563200,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.992815,
+        25.101463
+      ],
+      "colorIndex": 3
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_1_2606",
+      "name": "Shahidul Alam",
+      "dagNo": "2606",
+      "khatianNo": "RS-336",
+      "plotNo": "2606",
+      "mouzaId": "mouza_gowainghat_1",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 738.9,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 8866800,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.998565,
+        25.101463
+      ],
+      "colorIndex": 4
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_1_2607",
+      "name": "Rehana Parveen",
+      "dagNo": "2607",
+      "khatianNo": "RS-741",
+      "plotNo": "2607",
+      "mouzaId": "mouza_gowainghat_1",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 806.9,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 9682800,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        92.004315,
+        25.101463
+      ],
+      "colorIndex": 5
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_1_2608",
+      "name": "Zakir Hossain",
+      "dagNo": "2608",
+      "khatianNo": "RS-864",
+      "plotNo": "2608",
+      "mouzaId": "mouza_gowainghat_1",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 511.6,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 6139200,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        92.010065,
+        25.101463
+      ],
+      "colorIndex": 6
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_1_2609",
+      "name": "Hasina Mumtaz",
+      "dagNo": "2609",
+      "khatianNo": "RS-145",
+      "plotNo": "2609",
+      "mouzaId": "mouza_gowainghat_1",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 891.5,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 10698000,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.975565,
+        25.102522
+      ],
+      "colorIndex": 7
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_1_2610",
+      "name": "Golam Mostafa",
+      "dagNo": "2610",
+      "khatianNo": "RS-665",
+      "plotNo": "2610",
+      "mouzaId": "mouza_gowainghat_1",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "homestead",
+      "changeKind": "loss",
+      "lossDecimal": 794.7,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 9536400,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.981315,
+        25.102522
+      ],
+      "colorIndex": 8
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_1_2611",
+      "name": "Salma Khatun",
+      "dagNo": "2611",
+      "khatianNo": "RS-531",
+      "plotNo": "2611",
+      "mouzaId": "mouza_gowainghat_1",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 811.3,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 9735600,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.987065,
+        25.102522
+      ],
+      "colorIndex": 9
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_1_2612",
+      "name": "Rafiqul Bari",
+      "dagNo": "2612",
+      "khatianNo": "RS-176",
+      "plotNo": "2612",
+      "mouzaId": "mouza_gowainghat_1",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 840,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 10080000,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.992815,
+        25.102522
+      ],
+      "colorIndex": 10
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_1_2613",
+      "name": "Ferdousi Begum",
+      "dagNo": "2613",
+      "khatianNo": "RS-371",
+      "plotNo": "2613",
+      "mouzaId": "mouza_gowainghat_1",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "homestead",
+      "changeKind": "loss",
+      "lossDecimal": 479.2,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 5750400,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.998565,
+        25.102522
+      ],
+      "colorIndex": 11
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_1_2614",
+      "name": "Kazi Nazmul Huda",
+      "dagNo": "2614",
+      "khatianNo": "RS-689",
+      "plotNo": "2614",
+      "mouzaId": "mouza_gowainghat_1",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 900.4,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 10804800,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        92.004315,
+        25.102522
+      ],
+      "colorIndex": 0
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_1_2615",
+      "name": "Rowshan Ara",
+      "dagNo": "2615",
+      "khatianNo": "RS-580",
+      "plotNo": "2615",
+      "mouzaId": "mouza_gowainghat_1",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 758.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 9097200,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        92.010065,
+        25.102522
+      ],
+      "colorIndex": 1
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_2_2637",
+      "name": "Hosne Ara Begum",
+      "dagNo": "2637",
+      "khatianNo": "RS-396",
+      "plotNo": "2637",
+      "mouzaId": "mouza_gowainghat_2",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "pond",
+      "changeKind": "loss",
+      "lossDecimal": 727.8,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 8733600,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.975565,
+        25.111492
+      ],
+      "colorIndex": 0
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_2_2638",
+      "name": "Monirul Huq",
+      "dagNo": "2638",
+      "khatianNo": "RS-835",
+      "plotNo": "2638",
+      "mouzaId": "mouza_gowainghat_2",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "pond",
+      "changeKind": "loss",
+      "lossDecimal": 961.7,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 11540400,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.981315,
+        25.111492
+      ],
+      "colorIndex": 1
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_2_2639",
+      "name": "Sultana Razia",
+      "dagNo": "2639",
+      "khatianNo": "RS-881",
+      "plotNo": "2639",
+      "mouzaId": "mouza_gowainghat_2",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "pond",
+      "changeKind": "loss",
+      "lossDecimal": 793.9,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 9526800,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.987065,
+        25.111492
+      ],
+      "colorIndex": 2
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_2_2640",
+      "name": "Jalal Uddin Rumi",
+      "dagNo": "2640",
+      "khatianNo": "RS-473",
+      "plotNo": "2640",
+      "mouzaId": "mouza_gowainghat_2",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 1025.3,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 12303600,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.992815,
+        25.111492
+      ],
+      "colorIndex": 3
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_2_2641",
+      "name": "Bilkis Banu",
+      "dagNo": "2641",
+      "khatianNo": "RS-515",
+      "plotNo": "2641",
+      "mouzaId": "mouza_gowainghat_2",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "homestead",
+      "changeKind": "loss",
+      "lossDecimal": 439.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 5269200,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.998565,
+        25.111492
+      ],
+      "colorIndex": 4
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_2_2642",
+      "name": "Sirajul Islam",
+      "dagNo": "2642",
+      "khatianNo": "RS-593",
+      "plotNo": "2642",
+      "mouzaId": "mouza_gowainghat_2",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "homestead",
+      "changeKind": "loss",
+      "lossDecimal": 703.5,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 8442000,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        92.004315,
+        25.111492
+      ],
+      "colorIndex": 5
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_2_2643",
+      "name": "Parveen Sultana",
+      "dagNo": "2643",
+      "khatianNo": "RS-465",
+      "plotNo": "2643",
+      "mouzaId": "mouza_gowainghat_2",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "pond",
+      "changeKind": "loss",
+      "lossDecimal": 788.7,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 9464400,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        92.010065,
+        25.111492
+      ],
+      "colorIndex": 6
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_2_2644",
+      "name": "Mahbubur Rahman",
+      "dagNo": "2644",
+      "khatianNo": "RS-660",
+      "plotNo": "2644",
+      "mouzaId": "mouza_gowainghat_2",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "commercial",
+      "changeKind": "loss",
+      "lossDecimal": 581.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 6973200,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.975565,
+        25.11262
+      ],
+      "colorIndex": 7
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_2_2645",
+      "name": "Afroza Khanam",
+      "dagNo": "2645",
+      "khatianNo": "RS-317",
+      "plotNo": "2645",
+      "mouzaId": "mouza_gowainghat_2",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "homestead",
+      "changeKind": "loss",
+      "lossDecimal": 1007.4,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 12088800,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.981315,
+        25.11262
+      ],
+      "colorIndex": 8
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_3_2665",
+      "name": "Shamsul Alam Sarker",
+      "dagNo": "2665",
+      "khatianNo": "RS-375",
+      "plotNo": "2665",
+      "mouzaId": "mouza_gowainghat_3",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "homestead",
+      "changeKind": "loss",
+      "lossDecimal": 781,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 9372000,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.975565,
+        25.12099
+      ],
+      "colorIndex": 0
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_3_2666",
+      "name": "Begum Rokeya Khatun",
+      "dagNo": "2666",
+      "khatianNo": "RS-217",
+      "plotNo": "2666",
+      "mouzaId": "mouza_gowainghat_3",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 886.4,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 10636800,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.981315,
+        25.12099
+      ],
+      "colorIndex": 1
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_3_2667",
+      "name": "Anwar Parvez",
+      "dagNo": "2667",
+      "khatianNo": "RS-859",
+      "plotNo": "2667",
+      "mouzaId": "mouza_gowainghat_3",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "commercial",
+      "changeKind": "loss",
+      "lossDecimal": 489.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 5869200,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.987065,
+        25.12099
+      ],
+      "colorIndex": 2
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_3_2668",
+      "name": "Nasreen Jahan",
+      "dagNo": "2668",
+      "khatianNo": "RS-165",
+      "plotNo": "2668",
+      "mouzaId": "mouza_gowainghat_3",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "homestead",
+      "changeKind": "loss",
+      "lossDecimal": 779.9,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 9358800,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.992815,
+        25.12099
+      ],
+      "colorIndex": 3
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_3_2669",
+      "name": "Kamal Uddin Ahmed",
+      "dagNo": "2669",
+      "khatianNo": "RS-165",
+      "plotNo": "2669",
+      "mouzaId": "mouza_gowainghat_3",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "commercial",
+      "changeKind": "loss",
+      "lossDecimal": 523.3,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 6279600,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.998565,
+        25.12099
+      ],
+      "colorIndex": 4
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_3_2670",
+      "name": "Shahana Akter",
+      "dagNo": "2670",
+      "khatianNo": "RS-176",
+      "plotNo": "2670",
+      "mouzaId": "mouza_gowainghat_3",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "homestead",
+      "changeKind": "loss",
+      "lossDecimal": 578.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 6937200,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        92.004315,
+        25.12099
+      ],
+      "colorIndex": 5
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_3_2671",
+      "name": "Mizanur Rahman",
+      "dagNo": "2671",
+      "khatianNo": "RS-379",
+      "plotNo": "2671",
+      "mouzaId": "mouza_gowainghat_3",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "homestead",
+      "changeKind": "loss",
+      "lossDecimal": 450.4,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 5404800,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        92.010065,
+        25.12099
+      ],
+      "colorIndex": 6
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_3_2672",
+      "name": "Taslima Nasrin",
+      "dagNo": "2672",
+      "khatianNo": "RS-165",
+      "plotNo": "2672",
+      "mouzaId": "mouza_gowainghat_3",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "commercial",
+      "changeKind": "loss",
+      "lossDecimal": 945.5,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 11346000,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.975565,
+        25.122057
+      ],
+      "colorIndex": 7
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_3_2673",
+      "name": "Abdul Matin",
+      "dagNo": "2673",
+      "khatianNo": "RS-613",
+      "plotNo": "2673",
+      "mouzaId": "mouza_gowainghat_3",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 796.9,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 9562800,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.981315,
+        25.122057
+      ],
+      "colorIndex": 8
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_4_2700",
+      "name": "Rahim Chowdhury",
+      "dagNo": "2700",
+      "khatianNo": "RS-202",
+      "plotNo": "2700",
+      "mouzaId": "mouza_gowainghat_4",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "homestead",
+      "changeKind": "loss",
+      "lossDecimal": 846.8,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 10161600,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.975565,
+        25.130796
+      ],
+      "colorIndex": 0
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_4_2701",
+      "name": "Fatema Begum",
+      "dagNo": "2701",
+      "khatianNo": "RS-378",
+      "plotNo": "2701",
+      "mouzaId": "mouza_gowainghat_4",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "commercial",
+      "changeKind": "loss",
+      "lossDecimal": 799.5,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 9594000,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.981315,
+        25.130796
+      ],
+      "colorIndex": 1
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_4_2702",
+      "name": "Kabir Hossain Dewan",
+      "dagNo": "2702",
+      "khatianNo": "RS-726",
+      "plotNo": "2702",
+      "mouzaId": "mouza_gowainghat_4",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "pond",
+      "changeKind": "loss",
+      "lossDecimal": 578,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 6936000,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.987065,
+        25.130796
+      ],
+      "colorIndex": 2
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_4_2703",
+      "name": "Ayesha Siddiqua",
+      "dagNo": "2703",
+      "khatianNo": "RS-738",
+      "plotNo": "2703",
+      "mouzaId": "mouza_gowainghat_4",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "commercial",
+      "changeKind": "loss",
+      "lossDecimal": 573.7,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 6884400,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.992815,
+        25.130796
+      ],
+      "colorIndex": 3
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_4_2704",
+      "name": "Nurul Huda Mia",
+      "dagNo": "2704",
+      "khatianNo": "RS-261",
+      "plotNo": "2704",
+      "mouzaId": "mouza_gowainghat_4",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "commercial",
+      "changeKind": "loss",
+      "lossDecimal": 377.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 4525200,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.975565,
+        25.131798
+      ],
+      "colorIndex": 4
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_4_2705",
+      "name": "Shamsul Alam Sarker",
+      "dagNo": "2705",
+      "khatianNo": "RS-211",
+      "plotNo": "2705",
+      "mouzaId": "mouza_gowainghat_4",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 856.3,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 10275600,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.981315,
+        25.131798
+      ],
+      "colorIndex": 5
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_4_2706",
+      "name": "Begum Rokeya Khatun",
+      "dagNo": "2706",
+      "khatianNo": "RS-551",
+      "plotNo": "2706",
+      "mouzaId": "mouza_gowainghat_4",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "homestead",
+      "changeKind": "loss",
+      "lossDecimal": 435.2,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 5222400,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.987065,
+        25.131798
+      ],
+      "colorIndex": 6
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_4_2707",
+      "name": "Anwar Parvez",
+      "dagNo": "2707",
+      "khatianNo": "RS-790",
+      "plotNo": "2707",
+      "mouzaId": "mouza_gowainghat_4",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 519.9,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 6238800,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.992815,
+        25.131798
+      ],
+      "colorIndex": 7
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_4_2708",
+      "name": "Nasreen Jahan",
+      "dagNo": "2708",
+      "khatianNo": "RS-803",
+      "plotNo": "2708",
+      "mouzaId": "mouza_gowainghat_4",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 913,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 10956000,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.998565,
+        25.131798
+      ],
+      "colorIndex": 8
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_4_2709",
+      "name": "Kamal Uddin Ahmed",
+      "dagNo": "2709",
+      "khatianNo": "RS-702",
+      "plotNo": "2709",
+      "mouzaId": "mouza_gowainghat_4",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "homestead",
+      "changeKind": "loss",
+      "lossDecimal": 903.7,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 10844400,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        92.004315,
+        25.131798
+      ],
+      "colorIndex": 9
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_4_2710",
+      "name": "Shahana Akter",
+      "dagNo": "2710",
+      "khatianNo": "RS-551",
+      "plotNo": "2710",
+      "mouzaId": "mouza_gowainghat_4",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "homestead",
+      "changeKind": "loss",
+      "lossDecimal": 709.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 8509200,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        92.010065,
+        25.131798
+      ],
+      "colorIndex": 10
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_4_2711",
+      "name": "Mizanur Rahman",
+      "dagNo": "2711",
+      "khatianNo": "RS-238",
+      "plotNo": "2711",
+      "mouzaId": "mouza_gowainghat_4",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 736.6,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 8839200,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.975565,
+        25.1328
+      ],
+      "colorIndex": 11
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_5_2736",
+      "name": "Enamul Haque",
+      "dagNo": "2736",
+      "khatianNo": "RS-791",
+      "plotNo": "2736",
+      "mouzaId": "mouza_gowainghat_5",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 488.5,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 5862000,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.975565,
+        25.141235
+      ],
+      "colorIndex": 0
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_5_2737",
+      "name": "Momtaz Mahal",
+      "dagNo": "2737",
+      "khatianNo": "RS-642",
+      "plotNo": "2737",
+      "mouzaId": "mouza_gowainghat_5",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 581.4,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 6976800,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.981315,
+        25.141235
+      ],
+      "colorIndex": 1
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_5_2738",
+      "name": "Tariqul Islam",
+      "dagNo": "2738",
+      "khatianNo": "RS-554",
+      "plotNo": "2738",
+      "mouzaId": "mouza_gowainghat_5",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "commercial",
+      "changeKind": "loss",
+      "lossDecimal": 641.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 7693200,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.987065,
+        25.141235
+      ],
+      "colorIndex": 2
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_5_2739",
+      "name": "Shirin Akter",
+      "dagNo": "2739",
+      "khatianNo": "RS-256",
+      "plotNo": "2739",
+      "mouzaId": "mouza_gowainghat_5",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "pond",
+      "changeKind": "loss",
+      "lossDecimal": 411.2,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 4934400,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.992815,
+        25.141235
+      ],
+      "colorIndex": 3
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_5_2740",
+      "name": "Rahim Chowdhury",
+      "dagNo": "2740",
+      "khatianNo": "RS-198",
+      "plotNo": "2740",
+      "mouzaId": "mouza_gowainghat_5",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 418.7,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 5024400,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.998565,
+        25.141235
+      ],
+      "colorIndex": 4
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_5_2741",
+      "name": "Fatema Begum",
+      "dagNo": "2741",
+      "khatianNo": "RS-596",
+      "plotNo": "2741",
+      "mouzaId": "mouza_gowainghat_5",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 381.7,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 4580400,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        92.004315,
+        25.141235
+      ],
+      "colorIndex": 5
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_5_2742",
+      "name": "Kabir Hossain Dewan",
+      "dagNo": "2742",
+      "khatianNo": "RS-869",
+      "plotNo": "2742",
+      "mouzaId": "mouza_gowainghat_5",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "pond",
+      "changeKind": "loss",
+      "lossDecimal": 492.7,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 5912400,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        92.010065,
+        25.141235
+      ],
+      "colorIndex": 6
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_5_2743",
+      "name": "Ayesha Siddiqua",
+      "dagNo": "2743",
+      "khatianNo": "RS-110",
+      "plotNo": "2743",
+      "mouzaId": "mouza_gowainghat_5",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "pond",
+      "changeKind": "loss",
+      "lossDecimal": 818.3,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 9819600,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.975565,
+        25.142252
+      ],
+      "colorIndex": 7
+    },
+    {
+      "id": "fl_owner_plot_mouza_gowainghat_5_2744",
+      "name": "Nurul Huda Mia",
+      "dagNo": "2744",
+      "khatianNo": "RS-705",
+      "plotNo": "2744",
+      "mouzaId": "mouza_gowainghat_5",
+      "upazilaId": "gowainghat",
+      "districtId": "sylhet",
+      "hazard": "flood",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 677.7,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 8132400,
+      "isUnownedOrKhas": false,
+      "coordinates": [
+        91.981315,
+        25.142252
+      ],
+      "colorIndex": 8
+    }
+  ]
+}

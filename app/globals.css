@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "leaflet/dist/leaflet.css";
+
+/* Leaflet Container & Reset */
+.leaflet-container {
+  background-color: #EEF0E6 !important;
+  font-family: inherit;
+  outline: none;
+}
+
+/* Custom Leaflet Controls styling */
+.leaflet-bar {
+  border: 1px solid var(--border) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+
+.leaflet-bar a {
+  background-color: var(--surface) !important;
+  color: var(--ink) !important;
+  border-bottom: 1px solid var(--border) !important;
+  transition: background-color 0.15s ease;
+}
+
+.leaflet-bar a:hover {
+  background-color: var(--surface-alt) !important;
+  color: var(--ink) !important;
+}
+
+.leaflet-control-scale-line {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border: 1px solid var(--border) !important;
+  border-top: none !important;
+  color: var(--ink) !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  padding: 1px 5px !important;
+  border-radius: 0 0 4px 4px !important;
+}
+
+/* Leaflet Tooltips */
+.leaflet-tooltip {
+  background: #0F172A !important;
+  color: #F8FAFC !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 8px !important;
+  padding: 6px 10px !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18) !important;
+}
+
+.leaflet-tooltip-top:before {
+  border-top-color: #0F172A !important;
+}
+.leaflet-tooltip-bottom:before {
+  border-bottom-color: #0F172A !important;
+}
+.leaflet-tooltip-left:before {
+  border-left-color: #0F172A !important;
+}
+.leaflet-tooltip-right:before {
+  border-right-color: #0F172A !important;
+}
+
+:root {
+  /* Surfaces */
+  --bg: #F6F7F2;          /* Page background */
+  --surface: #FFFFFF;     /* Cards */
+  --surface-alt: #F0F2EA; /* Inputs, secondary chips */
+  --border: #E4E7DC;      /* 1px light border */
+
+  /* Text & Ink */
+  --ink: #14170F;         /* Primary heading & body */
+  --ink-2: #4A5043;       /* Secondary body text */
+  --muted: #7B8274;       /* Labels, axes, placeholders */
+
+  /* Accent (Lime) */
+  --accent: #C8F23A;      /* Primary button, pill, active highlight */
+  --accent-ink: #14170F;  /* Text on lime is ALWAYS #14170F */
+  --accent-deep: #4D7A0A; /* Lime-green lines / text on white for >= 4.5:1 contrast */
+  --accent-soft: #EEF8C8; /* Active nav background, soft pill hover */
+
+  /* Semantic Data Colors */
+  --loss: #E4604A;         /* Land loss / eroded */
+  --loss-soft: #FBE5E0;    /* Loss badge background */
+  --gain: #2F9E62;         /* Land gain / accretion */
+  --gain-soft: #DFF3E8;    /* Gain badge background */
+  --forecast: #6A5BD6;     /* Forecast prediction (purple dashed) */
+  --forecast-soft: #ECE9FB;/* Forecast badge background */
+  --water: #2F7FB8;        /* Water / river channels */
+  --warn: #D97706;         /* Attention / pending status */
+  --warn-soft: #FEF3C7;
+
+  /* Focus & radius */
+  --focus: #14170F;
+  --radius-card: 20px;
+  --radius-input: 12px;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Tabular numbers for all stats and tables */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Card base style */
+.bhumidorpon-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  box-shadow: 0 1px 2px rgba(20, 23, 15, 0.03);
+}
+
+/* Primary lime pill button */
+.btn-lime {
+  background-color: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 600;
+  border-radius: 9999px;
+  transition: all 150ms ease-out;
+}
+.btn-lime:hover {
+  background-color: #BBE825;
+  transform: translateY(-1px);
+}
+.btn-lime:active {
+  transform: translateY(0);
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #D7DACF;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #BCC0B4;
+}
+
+/* Dashed forecast stroke pattern */
+.stroke-forecast-dashed {
+  stroke-dasharray: 5 4;
+}
+
+/* Accessible focus ring for keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* Accessibility: respect user prefers-reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

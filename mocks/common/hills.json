@@ -1,0 +1,266 @@
+[
+  {
+    "id": "hill_gowainghat_1",
+    "name": "Gowainghat Ridge",
+    "upazilaId": "gowainghat",
+    "slopeAngleDeg": 39,
+    "soilType": "Colluvial clayey loam",
+    "riskLevel": "High"
+  },
+  {
+    "id": "hill_gowainghat_2",
+    "name": "Gowainghat Crest",
+    "upazilaId": "gowainghat",
+    "slopeAngleDeg": 38,
+    "soilType": "Pliocene sandstone",
+    "riskLevel": "High"
+  },
+  {
+    "id": "hill_gowainghat_3",
+    "name": "Gowainghat Escarpment",
+    "upazilaId": "gowainghat",
+    "slopeAngleDeg": 35,
+    "soilType": "Pliocene sandstone",
+    "riskLevel": "High"
+  },
+  {
+    "id": "hill_rangamati_sadar_1",
+    "name": "Rangamati Sadar Ridge",
+    "upazilaId": "rangamati_sadar",
+    "slopeAngleDeg": 36,
+    "soilType": "Silty shale",
+    "riskLevel": "Extreme"
+  },
+  {
+    "id": "hill_rangamati_sadar_2",
+    "name": "Rangamati Sadar Crest",
+    "upazilaId": "rangamati_sadar",
+    "slopeAngleDeg": 38,
+    "soilType": "Silty shale",
+    "riskLevel": "High"
+  },
+  {
+    "id": "hill_rangamati_sadar_3",
+    "name": "Rangamati Sadar Escarpment",
+    "upazilaId": "rangamati_sadar",
+    "slopeAngleDeg": 45,
+    "soilType": "Silty shale",
+    "riskLevel": "High"
+  },
+  {
+    "id": "hill_kawkhali_1",
+    "name": "Kawkhali Ridge",
+    "upazilaId": "kawkhali",
+    "slopeAngleDeg": 39,
+    "soilType": "Pliocene sandstone",
+    "riskLevel": "High"
+  },
+  {
+    "id": "hill_kawkhali_2",
+    "name": "Kawkhali Crest",
+    "upazilaId": "kawkhali",
+    "slopeAngleDeg": 45,
+    "soilType": "Colluvial clayey loam",
+    "riskLevel": "High"
+  },
+  {
+    "id": "hill_kawkhali_3",
+    "name": "Kawkhali Escarpment",
+    "upazilaId": "kawkhali",
+    "slopeAngleDeg": 36,
+    "soilType": "Colluvial clayey loam",
+    "riskLevel": "Extreme"
+  },
+  {
+    "id": "hill_baghaichhari_1",
+    "name": "Baghaichhari Ridge",
+    "upazilaId": "baghaichhari",
+    "slopeAngleDeg": 42,
+    "soilType": "Pliocene sandstone",
+    "riskLevel": "High"
+  },
+  {
+    "id": "hill_baghaichhari_2",
+    "name": "Baghaichhari Crest",
+    "upazilaId": "baghaichhari",
+    "slopeAngleDeg": 35,
+    "soilType": "Silty shale",
+    "riskLevel": "Moderate"
+  },
+  {
+    "id": "hill_baghaichhari_3",
+    "name": "Baghaichhari Escarpment",
+    "upazilaId": "baghaichhari",
+    "slopeAngleDeg": 33,
+    "soilType": "Colluvial clayey loam",
+    "riskLevel": "High"
+  },
+  {
+    "id": "hill_bandarban_sadar_1",
+    "name": "Bandarban Sadar Ridge",
+    "upazilaId": "bandarban_sadar",
+    "slopeAngleDeg": 43,
+    "soilType": "Pliocene sandstone",
+    "riskLevel": "High"
+  },
+  {
+    "id": "hill_bandarban_sadar_2",
+    "name": "Bandarban Sadar Crest",
+    "upazilaId": "bandarban_sadar",
+    "slopeAngleDeg": 45,
+    "soilType": "Pliocene sandstone",
+    "riskLevel": "Moderate"
+  },
+  {
+    "id": "hill_bandarban_sadar_3",
+    "name": "Bandarban Sadar Escarpment",
+    "upazilaId": "bandarban_sadar",
+    "slopeAngleDeg": 36,
+    "soilType": "Silty shale",
+    "riskLevel": "Moderate"
+  },
+  {
+    "id": "hill_lama_1",
+    "name": "Lama Ridge",
+    "upazilaId": "lama",
+    "slopeAngleDeg": 44,
+    "soilType": "Pliocene sandstone",
+    "riskLevel": "Extreme"
+  },
+  {
+    "id": "hill_lama_2",
+    "name": "Lama Crest",
+    "upazilaId": "lama",
+    "slopeAngleDeg": 39,
+    "soilType": "Pliocene sandstone",
+    "riskLevel": "Moderate"
+  },
+  {
+    "id": "hill_lama_3",
+    "name": "Lama Escarpment",
+    "upazilaId": "lama",
+    "slopeAngleDeg": 34,
+    "soilType": "Pliocene sandstone",
+    "riskLevel": "High"
+  },
+  {
+    "id": "hill_rowangchhari_1",
+    "name": "Rowangchhari Ridge",
+    "upazilaId": "rowangchhari",
+    "slopeAngleDeg": 47,
+    "soilType": "Colluvial clayey loam",
+    "riskLevel": "High"
+  },
+  {
+    "id": "hill_rowangchhari_2",
+    "name": "Rowangchhari Crest",
+    "upazilaId": "rowangchhari",
+    "slopeAngleDeg": 37,
+    "soilType": "Silty shale",
+    "riskLevel": "Extreme"
+  },
+  {
+    "id": "hill_rowangchhari_3",
+    "name": "Rowangchhari Escarpment",
+    "upazilaId": "rowangchhari",
+    "slopeAngleDeg": 45,
+    "soilType": "Colluvial clayey loam",
+    "riskLevel": "High"
+  },
+  {
+    "id": "hill_coxs_bazar_sadar_1",
+    "name": "Cox's Bazar Sadar Ridge",
+    "upazilaId": "coxs_bazar_sadar",
+    "slopeAngleDeg": 45,
+    "soilType": "Silty shale",
+    "riskLevel": "High"
+  },
+  {
+    "id": "hill_coxs_bazar_sadar_2",
+    "name": "Cox's Bazar Sadar Crest",
+    "upazilaId": "coxs_bazar_sadar",
+    "slopeAngleDeg": 40,
+    "soilType": "Silty shale",
+    "riskLevel": "High"
+  },
+  {
+    "id": "hill_coxs_bazar_sadar_3",
+    "name": "Cox's Bazar Sadar Escarpment",
+    "upazilaId": "coxs_bazar_sadar",
+    "slopeAngleDeg": 38,
+    "soilType": "Silty shale",
+    "riskLevel": "High"
+  },
+  {
+    "id": "hill_teknaf_1",
+    "name": "Teknaf Ridge",
+    "upazilaId": "teknaf",
+    "slopeAngleDeg": 34,
+    "soilType": "Colluvial clayey loam",
+    "riskLevel": "High"
+  },
+  {
+    "id": "hill_teknaf_2",
+    "name": "Teknaf Crest",
+    "upazilaId": "teknaf",
+    "slopeAngleDeg": 33,
+    "soilType": "Colluvial clayey loam",
+    "riskLevel": "Moderate"
+  },
+  {
+    "id": "hill_teknaf_3",
+    "name": "Teknaf Escarpment",
+    "upazilaId": "teknaf",
+    "slopeAngleDeg": 35,
+    "soilType": "Colluvial clayey loam",
+    "riskLevel": "Moderate"
+  },
+  {
+    "id": "hill_ukhia_1",
+    "name": "Ukhia Ridge",
+    "upazilaId": "ukhia",
+    "slopeAngleDeg": 40,
+    "soilType": "Silty shale",
+    "riskLevel": "High"
+  },
+  {
+    "id": "hill_ukhia_2",
+    "name": "Ukhia Crest",
+    "upazilaId": "ukhia",
+    "slopeAngleDeg": 36,
+    "soilType": "Pliocene sandstone",
+    "riskLevel": "Moderate"
+  },
+  {
+    "id": "hill_ukhia_3",
+    "name": "Ukhia Escarpment",
+    "upazilaId": "ukhia",
+    "slopeAngleDeg": 32,
+    "soilType": "Colluvial clayey loam",
+    "riskLevel": "Moderate"
+  },
+  {
+    "id": "hill_maheshkhali_1",
+    "name": "Maheshkhali Ridge",
+    "upazilaId": "maheshkhali",
+    "slopeAngleDeg": 36,
+    "soilType": "Silty shale",
+    "riskLevel": "Moderate"
+  },
+  {
+    "id": "hill_maheshkhali_2",
+    "name": "Maheshkhali Crest",
+    "upazilaId": "maheshkhali",
+    "slopeAngleDeg": 45,
+    "soilType": "Silty shale",
+    "riskLevel": "Moderate"
+  },
+  {
+    "id": "hill_maheshkhali_3",
+    "name": "Maheshkhali Escarpment",
+    "upazilaId": "maheshkhali",
+    "slopeAngleDeg": 41,
+    "soilType": "Pliocene sandstone",
+    "riskLevel": "High"
+  }
+]

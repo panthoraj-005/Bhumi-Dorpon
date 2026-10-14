@@ -1,0 +1,6112 @@
+[
+  {
+    "id": "mouza_kazipur_1",
+    "name": "Kazipur Riverside",
+    "jlNo": "JL-92",
+    "upazilaId": "kazipur",
+    "districtId": "sirajganj",
+    "riverId": "jamuna_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 42,
+    "center": [
+      89.64138248395176,
+      24.62193993656896
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            89.63438248395175,
+            24.61743993656896
+          ],
+          [
+            89.64838248395176,
+            24.61743993656896
+          ],
+          [
+            89.64838248395176,
+            24.62643993656896
+          ],
+          [
+            89.63438248395175,
+            24.62643993656896
+          ],
+          [
+            89.63438248395175,
+            24.61743993656896
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_kazipur_2",
+    "name": "Kazipur North Meadow",
+    "jlNo": "JL-83",
+    "upazilaId": "kazipur",
+    "districtId": "sirajganj",
+    "riverId": "jamuna_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "center": [
+      89.63784097324125,
+      24.64301020412706
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            89.63084097324125,
+            24.63851020412706
+          ],
+          [
+            89.64484097324126,
+            24.63851020412706
+          ],
+          [
+            89.64484097324126,
+            24.64751020412706
+          ],
+          [
+            89.63084097324125,
+            24.64751020412706
+          ],
+          [
+            89.63084097324125,
+            24.63851020412706
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_kazipur_3",
+    "name": "Kazipur South Alluvium",
+    "jlNo": "JL-47",
+    "upazilaId": "kazipur",
+    "districtId": "sirajganj",
+    "riverId": "jamuna_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 36,
+    "center": [
+      89.66558494483121,
+      24.634454383086414
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            89.6585849448312,
+            24.629954383086414
+          ],
+          [
+            89.67258494483121,
+            24.629954383086414
+          ],
+          [
+            89.67258494483121,
+            24.638954383086414
+          ],
+          [
+            89.6585849448312,
+            24.638954383086414
+          ],
+          [
+            89.6585849448312,
+            24.629954383086414
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_kazipur_4",
+    "name": "Kazipur Highland Block",
+    "jlNo": "JL-86",
+    "upazilaId": "kazipur",
+    "districtId": "sirajganj",
+    "riverId": "jamuna_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 25,
+    "center": [
+      89.6589497257676,
+      24.639378317259254
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            89.6519497257676,
+            24.634878317259254
+          ],
+          [
+            89.6659497257676,
+            24.634878317259254
+          ],
+          [
+            89.6659497257676,
+            24.643878317259254
+          ],
+          [
+            89.6519497257676,
+            24.643878317259254
+          ],
+          [
+            89.6519497257676,
+            24.634878317259254
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_sirajganj_sadar_1",
+    "name": "Sirajganj Sadar Riverside",
+    "jlNo": "JL-10",
+    "upazilaId": "sirajganj_sadar",
+    "districtId": "sirajganj",
+    "riverId": "jamuna_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 49,
+    "center": [
+      89.70079651630483,
+      24.467376797311008
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            89.69379651630483,
+            24.462876797311008
+          ],
+          [
+            89.70779651630484,
+            24.462876797311008
+          ],
+          [
+            89.70779651630484,
+            24.47187679731101
+          ],
+          [
+            89.69379651630483,
+            24.47187679731101
+          ],
+          [
+            89.69379651630483,
+            24.462876797311008
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_sirajganj_sadar_2",
+    "name": "Sirajganj Sadar North Meadow",
+    "jlNo": "JL-55",
+    "upazilaId": "sirajganj_sadar",
+    "districtId": "sirajganj",
+    "riverId": "jamuna_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "center": [
+      89.69984252518043,
+      24.438211765941233
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            89.69284252518042,
+            24.433711765941233
+          ],
+          [
+            89.70684252518043,
+            24.433711765941233
+          ],
+          [
+            89.70684252518043,
+            24.442711765941233
+          ],
+          [
+            89.69284252518042,
+            24.442711765941233
+          ],
+          [
+            89.69284252518042,
+            24.433711765941233
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_sirajganj_sadar_3",
+    "name": "Sirajganj Sadar South Alluvium",
+    "jlNo": "JL-85",
+    "upazilaId": "sirajganj_sadar",
+    "districtId": "sirajganj",
+    "riverId": "jamuna_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 42,
+    "center": [
+      89.71339124987834,
+      24.45492497742176
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            89.70639124987834,
+            24.45042497742176
+          ],
+          [
+            89.72039124987835,
+            24.45042497742176
+          ],
+          [
+            89.72039124987835,
+            24.45942497742176
+          ],
+          [
+            89.70639124987834,
+            24.45942497742176
+          ],
+          [
+            89.70639124987834,
+            24.45042497742176
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_sirajganj_sadar_4",
+    "name": "Sirajganj Sadar Highland Block",
+    "jlNo": "JL-94",
+    "upazilaId": "sirajganj_sadar",
+    "districtId": "sirajganj",
+    "riverId": "jamuna_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "center": [
+      89.71794184102677,
+      24.44827970020473
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            89.71094184102677,
+            24.44377970020473
+          ],
+          [
+            89.72494184102678,
+            24.44377970020473
+          ],
+          [
+            89.72494184102678,
+            24.45277970020473
+          ],
+          [
+            89.71094184102677,
+            24.45277970020473
+          ],
+          [
+            89.71094184102677,
+            24.44377970020473
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_belkuchi_1",
+    "name": "Belkuchi Riverside",
+    "jlNo": "JL-15",
+    "upazilaId": "belkuchi",
+    "districtId": "sirajganj",
+    "riverId": "jamuna_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "center": [
+      89.68176771315747,
+      24.29413495833054
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            89.67476771315746,
+            24.28963495833054
+          ],
+          [
+            89.68876771315747,
+            24.28963495833054
+          ],
+          [
+            89.68876771315747,
+            24.298634958330542
+          ],
+          [
+            89.67476771315746,
+            24.298634958330542
+          ],
+          [
+            89.67476771315746,
+            24.28963495833054
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_belkuchi_2",
+    "name": "Belkuchi North Meadow",
+    "jlNo": "JL-53",
+    "upazilaId": "belkuchi",
+    "districtId": "sirajganj",
+    "riverId": "jamuna_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "center": [
+      89.6819433629606,
+      24.29482100399211
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            89.67494336296059,
+            24.29032100399211
+          ],
+          [
+            89.6889433629606,
+            24.29032100399211
+          ],
+          [
+            89.6889433629606,
+            24.29932100399211
+          ],
+          [
+            89.67494336296059,
+            24.29932100399211
+          ],
+          [
+            89.67494336296059,
+            24.29032100399211
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_belkuchi_3",
+    "name": "Belkuchi South Alluvium",
+    "jlNo": "JL-11",
+    "upazilaId": "belkuchi",
+    "districtId": "sirajganj",
+    "riverId": "jamuna_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "center": [
+      89.71162955190987,
+      24.30092416157946
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            89.70462955190986,
+            24.29642416157946
+          ],
+          [
+            89.71862955190987,
+            24.29642416157946
+          ],
+          [
+            89.71862955190987,
+            24.30542416157946
+          ],
+          [
+            89.70462955190986,
+            24.30542416157946
+          ],
+          [
+            89.70462955190986,
+            24.29642416157946
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_belkuchi_4",
+    "name": "Belkuchi Highland Block",
+    "jlNo": "JL-37",
+    "upazilaId": "belkuchi",
+    "districtId": "sirajganj",
+    "riverId": "jamuna_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "center": [
+      89.70503567114473,
+      24.303600628515703
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            89.69803567114472,
+            24.299100628515703
+          ],
+          [
+            89.71203567114473,
+            24.299100628515703
+          ],
+          [
+            89.71203567114473,
+            24.308100628515703
+          ],
+          [
+            89.69803567114472,
+            24.308100628515703
+          ],
+          [
+            89.69803567114472,
+            24.299100628515703
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_chilmari_1",
+    "name": "Chilmari Riverside",
+    "jlNo": "JL-75",
+    "upazilaId": "chilmari",
+    "districtId": "kurigram",
+    "riverId": "brahmaputra_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "center": [
+      89.68463601492346,
+      25.571828554440287
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            89.67763601492345,
+            25.567328554440287
+          ],
+          [
+            89.69163601492346,
+            25.567328554440287
+          ],
+          [
+            89.69163601492346,
+            25.576328554440288
+          ],
+          [
+            89.67763601492345,
+            25.576328554440288
+          ],
+          [
+            89.67763601492345,
+            25.567328554440287
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_chilmari_2",
+    "name": "Chilmari North Meadow",
+    "jlNo": "JL-63",
+    "upazilaId": "chilmari",
+    "districtId": "kurigram",
+    "riverId": "brahmaputra_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "center": [
+      89.66208464260214,
+      25.579553837487474
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            89.65508464260213,
+            25.575053837487474
+          ],
+          [
+            89.66908464260214,
+            25.575053837487474
+          ],
+          [
+            89.66908464260214,
+            25.584053837487474
+          ],
+          [
+            89.65508464260213,
+            25.584053837487474
+          ],
+          [
+            89.65508464260213,
+            25.575053837487474
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_chilmari_3",
+    "name": "Chilmari South Alluvium",
+    "jlNo": "JL-35",
+    "upazilaId": "chilmari",
+    "districtId": "kurigram",
+    "riverId": "brahmaputra_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "center": [
+      89.66727107448503,
+      25.562275605192408
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            89.66027107448502,
+            25.557775605192408
+          ],
+          [
+            89.67427107448503,
+            25.557775605192408
+          ],
+          [
+            89.67427107448503,
+            25.566775605192408
+          ],
+          [
+            89.66027107448502,
+            25.566775605192408
+          ],
+          [
+            89.66027107448502,
+            25.557775605192408
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_rowmari_1",
+    "name": "Rowmari Riverside",
+    "jlNo": "JL-47",
+    "upazilaId": "rowmari",
+    "districtId": "kurigram",
+    "riverId": "brahmaputra_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 49,
+    "center": [
+      89.83301955128088,
+      25.574752198075874
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            89.82601955128088,
+            25.570252198075874
+          ],
+          [
+            89.84001955128089,
+            25.570252198075874
+          ],
+          [
+            89.84001955128089,
+            25.579252198075874
+          ],
+          [
+            89.82601955128088,
+            25.579252198075874
+          ],
+          [
+            89.82601955128088,
+            25.570252198075874
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_rowmari_2",
+    "name": "Rowmari North Meadow",
+    "jlNo": "JL-11",
+    "upazilaId": "rowmari",
+    "districtId": "kurigram",
+    "riverId": "brahmaputra_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "center": [
+      89.83629619833081,
+      25.548979894481597
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            89.82929619833081,
+            25.544479894481597
+          ],
+          [
+            89.84329619833082,
+            25.544479894481597
+          ],
+          [
+            89.84329619833082,
+            25.553479894481598
+          ],
+          [
+            89.82929619833081,
+            25.553479894481598
+          ],
+          [
+            89.82929619833081,
+            25.544479894481597
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_rowmari_3",
+    "name": "Rowmari South Alluvium",
+    "jlNo": "JL-33",
+    "upazilaId": "rowmari",
+    "districtId": "kurigram",
+    "riverId": "brahmaputra_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 49,
+    "center": [
+      89.84093678334727,
+      25.552429949734357
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            89.83393678334727,
+            25.547929949734357
+          ],
+          [
+            89.84793678334728,
+            25.547929949734357
+          ],
+          [
+            89.84793678334728,
+            25.556929949734357
+          ],
+          [
+            89.83393678334727,
+            25.556929949734357
+          ],
+          [
+            89.83393678334727,
+            25.547929949734357
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_rowmari_4",
+    "name": "Rowmari Highland Block",
+    "jlNo": "JL-56",
+    "upazilaId": "rowmari",
+    "districtId": "kurigram",
+    "riverId": "brahmaputra_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 25,
+    "center": [
+      89.86094110454432,
+      25.553150570075957
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            89.85394110454432,
+            25.548650570075957
+          ],
+          [
+            89.86794110454433,
+            25.548650570075957
+          ],
+          [
+            89.86794110454433,
+            25.557650570075957
+          ],
+          [
+            89.85394110454432,
+            25.557650570075957
+          ],
+          [
+            89.85394110454432,
+            25.548650570075957
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_ulipur_1",
+    "name": "Ulipur Riverside",
+    "jlNo": "JL-31",
+    "upazilaId": "ulipur",
+    "districtId": "kurigram",
+    "riverId": "brahmaputra_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 36,
+    "center": [
+      89.63309991007671,
+      25.660466903299092
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            89.6260999100767,
+            25.655966903299092
+          ],
+          [
+            89.64009991007671,
+            25.655966903299092
+          ],
+          [
+            89.64009991007671,
+            25.664966903299092
+          ],
+          [
+            89.6260999100767,
+            25.664966903299092
+          ],
+          [
+            89.6260999100767,
+            25.655966903299092
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_ulipur_2",
+    "name": "Ulipur North Meadow",
+    "jlNo": "JL-34",
+    "upazilaId": "ulipur",
+    "districtId": "kurigram",
+    "riverId": "brahmaputra_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 42,
+    "center": [
+      89.64999196432531,
+      25.64552217166871
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            89.6429919643253,
+            25.64102217166871
+          ],
+          [
+            89.65699196432531,
+            25.64102217166871
+          ],
+          [
+            89.65699196432531,
+            25.65002217166871
+          ],
+          [
+            89.6429919643253,
+            25.65002217166871
+          ],
+          [
+            89.6429919643253,
+            25.64102217166871
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_ulipur_3",
+    "name": "Ulipur South Alluvium",
+    "jlNo": "JL-10",
+    "upazilaId": "ulipur",
+    "districtId": "kurigram",
+    "riverId": "brahmaputra_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "center": [
+      89.62694992328062,
+      25.642638070778922
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            89.61994992328061,
+            25.638138070778922
+          ],
+          [
+            89.63394992328062,
+            25.638138070778922
+          ],
+          [
+            89.63394992328062,
+            25.647138070778922
+          ],
+          [
+            89.61994992328061,
+            25.647138070778922
+          ],
+          [
+            89.61994992328061,
+            25.638138070778922
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_ulipur_4",
+    "name": "Ulipur Highland Block",
+    "jlNo": "JL-39",
+    "upazilaId": "ulipur",
+    "districtId": "kurigram",
+    "riverId": "brahmaputra_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 36,
+    "center": [
+      89.61177578840405,
+      25.678627095436678
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            89.60477578840404,
+            25.674127095436678
+          ],
+          [
+            89.61877578840405,
+            25.674127095436678
+          ],
+          [
+            89.61877578840405,
+            25.683127095436678
+          ],
+          [
+            89.60477578840404,
+            25.683127095436678
+          ],
+          [
+            89.60477578840404,
+            25.674127095436678
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_naria_1",
+    "name": "Naria Riverside",
+    "jlNo": "JL-87",
+    "upazilaId": "naria",
+    "districtId": "shariatpur",
+    "riverId": "padma_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "center": [
+      90.43177951701918,
+      23.28329747724347
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            90.42477951701918,
+            23.27879747724347
+          ],
+          [
+            90.43877951701919,
+            23.27879747724347
+          ],
+          [
+            90.43877951701919,
+            23.28779747724347
+          ],
+          [
+            90.42477951701918,
+            23.28779747724347
+          ],
+          [
+            90.42477951701918,
+            23.27879747724347
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_naria_2",
+    "name": "Naria North Meadow",
+    "jlNo": "JL-82",
+    "upazilaId": "naria",
+    "districtId": "shariatpur",
+    "riverId": "padma_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 42,
+    "center": [
+      90.41367228925229,
+      23.2875673415605
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            90.40667228925228,
+            23.2830673415605
+          ],
+          [
+            90.4206722892523,
+            23.2830673415605
+          ],
+          [
+            90.4206722892523,
+            23.2920673415605
+          ],
+          [
+            90.40667228925228,
+            23.2920673415605
+          ],
+          [
+            90.40667228925228,
+            23.2830673415605
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_naria_3",
+    "name": "Naria South Alluvium",
+    "jlNo": "JL-29",
+    "upazilaId": "naria",
+    "districtId": "shariatpur",
+    "riverId": "padma_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "center": [
+      90.42603793941439,
+      23.31273618112318
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            90.41903793941438,
+            23.30823618112318
+          ],
+          [
+            90.43303793941439,
+            23.30823618112318
+          ],
+          [
+            90.43303793941439,
+            23.31723618112318
+          ],
+          [
+            90.41903793941438,
+            23.31723618112318
+          ],
+          [
+            90.41903793941438,
+            23.30823618112318
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_zajira_1",
+    "name": "Zajira Riverside",
+    "jlNo": "JL-52",
+    "upazilaId": "zajira",
+    "districtId": "shariatpur",
+    "riverId": "padma_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 42,
+    "center": [
+      90.36804619655013,
+      23.373377718292176
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            90.36104619655012,
+            23.368877718292175
+          ],
+          [
+            90.37504619655013,
+            23.368877718292175
+          ],
+          [
+            90.37504619655013,
+            23.377877718292176
+          ],
+          [
+            90.36104619655012,
+            23.377877718292176
+          ],
+          [
+            90.36104619655012,
+            23.368877718292175
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_zajira_2",
+    "name": "Zajira North Meadow",
+    "jlNo": "JL-43",
+    "upazilaId": "zajira",
+    "districtId": "shariatpur",
+    "riverId": "padma_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 25,
+    "center": [
+      90.3436932968255,
+      23.357681449037045
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            90.3366932968255,
+            23.353181449037045
+          ],
+          [
+            90.35069329682551,
+            23.353181449037045
+          ],
+          [
+            90.35069329682551,
+            23.362181449037045
+          ],
+          [
+            90.3366932968255,
+            23.362181449037045
+          ],
+          [
+            90.3366932968255,
+            23.353181449037045
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_zajira_3",
+    "name": "Zajira South Alluvium",
+    "jlNo": "JL-12",
+    "upazilaId": "zajira",
+    "districtId": "shariatpur",
+    "riverId": "padma_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "center": [
+      90.36599300391971,
+      23.360508516049013
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            90.35899300391971,
+            23.356008516049013
+          ],
+          [
+            90.37299300391972,
+            23.356008516049013
+          ],
+          [
+            90.37299300391972,
+            23.365008516049013
+          ],
+          [
+            90.35899300391971,
+            23.365008516049013
+          ],
+          [
+            90.35899300391971,
+            23.356008516049013
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_bhedarganj_1",
+    "name": "Bhedarganj Riverside",
+    "jlNo": "JL-82",
+    "upazilaId": "bhedarganj",
+    "districtId": "shariatpur",
+    "riverId": "padma_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 49,
+    "center": [
+      90.48171803685837,
+      23.184711238695307
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            90.47471803685836,
+            23.180211238695307
+          ],
+          [
+            90.48871803685837,
+            23.180211238695307
+          ],
+          [
+            90.48871803685837,
+            23.189211238695307
+          ],
+          [
+            90.47471803685836,
+            23.189211238695307
+          ],
+          [
+            90.47471803685836,
+            23.180211238695307
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_bhedarganj_2",
+    "name": "Bhedarganj North Meadow",
+    "jlNo": "JL-31",
+    "upazilaId": "bhedarganj",
+    "districtId": "shariatpur",
+    "riverId": "padma_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "center": [
+      90.46323343913072,
+      23.18750653967261
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            90.45623343913071,
+            23.18300653967261
+          ],
+          [
+            90.47023343913072,
+            23.18300653967261
+          ],
+          [
+            90.47023343913072,
+            23.19200653967261
+          ],
+          [
+            90.45623343913071,
+            23.19200653967261
+          ],
+          [
+            90.45623343913071,
+            23.18300653967261
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_bhedarganj_3",
+    "name": "Bhedarganj South Alluvium",
+    "jlNo": "JL-46",
+    "upazilaId": "bhedarganj",
+    "districtId": "shariatpur",
+    "riverId": "padma_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "center": [
+      90.46590431731195,
+      23.213546199277044
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            90.45890431731195,
+            23.209046199277044
+          ],
+          [
+            90.47290431731196,
+            23.209046199277044
+          ],
+          [
+            90.47290431731196,
+            23.218046199277044
+          ],
+          [
+            90.45890431731195,
+            23.218046199277044
+          ],
+          [
+            90.45890431731195,
+            23.209046199277044
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_haimchar_1",
+    "name": "Haimchar Riverside",
+    "jlNo": "JL-62",
+    "upazilaId": "haimchar",
+    "districtId": "chandpur",
+    "riverId": "meghna_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 42,
+    "center": [
+      90.61149924002588,
+      23.077011390598493
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            90.60449924002587,
+            23.072511390598493
+          ],
+          [
+            90.61849924002588,
+            23.072511390598493
+          ],
+          [
+            90.61849924002588,
+            23.081511390598493
+          ],
+          [
+            90.60449924002587,
+            23.081511390598493
+          ],
+          [
+            90.60449924002587,
+            23.072511390598493
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_haimchar_2",
+    "name": "Haimchar North Meadow",
+    "jlNo": "JL-73",
+    "upazilaId": "haimchar",
+    "districtId": "chandpur",
+    "riverId": "meghna_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "center": [
+      90.61694166414439,
+      23.061758414460346
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            90.60994166414439,
+            23.057258414460346
+          ],
+          [
+            90.6239416641444,
+            23.057258414460346
+          ],
+          [
+            90.6239416641444,
+            23.066258414460346
+          ],
+          [
+            90.60994166414439,
+            23.066258414460346
+          ],
+          [
+            90.60994166414439,
+            23.057258414460346
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_haimchar_3",
+    "name": "Haimchar South Alluvium",
+    "jlNo": "JL-92",
+    "upazilaId": "haimchar",
+    "districtId": "chandpur",
+    "riverId": "meghna_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 25,
+    "center": [
+      90.62836136857047,
+      23.062429444268346
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            90.62136136857046,
+            23.057929444268346
+          ],
+          [
+            90.63536136857047,
+            23.057929444268346
+          ],
+          [
+            90.63536136857047,
+            23.066929444268347
+          ],
+          [
+            90.62136136857046,
+            23.066929444268347
+          ],
+          [
+            90.62136136857046,
+            23.057929444268346
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_chandpur_sadar_1",
+    "name": "Chandpur Sadar Riverside",
+    "jlNo": "JL-66",
+    "upazilaId": "chandpur_sadar",
+    "districtId": "chandpur",
+    "riverId": "meghna_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "center": [
+      90.63875453281217,
+      23.238094273107126
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            90.63175453281217,
+            23.233594273107126
+          ],
+          [
+            90.64575453281218,
+            23.233594273107126
+          ],
+          [
+            90.64575453281218,
+            23.242594273107127
+          ],
+          [
+            90.63175453281217,
+            23.242594273107127
+          ],
+          [
+            90.63175453281217,
+            23.233594273107126
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_chandpur_sadar_2",
+    "name": "Chandpur Sadar North Meadow",
+    "jlNo": "JL-75",
+    "upazilaId": "chandpur_sadar",
+    "districtId": "chandpur",
+    "riverId": "meghna_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 25,
+    "center": [
+      90.65158927288839,
+      23.231769345980137
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            90.64458927288838,
+            23.227269345980137
+          ],
+          [
+            90.65858927288839,
+            23.227269345980137
+          ],
+          [
+            90.65858927288839,
+            23.236269345980137
+          ],
+          [
+            90.64458927288838,
+            23.236269345980137
+          ],
+          [
+            90.64458927288838,
+            23.227269345980137
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_chandpur_sadar_3",
+    "name": "Chandpur Sadar South Alluvium",
+    "jlNo": "JL-70",
+    "upazilaId": "chandpur_sadar",
+    "districtId": "chandpur",
+    "riverId": "meghna_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "center": [
+      90.66907190963626,
+      23.214172456264496
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            90.66207190963625,
+            23.209672456264496
+          ],
+          [
+            90.67607190963626,
+            23.209672456264496
+          ],
+          [
+            90.67607190963626,
+            23.218672456264496
+          ],
+          [
+            90.66207190963625,
+            23.218672456264496
+          ],
+          [
+            90.66207190963625,
+            23.209672456264496
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_matlab_dakshin_1",
+    "name": "Matlab Dakshin Riverside",
+    "jlNo": "JL-87",
+    "upazilaId": "matlab_dakshin",
+    "districtId": "chandpur",
+    "riverId": "meghna_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 25,
+    "center": [
+      90.71629496892913,
+      23.330713682835924
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            90.70929496892913,
+            23.326213682835924
+          ],
+          [
+            90.72329496892914,
+            23.326213682835924
+          ],
+          [
+            90.72329496892914,
+            23.335213682835924
+          ],
+          [
+            90.70929496892913,
+            23.335213682835924
+          ],
+          [
+            90.70929496892913,
+            23.326213682835924
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_matlab_dakshin_2",
+    "name": "Matlab Dakshin North Meadow",
+    "jlNo": "JL-47",
+    "upazilaId": "matlab_dakshin",
+    "districtId": "chandpur",
+    "riverId": "meghna_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 49,
+    "center": [
+      90.70720106137915,
+      23.367193341003734
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            90.70020106137915,
+            23.362693341003734
+          ],
+          [
+            90.71420106137916,
+            23.362693341003734
+          ],
+          [
+            90.71420106137916,
+            23.371693341003734
+          ],
+          [
+            90.70020106137915,
+            23.371693341003734
+          ],
+          [
+            90.70020106137915,
+            23.362693341003734
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_matlab_dakshin_3",
+    "name": "Matlab Dakshin South Alluvium",
+    "jlNo": "JL-11",
+    "upazilaId": "matlab_dakshin",
+    "districtId": "chandpur",
+    "riverId": "meghna_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 36,
+    "center": [
+      90.70659800948575,
+      23.335690966509283
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            90.69959800948574,
+            23.331190966509283
+          ],
+          [
+            90.71359800948575,
+            23.331190966509283
+          ],
+          [
+            90.71359800948575,
+            23.340190966509283
+          ],
+          [
+            90.69959800948574,
+            23.340190966509283
+          ],
+          [
+            90.69959800948574,
+            23.331190966509283
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_matlab_dakshin_4",
+    "name": "Matlab Dakshin Highland Block",
+    "jlNo": "JL-86",
+    "upazilaId": "matlab_dakshin",
+    "districtId": "chandpur",
+    "riverId": "meghna_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 42,
+    "center": [
+      90.71729823523201,
+      23.364162023821848
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            90.710298235232,
+            23.359662023821848
+          ],
+          [
+            90.72429823523201,
+            23.359662023821848
+          ],
+          [
+            90.72429823523201,
+            23.368662023821848
+          ],
+          [
+            90.710298235232,
+            23.368662023821848
+          ],
+          [
+            90.710298235232,
+            23.359662023821848
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_char_fasson_1",
+    "name": "Char Fasson Riverside",
+    "jlNo": "JL-89",
+    "upazilaId": "char_fasson",
+    "districtId": "bhola",
+    "riverId": "meghna_estuary",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "center": [
+      90.69319995934143,
+      22.196136568840593
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            90.68619995934142,
+            22.191636568840593
+          ],
+          [
+            90.70019995934143,
+            22.191636568840593
+          ],
+          [
+            90.70019995934143,
+            22.200636568840594
+          ],
+          [
+            90.68619995934142,
+            22.200636568840594
+          ],
+          [
+            90.68619995934142,
+            22.191636568840593
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_char_fasson_2",
+    "name": "Char Fasson North Meadow",
+    "jlNo": "JL-86",
+    "upazilaId": "char_fasson",
+    "districtId": "bhola",
+    "riverId": "meghna_estuary",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 42,
+    "center": [
+      90.72209692656062,
+      22.20430245540105
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            90.71509692656062,
+            22.19980245540105
+          ],
+          [
+            90.72909692656063,
+            22.19980245540105
+          ],
+          [
+            90.72909692656063,
+            22.20880245540105
+          ],
+          [
+            90.71509692656062,
+            22.20880245540105
+          ],
+          [
+            90.71509692656062,
+            22.19980245540105
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_char_fasson_3",
+    "name": "Char Fasson South Alluvium",
+    "jlNo": "JL-53",
+    "upazilaId": "char_fasson",
+    "districtId": "bhola",
+    "riverId": "meghna_estuary",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 49,
+    "center": [
+      90.70673542657866,
+      22.2079673443269
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            90.69973542657866,
+            22.2034673443269
+          ],
+          [
+            90.71373542657867,
+            22.2034673443269
+          ],
+          [
+            90.71373542657867,
+            22.2124673443269
+          ],
+          [
+            90.69973542657866,
+            22.2124673443269
+          ],
+          [
+            90.69973542657866,
+            22.2034673443269
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_unassigned_char_fasson_1",
+    "name": "Unassigned New Land (Char Fasson Mudflats Block-1)",
+    "jlNo": "V-01",
+    "upazilaId": "char_fasson",
+    "districtId": "bhola",
+    "kind": "unassigned",
+    "isVirtual": true,
+    "totalPlots": 30,
+    "center": [
+      90.72226788483559,
+      22.167120869087523
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            90.71526788483558,
+            22.162620869087522
+          ],
+          [
+            90.7292678848356,
+            22.162620869087522
+          ],
+          [
+            90.7292678848356,
+            22.171620869087523
+          ],
+          [
+            90.71526788483558,
+            22.171620869087523
+          ],
+          [
+            90.71526788483558,
+            22.162620869087522
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_unassigned_char_fasson_2",
+    "name": "Unassigned New Land (Char Fasson Mudflats Block-2)",
+    "jlNo": "V-02",
+    "upazilaId": "char_fasson",
+    "districtId": "bhola",
+    "kind": "unassigned",
+    "isVirtual": true,
+    "totalPlots": 42,
+    "center": [
+      90.74650163518963,
+      22.16043623526581
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            90.73950163518963,
+            22.15593623526581
+          ],
+          [
+            90.75350163518964,
+            22.15593623526581
+          ],
+          [
+            90.75350163518964,
+            22.16493623526581
+          ],
+          [
+            90.73950163518963,
+            22.16493623526581
+          ],
+          [
+            90.73950163518963,
+            22.15593623526581
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_bhola_sadar_1",
+    "name": "Bhola Sadar Riverside",
+    "jlNo": "JL-31",
+    "upazilaId": "bhola_sadar",
+    "districtId": "bhola",
+    "riverId": "meghna_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 36,
+    "center": [
+      90.65315671010875,
+      22.686047545336187
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            90.64615671010874,
+            22.681547545336187
+          ],
+          [
+            90.66015671010875,
+            22.681547545336187
+          ],
+          [
+            90.66015671010875,
+            22.690547545336187
+          ],
+          [
+            90.64615671010874,
+            22.690547545336187
+          ],
+          [
+            90.64615671010874,
+            22.681547545336187
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_bhola_sadar_2",
+    "name": "Bhola Sadar North Meadow",
+    "jlNo": "JL-56",
+    "upazilaId": "bhola_sadar",
+    "districtId": "bhola",
+    "riverId": "meghna_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "center": [
+      90.64215319870972,
+      22.68654556825757
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            90.63515319870972,
+            22.68204556825757
+          ],
+          [
+            90.64915319870973,
+            22.68204556825757
+          ],
+          [
+            90.64915319870973,
+            22.69104556825757
+          ],
+          [
+            90.63515319870972,
+            22.69104556825757
+          ],
+          [
+            90.63515319870972,
+            22.68204556825757
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_bhola_sadar_3",
+    "name": "Bhola Sadar South Alluvium",
+    "jlNo": "JL-70",
+    "upazilaId": "bhola_sadar",
+    "districtId": "bhola",
+    "riverId": "meghna_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "center": [
+      90.63207100161353,
+      22.691644476242363
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            90.62507100161352,
+            22.687144476242363
+          ],
+          [
+            90.63907100161353,
+            22.687144476242363
+          ],
+          [
+            90.63907100161353,
+            22.696144476242363
+          ],
+          [
+            90.62507100161352,
+            22.696144476242363
+          ],
+          [
+            90.62507100161352,
+            22.687144476242363
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_unassigned_bhola_sadar_1",
+    "name": "Unassigned New Land (Bhola Sadar Mudflats Block-1)",
+    "jlNo": "V-01",
+    "upazilaId": "bhola_sadar",
+    "districtId": "bhola",
+    "kind": "unassigned",
+    "isVirtual": true,
+    "totalPlots": 49,
+    "center": [
+      90.6844194115908,
+      22.63728526616702
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            90.67741941159079,
+            22.63278526616702
+          ],
+          [
+            90.6914194115908,
+            22.63278526616702
+          ],
+          [
+            90.6914194115908,
+            22.64178526616702
+          ],
+          [
+            90.67741941159079,
+            22.64178526616702
+          ],
+          [
+            90.67741941159079,
+            22.63278526616702
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_unassigned_bhola_sadar_2",
+    "name": "Unassigned New Land (Bhola Sadar Mudflats Block-2)",
+    "jlNo": "V-02",
+    "upazilaId": "bhola_sadar",
+    "districtId": "bhola",
+    "kind": "unassigned",
+    "isVirtual": true,
+    "totalPlots": 30,
+    "center": [
+      90.68473941281671,
+      22.651882987732535
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            90.6777394128167,
+            22.647382987732534
+          ],
+          [
+            90.69173941281672,
+            22.647382987732534
+          ],
+          [
+            90.69173941281672,
+            22.656382987732535
+          ],
+          [
+            90.6777394128167,
+            22.656382987732535
+          ],
+          [
+            90.6777394128167,
+            22.647382987732534
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_monpura_1",
+    "name": "Monpura Riverside",
+    "jlNo": "JL-57",
+    "upazilaId": "monpura",
+    "districtId": "bhola",
+    "riverId": "meghna_estuary",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "center": [
+      90.96189192321152,
+      22.31274937930517
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            90.95489192321152,
+            22.30824937930517
+          ],
+          [
+            90.96889192321153,
+            22.30824937930517
+          ],
+          [
+            90.96889192321153,
+            22.31724937930517
+          ],
+          [
+            90.95489192321152,
+            22.31724937930517
+          ],
+          [
+            90.95489192321152,
+            22.30824937930517
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_monpura_2",
+    "name": "Monpura North Meadow",
+    "jlNo": "JL-48",
+    "upazilaId": "monpura",
+    "districtId": "bhola",
+    "riverId": "meghna_estuary",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 36,
+    "center": [
+      90.99390037407167,
+      22.29286166721955
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            90.98690037407167,
+            22.28836166721955
+          ],
+          [
+            91.00090037407168,
+            22.28836166721955
+          ],
+          [
+            91.00090037407168,
+            22.29736166721955
+          ],
+          [
+            90.98690037407167,
+            22.29736166721955
+          ],
+          [
+            90.98690037407167,
+            22.28836166721955
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_monpura_3",
+    "name": "Monpura South Alluvium",
+    "jlNo": "JL-39",
+    "upazilaId": "monpura",
+    "districtId": "bhola",
+    "riverId": "meghna_estuary",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 49,
+    "center": [
+      90.99148766647093,
+      22.319940253617244
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            90.98448766647093,
+            22.315440253617243
+          ],
+          [
+            90.99848766647094,
+            22.315440253617243
+          ],
+          [
+            90.99848766647094,
+            22.324440253617244
+          ],
+          [
+            90.98448766647093,
+            22.324440253617244
+          ],
+          [
+            90.98448766647093,
+            22.315440253617243
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_monpura_4",
+    "name": "Monpura Highland Block",
+    "jlNo": "JL-82",
+    "upazilaId": "monpura",
+    "districtId": "bhola",
+    "riverId": "meghna_estuary",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 42,
+    "center": [
+      90.98053103744984,
+      22.282940230732784
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            90.97353103744983,
+            22.278440230732784
+          ],
+          [
+            90.98753103744984,
+            22.278440230732784
+          ],
+          [
+            90.98753103744984,
+            22.287440230732784
+          ],
+          [
+            90.97353103744983,
+            22.287440230732784
+          ],
+          [
+            90.97353103744983,
+            22.278440230732784
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_unassigned_monpura_1",
+    "name": "Unassigned New Land (Monpura Mudflats Block-1)",
+    "jlNo": "V-01",
+    "upazilaId": "monpura",
+    "districtId": "bhola",
+    "kind": "unassigned",
+    "isVirtual": true,
+    "totalPlots": 25,
+    "center": [
+      90.99448629015824,
+      22.271770136903505
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            90.98748629015823,
+            22.267270136903505
+          ],
+          [
+            91.00148629015824,
+            22.267270136903505
+          ],
+          [
+            91.00148629015824,
+            22.276270136903506
+          ],
+          [
+            90.98748629015823,
+            22.276270136903506
+          ],
+          [
+            90.98748629015823,
+            22.267270136903505
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_unassigned_monpura_2",
+    "name": "Unassigned New Land (Monpura Mudflats Block-2)",
+    "jlNo": "V-02",
+    "upazilaId": "monpura",
+    "districtId": "bhola",
+    "kind": "unassigned",
+    "isVirtual": true,
+    "totalPlots": 49,
+    "center": [
+      91.0048493718775,
+      22.255040573875885
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            90.99784937187749,
+            22.250540573875885
+          ],
+          [
+            91.0118493718775,
+            22.250540573875885
+          ],
+          [
+            91.0118493718775,
+            22.259540573875885
+          ],
+          [
+            90.99784937187749,
+            22.259540573875885
+          ],
+          [
+            90.99784937187749,
+            22.250540573875885
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_sunamganj_sadar_1",
+    "name": "Sunamganj Sadar Riverside",
+    "jlNo": "JL-10",
+    "upazilaId": "sunamganj_sadar",
+    "districtId": "sunamganj",
+    "riverId": "surma_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "center": [
+      91.40000147813932,
+      25.067461601076648
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.39300147813931,
+            25.062961601076648
+          ],
+          [
+            91.40700147813932,
+            25.062961601076648
+          ],
+          [
+            91.40700147813932,
+            25.071961601076648
+          ],
+          [
+            91.39300147813931,
+            25.071961601076648
+          ],
+          [
+            91.39300147813931,
+            25.062961601076648
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_sunamganj_sadar_2",
+    "name": "Sunamganj Sadar North Meadow",
+    "jlNo": "JL-57",
+    "upazilaId": "sunamganj_sadar",
+    "districtId": "sunamganj",
+    "riverId": "surma_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "center": [
+      91.38975369074383,
+      25.085107652172447
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.38275369074383,
+            25.080607652172446
+          ],
+          [
+            91.39675369074384,
+            25.080607652172446
+          ],
+          [
+            91.39675369074384,
+            25.089607652172447
+          ],
+          [
+            91.38275369074383,
+            25.089607652172447
+          ],
+          [
+            91.38275369074383,
+            25.080607652172446
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_sunamganj_sadar_3",
+    "name": "Sunamganj Sadar South Alluvium",
+    "jlNo": "JL-34",
+    "upazilaId": "sunamganj_sadar",
+    "districtId": "sunamganj",
+    "riverId": "surma_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "center": [
+      91.39176434405148,
+      25.0533884439338
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.38476434405148,
+            25.0488884439338
+          ],
+          [
+            91.39876434405149,
+            25.0488884439338
+          ],
+          [
+            91.39876434405149,
+            25.057888443933802
+          ],
+          [
+            91.38476434405148,
+            25.057888443933802
+          ],
+          [
+            91.38476434405148,
+            25.0488884439338
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_sunamganj_sadar_4",
+    "name": "Sunamganj Sadar Highland Block",
+    "jlNo": "JL-19",
+    "upazilaId": "sunamganj_sadar",
+    "districtId": "sunamganj",
+    "riverId": "surma_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "center": [
+      91.39441171481275,
+      25.05899957485497
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.38741171481274,
+            25.05449957485497
+          ],
+          [
+            91.40141171481275,
+            25.05449957485497
+          ],
+          [
+            91.40141171481275,
+            25.06349957485497
+          ],
+          [
+            91.38741171481274,
+            25.06349957485497
+          ],
+          [
+            91.38741171481274,
+            25.05449957485497
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_derai_1",
+    "name": "Derai Riverside",
+    "jlNo": "JL-23",
+    "upazilaId": "derai",
+    "districtId": "sunamganj",
+    "riverId": "piyain_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "center": [
+      91.33788298048079,
+      24.76576127268374
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.33088298048078,
+            24.76126127268374
+          ],
+          [
+            91.34488298048079,
+            24.76126127268374
+          ],
+          [
+            91.34488298048079,
+            24.77026127268374
+          ],
+          [
+            91.33088298048078,
+            24.77026127268374
+          ],
+          [
+            91.33088298048078,
+            24.76126127268374
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_derai_2",
+    "name": "Derai North Meadow",
+    "jlNo": "JL-21",
+    "upazilaId": "derai",
+    "districtId": "sunamganj",
+    "riverId": "piyain_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 36,
+    "center": [
+      91.34733158369548,
+      24.791334638018164
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.34033158369547,
+            24.786834638018163
+          ],
+          [
+            91.35433158369548,
+            24.786834638018163
+          ],
+          [
+            91.35433158369548,
+            24.795834638018164
+          ],
+          [
+            91.34033158369547,
+            24.795834638018164
+          ],
+          [
+            91.34033158369547,
+            24.786834638018163
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_derai_3",
+    "name": "Derai South Alluvium",
+    "jlNo": "JL-34",
+    "upazilaId": "derai",
+    "districtId": "sunamganj",
+    "riverId": "piyain_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "center": [
+      91.33586327353491,
+      24.797480317596346
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.3288632735349,
+            24.792980317596346
+          ],
+          [
+            91.34286327353492,
+            24.792980317596346
+          ],
+          [
+            91.34286327353492,
+            24.801980317596346
+          ],
+          [
+            91.3288632735349,
+            24.801980317596346
+          ],
+          [
+            91.3288632735349,
+            24.792980317596346
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_tahirpur_1",
+    "name": "Tahirpur Riverside",
+    "jlNo": "JL-30",
+    "upazilaId": "tahirpur",
+    "districtId": "sunamganj",
+    "riverId": "jadukata_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 36,
+    "center": [
+      91.18346206663178,
+      25.087471443573012
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.17646206663177,
+            25.082971443573012
+          ],
+          [
+            91.19046206663178,
+            25.082971443573012
+          ],
+          [
+            91.19046206663178,
+            25.091971443573012
+          ],
+          [
+            91.17646206663177,
+            25.091971443573012
+          ],
+          [
+            91.17646206663177,
+            25.082971443573012
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_tahirpur_2",
+    "name": "Tahirpur North Meadow",
+    "jlNo": "JL-11",
+    "upazilaId": "tahirpur",
+    "districtId": "sunamganj",
+    "riverId": "jadukata_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "center": [
+      91.18064241818153,
+      25.09625751310028
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.17364241818153,
+            25.09175751310028
+          ],
+          [
+            91.18764241818154,
+            25.09175751310028
+          ],
+          [
+            91.18764241818154,
+            25.10075751310028
+          ],
+          [
+            91.17364241818153,
+            25.10075751310028
+          ],
+          [
+            91.17364241818153,
+            25.09175751310028
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_tahirpur_3",
+    "name": "Tahirpur South Alluvium",
+    "jlNo": "JL-76",
+    "upazilaId": "tahirpur",
+    "districtId": "sunamganj",
+    "riverId": "jadukata_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "center": [
+      91.18343873488718,
+      25.10588323097676
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.17643873488717,
+            25.10138323097676
+          ],
+          [
+            91.19043873488718,
+            25.10138323097676
+          ],
+          [
+            91.19043873488718,
+            25.110383230976762
+          ],
+          [
+            91.17643873488717,
+            25.110383230976762
+          ],
+          [
+            91.17643873488717,
+            25.10138323097676
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_tahirpur_4",
+    "name": "Tahirpur Highland Block",
+    "jlNo": "JL-55",
+    "upazilaId": "tahirpur",
+    "districtId": "sunamganj",
+    "riverId": "jadukata_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "center": [
+      91.17374691644685,
+      25.083599050398917
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.16674691644684,
+            25.079099050398916
+          ],
+          [
+            91.18074691644685,
+            25.079099050398916
+          ],
+          [
+            91.18074691644685,
+            25.088099050398917
+          ],
+          [
+            91.16674691644684,
+            25.088099050398917
+          ],
+          [
+            91.16674691644684,
+            25.079099050398916
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_jamalganj_1",
+    "name": "Jamalganj Riverside",
+    "jlNo": "JL-16",
+    "upazilaId": "jamalganj",
+    "districtId": "sunamganj",
+    "riverId": "surma_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 49,
+    "center": [
+      91.24262422852217,
+      24.999095464451237
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.23562422852217,
+            24.994595464451237
+          ],
+          [
+            91.24962422852218,
+            24.994595464451237
+          ],
+          [
+            91.24962422852218,
+            25.003595464451237
+          ],
+          [
+            91.23562422852217,
+            25.003595464451237
+          ],
+          [
+            91.23562422852217,
+            24.994595464451237
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_jamalganj_2",
+    "name": "Jamalganj North Meadow",
+    "jlNo": "JL-53",
+    "upazilaId": "jamalganj",
+    "districtId": "sunamganj",
+    "riverId": "surma_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "center": [
+      91.23957176194526,
+      24.987637203335762
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.23257176194525,
+            24.98313720333576
+          ],
+          [
+            91.24657176194526,
+            24.98313720333576
+          ],
+          [
+            91.24657176194526,
+            24.992137203335762
+          ],
+          [
+            91.23257176194525,
+            24.992137203335762
+          ],
+          [
+            91.23257176194525,
+            24.98313720333576
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_jamalganj_3",
+    "name": "Jamalganj South Alluvium",
+    "jlNo": "JL-27",
+    "upazilaId": "jamalganj",
+    "districtId": "sunamganj",
+    "riverId": "surma_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 25,
+    "center": [
+      91.23116686391644,
+      25.00744806304574
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.22416686391644,
+            25.00294806304574
+          ],
+          [
+            91.23816686391645,
+            25.00294806304574
+          ],
+          [
+            91.23816686391645,
+            25.01194806304574
+          ],
+          [
+            91.22416686391644,
+            25.01194806304574
+          ],
+          [
+            91.22416686391644,
+            25.00294806304574
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_companiganj_1",
+    "name": "Companiganj Riverside",
+    "jlNo": "JL-53",
+    "upazilaId": "companiganj",
+    "districtId": "sylhet",
+    "riverId": "dholai_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 42,
+    "center": [
+      91.74862255934626,
+      25.087839856687932
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.74162255934625,
+            25.08333985668793
+          ],
+          [
+            91.75562255934626,
+            25.08333985668793
+          ],
+          [
+            91.75562255934626,
+            25.092339856687932
+          ],
+          [
+            91.74162255934625,
+            25.092339856687932
+          ],
+          [
+            91.74162255934625,
+            25.08333985668793
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_companiganj_2",
+    "name": "Companiganj North Meadow",
+    "jlNo": "JL-63",
+    "upazilaId": "companiganj",
+    "districtId": "sylhet",
+    "riverId": "dholai_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 25,
+    "center": [
+      91.74406322963536,
+      25.089077746383847
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.73706322963535,
+            25.084577746383847
+          ],
+          [
+            91.75106322963536,
+            25.084577746383847
+          ],
+          [
+            91.75106322963536,
+            25.093577746383847
+          ],
+          [
+            91.73706322963535,
+            25.093577746383847
+          ],
+          [
+            91.73706322963535,
+            25.084577746383847
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_companiganj_3",
+    "name": "Companiganj South Alluvium",
+    "jlNo": "JL-41",
+    "upazilaId": "companiganj",
+    "districtId": "sylhet",
+    "riverId": "dholai_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "center": [
+      91.7495291176252,
+      25.087028196481988
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.7425291176252,
+            25.082528196481988
+          ],
+          [
+            91.7565291176252,
+            25.082528196481988
+          ],
+          [
+            91.7565291176252,
+            25.09152819648199
+          ],
+          [
+            91.7425291176252,
+            25.09152819648199
+          ],
+          [
+            91.7425291176252,
+            25.082528196481988
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_gowainghat_1",
+    "name": "Gowainghat Riverside",
+    "jlNo": "JL-36",
+    "upazilaId": "gowainghat",
+    "districtId": "sylhet",
+    "riverId": "sari_goyain_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 42,
+    "center": [
+      92.00027277576737,
+      25.08836236719042
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.99327277576737,
+            25.08386236719042
+          ],
+          [
+            92.00727277576738,
+            25.08386236719042
+          ],
+          [
+            92.00727277576738,
+            25.09286236719042
+          ],
+          [
+            91.99327277576737,
+            25.09286236719042
+          ],
+          [
+            91.99327277576737,
+            25.08386236719042
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_gowainghat_2",
+    "name": "Gowainghat North Meadow",
+    "jlNo": "JL-57",
+    "upazilaId": "gowainghat",
+    "districtId": "sylhet",
+    "riverId": "sari_goyain_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 36,
+    "center": [
+      91.98357477957383,
+      25.093210476059465
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.97657477957382,
+            25.088710476059465
+          ],
+          [
+            91.99057477957383,
+            25.088710476059465
+          ],
+          [
+            91.99057477957383,
+            25.097710476059465
+          ],
+          [
+            91.97657477957382,
+            25.097710476059465
+          ],
+          [
+            91.97657477957382,
+            25.088710476059465
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_gowainghat_3",
+    "name": "Gowainghat South Alluvium",
+    "jlNo": "JL-30",
+    "upazilaId": "gowainghat",
+    "districtId": "sylhet",
+    "riverId": "sari_goyain_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 25,
+    "center": [
+      92.01013661835343,
+      25.072075612870975
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.00313661835342,
+            25.067575612870975
+          ],
+          [
+            92.01713661835343,
+            25.067575612870975
+          ],
+          [
+            92.01713661835343,
+            25.076575612870975
+          ],
+          [
+            92.00313661835342,
+            25.076575612870975
+          ],
+          [
+            92.00313661835342,
+            25.067575612870975
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_gowainghat_4",
+    "name": "Gowainghat Highland Block",
+    "jlNo": "JL-35",
+    "upazilaId": "gowainghat",
+    "districtId": "sylhet",
+    "riverId": "sari_goyain_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 42,
+    "center": [
+      92.00807422400452,
+      25.087636983897536
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.00107422400451,
+            25.083136983897536
+          ],
+          [
+            92.01507422400452,
+            25.083136983897536
+          ],
+          [
+            92.01507422400452,
+            25.092136983897536
+          ],
+          [
+            92.00107422400451,
+            25.092136983897536
+          ],
+          [
+            92.00107422400451,
+            25.083136983897536
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_beanibazar_1",
+    "name": "Beanibazar Riverside",
+    "jlNo": "JL-64",
+    "upazilaId": "beanibazar",
+    "districtId": "sylhet",
+    "riverId": "kushiara_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 49,
+    "center": [
+      92.14765534023753,
+      24.823861133158204
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.14065534023753,
+            24.819361133158203
+          ],
+          [
+            92.15465534023754,
+            24.819361133158203
+          ],
+          [
+            92.15465534023754,
+            24.828361133158204
+          ],
+          [
+            92.14065534023753,
+            24.828361133158204
+          ],
+          [
+            92.14065534023753,
+            24.819361133158203
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_beanibazar_2",
+    "name": "Beanibazar North Meadow",
+    "jlNo": "JL-76",
+    "upazilaId": "beanibazar",
+    "districtId": "sylhet",
+    "riverId": "kushiara_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 36,
+    "center": [
+      92.15920883489773,
+      24.84505847154185
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.15220883489772,
+            24.84055847154185
+          ],
+          [
+            92.16620883489773,
+            24.84055847154185
+          ],
+          [
+            92.16620883489773,
+            24.84955847154185
+          ],
+          [
+            92.15220883489772,
+            24.84955847154185
+          ],
+          [
+            92.15220883489772,
+            24.84055847154185
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_beanibazar_3",
+    "name": "Beanibazar South Alluvium",
+    "jlNo": "JL-18",
+    "upazilaId": "beanibazar",
+    "districtId": "sylhet",
+    "riverId": "kushiara_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 42,
+    "center": [
+      92.15023840826004,
+      24.829872918631878
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.14323840826003,
+            24.825372918631878
+          ],
+          [
+            92.15723840826004,
+            24.825372918631878
+          ],
+          [
+            92.15723840826004,
+            24.83437291863188
+          ],
+          [
+            92.14323840826003,
+            24.83437291863188
+          ],
+          [
+            92.14323840826003,
+            24.825372918631878
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_rangamati_sadar_1",
+    "name": "Rangamati Sadar Riverside",
+    "jlNo": "JL-36",
+    "upazilaId": "rangamati_sadar",
+    "districtId": "rangamati",
+    "riverId": "karnafuli_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "center": [
+      92.16125745202416,
+      22.658077763020994
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.15425745202415,
+            22.653577763020994
+          ],
+          [
+            92.16825745202416,
+            22.653577763020994
+          ],
+          [
+            92.16825745202416,
+            22.662577763020995
+          ],
+          [
+            92.15425745202415,
+            22.662577763020995
+          ],
+          [
+            92.15425745202415,
+            22.653577763020994
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_rangamati_sadar_2",
+    "name": "Rangamati Sadar North Meadow",
+    "jlNo": "JL-31",
+    "upazilaId": "rangamati_sadar",
+    "districtId": "rangamati",
+    "riverId": "karnafuli_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "center": [
+      92.17959139147774,
+      22.63591043429449
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.17259139147774,
+            22.63141043429449
+          ],
+          [
+            92.18659139147775,
+            22.63141043429449
+          ],
+          [
+            92.18659139147775,
+            22.64041043429449
+          ],
+          [
+            92.17259139147774,
+            22.64041043429449
+          ],
+          [
+            92.17259139147774,
+            22.63141043429449
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_rangamati_sadar_3",
+    "name": "Rangamati Sadar South Alluvium",
+    "jlNo": "JL-32",
+    "upazilaId": "rangamati_sadar",
+    "districtId": "rangamati",
+    "riverId": "karnafuli_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "center": [
+      92.17664102701471,
+      22.6340584859252
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.1696410270147,
+            22.629558485925198
+          ],
+          [
+            92.18364102701472,
+            22.629558485925198
+          ],
+          [
+            92.18364102701472,
+            22.6385584859252
+          ],
+          [
+            92.1696410270147,
+            22.6385584859252
+          ],
+          [
+            92.1696410270147,
+            22.629558485925198
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_kawkhali_1",
+    "name": "Kawkhali Riverside",
+    "jlNo": "JL-20",
+    "upazilaId": "kawkhali",
+    "districtId": "rangamati",
+    "riverId": "ghagra_stream",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 25,
+    "center": [
+      92.0508767685853,
+      22.560417726533487
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.04387676858529,
+            22.555917726533487
+          ],
+          [
+            92.0578767685853,
+            22.555917726533487
+          ],
+          [
+            92.0578767685853,
+            22.564917726533487
+          ],
+          [
+            92.04387676858529,
+            22.564917726533487
+          ],
+          [
+            92.04387676858529,
+            22.555917726533487
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_kawkhali_2",
+    "name": "Kawkhali North Meadow",
+    "jlNo": "JL-28",
+    "upazilaId": "kawkhali",
+    "districtId": "rangamati",
+    "riverId": "ghagra_stream",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 36,
+    "center": [
+      92.05222737070173,
+      22.548825126392767
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.04522737070172,
+            22.544325126392767
+          ],
+          [
+            92.05922737070173,
+            22.544325126392767
+          ],
+          [
+            92.05922737070173,
+            22.553325126392767
+          ],
+          [
+            92.04522737070172,
+            22.553325126392767
+          ],
+          [
+            92.04522737070172,
+            22.544325126392767
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_kawkhali_3",
+    "name": "Kawkhali South Alluvium",
+    "jlNo": "JL-65",
+    "upazilaId": "kawkhali",
+    "districtId": "rangamati",
+    "riverId": "ghagra_stream",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "center": [
+      92.0360706402082,
+      22.554557156302035
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.02907064020819,
+            22.550057156302035
+          ],
+          [
+            92.0430706402082,
+            22.550057156302035
+          ],
+          [
+            92.0430706402082,
+            22.559057156302035
+          ],
+          [
+            92.02907064020819,
+            22.559057156302035
+          ],
+          [
+            92.02907064020819,
+            22.550057156302035
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_kawkhali_4",
+    "name": "Kawkhali Highland Block",
+    "jlNo": "JL-57",
+    "upazilaId": "kawkhali",
+    "districtId": "rangamati",
+    "riverId": "ghagra_stream",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "center": [
+      92.05574114424176,
+      22.55120227050036
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.04874114424176,
+            22.54670227050036
+          ],
+          [
+            92.06274114424177,
+            22.54670227050036
+          ],
+          [
+            92.06274114424177,
+            22.555702270500362
+          ],
+          [
+            92.04874114424176,
+            22.555702270500362
+          ],
+          [
+            92.04874114424176,
+            22.54670227050036
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_baghaichhari_1",
+    "name": "Baghaichhari Riverside",
+    "jlNo": "JL-32",
+    "upazilaId": "baghaichhari",
+    "districtId": "rangamati",
+    "riverId": "kasalong_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "center": [
+      92.19445023722947,
+      23.146487601464614
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.18745023722947,
+            23.141987601464614
+          ],
+          [
+            92.20145023722948,
+            23.141987601464614
+          ],
+          [
+            92.20145023722948,
+            23.150987601464614
+          ],
+          [
+            92.18745023722947,
+            23.150987601464614
+          ],
+          [
+            92.18745023722947,
+            23.141987601464614
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_baghaichhari_2",
+    "name": "Baghaichhari North Meadow",
+    "jlNo": "JL-83",
+    "upazilaId": "baghaichhari",
+    "districtId": "rangamati",
+    "riverId": "kasalong_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 36,
+    "center": [
+      92.21766193018296,
+      23.1789863401372
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.21066193018295,
+            23.1744863401372
+          ],
+          [
+            92.22466193018296,
+            23.1744863401372
+          ],
+          [
+            92.22466193018296,
+            23.1834863401372
+          ],
+          [
+            92.21066193018295,
+            23.1834863401372
+          ],
+          [
+            92.21066193018295,
+            23.1744863401372
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_baghaichhari_3",
+    "name": "Baghaichhari South Alluvium",
+    "jlNo": "JL-88",
+    "upazilaId": "baghaichhari",
+    "districtId": "rangamati",
+    "riverId": "kasalong_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "center": [
+      92.21590218556113,
+      23.156445036036892
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.20890218556113,
+            23.151945036036892
+          ],
+          [
+            92.22290218556114,
+            23.151945036036892
+          ],
+          [
+            92.22290218556114,
+            23.160945036036892
+          ],
+          [
+            92.20890218556113,
+            23.160945036036892
+          ],
+          [
+            92.20890218556113,
+            23.151945036036892
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_bandarban_sadar_1",
+    "name": "Bandarban Sadar Riverside",
+    "jlNo": "JL-49",
+    "upazilaId": "bandarban_sadar",
+    "districtId": "bandarban",
+    "riverId": "sangu_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 42,
+    "center": [
+      92.23965455503203,
+      22.20450953403488
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.23265455503203,
+            22.20000953403488
+          ],
+          [
+            92.24665455503204,
+            22.20000953403488
+          ],
+          [
+            92.24665455503204,
+            22.20900953403488
+          ],
+          [
+            92.23265455503203,
+            22.20900953403488
+          ],
+          [
+            92.23265455503203,
+            22.20000953403488
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_bandarban_sadar_2",
+    "name": "Bandarban Sadar North Meadow",
+    "jlNo": "JL-12",
+    "upazilaId": "bandarban_sadar",
+    "districtId": "bandarban",
+    "riverId": "sangu_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "center": [
+      92.21978257350624,
+      22.177698466656732
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.21278257350623,
+            22.173198466656732
+          ],
+          [
+            92.22678257350624,
+            22.173198466656732
+          ],
+          [
+            92.22678257350624,
+            22.182198466656732
+          ],
+          [
+            92.21278257350623,
+            22.182198466656732
+          ],
+          [
+            92.21278257350623,
+            22.173198466656732
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_bandarban_sadar_3",
+    "name": "Bandarban Sadar South Alluvium",
+    "jlNo": "JL-22",
+    "upazilaId": "bandarban_sadar",
+    "districtId": "bandarban",
+    "riverId": "sangu_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "center": [
+      92.20350934877992,
+      22.184777440223844
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.19650934877991,
+            22.180277440223843
+          ],
+          [
+            92.21050934877992,
+            22.180277440223843
+          ],
+          [
+            92.21050934877992,
+            22.189277440223844
+          ],
+          [
+            92.19650934877991,
+            22.189277440223844
+          ],
+          [
+            92.19650934877991,
+            22.180277440223843
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_bandarban_sadar_4",
+    "name": "Bandarban Sadar Highland Block",
+    "jlNo": "JL-89",
+    "upazilaId": "bandarban_sadar",
+    "districtId": "bandarban",
+    "riverId": "sangu_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 49,
+    "center": [
+      92.2024889060948,
+      22.201553640840576
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.1954889060948,
+            22.197053640840576
+          ],
+          [
+            92.2094889060948,
+            22.197053640840576
+          ],
+          [
+            92.2094889060948,
+            22.206053640840576
+          ],
+          [
+            92.1954889060948,
+            22.206053640840576
+          ],
+          [
+            92.1954889060948,
+            22.197053640840576
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_lama_1",
+    "name": "Lama Riverside",
+    "jlNo": "JL-21",
+    "upazilaId": "lama",
+    "districtId": "bandarban",
+    "riverId": "matamuhuri_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "center": [
+      92.18439124684781,
+      21.799307644385845
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.1773912468478,
+            21.794807644385845
+          ],
+          [
+            92.19139124684781,
+            21.794807644385845
+          ],
+          [
+            92.19139124684781,
+            21.803807644385845
+          ],
+          [
+            92.1773912468478,
+            21.803807644385845
+          ],
+          [
+            92.1773912468478,
+            21.794807644385845
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_lama_2",
+    "name": "Lama North Meadow",
+    "jlNo": "JL-94",
+    "upazilaId": "lama",
+    "districtId": "bandarban",
+    "riverId": "matamuhuri_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "center": [
+      92.1863265382126,
+      21.79061222174205
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.17932653821259,
+            21.78611222174205
+          ],
+          [
+            92.1933265382126,
+            21.78611222174205
+          ],
+          [
+            92.1933265382126,
+            21.795112221742052
+          ],
+          [
+            92.17932653821259,
+            21.795112221742052
+          ],
+          [
+            92.17932653821259,
+            21.78611222174205
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_lama_3",
+    "name": "Lama South Alluvium",
+    "jlNo": "JL-54",
+    "upazilaId": "lama",
+    "districtId": "bandarban",
+    "riverId": "matamuhuri_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 42,
+    "center": [
+      92.19721658869646,
+      21.775855049593375
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.19021658869646,
+            21.771355049593375
+          ],
+          [
+            92.20421658869647,
+            21.771355049593375
+          ],
+          [
+            92.20421658869647,
+            21.780355049593375
+          ],
+          [
+            92.19021658869646,
+            21.780355049593375
+          ],
+          [
+            92.19021658869646,
+            21.771355049593375
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_rowangchhari_1",
+    "name": "Rowangchhari Riverside",
+    "jlNo": "JL-55",
+    "upazilaId": "rowangchhari",
+    "districtId": "bandarban",
+    "riverId": "tara_chhara",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "center": [
+      92.3355841810815,
+      22.17386756525375
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.3285841810815,
+            22.16936756525375
+          ],
+          [
+            92.3425841810815,
+            22.16936756525375
+          ],
+          [
+            92.3425841810815,
+            22.17836756525375
+          ],
+          [
+            92.3285841810815,
+            22.17836756525375
+          ],
+          [
+            92.3285841810815,
+            22.16936756525375
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_rowangchhari_2",
+    "name": "Rowangchhari North Meadow",
+    "jlNo": "JL-31",
+    "upazilaId": "rowangchhari",
+    "districtId": "bandarban",
+    "riverId": "tara_chhara",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 42,
+    "center": [
+      92.36551094989292,
+      22.16066357829608
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.35851094989292,
+            22.15616357829608
+          ],
+          [
+            92.37251094989293,
+            22.15616357829608
+          ],
+          [
+            92.37251094989293,
+            22.16516357829608
+          ],
+          [
+            92.35851094989292,
+            22.16516357829608
+          ],
+          [
+            92.35851094989292,
+            22.15616357829608
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_rowangchhari_3",
+    "name": "Rowangchhari South Alluvium",
+    "jlNo": "JL-89",
+    "upazilaId": "rowangchhari",
+    "districtId": "bandarban",
+    "riverId": "tara_chhara",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 49,
+    "center": [
+      92.36984951243736,
+      22.151201951485127
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.36284951243735,
+            22.146701951485127
+          ],
+          [
+            92.37684951243736,
+            22.146701951485127
+          ],
+          [
+            92.37684951243736,
+            22.155701951485128
+          ],
+          [
+            92.36284951243735,
+            22.155701951485128
+          ],
+          [
+            92.36284951243735,
+            22.146701951485127
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_coxs_bazar_sadar_1",
+    "name": "Cox's Bazar Sadar Riverside",
+    "jlNo": "JL-80",
+    "upazilaId": "coxs_bazar_sadar",
+    "districtId": "coxs_bazar",
+    "riverId": "bakkhali_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "center": [
+      91.97723458631896,
+      21.423990324288607
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.97023458631895,
+            21.419490324288606
+          ],
+          [
+            91.98423458631896,
+            21.419490324288606
+          ],
+          [
+            91.98423458631896,
+            21.428490324288607
+          ],
+          [
+            91.97023458631895,
+            21.428490324288607
+          ],
+          [
+            91.97023458631895,
+            21.419490324288606
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_coxs_bazar_sadar_2",
+    "name": "Cox's Bazar Sadar North Meadow",
+    "jlNo": "JL-85",
+    "upazilaId": "coxs_bazar_sadar",
+    "districtId": "coxs_bazar",
+    "riverId": "bakkhali_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 42,
+    "center": [
+      91.96473383001984,
+      21.434846029374746
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.95773383001983,
+            21.430346029374746
+          ],
+          [
+            91.97173383001984,
+            21.430346029374746
+          ],
+          [
+            91.97173383001984,
+            21.439346029374747
+          ],
+          [
+            91.95773383001983,
+            21.439346029374747
+          ],
+          [
+            91.95773383001983,
+            21.430346029374746
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_coxs_bazar_sadar_3",
+    "name": "Cox's Bazar Sadar South Alluvium",
+    "jlNo": "JL-24",
+    "upazilaId": "coxs_bazar_sadar",
+    "districtId": "coxs_bazar",
+    "riverId": "bakkhali_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 49,
+    "center": [
+      91.9719893300347,
+      21.433683186694978
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.9649893300347,
+            21.429183186694978
+          ],
+          [
+            91.97898933003471,
+            21.429183186694978
+          ],
+          [
+            91.97898933003471,
+            21.438183186694978
+          ],
+          [
+            91.9649893300347,
+            21.438183186694978
+          ],
+          [
+            91.9649893300347,
+            21.429183186694978
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_unassigned_coxs_bazar_sadar_1",
+    "name": "Unassigned New Land (Cox's Bazar Sadar Mudflats Block-1)",
+    "jlNo": "V-01",
+    "upazilaId": "coxs_bazar_sadar",
+    "districtId": "coxs_bazar",
+    "kind": "unassigned",
+    "isVirtual": true,
+    "totalPlots": 35,
+    "center": [
+      92.0060646105837,
+      21.399262378315907
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.9990646105837,
+            21.394762378315907
+          ],
+          [
+            92.01306461058371,
+            21.394762378315907
+          ],
+          [
+            92.01306461058371,
+            21.403762378315907
+          ],
+          [
+            91.9990646105837,
+            21.403762378315907
+          ],
+          [
+            91.9990646105837,
+            21.394762378315907
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_unassigned_coxs_bazar_sadar_2",
+    "name": "Unassigned New Land (Cox's Bazar Sadar Mudflats Block-2)",
+    "jlNo": "V-02",
+    "upazilaId": "coxs_bazar_sadar",
+    "districtId": "coxs_bazar",
+    "kind": "unassigned",
+    "isVirtual": true,
+    "totalPlots": 30,
+    "center": [
+      91.99141454862897,
+      21.382325125816276
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.98441454862896,
+            21.377825125816276
+          ],
+          [
+            91.99841454862897,
+            21.377825125816276
+          ],
+          [
+            91.99841454862897,
+            21.386825125816276
+          ],
+          [
+            91.98441454862896,
+            21.386825125816276
+          ],
+          [
+            91.98441454862896,
+            21.377825125816276
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_teknaf_1",
+    "name": "Teknaf Riverside",
+    "jlNo": "JL-13",
+    "upazilaId": "teknaf",
+    "districtId": "coxs_bazar",
+    "riverId": "naf_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 42,
+    "center": [
+      92.28583942825905,
+      20.863941224012525
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.27883942825905,
+            20.859441224012524
+          ],
+          [
+            92.29283942825906,
+            20.859441224012524
+          ],
+          [
+            92.29283942825906,
+            20.868441224012525
+          ],
+          [
+            92.27883942825905,
+            20.868441224012525
+          ],
+          [
+            92.27883942825905,
+            20.859441224012524
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_teknaf_2",
+    "name": "Teknaf North Meadow",
+    "jlNo": "JL-18",
+    "upazilaId": "teknaf",
+    "districtId": "coxs_bazar",
+    "riverId": "naf_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 42,
+    "center": [
+      92.30208979463204,
+      20.870820027915762
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.29508979463203,
+            20.866320027915762
+          ],
+          [
+            92.30908979463204,
+            20.866320027915762
+          ],
+          [
+            92.30908979463204,
+            20.875320027915762
+          ],
+          [
+            92.29508979463203,
+            20.875320027915762
+          ],
+          [
+            92.29508979463203,
+            20.866320027915762
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_teknaf_3",
+    "name": "Teknaf South Alluvium",
+    "jlNo": "JL-63",
+    "upazilaId": "teknaf",
+    "districtId": "coxs_bazar",
+    "riverId": "naf_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "center": [
+      92.28142393510788,
+      20.882103020278738
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.27442393510788,
+            20.877603020278737
+          ],
+          [
+            92.28842393510789,
+            20.877603020278737
+          ],
+          [
+            92.28842393510789,
+            20.886603020278738
+          ],
+          [
+            92.27442393510788,
+            20.886603020278738
+          ],
+          [
+            92.27442393510788,
+            20.877603020278737
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_unassigned_teknaf_1",
+    "name": "Unassigned New Land (Teknaf Mudflats Block-1)",
+    "jlNo": "V-01",
+    "upazilaId": "teknaf",
+    "districtId": "coxs_bazar",
+    "kind": "unassigned",
+    "isVirtual": true,
+    "totalPlots": 30,
+    "center": [
+      92.33223474949132,
+      20.837873804317788
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.32523474949132,
+            20.833373804317787
+          ],
+          [
+            92.33923474949133,
+            20.833373804317787
+          ],
+          [
+            92.33923474949133,
+            20.842373804317788
+          ],
+          [
+            92.32523474949132,
+            20.842373804317788
+          ],
+          [
+            92.32523474949132,
+            20.833373804317787
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_unassigned_teknaf_2",
+    "name": "Unassigned New Land (Teknaf Mudflats Block-2)",
+    "jlNo": "V-02",
+    "upazilaId": "teknaf",
+    "districtId": "coxs_bazar",
+    "kind": "unassigned",
+    "isVirtual": true,
+    "totalPlots": 35,
+    "center": [
+      92.33207133021438,
+      20.837356412492227
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.32507133021437,
+            20.832856412492227
+          ],
+          [
+            92.33907133021438,
+            20.832856412492227
+          ],
+          [
+            92.33907133021438,
+            20.841856412492227
+          ],
+          [
+            92.32507133021437,
+            20.841856412492227
+          ],
+          [
+            92.32507133021437,
+            20.832856412492227
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_ukhia_1",
+    "name": "Ukhia Riverside",
+    "jlNo": "JL-64",
+    "upazilaId": "ukhia",
+    "districtId": "coxs_bazar",
+    "riverId": "reju_canal",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 49,
+    "center": [
+      92.12998046962544,
+      21.257435931405052
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.12298046962543,
+            21.25293593140505
+          ],
+          [
+            92.13698046962544,
+            21.25293593140505
+          ],
+          [
+            92.13698046962544,
+            21.261935931405052
+          ],
+          [
+            92.12298046962543,
+            21.261935931405052
+          ],
+          [
+            92.12298046962543,
+            21.25293593140505
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_ukhia_2",
+    "name": "Ukhia North Meadow",
+    "jlNo": "JL-15",
+    "upazilaId": "ukhia",
+    "districtId": "coxs_bazar",
+    "riverId": "reju_canal",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "center": [
+      92.13824429049157,
+      21.226250544069334
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.13124429049157,
+            21.221750544069334
+          ],
+          [
+            92.14524429049158,
+            21.221750544069334
+          ],
+          [
+            92.14524429049158,
+            21.230750544069334
+          ],
+          [
+            92.13124429049157,
+            21.230750544069334
+          ],
+          [
+            92.13124429049157,
+            21.221750544069334
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_ukhia_3",
+    "name": "Ukhia South Alluvium",
+    "jlNo": "JL-71",
+    "upazilaId": "ukhia",
+    "districtId": "coxs_bazar",
+    "riverId": "reju_canal",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "center": [
+      92.1262601524312,
+      21.249391853054984
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.1192601524312,
+            21.244891853054984
+          ],
+          [
+            92.1332601524312,
+            21.244891853054984
+          ],
+          [
+            92.1332601524312,
+            21.253891853054984
+          ],
+          [
+            92.1192601524312,
+            21.253891853054984
+          ],
+          [
+            92.1192601524312,
+            21.244891853054984
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_ukhia_4",
+    "name": "Ukhia Highland Block",
+    "jlNo": "JL-31",
+    "upazilaId": "ukhia",
+    "districtId": "coxs_bazar",
+    "riverId": "reju_canal",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 42,
+    "center": [
+      92.12798732785508,
+      21.23203140283003
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.12098732785508,
+            21.22753140283003
+          ],
+          [
+            92.13498732785509,
+            21.22753140283003
+          ],
+          [
+            92.13498732785509,
+            21.236531402830032
+          ],
+          [
+            92.12098732785508,
+            21.236531402830032
+          ],
+          [
+            92.12098732785508,
+            21.22753140283003
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_unassigned_ukhia_1",
+    "name": "Unassigned New Land (Ukhia Mudflats Block-1)",
+    "jlNo": "V-01",
+    "upazilaId": "ukhia",
+    "districtId": "coxs_bazar",
+    "kind": "unassigned",
+    "isVirtual": true,
+    "totalPlots": 25,
+    "center": [
+      92.16511859021149,
+      21.193390643293966
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.15811859021149,
+            21.188890643293966
+          ],
+          [
+            92.1721185902115,
+            21.188890643293966
+          ],
+          [
+            92.1721185902115,
+            21.197890643293967
+          ],
+          [
+            92.15811859021149,
+            21.197890643293967
+          ],
+          [
+            92.15811859021149,
+            21.188890643293966
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_unassigned_ukhia_2",
+    "name": "Unassigned New Land (Ukhia Mudflats Block-2)",
+    "jlNo": "V-02",
+    "upazilaId": "ukhia",
+    "districtId": "coxs_bazar",
+    "kind": "unassigned",
+    "isVirtual": true,
+    "totalPlots": 36,
+    "center": [
+      92.15370595114305,
+      21.21584050731733
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            92.14670595114305,
+            21.21134050731733
+          ],
+          [
+            92.16070595114306,
+            21.21134050731733
+          ],
+          [
+            92.16070595114306,
+            21.22034050731733
+          ],
+          [
+            92.14670595114305,
+            21.22034050731733
+          ],
+          [
+            92.14670595114305,
+            21.21134050731733
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_maheshkhali_1",
+    "name": "Maheshkhali Riverside",
+    "jlNo": "JL-18",
+    "upazilaId": "maheshkhali",
+    "districtId": "coxs_bazar",
+    "riverId": "kohelia_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 42,
+    "center": [
+      91.95055944903754,
+      21.5482660875842
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.94355944903754,
+            21.5437660875842
+          ],
+          [
+            91.95755944903755,
+            21.5437660875842
+          ],
+          [
+            91.95755944903755,
+            21.5527660875842
+          ],
+          [
+            91.94355944903754,
+            21.5527660875842
+          ],
+          [
+            91.94355944903754,
+            21.5437660875842
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_maheshkhali_2",
+    "name": "Maheshkhali North Meadow",
+    "jlNo": "JL-35",
+    "upazilaId": "maheshkhali",
+    "districtId": "coxs_bazar",
+    "riverId": "kohelia_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "center": [
+      91.94102912316099,
+      21.548194278590383
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.93402912316098,
+            21.543694278590383
+          ],
+          [
+            91.94802912316099,
+            21.543694278590383
+          ],
+          [
+            91.94802912316099,
+            21.552694278590383
+          ],
+          [
+            91.93402912316098,
+            21.552694278590383
+          ],
+          [
+            91.93402912316098,
+            21.543694278590383
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_maheshkhali_3",
+    "name": "Maheshkhali South Alluvium",
+    "jlNo": "JL-39",
+    "upazilaId": "maheshkhali",
+    "districtId": "coxs_bazar",
+    "riverId": "kohelia_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 25,
+    "center": [
+      91.94417873170227,
+      21.554812745349484
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.93717873170226,
+            21.550312745349483
+          ],
+          [
+            91.95117873170227,
+            21.550312745349483
+          ],
+          [
+            91.95117873170227,
+            21.559312745349484
+          ],
+          [
+            91.93717873170226,
+            21.559312745349484
+          ],
+          [
+            91.93717873170226,
+            21.550312745349483
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_maheshkhali_4",
+    "name": "Maheshkhali Highland Block",
+    "jlNo": "JL-86",
+    "upazilaId": "maheshkhali",
+    "districtId": "coxs_bazar",
+    "riverId": "kohelia_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 49,
+    "center": [
+      91.9592430004105,
+      21.5695765531715
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.95224300041049,
+            21.5650765531715
+          ],
+          [
+            91.9662430004105,
+            21.5650765531715
+          ],
+          [
+            91.9662430004105,
+            21.5740765531715
+          ],
+          [
+            91.95224300041049,
+            21.5740765531715
+          ],
+          [
+            91.95224300041049,
+            21.5650765531715
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_unassigned_maheshkhali_1",
+    "name": "Unassigned New Land (Maheshkhali Mudflats Block-1)",
+    "jlNo": "V-01",
+    "upazilaId": "maheshkhali",
+    "districtId": "coxs_bazar",
+    "kind": "unassigned",
+    "isVirtual": true,
+    "totalPlots": 30,
+    "center": [
+      91.96352789074183,
+      21.516984881050885
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.95652789074182,
+            21.512484881050884
+          ],
+          [
+            91.97052789074183,
+            21.512484881050884
+          ],
+          [
+            91.97052789074183,
+            21.521484881050885
+          ],
+          [
+            91.95652789074182,
+            21.521484881050885
+          ],
+          [
+            91.95652789074182,
+            21.512484881050884
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_unassigned_maheshkhali_2",
+    "name": "Unassigned New Land (Maheshkhali Mudflats Block-2)",
+    "jlNo": "V-02",
+    "upazilaId": "maheshkhali",
+    "districtId": "coxs_bazar",
+    "kind": "unassigned",
+    "isVirtual": true,
+    "totalPlots": 30,
+    "center": [
+      91.96448250106303,
+      21.510128048760816
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.95748250106303,
+            21.505628048760816
+          ],
+          [
+            91.97148250106304,
+            21.505628048760816
+          ],
+          [
+            91.97148250106304,
+            21.514628048760816
+          ],
+          [
+            91.95748250106303,
+            21.514628048760816
+          ],
+          [
+            91.95748250106303,
+            21.505628048760816
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_hatiya_1",
+    "name": "Hatiya Riverside",
+    "jlNo": "JL-92",
+    "upazilaId": "hatiya",
+    "districtId": "noakhali",
+    "riverId": "meghna_estuary",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 42,
+    "center": [
+      91.09868724955246,
+      22.375257853744554
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.09168724955245,
+            22.370757853744554
+          ],
+          [
+            91.10568724955246,
+            22.370757853744554
+          ],
+          [
+            91.10568724955246,
+            22.379757853744554
+          ],
+          [
+            91.09168724955245,
+            22.379757853744554
+          ],
+          [
+            91.09168724955245,
+            22.370757853744554
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_hatiya_2",
+    "name": "Hatiya North Meadow",
+    "jlNo": "JL-29",
+    "upazilaId": "hatiya",
+    "districtId": "noakhali",
+    "riverId": "meghna_estuary",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 25,
+    "center": [
+      91.1075985997729,
+      22.351704712789505
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.1005985997729,
+            22.347204712789505
+          ],
+          [
+            91.1145985997729,
+            22.347204712789505
+          ],
+          [
+            91.1145985997729,
+            22.356204712789506
+          ],
+          [
+            91.1005985997729,
+            22.356204712789506
+          ],
+          [
+            91.1005985997729,
+            22.347204712789505
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_hatiya_3",
+    "name": "Hatiya South Alluvium",
+    "jlNo": "JL-81",
+    "upazilaId": "hatiya",
+    "districtId": "noakhali",
+    "riverId": "meghna_estuary",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 42,
+    "center": [
+      91.10134159072302,
+      22.371027845637872
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.09434159072302,
+            22.366527845637872
+          ],
+          [
+            91.10834159072303,
+            22.366527845637872
+          ],
+          [
+            91.10834159072303,
+            22.375527845637873
+          ],
+          [
+            91.09434159072302,
+            22.375527845637873
+          ],
+          [
+            91.09434159072302,
+            22.366527845637872
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_unassigned_hatiya_1",
+    "name": "Unassigned New Land (Hatiya Mudflats Block-1)",
+    "jlNo": "V-01",
+    "upazilaId": "hatiya",
+    "districtId": "noakhali",
+    "kind": "unassigned",
+    "isVirtual": true,
+    "totalPlots": 42,
+    "center": [
+      91.13844871213193,
+      22.347254216442817
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.13144871213193,
+            22.342754216442817
+          ],
+          [
+            91.14544871213194,
+            22.342754216442817
+          ],
+          [
+            91.14544871213194,
+            22.351754216442817
+          ],
+          [
+            91.13144871213193,
+            22.351754216442817
+          ],
+          [
+            91.13144871213193,
+            22.342754216442817
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_unassigned_hatiya_2",
+    "name": "Unassigned New Land (Hatiya Mudflats Block-2)",
+    "jlNo": "V-02",
+    "upazilaId": "hatiya",
+    "districtId": "noakhali",
+    "kind": "unassigned",
+    "isVirtual": true,
+    "totalPlots": 36,
+    "center": [
+      91.12599594619357,
+      22.33879962341627
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.11899594619356,
+            22.33429962341627
+          ],
+          [
+            91.13299594619357,
+            22.33429962341627
+          ],
+          [
+            91.13299594619357,
+            22.34329962341627
+          ],
+          [
+            91.11899594619356,
+            22.34329962341627
+          ],
+          [
+            91.11899594619356,
+            22.33429962341627
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_subarnachar_1",
+    "name": "Subarnachar Riverside",
+    "jlNo": "JL-38",
+    "upazilaId": "subarnachar",
+    "districtId": "noakhali",
+    "riverId": "meghna_estuary",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 42,
+    "center": [
+      91.1155815859884,
+      22.745813404582442
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.10858158598839,
+            22.741313404582442
+          ],
+          [
+            91.1225815859884,
+            22.741313404582442
+          ],
+          [
+            91.1225815859884,
+            22.750313404582442
+          ],
+          [
+            91.10858158598839,
+            22.750313404582442
+          ],
+          [
+            91.10858158598839,
+            22.741313404582442
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_subarnachar_2",
+    "name": "Subarnachar North Meadow",
+    "jlNo": "JL-85",
+    "upazilaId": "subarnachar",
+    "districtId": "noakhali",
+    "riverId": "meghna_estuary",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 42,
+    "center": [
+      91.12204304445534,
+      22.750329059232026
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.11504304445533,
+            22.745829059232026
+          ],
+          [
+            91.12904304445534,
+            22.745829059232026
+          ],
+          [
+            91.12904304445534,
+            22.754829059232026
+          ],
+          [
+            91.11504304445533,
+            22.754829059232026
+          ],
+          [
+            91.11504304445533,
+            22.745829059232026
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_subarnachar_3",
+    "name": "Subarnachar South Alluvium",
+    "jlNo": "JL-82",
+    "upazilaId": "subarnachar",
+    "districtId": "noakhali",
+    "riverId": "meghna_estuary",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "center": [
+      91.14494443234055,
+      22.737729857144878
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.13794443234055,
+            22.733229857144877
+          ],
+          [
+            91.15194443234056,
+            22.733229857144877
+          ],
+          [
+            91.15194443234056,
+            22.742229857144878
+          ],
+          [
+            91.13794443234055,
+            22.742229857144878
+          ],
+          [
+            91.13794443234055,
+            22.733229857144877
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_subarnachar_4",
+    "name": "Subarnachar Highland Block",
+    "jlNo": "JL-50",
+    "upazilaId": "subarnachar",
+    "districtId": "noakhali",
+    "riverId": "meghna_estuary",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 25,
+    "center": [
+      91.11678742870689,
+      22.73459792113863
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.10978742870688,
+            22.73009792113863
+          ],
+          [
+            91.12378742870689,
+            22.73009792113863
+          ],
+          [
+            91.12378742870689,
+            22.73909792113863
+          ],
+          [
+            91.10978742870688,
+            22.73909792113863
+          ],
+          [
+            91.10978742870688,
+            22.73009792113863
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_unassigned_subarnachar_1",
+    "name": "Unassigned New Land (Subarnachar Mudflats Block-1)",
+    "jlNo": "V-01",
+    "upazilaId": "subarnachar",
+    "districtId": "noakhali",
+    "kind": "unassigned",
+    "isVirtual": true,
+    "totalPlots": 36,
+    "center": [
+      91.16963165197754,
+      22.7074437958817
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.16263165197753,
+            22.7029437958817
+          ],
+          [
+            91.17663165197754,
+            22.7029437958817
+          ],
+          [
+            91.17663165197754,
+            22.7119437958817
+          ],
+          [
+            91.16263165197753,
+            22.7119437958817
+          ],
+          [
+            91.16263165197753,
+            22.7029437958817
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_unassigned_subarnachar_2",
+    "name": "Unassigned New Land (Subarnachar Mudflats Block-2)",
+    "jlNo": "V-02",
+    "upazilaId": "subarnachar",
+    "districtId": "noakhali",
+    "kind": "unassigned",
+    "isVirtual": true,
+    "totalPlots": 25,
+    "center": [
+      91.15129254772793,
+      22.72115595612675
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            91.14429254772793,
+            22.71665595612675
+          ],
+          [
+            91.15829254772794,
+            22.71665595612675
+          ],
+          [
+            91.15829254772794,
+            22.72565595612675
+          ],
+          [
+            91.14429254772793,
+            22.72565595612675
+          ],
+          [
+            91.14429254772793,
+            22.71665595612675
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_koyra_1",
+    "name": "Koyra Riverside",
+    "jlNo": "JL-46",
+    "upazilaId": "koyra",
+    "districtId": "khulna",
+    "riverId": "shibsa_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 49,
+    "center": [
+      89.28225955800153,
+      22.32631943053566
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            89.27525955800152,
+            22.32181943053566
+          ],
+          [
+            89.28925955800153,
+            22.32181943053566
+          ],
+          [
+            89.28925955800153,
+            22.33081943053566
+          ],
+          [
+            89.27525955800152,
+            22.33081943053566
+          ],
+          [
+            89.27525955800152,
+            22.32181943053566
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_koyra_2",
+    "name": "Koyra North Meadow",
+    "jlNo": "JL-88",
+    "upazilaId": "koyra",
+    "districtId": "khulna",
+    "riverId": "shibsa_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "center": [
+      89.31787915091961,
+      22.346810295525938
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            89.3108791509196,
+            22.342310295525937
+          ],
+          [
+            89.32487915091961,
+            22.342310295525937
+          ],
+          [
+            89.32487915091961,
+            22.351310295525938
+          ],
+          [
+            89.3108791509196,
+            22.351310295525938
+          ],
+          [
+            89.3108791509196,
+            22.342310295525937
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_koyra_3",
+    "name": "Koyra South Alluvium",
+    "jlNo": "JL-47",
+    "upazilaId": "koyra",
+    "districtId": "khulna",
+    "riverId": "shibsa_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "center": [
+      89.31035383440553,
+      22.356307135242968
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            89.30335383440553,
+            22.351807135242968
+          ],
+          [
+            89.31735383440554,
+            22.351807135242968
+          ],
+          [
+            89.31735383440554,
+            22.36080713524297
+          ],
+          [
+            89.30335383440553,
+            22.36080713524297
+          ],
+          [
+            89.30335383440553,
+            22.351807135242968
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_koyra_4",
+    "name": "Koyra Highland Block",
+    "jlNo": "JL-61",
+    "upazilaId": "koyra",
+    "districtId": "khulna",
+    "riverId": "shibsa_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 30,
+    "center": [
+      89.28756374977529,
+      22.32157163028605
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            89.28056374977528,
+            22.31707163028605
+          ],
+          [
+            89.29456374977529,
+            22.31707163028605
+          ],
+          [
+            89.29456374977529,
+            22.32607163028605
+          ],
+          [
+            89.28056374977528,
+            22.32607163028605
+          ],
+          [
+            89.28056374977528,
+            22.31707163028605
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_unassigned_koyra_1",
+    "name": "Unassigned New Land (Koyra Mudflats Block-1)",
+    "jlNo": "V-01",
+    "upazilaId": "koyra",
+    "districtId": "khulna",
+    "kind": "unassigned",
+    "isVirtual": true,
+    "totalPlots": 30,
+    "center": [
+      89.33218705401755,
+      22.302863735414576
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            89.32518705401755,
+            22.298363735414576
+          ],
+          [
+            89.33918705401756,
+            22.298363735414576
+          ],
+          [
+            89.33918705401756,
+            22.307363735414576
+          ],
+          [
+            89.32518705401755,
+            22.307363735414576
+          ],
+          [
+            89.32518705401755,
+            22.298363735414576
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_unassigned_koyra_2",
+    "name": "Unassigned New Land (Koyra Mudflats Block-2)",
+    "jlNo": "V-02",
+    "upazilaId": "koyra",
+    "districtId": "khulna",
+    "kind": "unassigned",
+    "isVirtual": true,
+    "totalPlots": 42,
+    "center": [
+      89.32015073271934,
+      22.319285426067655
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            89.31315073271934,
+            22.314785426067655
+          ],
+          [
+            89.32715073271935,
+            22.314785426067655
+          ],
+          [
+            89.32715073271935,
+            22.323785426067655
+          ],
+          [
+            89.31315073271934,
+            22.323785426067655
+          ],
+          [
+            89.31315073271934,
+            22.314785426067655
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_dacope_1",
+    "name": "Dacope Riverside",
+    "jlNo": "JL-71",
+    "upazilaId": "dacope",
+    "districtId": "khulna",
+    "riverId": "passur_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 36,
+    "center": [
+      89.51421420880594,
+      22.589640364134684
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            89.50721420880593,
+            22.585140364134684
+          ],
+          [
+            89.52121420880594,
+            22.585140364134684
+          ],
+          [
+            89.52121420880594,
+            22.594140364134685
+          ],
+          [
+            89.50721420880593,
+            22.594140364134685
+          ],
+          [
+            89.50721420880593,
+            22.585140364134684
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_dacope_2",
+    "name": "Dacope North Meadow",
+    "jlNo": "JL-72",
+    "upazilaId": "dacope",
+    "districtId": "khulna",
+    "riverId": "passur_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 35,
+    "center": [
+      89.52779720610008,
+      22.570738337356598
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            89.52079720610007,
+            22.566238337356598
+          ],
+          [
+            89.53479720610008,
+            22.566238337356598
+          ],
+          [
+            89.53479720610008,
+            22.5752383373566
+          ],
+          [
+            89.52079720610007,
+            22.5752383373566
+          ],
+          [
+            89.52079720610007,
+            22.566238337356598
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_dacope_3",
+    "name": "Dacope South Alluvium",
+    "jlNo": "JL-34",
+    "upazilaId": "dacope",
+    "districtId": "khulna",
+    "riverId": "passur_river",
+    "kind": "registered",
+    "isVirtual": false,
+    "totalPlots": 25,
+    "center": [
+      89.49311868615449,
+      22.583576970798894
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            89.48611868615448,
+            22.579076970798894
+          ],
+          [
+            89.5001186861545,
+            22.579076970798894
+          ],
+          [
+            89.5001186861545,
+            22.588076970798895
+          ],
+          [
+            89.48611868615448,
+            22.588076970798895
+          ],
+          [
+            89.48611868615448,
+            22.579076970798894
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_unassigned_dacope_1",
+    "name": "Unassigned New Land (Dacope Mudflats Block-1)",
+    "jlNo": "V-01",
+    "upazilaId": "dacope",
+    "districtId": "khulna",
+    "kind": "unassigned",
+    "isVirtual": true,
+    "totalPlots": 42,
+    "center": [
+      89.53502291599754,
+      22.541500528259203
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            89.52802291599754,
+            22.537000528259203
+          ],
+          [
+            89.54202291599755,
+            22.537000528259203
+          ],
+          [
+            89.54202291599755,
+            22.546000528259203
+          ],
+          [
+            89.52802291599754,
+            22.546000528259203
+          ],
+          [
+            89.52802291599754,
+            22.537000528259203
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mouza_unassigned_dacope_2",
+    "name": "Unassigned New Land (Dacope Mudflats Block-2)",
+    "jlNo": "V-02",
+    "upazilaId": "dacope",
+    "districtId": "khulna",
+    "kind": "unassigned",
+    "isVirtual": true,
+    "totalPlots": 35,
+    "center": [
+      89.53144174368354,
+      22.5310018212907
+    ],
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            89.52444174368354,
+            22.5265018212907
+          ],
+          [
+            89.53844174368355,
+            22.5265018212907
+          ],
+          [
+            89.53844174368355,
+            22.5355018212907
+          ],
+          [
+            89.52444174368354,
+            22.5355018212907
+          ],
+          [
+            89.52444174368354,
+            22.5265018212907
+          ]
+        ]
+      ]
+    }
+  }
+]

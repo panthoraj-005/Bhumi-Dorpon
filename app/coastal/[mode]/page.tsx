@@ -1,0 +1,364 @@
+"use client";
+
+import React, { useState } from "react";
+import Link from "next/link";
+import { useParams, useRouter } from "next/navigation";
+import {
+  Anchor,
+  ChevronRight,
+  TrendingDown,
+  TrendingUp,
+  Calendar,
+  AlertCircle,
+  RotateCcw,
+  Sparkles,
+  Info,
+  Building2,
+  Layers,
+} from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
+import { AppHeader } from "@/components/AppHeader";
+import { SelectorChain } from "@/components/SelectorChain";
+import { OwnerTable } from "@/components/OwnerTable";
+import { ForecastBadge } from "@/components/ForecastBadge";
+import { ConfidenceBadge } from "@/components/ConfidenceBadge";
+import { EmptyState } from "@/components/EmptyState";
+import { SegmentedToggle } from "@/components/SegmentedToggle";
+import { Skeleton } from "@/components/Skeleton";
+import { CoastalMap } from "@/components/CoastalMap";
+import { useAppStore } from "@/stores/appStore";
+import { formatArea } from "@/lib/units";
+import { getHazardResult } from "@/lib/data";
+import { HazardResult, DataMode } from "@/lib/types";
+import { useSelection } from "@/lib/useSelection";
+
+const DEFAULT_COASTAL_SELECTION = {
+  d: "bhola",
+  u: "char_fasson",
+  m: "mouza_char_fasson_1",
+};
+
+export default function CoastalDetailPage() {
+  const params = useParams();
+  const router = useRouter();
+  const rawMode = (params?.mode as string) || "recorded";
+  const mode: DataMode = rawMode === "forecast" ? "forecast" : "recorded";
+  const isForecast = mode === "forecast";
+
+  const { unit } = useAppStore();
+
+  // 1. URL is single source of truth via useSelection
+  const {
+    selection,
+    d,
+    u,
+    m,
+    setStep,
+    resetToDefault,
+    isFinalStepSet,
+    activeEntityId,
+  } = useSelection({
+    hazard: "coastal",
+    mode,
+    defaultSelection: DEFAULT_COASTAL_SELECTION,
+  });
+
+  const [focusedPlotNo, setFocusedPlotNo] = useState<string | null>(null);
+
+  // 2. Load Results via TanStack Query with full selection in query key
+  const {
+    data: result,
+    isLoading,
+    isError,
+    error,
+    refetch,
+  } = useQuery<HazardResult | null>({
+    queryKey: ["hazardResult", "coastal", mode, { d, u, m }],
+    queryFn: async () => {
+      if (!activeEntityId) return null;
+      return getHazardResult("coastal", mode, activeEntityId);
+    },
+    enabled: isFinalStepSet,
+  });
+
+  const handleModeSwitch = (newMode: DataMode) => {
+    const qs = new URLSearchParams();
+    if (d) qs.set("d", d);
+    if (u) qs.set("u", u);
+    if (m) qs.set("m", m);
+    const queryString = qs.toString();
+    router.push(`/coastal/${newMode}${queryString ? `?${queryString}` : ""}`);
+  };
+
+  return (
+    <div className="flex-1 flex flex-col pb-16">
+      <AppHeader
+        title="Coastal Shoreline Shifts & Mudflats"
+        subtitle={
+          isForecast
+            ? "Deep learning estuarine shoreline retreat & accretion forecasting with virtual cadastral blocks"
+            : "Bay of Bengal tidal shoreline migration, mangrove buffer strips, and intertidal mudflat formation"
+        }
+      >
+        <div className="inline-flex items-center">
+          <SegmentedToggle<DataMode>
+            options={[
+              { id: "recorded", label: "A. Recorded Data" },
+              { id: "forecast", label: "B. Forecast (DL)" },
+            ]}
+            value={mode}
+            onChange={handleModeSwitch}
+            variant="lime"
+            size="md"
+          />
+        </div>
+      </AppHeader>
+
+      <div className="px-4 sm:px-8 py-6 space-y-6 max-w-[1440px] mx-auto w-full">
+        {/* Breadcrumb Strip */}
+        <div className="flex flex-wrap items-center justify-between gap-3 text-xs text-muted pb-1">
+          <nav className="flex items-center gap-1.5 font-medium">
+            <Link href="/" className="hover:text-ink transition-colors">
+              Home
+            </Link>
+            <ChevronRight className="w-3.5 h-3.5" />
+            <Link href="/coastal" className="hover:text-ink transition-colors">
+              Coastal
+            </Link>
+            <ChevronRight className="w-3.5 h-3.5" />
+            <span className="text-ink font-semibold">
+              {isForecast ? "Forecast Mode" : "Recorded Mode"}
+            </span>
+            {result && (
+              <>
+                <ChevronRight className="w-3.5 h-3.5" />
+                <span className="text-accent-deep font-semibold">
+                  {result.title}
+                </span>
+              </>
+            )}
+          </nav>
+
+          {isForecast && <ForecastBadge label="Delta AI Shoreline Model" />}
+        </div>
+
+        {/* SELECTOR CHAIN (STEP 3) */}
+        <SelectorChain
+          hazard="coastal"
+          mode={mode}
+          selection={selection}
+          onSelectStep={setStep}
+          onReset={resetToDefault}
+        />
+
+        {/* LOADING SKELETON */}
+        {isLoading && (
+          <div className="space-y-6">
+            <div className="bhumidorpon-card p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="space-y-2 w-full max-w-md">
+                <Skeleton className="h-4 w-32" />
+                <Skeleton className="h-8 w-72" />
+                <Skeleton className="h-4 w-48" />
+              </div>
+              <div className="flex gap-4">
+                <Skeleton className="h-14 w-28" />
+                <Skeleton className="h-14 w-28" />
+              </div>
+            </div>
+            <Skeleton className="h-[400px] w-full rounded-card" />
+            <Skeleton className="h-64 w-full rounded-card" />
+          </div>
+        )}
+
+        {/* ERROR BOUNDARY WITH TRY AGAIN */}
+        {isError && (
+          <div className="bhumidorpon-card p-8 text-center space-y-3">
+            <div className="w-10 h-10 rounded-full bg-loss-soft text-loss mx-auto flex items-center justify-center font-bold">
+              !
+            </div>
+            <h3 className="font-semibold text-base text-ink">Failed to load coastal shoreline data</h3>
+            <p className="text-xs text-muted max-w-sm mx-auto">
+              {error instanceof Error ? error.message : "An unexpected error occurred while loading coastal dynamics data."}
+            </p>
+            <button
+              type="button"
+              onClick={() => refetch()}
+              className="px-4 py-2 rounded-pill bg-ink text-surface text-xs font-semibold hover:bg-ink/90 transition-colors"
+            >
+              Try again
+            </button>
+          </div>
+        )}
+
+        {/* EMPTY STATE */}
+        {!isLoading && !isError && isFinalStepSet && !result && (
+          <EmptyState
+            hazard="coastal"
+            title="No coastal records found."
+            description="The selected district or upazila has no marine coastline or tidal estuarine frontage along the Bay of Bengal."
+            actionLabel="Reset to Pilot Cluster"
+            onAction={resetToDefault}
+          />
+        )}
+
+        {!isFinalStepSet && (
+          <div className="bhumidorpon-card p-12 text-center space-y-3">
+            <Info className="w-8 h-8 text-muted mx-auto" />
+            <h3 className="text-sm font-semibold text-ink">Please select a coastal mouza</h3>
+            <p className="text-xs text-muted max-w-md mx-auto">
+              Choose District, Upazila, and Coastal Mouza / Virtual Block above to inspect mudflat accretion and marine shoreline retreat.
+            </p>
+          </div>
+        )}
+
+        {/* RESULT DETAIL SECTION */}
+        {!isLoading && !isError && result && (
+          <div className="space-y-6 animate-in fade-in duration-300">
+            {/* 1. SUMMARY STRIP */}
+            <div className="bhumidorpon-card p-5 flex flex-col md:flex-row md:items-center justify-between gap-4 bg-gradient-to-r from-surface to-[#E0F2FE]/30">
+              <div className="space-y-1">
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-semibold text-muted">
+                    {result.locationLabel}
+                  </span>
+                  {isForecast && (
+                    <ConfidenceBadge
+                      level={result.confidence?.level || "Medium"}
+                      scorePercent={result.confidence?.scorePercent || 81}
+                    />
+                  )}
+                </div>
+                <h2 className="text-xl sm:text-2xl font-display font-bold text-ink">
+                  {result.title}
+                </h2>
+                <div className="text-xs text-muted flex items-center gap-2">
+                  <Calendar className="w-3.5 h-3.5" />
+                  <span>Period: {result.periodLabel}</span>
+                  <span>•</span>
+                  <span>Accretion / Erosion Rate: {formatArea(result.annualRateDecimal, unit)}/yr</span>
+                </div>
+              </div>
+
+              {/* Total Loss, Total Gain, Trend */}
+              <div className="flex items-center gap-4 border-t md:border-t-0 md:border-l border-border pt-3 md:pt-0 md:pl-6">
+                <div>
+                  <div className="text-[11px] text-muted">Intertidal Gain</div>
+                  <div className="text-xl font-bold text-gain tabular-nums">
+                    +{formatArea(result.totalGainDecimal, unit)}
+                  </div>
+                </div>
+                <div className="border-l border-border pl-4">
+                  <div className="text-[11px] text-muted">Marine Erosion</div>
+                  <div className="text-xl font-bold text-loss tabular-nums">
+                    −{formatArea(result.totalLossDecimal, unit)}
+                  </div>
+                </div>
+                <div className="border-l border-border pl-4">
+                  <div className="text-[11px] text-muted">Net Change</div>
+                  <div className="inline-flex items-center gap-1 text-xs font-bold text-gain capitalize">
+                    <TrendingUp className="w-3.5 h-3.5" />
+                    <span>+{formatArea(result.netChangeDecimal, unit)}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 2. DEDICATED COASTAL MAP */}
+            <div className="space-y-2">
+              <div className="flex items-center justify-between px-1">
+                <div className="space-y-0.5">
+                  <h3 className="text-sm font-semibold text-ink">
+                    Coastal Shoreline Dynamics Map
+                  </h3>
+                  <p className="text-xs text-muted">
+                    Estuarine retreat line, intertidal mudflats, mangrove protective greenbelts, and virtual cadastral mouza blocks
+                  </p>
+                </div>
+                <div className="text-xs text-muted">
+                  {isForecast ? "Projected Shoreline Retreat" : "Surveyed Coastal Baseline"}
+                </div>
+              </div>
+
+              <CoastalMap
+                geometry={result.geometry}
+                owners={result.owners}
+                isForecast={isForecast}
+                selectedPlotNo={focusedPlotNo}
+                onSelectPlot={(dagNo) => setFocusedPlotNo(dagNo)}
+                selectedMouzaId={m}
+                onSelectMouza={(mId) => setStep("m", mId)}
+              />
+            </div>
+
+            {/* 3. INFO CARDS */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="bhumidorpon-card p-4 space-y-1">
+                <span className="text-xs font-medium text-muted">Unowned Land (Unassigned New Land / Mudflats)</span>
+                <div className="text-xl font-bold text-gain tabular-nums">
+                  +{formatArea(result.annualRateDecimal, unit)}/yr
+                </div>
+                <div className="text-[11px] text-secondary">Estuarine delta sedimentation (No mouza)</div>
+              </div>
+
+              <div className="bhumidorpon-card p-4 space-y-1">
+                <span className="text-xs font-medium text-muted">Mangrove Greenbelt</span>
+                <div className="text-base font-bold text-ink">
+                  340m Protective Buffer
+                </div>
+                <div className="text-[11px] text-secondary">Wave attenuation mangrove strip</div>
+              </div>
+
+              <div className="bhumidorpon-card p-4 space-y-1">
+                <span className="text-xs font-medium text-muted">Tenure Designation</span>
+                <div className="text-base font-bold text-secondary flex items-center gap-1.5">
+                  <Building2 className="w-4 h-4 text-ink" />
+                  <span>Virtual Mouza Khas</span>
+                </div>
+                <div className="text-[11px] text-secondary">Unsurveyed emergent intertidal delta</div>
+              </div>
+            </div>
+
+            {/* 4. OWNER & VIRTUALLY ASSIGNED TABLE (STEP 4) */}
+            <div className="space-y-2">
+              <div className="flex items-center justify-between px-1">
+                <div>
+                  <h3 className="text-sm font-semibold text-ink">
+                    Coastal Landowner & Virtual Mudflat Register
+                  </h3>
+                  <p className="text-xs text-muted">
+                    Surveyed cadastral parcels and newly accreted virtual mouza blocks
+                  </p>
+                </div>
+                <span className="text-xs text-muted tabular-nums">
+                  {result.owners.length} registered parcels
+                </span>
+              </div>
+
+              <OwnerTable
+                variant={isForecast ? "forecast" : "recorded"}
+                owners={result.owners}
+                selectedPlotNo={focusedPlotNo}
+                onSelectPlot={(dagNo) => setFocusedPlotNo(dagNo)}
+              />
+            </div>
+
+            {/* 5. FORECAST DISCLAIMER (Rule 7) */}
+            {isForecast && (
+              <div className="p-4 rounded-card bg-predicted-soft border border-predicted/30 text-xs text-secondary flex items-start gap-3">
+                <AlertCircle className="w-5 h-5 text-predicted shrink-0 mt-0.5" />
+                <div className="space-y-1">
+                  <strong className="text-ink font-semibold block">
+                    Disclaimer:
+                  </strong>
+                  <p className="leading-relaxed">
+                    This is a model-based estimate, not an official government record.
+                  </p>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}

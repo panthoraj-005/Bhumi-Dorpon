@@ -1,0 +1,2589 @@
+{
+  "areaId": "area_char_hatiya",
+  "hazard": "char",
+  "mode": "recorded",
+  "bounds": [
+    91.08,
+    22.35,
+    91.13,
+    22.4
+  ],
+  "basemap": {
+    "land": [
+      [
+        [
+          91.08,
+          22.35
+        ],
+        [
+          91.13,
+          22.35
+        ],
+        [
+          91.13,
+          22.4
+        ],
+        [
+          91.08,
+          22.4
+        ],
+        [
+          91.08,
+          22.35
+        ]
+      ]
+    ],
+    "landuse": [
+      {
+        "type": "farmland",
+        "polygon": [
+          [
+            [
+              91.09,
+              22.354549
+            ],
+            [
+              91.0954,
+              22.354749
+            ],
+            [
+              91.096,
+              22.358149
+            ],
+            [
+              91.0903,
+              22.358549
+            ],
+            [
+              91.09,
+              22.354549
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "vegetation",
+        "polygon": [
+          [
+            [
+              91.094,
+              22.357549
+            ],
+            [
+              91.0965,
+              22.357749
+            ],
+            [
+              91.0962,
+              22.359349
+            ],
+            [
+              91.0942,
+              22.359149
+            ],
+            [
+              91.094,
+              22.357549
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "settlement",
+        "polygon": [
+          [
+            [
+              91.09,
+              22.357049
+            ],
+            [
+              91.0915,
+              22.357149
+            ],
+            [
+              91.0916,
+              22.358349
+            ],
+            [
+              91.0901,
+              22.358249
+            ],
+            [
+              91.09,
+              22.357049
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "farmland",
+        "polygon": [
+          [
+            [
+              91.095958,
+              22.366761
+            ],
+            [
+              91.101358,
+              22.366961
+            ],
+            [
+              91.101958,
+              22.370361
+            ],
+            [
+              91.096258,
+              22.370761
+            ],
+            [
+              91.095958,
+              22.366761
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "vegetation",
+        "polygon": [
+          [
+            [
+              91.099958,
+              22.369761
+            ],
+            [
+              91.102458,
+              22.369961
+            ],
+            [
+              91.102158,
+              22.371561
+            ],
+            [
+              91.100158,
+              22.371361
+            ],
+            [
+              91.099958,
+              22.369761
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "settlement",
+        "polygon": [
+          [
+            [
+              91.095958,
+              22.369261
+            ],
+            [
+              91.097458,
+              22.369361
+            ],
+            [
+              91.097558,
+              22.370561
+            ],
+            [
+              91.096058,
+              22.370461
+            ],
+            [
+              91.095958,
+              22.369261
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "farmland",
+        "polygon": [
+          [
+            [
+              91.101458,
+              22.379103
+            ],
+            [
+              91.106858,
+              22.379303
+            ],
+            [
+              91.107458,
+              22.382703
+            ],
+            [
+              91.101758,
+              22.383103
+            ],
+            [
+              91.101458,
+              22.379103
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "vegetation",
+        "polygon": [
+          [
+            [
+              91.105458,
+              22.382103
+            ],
+            [
+              91.107958,
+              22.382303
+            ],
+            [
+              91.107658,
+              22.383903
+            ],
+            [
+              91.105658,
+              22.383703
+            ],
+            [
+              91.105458,
+              22.382103
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "settlement",
+        "polygon": [
+          [
+            [
+              91.101458,
+              22.381603
+            ],
+            [
+              91.102958,
+              22.381703
+            ],
+            [
+              91.103058,
+              22.382903
+            ],
+            [
+              91.101558,
+              22.382803
+            ],
+            [
+              91.101458,
+              22.381603
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "farmland",
+        "polygon": [
+          [
+            [
+              91.09,
+              22.391456
+            ],
+            [
+              91.0954,
+              22.391656
+            ],
+            [
+              91.096,
+              22.395056
+            ],
+            [
+              91.0903,
+              22.395456
+            ],
+            [
+              91.09,
+              22.391456
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "vegetation",
+        "polygon": [
+          [
+            [
+              91.094,
+              22.394456
+            ],
+            [
+              91.0965,
+              22.394656
+            ],
+            [
+              91.0962,
+              22.396256
+            ],
+            [
+              91.0942,
+              22.396056
+            ],
+            [
+              91.094,
+              22.394456
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "settlement",
+        "polygon": [
+          [
+            [
+              91.09,
+              22.393956
+            ],
+            [
+              91.0915,
+              22.394056
+            ],
+            [
+              91.0916,
+              22.395256
+            ],
+            [
+              91.0901,
+              22.395156
+            ],
+            [
+              91.09,
+              22.393956
+            ]
+          ]
+        ]
+      }
+    ],
+    "water": [
+      {
+        "type": "river",
+        "polygon": [
+          [
+            [
+              91.112,
+              22.35
+            ],
+            [
+              91.13,
+              22.35
+            ],
+            [
+              91.13,
+              22.4
+            ],
+            [
+              91.112,
+              22.4
+            ],
+            [
+              91.112,
+              22.35
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "beel",
+        "polygon": [
+          [
+            [
+              91.091,
+              22.3715
+            ],
+            [
+              91.0943,
+              22.3717
+            ],
+            [
+              91.0937,
+              22.3737
+            ],
+            [
+              91.0909,
+              22.3734
+            ],
+            [
+              91.091,
+              22.3715
+            ]
+          ]
+        ]
+      }
+    ],
+    "waterlines": [
+      {
+        "type": "canal",
+        "line": [
+          [
+            91.082,
+            22.353
+          ],
+          [
+            91.088,
+            22.357
+          ],
+          [
+            91.094,
+            22.358
+          ]
+        ]
+      },
+      {
+        "type": "canal",
+        "line": [
+          [
+            91.0925,
+            22.3725
+          ],
+          [
+            91.0985,
+            22.3765
+          ],
+          [
+            91.126,
+            22.3785
+          ]
+        ]
+      }
+    ],
+    "roads": [
+      {
+        "type": "major",
+        "line": [
+          [
+            91.08,
+            22.373
+          ],
+          [
+            91.1,
+            22.376
+          ],
+          [
+            91.127,
+            22.377
+          ]
+        ]
+      },
+      {
+        "type": "minor",
+        "line": [
+          [
+            91.085,
+            22.352
+          ],
+          [
+            91.086,
+            22.376
+          ],
+          [
+            91.088,
+            22.397
+          ]
+        ]
+      },
+      {
+        "type": "minor",
+        "line": [
+          [
+            91.092,
+            22.376
+          ],
+          [
+            91.095,
+            22.398
+          ]
+        ]
+      }
+    ],
+    "embankments": [
+      {
+        "line": [
+          [
+            91.088,
+            22.351
+          ],
+          [
+            91.089,
+            22.375
+          ],
+          [
+            91.0885,
+            22.399
+          ]
+        ]
+      }
+    ],
+    "buildings": [
+      {
+        "polygon": [
+          [
+            [
+              91.0927,
+              22.356349
+            ],
+            [
+              91.0933,
+              22.356349
+            ],
+            [
+              91.0933,
+              22.356749
+            ],
+            [
+              91.0927,
+              22.356749
+            ],
+            [
+              91.0927,
+              22.356349
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              91.0936,
+              22.356349
+            ],
+            [
+              91.0942,
+              22.356349
+            ],
+            [
+              91.0942,
+              22.356749
+            ],
+            [
+              91.0936,
+              22.356749
+            ],
+            [
+              91.0936,
+              22.356349
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              91.098658,
+              22.368561
+            ],
+            [
+              91.099258,
+              22.368561
+            ],
+            [
+              91.099258,
+              22.368961
+            ],
+            [
+              91.098658,
+              22.368961
+            ],
+            [
+              91.098658,
+              22.368561
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              91.099558,
+              22.368561
+            ],
+            [
+              91.100158,
+              22.368561
+            ],
+            [
+              91.100158,
+              22.368961
+            ],
+            [
+              91.099558,
+              22.368961
+            ],
+            [
+              91.099558,
+              22.368561
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              91.104158,
+              22.380903
+            ],
+            [
+              91.104758,
+              22.380903
+            ],
+            [
+              91.104758,
+              22.381303
+            ],
+            [
+              91.104158,
+              22.381303
+            ],
+            [
+              91.104158,
+              22.380903
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              91.105058,
+              22.380903
+            ],
+            [
+              91.105658,
+              22.380903
+            ],
+            [
+              91.105658,
+              22.381303
+            ],
+            [
+              91.105058,
+              22.381303
+            ],
+            [
+              91.105058,
+              22.380903
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              91.0927,
+              22.393256
+            ],
+            [
+              91.0933,
+              22.393256
+            ],
+            [
+              91.0933,
+              22.393656
+            ],
+            [
+              91.0927,
+              22.393656
+            ],
+            [
+              91.0927,
+              22.393256
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              91.0936,
+              22.393256
+            ],
+            [
+              91.0942,
+              22.393256
+            ],
+            [
+              91.0942,
+              22.393656
+            ],
+            [
+              91.0936,
+              22.393656
+            ],
+            [
+              91.0936,
+              22.393256
+            ]
+          ]
+        ]
+      }
+    ],
+    "pois": [
+      {
+        "name": "Bhasan Sector SCHOOL",
+        "type": "school",
+        "coordinates": [
+          91.0945,
+          22.355349
+        ]
+      },
+      {
+        "name": "Nijhum Sandbar MOSQUE",
+        "type": "mosque",
+        "coordinates": [
+          91.100458,
+          22.367561
+        ]
+      },
+      {
+        "name": "Hatiya Island North MARKET",
+        "type": "market",
+        "coordinates": [
+          91.105958,
+          22.379903
+        ]
+      },
+      {
+        "name": "Hatiya Khas HEALTH CENTER",
+        "type": "health_center",
+        "coordinates": [
+          91.0945,
+          22.392256
+        ]
+      }
+    ],
+    "upazila": [
+      [
+        [
+          91.078,
+          22.348
+        ],
+        [
+          91.132,
+          22.348
+        ],
+        [
+          91.132,
+          22.402
+        ],
+        [
+          91.078,
+          22.402
+        ],
+        [
+          91.078,
+          22.348
+        ]
+      ]
+    ],
+    "mouzas": [
+      {
+        "id": "mouza_hatiya_1",
+        "name": "Bhasan Sector Mouza",
+        "jlNo": "JL-90",
+        "labelAnchor": [
+          91.093,
+          22.356549
+        ],
+        "areaDecimal": 118226,
+        "polygon": [
+          [
+            [
+              91.082,
+              22.35
+            ],
+            [
+              91.09289,
+              22.35
+            ],
+            [
+              91.10411,
+              22.35
+            ],
+            [
+              91.115,
+              22.35
+            ],
+            [
+              91.115,
+              22.355
+            ],
+            [
+              91.115,
+              22.3625
+            ],
+            [
+              91.10411,
+              22.362436
+            ],
+            [
+              91.09289,
+              22.363098
+            ],
+            [
+              91.082,
+              22.3625
+            ],
+            [
+              91.082,
+              22.35
+            ]
+          ]
+        ]
+      },
+      {
+        "id": "mouza_hatiya_2",
+        "name": "Nijhum Sandbar Mouza",
+        "jlNo": "JL-94",
+        "labelAnchor": [
+          91.098958,
+          22.368761
+        ],
+        "areaDecimal": 113636.4,
+        "polygon": [
+          [
+            [
+              91.082,
+              22.3625
+            ],
+            [
+              91.09289,
+              22.363098
+            ],
+            [
+              91.10411,
+              22.362436
+            ],
+            [
+              91.115,
+              22.3625
+            ],
+            [
+              91.115,
+              22.37
+            ],
+            [
+              91.115,
+              22.375
+            ],
+            [
+              91.10411,
+              22.374517
+            ],
+            [
+              91.09289,
+              22.375085
+            ],
+            [
+              91.082,
+              22.375
+            ],
+            [
+              91.082,
+              22.3625
+            ]
+          ]
+        ]
+      },
+      {
+        "id": "mouza_hatiya_3",
+        "name": "Hatiya Island North",
+        "jlNo": "JL-98",
+        "labelAnchor": [
+          91.104458,
+          22.381103
+        ],
+        "areaDecimal": 116537.2,
+        "polygon": [
+          [
+            [
+              91.082,
+              22.375
+            ],
+            [
+              91.09289,
+              22.375085
+            ],
+            [
+              91.10411,
+              22.374517
+            ],
+            [
+              91.115,
+              22.375
+            ],
+            [
+              91.115,
+              22.38
+            ],
+            [
+              91.115,
+              22.3875
+            ],
+            [
+              91.10411,
+              22.387689
+            ],
+            [
+              91.09289,
+              22.386913
+            ],
+            [
+              91.082,
+              22.3875
+            ],
+            [
+              91.082,
+              22.375
+            ]
+          ]
+        ]
+      },
+      {
+        "id": "mouza_hatiya_4",
+        "name": "Hatiya Khas",
+        "jlNo": "JL-102",
+        "labelAnchor": [
+          91.093,
+          22.393456
+        ],
+        "areaDecimal": 117769.6,
+        "polygon": [
+          [
+            [
+              91.082,
+              22.3875
+            ],
+            [
+              91.09289,
+              22.386913
+            ],
+            [
+              91.10411,
+              22.387689
+            ],
+            [
+              91.115,
+              22.3875
+            ],
+            [
+              91.115,
+              22.395
+            ],
+            [
+              91.115,
+              22.4
+            ],
+            [
+              91.10411,
+              22.4
+            ],
+            [
+              91.09289,
+              22.4
+            ],
+            [
+              91.082,
+              22.4
+            ],
+            [
+              91.082,
+              22.3875
+            ]
+          ]
+        ]
+      }
+    ],
+    "labels": [
+      {
+        "text": "Braided Channels",
+        "type": "river",
+        "bearing": 75,
+        "coordinates": [
+          91.127,
+          22.375
+        ]
+      }
+    ]
+  },
+  "mouzas": [
+    {
+      "id": "mouza_hatiya_1",
+      "name": "Bhasan Sector Mouza",
+      "jlNo": "JL-90",
+      "areaDecimal": 118226,
+      "lossDecimal": 112.5,
+      "gainDecimal": 168,
+      "percent": 0.2,
+      "labelAnchor": [
+        91.093,
+        22.356549
+      ],
+      "affectedOwnersCount": 20,
+      "polygon": [
+        [
+          [
+            91.082,
+            22.35
+          ],
+          [
+            91.09289,
+            22.35
+          ],
+          [
+            91.10411,
+            22.35
+          ],
+          [
+            91.115,
+            22.35
+          ],
+          [
+            91.115,
+            22.355
+          ],
+          [
+            91.115,
+            22.3625
+          ],
+          [
+            91.10411,
+            22.362436
+          ],
+          [
+            91.09289,
+            22.363098
+          ],
+          [
+            91.082,
+            22.3625
+          ],
+          [
+            91.082,
+            22.35
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_hatiya_2",
+      "name": "Nijhum Sandbar Mouza",
+      "jlNo": "JL-94",
+      "areaDecimal": 113636.4,
+      "lossDecimal": 43.4,
+      "gainDecimal": 60.2,
+      "percent": 0.1,
+      "labelAnchor": [
+        91.098958,
+        22.368761
+      ],
+      "affectedOwnersCount": 16,
+      "polygon": [
+        [
+          [
+            91.082,
+            22.3625
+          ],
+          [
+            91.09289,
+            22.363098
+          ],
+          [
+            91.10411,
+            22.362436
+          ],
+          [
+            91.115,
+            22.3625
+          ],
+          [
+            91.115,
+            22.37
+          ],
+          [
+            91.115,
+            22.375
+          ],
+          [
+            91.10411,
+            22.374517
+          ],
+          [
+            91.09289,
+            22.375085
+          ],
+          [
+            91.082,
+            22.375
+          ],
+          [
+            91.082,
+            22.3625
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_hatiya_3",
+      "name": "Hatiya Island North",
+      "jlNo": "JL-98",
+      "areaDecimal": 116537.2,
+      "lossDecimal": 36.6,
+      "gainDecimal": 30,
+      "percent": 0.1,
+      "labelAnchor": [
+        91.104458,
+        22.381103
+      ],
+      "affectedOwnersCount": 12,
+      "polygon": [
+        [
+          [
+            91.082,
+            22.375
+          ],
+          [
+            91.09289,
+            22.375085
+          ],
+          [
+            91.10411,
+            22.374517
+          ],
+          [
+            91.115,
+            22.375
+          ],
+          [
+            91.115,
+            22.38
+          ],
+          [
+            91.115,
+            22.3875
+          ],
+          [
+            91.10411,
+            22.387689
+          ],
+          [
+            91.09289,
+            22.386913
+          ],
+          [
+            91.082,
+            22.3875
+          ],
+          [
+            91.082,
+            22.375
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_hatiya_4",
+      "name": "Hatiya Khas",
+      "jlNo": "JL-102",
+      "areaDecimal": 117769.6,
+      "lossDecimal": 34.7,
+      "gainDecimal": 33.1,
+      "percent": 0.1,
+      "labelAnchor": [
+        91.093,
+        22.393456
+      ],
+      "affectedOwnersCount": 11,
+      "polygon": [
+        [
+          [
+            91.082,
+            22.3875
+          ],
+          [
+            91.09289,
+            22.386913
+          ],
+          [
+            91.10411,
+            22.387689
+          ],
+          [
+            91.115,
+            22.3875
+          ],
+          [
+            91.115,
+            22.395
+          ],
+          [
+            91.115,
+            22.4
+          ],
+          [
+            91.10411,
+            22.4
+          ],
+          [
+            91.09289,
+            22.4
+          ],
+          [
+            91.082,
+            22.4
+          ],
+          [
+            91.082,
+            22.3875
+          ]
+        ]
+      ]
+    }
+  ],
+  "hazardLayers": {
+    "islands": [
+      [
+        [
+          [
+            91.112,
+            22.35
+          ],
+          [
+            91.13,
+            22.35
+          ],
+          [
+            91.13,
+            22.4
+          ],
+          [
+            91.112,
+            22.4
+          ],
+          [
+            91.112,
+            22.35
+          ]
+        ]
+      ]
+    ],
+    "accretionTips": [
+      [
+        [
+          [
+            91.112,
+            22.35
+          ],
+          [
+            91.13,
+            22.35
+          ],
+          [
+            91.13,
+            22.4
+          ],
+          [
+            91.112,
+            22.4
+          ],
+          [
+            91.112,
+            22.35
+          ]
+        ]
+      ]
+    ],
+    "erosionFlanks": [
+      [
+        [
+          [
+            91.112,
+            22.35
+          ],
+          [
+            91.13,
+            22.35
+          ],
+          [
+            91.13,
+            22.4
+          ],
+          [
+            91.112,
+            22.4
+          ],
+          [
+            91.112,
+            22.35
+          ]
+        ]
+      ]
+    ],
+    "unownedKhasLand": [
+      [
+        [
+          [
+            91.112,
+            22.35
+          ],
+          [
+            91.13,
+            22.35
+          ],
+          [
+            91.13,
+            22.4
+          ],
+          [
+            91.112,
+            22.4
+          ],
+          [
+            91.112,
+            22.35
+          ]
+        ]
+      ]
+    ]
+  },
+  "context": {
+    "type": "char",
+    "activeChannelWidthM": 2150,
+    "charAreaCurrentDec": 420.5,
+    "charAreaPreviousDec": 388.2,
+    "netChangeDec": 32.3,
+    "isProjected": false
+  },
+  "owners": [
+    {
+      "id": "impact_char_recorded_mouza_hatiya_1_1",
+      "name": "Fatema Begum",
+      "dagNo": "101",
+      "khatianNo": "RS-201",
+      "plotNo": "101",
+      "mouzaId": "mouza_hatiya_1",
+      "upazilaId": "hatiya",
+      "districtId": "noakhali",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 169200,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        91.093,
+        22.356549
+      ],
+      "colorIndex": 1
+    },
+    {
+      "id": "impact_char_recorded_mouza_hatiya_1_2",
+      "name": "Nurul Huda Mia",
+      "dagNo": "102",
+      "khatianNo": "RS-202",
+      "plotNo": "102",
+      "mouzaId": "mouza_hatiya_1",
+      "upazilaId": "hatiya",
+      "districtId": "noakhali",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 169200,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        91.093,
+        22.356549
+      ],
+      "colorIndex": 4
+    },
+    {
+      "id": "impact_char_recorded_mouza_hatiya_1_3",
+      "name": "Anwar Parvez",
+      "dagNo": "103",
+      "khatianNo": "RS-203",
+      "plotNo": "103",
+      "mouzaId": "mouza_hatiya_1",
+      "upazilaId": "hatiya",
+      "districtId": "noakhali",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 169200,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        91.093,
+        22.356549
+      ],
+      "colorIndex": 7
+    },
+    {
+      "id": "impact_char_recorded_mouza_hatiya_1_4",
+      "name": "Shahana Akter",
+      "dagNo": "104",
+      "khatianNo": "RS-204",
+      "plotNo": "104",
+      "mouzaId": "mouza_hatiya_1",
+      "upazilaId": "hatiya",
+      "districtId": "noakhali",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 169200,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        91.093,
+        22.356549
+      ],
+      "colorIndex": 10
+    },
+    {
+      "id": "impact_char_recorded_mouza_hatiya_1_5",
+      "name": "Abdul Matin",
+      "dagNo": "105",
+      "khatianNo": "RS-205",
+      "plotNo": "105",
+      "mouzaId": "mouza_hatiya_1",
+      "upazilaId": "hatiya",
+      "districtId": "noakhali",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 169200,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        91.093,
+        22.356549
+      ],
+      "colorIndex": 1
+    },
+    {
+      "id": "impact_char_recorded_mouza_hatiya_1_6",
+      "name": "Zubair Ahmed",
+      "dagNo": "106",
+      "khatianNo": "RS-206",
+      "plotNo": "106",
+      "mouzaId": "mouza_hatiya_1",
+      "upazilaId": "hatiya",
+      "districtId": "noakhali",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 169200,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        91.093,
+        22.356549
+      ],
+      "colorIndex": 4
+    },
+    {
+      "id": "impact_char_recorded_mouza_hatiya_1_7",
+      "name": "Sultana Razia",
+      "dagNo": "107",
+      "khatianNo": "RS-207",
+      "plotNo": "107",
+      "mouzaId": "mouza_hatiya_1",
+      "upazilaId": "hatiya",
+      "districtId": "noakhali",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 169200,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        91.093,
+        22.356549
+      ],
+      "colorIndex": 7
+    },
+    {
+      "id": "impact_char_recorded_mouza_hatiya_1_8",
+      "name": "Sirajul Islam",
+      "dagNo": "108",
+      "khatianNo": "RS-208",
+      "plotNo": "108",
+      "mouzaId": "mouza_hatiya_1",
+      "upazilaId": "hatiya",
+      "districtId": "noakhali",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 13.8,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 165600,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        91.093,
+        22.356549
+      ],
+      "colorIndex": 10
+    },
+    {
+      "id": "impact_char_recorded_mouza_hatiya_2_1",
+      "name": "Kamal Uddin Ahmed",
+      "dagNo": "109",
+      "khatianNo": "RS-209",
+      "plotNo": "109",
+      "mouzaId": "mouza_hatiya_2",
+      "upazilaId": "hatiya",
+      "districtId": "noakhali",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 10.8,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 129600,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        91.098958,
+        22.368761
+      ],
+      "colorIndex": 9
+    },
+    {
+      "id": "impact_char_recorded_mouza_hatiya_2_2",
+      "name": "Taslima Nasrin",
+      "dagNo": "110",
+      "khatianNo": "RS-210",
+      "plotNo": "110",
+      "mouzaId": "mouza_hatiya_2",
+      "upazilaId": "hatiya",
+      "districtId": "noakhali",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 10.8,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 129600,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        91.098958,
+        22.368761
+      ],
+      "colorIndex": 0
+    },
+    {
+      "id": "impact_char_recorded_mouza_hatiya_2_3",
+      "name": "Faridul Islam",
+      "dagNo": "111",
+      "khatianNo": "RS-211",
+      "plotNo": "111",
+      "mouzaId": "mouza_hatiya_2",
+      "upazilaId": "hatiya",
+      "districtId": "noakhali",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 10.8,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 129600,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        91.098958,
+        22.368761
+      ],
+      "colorIndex": 3
+    },
+    {
+      "id": "impact_char_recorded_mouza_hatiya_2_4",
+      "name": "Monirul Huq",
+      "dagNo": "112",
+      "khatianNo": "RS-212",
+      "plotNo": "112",
+      "mouzaId": "mouza_hatiya_2",
+      "upazilaId": "hatiya",
+      "districtId": "noakhali",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 11,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 132000,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        91.098958,
+        22.368761
+      ],
+      "colorIndex": 6
+    },
+    {
+      "id": "impact_char_recorded_mouza_hatiya_3_1",
+      "name": "Abdul Matin",
+      "dagNo": "113",
+      "khatianNo": "RS-213",
+      "plotNo": "113",
+      "mouzaId": "mouza_hatiya_3",
+      "upazilaId": "hatiya",
+      "districtId": "noakhali",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12.2,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 146400,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        91.104458,
+        22.381103
+      ],
+      "colorIndex": 1
+    },
+    {
+      "id": "impact_char_recorded_mouza_hatiya_3_2",
+      "name": "Zubair Ahmed",
+      "dagNo": "114",
+      "khatianNo": "RS-214",
+      "plotNo": "114",
+      "mouzaId": "mouza_hatiya_3",
+      "upazilaId": "hatiya",
+      "districtId": "noakhali",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12.2,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 146400,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        91.104458,
+        22.381103
+      ],
+      "colorIndex": 4
+    },
+    {
+      "id": "impact_char_recorded_mouza_hatiya_3_3",
+      "name": "Sultana Razia",
+      "dagNo": "115",
+      "khatianNo": "RS-215",
+      "plotNo": "115",
+      "mouzaId": "mouza_hatiya_3",
+      "upazilaId": "hatiya",
+      "districtId": "noakhali",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12.2,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 146400,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        91.104458,
+        22.381103
+      ],
+      "colorIndex": 7
+    },
+    {
+      "id": "impact_char_recorded_mouza_hatiya_4_1",
+      "name": "Zubair Ahmed",
+      "dagNo": "116",
+      "khatianNo": "RS-216",
+      "plotNo": "116",
+      "mouzaId": "mouza_hatiya_4",
+      "upazilaId": "hatiya",
+      "districtId": "noakhali",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 11.6,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 139200,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        91.093,
+        22.393456
+      ],
+      "colorIndex": 4
+    },
+    {
+      "id": "impact_char_recorded_mouza_hatiya_4_2",
+      "name": "Sultana Razia",
+      "dagNo": "117",
+      "khatianNo": "RS-217",
+      "plotNo": "117",
+      "mouzaId": "mouza_hatiya_4",
+      "upazilaId": "hatiya",
+      "districtId": "noakhali",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 11.6,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 139200,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        91.093,
+        22.393456
+      ],
+      "colorIndex": 7
+    },
+    {
+      "id": "impact_char_recorded_mouza_hatiya_4_3",
+      "name": "Sirajul Islam",
+      "dagNo": "118",
+      "khatianNo": "RS-218",
+      "plotNo": "118",
+      "mouzaId": "mouza_hatiya_4",
+      "upazilaId": "hatiya",
+      "districtId": "noakhali",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 11.5,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 138000,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        91.093,
+        22.393456
+      ],
+      "colorIndex": 10
+    }
+  ],
+  "mouzasRecorded": [
+    {
+      "id": "mouza_hatiya_1",
+      "name": "Bhasan Sector Mouza",
+      "jlNo": "JL-90",
+      "areaDecimal": 118226,
+      "lossDecimal": 112.5,
+      "gainDecimal": 168,
+      "percent": 0.2,
+      "labelAnchor": [
+        91.093,
+        22.356549
+      ],
+      "affectedOwnersCount": 20,
+      "polygon": [
+        [
+          [
+            91.082,
+            22.35
+          ],
+          [
+            91.09289,
+            22.35
+          ],
+          [
+            91.10411,
+            22.35
+          ],
+          [
+            91.115,
+            22.35
+          ],
+          [
+            91.115,
+            22.355
+          ],
+          [
+            91.115,
+            22.3625
+          ],
+          [
+            91.10411,
+            22.362436
+          ],
+          [
+            91.09289,
+            22.363098
+          ],
+          [
+            91.082,
+            22.3625
+          ],
+          [
+            91.082,
+            22.35
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_hatiya_2",
+      "name": "Nijhum Sandbar Mouza",
+      "jlNo": "JL-94",
+      "areaDecimal": 113636.4,
+      "lossDecimal": 43.4,
+      "gainDecimal": 60.2,
+      "percent": 0.1,
+      "labelAnchor": [
+        91.098958,
+        22.368761
+      ],
+      "affectedOwnersCount": 16,
+      "polygon": [
+        [
+          [
+            91.082,
+            22.3625
+          ],
+          [
+            91.09289,
+            22.363098
+          ],
+          [
+            91.10411,
+            22.362436
+          ],
+          [
+            91.115,
+            22.3625
+          ],
+          [
+            91.115,
+            22.37
+          ],
+          [
+            91.115,
+            22.375
+          ],
+          [
+            91.10411,
+            22.374517
+          ],
+          [
+            91.09289,
+            22.375085
+          ],
+          [
+            91.082,
+            22.375
+          ],
+          [
+            91.082,
+            22.3625
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_hatiya_3",
+      "name": "Hatiya Island North",
+      "jlNo": "JL-98",
+      "areaDecimal": 116537.2,
+      "lossDecimal": 36.6,
+      "gainDecimal": 30,
+      "percent": 0.1,
+      "labelAnchor": [
+        91.104458,
+        22.381103
+      ],
+      "affectedOwnersCount": 12,
+      "polygon": [
+        [
+          [
+            91.082,
+            22.375
+          ],
+          [
+            91.09289,
+            22.375085
+          ],
+          [
+            91.10411,
+            22.374517
+          ],
+          [
+            91.115,
+            22.375
+          ],
+          [
+            91.115,
+            22.38
+          ],
+          [
+            91.115,
+            22.3875
+          ],
+          [
+            91.10411,
+            22.387689
+          ],
+          [
+            91.09289,
+            22.386913
+          ],
+          [
+            91.082,
+            22.3875
+          ],
+          [
+            91.082,
+            22.375
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_hatiya_4",
+      "name": "Hatiya Khas",
+      "jlNo": "JL-102",
+      "areaDecimal": 117769.6,
+      "lossDecimal": 34.7,
+      "gainDecimal": 33.1,
+      "percent": 0.1,
+      "labelAnchor": [
+        91.093,
+        22.393456
+      ],
+      "affectedOwnersCount": 11,
+      "polygon": [
+        [
+          [
+            91.082,
+            22.3875
+          ],
+          [
+            91.09289,
+            22.386913
+          ],
+          [
+            91.10411,
+            22.387689
+          ],
+          [
+            91.115,
+            22.3875
+          ],
+          [
+            91.115,
+            22.395
+          ],
+          [
+            91.115,
+            22.4
+          ],
+          [
+            91.10411,
+            22.4
+          ],
+          [
+            91.09289,
+            22.4
+          ],
+          [
+            91.082,
+            22.4
+          ],
+          [
+            91.082,
+            22.3875
+          ]
+        ]
+      ]
+    }
+  ],
+  "mouzasForecast": [
+    {
+      "id": "mouza_hatiya_1",
+      "name": "Bhasan Sector Mouza",
+      "jlNo": "JL-90",
+      "areaDecimal": 118226,
+      "lossDecimal": 96,
+      "gainDecimal": 193,
+      "percent": 0.2,
+      "labelAnchor": [
+        91.093,
+        22.356549
+      ],
+      "affectedOwnersCount": 18,
+      "polygon": [
+        [
+          [
+            91.082,
+            22.35
+          ],
+          [
+            91.09289,
+            22.35
+          ],
+          [
+            91.10411,
+            22.35
+          ],
+          [
+            91.115,
+            22.35
+          ],
+          [
+            91.115,
+            22.355
+          ],
+          [
+            91.115,
+            22.3625
+          ],
+          [
+            91.10411,
+            22.362436
+          ],
+          [
+            91.09289,
+            22.363098
+          ],
+          [
+            91.082,
+            22.3625
+          ],
+          [
+            91.082,
+            22.35
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_hatiya_2",
+      "name": "Nijhum Sandbar Mouza",
+      "jlNo": "JL-94",
+      "areaDecimal": 113636.4,
+      "lossDecimal": 37,
+      "gainDecimal": 69,
+      "percent": 0.1,
+      "labelAnchor": [
+        91.098958,
+        22.368761
+      ],
+      "affectedOwnersCount": 12,
+      "polygon": [
+        [
+          [
+            91.082,
+            22.3625
+          ],
+          [
+            91.09289,
+            22.363098
+          ],
+          [
+            91.10411,
+            22.362436
+          ],
+          [
+            91.115,
+            22.3625
+          ],
+          [
+            91.115,
+            22.37
+          ],
+          [
+            91.115,
+            22.375
+          ],
+          [
+            91.10411,
+            22.374517
+          ],
+          [
+            91.09289,
+            22.375085
+          ],
+          [
+            91.082,
+            22.375
+          ],
+          [
+            91.082,
+            22.3625
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_hatiya_3",
+      "name": "Hatiya Island North",
+      "jlNo": "JL-98",
+      "areaDecimal": 116537.2,
+      "lossDecimal": 31,
+      "gainDecimal": 35,
+      "percent": 0.1,
+      "labelAnchor": [
+        91.104458,
+        22.381103
+      ],
+      "affectedOwnersCount": 9,
+      "polygon": [
+        [
+          [
+            91.082,
+            22.375
+          ],
+          [
+            91.09289,
+            22.375085
+          ],
+          [
+            91.10411,
+            22.374517
+          ],
+          [
+            91.115,
+            22.375
+          ],
+          [
+            91.115,
+            22.38
+          ],
+          [
+            91.115,
+            22.3875
+          ],
+          [
+            91.10411,
+            22.387689
+          ],
+          [
+            91.09289,
+            22.386913
+          ],
+          [
+            91.082,
+            22.3875
+          ],
+          [
+            91.082,
+            22.375
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_hatiya_4",
+      "name": "Hatiya Khas",
+      "jlNo": "JL-102",
+      "areaDecimal": 117769.6,
+      "lossDecimal": 29,
+      "gainDecimal": 38,
+      "percent": 0.1,
+      "labelAnchor": [
+        91.093,
+        22.393456
+      ],
+      "affectedOwnersCount": 14,
+      "polygon": [
+        [
+          [
+            91.082,
+            22.3875
+          ],
+          [
+            91.09289,
+            22.386913
+          ],
+          [
+            91.10411,
+            22.387689
+          ],
+          [
+            91.115,
+            22.3875
+          ],
+          [
+            91.115,
+            22.395
+          ],
+          [
+            91.115,
+            22.4
+          ],
+          [
+            91.10411,
+            22.4
+          ],
+          [
+            91.09289,
+            22.4
+          ],
+          [
+            91.082,
+            22.4
+          ],
+          [
+            91.082,
+            22.3875
+          ]
+        ]
+      ]
+    }
+  ],
+  "contextRecorded": {
+    "type": "char",
+    "activeChannelWidthM": 2150,
+    "charAreaCurrentDec": 420.5,
+    "charAreaPreviousDec": 388.2,
+    "netChangeDec": 32.3,
+    "isProjected": false
+  },
+  "contextForecast": {
+    "type": "char",
+    "activeChannelWidthM": 2280,
+    "charAreaCurrentDec": 465,
+    "charAreaPreviousDec": 420.5,
+    "netChangeDec": 44.5,
+    "isProjected": true
+  },
+  "ownersForecast": [
+    {
+      "id": "impact_char_forecast_mouza_hatiya_1_1",
+      "name": "Fatema Begum",
+      "dagNo": "101",
+      "khatianNo": "RS-201",
+      "plotNo": "101",
+      "mouzaId": "mouza_hatiya_1",
+      "upazilaId": "hatiya",
+      "districtId": "noakhali",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12,
+      "gainDecimal": 0,
+      "coordinates": [
+        91.093,
+        22.356549
+      ],
+      "colorIndex": 1
+    },
+    {
+      "id": "impact_char_forecast_mouza_hatiya_1_2",
+      "name": "Nurul Huda Mia",
+      "dagNo": "102",
+      "khatianNo": "RS-202",
+      "plotNo": "102",
+      "mouzaId": "mouza_hatiya_1",
+      "upazilaId": "hatiya",
+      "districtId": "noakhali",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12,
+      "gainDecimal": 0,
+      "coordinates": [
+        91.093,
+        22.356549
+      ],
+      "colorIndex": 4
+    },
+    {
+      "id": "impact_char_forecast_mouza_hatiya_1_3",
+      "name": "Anwar Parvez",
+      "dagNo": "103",
+      "khatianNo": "RS-203",
+      "plotNo": "103",
+      "mouzaId": "mouza_hatiya_1",
+      "upazilaId": "hatiya",
+      "districtId": "noakhali",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12,
+      "gainDecimal": 0,
+      "coordinates": [
+        91.093,
+        22.356549
+      ],
+      "colorIndex": 7
+    },
+    {
+      "id": "impact_char_forecast_mouza_hatiya_1_4",
+      "name": "Shahana Akter",
+      "dagNo": "104",
+      "khatianNo": "RS-204",
+      "plotNo": "104",
+      "mouzaId": "mouza_hatiya_1",
+      "upazilaId": "hatiya",
+      "districtId": "noakhali",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12,
+      "gainDecimal": 0,
+      "coordinates": [
+        91.093,
+        22.356549
+      ],
+      "colorIndex": 10
+    },
+    {
+      "id": "impact_char_forecast_mouza_hatiya_1_5",
+      "name": "Abdul Matin",
+      "dagNo": "105",
+      "khatianNo": "RS-205",
+      "plotNo": "105",
+      "mouzaId": "mouza_hatiya_1",
+      "upazilaId": "hatiya",
+      "districtId": "noakhali",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12,
+      "gainDecimal": 0,
+      "coordinates": [
+        91.093,
+        22.356549
+      ],
+      "colorIndex": 1
+    },
+    {
+      "id": "impact_char_forecast_mouza_hatiya_1_6",
+      "name": "Zubair Ahmed",
+      "dagNo": "106",
+      "khatianNo": "RS-206",
+      "plotNo": "106",
+      "mouzaId": "mouza_hatiya_1",
+      "upazilaId": "hatiya",
+      "districtId": "noakhali",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12,
+      "gainDecimal": 0,
+      "coordinates": [
+        91.093,
+        22.356549
+      ],
+      "colorIndex": 4
+    },
+    {
+      "id": "impact_char_forecast_mouza_hatiya_1_7",
+      "name": "Sultana Razia",
+      "dagNo": "107",
+      "khatianNo": "RS-207",
+      "plotNo": "107",
+      "mouzaId": "mouza_hatiya_1",
+      "upazilaId": "hatiya",
+      "districtId": "noakhali",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12,
+      "gainDecimal": 0,
+      "coordinates": [
+        91.093,
+        22.356549
+      ],
+      "colorIndex": 7
+    },
+    {
+      "id": "impact_char_forecast_mouza_hatiya_1_8",
+      "name": "Sirajul Islam",
+      "dagNo": "108",
+      "khatianNo": "RS-208",
+      "plotNo": "108",
+      "mouzaId": "mouza_hatiya_1",
+      "upazilaId": "hatiya",
+      "districtId": "noakhali",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12,
+      "gainDecimal": 0,
+      "coordinates": [
+        91.093,
+        22.356549
+      ],
+      "colorIndex": 10
+    },
+    {
+      "id": "impact_char_forecast_mouza_hatiya_2_1",
+      "name": "Kamal Uddin Ahmed",
+      "dagNo": "109",
+      "khatianNo": "RS-209",
+      "plotNo": "109",
+      "mouzaId": "mouza_hatiya_2",
+      "upazilaId": "hatiya",
+      "districtId": "noakhali",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12.3,
+      "gainDecimal": 0,
+      "coordinates": [
+        91.098958,
+        22.368761
+      ],
+      "colorIndex": 9
+    },
+    {
+      "id": "impact_char_forecast_mouza_hatiya_2_2",
+      "name": "Taslima Nasrin",
+      "dagNo": "110",
+      "khatianNo": "RS-210",
+      "plotNo": "110",
+      "mouzaId": "mouza_hatiya_2",
+      "upazilaId": "hatiya",
+      "districtId": "noakhali",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12.3,
+      "gainDecimal": 0,
+      "coordinates": [
+        91.098958,
+        22.368761
+      ],
+      "colorIndex": 0
+    },
+    {
+      "id": "impact_char_forecast_mouza_hatiya_2_3",
+      "name": "Faridul Islam",
+      "dagNo": "111",
+      "khatianNo": "RS-211",
+      "plotNo": "111",
+      "mouzaId": "mouza_hatiya_2",
+      "upazilaId": "hatiya",
+      "districtId": "noakhali",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12.4,
+      "gainDecimal": 0,
+      "coordinates": [
+        91.098958,
+        22.368761
+      ],
+      "colorIndex": 3
+    },
+    {
+      "id": "impact_char_forecast_mouza_hatiya_3_1",
+      "name": "Taslima Nasrin",
+      "dagNo": "112",
+      "khatianNo": "RS-212",
+      "plotNo": "112",
+      "mouzaId": "mouza_hatiya_3",
+      "upazilaId": "hatiya",
+      "districtId": "noakhali",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 10.3,
+      "gainDecimal": 0,
+      "coordinates": [
+        91.104458,
+        22.381103
+      ],
+      "colorIndex": 0
+    },
+    {
+      "id": "impact_char_forecast_mouza_hatiya_3_2",
+      "name": "Faridul Islam",
+      "dagNo": "113",
+      "khatianNo": "RS-213",
+      "plotNo": "113",
+      "mouzaId": "mouza_hatiya_3",
+      "upazilaId": "hatiya",
+      "districtId": "noakhali",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 10.3,
+      "gainDecimal": 0,
+      "coordinates": [
+        91.104458,
+        22.381103
+      ],
+      "colorIndex": 3
+    },
+    {
+      "id": "impact_char_forecast_mouza_hatiya_3_3",
+      "name": "Monirul Huq",
+      "dagNo": "114",
+      "khatianNo": "RS-214",
+      "plotNo": "114",
+      "mouzaId": "mouza_hatiya_3",
+      "upazilaId": "hatiya",
+      "districtId": "noakhali",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 10.4,
+      "gainDecimal": 0,
+      "coordinates": [
+        91.104458,
+        22.381103
+      ],
+      "colorIndex": 6
+    },
+    {
+      "id": "impact_char_forecast_mouza_hatiya_4_1",
+      "name": "Faridul Islam",
+      "dagNo": "115",
+      "khatianNo": "RS-215",
+      "plotNo": "115",
+      "mouzaId": "mouza_hatiya_4",
+      "upazilaId": "hatiya",
+      "districtId": "noakhali",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14.5,
+      "gainDecimal": 0,
+      "coordinates": [
+        91.093,
+        22.393456
+      ],
+      "colorIndex": 3
+    },
+    {
+      "id": "impact_char_forecast_mouza_hatiya_4_2",
+      "name": "Monirul Huq",
+      "dagNo": "116",
+      "khatianNo": "RS-216",
+      "plotNo": "116",
+      "mouzaId": "mouza_hatiya_4",
+      "upazilaId": "hatiya",
+      "districtId": "noakhali",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14.5,
+      "gainDecimal": 0,
+      "coordinates": [
+        91.093,
+        22.393456
+      ],
+      "colorIndex": 6
+    }
+  ]
+}

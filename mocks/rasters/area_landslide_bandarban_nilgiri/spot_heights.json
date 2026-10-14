@@ -1,0 +1,33 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "elevation": 375,
+        "label": "375 m"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.226406,
+          22.212031
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "elevation": 297,
+        "label": "297 m"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.235781,
+          22.202656
+        ]
+      }
+    }
+  ]
+}

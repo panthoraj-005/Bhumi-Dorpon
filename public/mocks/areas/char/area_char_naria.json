@@ -1,0 +1,2569 @@
+{
+  "areaId": "area_char_naria",
+  "hazard": "char",
+  "mode": "recorded",
+  "bounds": [
+    90.38,
+    23.29,
+    90.43,
+    23.34
+  ],
+  "basemap": {
+    "land": [
+      [
+        [
+          90.38,
+          23.29
+        ],
+        [
+          90.43,
+          23.29
+        ],
+        [
+          90.43,
+          23.34
+        ],
+        [
+          90.38,
+          23.34
+        ],
+        [
+          90.38,
+          23.29
+        ]
+      ]
+    ],
+    "landuse": [
+      {
+        "type": "farmland",
+        "polygon": [
+          [
+            [
+              90.39,
+              23.294549
+            ],
+            [
+              90.3954,
+              23.294749
+            ],
+            [
+              90.396,
+              23.298149
+            ],
+            [
+              90.3903,
+              23.298549
+            ],
+            [
+              90.39,
+              23.294549
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "vegetation",
+        "polygon": [
+          [
+            [
+              90.394,
+              23.297549
+            ],
+            [
+              90.3965,
+              23.297749
+            ],
+            [
+              90.3962,
+              23.299349
+            ],
+            [
+              90.3942,
+              23.299149
+            ],
+            [
+              90.394,
+              23.297549
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "settlement",
+        "polygon": [
+          [
+            [
+              90.39,
+              23.297049
+            ],
+            [
+              90.3915,
+              23.297149
+            ],
+            [
+              90.3916,
+              23.298349
+            ],
+            [
+              90.3901,
+              23.298249
+            ],
+            [
+              90.39,
+              23.297049
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "farmland",
+        "polygon": [
+          [
+            [
+              90.395958,
+              23.30676
+            ],
+            [
+              90.401358,
+              23.30696
+            ],
+            [
+              90.401958,
+              23.31036
+            ],
+            [
+              90.396258,
+              23.31076
+            ],
+            [
+              90.395958,
+              23.30676
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "vegetation",
+        "polygon": [
+          [
+            [
+              90.399958,
+              23.30976
+            ],
+            [
+              90.402458,
+              23.30996
+            ],
+            [
+              90.402158,
+              23.31156
+            ],
+            [
+              90.400158,
+              23.31136
+            ],
+            [
+              90.399958,
+              23.30976
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "settlement",
+        "polygon": [
+          [
+            [
+              90.395958,
+              23.30926
+            ],
+            [
+              90.397458,
+              23.30936
+            ],
+            [
+              90.397558,
+              23.31056
+            ],
+            [
+              90.396058,
+              23.31046
+            ],
+            [
+              90.395958,
+              23.30926
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "farmland",
+        "polygon": [
+          [
+            [
+              90.401458,
+              23.319103
+            ],
+            [
+              90.406858,
+              23.319303
+            ],
+            [
+              90.407458,
+              23.322703
+            ],
+            [
+              90.401758,
+              23.323103
+            ],
+            [
+              90.401458,
+              23.319103
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "vegetation",
+        "polygon": [
+          [
+            [
+              90.405458,
+              23.322103
+            ],
+            [
+              90.407958,
+              23.322303
+            ],
+            [
+              90.407658,
+              23.323903
+            ],
+            [
+              90.405658,
+              23.323703
+            ],
+            [
+              90.405458,
+              23.322103
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "settlement",
+        "polygon": [
+          [
+            [
+              90.401458,
+              23.321603
+            ],
+            [
+              90.402958,
+              23.321703
+            ],
+            [
+              90.403058,
+              23.322903
+            ],
+            [
+              90.401558,
+              23.322803
+            ],
+            [
+              90.401458,
+              23.321603
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "farmland",
+        "polygon": [
+          [
+            [
+              90.39,
+              23.331457
+            ],
+            [
+              90.3954,
+              23.331657
+            ],
+            [
+              90.396,
+              23.335057
+            ],
+            [
+              90.3903,
+              23.335457
+            ],
+            [
+              90.39,
+              23.331457
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "vegetation",
+        "polygon": [
+          [
+            [
+              90.394,
+              23.334457
+            ],
+            [
+              90.3965,
+              23.334657
+            ],
+            [
+              90.3962,
+              23.336257
+            ],
+            [
+              90.3942,
+              23.336057
+            ],
+            [
+              90.394,
+              23.334457
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "settlement",
+        "polygon": [
+          [
+            [
+              90.39,
+              23.333957
+            ],
+            [
+              90.3915,
+              23.334057
+            ],
+            [
+              90.3916,
+              23.335257
+            ],
+            [
+              90.3901,
+              23.335157
+            ],
+            [
+              90.39,
+              23.333957
+            ]
+          ]
+        ]
+      }
+    ],
+    "water": [
+      {
+        "type": "river",
+        "polygon": [
+          [
+            [
+              90.412,
+              23.29
+            ],
+            [
+              90.43,
+              23.29
+            ],
+            [
+              90.43,
+              23.34
+            ],
+            [
+              90.412,
+              23.34
+            ],
+            [
+              90.412,
+              23.29
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "beel",
+        "polygon": [
+          [
+            [
+              90.391,
+              23.3115
+            ],
+            [
+              90.3943,
+              23.3117
+            ],
+            [
+              90.3937,
+              23.3137
+            ],
+            [
+              90.3909,
+              23.3134
+            ],
+            [
+              90.391,
+              23.3115
+            ]
+          ]
+        ]
+      }
+    ],
+    "waterlines": [
+      {
+        "type": "canal",
+        "line": [
+          [
+            90.382,
+            23.293
+          ],
+          [
+            90.388,
+            23.297
+          ],
+          [
+            90.394,
+            23.298
+          ]
+        ]
+      },
+      {
+        "type": "canal",
+        "line": [
+          [
+            90.3925,
+            23.3125
+          ],
+          [
+            90.3985,
+            23.3165
+          ],
+          [
+            90.426,
+            23.3185
+          ]
+        ]
+      }
+    ],
+    "roads": [
+      {
+        "type": "major",
+        "line": [
+          [
+            90.38,
+            23.313
+          ],
+          [
+            90.4,
+            23.316
+          ],
+          [
+            90.427,
+            23.317
+          ]
+        ]
+      },
+      {
+        "type": "minor",
+        "line": [
+          [
+            90.385,
+            23.292
+          ],
+          [
+            90.386,
+            23.316
+          ],
+          [
+            90.388,
+            23.337
+          ]
+        ]
+      },
+      {
+        "type": "minor",
+        "line": [
+          [
+            90.392,
+            23.316
+          ],
+          [
+            90.395,
+            23.338
+          ]
+        ]
+      }
+    ],
+    "embankments": [
+      {
+        "line": [
+          [
+            90.388,
+            23.291
+          ],
+          [
+            90.389,
+            23.315
+          ],
+          [
+            90.3885,
+            23.339
+          ]
+        ]
+      }
+    ],
+    "buildings": [
+      {
+        "polygon": [
+          [
+            [
+              90.3927,
+              23.296349
+            ],
+            [
+              90.3933,
+              23.296349
+            ],
+            [
+              90.3933,
+              23.296749
+            ],
+            [
+              90.3927,
+              23.296749
+            ],
+            [
+              90.3927,
+              23.296349
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              90.3936,
+              23.296349
+            ],
+            [
+              90.3942,
+              23.296349
+            ],
+            [
+              90.3942,
+              23.296749
+            ],
+            [
+              90.3936,
+              23.296749
+            ],
+            [
+              90.3936,
+              23.296349
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              90.398658,
+              23.30856
+            ],
+            [
+              90.399258,
+              23.30856
+            ],
+            [
+              90.399258,
+              23.30896
+            ],
+            [
+              90.398658,
+              23.30896
+            ],
+            [
+              90.398658,
+              23.30856
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              90.399558,
+              23.30856
+            ],
+            [
+              90.400158,
+              23.30856
+            ],
+            [
+              90.400158,
+              23.30896
+            ],
+            [
+              90.399558,
+              23.30896
+            ],
+            [
+              90.399558,
+              23.30856
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              90.404158,
+              23.320903
+            ],
+            [
+              90.404758,
+              23.320903
+            ],
+            [
+              90.404758,
+              23.321303
+            ],
+            [
+              90.404158,
+              23.321303
+            ],
+            [
+              90.404158,
+              23.320903
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              90.405058,
+              23.320903
+            ],
+            [
+              90.405658,
+              23.320903
+            ],
+            [
+              90.405658,
+              23.321303
+            ],
+            [
+              90.405058,
+              23.321303
+            ],
+            [
+              90.405058,
+              23.320903
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              90.3927,
+              23.333257
+            ],
+            [
+              90.3933,
+              23.333257
+            ],
+            [
+              90.3933,
+              23.333657
+            ],
+            [
+              90.3927,
+              23.333657
+            ],
+            [
+              90.3927,
+              23.333257
+            ]
+          ]
+        ]
+      },
+      {
+        "polygon": [
+          [
+            [
+              90.3936,
+              23.333257
+            ],
+            [
+              90.3942,
+              23.333257
+            ],
+            [
+              90.3942,
+              23.333657
+            ],
+            [
+              90.3936,
+              23.333657
+            ],
+            [
+              90.3936,
+              23.333257
+            ]
+          ]
+        ]
+      }
+    ],
+    "pois": [
+      {
+        "name": "Char Naria SCHOOL",
+        "type": "school",
+        "coordinates": [
+          90.3945,
+          23.295349
+        ]
+      },
+      {
+        "name": "Padma Island Sector 1 MOSQUE",
+        "type": "mosque",
+        "coordinates": [
+          90.400458,
+          23.30756
+        ]
+      },
+      {
+        "name": "Padma Island Sector 2 MARKET",
+        "type": "market",
+        "coordinates": [
+          90.405958,
+          23.319903
+        ]
+      },
+      {
+        "name": "Padma Khas Sandbar HEALTH CENTER",
+        "type": "health_center",
+        "coordinates": [
+          90.3945,
+          23.332257
+        ]
+      }
+    ],
+    "upazila": [
+      [
+        [
+          90.378,
+          23.288
+        ],
+        [
+          90.432,
+          23.288
+        ],
+        [
+          90.432,
+          23.342
+        ],
+        [
+          90.378,
+          23.342
+        ],
+        [
+          90.378,
+          23.288
+        ]
+      ]
+    ],
+    "mouzas": [
+      {
+        "id": "mouza_naria_1",
+        "name": "Char Naria Mouza",
+        "jlNo": "JL-60",
+        "labelAnchor": [
+          90.393,
+          23.296549
+        ],
+        "areaDecimal": 117412.4,
+        "polygon": [
+          [
+            [
+              90.382,
+              23.29
+            ],
+            [
+              90.39289,
+              23.29
+            ],
+            [
+              90.40411,
+              23.29
+            ],
+            [
+              90.415,
+              23.29
+            ],
+            [
+              90.415,
+              23.295
+            ],
+            [
+              90.415,
+              23.3025
+            ],
+            [
+              90.40411,
+              23.302436
+            ],
+            [
+              90.39289,
+              23.303098
+            ],
+            [
+              90.382,
+              23.3025
+            ],
+            [
+              90.382,
+              23.29
+            ]
+          ]
+        ]
+      },
+      {
+        "id": "mouza_naria_2",
+        "name": "Padma Island Sector 1",
+        "jlNo": "JL-64",
+        "labelAnchor": [
+          90.398958,
+          23.30876
+        ],
+        "areaDecimal": 112853.9,
+        "polygon": [
+          [
+            [
+              90.382,
+              23.3025
+            ],
+            [
+              90.39289,
+              23.303098
+            ],
+            [
+              90.40411,
+              23.302436
+            ],
+            [
+              90.415,
+              23.3025
+            ],
+            [
+              90.415,
+              23.31
+            ],
+            [
+              90.415,
+              23.315
+            ],
+            [
+              90.40411,
+              23.314517
+            ],
+            [
+              90.39289,
+              23.315085
+            ],
+            [
+              90.382,
+              23.315
+            ],
+            [
+              90.382,
+              23.3025
+            ]
+          ]
+        ]
+      },
+      {
+        "id": "mouza_naria_3",
+        "name": "Padma Island Sector 2",
+        "jlNo": "JL-68",
+        "labelAnchor": [
+          90.404458,
+          23.321103
+        ],
+        "areaDecimal": 115734.2,
+        "polygon": [
+          [
+            [
+              90.382,
+              23.315
+            ],
+            [
+              90.39289,
+              23.315085
+            ],
+            [
+              90.40411,
+              23.314517
+            ],
+            [
+              90.415,
+              23.315
+            ],
+            [
+              90.415,
+              23.32
+            ],
+            [
+              90.415,
+              23.3275
+            ],
+            [
+              90.40411,
+              23.327689
+            ],
+            [
+              90.39289,
+              23.326913
+            ],
+            [
+              90.382,
+              23.3275
+            ],
+            [
+              90.382,
+              23.315
+            ]
+          ]
+        ]
+      },
+      {
+        "id": "mouza_naria_4",
+        "name": "Padma Khas Sandbar",
+        "jlNo": "JL-72",
+        "labelAnchor": [
+          90.393,
+          23.333457
+        ],
+        "areaDecimal": 116957.6,
+        "polygon": [
+          [
+            [
+              90.382,
+              23.3275
+            ],
+            [
+              90.39289,
+              23.326913
+            ],
+            [
+              90.40411,
+              23.327689
+            ],
+            [
+              90.415,
+              23.3275
+            ],
+            [
+              90.415,
+              23.335
+            ],
+            [
+              90.415,
+              23.34
+            ],
+            [
+              90.40411,
+              23.34
+            ],
+            [
+              90.39289,
+              23.34
+            ],
+            [
+              90.382,
+              23.34
+            ],
+            [
+              90.382,
+              23.3275
+            ]
+          ]
+        ]
+      }
+    ],
+    "labels": [
+      {
+        "text": "Braided Channels",
+        "type": "river",
+        "bearing": 75,
+        "coordinates": [
+          90.427,
+          23.315
+        ]
+      }
+    ]
+  },
+  "mouzas": [
+    {
+      "id": "mouza_naria_1",
+      "name": "Char Naria Mouza",
+      "jlNo": "JL-60",
+      "areaDecimal": 117412.4,
+      "lossDecimal": 112.5,
+      "gainDecimal": 168,
+      "percent": 0.2,
+      "labelAnchor": [
+        90.393,
+        23.296549
+      ],
+      "affectedOwnersCount": 14,
+      "polygon": [
+        [
+          [
+            90.382,
+            23.29
+          ],
+          [
+            90.39289,
+            23.29
+          ],
+          [
+            90.40411,
+            23.29
+          ],
+          [
+            90.415,
+            23.29
+          ],
+          [
+            90.415,
+            23.295
+          ],
+          [
+            90.415,
+            23.3025
+          ],
+          [
+            90.40411,
+            23.302436
+          ],
+          [
+            90.39289,
+            23.303098
+          ],
+          [
+            90.382,
+            23.3025
+          ],
+          [
+            90.382,
+            23.29
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_naria_2",
+      "name": "Padma Island Sector 1",
+      "jlNo": "JL-64",
+      "areaDecimal": 112853.9,
+      "lossDecimal": 32.1,
+      "gainDecimal": 53.1,
+      "percent": 0.1,
+      "labelAnchor": [
+        90.398958,
+        23.30876
+      ],
+      "affectedOwnersCount": 20,
+      "polygon": [
+        [
+          [
+            90.382,
+            23.3025
+          ],
+          [
+            90.39289,
+            23.303098
+          ],
+          [
+            90.40411,
+            23.302436
+          ],
+          [
+            90.415,
+            23.3025
+          ],
+          [
+            90.415,
+            23.31
+          ],
+          [
+            90.415,
+            23.315
+          ],
+          [
+            90.40411,
+            23.314517
+          ],
+          [
+            90.39289,
+            23.315085
+          ],
+          [
+            90.382,
+            23.315
+          ],
+          [
+            90.382,
+            23.3025
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_naria_3",
+      "name": "Padma Island Sector 2",
+      "jlNo": "JL-68",
+      "areaDecimal": 115734.2,
+      "lossDecimal": 33,
+      "gainDecimal": 58.5,
+      "percent": 0.1,
+      "labelAnchor": [
+        90.404458,
+        23.321103
+      ],
+      "affectedOwnersCount": 18,
+      "polygon": [
+        [
+          [
+            90.382,
+            23.315
+          ],
+          [
+            90.39289,
+            23.315085
+          ],
+          [
+            90.40411,
+            23.314517
+          ],
+          [
+            90.415,
+            23.315
+          ],
+          [
+            90.415,
+            23.32
+          ],
+          [
+            90.415,
+            23.3275
+          ],
+          [
+            90.40411,
+            23.327689
+          ],
+          [
+            90.39289,
+            23.326913
+          ],
+          [
+            90.382,
+            23.3275
+          ],
+          [
+            90.382,
+            23.315
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_naria_4",
+      "name": "Padma Khas Sandbar",
+      "jlNo": "JL-72",
+      "areaDecimal": 116957.6,
+      "lossDecimal": 44.8,
+      "gainDecimal": 60.5,
+      "percent": 0.1,
+      "labelAnchor": [
+        90.393,
+        23.333457
+      ],
+      "affectedOwnersCount": 13,
+      "polygon": [
+        [
+          [
+            90.382,
+            23.3275
+          ],
+          [
+            90.39289,
+            23.326913
+          ],
+          [
+            90.40411,
+            23.327689
+          ],
+          [
+            90.415,
+            23.3275
+          ],
+          [
+            90.415,
+            23.335
+          ],
+          [
+            90.415,
+            23.34
+          ],
+          [
+            90.40411,
+            23.34
+          ],
+          [
+            90.39289,
+            23.34
+          ],
+          [
+            90.382,
+            23.34
+          ],
+          [
+            90.382,
+            23.3275
+          ]
+        ]
+      ]
+    }
+  ],
+  "hazardLayers": {
+    "islands": [
+      [
+        [
+          [
+            90.412,
+            23.29
+          ],
+          [
+            90.43,
+            23.29
+          ],
+          [
+            90.43,
+            23.34
+          ],
+          [
+            90.412,
+            23.34
+          ],
+          [
+            90.412,
+            23.29
+          ]
+        ]
+      ]
+    ],
+    "accretionTips": [
+      [
+        [
+          [
+            90.412,
+            23.29
+          ],
+          [
+            90.43,
+            23.29
+          ],
+          [
+            90.43,
+            23.34
+          ],
+          [
+            90.412,
+            23.34
+          ],
+          [
+            90.412,
+            23.29
+          ]
+        ]
+      ]
+    ],
+    "erosionFlanks": [
+      [
+        [
+          [
+            90.412,
+            23.29
+          ],
+          [
+            90.43,
+            23.29
+          ],
+          [
+            90.43,
+            23.34
+          ],
+          [
+            90.412,
+            23.34
+          ],
+          [
+            90.412,
+            23.29
+          ]
+        ]
+      ]
+    ],
+    "unownedKhasLand": [
+      [
+        [
+          [
+            90.412,
+            23.29
+          ],
+          [
+            90.43,
+            23.29
+          ],
+          [
+            90.43,
+            23.34
+          ],
+          [
+            90.412,
+            23.34
+          ],
+          [
+            90.412,
+            23.29
+          ]
+        ]
+      ]
+    ]
+  },
+  "context": {
+    "type": "char",
+    "activeChannelWidthM": 2150,
+    "charAreaCurrentDec": 420.5,
+    "charAreaPreviousDec": 388.2,
+    "netChangeDec": 32.3,
+    "isProjected": false
+  },
+  "owners": [
+    {
+      "id": "impact_char_recorded_mouza_naria_1_1",
+      "name": "Fatema Begum",
+      "dagNo": "101",
+      "khatianNo": "RS-201",
+      "plotNo": "101",
+      "mouzaId": "mouza_naria_1",
+      "upazilaId": "naria",
+      "districtId": "shariatpur",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 169200,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        90.393,
+        23.296549
+      ],
+      "colorIndex": 1
+    },
+    {
+      "id": "impact_char_recorded_mouza_naria_1_2",
+      "name": "Nurul Huda Mia",
+      "dagNo": "102",
+      "khatianNo": "RS-202",
+      "plotNo": "102",
+      "mouzaId": "mouza_naria_1",
+      "upazilaId": "naria",
+      "districtId": "shariatpur",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 169200,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        90.393,
+        23.296549
+      ],
+      "colorIndex": 4
+    },
+    {
+      "id": "impact_char_recorded_mouza_naria_1_3",
+      "name": "Anwar Parvez",
+      "dagNo": "103",
+      "khatianNo": "RS-203",
+      "plotNo": "103",
+      "mouzaId": "mouza_naria_1",
+      "upazilaId": "naria",
+      "districtId": "shariatpur",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 169200,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        90.393,
+        23.296549
+      ],
+      "colorIndex": 7
+    },
+    {
+      "id": "impact_char_recorded_mouza_naria_1_4",
+      "name": "Shahana Akter",
+      "dagNo": "104",
+      "khatianNo": "RS-204",
+      "plotNo": "104",
+      "mouzaId": "mouza_naria_1",
+      "upazilaId": "naria",
+      "districtId": "shariatpur",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 169200,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        90.393,
+        23.296549
+      ],
+      "colorIndex": 10
+    },
+    {
+      "id": "impact_char_recorded_mouza_naria_1_5",
+      "name": "Abdul Matin",
+      "dagNo": "105",
+      "khatianNo": "RS-205",
+      "plotNo": "105",
+      "mouzaId": "mouza_naria_1",
+      "upazilaId": "naria",
+      "districtId": "shariatpur",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 169200,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        90.393,
+        23.296549
+      ],
+      "colorIndex": 1
+    },
+    {
+      "id": "impact_char_recorded_mouza_naria_1_6",
+      "name": "Zubair Ahmed",
+      "dagNo": "106",
+      "khatianNo": "RS-206",
+      "plotNo": "106",
+      "mouzaId": "mouza_naria_1",
+      "upazilaId": "naria",
+      "districtId": "shariatpur",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 169200,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        90.393,
+        23.296549
+      ],
+      "colorIndex": 4
+    },
+    {
+      "id": "impact_char_recorded_mouza_naria_1_7",
+      "name": "Sultana Razia",
+      "dagNo": "107",
+      "khatianNo": "RS-207",
+      "plotNo": "107",
+      "mouzaId": "mouza_naria_1",
+      "upazilaId": "naria",
+      "districtId": "shariatpur",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14.1,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 169200,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        90.393,
+        23.296549
+      ],
+      "colorIndex": 7
+    },
+    {
+      "id": "impact_char_recorded_mouza_naria_1_8",
+      "name": "Sirajul Islam",
+      "dagNo": "108",
+      "khatianNo": "RS-208",
+      "plotNo": "108",
+      "mouzaId": "mouza_naria_1",
+      "upazilaId": "naria",
+      "districtId": "shariatpur",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 13.8,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 165600,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        90.393,
+        23.296549
+      ],
+      "colorIndex": 10
+    },
+    {
+      "id": "impact_char_recorded_mouza_naria_2_1",
+      "name": "Kamal Uddin Ahmed",
+      "dagNo": "109",
+      "khatianNo": "RS-209",
+      "plotNo": "109",
+      "mouzaId": "mouza_naria_2",
+      "upazilaId": "naria",
+      "districtId": "shariatpur",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 10.7,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 128400,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        90.398958,
+        23.30876
+      ],
+      "colorIndex": 9
+    },
+    {
+      "id": "impact_char_recorded_mouza_naria_2_2",
+      "name": "Taslima Nasrin",
+      "dagNo": "110",
+      "khatianNo": "RS-210",
+      "plotNo": "110",
+      "mouzaId": "mouza_naria_2",
+      "upazilaId": "naria",
+      "districtId": "shariatpur",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 10.7,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 128400,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        90.398958,
+        23.30876
+      ],
+      "colorIndex": 0
+    },
+    {
+      "id": "impact_char_recorded_mouza_naria_2_3",
+      "name": "Faridul Islam",
+      "dagNo": "111",
+      "khatianNo": "RS-211",
+      "plotNo": "111",
+      "mouzaId": "mouza_naria_2",
+      "upazilaId": "naria",
+      "districtId": "shariatpur",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 10.7,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 128400,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        90.398958,
+        23.30876
+      ],
+      "colorIndex": 3
+    },
+    {
+      "id": "impact_char_recorded_mouza_naria_3_1",
+      "name": "Taslima Nasrin",
+      "dagNo": "112",
+      "khatianNo": "RS-212",
+      "plotNo": "112",
+      "mouzaId": "mouza_naria_3",
+      "upazilaId": "naria",
+      "districtId": "shariatpur",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 11,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 132000,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        90.404458,
+        23.321103
+      ],
+      "colorIndex": 0
+    },
+    {
+      "id": "impact_char_recorded_mouza_naria_3_2",
+      "name": "Faridul Islam",
+      "dagNo": "113",
+      "khatianNo": "RS-213",
+      "plotNo": "113",
+      "mouzaId": "mouza_naria_3",
+      "upazilaId": "naria",
+      "districtId": "shariatpur",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 11,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 132000,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        90.404458,
+        23.321103
+      ],
+      "colorIndex": 3
+    },
+    {
+      "id": "impact_char_recorded_mouza_naria_3_3",
+      "name": "Monirul Huq",
+      "dagNo": "114",
+      "khatianNo": "RS-214",
+      "plotNo": "114",
+      "mouzaId": "mouza_naria_3",
+      "upazilaId": "naria",
+      "districtId": "shariatpur",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 11,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 132000,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        90.404458,
+        23.321103
+      ],
+      "colorIndex": 6
+    },
+    {
+      "id": "impact_char_recorded_mouza_naria_4_1",
+      "name": "Faridul Islam",
+      "dagNo": "115",
+      "khatianNo": "RS-215",
+      "plotNo": "115",
+      "mouzaId": "mouza_naria_4",
+      "upazilaId": "naria",
+      "districtId": "shariatpur",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 11.2,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 134400,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        90.393,
+        23.333457
+      ],
+      "colorIndex": 3
+    },
+    {
+      "id": "impact_char_recorded_mouza_naria_4_2",
+      "name": "Monirul Huq",
+      "dagNo": "116",
+      "khatianNo": "RS-216",
+      "plotNo": "116",
+      "mouzaId": "mouza_naria_4",
+      "upazilaId": "naria",
+      "districtId": "shariatpur",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 11.2,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 134400,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        90.393,
+        23.333457
+      ],
+      "colorIndex": 6
+    },
+    {
+      "id": "impact_char_recorded_mouza_naria_4_3",
+      "name": "Bilkis Banu",
+      "dagNo": "117",
+      "khatianNo": "RS-217",
+      "plotNo": "117",
+      "mouzaId": "mouza_naria_4",
+      "upazilaId": "naria",
+      "districtId": "shariatpur",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 11.2,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 134400,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        90.393,
+        23.333457
+      ],
+      "colorIndex": 9
+    },
+    {
+      "id": "impact_char_recorded_mouza_naria_4_4",
+      "name": "Mahbubur Rahman",
+      "dagNo": "118",
+      "khatianNo": "RS-218",
+      "plotNo": "118",
+      "mouzaId": "mouza_naria_4",
+      "upazilaId": "naria",
+      "districtId": "shariatpur",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 11.2,
+      "gainDecimal": 0,
+      "estimatedCompensationBDT": 134400,
+      "compensationStatus": "approved",
+      "paidAmountBDT": 0,
+      "coordinates": [
+        90.393,
+        23.333457
+      ],
+      "colorIndex": 0
+    }
+  ],
+  "mouzasRecorded": [
+    {
+      "id": "mouza_naria_1",
+      "name": "Char Naria Mouza",
+      "jlNo": "JL-60",
+      "areaDecimal": 117412.4,
+      "lossDecimal": 112.5,
+      "gainDecimal": 168,
+      "percent": 0.2,
+      "labelAnchor": [
+        90.393,
+        23.296549
+      ],
+      "affectedOwnersCount": 14,
+      "polygon": [
+        [
+          [
+            90.382,
+            23.29
+          ],
+          [
+            90.39289,
+            23.29
+          ],
+          [
+            90.40411,
+            23.29
+          ],
+          [
+            90.415,
+            23.29
+          ],
+          [
+            90.415,
+            23.295
+          ],
+          [
+            90.415,
+            23.3025
+          ],
+          [
+            90.40411,
+            23.302436
+          ],
+          [
+            90.39289,
+            23.303098
+          ],
+          [
+            90.382,
+            23.3025
+          ],
+          [
+            90.382,
+            23.29
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_naria_2",
+      "name": "Padma Island Sector 1",
+      "jlNo": "JL-64",
+      "areaDecimal": 112853.9,
+      "lossDecimal": 32.1,
+      "gainDecimal": 53.1,
+      "percent": 0.1,
+      "labelAnchor": [
+        90.398958,
+        23.30876
+      ],
+      "affectedOwnersCount": 20,
+      "polygon": [
+        [
+          [
+            90.382,
+            23.3025
+          ],
+          [
+            90.39289,
+            23.303098
+          ],
+          [
+            90.40411,
+            23.302436
+          ],
+          [
+            90.415,
+            23.3025
+          ],
+          [
+            90.415,
+            23.31
+          ],
+          [
+            90.415,
+            23.315
+          ],
+          [
+            90.40411,
+            23.314517
+          ],
+          [
+            90.39289,
+            23.315085
+          ],
+          [
+            90.382,
+            23.315
+          ],
+          [
+            90.382,
+            23.3025
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_naria_3",
+      "name": "Padma Island Sector 2",
+      "jlNo": "JL-68",
+      "areaDecimal": 115734.2,
+      "lossDecimal": 33,
+      "gainDecimal": 58.5,
+      "percent": 0.1,
+      "labelAnchor": [
+        90.404458,
+        23.321103
+      ],
+      "affectedOwnersCount": 18,
+      "polygon": [
+        [
+          [
+            90.382,
+            23.315
+          ],
+          [
+            90.39289,
+            23.315085
+          ],
+          [
+            90.40411,
+            23.314517
+          ],
+          [
+            90.415,
+            23.315
+          ],
+          [
+            90.415,
+            23.32
+          ],
+          [
+            90.415,
+            23.3275
+          ],
+          [
+            90.40411,
+            23.327689
+          ],
+          [
+            90.39289,
+            23.326913
+          ],
+          [
+            90.382,
+            23.3275
+          ],
+          [
+            90.382,
+            23.315
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_naria_4",
+      "name": "Padma Khas Sandbar",
+      "jlNo": "JL-72",
+      "areaDecimal": 116957.6,
+      "lossDecimal": 44.8,
+      "gainDecimal": 60.5,
+      "percent": 0.1,
+      "labelAnchor": [
+        90.393,
+        23.333457
+      ],
+      "affectedOwnersCount": 13,
+      "polygon": [
+        [
+          [
+            90.382,
+            23.3275
+          ],
+          [
+            90.39289,
+            23.326913
+          ],
+          [
+            90.40411,
+            23.327689
+          ],
+          [
+            90.415,
+            23.3275
+          ],
+          [
+            90.415,
+            23.335
+          ],
+          [
+            90.415,
+            23.34
+          ],
+          [
+            90.40411,
+            23.34
+          ],
+          [
+            90.39289,
+            23.34
+          ],
+          [
+            90.382,
+            23.34
+          ],
+          [
+            90.382,
+            23.3275
+          ]
+        ]
+      ]
+    }
+  ],
+  "mouzasForecast": [
+    {
+      "id": "mouza_naria_1",
+      "name": "Char Naria Mouza",
+      "jlNo": "JL-60",
+      "areaDecimal": 117412.4,
+      "lossDecimal": 96,
+      "gainDecimal": 193,
+      "percent": 0.2,
+      "labelAnchor": [
+        90.393,
+        23.296549
+      ],
+      "affectedOwnersCount": 14,
+      "polygon": [
+        [
+          [
+            90.382,
+            23.29
+          ],
+          [
+            90.39289,
+            23.29
+          ],
+          [
+            90.40411,
+            23.29
+          ],
+          [
+            90.415,
+            23.29
+          ],
+          [
+            90.415,
+            23.295
+          ],
+          [
+            90.415,
+            23.3025
+          ],
+          [
+            90.40411,
+            23.302436
+          ],
+          [
+            90.39289,
+            23.303098
+          ],
+          [
+            90.382,
+            23.3025
+          ],
+          [
+            90.382,
+            23.29
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_naria_2",
+      "name": "Padma Island Sector 1",
+      "jlNo": "JL-64",
+      "areaDecimal": 112853.9,
+      "lossDecimal": 27,
+      "gainDecimal": 61,
+      "percent": 0.1,
+      "labelAnchor": [
+        90.398958,
+        23.30876
+      ],
+      "affectedOwnersCount": 9,
+      "polygon": [
+        [
+          [
+            90.382,
+            23.3025
+          ],
+          [
+            90.39289,
+            23.303098
+          ],
+          [
+            90.40411,
+            23.302436
+          ],
+          [
+            90.415,
+            23.3025
+          ],
+          [
+            90.415,
+            23.31
+          ],
+          [
+            90.415,
+            23.315
+          ],
+          [
+            90.40411,
+            23.314517
+          ],
+          [
+            90.39289,
+            23.315085
+          ],
+          [
+            90.382,
+            23.315
+          ],
+          [
+            90.382,
+            23.3025
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_naria_3",
+      "name": "Padma Island Sector 2",
+      "jlNo": "JL-68",
+      "areaDecimal": 115734.2,
+      "lossDecimal": 28,
+      "gainDecimal": 67,
+      "percent": 0.1,
+      "labelAnchor": [
+        90.404458,
+        23.321103
+      ],
+      "affectedOwnersCount": 20,
+      "polygon": [
+        [
+          [
+            90.382,
+            23.315
+          ],
+          [
+            90.39289,
+            23.315085
+          ],
+          [
+            90.40411,
+            23.314517
+          ],
+          [
+            90.415,
+            23.315
+          ],
+          [
+            90.415,
+            23.32
+          ],
+          [
+            90.415,
+            23.3275
+          ],
+          [
+            90.40411,
+            23.327689
+          ],
+          [
+            90.39289,
+            23.326913
+          ],
+          [
+            90.382,
+            23.3275
+          ],
+          [
+            90.382,
+            23.315
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "mouza_naria_4",
+      "name": "Padma Khas Sandbar",
+      "jlNo": "JL-72",
+      "areaDecimal": 116957.6,
+      "lossDecimal": 38,
+      "gainDecimal": 70,
+      "percent": 0.1,
+      "labelAnchor": [
+        90.393,
+        23.333457
+      ],
+      "affectedOwnersCount": 11,
+      "polygon": [
+        [
+          [
+            90.382,
+            23.3275
+          ],
+          [
+            90.39289,
+            23.326913
+          ],
+          [
+            90.40411,
+            23.327689
+          ],
+          [
+            90.415,
+            23.3275
+          ],
+          [
+            90.415,
+            23.335
+          ],
+          [
+            90.415,
+            23.34
+          ],
+          [
+            90.40411,
+            23.34
+          ],
+          [
+            90.39289,
+            23.34
+          ],
+          [
+            90.382,
+            23.34
+          ],
+          [
+            90.382,
+            23.3275
+          ]
+        ]
+      ]
+    }
+  ],
+  "contextRecorded": {
+    "type": "char",
+    "activeChannelWidthM": 2150,
+    "charAreaCurrentDec": 420.5,
+    "charAreaPreviousDec": 388.2,
+    "netChangeDec": 32.3,
+    "isProjected": false
+  },
+  "contextForecast": {
+    "type": "char",
+    "activeChannelWidthM": 2280,
+    "charAreaCurrentDec": 465,
+    "charAreaPreviousDec": 420.5,
+    "netChangeDec": 44.5,
+    "isProjected": true
+  },
+  "ownersForecast": [
+    {
+      "id": "impact_char_forecast_mouza_naria_1_1",
+      "name": "Fatema Begum",
+      "dagNo": "101",
+      "khatianNo": "RS-201",
+      "plotNo": "101",
+      "mouzaId": "mouza_naria_1",
+      "upazilaId": "naria",
+      "districtId": "shariatpur",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12,
+      "gainDecimal": 0,
+      "coordinates": [
+        90.393,
+        23.296549
+      ],
+      "colorIndex": 1
+    },
+    {
+      "id": "impact_char_forecast_mouza_naria_1_2",
+      "name": "Nurul Huda Mia",
+      "dagNo": "102",
+      "khatianNo": "RS-202",
+      "plotNo": "102",
+      "mouzaId": "mouza_naria_1",
+      "upazilaId": "naria",
+      "districtId": "shariatpur",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12,
+      "gainDecimal": 0,
+      "coordinates": [
+        90.393,
+        23.296549
+      ],
+      "colorIndex": 4
+    },
+    {
+      "id": "impact_char_forecast_mouza_naria_1_3",
+      "name": "Anwar Parvez",
+      "dagNo": "103",
+      "khatianNo": "RS-203",
+      "plotNo": "103",
+      "mouzaId": "mouza_naria_1",
+      "upazilaId": "naria",
+      "districtId": "shariatpur",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12,
+      "gainDecimal": 0,
+      "coordinates": [
+        90.393,
+        23.296549
+      ],
+      "colorIndex": 7
+    },
+    {
+      "id": "impact_char_forecast_mouza_naria_1_4",
+      "name": "Shahana Akter",
+      "dagNo": "104",
+      "khatianNo": "RS-204",
+      "plotNo": "104",
+      "mouzaId": "mouza_naria_1",
+      "upazilaId": "naria",
+      "districtId": "shariatpur",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12,
+      "gainDecimal": 0,
+      "coordinates": [
+        90.393,
+        23.296549
+      ],
+      "colorIndex": 10
+    },
+    {
+      "id": "impact_char_forecast_mouza_naria_1_5",
+      "name": "Abdul Matin",
+      "dagNo": "105",
+      "khatianNo": "RS-205",
+      "plotNo": "105",
+      "mouzaId": "mouza_naria_1",
+      "upazilaId": "naria",
+      "districtId": "shariatpur",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12,
+      "gainDecimal": 0,
+      "coordinates": [
+        90.393,
+        23.296549
+      ],
+      "colorIndex": 1
+    },
+    {
+      "id": "impact_char_forecast_mouza_naria_1_6",
+      "name": "Zubair Ahmed",
+      "dagNo": "106",
+      "khatianNo": "RS-206",
+      "plotNo": "106",
+      "mouzaId": "mouza_naria_1",
+      "upazilaId": "naria",
+      "districtId": "shariatpur",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12,
+      "gainDecimal": 0,
+      "coordinates": [
+        90.393,
+        23.296549
+      ],
+      "colorIndex": 4
+    },
+    {
+      "id": "impact_char_forecast_mouza_naria_1_7",
+      "name": "Sultana Razia",
+      "dagNo": "107",
+      "khatianNo": "RS-207",
+      "plotNo": "107",
+      "mouzaId": "mouza_naria_1",
+      "upazilaId": "naria",
+      "districtId": "shariatpur",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12,
+      "gainDecimal": 0,
+      "coordinates": [
+        90.393,
+        23.296549
+      ],
+      "colorIndex": 7
+    },
+    {
+      "id": "impact_char_forecast_mouza_naria_1_8",
+      "name": "Sirajul Islam",
+      "dagNo": "108",
+      "khatianNo": "RS-208",
+      "plotNo": "108",
+      "mouzaId": "mouza_naria_1",
+      "upazilaId": "naria",
+      "districtId": "shariatpur",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12,
+      "gainDecimal": 0,
+      "coordinates": [
+        90.393,
+        23.296549
+      ],
+      "colorIndex": 10
+    },
+    {
+      "id": "impact_char_forecast_mouza_naria_2_1",
+      "name": "Kamal Uddin Ahmed",
+      "dagNo": "109",
+      "khatianNo": "RS-209",
+      "plotNo": "109",
+      "mouzaId": "mouza_naria_2",
+      "upazilaId": "naria",
+      "districtId": "shariatpur",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 13.5,
+      "gainDecimal": 0,
+      "coordinates": [
+        90.398958,
+        23.30876
+      ],
+      "colorIndex": 9
+    },
+    {
+      "id": "impact_char_forecast_mouza_naria_2_2",
+      "name": "Taslima Nasrin",
+      "dagNo": "110",
+      "khatianNo": "RS-210",
+      "plotNo": "110",
+      "mouzaId": "mouza_naria_2",
+      "upazilaId": "naria",
+      "districtId": "shariatpur",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 13.5,
+      "gainDecimal": 0,
+      "coordinates": [
+        90.398958,
+        23.30876
+      ],
+      "colorIndex": 0
+    },
+    {
+      "id": "impact_char_forecast_mouza_naria_3_1",
+      "name": "Mizanur Rahman",
+      "dagNo": "111",
+      "khatianNo": "RS-211",
+      "plotNo": "111",
+      "mouzaId": "mouza_naria_3",
+      "upazilaId": "naria",
+      "districtId": "shariatpur",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14,
+      "gainDecimal": 0,
+      "coordinates": [
+        90.404458,
+        23.321103
+      ],
+      "colorIndex": 11
+    },
+    {
+      "id": "impact_char_forecast_mouza_naria_3_2",
+      "name": "Laila Arjumand",
+      "dagNo": "112",
+      "khatianNo": "RS-212",
+      "plotNo": "112",
+      "mouzaId": "mouza_naria_3",
+      "upazilaId": "naria",
+      "districtId": "shariatpur",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 14,
+      "gainDecimal": 0,
+      "coordinates": [
+        90.404458,
+        23.321103
+      ],
+      "colorIndex": 2
+    },
+    {
+      "id": "impact_char_forecast_mouza_naria_4_1",
+      "name": "Abdul Matin",
+      "dagNo": "113",
+      "khatianNo": "RS-213",
+      "plotNo": "113",
+      "mouzaId": "mouza_naria_4",
+      "upazilaId": "naria",
+      "districtId": "shariatpur",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12.7,
+      "gainDecimal": 0,
+      "coordinates": [
+        90.393,
+        23.333457
+      ],
+      "colorIndex": 1
+    },
+    {
+      "id": "impact_char_forecast_mouza_naria_4_2",
+      "name": "Zubair Ahmed",
+      "dagNo": "114",
+      "khatianNo": "RS-214",
+      "plotNo": "114",
+      "mouzaId": "mouza_naria_4",
+      "upazilaId": "naria",
+      "districtId": "shariatpur",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12.7,
+      "gainDecimal": 0,
+      "coordinates": [
+        90.393,
+        23.333457
+      ],
+      "colorIndex": 4
+    },
+    {
+      "id": "impact_char_forecast_mouza_naria_4_3",
+      "name": "Sultana Razia",
+      "dagNo": "115",
+      "khatianNo": "RS-215",
+      "plotNo": "115",
+      "mouzaId": "mouza_naria_4",
+      "upazilaId": "naria",
+      "districtId": "shariatpur",
+      "hazard": "char",
+      "landClass": "agri",
+      "changeKind": "loss",
+      "lossDecimal": 12.6,
+      "gainDecimal": 0,
+      "coordinates": [
+        90.393,
+        23.333457
+      ],
+      "colorIndex": 7
+    }
+  ]
+}

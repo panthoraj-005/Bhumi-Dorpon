@@ -1,0 +1,212 @@
+[
+  {
+    "id": "char_kazipur_1",
+    "name": "Char Kazipur Island North",
+    "riverId": "jamuna",
+    "upazilaId": "kazipur",
+    "firstSeenYear": 2014,
+    "vegetationStatus": "Dense pioneer grass",
+    "stabilityIndex": 0.84,
+    "totalAreaDecimal": 3256
+  },
+  {
+    "id": "char_kazipur_2",
+    "name": "Char Kazipur Island South",
+    "riverId": "jamuna",
+    "upazilaId": "kazipur",
+    "firstSeenYear": 2016,
+    "vegetationStatus": "Partially vegetated",
+    "stabilityIndex": 0.71,
+    "totalAreaDecimal": 2364
+  },
+  {
+    "id": "char_sirajganj_sadar_1",
+    "name": "Char Sirajganj Sadar Island North",
+    "riverId": "jamuna",
+    "upazilaId": "sirajganj_sadar",
+    "firstSeenYear": 2012,
+    "vegetationStatus": "Consolidated agriculture",
+    "stabilityIndex": 0.77,
+    "totalAreaDecimal": 2746
+  },
+  {
+    "id": "char_chilmari_1",
+    "name": "Char Chilmari Island North",
+    "riverId": "brahmaputra",
+    "upazilaId": "chilmari",
+    "firstSeenYear": 2015,
+    "vegetationStatus": "Dense pioneer grass",
+    "stabilityIndex": 0.67,
+    "totalAreaDecimal": 2016
+  },
+  {
+    "id": "char_ulipur_1",
+    "name": "Char Ulipur Island North",
+    "riverId": "brahmaputra",
+    "upazilaId": "ulipur",
+    "firstSeenYear": 2012,
+    "vegetationStatus": "Consolidated agriculture",
+    "stabilityIndex": 0.77,
+    "totalAreaDecimal": 2743
+  },
+  {
+    "id": "char_ulipur_2",
+    "name": "Char Ulipur Island South",
+    "riverId": "brahmaputra",
+    "upazilaId": "ulipur",
+    "firstSeenYear": 2017,
+    "vegetationStatus": "Partially vegetated",
+    "stabilityIndex": 0.78,
+    "totalAreaDecimal": 2524
+  },
+  {
+    "id": "char_naria_1",
+    "name": "Char Naria Island North",
+    "riverId": "padma",
+    "upazilaId": "naria",
+    "firstSeenYear": 2012,
+    "vegetationStatus": "Dense pioneer grass",
+    "stabilityIndex": 0.64,
+    "totalAreaDecimal": 3501
+  },
+  {
+    "id": "char_zajira_1",
+    "name": "Char Zajira Island North",
+    "riverId": "padma",
+    "upazilaId": "zajira",
+    "firstSeenYear": 2015,
+    "vegetationStatus": "Consolidated agriculture",
+    "stabilityIndex": 0.63,
+    "totalAreaDecimal": 3995
+  },
+  {
+    "id": "char_bhedarganj_1",
+    "name": "Char Bhedarganj Island North",
+    "riverId": "padma",
+    "upazilaId": "bhedarganj",
+    "firstSeenYear": 2018,
+    "vegetationStatus": "Consolidated agriculture",
+    "stabilityIndex": 0.67,
+    "totalAreaDecimal": 3563
+  },
+  {
+    "id": "char_bhedarganj_2",
+    "name": "Char Bhedarganj Island South",
+    "riverId": "padma",
+    "upazilaId": "bhedarganj",
+    "firstSeenYear": 2012,
+    "vegetationStatus": "Partially vegetated",
+    "stabilityIndex": 0.77,
+    "totalAreaDecimal": 4149
+  },
+  {
+    "id": "char_haimchar_1",
+    "name": "Char Haimchar Island North",
+    "riverId": "meghna",
+    "upazilaId": "haimchar",
+    "firstSeenYear": 2009,
+    "vegetationStatus": "Partially vegetated",
+    "stabilityIndex": 0.82,
+    "totalAreaDecimal": 2570
+  },
+  {
+    "id": "char_chandpur_sadar_1",
+    "name": "Char Chandpur Sadar Island North",
+    "riverId": "meghna",
+    "upazilaId": "chandpur_sadar",
+    "firstSeenYear": 2009,
+    "vegetationStatus": "Dense pioneer grass",
+    "stabilityIndex": 0.69,
+    "totalAreaDecimal": 3393
+  },
+  {
+    "id": "char_chandpur_sadar_2",
+    "name": "Char Chandpur Sadar Island South",
+    "riverId": "meghna",
+    "upazilaId": "chandpur_sadar",
+    "firstSeenYear": 2010,
+    "vegetationStatus": "Partially vegetated",
+    "stabilityIndex": 0.81,
+    "totalAreaDecimal": 2457
+  },
+  {
+    "id": "char_char_fasson_1",
+    "name": "Char Char Fasson Island North",
+    "riverId": "meghna",
+    "upazilaId": "char_fasson",
+    "firstSeenYear": 2012,
+    "vegetationStatus": "Dense pioneer grass",
+    "stabilityIndex": 0.84,
+    "totalAreaDecimal": 3014
+  },
+  {
+    "id": "char_char_fasson_2",
+    "name": "Char Char Fasson Island South",
+    "riverId": "meghna",
+    "upazilaId": "char_fasson",
+    "firstSeenYear": 2015,
+    "vegetationStatus": "Consolidated agriculture",
+    "stabilityIndex": 0.8,
+    "totalAreaDecimal": 3702
+  },
+  {
+    "id": "char_bhola_sadar_1",
+    "name": "Char Bhola Sadar Island North",
+    "riverId": "meghna",
+    "upazilaId": "bhola_sadar",
+    "firstSeenYear": 2008,
+    "vegetationStatus": "Partially vegetated",
+    "stabilityIndex": 0.62,
+    "totalAreaDecimal": 2466
+  },
+  {
+    "id": "char_monpura_1",
+    "name": "Char Monpura Island North",
+    "riverId": "meghna",
+    "upazilaId": "monpura",
+    "firstSeenYear": 2008,
+    "vegetationStatus": "Dense pioneer grass",
+    "stabilityIndex": 0.7,
+    "totalAreaDecimal": 2743
+  },
+  {
+    "id": "char_monpura_2",
+    "name": "Char Monpura Island South",
+    "riverId": "meghna",
+    "upazilaId": "monpura",
+    "firstSeenYear": 2014,
+    "vegetationStatus": "Dense pioneer grass",
+    "stabilityIndex": 0.78,
+    "totalAreaDecimal": 3809
+  },
+  {
+    "id": "char_hatiya_1",
+    "name": "Char Hatiya Island North",
+    "riverId": "meghna_channel",
+    "upazilaId": "hatiya",
+    "firstSeenYear": 2017,
+    "vegetationStatus": "Consolidated agriculture",
+    "stabilityIndex": 0.78,
+    "totalAreaDecimal": 2212
+  },
+  {
+    "id": "char_subarnachar_1",
+    "name": "Char Subarnachar Island North",
+    "riverId": "little_feni",
+    "upazilaId": "subarnachar",
+    "firstSeenYear": 2014,
+    "vegetationStatus": "Partially vegetated",
+    "stabilityIndex": 0.79,
+    "totalAreaDecimal": 2037
+  },
+  {
+    "id": "char_subarnachar_2",
+    "name": "Char Subarnachar Island South",
+    "riverId": "little_feni",
+    "upazilaId": "subarnachar",
+    "firstSeenYear": 2014,
+    "vegetationStatus": "Consolidated agriculture",
+    "stabilityIndex": 0.65,
+    "totalAreaDecimal": 4152
+  }
+]
