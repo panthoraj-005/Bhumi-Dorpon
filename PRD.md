@@ -222,3 +222,16 @@ This amendment addresses the requirement that imagery must match the selected ha
 ### Zoom control corrective requirement
 - The `+` and `−` controls must be direct, immediately working buttons. A user must not have to click the zoom control once to activate it and then click again to zoom.
 - Remove any zoom-tool activation/toggle state that causes the first click to be consumed. Clicking `+` or `−` must call the actual map zoom operation on that same click and synchronize the paired map.
+
+## 13. Settings Information Pages (About Project & Team Information)
+
+The Settings option accessible from the main navigation sidebar provides exactly two options:
+1. **About Project**: A factual overview of the verified existing BhumiDorpon purpose, hazard categories, map comparison features, and demo data limitations.
+2. **Team Information**: Official development team structure and copyright metadata:
+   - **Team Name:** GeoNeural
+   - **Team Leader:** Pantho Raj Biswas
+   - **Team Member:** Puja Paul
+   - **Copyright:** © 2026 GeoNeural. All rights reserved.
+
+No other settings options or unverified features are permitted. Clear navigation back to Settings is maintained.
+

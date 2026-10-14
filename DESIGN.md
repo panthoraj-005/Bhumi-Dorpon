@@ -246,3 +246,13 @@ This section amends map presentation only; preserve all existing design tokens a
 - Keep the current design tokens, typography, panel styling, map controls, and existing visual language. This is a targeted correction, not a site redesign.
 - The `+` and `−` buttons must zoom on the first click. Do not show an intermediate “zoom mode active” state. Keep buttons visibly clickable and keyboard/touch accessible.
 - If coordinates are synthetic or not verified, keep the `Demo geometry — not survey-accurate` notice rather than pretending the overlay matches the imagery.
+
+## 13. Settings Information Views Design Specification
+
+- **Aesthetic Consistency**: Matches the existing BhumiDorpon visual design system without redesigning the application layout.
+- **Two Settings Options**: Settings option displays exactly two entries: **About Project** and **Team Information**.
+- **Design Tokens**: Standard tokens applied (`bhumidorpon-card`, `var(--bg)`, `var(--surface)`, `var(--border)`, `var(--ink)`, `var(--accent)`, `var(--radius-card)`, Space Grotesk headings, Inter body typography).
+- **About Project**: Uses concise headings and structured feature descriptions covering verified project capabilities and explicit data transparency limitations.
+- **Team Information**: Clean, focused presentation displaying exact team name (`GeoNeural`), team leader (`Pantho Raj Biswas`), team member (`Puja Paul`), and copyright (`© 2026 GeoNeural. All rights reserved.`).
+- **Navigation**: Visible return navigation ("Back to Settings") with accessible keyboard navigation and focus rings.
+

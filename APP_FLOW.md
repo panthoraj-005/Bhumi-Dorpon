@@ -73,3 +73,14 @@ Changing the base map must preserve the selected hazard, result, mode, viewport,
 6. If region coordinates are missing or synthetic, the UI shows the appropriate fallback/disclaimer rather than reusing another hazard's imagery or inventing coordinates.
 
 The `+` and `−` controls must zoom immediately on the first click; there is no activation step.
+
+## 9. Settings Flow
+
+1. User clicks the `Settings` icon at the bottom of the navigation sidebar.
+2. The Settings hub (`/settings`) displays exactly two options:
+   - **About Project**: opens the factual project overview (`/settings/about`).
+   - **Team Information**: opens the team details and copyright line (`/settings/team`).
+3. Selecting either option opens its respective view.
+4. From each view, the user can return to Settings using the "Back to Settings" navigation control.
+5. No other settings options or choices are displayed.
+

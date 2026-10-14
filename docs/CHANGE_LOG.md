@@ -786,6 +786,45 @@ A comprehensive code and visual audit was conducted on all existing Leaflet map 
 - **TypeScript Check (`npm run lint`)**: `tsc --noEmit` passed with **0 errors**.
 - **Production Build (`npm run build`)**: `next build` compiled cleanly into production bundle with all 14 routes static and dynamic.
 
+---
+
+## Change 6 — Settings Information Feature: About Project & Team Information
+
+### 1. Settings Navigation Hub
+- **AppSidebar (`components/AppSidebar.tsx`)**: Upgraded the bottom Settings control from an inactive button to an active Next.js `<Link href="/settings">` with route-aware styling (`bg-accent-soft text-accent-deep font-semibold` when active).
+- **Settings Page (`app/settings/page.tsx`)**: Created the Settings hub with `AppHeader` and a two-column responsive grid displaying **exactly two options**:
+  1. **About Project** (links to `/settings/about`)
+  2. **Team Information** (links to `/settings/team`)
+- Strictly restricted the options to only these two; no extraneous settings, profile, or account tabs added.
+
+### 2. About Project View (`app/settings/about/page.tsx`)
+- Structured with clear headings and factual descriptions based on verified source code and `ABOUT_PROJECT_CONTENT.md`:
+  - **Project Overview**: Purpose of BhumiDorpon for visualizing and comparing land-change and natural-hazard impact in Bangladesh.
+  - **Hazard Modules**: Full descriptions of River Erosion, Flood, Landslide, Char Formation and Erosion, and Coastal Erosion and Land Formation.
+  - **Map Comparison**: Side-by-side Before/After comparison layouts with synchronized viewport mechanics.
+  - **Map Controls and Basemaps**: Light GIS and Satellite basemap options, instant zoom controls, and scale indicators.
+  - **Map Layers and Information**: Cadastral plot boundaries, Dag No. and Khatian No. identifiers, legends, and mouza-level statistics.
+  - **Dashboard and Other Pages**: Overview dashboard, owner portfolio pages, and UI component showcase.
+  - **Recorded and Forecast**: Observed ground facts vs. model-based risk predictions without disbursed figures.
+  - **Data Transparency Disclosures**: Explicit statement that the demo uses mock and synthetic datasets; contains no claims of live satellite telemetry, real-time alerting, or legally certified land surveying.
+- Integrated breadcrumb navigation and prominent "Back to Settings" controls.
+
+### 3. Team Information View (`app/settings/team/page.tsx`)
+- Displayed exact team details with exact capitalization, spelling, and structure:
+  - **Team Name:** GeoNeural
+  - **Team Leader:** Pantho Raj Biswas
+  - **Team Member:** Puja Paul
+  - **Copyright:** © 2026 GeoNeural. All rights reserved.
+- Zero extraneous roles, biographies, or external links added.
+- Integrated breadcrumb navigation and prominent "Back to Settings" controls.
+
+### 4. Verification & Testing
+- **Unit Tests (`tests/settings_information.test.ts`)**: Added 4 automated unit tests verifying sidebar navigation, exact two options, factual About Project coverage, and exact Team Information strings.
+- **Vitest Suite (`npm test`)**: Passed **9/9 test suites, 54/54 tests**.
+- **TypeScript Typecheck (`npm run lint`)**: `tsc --noEmit` passed with **0 errors**.
+- **Production Build (`npm run build`)**: `next build` succeeded with clean prerendering of `/settings`, `/settings/about`, and `/settings/team`.
+
+
 
 
 

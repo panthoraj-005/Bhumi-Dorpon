@@ -109,13 +109,19 @@ export function AppSidebar() {
 
         {/* Settings */}
         <div className="relative group">
-          <button
-            type="button"
-            className="w-11 h-11 rounded-2xl flex items-center justify-center text-muted hover:text-ink hover:bg-surface-alt transition-all"
+          <Link
+            href="/settings"
+            className={cn(
+              "w-11 h-11 rounded-2xl flex items-center justify-center transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-ink",
+              pathname.startsWith("/settings")
+                ? "bg-accent-soft text-accent-deep font-semibold"
+                : "text-muted hover:text-ink hover:bg-surface-alt"
+            )}
             title="Settings"
+            aria-label="Settings"
           >
             <Settings className="w-5 h-5" />
-          </button>
+          </Link>
           <div className="absolute left-[calc(100%+12px)] top-1/2 -translate-y-1/2 px-2.5 py-1 bg-ink text-surface text-xs font-medium rounded-md whitespace-nowrap shadow-popover pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity z-50">
             Settings
           </div>

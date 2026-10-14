@@ -113,3 +113,16 @@ npx playwright test
 - **Color Independence**: Color is never the sole carrier of meaning—loss items use minus (`−`) indicators and coral tones; gain items use plus (`+`) indicators and green tones; forecast items use dashed patterns (`∼`).
 - **Demo Banner**: Sticky amber banner across every view: *"Demo data: all names, plots and figures are fictional."*
 - **Forecast Honesty Disclaimer**: All forecast views conclude with: *"This is a model-based estimate, not an official government record."*
+
+---
+
+## Settings & Project Information
+
+The Settings option accessible from the sidebar (`/settings`) presents two dedicated views:
+1. **About Project** (`/settings/about`): Factual explanation of BhumiDorpon's purpose, the five hazard modules, Before/After map comparison, basemap controls, and data transparency notices.
+2. **Team Information** (`/settings/team`): Official development team metadata:
+   - **Team Name:** GeoNeural
+   - **Team Leader:** Pantho Raj Biswas
+   - **Team Member:** Puja Paul
+   - **Copyright:** © 2026 GeoNeural. All rights reserved.
+
