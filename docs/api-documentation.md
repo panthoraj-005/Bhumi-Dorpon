@@ -206,3 +206,29 @@ Authentication: Bearer JWT (for administrative mutation routes)
 | `GET` | `/hazards/char/{charId}` | Returns sandbar accretion/erosion polygons and khas land extents. |
 | `GET` | `/hazards/coastal/{mouzaId}` | Returns marine shoreline retreat vectors and unassigned mudflats. |
 | `POST`| `/compensation/applications` | Submits formal citizen compensation claim (requires authentication). |
+
+---
+
+<!-- addendum:google-earth-and-hazard-store -->
+## 9. Addendum — Google Earth Parcel Outline & Five-Hazard Information Store
+
+### 9.1 Client-Side Google Earth Integration (`lib/googleEarth.ts`)
+The application exposes a pure TypeScript geospatial helper library (`lib/googleEarth.ts`) for browser-based KML synthesis and Google Earth camera positioning:
+
+| Function | Signature | Description |
+|---|---|---|
+| `buildParcelKml` | `(parcel: EarthParcel, meta?: EarthOwnerMeta) => string` | Generates valid KML 2.2 XML containing a closed 5-point polygon (clampToGround, orange outline, translucent fill), four corner point placemarks (`1 (NW)` … `4 (SW)`), and complete owner/cadastral metadata with mock-data disclaimer. Throws error if `parcel.corners` length is not exactly 4. |
+| `parcelRingToKmlCoordinates` | `(corners: EarthCorner[]) => string` | Serializes 4 corners into 5 space-separated `lon,lat,0` tuples with first point repeated last. |
+| `getParcelCenter` | `(corners: EarthCorner[]) => { lat: number; lon: number }` | Computes bounding-box center `(min + max) / 2`. |
+| `getCameraRangeMeters` | `(corners: EarthCorner[]) => number` | Computes larger parcel extent in meters (minimum 20m) and scales by 3 for optimal Google Earth camera framing. |
+| `buildEarthCameraUrl` | `(corners: EarthCorner[]) => string` | Produces Google Earth web URL: `https://earth.google.com/web/@<lat>,<lon>,0a,<range>d,35y,0h,0t,0r`. |
+| `buildKmlFileName` | `(parcel: { dagNo: string }, meta?: { floodId?: string }) => string` | Returns sanitized lowercase filename: `<floodId>_dag_<dagNo>_outline.kml`. |
+| `escapeXml` | `(str: string) => string` | Escapes `&`, `<`, `>`, `"`, `'` characters for safe XML embedding. |
+| `openParcelInGoogleEarth` | `(parcel: EarthParcel, meta?: EarthOwnerMeta) => { fileName, earthUrl }` | Browser-only: triggers synchronous `window.open(earthUrl, "_blank")` followed by `Blob` + temporary `<a download>` trigger and revocation. |
+
+### 9.2 Five-Hazard Information Store Endpoints & Layer
+Data is served as static, deterministic JSON files without database overhead:
+- **Client Endpoints:** Served via `/mocks/*.json` from `public/mocks/` (`river_erosion.json`, `flood.json`, `landslide.json`, `char.json`, `coastal.json`, and shared indices).
+- **Per-Area Map Packages:** `/mocks/areas/<hazard>/area_*.json` resolved dynamically by `getMapArea()` using `areas_index.json`.
+- **Single Access Layer:** UI components consume datasets strictly through cached async getters in `lib/data.ts`.
+

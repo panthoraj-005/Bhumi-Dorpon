@@ -244,6 +244,7 @@ graph TD
    - Corner 3 (SE): 25.157832 N, 92.015239 E
    - Corner 4 (SW): 25.157834 N, 92.014580 E
 9. Clicks "Copy 4 Corners" to copy coordinates to mobile clipboard.
+10. Clicks "Open in Google Earth" directly below the table; KML downloads and Google Earth opens in a new tab centered on the parcel. Follows the on-screen hint (New → Open local KML file) to visualize the parcel outline in 3D satellite imagery.
 ```
 
 ### Journey 2: Upazila Disaster Committee Relief Planning
@@ -269,3 +270,32 @@ graph TD
 | **No GPS Location Detection** | Users must manually select District and Upazila. | Add a "Use My Current Location" button to auto-detect the user's upazila. |
 | **No Direct Plot Search** | Users cannot search directly by Dag No. from the dashboard. | Implement a global command palette (`Cmd + K`) to search Dag/Khatian numbers nationally. |
 | **Offline Map Caching** | Satellite imagery cannot be viewed without an active internet connection. | Add Service Worker Progressive Web App (PWA) tile caching for field operations. |
+
+---
+
+<!-- addendum:google-earth-and-hazard-store -->
+## Addendum — Google Earth Parcel Outline & Five-Hazard Information Store
+
+### A. Flow — Open a Parcel in Google Earth
+1. Open **Flood Monitoring** (`/flood`), choose District → Upazila → Mouza → flood event.
+2. In the affected-owner table click an owner to open `/flood/[mouzaId]/[floodId]/owner/[ownerId]`.
+3. Each parcel card shows its **Four Corner Coordinates** table (1 NW, 2 NE, 3 SE, 4 SW; latitude first; 6 decimals).
+4. Click **Open in Google Earth** under the table.
+5. A KML file `<floodId>_dag_<dagNo>_outline.kml` downloads and Google Earth (web) opens in a new tab at the parcel.
+6. An on-page hint appears (about 12 s): in Google Earth choose **New → Open local KML file** and select the downloaded file (Earth Pro: double-click the file).
+7. Google Earth draws the parcel outline with four numbered corner markers.
+
+**Edge cases:** pop-up blocked → allow pop-ups for the site and click again; downloads blocked → allow downloads; clicking the button does not select or zoom the card; the page works offline except for Google Earth itself.
+
+### B. Flow — Where Hazard Information Comes From
+Select a hazard module → cascading selectors call `getOptions()` → selecting a mouza / event calls `getHazardResult()` / `getFlood()` / `getMapArea()` in `lib/data.ts` → `loadMockJson()` fetches `/mocks/<file>` (or reads `mocks/<file>` on the server) → the result is cached and rendered by the map and tables. Each hazard reads its own file, so no module shows another hazard's data.
+
+| Store | Location | Content | Read by |
+|---|---|---|---|
+| Runtime copy (browser) | `public/mocks/*.json`, served at `/mocks/*` | Flat per-hazard files: `river_erosion.json`, `flood.json`, `landslide.json`, `char.json`, `coastal.json`, plus `common.json`, `chars.json`, `hills.json`, `rivers.json`, `districts.json`, `upazilas.json`, `mouzas.json`, `owners.json`, `plots.json`, `summary.json`, `areas_index.json` | `loadMockJson()` in `lib/data.ts` (client `fetch('/mocks/<file>')`) |
+| Source copy (Node / tests) | `mocks/*.json` | Same flat files | `loadMockJson()` on the server side (`fs.readFileSync` from `mocks/`) and Vitest |
+| Per-area map packages | `mocks/areas/<hazard>/area_*.json` and `public/mocks/areas/<hazard>/area_*.json` | One package per map area: `areaId`, `hazard`, `mode`, `bounds`, `basemap`, `mouzas`, `hazardLayers`, `context`, `owners` (river_erosion 7, flood 6, landslide 6, char 5, coastal 6) | `lib/data.ts` via `areas_index.json` (maps a hazard / mode / mouza key to an `area_*` file) |
+| Landslide terrain rasters | `public/mocks/rasters/<area>/`, `public/mocks/hillshades/` | `elevation_before/after.png`, `hillshade_*.png`, `slope_before.png`, `elevation_change.png`, `contours.geojson`, `spot_heights.json` | Landslide map layers |
+| Reserved per-mouza hazard results | `mocks/hazards/<hazard>.json`, `mocks/common/*.json` | Larger per-mouza keyed result sets and a copy of the shared reference tables | Present in `mocks/` only; **not read by the current runtime loader** |
+| Generator | `scripts/generate-mocks.ts`, `scripts/generate-map-areas.ts` | Deterministic, seeded generation; writes to both `mocks/` and `public/mocks/` | `npm run generate:mocks` |
+

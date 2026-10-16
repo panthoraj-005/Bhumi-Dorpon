@@ -828,3 +828,35 @@ The long-term vision for BhumiDorpon involves transitioning from an architectura
 
 *BhumiDorpon is developed and maintained by Team GeoNeural as an advanced geospatial research and demonstration platform for cadastral hazard monitoring in Bangladesh.*
 
+---
+
+<!-- addendum:google-earth-and-hazard-store -->
+## 16. Addendum — Google Earth Parcel Outline & Five-Hazard Information Store
+
+### 16.1 Topic A: Google Earth Parcel Outline Export (Flood Owner Detail)
+On the Flood Owner Land Detail page (`/flood/[mouzaId]/[floodId]/owner/[ownerId]`), every parcel card features an **Open in Google Earth** button directly beneath its Four Corner Coordinates table:
+- **Purpose & User Experience:** Allows landowners, local union parishad representatives, and relief officials to transition from 2D cadastral cards to Google Earth's immersive 3D terrain environment.
+- **Client-Side Workflow:** When clicked, the application:
+  1. Synchronously opens Google Earth (web) in a new browser tab with camera parameters centered on the parcel: `https://earth.google.com/web/@<lat>,<lon>,0a,<range>d,35y,0h,0t,0r`.
+  2. Synthesizes a valid KML 2.2 document in memory and initiates a browser download of `<floodId>_dag_<dagNo>_outline.kml`.
+  3. Displays a persistent on-page `role="status"` guidance hint for ~12 seconds: *"In Google Earth choose New → Open local KML file and select the downloaded file to display the parcel outline (Earth Pro: double-click the file)"*.
+- **KML Document Specifications:**
+  - Standard KML 2.2 XML with tessellated, clamp-to-ground coordinates.
+  - Closed 5-point polygon ring formatted as `lon,lat,0` with orange perimeter styling (`ff0088ff`, 3px width) and translucent fill (`440088ff`).
+  - Four distinct Placemark Points marking individual corners: `1 (NW)`, `2 (NE)`, `3 (SE)`, and `4 (SW)`.
+  - Comprehensive placemark metadata: Owner Name, Mouza, Dag No., Khatian No., Land Class, Area (decimals), Flood Severity Status, and explicit disclaimer: *"BhumiDorpon demo (mock / synthetic data, not a legal survey)"*.
+  - Strict XML escaping across all fields (`&amp;`, `&lt;`, `&gt;`, `&quot;`, `&apos;`).
+- **Privacy & Security Boundaries:** Only the geographic bounding-box centroid and camera range are passed as URL parameters to Google Earth. Landowner names, NID records, compensation values, and cadastral boundaries never cross external network boundaries; they remain purely local in client memory.
+- **Architectural Constraints & Rationale:** Google Earth web does not support loading arbitrary KML files via URL query parameters without enterprise API integration or hosted cloud storage. BhumiDorpon adopts a zero-backend, zero-dependency client pattern: instant KML download combined with camera positioning.
+
+### 16.2 Topic B: Five-Hazard Information Store Architecture
+The entire data foundation powering BhumiDorpon across all five hazards (river erosion, flood inundation, hill tracts landslides, char island dynamics, and coastal erosion/accretion) is structured as a deterministic, static JSON store without any SQL database or live API servers:
+- **Runtime Web Store (`public/mocks/*.json`):** Served statically at `/mocks/*` and fetched by client components via `loadMockJson()` in `lib/data.ts`. Flat hazard datasets include `river_erosion.json`, `flood.json`, `landslide.json`, `char.json`, `coastal.json`, along with administrative references (`districts.json`, `upazilas.json`, `mouzas.json`, `owners.json`, `plots.json`, `summary.json`, `areas_index.json`).
+- **Source / Test Store (`mocks/*.json`):** Node.js and Vitest test environments read synchronously from `mocks/*.json` using `fs.readFileSync`. Both copies are generated simultaneously by `npm run generate:mocks`.
+- **Per-Area Map Packages (`mocks/areas/<hazard>/` & `public/mocks/areas/<hazard>/`):** Self-contained geospatial bundles storing bounds, vector layers, basemap context, and landowner subsets, indexed via `areas_index.json`.
+- **Landslide Terrain Rasters (`public/mocks/rasters/`, `public/mocks/hillshades/`):** Pre-rendered DEM PNG hillshades and slope models.
+- **Legacy / Reserved Directories:** `mocks/hazards/` and `mocks/common/` contain legacy large datasets that are intentionally bypassed by the current runtime loader.
+- **Single Access Layer (`lib/data.ts`):** All UI components interact strictly with typed helper methods (`getFlood()`, `getOwnerPlots()`, `getHazardResult()`, `getMapArea()`). UI components are strictly prohibited from making raw `fetch()` calls to mock files.
+- **Cadastral Single Source of Truth:** Four-corner coordinates (`NW`, `NE`, `SE`, `SW`) in `plots.json` and `flood.json` serve as the singular authority across the Four Corner Coordinates table, clipboard copy actions, CSV export, GeoJSON export, and Google Earth KML generation.
+
+

@@ -302,3 +302,35 @@ CREATE INDEX idx_mouzas_geom ON mouzas USING GIST (geom);
 CREATE INDEX idx_plots_geom ON plots USING GIST (geom);
 CREATE INDEX idx_plots_dag_no ON plots (dag_no);
 ```
+
+---
+
+<!-- addendum:google-earth-and-hazard-store -->
+## Addendum — Google Earth Parcel Outline & Five-Hazard Information Store
+
+### A. Derived Entity — Parcel KML Export (not stored)
+The Google Earth button creates a KML document on the fly from an existing `OwnerPlotDetail` (`lib/data.ts`). Nothing is added to the JSON data, no table or collection is created, and nothing is uploaded.
+
+| KML element | Source field |
+|---|---|
+| `Placemark/name` | `Dag <dagNo> / Khatian <khatianNo>` |
+| `Polygon/outerBoundaryIs/LinearRing/coordinates` | `corners[0..3]` + `corners[0]`, written `lon,lat,0` |
+| 4 × `Placemark/Point` | `corners[i]`, named `i+1 (NW|NE|SE|SW)` |
+| `description` | owner name (`OwnerProfile.name`), mouza name (`FloodEvent.mouzaName`), `landClass`, `areaDecimal`, flood status label, demo-data disclaimer |
+
+Helper input type (`lib/googleEarth.ts`): `EarthParcel { plotId, dagNo, khatianNo, landClass?, areaDecimal?, floodStatus?, corners: EarthCorner[4] }`, `EarthCorner { label, lat, lon }`, `EarthOwnerMeta { ownerName?, mouzaName?, floodId? }`.
+
+### B. Five-Hazard Information Store — Storage Map
+All information for the five hazard categories (river erosion, flood, landslide, char formation/erosion, coastal erosion/land formation) is saved as static, deterministic, mock/synthetic JSON files. There is no backend or database. Each hazard has one flat JSON file, a set of per-area map packages and, for landslides, terrain rasters. The same files are written to `mocks/` (server and tests) and `public/mocks/` (browser), and every read goes through `loadMockJson()` in `lib/data.ts`.
+
+| Store | Location | Content | Read by |
+|---|---|---|---|
+| Runtime copy (browser) | `public/mocks/*.json`, served at `/mocks/*` | Flat per-hazard files: `river_erosion.json`, `flood.json`, `landslide.json`, `char.json`, `coastal.json`, plus `common.json`, `chars.json`, `hills.json`, `rivers.json`, `districts.json`, `upazilas.json`, `mouzas.json`, `owners.json`, `plots.json`, `summary.json`, `areas_index.json` | `loadMockJson()` in `lib/data.ts` (client `fetch('/mocks/<file>')`) |
+| Source copy (Node / tests) | `mocks/*.json` | Same flat files | `loadMockJson()` on the server side (`fs.readFileSync` from `mocks/`) and Vitest |
+| Per-area map packages | `mocks/areas/<hazard>/area_*.json` and `public/mocks/areas/<hazard>/area_*.json` | One package per map area: `areaId`, `hazard`, `mode`, `bounds`, `basemap`, `mouzas`, `hazardLayers`, `context`, `owners` (river_erosion 7, flood 6, landslide 6, char 5, coastal 6) | `lib/data.ts` via `areas_index.json` (maps a hazard / mode / mouza key to an `area_*` file) |
+| Landslide terrain rasters | `public/mocks/rasters/<area>/`, `public/mocks/hillshades/` | `elevation_before/after.png`, `hillshade_*.png`, `slope_before.png`, `elevation_change.png`, `contours.geojson`, `spot_heights.json` | Landslide map layers |
+| Reserved per-mouza hazard results | `mocks/hazards/<hazard>.json`, `mocks/common/*.json` | Larger per-mouza keyed result sets and a copy of the shared reference tables | Present in `mocks/` only; **not read by the current runtime loader** |
+| Generator | `scripts/generate-mocks.ts`, `scripts/generate-map-areas.ts` | Deterministic, seeded generation; writes to both `mocks/` and `public/mocks/` | `npm run generate:mocks` |
+
+Keys: `flood.json` → `{ events[], results }`; each flood event → `id, mouzaId, date, year, severity, floodedAreaDecimal, maxDepthM, durationDays, geometry, plotStatus[]`; each `plotStatus` row carries `ownerId, ownerName, plotId, dagNo, khatianNo, landClass, floodedAreaDecimal, depthClass, status, estCompensationBdt` and optional `corners`. Plots in `plots.json` carry `polygon` (closed ring) and, where present, `corners`; `deriveCorners()` derives NW/NE/SE/SW when `corners` is absent. A future production schema (PostgreSQL + PostGIS) is described in the schema document and remains proposed, not implemented.
+

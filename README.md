@@ -697,6 +697,7 @@ BhumiDorpon/
 ├── lib/                              # Business logic, helpers, and data layer
 │   ├── basemapConfig.ts              # Basemap layer definitions & colors
 │   ├── data.ts                       # Typed asynchronous mock data layer
+│   ├── googleEarth.ts                # Pure KML generator & Google Earth browser launcher
 │   ├── types.ts                      # TypeScript interfaces (Plots, Owners, Hazards)
 │   ├── units.ts                      # Land unit conversion utilities & compensation math
 │   └── useSelection.ts               # Custom hook for cascading geographic selection
@@ -733,6 +734,7 @@ BhumiDorpon/
 │   ├── change3_part1_gis_basemap.test.ts
 │   ├── data_layer.test.ts
 │   ├── four_corners_geometry.test.ts
+│   ├── google_earth_kml.test.ts
 │   ├── map_comparison_side_by_side.test.ts
 │   ├── map_fixes.test.ts
 │   ├── settings_information.test.ts
@@ -808,6 +810,27 @@ In accordance with the LandTech Innovation Hackathon Rule Book requirements for 
 | **Cadastral 4-Corner Boundary Readout** | Oct 2026 | Standardized all cadastral plots into 4-corner polygons with 6-decimal GPS coordinate readouts (NW, NE, SE, SW), clipboard copying, and dedicated Owner Land Detail pages. |
 | **Rule 5 Forecast Guardrails & AI Disclosures** | Oct 2026 | Implemented strict suppression of financial disbursement metrics on predictive forecast views and added transparent AI tool disclosures. |
 | **GeoAI Forecast Mode & Rule 5 Guardrails** | Oct 2026 | Introduced GeoAI Forecast Mode as a concept demo for 1-year predictive hazard envelopes with cadastral plot intersections; implemented strict suppression of financial compensation metrics in forecast mode (Rule 5 compliance); added transparent disclosures that all forecasts are deterministic pre-computed mock datasets generated via `scripts/generate-mocks.ts` and `scripts/generate-map-areas.ts` rather than live neural network outputs. |
+| **Google Earth Parcel Outline & Five-Hazard Store** | Oct 2026 | Added full-width "Open in Google Earth" button on Flood Owner Land Detail pages to download parcel KML and open Google Earth web centered on the parcel with an import hint; documented the deterministic Five-Hazard Information Store architecture (`public/mocks/` and `mocks/`). |
+
+---
+
+<!-- addendum:google-earth-and-hazard-store -->
+## 24. Addendum — Google Earth Parcel Outline & Five-Hazard Information Store
+
+### A. Google Earth Parcel Outline Integration (Flood Owner Land Detail)
+- **Feature:** On `/flood/[mouzaId]/[floodId]/owner/[ownerId]`, directly below the Four Corner Coordinates table, an **Open in Google Earth** button (Globe icon) allows landowners and relief officers to export parcel boundaries to 3D satellite visualization.
+- **Workflow:** One click (1) synchronously opens Google Earth (web) in a new tab centered on the parcel (`https://earth.google.com/web/@<lat>,<lon>,0a,<range>d,35y,0h,0t,0r`), (2) triggers browser download of `<floodId>_dag_<dagNo>_outline.kml`, and (3) displays an on-screen status hint for ~12 seconds: *"In Google Earth choose New → Open local KML file and select the downloaded file to display the parcel outline (Earth Pro: double-click the file)"*.
+- **KML Contents:** KML 2.2 format containing a single `Polygon` (`clampToGround`, closed 5-point ring with coordinates written `lon,lat,0`), orange outline (`ff0088ff`) with translucent fill (`440088ff`), four numbered corner `Point` Placemarks (`1 (NW)`, `2 (NE)`, `3 (SE)`, `4 (SW)`), and comprehensive metadata (owner name, mouza name, Dag No., Khatian No., land class, area in decimal, flood status) alongside the mandatory disclaimer: *"BhumiDorpon demo (mock / synthetic data, not a legal survey)"*.
+- **Zero Backend / Strict Privacy:** Pure client-side generation (`lib/googleEarth.ts`); no backend, database, external API key, or analytics. Only the bounding-box center and camera range pass via the public Earth URL; landowner names, deeds, and geometry remain strictly local to the user's device.
+- **Tested & Verified:** Comprehensive unit test suite (`tests/google_earth_kml.test.ts`, 7 tests) verifying coordinate formatting, ring closure, XML escaping, non-4-corner rejection, camera math, sanitized filenames, and validation across real mock parcels.
+
+### B. Five-Hazard Information Store Architecture
+All data for the five hazard categories (river erosion, flood, landslide, char formation/erosion, and coastal erosion/land formation) is saved as static, deterministic, mock/synthetic JSON files without any database:
+1. **Runtime Store (`public/mocks/*.json`):** Served at `/mocks/*` and fetched by client browser components through `loadMockJson()` in `lib/data.ts`. Flat hazard datasets: `river_erosion.json`, `flood.json`, `landslide.json`, `char.json`, `coastal.json`, plus administrative indices and summary stats.
+2. **Server / Test Store (`mocks/*.json`):** Mirrored copy read synchronously via `fs.readFileSync` in Node.js and Vitest test environments.
+3. **Per-Area Map Packages (`mocks/areas/<hazard>/` & `public/mocks/areas/<hazard>/`):** Modular spatial packages (`areaId`, `bounds`, `basemap`, `hazardLayers`, `context`) resolved via `areas_index.json`.
+4. **Terrain Rasters (`public/mocks/rasters/`, `public/mocks/hillshades/`):** DEM slope and elevation assets for landslide terrain modeling.
+5. **Single Source of Truth:** Four-corner parcel coordinates stored in this relational JSON model serve as the single source for the cadastral table, copy buttons, CSV export, GeoJSON download, and Google Earth KML outlines.
 
 ---
 

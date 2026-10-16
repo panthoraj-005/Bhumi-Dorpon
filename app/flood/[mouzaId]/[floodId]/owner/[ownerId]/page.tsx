@@ -15,12 +15,18 @@ import {
   Layers,
   ZoomIn,
   RotateCcw,
+  Globe,
 } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { AppHeader } from "@/components/AppHeader";
 import { Skeleton } from "@/components/Skeleton";
 import { useAppStore } from "@/stores/appStore";
 import { formatArea } from "@/lib/units";
+import {
+  openParcelInGoogleEarth,
+  EarthOwnerMeta,
+  EarthParcel,
+} from "@/lib/googleEarth";
 
 const OwnerPlotsLeafletMap = dynamic(
   () =>
@@ -52,6 +58,7 @@ export default function OwnerLandDetailPage() {
   const [selectedPlotId, setSelectedPlotId] = useState<string | null>(null);
   const [copiedAllCoords, setCopiedAllCoords] = useState(false);
   const [copiedPlotId, setCopiedPlotId] = useState<string | null>(null);
+  const [earthHint, setEarthHint] = useState<{ plotId: string; fileName: string } | null>(null);
 
   // 1. Load Flood Event
   const { data: flood } = useQuery<FloodEvent | null>({
@@ -217,6 +224,30 @@ export default function OwnerLandDetailPage() {
     const depth = p.depthClass && p.depthClass !== "none" ? ` (${p.depthClass})` : "";
     return isFull ? `Full${depth}` : `Partial${depth}`;
   }
+
+  // Open parcel outline in Google Earth
+  const handleOpenInGoogleEarth = (plot: OwnerPlotDetail) => {
+    const meta: EarthOwnerMeta = {
+      ownerName: profile?.name,
+      mouzaName: flood?.mouzaName,
+      floodId,
+    };
+    const statusLabel = getFloodStatusLabel(plot);
+    const earthParcel: EarthParcel = {
+      plotId: plot.plotId,
+      dagNo: plot.dagNo,
+      khatianNo: plot.khatianNo,
+      landClass: plot.landClass,
+      areaDecimal: plot.areaDecimal,
+      floodStatus: statusLabel,
+      corners: plot.corners,
+    };
+    const { fileName } = openParcelInGoogleEarth(earthParcel, meta);
+    setEarthHint({ plotId: plot.plotId, fileName });
+    setTimeout(() => {
+      setEarthHint((curr) => (curr?.plotId === plot.plotId ? null : curr));
+    }, 12000);
+  };
 
   // Map coordinate transformation & dynamic bounding box (zooms to selected plot or fits all)
   const mapGeometry = useMemo(() => {
@@ -646,6 +677,31 @@ export default function OwnerLandDetailPage() {
                               </tbody>
                             </table>
                           </div>
+
+                          {/* Open in Google Earth Action */}
+                          <button
+                            type="button"
+                            id={`open-google-earth-btn-${plot.dagNo}`}
+                            data-testid="open-google-earth-btn"
+                            title="Download the parcel outline as KML and open Google Earth at this parcel"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleOpenInGoogleEarth(plot);
+                            }}
+                            className="w-full inline-flex items-center justify-center gap-2 px-3 py-2 rounded-xl border border-water/40 bg-water/10 hover:bg-water/20 text-water text-xs font-bold transition-colors shadow-2xs"
+                          >
+                            <Globe className="w-3.5 h-3.5" />
+                            <span>Open in Google Earth</span>
+                          </button>
+
+                          {earthHint && earthHint.plotId === plot.plotId && (
+                            <p
+                              role="status"
+                              className="p-2.5 rounded-xl bg-surface-alt border border-border text-[11px] text-secondary leading-relaxed animate-in fade-in duration-200"
+                            >
+                              <strong className="text-ink font-mono">{earthHint.fileName}</strong> downloaded. In Google Earth choose <strong className="text-ink">New → Open local KML file</strong> and select the downloaded file to display the parcel outline (Earth Pro: double-click the file).
+                            </p>
+                          )}
                         </div>
                       </div>
 

@@ -256,3 +256,19 @@ This section amends map presentation only; preserve all existing design tokens a
 - **Team Information**: Clean, focused presentation displaying exact team name (`GeoNeural`), team leader (`Pantho Raj Biswas`), team member (`Puja Paul`), and copyright (`© 2026 GeoNeural. All rights reserved.`).
 - **Navigation**: Visible return navigation ("Back to Settings") with accessible keyboard navigation and focus rings.
 
+---
+
+<!-- addendum:google-earth-and-hazard-store -->
+## Addendum — Google Earth Parcel Outline & Five-Hazard Information Store
+
+### A. Component — "Open in Google Earth" Button
+- **Placement:** directly beneath the Four Corner Coordinates table inside each parcel card; full card width.
+- **Style:** secondary action using the water accent — `border-water/40 bg-water/10 hover:bg-water/20 text-water`, `text-xs font-bold`, `rounded-xl`, `px-3 py-2`, Globe icon (`lucide-react`) + label "Open in Google Earth". It is visually lighter than primary actions and does not compete with "Copy 4 corners".
+- **Behavior:** `type="button"`, `title="Download the parcel outline as KML and open Google Earth at this parcel"`, click does not select the card, keyboard focusable with the standard focus ring.
+- **Feedback:** a `role="status"` hint (`text-[11px]`, `bg-surface-alt`, bordered) appears under the button for about 12 seconds: file name + "New → Open local KML file" (Earth Pro: double-click).
+- **Identifiers:** `id="open-google-earth-btn-<dagNo>"`, `data-testid="open-google-earth-btn"`.
+- **Responsive:** the button and hint wrap inside the card at mobile widths; no horizontal scroll.
+
+### B. Topic — Five-Hazard Information Presentation
+Each hazard keeps its own color and layers, but all five read from the same store and show the same four-corner parcel presentation and the same mock-data disclosure. All information for the five hazard categories (river erosion, flood, landslide, char formation/erosion, coastal erosion/land formation) is saved as static, deterministic, mock/synthetic JSON files. There is no backend or database. Each hazard has one flat JSON file, a set of per-area map packages and, for landslides, terrain rasters. The same files are written to `mocks/` (server and tests) and `public/mocks/` (browser), and every read goes through `loadMockJson()` in `lib/data.ts`.
+

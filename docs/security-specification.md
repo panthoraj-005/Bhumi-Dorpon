@@ -153,3 +153,22 @@ When BhumiDorpon evolves into an operational national platform, the following co
 3. **Database Security:** Enforce PostGIS connection pooling over TLS, with Row-Level Security (RLS) ensuring that field surveyors only access records within their assigned upazila.
 4. **Comprehensive Audit Logging:** Maintain immutable append-only audit logs recording every cadastral plot query, coordinate export, and compensation modification.
 5. **Formal Penetration Testing:** Commission independent third-party penetration testing and vulnerability assessments prior to production launch.
+
+---
+
+<!-- addendum:google-earth-and-hazard-store -->
+## 7. Addendum — Google Earth & Five-Hazard Store Privacy and Security Analysis
+
+### 7.1 Google Earth Integration Privacy Boundaries
+The "Open in Google Earth" feature on the Flood Owner Land Detail page was engineered under strict privacy-preserving zero-leakage principles:
+- **Trust Boundary Analysis:**
+  - **Data crossing to Google:** ONLY the parcel bounding-box centroid (`<lat>,<lon>`) and camera range (`<range>d`) pass through the URL query string: `https://earth.google.com/web/@<lat>,<lon>,0a,<range>d,35y,0h,0t,0r`.
+  - **Data staying strictly on device:** Landowner names, father's names, NID details, contact numbers, Dag numbers, Khatian numbers, financial compensation amounts, and full cadastral boundary coordinates NEVER cross external network boundaries.
+  - **KML In-Memory Generation:** The `.kml` file is compiled purely in client JavaScript memory via `new Blob()` and served via an ephemeral `URL.createObjectURL()` anchor click, which is revoked immediately. No backend server stores, hosts, logs, or inspects the generated KML.
+- **Relief from Third-Party Tracking:** No Google Earth Engine SDK, Google Maps JavaScript API, or Google Analytics tracking scripts are embedded in the application.
+
+### 7.2 Five-Hazard Information Store Security Posture
+- **Zero Attack Surface:** All hazard datasets (flood, river erosion, landslide, char dynamics, coastal erosion) are served as immutable, static JSON files via `public/mocks/` and `mocks/`. There is no SQL database engine, no connection string, no server-side execution environment, and no attack surface for SQL injection, ORM vulnerabilities, or authentication bypass.
+- **Read-Only Determinism:** Datasets cannot be mutated via HTTP requests.
+- **Data Integrity & Disclaimers:** All datasets carry explicit disclaimers (*"BhumiDorpon demo (mock / synthetic data, not a legal survey)"*) to prevent accidental reliance on synthetic demo boundaries for legal conveyancing.
+

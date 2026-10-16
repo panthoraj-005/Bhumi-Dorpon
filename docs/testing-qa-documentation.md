@@ -149,3 +149,28 @@ When defects or inconsistencies are identified, they must be recorded using the 
 1. **Synthetic vs. Real Ground Truth:** Automated tests currently validate schema conformity against `/mocks`. They cannot validate whether coordinates align with physical ground-truth satellite features.
 2. **Visual Regression Testing:** Storybook/Chromatic visual regression testing is not yet automated in CI/CD.
 3. **Cross-Browser Headless Limitations:** Automated E2E runs use Chromium; scheduled nightly runs on WebKit (Safari) and Gecko (Firefox) are recommended.
+
+---
+
+<!-- addendum:google-earth-and-hazard-store -->
+## 9. Addendum — Google Earth Parcel Outline & Five-Hazard Information Store QA
+
+### 9.1 Vitest Unit & Integration Suite (`tests/google_earth_kml.test.ts`)
+A dedicated Vitest test suite (`tests/google_earth_kml.test.ts`, 7 tests) validates the client-side Google Earth and KML generation engine:
+
+| Test Case | Scope & Invariants Verified | Result |
+|---|---|---|
+| **1. Coordinate Ring Formatting** | Validates that `parcelRingToKmlCoordinates` returns 5 space-separated points in strict `lon,lat,0` order where point 5 repeats point 1 (`NW → NE → SE → SW → NW`). | PASSED |
+| **2. KML 2.2 Structure & Disclaimer** | Verifies standard KML header (`xmlns="http://www.opengis.net/kml/2.2"`), single `Polygon` with `clampToGround` and `tessellate=1`, orange outline (`ff0088ff`), translucent fill (`440088ff`), four corner Placemark Points (`1 (NW)`, `2 (NE)`, `3 (SE)`, `4 (SW)`), owner metadata, and the required disclaimer text: *"BhumiDorpon demo (mock / synthetic data, not a legal survey)"*. | PASSED |
+| **3. XML Escaping** | Asserts that `escapeXml` and `buildParcelKml` escape `&`, `<`, `>`, `"`, `'` characters, preventing XML syntax corruption when landowner names or notes contain special characters. | PASSED |
+| **4. Non-4-Corner Rejection** | Ensures that `parcelRingToKmlCoordinates` and `buildParcelKml` throw explicit errors when passed empty, 3-point, or multi-vertex non-quadrilateral arrays. | PASSED |
+| **5. Earth Camera URL Generation** | Verifies `getParcelCenter` computes bounding-box midpoint `(min + max) / 2`, `getCameraRangeMeters` enforces a minimum 20m extent with ~3x range scaling, and `buildEarthCameraUrl` adheres to `https://earth.google.com/web/@<lat>,<lon>,0a,<range>d,35y,0h,0t,0r`. | PASSED |
+| **6. Sanitized Filenames** | Verifies `buildKmlFileName` produces clean lowercase names matching `<floodId>_dag_<dagNo>_outline.kml` and sanitizes illegal characters. | PASSED |
+| **7. Real Mock Parcels Integration** | Asynchronously loads flood events via `listFloods()` and owner parcels via `getOwnerPlots()`, generating and validating KML and Earth camera URLs across real mock plots. | PASSED |
+
+### 9.2 Full Test Suite & Build Verification
+- **Total Test Files:** 10 passed (`tests/google_earth_kml.test.ts`, `tests/step5_flood_flow.test.ts`, `tests/data_layer.test.ts`, `tests/step3_and_step4.test.ts`, `tests/four_corners_geometry.test.ts`, `tests/change3_part1_gis_basemap.test.ts`, `tests/map_fixes.test.ts`, `tests/units_and_compensation.test.ts`, `tests/settings_information.test.ts`, `tests/map_comparison_side_by_side.test.ts`).
+- **Total Tests:** 61 passed out of 61.
+- **Linter:** `npm run lint` (`tsc --noEmit`) passes with zero errors.
+- **Production Build:** `npm run build` compiles all static and dynamic App Router routes successfully.
+

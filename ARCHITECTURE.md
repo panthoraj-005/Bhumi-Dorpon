@@ -91,3 +91,43 @@ Keep the layer order and pane/z-index values defined in `MAP_SPEC.md`. The base-
 - Zoom buttons call the map API directly from their click handlers; no activation state or second click is allowed.
 - Keep event propagation handling local to the controls so clicks do not become map clicks/drags.
 - Test that the first click changes zoom on both synchronized maps.
+
+---
+
+<!-- addendum:google-earth-and-hazard-store -->
+## Addendum — Google Earth Parcel Outline & Five-Hazard Information Store
+
+### A. Google Earth Integration (Client-Side Only)
+```
+Owner Land Detail page (client component)
+   └─ "Open in Google Earth" button  (per parcel card)
+        └─ lib/googleEarth.ts
+             ├─ buildParcelKml(corners, meta)  → KML string (in memory)
+             ├─ Blob + <a download>            → file saved on the user's device
+             └─ window.open(earth.google.com/web/@lat,lon,0a,<range>d,…)  → Google Earth tab
+```
+On the Flood Owner Land Detail page, every parcel card now shows an **Open in Google Earth** button directly beneath its Four Corner Coordinates table. One click (1) builds a KML file of the parcel outline in the browser and downloads it, and (2) opens Google Earth (web) centered on the parcel in a new tab. Google Earth cannot load a polygon from a URL, so the outline appears after the user loads the downloaded KML (Earth web: **New → Open local KML file**; Earth Pro: double-click the file). A short on-page hint explains this.
+
+- Layer: presentation + a pure helper in `lib/`; no server route, no persistence, no API key.
+- Data crossing the trust boundary: only the camera center (lat, lon) and zoom distance in the Earth URL. Owner names, Dag/Khatian numbers, and the KML stay on the device.
+- Google Earth is an external third-party service the user opens in a new tab; the app never calls its API.
+
+### B. Five-Hazard Information Store (Data Layer)
+All information for the five hazard categories (river erosion, flood, landslide, char formation/erosion, coastal erosion/land formation) is saved as static, deterministic, mock/synthetic JSON files. There is no backend or database. Each hazard has one flat JSON file, a set of per-area map packages and, for landslides, terrain rasters. The same files are written to `mocks/` (server and tests) and `public/mocks/` (browser), and every read goes through `loadMockJson()` in `lib/data.ts`.
+
+| Store | Location | Content | Read by |
+|---|---|---|---|
+| Runtime copy (browser) | `public/mocks/*.json`, served at `/mocks/*` | Flat per-hazard files: `river_erosion.json`, `flood.json`, `landslide.json`, `char.json`, `coastal.json`, plus `common.json`, `chars.json`, `hills.json`, `rivers.json`, `districts.json`, `upazilas.json`, `mouzas.json`, `owners.json`, `plots.json`, `summary.json`, `areas_index.json` | `loadMockJson()` in `lib/data.ts` (client `fetch('/mocks/<file>')`) |
+| Source copy (Node / tests) | `mocks/*.json` | Same flat files | `loadMockJson()` on the server side (`fs.readFileSync` from `mocks/`) and Vitest |
+| Per-area map packages | `mocks/areas/<hazard>/area_*.json` and `public/mocks/areas/<hazard>/area_*.json` | One package per map area: `areaId`, `hazard`, `mode`, `bounds`, `basemap`, `mouzas`, `hazardLayers`, `context`, `owners` (river_erosion 7, flood 6, landslide 6, char 5, coastal 6) | `lib/data.ts` via `areas_index.json` (maps a hazard / mode / mouza key to an `area_*` file) |
+| Landslide terrain rasters | `public/mocks/rasters/<area>/`, `public/mocks/hillshades/` | `elevation_before/after.png`, `hillshade_*.png`, `slope_before.png`, `elevation_change.png`, `contours.geojson`, `spot_heights.json` | Landslide map layers |
+| Reserved per-mouza hazard results | `mocks/hazards/<hazard>.json`, `mocks/common/*.json` | Larger per-mouza keyed result sets and a copy of the shared reference tables | Present in `mocks/` only; **not read by the current runtime loader** |
+| Generator | `scripts/generate-mocks.ts`, `scripts/generate-map-areas.ts` | Deterministic, seeded generation; writes to both `mocks/` and `public/mocks/` | `npm run generate:mocks` |
+
+```
+UI (pages / maps / tables) → lib/data.ts (single access layer, cached) → loadMockJson()
+                                   ├─ browser: fetch('/mocks/<file>')  → public/mocks/
+                                   └─ server/tests: fs.readFileSync   → mocks/
+scripts/generate-mocks.ts + generate-map-areas.ts  → write both folders
+```
+

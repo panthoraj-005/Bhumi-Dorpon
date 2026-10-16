@@ -824,6 +824,44 @@ A comprehensive code and visual audit was conducted on all existing Leaflet map 
 - **TypeScript Typecheck (`npm run lint`)**: `tsc --noEmit` passed with **0 errors**.
 - **Production Build (`npm run build`)**: `next build` succeeded with clean prerendering of `/settings`, `/settings/about`, and `/settings/team`.
 
+---
+
+<!-- addendum:google-earth-and-hazard-store -->
+## Step 8: Addendum — Google Earth Parcel Outline & Five-Hazard Information Store
+
+### 1. "Open in Google Earth" Parcel Outline Feature
+- **Implementation:** Added `lib/googleEarth.ts` containing pure helper functions:
+  - `buildParcelKml(parcel, meta?)`: Generates KML 2.2 XML with orange outline (`ff0088ff`), translucent fill (`440088ff`), one `Polygon` (`clampToGround`), four numbered corner `Point` Placemarks (`1 (NW)` … `4 (SW)`), and full metadata with the mandatory disclaimer: *"BhumiDorpon demo (mock / synthetic data, not a legal survey)"*. Throws unless parcel has exactly 4 corners.
+  - `parcelRingToKmlCoordinates`: Returns closed 5-point coordinate string in `lon,lat,0` order.
+  - `getParcelCenter`: Computes bounding-box center `(min + max) / 2`.
+  - `getCameraRangeMeters`: Calculates camera range as 3 × the larger parcel extent (minimum 20m extent).
+  - `buildEarthCameraUrl`: Constructs `https://earth.google.com/web/@<lat>,<lon>,0a,<range>d,35y,0h,0t,0r`.
+  - `buildKmlFileName`: Generates sanitized lowercase filename `<floodId>_dag_<dagNo>_outline.kml`.
+  - `escapeXml`: Safely escapes XML special characters (`&`, `<`, `>`, `"`, `'`).
+  - `openParcelInGoogleEarth`: Browser-only function that triggers `window.open(earthUrl, "_blank", "noopener,noreferrer")` synchronously inside the click handler, followed by Blob creation, temporary `<a download>` click, and object URL revocation.
+- **UI Integration (`app/flood/[mouzaId]/[floodId]/owner/[ownerId]/page.tsx`):**
+  - Added full-width secondary button directly below the Four Corner Coordinates table on every parcel card.
+  - Button properties: `type="button"`, `id="open-google-earth-btn-<dagNo>"`, `data-testid="open-google-earth-btn"`, `title="Download the parcel outline as KML and open Google Earth at this parcel"`, `e.stopPropagation()`.
+  - Styling: `border-water/40 bg-water/10 hover:bg-water/20 text-water text-xs font-bold rounded-xl` with Globe icon from `lucide-react`.
+  - On-screen status hint: A `role="status"` paragraph styled with `bg-surface-alt border border-border text-[11px]` displayed for ~12 seconds instructing the user: *"In Google Earth choose New → Open local KML file and select the downloaded file to display the parcel outline (Earth Pro: double-click the file)"*.
+
+### 2. Five-Hazard Information Store Documentation
+- Comprehensive documentation added across project markdown documents detailing:
+  - Runtime store: `public/mocks/*.json` (served at `/mocks/*`, fetched by browser).
+  - Source store: `mocks/*.json` (read synchronously by Node.js/Vitest via `fs.readFileSync`).
+  - Per-area map packages: `mocks/areas/<hazard>/` & `public/mocks/areas/<hazard>/` resolved via `areas_index.json`.
+  - Landslide terrain rasters: `public/mocks/rasters/` & `public/mocks/hillshades/`.
+  - Reserved folders `mocks/hazards/` and `mocks/common/` (explicitly noted as not read by the current runtime loader).
+  - Single access layer: `loadMockJson()` in `lib/data.ts`.
+  - Four-corner coordinates in `plots.json` and `flood.json` as the single source of truth.
+
+### 3. Verification & Quality Assurance
+- **New Unit Test Suite (`tests/google_earth_kml.test.ts`)**: 7 tests covering coordinate ordering, KML 2.2 structure, XML escaping, non-4-corner rejection, camera math, sanitized filenames, and validation across real mock parcels.
+- **Vitest Suite (`npm test`)**: Passed **10/10 test files, 61/61 tests**.
+- **TypeScript Typecheck (`npm run lint`)**: `tsc --noEmit` passed with **0 errors**.
+- **Production Build (`npm run build`)**: `next build` succeeded with clean prerendering across all routes.
+
+
 
 
 

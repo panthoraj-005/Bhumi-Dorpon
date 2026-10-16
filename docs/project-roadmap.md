@@ -143,8 +143,30 @@ The following features have been implemented and verified in the source code:
 
 | Milestone | Target Scope | Key Acceptance Criteria | Status |
 |---|---|---|---|
-| **M1: Interactive Demonstration** | Frontend UI, 5 modules, side-by-side maps, mock data layer. | All 5 hazards navigable; synchronized maps; 54 unit tests pass. | **Achieved** |
+| **M1: Interactive Demonstration** | Frontend UI, 5 modules, side-by-side maps, mock data layer, Google Earth integration. | All 5 hazards navigable; synchronized maps; 61 unit tests pass; Google Earth parcel KML export verified. | **Achieved** |
 | **M2: Localization & Accessibility** | Bengali UI toggle; WCAG 2.1 AA screen-reader audit. | 100% UI strings localized in Bengali; keyboard navigation certified. | Proposed |
 | **M3: Spatial Backend MVP** | FastAPI + PostGIS database; RESTful API endpoints. | Sub-500ms API response times for mouza and plot queries. | Proposed |
 | **M4: Automated EO Pipeline** | Automated Sentinel-1/2 flood and erosion vector extraction. | Automated weekly water-mask updates during monsoon season. | Proposed |
 | **M5: Pilot Field Trial** | Field testing with local Upazila Land Office surveyors. | Successful boundary reconstruction using 4-corner GPS readouts. | Proposed |
+
+---
+
+<!-- addendum:google-earth-and-hazard-store -->
+## 7. Addendum — Google Earth & Spatial Export Roadmap (Future Evolution)
+
+### 7.1 Evolution of Google Earth & 3D Visualization
+While the current implementation achieves immediate zero-cost 3D visualization via client-side KML download and Google Earth web camera redirection, the project roadmap identifies three evolutionary phases:
+1. **Whole-Owner Multi-Plot KMZ Archive:**
+   - Package all cadastral parcels owned by a citizen across a mouza into a single compressed `.kmz` archive.
+   - Include color-coded flood inundation depth layers (shallow, moderate, deep) and surveyed corner point Placemarks within a structured KML Folder hierarchy.
+2. **Hosted KML Streaming (Dynamic NetworkLinks):**
+   - Once a production backend is deployed, provide authenticated permalink endpoints (e.g., `https://api.bhumidorpon.gov.bd/kml/owners/{ownerId}.kml`).
+   - Allow Google Earth Desktop and mobile clients to maintain live `<NetworkLink>` connections that automatically refresh when flood waterlines shift.
+3. **In-App Photorealistic 3D Tiles (Google Maps Platform):**
+   - Integrate Google Maps Platform Photorealistic 3D Tiles / WebGL Maps JavaScript API (or CesiumJS) directly within the BhumiDorpon comparison viewport.
+   - Requires commercial Google Cloud API keys and enterprise billing; will eliminate the need to switch external browser tabs.
+
+### 7.2 Evolution of the Five-Hazard Information Store
+- **Current State:** Static, deterministic JSON files served via `/public/mocks/` and `mocks/`, ensuring rapid development, reproducibility, and zero backend maintenance.
+- **Production Transition:** Migration to PostgreSQL 16 + PostGIS spatial tables with Martin dynamic vector tile serving (`.pbf`) for sub-second retrieval of millions of nationwide parcels.
+

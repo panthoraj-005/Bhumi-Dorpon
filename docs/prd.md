@@ -304,3 +304,44 @@ The following capabilities are **explicitly out-of-scope** for the v1.1 demonstr
 3. **Deep Learning Prediction Engine:** Deploy spatiotemporal neural networks (ConvLSTM / U-Net) to generate verified 1-year riverbank retreat forecasts.
 4. **Government System Integration:** Connect to official land ministry registries (e-Mutation / e-Porcha) under strict institutional data-sharing agreements.
 5. **Bilingual Localization:** Add full Bengali language localization across all UI elements, maps, and reports.
+
+---
+
+<!-- addendum:google-earth-and-hazard-store -->
+## Addendum — Google Earth Parcel Outline & Five-Hazard Information Store
+
+### A. Feature — Open Parcel in Google Earth (Flood Owner Land Detail)
+On the Flood Owner Land Detail page, every parcel card now shows an **Open in Google Earth** button directly beneath its Four Corner Coordinates table. One click (1) builds a KML file of the parcel outline in the browser and downloads it, and (2) opens Google Earth (web) centered on the parcel in a new tab. Google Earth cannot load a polygon from a URL, so the outline appears after the user loads the downloaded KML (Earth web: **New → Open local KML file**; Earth Pro: double-click the file). A short on-page hint explains this.
+
+**Functional requirements**
+- **FR-GE-1:** Each parcel card on `/flood/[mouzaId]/[floodId]/owner/[ownerId]` shall show an **Open in Google Earth** button directly below the Four Corner Coordinates table.
+- **FR-GE-2:** Clicking the button shall download a `.kml` file containing the parcel's closed four-corner polygon and four numbered corner points, using the same coordinates that are displayed in the table.
+- **FR-GE-3:** Clicking the button shall open Google Earth (web) in a new tab centered on the parcel at a zoom level that frames the whole parcel.
+- **FR-GE-4:** The page shall tell the user how to draw the outline (**New → Open local KML file**, or double-click in Earth Pro) for about 12 seconds after the click.
+- **FR-GE-5:** The button shall not select or zoom the parcel card (event propagation stopped).
+- **FR-GE-6:** The KML description shall state that BhumiDorpon data is mock / synthetic and not a legal survey.
+- **FR-GE-7:** No backend, database, API key, analytics, or new dependency is introduced.
+
+**Acceptance criteria**
+- Every parcel card shows the button; the downloaded KML opens in Google Earth and the outline matches the four displayed corners.
+- Dag No., Khatian No., and owner name appear in the KML placemark description.
+- `npm run lint` and `npm test` pass; no existing feature changes.
+
+### B. Topic — Five-Hazard Information Store
+All information for the five hazard categories (river erosion, flood, landslide, char formation/erosion, coastal erosion/land formation) is saved as static, deterministic, mock/synthetic JSON files. There is no backend or database. Each hazard has one flat JSON file, a set of per-area map packages and, for landslides, terrain rasters. The same files are written to `mocks/` (server and tests) and `public/mocks/` (browser), and every read goes through `loadMockJson()` in `lib/data.ts`.
+
+**Requirements**
+- **FR-HS-1:** The five hazards shall each have their own dataset, so a module never shows another hazard's records.
+- **FR-HS-2:** All hazard information shall be loadable through the single data layer (`lib/data.ts`); UI components shall not read JSON files directly.
+- **FR-HS-3:** Data shall be reproducible with `npm run generate:mocks` and labelled mock / synthetic wherever it is displayed.
+- **FR-HS-4:** Four-corner parcel coordinates stored with the hazard data are the single source for the table, copy buttons, CSV, GeoJSON, and the Google Earth KML.
+
+| Store | Location | Content | Read by |
+|---|---|---|---|
+| Runtime copy (browser) | `public/mocks/*.json`, served at `/mocks/*` | Flat per-hazard files: `river_erosion.json`, `flood.json`, `landslide.json`, `char.json`, `coastal.json`, plus `common.json`, `chars.json`, `hills.json`, `rivers.json`, `districts.json`, `upazilas.json`, `mouzas.json`, `owners.json`, `plots.json`, `summary.json`, `areas_index.json` | `loadMockJson()` in `lib/data.ts` (client `fetch('/mocks/<file>')`) |
+| Source copy (Node / tests) | `mocks/*.json` | Same flat files | `loadMockJson()` on the server side (`fs.readFileSync` from `mocks/`) and Vitest |
+| Per-area map packages | `mocks/areas/<hazard>/area_*.json` and `public/mocks/areas/<hazard>/area_*.json` | One package per map area: `areaId`, `hazard`, `mode`, `bounds`, `basemap`, `mouzas`, `hazardLayers`, `context`, `owners` (river_erosion 7, flood 6, landslide 6, char 5, coastal 6) | `lib/data.ts` via `areas_index.json` (maps a hazard / mode / mouza key to an `area_*` file) |
+| Landslide terrain rasters | `public/mocks/rasters/<area>/`, `public/mocks/hillshades/` | `elevation_before/after.png`, `hillshade_*.png`, `slope_before.png`, `elevation_change.png`, `contours.geojson`, `spot_heights.json` | Landslide map layers |
+| Reserved per-mouza hazard results | `mocks/hazards/<hazard>.json`, `mocks/common/*.json` | Larger per-mouza keyed result sets and a copy of the shared reference tables | Present in `mocks/` only; **not read by the current runtime loader** |
+| Generator | `scripts/generate-mocks.ts`, `scripts/generate-map-areas.ts` | Deterministic, seeded generation; writes to both `mocks/` and `public/mocks/` | `npm run generate:mocks` |
+
