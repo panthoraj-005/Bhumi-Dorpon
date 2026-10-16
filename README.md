@@ -72,7 +72,8 @@ Open [http://localhost:3000](http://localhost:3000) in your web browser.
 - [20. Credits and Acknowledgements](#20-credits-and-acknowledgements)
 - [21. License](#21-license)
 - [22. Repository and Demo Links](#22-repository-and-demo-links)
-- [23. Project Update History](#23-project-update-history)
+- [23. Google Earth Parcel Outline Feature](#23-google-earth-parcel-outline-feature)
+- [24. Project Update History](#24-project-update-history)
 
 ---
 
@@ -336,7 +337,7 @@ To maintain rigorous technical and scientific honesty, the role of Deep Learning
 | **UI Primitives** | Radix UI | Various | Accessible, unstyled UI primitives (Dialog, Dropdown, Popover, Slider, Tabs, Tooltip). |
 | **Icons** | Lucide React | `^0.447.0` | Clean, accessible vector icons for navigation and status indicators. |
 | **Charts** | Recharts | `^2.12.7` | Accessible SVG data visualizations for national hazard trends and compensation breakdowns. |
-| **Testing** | Vitest | `^4.1.11` | Fast, modern unit test runner executing 9 comprehensive test suites (54 tests). |
+| **Testing** | Vitest | `^4.1.11` | Fast, modern unit test runner executing 10 comprehensive test suites (61 tests). |
 | **E2E Testing** | Playwright | Configured | Headless browser testing framework for end-to-end user flow verification. |
 
 ---
@@ -538,7 +539,7 @@ In compliance with the LandTech Innovation Hackathon Rule Book, the following AI
 ## 15. Testing and Verification
 
 ### 15.1 Automated Test Suite (Vitest)
-BhumiDorpon includes an extensive automated unit test suite implemented with **Vitest**. All 9 test suites and 54 individual unit tests pass cleanly:
+BhumiDorpon includes an extensive automated unit test suite implemented with **Vitest**. All 10 test suites and 61 individual unit tests pass cleanly:
 
 ```bash
 npm test
@@ -574,9 +575,13 @@ npm test
      • Verifies exact mathematical land unit conversions and compensation math
  ✓ tests/map_comparison_side_by_side.test.ts (3 tests)
      • Verifies dual map synchronization event guards
+ ✓ tests/google_earth_kml.test.ts (7 tests)
+     • Verifies KML 2.2 coordinate formatting, closed ring polygon, and XML escaping
+     • Verifies four corner point placemarks and Google Earth web camera URL generation
+     • Verifies strict client-side privacy, sanitized filenames, and mock parcel validation
 
- Test Files  9 passed (9)
-      Tests  54 passed (54)
+ Test Files  10 passed (10)
+      Tests  61 passed (61)
 ```
 
 ### 15.3 Verified Land Unit Conversion Ratios
@@ -797,40 +802,45 @@ All rights to the source code, design assets, and documentation are reserved by 
 
 ---
 
-## 23. Project Update History
+## 23. Google Earth Parcel Outline Feature
 
-In accordance with the LandTech Innovation Hackathon Rule Book requirements for documenting project improvements after Round 1:
-
-| Milestone / Version | Date | Key Enhancements & Modifications |
-|---|---|---|
-| **Initial Submission** | Oct 2026 | Initial prototype establishing the 5 hazard modules, basic side-by-side map comparison, and mock data models. |
-| **Documentation Suite Update** | Oct 2026 | Added comprehensive 25-file technical specification suite in `/docs` (PRD, TRD, System Architecture, Security, QA, Design System, API Documentation, Database Schema, Roadmap, and Map Specifications). |
-| **Settings & Team Attribution** | Oct 2026 | Implemented dedicated Settings Hub (`/settings`) with verified **About Project** (`/settings/about`) and **Team Information** (`/settings/team`) views. |
-| **Light GIS Basemap & Chrome Upgrade** | Oct 2026 | Introduced custom Light-Themed GIS Basemap, graticules, locator insets, coordinate readouts, mouza loss/gain badges, and MouzaSummaryPanels across river erosion, char, and coastal maps. |
-| **Cadastral 4-Corner Boundary Readout** | Oct 2026 | Standardized all cadastral plots into 4-corner polygons with 6-decimal GPS coordinate readouts (NW, NE, SE, SW), clipboard copying, and dedicated Owner Land Detail pages. |
-| **Rule 5 Forecast Guardrails & AI Disclosures** | Oct 2026 | Implemented strict suppression of financial disbursement metrics on predictive forecast views and added transparent AI tool disclosures. |
-| **GeoAI Forecast Mode & Rule 5 Guardrails** | Oct 2026 | Introduced GeoAI Forecast Mode as a concept demo for 1-year predictive hazard envelopes with cadastral plot intersections; implemented strict suppression of financial compensation metrics in forecast mode (Rule 5 compliance); added transparent disclosures that all forecasts are deterministic pre-computed mock datasets generated via `scripts/generate-mocks.ts` and `scripts/generate-map-areas.ts` rather than live neural network outputs. |
-| **Google Earth Parcel Outline & Five-Hazard Store** | Oct 2026 | Added full-width "Open in Google Earth" button on Flood Owner Land Detail pages to download parcel KML and open Google Earth web centered on the parcel with an import hint; documented the deterministic Five-Hazard Information Store architecture (`public/mocks/` and `mocks/`). |
-
----
-
-<!-- addendum:google-earth-and-hazard-store -->
-## 24. Addendum — Google Earth Parcel Outline & Five-Hazard Information Store
-
-### A. Google Earth Parcel Outline Integration (Flood Owner Land Detail)
+### 23.1 Google Earth Parcel Outline Integration (Flood Owner Land Detail)
 - **Feature:** On `/flood/[mouzaId]/[floodId]/owner/[ownerId]`, directly below the Four Corner Coordinates table, an **Open in Google Earth** button (Globe icon) allows landowners and relief officers to export parcel boundaries to 3D satellite visualization.
 - **Workflow:** One click (1) synchronously opens Google Earth (web) in a new tab centered on the parcel (`https://earth.google.com/web/@<lat>,<lon>,0a,<range>d,35y,0h,0t,0r`), (2) triggers browser download of `<floodId>_dag_<dagNo>_outline.kml`, and (3) displays an on-screen status hint for ~12 seconds: *"In Google Earth choose New → Open local KML file and select the downloaded file to display the parcel outline (Earth Pro: double-click the file)"*.
 - **KML Contents:** KML 2.2 format containing a single `Polygon` (`clampToGround`, closed 5-point ring with coordinates written `lon,lat,0`), orange outline (`ff0088ff`) with translucent fill (`440088ff`), four numbered corner `Point` Placemarks (`1 (NW)`, `2 (NE)`, `3 (SE)`, `4 (SW)`), and comprehensive metadata (owner name, mouza name, Dag No., Khatian No., land class, area in decimal, flood status) alongside the mandatory disclaimer: *"BhumiDorpon demo (mock / synthetic data, not a legal survey)"*.
 - **Zero Backend / Strict Privacy:** Pure client-side generation (`lib/googleEarth.ts`); no backend, database, external API key, or analytics. Only the bounding-box center and camera range pass via the public Earth URL; landowner names, deeds, and geometry remain strictly local to the user's device.
 - **Tested & Verified:** Comprehensive unit test suite (`tests/google_earth_kml.test.ts`, 7 tests) verifying coordinate formatting, ring closure, XML escaping, non-4-corner rejection, camera math, sanitized filenames, and validation across real mock parcels.
 
-### B. Five-Hazard Information Store Architecture
+### 23.2 Five-Hazard Information Store Architecture
 All data for the five hazard categories (river erosion, flood, landslide, char formation/erosion, and coastal erosion/land formation) is saved as static, deterministic, mock/synthetic JSON files without any database:
 1. **Runtime Store (`public/mocks/*.json`):** Served at `/mocks/*` and fetched by client browser components through `loadMockJson()` in `lib/data.ts`. Flat hazard datasets: `river_erosion.json`, `flood.json`, `landslide.json`, `char.json`, `coastal.json`, plus administrative indices and summary stats.
 2. **Server / Test Store (`mocks/*.json`):** Mirrored copy read synchronously via `fs.readFileSync` in Node.js and Vitest test environments.
 3. **Per-Area Map Packages (`mocks/areas/<hazard>/` & `public/mocks/areas/<hazard>/`):** Modular spatial packages (`areaId`, `bounds`, `basemap`, `hazardLayers`, `context`) resolved via `areas_index.json`.
 4. **Terrain Rasters (`public/mocks/rasters/`, `public/mocks/hillshades/`):** DEM slope and elevation assets for landslide terrain modeling.
 5. **Single Source of Truth:** Four-corner parcel coordinates stored in this relational JSON model serve as the single source for the cadastral table, copy buttons, CSV export, GeoJSON download, and Google Earth KML outlines.
+
+---
+
+## 24. Project Update History
+
+In accordance with the LandTech Innovation Hackathon Rule Book requirements for documenting project improvements after Round 1:
+
+| Milestone / Version | Date | Key Enhancements & Modifications |
+|---|---|---|
+| **Initial Submission** | Oct 2026 | Initial prototype establishing the 5 core hazard modules (River Erosion, Flood, Landslide, Char Formation, Coastal Erosion), baseline side-by-side Before/After map comparison, and preliminary mock data models. |
+| **Data Architecture Refactoring & Deterministic Mock Engine** | Oct 2026 | Rebuilt core data architecture with deterministic mock generator (`scripts/generate-mocks.ts`), resolving empty cascading dropdowns and producing synchronized relational JSON stores across administrative hierarchies (Division, District, Upazila, Mouza) in `public/mocks/` and `mocks/`. |
+| **SelectorChain Cascading & Rule 5 Forecast Guardrails** | Oct 2026 | Refactored `SelectorChain` cascading dropdown hierarchy (`lib/data.ts`); implemented strict compliance with Rule 5 by suppressing all financial disbursement metrics (paid, approved, pending) on predictive forecast views, retaining only projected compensation metrics (`tests/step3_and_step4.test.ts`). |
+| **Flood Multi-Owner Flow & Landslide Terrain Overhaul** | Oct 2026 | Implemented flood event views with individual landowner plot color-coding and search by owner name / Dag number (`tests/step5_flood_flow.test.ts`); built landslide terrain engine with togglable elevation tints, hillshade rasters, index contour labels, and slope change metrics (`components/map/LandslideMap.tsx`). |
+| **Cadastral 4-Corner Boundary Readout & Owner Detail Page** | Oct 2026 | Standardized all cadastral parcels into strict 4-corner quadrilaterals with fixed NW, NE, SE, SW vertex ordering and 6-decimal GPS coordinate readouts (`tests/four_corners_geometry.test.ts`); launched dedicated Flood Owner Land Detail route (`/flood/[mouzaId]/[floodId]/owner/[ownerId]`) with one-click clipboard copying and centroid suppression. |
+| **Leaflet Migration & Offline Cartography (Zero External Tiles)** | Oct 2026 | Removed all external tile server dependencies and MapLibre/Mapbox imports in full adherence to hackathon competition rules; migrated the complete mapping engine across all hazard views and previews to pure Leaflet with client-rendered SVG vector geometry (`components/map/`). |
+| **Light-Themed GIS Basemap & Cartographic Chrome Upgrade** | Oct 2026 | Engineered custom high-contrast Light GIS basemap (`components/map/basemap/`), cartographic map chrome (graticules, dynamic scale bar, north arrow, locator inset mini-map in `components/map/chrome/`), mouza loss/gain badges, and `MouzaSummaryPanel` for river erosion, char, and coastal maps (`tests/change3_part1_gis_basemap.test.ts`). |
+| **Side-by-Side Dual Map Viewer, Dedicated Zoom & Basemap Switcher** | Oct 2026 | Upgraded Before/After comparison to simultaneous dual-panel synchronized layout (`components/map/HazardMapContainer.tsx`); introduced dedicated in-map zoom controls (+/-) and an interactive basemap switcher (Light GIS vs. Satellite Remote Sensing) (`tests/map_comparison_side_by_side.test.ts`). |
+| **Geographic Extent Bounds & Instant Dual-Zoom Synchronicity** | Oct 2026 | Configured regional bounding boxes per hazard (Kazipur, Sunamganj, Cox's Bazar, Bhashan Char, Kuakata in `tests/map_fixes.test.ts`); aligned geographic coordinate systems and implemented single-click simultaneous dual-map zoom synchronicity with active re-entrancy locks (`components/map/GisMapCompare.tsx`). |
+| **Settings Navigation Hub & Verified Team Attribution** | Oct 2026 | Added dedicated Settings Hub (`/settings`) featuring verified **About Project** (`/settings/about`) detailing project capabilities and mock disclosures, and **Team Information** (`/settings/team`) displaying official team attribution (Team GeoNeural: Pantho Raj Biswas, Puja Paul) (`tests/settings_information.test.ts`). |
+| **Comprehensive 25-File Technical Documentation Suite** | Oct 2026 | Published exhaustive 25-file engineering and specification suite in `/docs` (PRD, TRD, System Architecture, Database Schema, Security Specification, QA Testing Documentation, UI/UX Design System, API Documentation, and Roadmap). |
+| **GeoAI Forecast Highlighting & Technical Readme Enhancement** | Oct 2026 | Enhanced README with comprehensive GeoAI 1-year predictive forecast hazard envelope highlight, operational troubleshooting guide, and transparent disclosures that all predictive data is pre-computed mock/synthetic datasets generated via scripts rather than live neural network outputs. |
+| **Google Earth Parcel Outline Feature & Five-Hazard Information Store** | Oct 2026 | Implemented full-width "Open in Google Earth" button on Flood Owner Land Detail pages (`app/flood/[mouzaId]/[floodId]/owner/[ownerId]/page.tsx`) with pure client-side KML 2.2 serializer (`lib/googleEarth.ts`), synchronous Google Earth web launch, KML file download, on-screen guidance hint, and 7 automated tests (`tests/google_earth_kml.test.ts`, bringing suite to 61/61 passing tests); documented the deterministic Five-Hazard Information Store architecture. |
+| **Documentation Alignment & History Synchronization** | Oct 2026 | Re-audited and updated complete 14-milestone project update history in `README.md` and `docs/CHANGE_LOG.md`; synchronized test counts across documentation to 10 test suites (61/61 passing unit tests); ensured Section 24 is terminal section with valid anchor links. |
 
 ---
 
