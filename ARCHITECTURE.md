@@ -25,7 +25,7 @@ Use the existing repository structure rather than generating a replacement:
 - `lib/`: data access, selection, units, formatting, types, and map configuration as already present.
 - `mocks/`: generated JSON/GeoJSON and raster/image assets.
 - `scripts/`: deterministic mock generator.
-- `docs/`: PRD, TRD, APP_FLOW, DESIGN, BACKEND_SCHEMA, ARCHITECTURE, MAP_SPEC, build rules, and change log.
+- `docs/`: Exactly 12 consolidated specifications (`PRD.md`, `TRD.md`, `APP_FLOW.md`, `ARCHITECTURE.md`, `DATABASE_SCHEMA.md`, `API_DOCUMENTATION.md`, `UI_UX_DESIGN_SYSTEM.md`, `AUTH_SPECIFICATION.md`, `TESTING_QA.md`, `SECURITY_SPECIFICATION.md`, `PROJECT_ROADMAP.md`, `MAIN_PROJECT_DOCUMENTATION.md`).
 
 The exact file list is not verified because source code was not included with the documentation.
 
