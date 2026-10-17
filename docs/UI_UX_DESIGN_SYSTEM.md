@@ -9,7 +9,7 @@
 > **Primary Accent:** Cyber Lime (`#D4F239`) with Deep Ink (`#1A1A1A`)  
 > **Team:** GeoNeural  
 > **Last Updated:** October 2026  
-> **Cross-References:** [Main Documentation](MAIN_PROJECT_DOCUMENTATION.md) | [PRD](PRD.md) | [TRD](TRD.md) | [App Flow & User Flow](APP_FLOW.md) | [System Architecture](ARCHITECTURE.md) | [Database Schema](DATABASE_SCHEMA.md) | [Testing & QA](TESTING_QA.md)
+> **Cross-References:** [Main Documentation](MAIN_PROJECT_DOCUMENTATION.md) | [PRD](PRD.md) | [TRD](TRD.md) | [App Flow & User Flow](APP_FLOW.md) | [System Architecture](ARCHITECTURE.md) | [Database Schema](DATABASE_SCHEMA.md)
 
 ---
 
@@ -31,11 +31,10 @@
   - [6.1 5-Level Cascading Search Form](#61-5-level-cascading-search-form)
   - [6.2 6-Section Structured Cadastral Report Cards](#62-6-section-structured-cadastral-report-cards)
   - [6.3 Disaster Change & Deep-Learning Risk Section Design](#63-disaster-change--deep-learning-risk-section-design)
-- [7. Landslide Mountain & Historical Event Selector (MountainEventSelector.tsx)](#7-landslide-mountain--historical-event-selector-mountaineventselectortsx)
+- [7. Landslide Mountain & Historical Event Selector (SelectorChain.tsx)](#7-landslide-mountain--historical-event-selector-selectorchaintsx)
 - [8. Top-Level "Explore Disasters" Scroll Button](#8-top-level-explore-disasters-scroll-button)
 - [9. Data Transparency & Rule 5 Visual Suppression](#9-data-transparency--rule-5-visual-suppression)
-- [10. Micro-Animations, Skeletons, and Interactive Feedback](#10-micro-animations-skeletons-and-interactive-feedback)
-- [11. Responsive Breakpoints & Mobile Adaptation](#11-responsive-breakpoints--mobile-adaptation)
+- [10. Responsive Breakpoints & Mobile Adaptation](#10-responsive-breakpoints--mobile-adaptation)
 
 ---
 
@@ -100,6 +99,7 @@ font-family: var(--font-space-grotesk), var(--font-inter), 'Noto Sans Bengali', 
 - **Section Titles:** `text-sm sm:text-base` ($14\text{px} - 16\text{px}$, font-bold).
 - **Body Text:** `text-xs sm:text-sm` ($12\text{px} - 14\text{px}$, leading-relaxed).
 - **Micro Labels & Captions:** `text-[10px] sm:text-[11px]` ($10\text{px} - 11\text{px}$, tabular-nums).
+- **Bangla Heading Line-Height:** Bangla page titles use a taller line-height (e.g., `leading-[1.35]`) so Bengali glyphs and the subtitle never overlap when a title wraps to two lines.
 
 ---
 
@@ -115,6 +115,7 @@ font-family: var(--font-space-grotesk), var(--font-inter), 'Noto Sans Bengali', 
   5. **Period Dropdown:** 1y, 3y, 5y, All time with localized labels.
   6. **Unit Segmented Control:** Decimal, Acre, Hectare.
   7. **User Profile Badge:** Displays "ডেমো ব্যবহারকারী" or authenticated user name with Sign Out popover.
+- **Toolbar Wrapping Rule:** On `md` and wider the toolbar is right-aligned. When controls overflow, the second row (e.g., `৳ (BDT)` badge and period dropdown) stays right-aligned directly under the বাংলা | English toggle with the same gap as the first row. Mobile keeps the left-aligned wrapping.
 
 ### 4.2 Fixed 72px Sidebar (`AppSidebar.tsx`)
 - Fixed left positioning with $72\text{px}$ width.
@@ -162,12 +163,14 @@ Structured 3-column responsive grid featuring:
 
 ---
 
-## 7. Landslide Mountain & Historical Event Selector (`MountainEventSelector.tsx`)
+## 7. Landslide Mountain & Historical Event Selector (`SelectorChain.tsx`)
 
-- Two-step responsive grid:
-  - **Dropdown 1 (Mountain):** Mountain name, slope gradient ($^\circ$), and risk level.
-  - **Dropdown 2 (Event):** Populates automatically upon mountain selection, displaying event year and name.
-- Event Details Card: Displays date, location, affected slope area, displaced debris volume ($m^3$), 24h rainfall (mm), and downslope homesteads count.
+- Four-step cascading chain in the standard combobox style (`h-11`, rounded input, bordered, searchable popover): **① District → ② Upazila → ③ Hill → ④ Landslide Event**. The breadcrumb reads "এলাকা নির্বাচন (জেলা > উপজেলা > পাহাড় > ঘটনা)".
+- **Event box (④):** label *ভূমিধসের ঘটনা* / *Landslide Event*, placeholder *ঘটনা নির্বাচন করুন* / *Select Event*. Each option shows the event name (semibold) with the date as a muted sublabel on a second line, newest first. The newest event is pre-selected.
+- Disabled until a hill is chosen. If the hill has no events it stays disabled with the muted honest text *"এই পাহাড়ে কোনো ভূমিধসের ঘটনা রেকর্ড নেই"*.
+- Layout: four equal-width boxes in one row where space allows; two per row on tablet; one per row on mobile.
+- Event Details Card: Displays date, location, affected slope area, displaced debris volume ($m^3$), 24h rainfall (mm), and downslope homesteads count for the selected event.
+- The former separate two-dropdown card is removed from the detail page to avoid duplicate District/Hill controls.
 
 ---
 
@@ -190,3 +193,23 @@ Structured 3-column responsive grid featuring:
 - **Desktop ($> 1280\text{px}$):** 12-column layout, side-by-side synchronized maps, 5-column search form.
 - **Tablet ($768\text{px} - 1279\text{px}$):** 2-column report cards, stacked dual maps, 2-column search form.
 - **Mobile ($< 768\text{px}$):** 1-column stacked cards, vertically stacked maps, touch-optimized button targets ($\ge 44\text{px}$).
+- **Header Toolbar:** right-aligned with a right-aligned overflow row on tablet and desktop; left-aligned wrapping on mobile.
+- **Bangla Tables:** Same layout and column widths as English; longer Bangla labels must not clip or cause horizontal overflow; digits are Bengali; no Latin words except allowed acronyms.
+
+---
+
+## Addendum v1.3 — Seven Primary Land Information Cards
+
+Keep the existing visual system, responsive behavior, colors, typography and status badges. Update the report area to display these seven primary cards in this exact order:
+1. **জমির পরিচয় ও পরিমাণ** — area, location, land class, coordinates and physical status.
+2. **মালিকানা সংক্রান্ত তথ্য** — owner and available ownership details.
+3. **বিক্রি ও হস্তান্তর সংক্রান্ত তথ্য** — sale/listing and available transfer details.
+4. **আইনি তথ্য** — disputes, cases and injunction information.
+5. **ভূমি উন্নয়ন কর** — assessment, payment and receipt details.
+6. **নিবন্ধন ও ভূমির ইতিহাস** — deed, mutation, registration office/year and land-use history.
+7. **এই জমি বন্ধক রেখে ব্যাংক ঋণ নেওয়ার তথ্য** — recorded mortgage/loan charge, bank name, masked reference, record/status/release dates, source and verification badge where available.
+
+Use a bank/building or shield icon consistent with the existing icon set for card 7. On desktop, retain the existing 3-column responsive card grid; let the seventh card wrap naturally. On narrow screens, stack cards without horizontal overflow. Keep all labels and table values bilingual through the central translation dictionary. Provide clear empty/unavailable states and do not display a green “no loan” result unless the underlying data actually verifies it.
+
+After these seven cards, show the existing disaster-change history, deep-learning risk predictions, submerged-parcel notice and other supplementary information in their current style.
+

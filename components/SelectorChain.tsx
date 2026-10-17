@@ -20,8 +20,16 @@ import {
   getLocalizedHillName,
   DISTRICTS_BN,
 } from "@/lib/translations";
+import { getLandslideEventById, LANDSLIDE_EVENTS } from "@/lib/landslideEvents";
 
-function getLocalizedOptionText(stepName: string, label: string, language: Language): string {
+function getLocalizedOptionText(stepName: string, label: string, language: Language, optionId?: string): string {
+  if (stepName === "event") {
+    const ev = optionId
+      ? getLandslideEventById(optionId)
+      : LANDSLIDE_EVENTS.find((e) => e.eventNameEn === label || e.eventNameBn === label || e.id === label);
+    if (ev) return language === "bn" ? ev.eventNameBn : ev.eventNameEn;
+    return label;
+  }
   if (language !== "bn" || !label) return label;
   switch (stepName) {
     case "district":
@@ -95,6 +103,7 @@ export function getStepsForHazard(hazard: HazardType, language: Language = "bn")
         { key: "d", stepName: "district", label: isBn ? "জেলা" : "District", placeholder: isBn ? "জেলা নির্বাচন করুন" : "Select District" },
         { key: "u", stepName: "upazila", label: isBn ? "উপজেলা" : "Upazila", placeholder: isBn ? "উপজেলা নির্বাচন করুন" : "Select Upazila" },
         { key: "h", stepName: "hill", label: isBn ? "পাহাড়" : "Hill Feature", placeholder: isBn ? "পাহাড় নির্বাচন করুন" : "Select Hill Slope" },
+        { key: "ev", stepName: "event", label: isBn ? "ভূমিধসের ঘটনা" : "Landslide Event", placeholder: isBn ? "ঘটনা নির্বাচন করুন" : "Select Event" },
       ];
     case "char":
       return [
@@ -131,13 +140,18 @@ export function SelectorChain({
   const steps = getStepsForHazard(hazard, language);
   const [openStep, setOpenStep] = useState<StepKey | null>(null);
 
+  const getBreadcrumbLabel = (s: SelectorChainStepDef) => {
+    if (s.key === "ev") return language === "bn" ? "ঘটনা" : "Event";
+    return s.label;
+  };
+
   return (
     <div className={cn("bhumidorpon-card p-4 sm:p-5 flex flex-col gap-3 relative", className)}>
       <div className="flex items-center justify-between gap-2 border-b border-border/60 pb-2.5">
         <div className="text-xs font-semibold text-secondary flex items-center gap-2">
           <span>{language === "bn" ? "এলাকা নির্বাচন" : "Location Selector"}</span>
           <span className="text-[11px] text-muted font-normal">
-            ({steps.map((s) => s.label).join(" > ")})
+            ({steps.map(getBreadcrumbLabel).join(" > ")})
           </span>
         </div>
         {onReset && (
@@ -220,6 +234,8 @@ function SelectorStepCombobox({
         r: selection.r,
         h: selection.h,
         m: selection.m,
+        year: selection.year,
+        ev: selection.ev,
       },
     ],
     queryFn: () =>
@@ -230,11 +246,14 @@ function SelectorStepCombobox({
         h: selection.h || "",
         m: selection.m || "",
         year: selection.year || "",
+        ev: selection.ev || "",
       }),
     enabled: isEnabled,
   });
 
   const selectedOption = options.find((opt) => opt.id === selectedValue);
+  const isNoEventsState = isEnabled && step.stepName === "event" && !isLoading && options.length === 0;
+  const isButtonDisabled = !isEnabled || isNoEventsState;
 
   return (
     <div className="flex-1 min-w-[170px] space-y-1">
@@ -245,14 +264,14 @@ function SelectorStepCombobox({
         <span>{step.label}</span>
       </label>
 
-      <Popover.Root open={isOpen && isEnabled} onOpenChange={onOpenChange}>
+      <Popover.Root open={isOpen && isEnabled && !isNoEventsState} onOpenChange={onOpenChange}>
         <Popover.Trigger asChild>
           <button
             type="button"
-            disabled={!isEnabled}
+            disabled={isButtonDisabled}
             className={cn(
               "w-full h-11 px-3.5 rounded-input flex items-center justify-between text-left text-sm transition-all border",
-              !isEnabled
+              isButtonDisabled
                 ? "bg-[#F4F5EE] border-[#E8EBDD] text-muted/60 cursor-not-allowed opacity-60"
                 : isOpen
                 ? "bg-surface border-ink ring-2 ring-ink/10 text-ink shadow-sm"
@@ -276,7 +295,7 @@ function SelectorStepCombobox({
                     ●
                   </span>
                   <span className="font-semibold text-ink truncate">
-                    {getLocalizedOptionText(step.stepName, selectedOption.label, language)}
+                    {getLocalizedOptionText(step.stepName, selectedOption.label, language, selectedOption.id)}
                   </span>
                 </div>
               ) : (
@@ -285,6 +304,10 @@ function SelectorStepCombobox({
                     ? language === "bn" ? "আগের ধাপটি নির্বাচন করুন" : "Select previous step first"
                     : isLoading
                     ? language === "bn" ? "লোড হচ্ছে..." : "Loading options..."
+                    : isNoEventsState
+                    ? language === "bn"
+                      ? "এই পাহাড়ে কোনো ভূমিধসের ঘটনা রেকর্ড নেই"
+                      : "No landslide events recorded for this hill"
                     : options.length === 0
                     ? language === "bn" ? "কোনো তথ্য পাওয়া যায়নি" : `No ${step.label.toLowerCase()} available`
                     : step.placeholder}
@@ -338,7 +361,7 @@ function SelectorStepCombobox({
                 {options.map((opt) => (
                   <Command.Item
                     key={opt.id}
-                    value={`${opt.label} ${getLocalizedOptionText(step.stepName, opt.label, language)} ${opt.sublabel || ""} ${opt.id}`}
+                    value={`${opt.label} ${getLocalizedOptionText(step.stepName, opt.label, language, opt.id)} ${opt.sublabel || ""} ${opt.id}`}
                     onSelect={() => {
                       onSelect(opt.id);
                       onOpenChange(false);
@@ -365,7 +388,7 @@ function SelectorStepCombobox({
                         ●
                       </span>
                       <div className="flex flex-col truncate">
-                        <span className="truncate">{getLocalizedOptionText(step.stepName, opt.label, language)}</span>
+                        <span className="truncate">{getLocalizedOptionText(step.stepName, opt.label, language, opt.id)}</span>
                         {opt.sublabel && (
                           <span className="text-[10px] text-muted truncate">
                             {getLocalizedOptionSublabel(opt.sublabel, language)}

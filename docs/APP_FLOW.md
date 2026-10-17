@@ -7,7 +7,7 @@
 > **System Version:** 1.2 (Enhanced Demonstration Release)  
 > **Team:** GeoNeural  
 > **Last Updated:** October 2026  
-> **Cross-References:** [Main Documentation](MAIN_PROJECT_DOCUMENTATION.md) | [PRD](PRD.md) | [TRD](TRD.md) | [System Architecture](ARCHITECTURE.md) | [Database Schema](DATABASE_SCHEMA.md) | [UI/UX Design System](UI_UX_DESIGN_SYSTEM.md) | [Authentication Specification](AUTH_SPECIFICATION.md) | [Testing & QA](TESTING_QA.md) | [Security Specification](SECURITY_SPECIFICATION.md)
+> **Cross-References:** [Main Documentation](MAIN_PROJECT_DOCUMENTATION.md) | [PRD](PRD.md) | [TRD](TRD.md) | [System Architecture](ARCHITECTURE.md) | [Database Schema](DATABASE_SCHEMA.md) | [UI/UX Design System](UI_UX_DESIGN_SYSTEM.md) | [Authentication Specification](AUTH_SPECIFICATION.md) | [Security Specification](SECURITY_SPECIFICATION.md)
 
 ---
 
@@ -24,9 +24,6 @@
   - [4.5 Screen S4: River Erosion Side-by-Side Comparison (/river-erosion)](#45-screen-s4-river-erosion-side-by-side-comparison-river-erosion)
   - [4.6 Screen S5: Flood Event Map & Multi-Owner Registry (/flood)](#46-screen-s5-flood-event-map--multi-owner-registry-flood)
   - [4.7 Screen S6: Flood Owner Land Detail & 4-Corner GPS Readout](#47-screen-s6-flood-owner-land-detail--4-corner-gps-readout)
-  - [4.8 Screen S7: Char Islands Accretion & State Khas Tracking (/char)](#48-screen-s7-char-islands-accretion--state-khas-tracking-char)
-  - [4.9 Screen S8: Coastal Shifts & Tidal Shoreline Retreat (/coastal)](#49-screen-s8-coastal-shifts--tidal-shoreline-retreat-coastal)
-  - [4.10 Screen S9: Platform Settings (About & Team)](#410-screen-s9-platform-settings-about--team)
 - [5. Global Bilingual Language Switching Flow](#5-global-bilingual-language-switching-flow)
 - [6. Top-Level "Explore Disasters" Scroll Navigation Flow](#6-top-level-explore-disasters-scroll-navigation-flow)
 - [7. Google Earth 3D Parcel KML Interaction Flow](#7-google-earth-3d-parcel-kml-interaction-flow)
@@ -92,6 +89,8 @@ graph TD
     Sidebar --> NavDev["UI Components (/dev/components)"]
     Sidebar --> NavSettings["Settings (/settings)"]
 ```
+
+**Header toolbar wrapping rule:** On tablet and desktop the toolbar is right-aligned. If the controls do not fit in one row, the remaining controls (e.g., `৳ (BDT)` badge and period dropdown) wrap to a second row that stays on the right, directly beneath the `বাংলা | English` toggle. On mobile the toolbar wraps left-aligned.
 
 ---
 
@@ -181,22 +180,31 @@ graph TD
 ```
 
 ### 4.4 Screen S3: Landslide Hazards with Mountain & Event Selector (`/landslide`)
-- **Two-Step Selector:**
-  1. User selects Mountain from Chittagong Hill Tracts catalog (e.g., *Ghagra Hill Corridor*, *Furamon Peak Ridge*, *Chimbuk Hill Crest*).
-  2. Event dropdown populates with corresponding historical events or forecast scenarios.
-  3. User selects event (e.g., *June 2024 Monsoonal Slope Rupture*).
+- **Four-Step Selector Chain:**
+  1. User selects a District (e.g., *Rangamati*) and an Upazila (e.g., *Kawkhali*).
+  2. User selects a Hill from the Chittagong Hill Tracts catalog (e.g., *Ghagra Hill Corridor*, *Furamon Peak Ridge*, *Chimbuk Hill Crest*).
+  3. The fourth box **"ভূমিধসের ঘটনা / Landslide Event"** activates and lists the landslides that occurred on that hill (Recorded) or the forecast scenarios (Forecast), newest first, each with name and date.
+  4. The newest event is pre-selected; the user may open the list and pick another one. The URL updates to `?d=…&u=…&h=…&ev=…`.
 - **Dynamic Interface Update:**
-  - Title and event date update instantly.
+  - Title, breadcrumb and event date update instantly.
   - Displaced debris volume ($43,200\text{ m}^3$) and slope gradient ($42^\circ$) update.
   - Rainfall saturation threshold (mm/24h) and early warning casualties avoided count update.
   - Topographic contours, failure scar, debris runout zone, and downslope homestead table update synchronously.
+- **Dependency Rules:** Changing District, Upazila or Hill clears the event and re-selects the newest event of the new hill. "Reset to pilot cluster" returns to the default area and its newest event.
+- **Empty State:** If the hill has no events, the event box is disabled and reads *"এই পাহাড়ে কোনো ভূমিধসের ঘটনা রেকর্ড নেই"*; the hill result still loads.
+- **Single Selector:** The page has one selector chain only; the former separate Mountain/Event card is removed.
 
 ```mermaid
 graph TD
-    LandslideScreen["Open Landslide Hazard Screen (/landslide/recorded)"] --> MountainStep["Step 1: Select Mountain (e.g. 'Ghagra Hill Corridor')"]
-    MountainStep --> LoadEvents["Load Associated Historical/Forecast Events"]
-    LoadEvents --> EventStep["Step 2: Select Event (e.g. 'June 2024 Monsoonal Slope Rupture')"]
-    EventStep --> UpdateInterface["Update UI Synchronously:"]
+    LandslideScreen["Open Landslide Hazard Screen (/landslide/recorded)"] --> DistrictStep["Step 1: Select District (e.g. 'Rangamati')"]
+    DistrictStep --> UpazilaStep["Step 2: Select Upazila (e.g. 'Kawkhali')"]
+    UpazilaStep --> HillStep["Step 3: Select Hill (e.g. 'Ghagra Hill Corridor')"]
+    HillStep --> LoadEvents["Load Events for Hill and Mode (getEventsForMountain)"]
+    LoadEvents --> HasEvents{"Events Found?"}
+    HasEvents -->|No| EmptyEvent["Event Box Disabled: No landslide events recorded for this hill"]
+    HasEvents -->|Yes| EventStep["Step 4: Select Event (newest pre-selected, e.g. 'June 2024 Monsoonal Slope Rupture')"]
+    EventStep --> UpdateUrl["Write ev to URL (?d&u&h&ev)"]
+    UpdateUrl --> UpdateInterface["Update UI Synchronously:"]
     
     UpdateInterface --> StatCards["Debris Volume (43,200 m³), Slope Angle (42°), Rainfall (310mm)"]
     UpdateInterface --> TopoMap["Topographic Elevation Contours & Rupture Scarp"]
@@ -232,7 +240,10 @@ graph TD
     
     ReactReRender --> NumeralConvert["Format Numbers with formatNumberLocalized (e.g. 101 -> ১০১)"]
     ReactReRender --> KeepState["Preserve Map Bounds, Zoom, Cascading Selectors & Active Search"]
+    ReactReRender --> TableLocalize["Localize Every Table Header, Cell, Badge, Tooltip & aria-label (names, statuses, risk zones, dates)"]
 ```
+
+In Bangla mode no table or data-derived label shows English text, apart from agreed acronyms and units (GIS, InSAR, KML, GeoJSON, CSV, BDT, m, mm, km). Switching back to English restores the original text.
 
 ---
 
@@ -263,3 +274,21 @@ graph TD
 - **Missing Required Search Fields:** Displays inline error alert *"অনুগ্রহ করে অন্তত জেলা ও উপজেলা নির্বাচন করুন"*.
 - **Landslide Feature Out-of-Bounds:** Displays informative empty state *"No historical landslide recorded on this slope"* with reset to pilot cluster.
 - **Data Network Error:** Displays error boundary with friendly message and "Try again" retry button.
+
+---
+
+## Addendum v1.3 — Updated Land Information Results Flow
+
+After the user submits the existing five-field land search, show the primary report cards in this exact order:
+1. জমির পরিচয় ও পরিমাণ
+2. মালিকানা সংক্রান্ত তথ্য
+3. বিক্রি ও হস্তান্তর সংক্রান্ত তথ্য
+4. আইনি তথ্য
+5. ভূমি উন্নয়ন কর
+6. নিবন্ধন ও ভূমির ইতিহাস
+7. এই জমি বন্ধক রেখে ব্যাংক ঋণ নেওয়ার তথ্য
+
+The seventh card should show, where available, whether a mortgage/loan charge is recorded against this parcel, bank name, masked loan/mortgage reference, record date, status, release date, source and verification badge. If data is missing, show a clear unavailable/external-connection state instead of assuming that no loan exists.
+
+Below all seven cards, continue to show the existing disaster-change history, future hazard-risk estimates, submerged-land notice, maps and other supplementary information. Do not remove or silently relocate these into the seven primary cards. Search criteria and route remain unchanged.
+

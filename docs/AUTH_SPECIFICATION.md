@@ -9,7 +9,7 @@
 > **Target Production Model:** Role-Based Access Control (RBAC) with Government SSO Integration (NextAuth.js v5 / DLR&S OIDC)  
 > **Team:** GeoNeural  
 > **Last Updated:** October 2026  
-> **Cross-References:** [Main Documentation](MAIN_PROJECT_DOCUMENTATION.md) | [PRD](PRD.md) | [TRD](TRD.md) | [Security Specification](SECURITY_SPECIFICATION.md) | [System Architecture](ARCHITECTURE.md) | [Database Schema](DATABASE_SCHEMA.md) | [Testing & QA](TESTING_QA.md)
+> **Cross-References:** [Main Documentation](MAIN_PROJECT_DOCUMENTATION.md) | [PRD](PRD.md) | [TRD](TRD.md) | [Security Specification](SECURITY_SPECIFICATION.md) | [System Architecture](ARCHITECTURE.md) | [Database Schema](DATABASE_SCHEMA.md)
 
 ---
 

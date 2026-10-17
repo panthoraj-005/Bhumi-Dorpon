@@ -8,7 +8,7 @@
 > **Target Runtime:** Node.js 18+ / 20+ | Modern Web Browsers  
 > **Team:** GeoNeural  
 > **Last Updated:** October 2026  
-> **Cross-References:** [Main Documentation](MAIN_PROJECT_DOCUMENTATION.md) | [PRD](PRD.md) | [System Architecture](ARCHITECTURE.md) | [Database Schema](DATABASE_SCHEMA.md) | [API Documentation](API_DOCUMENTATION.md) | [UI/UX Design System](UI_UX_DESIGN_SYSTEM.md) | [Authentication Specification](AUTH_SPECIFICATION.md) | [Testing & QA](TESTING_QA.md) | [Security Specification](SECURITY_SPECIFICATION.md) | [Project Roadmap](PROJECT_ROADMAP.md)
+> **Cross-References:** [Main Documentation](MAIN_PROJECT_DOCUMENTATION.md) | [PRD](PRD.md) | [System Architecture](ARCHITECTURE.md) | [Database Schema](DATABASE_SCHEMA.md) | [UI/UX Design System](UI_UX_DESIGN_SYSTEM.md) | [Authentication Specification](AUTH_SPECIFICATION.md) | [Security Specification](SECURITY_SPECIFICATION.md)
 
 ---
 
@@ -25,6 +25,7 @@
   - [5.1 Translation Dictionary (lib/translations.ts)](#51-translation-dictionary-libtranslationsts)
   - [5.2 Bangla-First Default Initialization](#52-bangla-first-default-initialization)
   - [5.3 Bengali Numeral Localization (formatNumberLocalized)](#53-bengali-numeral-localization-formatnumberlocalized)
+  - [5.4 Data-Derived String and Table Localization](#54-data-derived-string-and-table-localization)
 - [6. Global "Land Information" Search Subsystem](#6-global-land-information-search-subsystem)
   - [6.1 Cascading Search Engine (lib/landSearch.ts)](#61-cascading-search-engine-liblandsearchts)
   - [6.2 Preserving Leading Zeros in Dag and Khatian Numbers](#62-preserving-leading-zeros-in-dag-and-khatian-numbers)
@@ -37,21 +38,10 @@
   - [7.4 Cadastral Identity Preservation for Submerged Plots](#74-cadastral-identity-preservation-for-submerged-plots)
 - [8. Landslide Mountain & Historical Event Selector](#8-landslide-mountain--historical-event-selector)
   - [8.1 Mountain-to-Event Catalog (lib/landslideEvents.ts)](#81-mountain-to-event-catalog-liblandslideeventsts)
-  - [8.2 Two-Step Dependent Component (MountainEventSelector.tsx)](#82-two-step-dependent-component-mountaineventselectortsx)
+  - [8.2 Four-Step Dependent Selector (SelectorChain.tsx + useSelection.ts)](#82-four-step-dependent-selector-selectorchaintsx--useselectionts)
   - [8.3 Dynamic Interface Updating in Recorded and Forecast Modes](#83-dynamic-interface-updating-in-recorded-and-forecast-modes)
 - [9. Top-Level Smooth Scroll Navigation](#9-top-level-smooth-scroll-navigation)
-- [10. Five-Hazard Information Store Architecture](#10-five-hazard-information-store-architecture)
-  - [10.1 Dual JSON Storage Model](#101-dual-json-storage-model)
-  - [10.2 Data Access Layer (lib/data.ts)](#102-data-access-layer-libdatats)
-- [11. Mathematical Specifications and Unit Conversions](#11-mathematical-specifications-and-unit-conversions)
-  - [11.1 Land Area Conversion Ratios](#111-land-area-conversion-ratios)
-  - [11.2 Financial Compensation Formulas](#112-financial-compensation-formulas)
-- [12. Cadastral Four-Corner Geometry Engine](#12-cadastral-four-corner-geometry-engine)
-- [13. Google Earth Client-Side KML Export](#13-google-earth-client-side-kml-export)
-- [14. Cartography & Dual-Map Synchronization Engine](#14-cartography--dual-map-synchronization-engine)
-- [15. State Management & Data Fetching Architecture](#15-state-management--data-fetching-architecture)
-- [16. Quality Assurance, Linting, and Test Specifications](#16-quality-assurance-linting-and-test-specifications)
-- [17. Production Build, Performance, and Compatibility](#17-production-build-performance-and-compatibility)
+- [10. Quality Assurance, Linting, and Test Specifications](#10-quality-assurance-linting-and-test-specifications)
 
 ---
 
@@ -73,7 +63,7 @@ The technology stack is verified directly against [`package.json`](file:///d:/Pr
 | **Styling & Design** | Tailwind CSS | `^3.4.13` | Modern utility-first CSS design system with curated lime/ink palette. |
 | **CSS Utilities** | `clsx` & `tailwind-merge` | `^2.1.1` / `^2.5.3` | Conflict-free dynamic className generation (`lib/utils.ts`). |
 | **Vector Icons** | Lucide React | `^0.447.0` | Modern SVG iconography with zero runtime overhead. |
-| **Test Framework** | Vitest | `^4.1.11` | Blazing-fast unit test execution across 14 test suites and 78 tests. |
+| **Test Framework** | Vitest | `^4.1.11` | Blazing-fast unit test execution across 16 test suites and 92 tests. |
 
 ---
 
@@ -83,6 +73,7 @@ The technology stack is verified directly against [`package.json`](file:///d:/Pr
 2. **Client Components with SSR Isolation:** Mapping and chart components utilizing browser APIs (`window`, `localStorage`, `canvas`, Leaflet) are declared with `"use client"` and dynamically imported with `{ ssr: false }`.
 3. **Zustand Reactive Store:** Global user preferences (Language `'bn' | 'en'`, Area Unit `'decimal' | 'acre' | 'hectare'`, Period `'1y' | '3y' | '5y' | 'all'`, Auth Session) are decoupled from component hierarchies.
 4. **Deterministic Mock Layer:** Fully independent of live external databases or server processes, enabling instantaneous offline deployment.
+5. **Header Toolbar Layout Contract (`components/AppHeader.tsx`):** The header container is `md:flex-row justify-between` with a `min-w-0 shrink` title block. The action toolbar is `flex flex-wrap items-center gap-2.5 justify-start md:justify-end md:flex-1 md:ml-auto`, so wrapped rows stay right-aligned under the language toggle on `md` and wider and left-aligned on mobile. Bangla headings use a line-height (e.g., `leading-[1.35]`) that does not clip Bengali glyphs.
 
 ---
 
@@ -135,17 +126,14 @@ BhumiDorpon/
 │   ├── SegmentedToggle.tsx         # Pill-Style Toggle Control
 │   └── TrendChart.tsx              # Recharts Multi-Year Metric Visualization
 ├── docs/                           # Authoritative Documentation Suite (Synchronized)
-│   ├── API_DOCUMENTATION.md
 │   ├── APP_FLOW.md
 │   ├── ARCHITECTURE.md
 │   ├── AUTH_SPECIFICATION.md
 │   ├── DATABASE_SCHEMA.md
 │   ├── MAIN_PROJECT_DOCUMENTATION.md
 │   ├── PRD.md
-│   ├── PROJECT_ROADMAP.md
 │   ├── README.md
 │   ├── SECURITY_SPECIFICATION.md
-│   ├── TESTING_QA.md
 │   ├── TRD.md
 │   └── UI_UX_DESIGN_SYSTEM.md
 ├── lib/
@@ -166,7 +154,7 @@ BhumiDorpon/
 │   └── plots.json                  # Cadastral Plots with 4-Corner Geometry
 ├── stores/
 │   └── appStore.ts                 # Zustand Global Store (Language, Auth, Cascade)
-└── tests/                          # Automated Vitest Test Suite (14 Suites, 78 Tests)
+└── tests/                          # Automated Vitest Test Suite (16 Suites, 92 Tests)
 ```
 
 ---
@@ -222,6 +210,14 @@ export function formatNumberLocalized(num: number | string, lang: Language): str
 }
 ```
 Ensures numbers, years, percentages, and plot IDs render in Bengali script (e.g., `১০১`, `২০২৪`, `৮৪২০.৫`).
+
+### 5.4 Data-Derived String and Table Localization
+- All data-derived strings pass through `lib/translations.ts` helpers (`getLocalizedHillName`, `getLocalizedLocationLabel`, `getLocalizedOwnerName`, `getLocalizedLandClass`, `getLocalizedRiskLevel`, `getLocalizedCompensationStatus`, `formatNumberLocalized`, `formatDateLocalized`, etc.). Components never hard-code English fallbacks for data.
+- `getLocalizedHillName` resolves by hill id (`ghagra`) **and** by English display name (`Ghagra Hill Corridor`), case-insensitively, for every hill in `public/mocks/hills.json`.
+- `getLocalizedLocationLabel` maps risk-zone suffixes (e.g., `| High Risk Slope Zone`) and every other suffix found in `public/mocks/*.json`.
+- Raw technical identifiers (e.g., `owner_35`) are not shown to users; a localized readable identifier is displayed instead.
+- Data-table `aria-label` text in `TrendChart.tsx` and `BarChart.tsx` is localized.
+- Regression test `tests/localization_tables.test.ts` renders every table component and selector option list in Bangla and fails on non-allow-listed English words (allow-list: GIS, InSAR, KML, GeoJSON, CSV, BDT, DL, m, mm, km).
 
 ---
 
@@ -286,13 +282,20 @@ Plots eroded into the riverbed are not deleted from the record. Their physical s
 ## 8. Landslide Mountain & Historical Event Selector
 
 ### 8.1 Mountain-to-Event Catalog (`lib/landslideEvents.ts`)
-Maps 12 major Chittagong Hill Tracts mountains (Ghagra, Furamon, Vedvedi, Sajek, Chimbuk, Nilgiri, Mirinja, Keokradong, Himchari, Teknaf, Inani, Jaflong) to historical slope failures and forecast models.
+Maps 12 major Chittagong Hill Tracts mountains (Ghagra, Furamon, Vedvedi, Sajek, Chimbuk, Nilgiri, Mirinja, Keokradong, Himchari, Teknaf, Inani, Jaflong) to historical slope failures and forecast models. The catalog currently holds 13 event records across 7 hills (Ghagra 3, Furamon 2, Vedvedi 2, Chimbuk 2, Himchari 2, Nilgiri 1, Sajek 1); the remaining hills have no events and use the empty state. Query API: `getEventsForMountain(hillId, mode)` and `getLandslideEventById(id)`.
 
-### 8.2 Two-Step Dependent Component (`MountainEventSelector.tsx`)
-1. User selects a mountain.
-2. The event list updates dynamically to show events for that mountain.
-3. User selects an event.
-4. Interface updates metrics: debris volume ($m^3$), slope angle, rainfall threshold, affected slope area, and impacted plot count.
+### 8.2 Four-Step Dependent Selector (`SelectorChain.tsx` + `useSelection.ts`)
+1. `getStepsForHazard("landslide")` returns four steps: District, Upazila, Hill, and **Landslide Event** (`{ key: "ev", stepName: "event" }`, label *ভূমিধসের ঘটনা* / *Landslide Event*).
+2. The event step is disabled until a hill is chosen. Its options come from `getEventsForMountain(hillId, mode)`, mapped to `SelectorOption` with the localized event name as `label`, the localized event date as `sublabel`, sorted newest first (`year` descending, then date).
+3. `useSelection` adds `ev: string | null` to `SelectionState` and `"ev"` to `StepKey`, read from URL query param `ev`. `setStep("d" | "u" | "h", …)` also deletes `ev`; `resetToDefault` removes `ev`. When a hill is set and `ev` is empty, the newest event is selected automatically.
+4. `isFinalStepSet` and `activeEntityId` remain based on the hill; `ev` is optional and never blocks result loading.
+5. If the hill has no events, the step renders a disabled box with the honest empty-state text and no events are invented.
+6. The standalone `MountainEventSelector.tsx` card is removed from `app/landslide/[mode]/page.tsx` so the URL (`ev`) is the single source of truth. The component is kept only if the `/landslide` overview page still uses it.
+
+### 8.3 Dynamic Interface Updating in Recorded and Forecast Modes
+- The detail page resolves `ev` with `getLandslideEventById`, falling back to the newest event of the hill.
+- Event name, date, 24-hour rainfall, debris volume ($m^3$), slope gradient, affected slope area, homesteads at risk, and impact summary shown in the page title, breadcrumb, stat cards and summary reflect the selected event.
+- Recorded mode lists past events; Forecast mode lists forecast scenarios with their model confidence score. Switching mode keeps `d`, `u`, `h` and re-resolves `ev` for the new mode.
 
 ---
 
@@ -319,15 +322,15 @@ The target `<div id="disaster-options" className="space-y-4 pt-6 scroll-mt-24">`
 
 ## 10. Quality Assurance, Linting, and Test Specifications
 
-### Verified Test Suite (14 Test Suites, 78 Unit Tests)
+### Verified Test Suite (16 Test Suites, 92 Unit Tests)
 Execution command: `npm test`
 - `tests/localization.test.ts` (4 tests) — Default Bangla, English toggle, Bengali numerals, dictionary completeness.
 - `tests/auth_demo_access.test.ts` (4 tests) — Demo access bypass, credential validation, role enforcement, password matching.
 - `tests/land_search.test.ts` (4 tests) — 5-field cascading search, leading zero preservation, 6 report sections, DL risk prediction.
-- `tests/mountain_event_selector.test.ts` (5 tests) — Hills catalog, recorded events, forecast events, mountain dependency resets.
+- `tests/mountain_event_selector.test.ts` (9 tests) — Hills catalog, recorded events, forecast events, mountain dependency resets, 4-step chain options sorting, empty states, single selector validation.
 - `tests/step5_flood_flow.test.ts` (6 tests) — Flood events, plot statuses, owner profiles, 4-corner GPS geometry.
 - `tests/data_layer.test.ts` (4 tests) — Dashboard aggregation, cascading options, hazard result types.
-- `tests/step3_and_step4.test.ts` (8 tests) — Parent-child validation, Rule 5 financial suppression in forecast mode.
+- `tests/step3_and_step4.test.ts` (8 tests) — Parent-child validation, 4-step landslide hierarchy, Rule 5 financial suppression in forecast mode.
 - `tests/google_earth_kml.test.ts` (7 tests) — KML 2.2 serialization, camera altitude math, Earth URL generation.
 - `tests/four_corners_geometry.test.ts` (5 tests) — NW, NE, SE, SW vertex ordering, 6 decimal precision.
 - `tests/change3_part1_gis_basemap.test.ts` (8 tests) — Vector GIS basemap rendering, mode variants.
@@ -335,6 +338,49 @@ Execution command: `npm test`
 - `tests/units_and_compensation.test.ts` (12 tests) — Unit conversion ratios, Taka currency formatting.
 - `tests/settings_information.test.ts` (4 tests) — Settings routing, about project, team roster.
 - `tests/map_comparison_side_by_side.test.ts` (3 tests) — Synchronized dual Leaflet maps, re-entrancy protection.
+- `tests/localization_tables.test.ts` (6 tests) — Hill translations, landslide events, locationLabel suffixes, table data localization.
+- `tests/app_header_toolbar.test.ts` (4 tests) — Responsive right-aligned toolbar on md+, shrinkable title, Bengali heading line-height.
 
 **Type Checking:** `npm run lint` (`tsc --noEmit`) passes with 0 errors.  
 **Production Build:** `npm run build` compiles 15 static routes with 0 errors.
+
+---
+
+## Addendum v1.3 — Loan/Mortgage Record Section and Report Ordering
+
+This is an additive requirement; retain the existing implementation and interfaces unless a change is required to add this section.
+
+### Seven primary report sections
+Render the report cards in this order: (1) জমির পরিচয় ও পরিমাণ, (2) মালিকানা সংক্রান্ত তথ্য, (3) বিক্রি ও হস্তান্তর সংক্রান্ত তথ্য, (4) আইনি তথ্য, (5) ভূমি উন্নয়ন কর, (6) নিবন্ধন ও ভূমির ইতিহাস, (7) এই জমি বন্ধক রেখে ব্যাংক ঋণ নেওয়ার তথ্য.
+
+### Suggested TypeScript contract
+Add an optional `LandLoanMortgageInfo` type to the existing land-search domain model without breaking current callers:
+
+```typescript
+export interface LandLoanMortgageInfo {
+  hasMortgageOrLoanCharge: boolean | null; // null means unknown, not false
+  bankName?: string;
+  loanReferenceMasked?: string;
+  mortgageDeedNo?: string;
+  recordDate?: string;
+  loanStatus?: "active" | "released" | "closed" | "disputed" | "unknown";
+  releaseDate?: string;
+  dataSource: string;
+  statusBadge: DataStatusBadge;
+  notesBn?: string;
+  notesEn?: string;
+}
+```
+
+Attach it as an optional property to the existing assembled land report (use the project's actual report type/name after inspecting the code). Keep mock JSON and TypeScript types consistent. Preserve null/unknown separately from a verified no-mortgage result. Do not store full account numbers or expose sensitive borrower information.
+
+### Data access and localization
+- Keep the current deterministic mock-data architecture; no live bank API is assumed.
+- Add sample entries only as clearly labelled synthetic demo records, if test data is needed.
+- Add centralized Bangla/English translation keys for the card title, fields, statuses, empty states and tooltips.
+- Use existing badge values: `verified`, `demo`, `unverified`, `unavailable`, `external_required`.
+- After the seven primary cards, retain the current disaster-history and risk-prediction content as supplementary information.
+
+### Tests
+Add tests for a demo mortgage record, unavailable record, unknown status, released mortgage, localization in both languages, and backward compatibility when the optional property is absent. Run the existing test suite and TypeScript check.
+

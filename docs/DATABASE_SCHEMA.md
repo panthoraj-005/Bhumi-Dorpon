@@ -10,7 +10,7 @@
 > **Coordinate Systems:** Storage: EPSG:4326 (WGS 84) | Area Calculations: EPSG:32646 (UTM Zone 46N)  
 > **Team:** GeoNeural  
 > **Last Updated:** October 2026  
-> **Cross-References:** [Main Documentation](MAIN_PROJECT_DOCUMENTATION.md) | [PRD](PRD.md) | [TRD](TRD.md) | [System Architecture](ARCHITECTURE.md) | [API Documentation](API_DOCUMENTATION.md) | [UI/UX Design System](UI_UX_DESIGN_SYSTEM.md) | [Testing & QA](TESTING_QA.md)
+> **Cross-References:** [Main Documentation](MAIN_PROJECT_DOCUMENTATION.md) | [PRD](PRD.md) | [TRD](TRD.md) | [System Architecture](ARCHITECTURE.md) | [UI/UX Design System](UI_UX_DESIGN_SYSTEM.md)
 
 ---
 
@@ -28,12 +28,6 @@
   - [2.6 Standardized Data Status Badges](#26-standardized-data-status-badges)
 - [3. Core Administrative & Geographic Schemas](#3-core-administrative--geographic-schemas)
 - [4. Proposed Production PostgreSQL / PostGIS DDL](#4-proposed-production-postgresql--postgis-ddl)
-  - [4.1 Database Extensions and Custom Enums](#41-database-extensions-and-custom-enums)
-  - [4.2 Users, Roles, and Sessions Tables](#42-users-roles-and-sessions-tables)
-  - [4.3 Cadastral Parcels, Plots, and Corners Tables](#43-cadastral-parcels-plots-and-corners-tables)
-  - [4.4 Ownership, Tax, Legal, and Sale Tables](#44-ownership-tax-legal-and-sale-tables)
-  - [4.5 Mountains and Landslide Events Tables](#45-mountains-and-landslide-events-tables)
-  - [4.6 Multi-Hazard Risk Predictions Table](#46-multi-hazard-risk-predictions-table)
 - [5. Spatial Indexing and Query Performance](#5-spatial-indexing-and-query-performance)
 - [6. Geospatial Area Calculations & Projection Transformations](#6-geospatial-area-calculations--projection-transformations)
 
@@ -250,6 +244,26 @@ export interface LandslideEventRecord {
 }
 ```
 
+#### Selection State and URL Contract
+```typescript
+// lib/useSelection.ts
+export interface SelectionState {
+  d: string | null;     // district
+  u: string | null;     // upazila
+  r: string | null;     // river
+  h: string | null;     // hill
+  m: string | null;     // mouza / char
+  year: string | null;  // flood event year
+  ev: string | null;    // landslide event id (landslide hazard only)
+}
+```
+- URL query contract for landslide: `?d=<districtId>&u=<upazilaId>&h=<hillId>&ev=<eventId>`.
+- Query contract: `getEventsForMountain(hillId, mode) → LandslideEventRecord[]` (the selector sorts newest first) and `getLandslideEventById(id) → LandslideEventRecord | null`.
+- Relationship: `Hill 1 ── 0..n LandslideEvent`; hills without events return an empty list.
+- Selector option shape for the event step: `SelectorOption { id: event.id, label: localized event name, sublabel: localized event date, hasRecords: true }`.
+- Production mapping: `landslide_events(id PK, hill_id FK → hills.id, mode, event_name_bn, event_name_en, event_date, …)` with an index on `(hill_id, mode, event_date DESC)`.
+- Localization dictionaries for hills, risk zones and event names are keyed by both id and English display name so that either lookup resolves to Bangla.
+
 ### 2.6 Standardized Data Status Badges
 
 ```typescript
@@ -394,3 +408,34 @@ CREATE TABLE hazard_risk_predictions (
   $$\text{Area}_{\text{m}^2} = \text{ST\_Area}(\text{ST\_Transform}(\text{geom}, 32646))$$
 - **Decimal Conversion:**
   $$\text{Area}_{\text{Decimal}} = \frac{\text{Area}_{\text{m}^2}}{40.468564224}$$
+
+---
+
+## Addendum v1.3 — Land Loan/Mortgage Information Schema
+
+Add this optional model alongside the existing land-search report interfaces. Keep the current schema backward-compatible.
+
+```typescript
+export interface LandLoanMortgageInfo {
+  hasMortgageOrLoanCharge: boolean | null; // null = not known / not checked
+  bankName?: string;
+  loanReferenceMasked?: string;
+  mortgageDeedNo?: string;
+  recordDate?: string;
+  loanStatus?: "active" | "released" | "closed" | "disputed" | "unknown";
+  releaseDate?: string;
+  dataSource: string;
+  statusBadge: DataStatusBadge;
+  notesBn?: string;
+  notesEn?: string;
+}
+```
+
+Add `loanMortgageInfo?: LandLoanMortgageInfo` to the existing assembled land-report type (use the actual type name in the implementation). Do not make this required for existing records. If mock JSON fixtures are updated, add only clearly labelled synthetic demo examples. `hasMortgageOrLoanCharge: false` must only be used when the supplied record actually supports a negative result; use `null` for unknown/unavailable. Do not include full bank account numbers, full loan account numbers, or unmasked personal identifiers.
+
+### Report presentation contract
+The seven primary cards must appear in order: Land Identification & Area; Ownership; Sale & Transfer; Legal Information; Land Development Tax; Registration & Land History; Bank Loan/Mortgage Information. Existing disaster history and risk prediction data remain below these cards as supplementary information.
+
+### Source/verification constraints
+Reuse `DataStatusBadge` and the existing `dataSource` convention. Use `external_required` when official source integration is not available, `unavailable` when no record is supplied, `unverified` when a supplied record has not been verified, and `demo` for synthetic examples. The application must not claim access to bank systems or official mortgage registries unless such integration actually exists.
+

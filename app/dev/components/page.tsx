@@ -70,6 +70,7 @@ export default function ComponentsShowcasePage() {
     h: null,
     m: "mouza_kazipur_1",
     year: null,
+    ev: null,
   });
 
   // Selected plot for table / map synchronization
@@ -261,6 +262,7 @@ export default function ComponentsShowcasePage() {
                   h: null,
                   m: "mouza_kazipur_1",
                   year: null,
+                  ev: null,
                 });
               }}
               className="text-xs font-semibold text-accent-deep hover:underline inline-flex items-center gap-1"
@@ -285,6 +287,7 @@ export default function ComponentsShowcasePage() {
                 h: null,
                 m: "mouza_kazipur_1",
                 year: null,
+                ev: null,
               });
             }}
           />

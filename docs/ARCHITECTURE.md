@@ -7,7 +7,7 @@
 > **System Version:** 1.2 (Enhanced Demonstration Release)  
 > **Team:** GeoNeural  
 > **Last Updated:** October 2026  
-> **Cross-References:** [Main Documentation](MAIN_PROJECT_DOCUMENTATION.md) | [PRD](PRD.md) | [TRD](TRD.md) | [App Flow & User Flow](APP_FLOW.md) | [Database Schema](DATABASE_SCHEMA.md) | [API Documentation](API_DOCUMENTATION.md) | [UI/UX Design System](UI_UX_DESIGN_SYSTEM.md) | [Authentication Specification](AUTH_SPECIFICATION.md) | [Testing & QA](TESTING_QA.md) | [Security Specification](SECURITY_SPECIFICATION.md)
+> **Cross-References:** [Main Documentation](MAIN_PROJECT_DOCUMENTATION.md) | [PRD](PRD.md) | [TRD](TRD.md) | [App Flow & User Flow](APP_FLOW.md) | [Database Schema](DATABASE_SCHEMA.md) | [UI/UX Design System](UI_UX_DESIGN_SYSTEM.md) | [Authentication Specification](AUTH_SPECIFICATION.md) | [Security Specification](SECURITY_SPECIFICATION.md)
 
 ---
 
@@ -29,8 +29,6 @@
 - [3. Google Earth vs. Google Earth Engine Architectural Placement](#3-google-earth-vs-google-earth-engine-architectural-placement)
 - [4. Disaster Information Flow & Data Relationships](#4-disaster-information-flow--data-relationships)
 - [5. Proposed Enterprise Production Cloud Architecture](#5-proposed-enterprise-production-cloud-architecture)
-  - [5.1 Live Spatial Microservices](#51-live-spatial-microservices)
-  - [5.2 Automated Cloud Remote-Sensing Pipeline](#52-automated-cloud-remote-sensing-pipeline)
 
 ---
 
@@ -111,6 +109,7 @@ graph TD
 - **Framework:** Next.js 14 App Router with React Server and Client Components.
 - **Styling:** Tailwind CSS with a curated lime (`#D4F239`), ink (`#1A1A1A`), loss coral (`#EF4444`), and water blue (`#0284C7`) palette.
 - **Typography:** Space Grotesk for headings and data readouts; Inter for UI prose.
+- **Header Toolbar:** `AppHeader` owns the toolbar layout: a right-aligned, wrapping flex container on `md` and wider whose overflow row stays right-aligned beneath the language toggle; left-aligned wrapping on mobile. No page overrides it.
 
 ### 2.2 Authentication & Demo Access Gate (`lib/auth.ts`)
 - **Initialization:** Intercepts unauthenticated first-time visitors via `AuthModal.tsx`.
@@ -122,6 +121,7 @@ graph TD
 - **Bangla Default:** `useAppStore` initializes with `language: "bn"`.
 - **Bengali Numerals:** `formatNumberLocalized(val, lang)` replaces ASCII digits $0-9$ with Bengali glyphs $০-৯$ when language is `'bn'`.
 - **Zero Layout Shifts:** CSS flex and grid tiers prevent text expansion from disrupting card dimensions.
+- **Data-Derived Strings:** All data-derived text (names, location labels, risk zones, statuses, dates, event names) is localized through helpers in `lib/translations.ts`, keyed by id and by English display name. Components never embed English fallbacks for data. A regression test renders all table components in Bangla and fails on non-allow-listed English words.
 
 ### 2.4 Global "Land Information" Search Subsystem (`lib/landSearch.ts`)
 - **Cascading Resolution:** Resolves District &rarr; Upazila &rarr; Mouza &rarr; Dag No. &rarr; Khatian No.
@@ -136,7 +136,13 @@ graph TD
 
 ### 2.6 Landslide Mountain & Historical Event Engine (`lib/landslideEvents.ts`)
 - **Catalog:** Maps 12 Chittagong Hill Tracts mountains to historical events and forecast models.
-- **Two-Step Selector:** `MountainEventSelector.tsx` handles Mountain selection &rarr; Event selection &rarr; Dynamic update of debris volume, slope angle, rainfall threshold, and downslope plots.
+- **Four-Step Selector:** The URL-driven `SelectorChain` + `useSelection` handle District &rarr; Upazila &rarr; Hill &rarr; Landslide Event. The event step reads from `getEventsForMountain(hillId, mode)` instead of the hazard JSON store, and the selected event is stored in URL param `ev`, making the URL the single source of truth. The detail page resolves it with `getLandslideEventById` and updates debris volume, slope angle, rainfall threshold, and downslope plots. The former standalone `MountainEventSelector` card is removed from the detail page.
+
+```
+URL (?d&u&h&ev) -> useSelection -> SelectorChain -> getOptions (district / upazila / hill)
+                                       \-> getEventsForMountain (event)
+                              -> Landslide detail page -> getLandslideEventById -> stat cards / summary
+```
 
 ### 2.7 Geospatial Cartography & Dual-Map Synchronization Engine
 - **Engine:** Pure Leaflet 1.9 with SVG vector rendering.
@@ -192,3 +198,14 @@ In enterprise production:
 - **Tile Server:** Martin vector tile server streaming MVT tiles.
 - **Earth Observation Ingestion:** Cloud Functions triggering automated GEE pipelines upon Sentinel-1 SAR orbit passes.
 - **Deep Learning Workers:** Celery workers running ConvLSTM and U-Net models on GPU instances.
+
+---
+
+## Addendum v1.3 — Loan/Mortgage Information in Land Search
+
+Extend the existing Land Information subsystem additively: the UI reads an optional loan/mortgage record from the same land-report assembly/data-access path as the other cadastral sections. Do not introduce a new live banking integration or alter the five-field search flow for this UI-only/data-model addition.
+
+The report's seven primary cards are ordered as follows: (1) জমির পরিচয় ও পরিমাণ, (2) মালিকানা সংক্রান্ত তথ্য, (3) বিক্রি ও হস্তান্তর সংক্রান্ত তথ্য, (4) আইনি তথ্য, (5) ভূমি উন্নয়ন কর, (6) নিবন্ধন ও ভূমির ইতিহাস, and (7) এই জমি বন্ধক রেখে ব্যাংক ঋণ নেওয়ার তথ্য. The existing disaster history, deep-learning risk forecast, submerged-parcel handling, and related maps stay below the seven cards as supplementary content.
+
+The new section uses the current deterministic mock store and standardized status badges. Unknown data must remain unknown; the absence of a mock record is not proof that the land has no mortgage. Only future, explicitly configured and authorized source integration could verify official bank/mortgage records. Keep sensitive references masked and label synthetic records as demo data.
+

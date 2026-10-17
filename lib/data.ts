@@ -24,6 +24,7 @@ import {
 } from "./types";
 
 export type { OwnerProfile, Corner, MapArea, Basemap, MouzaSummary, ContextCard, TerrainAssets } from "./types";
+import { getEventsForMountain } from "./landslideEvents";
 
 // Artificial delay of 200-350ms to demonstrate realistic loading skeletons
 const delay = (ms: number = 240) =>
@@ -418,6 +419,19 @@ export async function getOptions(
       id: String(y),
       label: `${y} Monsoon Flood`,
       sublabel: `Event record for ${y}`,
+      hasRecords: true,
+    }));
+  }
+
+  if (step === "event" && hazard === "landslide") {
+    if (!hillId) return [];
+    const events = getEventsForMountain(hillId, mode);
+    const sorted = [...events].sort((a, b) => b.year - a.year);
+
+    return sorted.map((ev) => ({
+      id: ev.id,
+      label: ev.eventNameEn,
+      sublabel: ev.eventDate,
       hasRecords: true,
     }));
   }

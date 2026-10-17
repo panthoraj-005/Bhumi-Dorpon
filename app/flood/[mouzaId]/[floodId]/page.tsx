@@ -35,6 +35,7 @@ import {
   getLocalizedOwnerName,
   getLocalizedMouzaName,
   formatNumberLocalized,
+  getLocalizedOwnerId,
 } from "@/lib/translations";
 
 export default function FloodEventDetailPage() {
@@ -485,7 +486,7 @@ export default function FloodEventDetailPage() {
                                 <span>{getLocalizedOwnerName(ps.ownerName, language)}</span>
                                 <ExternalLink className="w-3 h-3 text-water/70" />
                               </Link>
-                              <div className="text-[10px] text-muted">{ps.ownerId}</div>
+                              <div className="text-[10px] text-muted">{getLocalizedOwnerId(ps.ownerId, language)}</div>
                             </td>
 
                             {/* Dag No. */}

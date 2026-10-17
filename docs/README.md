@@ -12,7 +12,7 @@
 [![Leaflet](https://img.shields.io/badge/Leaflet-1.9.4-199900?style=flat&logo=leaflet)](https://leafletjs.com/)
 [![Turf.js](https://img.shields.io/badge/Turf.js-7.4.0-darkgreen?style=flat)](https://turfjs.org/)
 [![Vitest](https://img.shields.io/badge/Vitest-4.1.11-yellow?style=flat&logo=vitest)](https://vitest.dev/)
-[![Tests](https://img.shields.io/badge/Tests-78%20passed%20(14%20suites)-brightgreen?style=flat)](tests/)
+[![Tests](https://img.shields.io/badge/Tests-92%20passed%20(16%20suites)-brightgreen?style=flat)](tests/)
 [![Team](https://img.shields.io/badge/Team-GeoNeural-indigo?style=flat)](#21-team-information-credits-and-acknowledgements)
 
 ---
@@ -36,7 +36,7 @@
 - [5. Entry Authentication, Registration & Demo Access](#5-entry-authentication-registration--demo-access)
 - [6. Global Land Information Cascading Search & Report Engine](#6-global-land-information-cascading-search--report-engine)
 - [7. Section 5: Disaster Change & Deep-Learning Risk Analysis](#7-section-5-disaster-change--deep-learning-risk-analysis)
-- [8. Landslide Mountain & Historical Event Selector](#8-landslide-mountain--historical-event-selector)
+- [8. Four-Step Landslide Hierarchy & Event Selector](#8-four-step-landslide-hierarchy--event-selector)
 - [9. Google Earth Parcel Outline Feature](#9-google-earth-parcel-outline-feature)
 - [10. System Architecture and Data Store](#10-system-architecture-and-data-store)
 - [11. Technology Stack](#11-technology-stack)
@@ -96,7 +96,9 @@ Bangladesh is one of the most hydro-morphologically dynamic deltaic nations in t
 | **Auth Entry & Isolated Demo** | Glassmorphic auth modal on first visit and `/login` route with one-click Demo access. | Click **"Demo / ডেমো হিসেবে প্রবেশ করুন"** on login modal. | Immediate exploration for evaluators while isolating administrative actions. |
 | **Global Land Search** | Dedicated route (`/land-information`) supporting 5 cascading fields with leading zero preservation. | Click **"Land Information / ভূমির তথ্য"** in header; query Dag `0101`. | Rapid cadastral parcel retrieval with 6-section structured reports. |
 | **Disaster Change & DL Risk Analysis** | Section 5 of land report detailing historical loss/deposition and 4 deep-learning risk forecasts. | Search any parcel in `/land-information` and inspect Section 5. | Transparent hazard risk accounting separating physical loss from legal title. |
-| **Mountain & Landslide Event Selector** | Two-step selector filtering monitored mountains and historical landslide events. | Select Mountain (e.g., Batali Hill) &rarr; Select Historical Event on `/landslide`. | Instant historical telemetry and footprint inspection across both modes. |
+| **Four-Step Landslide Chain Selector** | Four-step dependent selector (District &rarr; Upazila &rarr; Hill &rarr; Landslide Event) embedded in `SelectorChain.tsx` with URL synchronization (`?d&u&h&ev`), newest-first sorting, auto-selection, and honest empty states. | Select District &rarr; Upazila &rarr; Hill &rarr; Event on `/landslide/[mode]`. | Seamless hierarchical exploration connecting hills directly to historical disaster records and forecast scenarios without duplicate controls. |
+| **Right-Aligned Header Toolbar** | Responsive header toolbar layout right-aligning action controls on desktop (`md:justify-end`) with multi-line overflow wrapping directly below the language toggle, maintaining left-alignment on mobile. | Resize viewport between mobile (<768px) and desktop (&ge;768px). | Keeps top controls visually anchored under the language toggle, preventing awkward floating or centering on wide viewports. |
+| **Complete Table & Data Localization** | Full localization of all tabular data, headers, cells, status badges, sublabels, chart `aria-label`s, and data-derived strings (hill names, risk zone suffixes like *High Risk Slope Zone*, plot IDs, survey types, dates, Eastern Nagari numbers), while strictly preserving allowlisted technical acronyms (GIS, InSAR, KML, GeoJSON, CSV, BDT/৳, DL, m, mm, km). | Switch language toggle to `বাংলা` on any hazard table, flood owner ledger, or land report. | Eliminates untranslated English text in tables for complete Bengali linguistic immersion. |
 | **Top-Level Scroll to Disasters** | Direct smooth-scroll navigation button on homepage hero. | Click **"Explore Disasters / দুর্যোগসমূহ দেখুন"** on homepage. | Fast, accessible navigation to `#disaster-options` with header offset. |
 | **Side-by-Side Synced Compare** | Synchronized Leaflet viewports: *Before* on left and *After* (or *Forecast*) on right. | Pan or zoom either viewport; event listeners synchronize the paired map. | Immediate visual verification of land loss, shoreline retreat, or flood inundation over time. |
 | **Dual Basemap Engine** | Switches canvas between offline vector **Light GIS** basemap and **Satellite** imagery. | Toggle basemaps in the map chrome bar. | Light GIS maximizes boundary legibility; Satellite imagery provides real-world physical ground context. |
@@ -174,13 +176,18 @@ Directly below the cadastral report, a specialized section titled **"দুর�
 
 ---
 
-## 8. Landslide Mountain & Historical Event Selector
+## 8. Four-Step Landslide Hierarchy & Event Selector
 
-Integrated into both Recorded and Forecast modes on `/landslide` and `/landslide/[mode]`:
-- **Step 1:** User selects a mountain/hill (Batali Hill, Tiger Pass, Moti Jhorna, Rangamati Sadar, Kaptai, Nilachal).
-- **Step 2:** User selects a historical landslide event associated with that mountain.
-- Telemetry, contour maps, and impact statistics update dynamically.
-- Changing the mountain automatically resets any incompatible event selection.
+Integrated directly into `components/SelectorChain.tsx` for both Recorded and Forecast modes on `/landslide` and `/landslide/[mode]`:
+- **Four-Step Dependent Chain:**
+  1. **District (জেলা):** Chittagong, Rangamati, Bandarban, Cox's Bazar.
+  2. **Upazila (উপজেলা):** Filtered by selected District.
+  3. **Hill / Mountain (পাহাড়):** Monitored hills within the Upazila (e.g., Ghagra, Furamon, Vedvedi, Chimbuk, Himchari, Nilgiri, Sajek Ridge).
+  4. **Landslide Event (ভূমিধসের ঘটনা):** Fourth dependent step (Badge ④) listing all recorded landslide disasters (Recorded mode) or simulation scenarios (Forecast mode) for the selected hill, sorted newest first with event dates.
+- **Auto-Selection & Clearing Rules:** When a hill is selected, the newest available event is automatically selected if `ev` is empty. Changing District, Upazila, or Hill immediately clears the downstream event parameter `ev`. Reset-to-default also clears `ev`.
+- **Honest Empty State:** Hills without recorded disaster events (e.g., Mirinja, Keokradong, Teknaf Ridge, Inani Range, Jaflong Hill) render a disabled combobox with the honest message: *"এই পাহাড়ে কোনো ভূমিধসের ঘটনা রেকর্ড নেই"* / *"No landslide events recorded for this hill"*, without inventing fictitious events.
+- **Dynamic Detail Telemetry:** The chosen event drives 8 critical metrics on the landslide detail view: event title, date, 24-hour rainfall, debris volume, slope gradient, affected slope area, homesteads at risk, and impact summary banner.
+- **Unified Single-Selector Architecture:** The redundant standalone `MountainEventSelector` card was eliminated from `/landslide/[mode]`, establishing `SelectorChain` as the sole authoritative selector driven by URL state (`?d&u&h&ev`).
 
 ---
 
@@ -347,7 +354,7 @@ BhumiDorpon/
 │   └── units.ts                      # Land unit conversion utilities & compensation math
 ├── mocks/                            # Deterministic relational mock JSON datasets
 ├── public/                           # Static assets, rasters, and area GeoJSON
-├── tests/                            # Automated test suite (14 test files, 78 unit tests)
+├── tests/                            # Automated test suite (16 test files, 92 unit tests)
 ├── package.json                      # Project dependencies & npm scripts
 ├── tailwind.config.ts                # Tailwind CSS design system configuration
 └── tsconfig.json                     # TypeScript compiler configuration
@@ -355,7 +362,7 @@ BhumiDorpon/
 
 ### 18.2 Consolidated Documentation Index (`docs/`)
 
-The `docs/` directory contains authoritative Markdown specifications:
+The `docs/` directory contains 10 authoritative Markdown specifications:
 
 | Document | Primary System Scope & Core Technical Coverage |
 |---|---|
@@ -364,14 +371,10 @@ The `docs/` directory contains authoritative Markdown specifications:
 | [**`docs/APP_FLOW.md`**](docs/APP_FLOW.md) | **App Flow / User Flow:** Complete screen flows (S0 to S7), login gate, demo access, language toggle, 5-field land search, and landslide selectors. |
 | [**`docs/ARCHITECTURE.md`**](docs/ARCHITECTURE.md) | **System Architecture:** Layered client architecture, auth and search data adapters, pure Leaflet engine, and future cloud roadmap. |
 | [**`docs/DATABASE_SCHEMA.md`**](docs/DATABASE_SCHEMA.md) | **Database & Backend Schema:** Five-Hazard JSON Store schemas, land search entities, auth user models, and production PostgreSQL 16 + PostGIS DDL. |
-| [**`docs/API_DOCUMENTATION.md`**](docs/API_DOCUMENTATION.md) | **API Documentation:** Typed client data services (`lib/data.ts`, `lib/auth.ts`, `lib/landSearch.ts`, `lib/landslideEvents.ts`) and proposed future REST endpoints. |
 | [**`docs/UI_UX_DESIGN_SYSTEM.md`**](docs/UI_UX_DESIGN_SYSTEM.md) | **UI/UX Design System:** Minimalist Light GIS design tokens, typography, badges, color palettes, responsive layouts, and accessibility. |
 | [**`docs/AUTH_SPECIFICATION.md`**](docs/AUTH_SPECIFICATION.md) | **Authentication & Authorization Specification:** Client prototype auth, isolated demo access, role matrix, and government SSO roadmap. |
-| [**`docs/TESTING_QA.md`**](docs/TESTING_QA.md) | **Testing & QA Documentation:** Complete audit of all 14 test suites and 78 unit tests, execution logs, and manual QA checklists. |
 | [**`docs/SECURITY_SPECIFICATION.md`**](docs/SECURITY_SPECIFICATION.md) | **Security Specification:** Zero-backend security posture, demo privilege isolation, input sanitization, and PII protection. |
-| [**`docs/PROJECT_ROADMAP.md`**](docs/PROJECT_ROADMAP.md) | **Project Roadmap:** Completed v1.1 and v1.2 milestones, and future Phase 2–4 technical phases. |
-| [**`docs/CHANGE_LOG.md`**](docs/CHANGE_LOG.md) | **Project Change Log:** Chronological record of architectural modifications, map upgrades, feature implementations, and test assertions. |
-| [**`docs/MAIN_PROJECT_DOCUMENTATION.md`**](docs/MAIN_PROJECT_DOCUMENTATION.md) | **Main Project Documentation:** Master compendium synthesizing all project capabilities, academic citations, and 16-milestone history. |
+| [**`docs/MAIN_PROJECT_DOCUMENTATION.md`**](docs/MAIN_PROJECT_DOCUMENTATION.md) | **Main Project Documentation:** Master compendium synthesizing all project capabilities, academic citations, and milestone history. |
 
 ---
 
@@ -404,9 +407,10 @@ In compliance with the LandTech Innovation Hackathon Rule Book:
 | **GeoAI Forecast Highlighting** | Oct 2026 | Enhanced README with GeoAI forecast highlight, operational troubleshooting guide, and mock data disclosures. |
 | **Google Earth Parcel Outline Feature** | Oct 2026 | Implemented "Open in Google Earth" with client-side KML 2.2 serializer, camera URL calculation, and automated tests. |
 | **Documentation Alignment** | Oct 2026 | Synchronized project history and test counts to 10 test suites (61/61 passing unit tests). |
-| **Documentation Standardization** | Oct 2026 | Consolidated historical documents into 12 authoritative Markdown specifications in `/docs`; translated prose to English. |
+| **Documentation Standardization** | Oct 2026 | Consolidated historical documents into 10 authoritative Markdown specifications in `/docs`; translated prose to English. |
 | **v1.2 Release: Auth, Localization, Land Search & Landslide Selectors** | Oct 2026 | Implemented global Bangla default with English toggle (`lib/translations.ts`); entry auth modal and isolated demo access (`lib/auth.ts`); cascading Land Information search across 5 fields with leading zero preservation (`lib/landSearch.ts`); Section 5 multi-hazard DL predictions and submerged parcel preservation; two-step mountain and landslide historical event selector (`lib/landslideEvents.ts`); top-level scroll-to-disasters button; expanded automated test suite to 14 test suites and 78 unit tests (100% passing). |
-| **Documentation Audit & Synchronization** | Oct 2026 | Comprehensive audit of all 14 documentation files; synchronized duplicate README and Master Documentation copies; aligned route signatures and verified 14 test suites (78/78 passing unit tests). |
+| **Documentation Audit & Synchronization** | Oct 2026 | Comprehensive audit of all 10 documentation specifications in `/docs`; synchronized duplicate README and Master Documentation copies; aligned route signatures and verified 14 test suites (78/78 passing unit tests). |
+| **Change 4: Landslide Event Step, Header Toolbar & Bangla Table Localization** | Oct 2026 | Added 4th dependent step (Landslide Event) to `SelectorChain.tsx` with URL param `ev`, newest-first sorting, auto-selection, and honest empty states; right-aligned header toolbar on `md+` with wrapping under language toggle and Bengali heading line-height fix; comprehensive Bangla table and data localization across all tables and charts; expanded test suite to 16 suites and 92 passing unit tests. |
 
 ---
 

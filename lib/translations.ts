@@ -426,6 +426,78 @@ export const TRANSLATIONS = {
     bn: "৬. নিবন্ধন ও ভূমির ব্যবহার ইতিহাস",
     en: "6. Registration History & Land Use",
   },
+  secMortgage: {
+    bn: "৭. এই জমি বন্ধক রেখে ব্যাংক ঋণ নেওয়ার তথ্য",
+    en: "7. Land Mortgage & Bank Loan Information",
+  },
+  mortgageStatusLabel: {
+    bn: "বন্ধক বা ঋণের অবস্থা",
+    en: "Mortgage / Loan Status",
+  },
+  mortgageStatusActive: {
+    bn: "বন্ধককৃত (ঋণের বিপরীতে দায়বদ্ধ)",
+    en: "Mortgaged (Pledged for Loan)",
+  },
+  mortgageStatusReleased: {
+    bn: "বন্ধক অবমুক্ত (পরিশোধিত)",
+    en: "Mortgage Released (Repaid)",
+  },
+  mortgageStatusNoneFound: {
+    bn: "কোনো বন্ধক রেকর্ড পাওয়া যায়নি",
+    en: "No Mortgage Record Found",
+  },
+  mortgageStatusUnknown: {
+    bn: "তথ্য পাওয়া যায়নি / যাচাই করা সম্ভব হয়নি",
+    en: "Information Not Available / Unable to Verify",
+  },
+  bankNameLabel: {
+    bn: "ব্যাংক বা আর্থিক প্রতিষ্ঠান",
+    en: "Bank or Financial Institution",
+  },
+  bankNameNotAvailable: {
+    bn: "তথ্য পাওয়া যায়নি",
+    en: "Information Not Available",
+  },
+  loanRefLabel: {
+    bn: "ঋণ / বন্ধক রেফারেন্স (সুরক্ষিত)",
+    en: "Loan / Mortgage Ref (Masked)",
+  },
+  loanRefNotAvailable: {
+    bn: "প্রযোজ্য নয় / সংরক্ষিত নেই",
+    en: "N/A / Not Recorded",
+  },
+  mortgageDeedLabel: {
+    bn: "বন্ধক দলিল নম্বর",
+    en: "Mortgage Deed No.",
+  },
+  mortgageRecordDateLabel: {
+    bn: "রেকর্ড / হালনাগাদের তারিখ",
+    en: "Record / Update Date",
+  },
+  releaseInfoLabel: {
+    bn: "অবমুক্তি / দায়মুক্তির বিবরণ",
+    en: "Release & Clearance Info",
+  },
+  releaseInfoActive: {
+    bn: "বন্ধক কার্যকর রয়েছে (সক্রিয় ঋণ)",
+    en: "Mortgage Active (Active Loan)",
+  },
+  releaseInfoReleased: {
+    bn: "দায়মুক্ত (অবমুক্তিপত্র কার্যকর)",
+    en: "Discharged (Release Deed Active)",
+  },
+  releaseInfoUnavailable: {
+    bn: "যাচাই করা সম্ভব হয়নি",
+    en: "Unable to Verify",
+  },
+  externalIntegrationRequiredNotice: {
+    bn: "অফিসিয়াল তথ্য যাচাইয়ের জন্য বাংলাদেশ ব্যাংক সিআইবি বা সংশ্লিষ্ট সাব-রেজিস্ট্রার কার্যালয়ের সমন্বয় ও বাহ্যিক ডেটা সংযোগ প্রয়োজন।",
+    en: "Official verification requires integration with Bangladesh Bank CIB or Sub-Registry archives.",
+  },
+  demoDataNotice: {
+    bn: "এটি একটি নমুনা (ডেমো) রেকর্ড। কোনো লাইভ বা অফিসিয়াল ব্যাংক সংযোগ বিদ্যমান নেই।",
+    en: "This is a synthetic demo record. No live or official banking integration exists.",
+  },
   secDisasterAnalysis: {
     bn: "দুর্যোগজনিত ভূমির পরিবর্তন ও ঝুঁকি বিশ্লেষণ",
     en: "Disaster-Related Land Change and Risk Analysis",
@@ -892,6 +964,7 @@ export const MOUZAS_BN: Record<string, string> = {
 };
 
 export const HILLS_BN: Record<string, string> = {
+  // IDs
   "ghagra": "ঘাগড়া শৈল করিডোর",
   "furamon": "ফুরামন চূড়া শৈলশিরা",
   "vedvedi": "ভেদভেদী নগর পাহাড়ি ঢাল",
@@ -904,6 +977,32 @@ export const HILLS_BN: Record<string, string> = {
   "teknaf_ridge": "টেকনাফ উপদ্বীপ শৈলশিরা",
   "inani_range": "ইনানী সংরক্ষিত পাহাড়মালা",
   "jaflong_hill": "জাফলং সীমান্ত পাহাড়",
+  // English display names from public/mocks/hills.json
+  "Ghagra Hill Corridor": "ঘাগড়া শৈল করিডোর",
+  "Furamon Peak Ridge": "ফুরামন চূড়া শৈলশিরা",
+  "Vedvedi Urban Hill Slope": "ভেদভেদী নগর পাহাড়ি ঢাল",
+  "Sajek Valley Escarpment": "সাজেক উপত্যকা ঢাল",
+  "Chimbuk Hill Crest": "চিম্বুক পাহাড় চূড়া",
+  "Nilgiri Plateau Descent": "নীলগিরি মালভূমি ঢাল",
+  "Mirinja Ridge": "মিরিঞ্জা শৈলশিরা",
+  "Keokradong Foot Range": "কেওক্রাডং পাদদেশীয় পর্বতমালা",
+  "Himchari Coastal Hill Slopes": "হিমছড়ি উপকূলীয় পাহাড়ি ঢাল",
+  "Teknaf Peninsula Ridge": "টেকনাফ উপদ্বীপ শৈলশিরা",
+  "Inani Protected Hill Range": "ইনানী সংরক্ষিত পাহাড়মালা",
+  "Jaflong Border Escarpment": "জাফলং সীমান্ত পাহাড়",
+  // Lowercase keys
+  "ghagra hill corridor": "ঘাগড়া শৈল করিডোর",
+  "furamon peak ridge": "ফুরামন চূড়া শৈলশিরা",
+  "vedvedi urban hill slope": "ভেদভেদী নগর পাহাড়ি ঢাল",
+  "sajek valley escarpment": "সাজেক উপত্যকা ঢাল",
+  "chimbuk hill crest": "চিম্বুক পাহাড় চূড়া",
+  "nilgiri plateau descent": "নীলগিরি মালভূমি ঢাল",
+  "mirinja ridge": "মিরিঞ্জা শৈলশিরা",
+  "keokradong foot range": "কেওক্রাডং পাদদেশীয় পর্বতমালা",
+  "himchari coastal hill slopes": "হিমছড়ি উপকূলীয় পাহাড়ি ঢাল",
+  "teknaf peninsula ridge": "টেকনাফ উপদ্বীপ শৈলশিরা",
+  "inani protected hill range": "ইনানী সংরক্ষিত পাহাড়মালা",
+  "jaflong border escarpment": "জাফলং সীমান্ত পাহাড়",
   "Batali Hill": "বাটালী হিল",
   "Tiger Pass": "টাইগার পাস",
   "Moti Jhorna": "মতিঝর্ণা",
@@ -936,6 +1035,10 @@ export const LAND_CLASSES_BN: Record<string, string> = {
   "char_accretion": "পয়স্তি চর জমি",
   "fallow": "পতিত জমি",
   "orchard": "বাগান",
+  "nal": "নাল (কৃষি জমি)",
+  "bhiti": "ভিটি (উঁচু জমি)",
+  "chala": "চালা (উঁচু ঢালু জমি)",
+  "baid": "বাইদ (নিচু ধানজমি)",
   "Nal Agricultural": "নল কৃষি জমি",
   "Paddy & Crop Field": "ধান ও রবিশস্য জমি",
   "agricultural": "কৃষি জমি",
@@ -961,6 +1064,10 @@ export const RISK_LEVELS_BN: Record<string, string> = {
   "High": "উচ্চ ঝুঁকি",
   "Moderate": "মাঝারি ঝুঁকি",
   "Low": "স্বল্প ঝুঁকি",
+  "extreme": "চরম ঝুঁকি",
+  "high": "উচ্চ ঝুঁকি",
+  "moderate": "মাঝারি ঝুঁকি",
+  "low": "স্বল্প ঝুঁকি",
 };
 
 export const SOIL_TYPES_BN: Record<string, string> = {
@@ -970,6 +1077,31 @@ export const SOIL_TYPES_BN: Record<string, string> = {
   "Alluvial Silt Loam": "পলি দোআঁশ মাটি",
   "Weathered Shale & Siltstone": "ক্ষয়প্রাপ্ত শেল ও পলিমাটি",
   "Sandy Silt with Colluvium": "ঢাল ক্ষয়জনিত বেলে পলিমাটি",
+  // From hills.json & landslide.json
+  "Colluvial sandy clay loam": "কোলুভিয়াল বেলে এঁটেল দোআঁশ",
+  "colluvial sandy clay loam": "কোলুভিয়াল বেলে এঁটেল দোআঁশ",
+  "Tertiary sandstone weathered shale": "টারশিয়ারি বেলেপাথর ও ক্ষয়প্রাপ্ত শেল",
+  "tertiary sandstone weathered shale": "টারশিয়ারি বেলেপাথর ও ক্ষয়প্রাপ্ত শেল",
+  "Residual silt loam": "অবশিষ্ট পলি দোআঁশ",
+  "residual silt loam": "অবশিষ্ট পলি দোআঁশ",
+  "Steep shale terrace": "খাড়া শেল ধাপ",
+  "steep shale terrace": "খাড়া শেল ধাপ",
+  "Weathered metamorphic clay": "ক্ষয়প্রাপ্ত রূপান্তরিত কাদামাটি",
+  "weathered metamorphic clay": "ক্ষয়প্রাপ্ত রূপান্তরিত কাদামাটি",
+  "Compact laterite sandy loam": "সংকুচিত ল্যাটেরাইট বেলে দোআঁশ",
+  "compact laterite sandy loam": "সংকুচিত ল্যাটেরাইট বেলে দোআঁশ",
+  "Silty sandstone colluvium": "পলিযুক্ত বেলেপাথর কোলুভিয়াম",
+  "silty sandstone colluvium": "পলিযুক্ত বেলেপাথর কোলুভিয়াম",
+  "Friable shale slope": "ভঙ্গুর শেল ঢাল",
+  "friable shale slope": "ভঙ্গুর শেল ঢাল",
+  "Marine sandstone terrace": "সামুদ্রিক বেলেপাথর ধাপ",
+  "marine sandstone terrace": "সামুদ্রিক বেলেপাথর ধাপ",
+  "Unconsolidated sandy sediment": "অসংহত বালুকাময় পলি",
+  "unconsolidated sandy sediment": "অসংহত বালুকাময় পলি",
+  "Lateritic red soil": "ল্যাটেরাইটিক লাল মাটি",
+  "lateritic red soil": "ল্যাটেরাইটিক লাল মাটি",
+  "Piedmont boulder clay": "পাদদেশীয় নুড়িপাথর কাদা",
+  "piedmont boulder clay": "পাদদেশীয় নুড়িপাথর কাদা",
 };
 
 export const CORNERS_BN: Record<string, string> = {
@@ -1238,9 +1370,21 @@ export function getLocalizedLocationLabel(label: string, lang: Language): string
     res = res.replace(new RegExp(`\\b${en}\\b`, "gi"), bn);
   }
   res = res.replace(/\bMouza\b/gi, "মৌজা");
+  // Specific suffixes and zone labels
+  res = res.replace(/\bHigh Risk Slope Zone\b/gi, "উচ্চ ঝুঁকিপূর্ণ ঢাল অঞ্চল");
   res = res.replace(/\bHill Tracts Corridor\b/gi, "পার্বত্য চট্টগ্রাম করিডোর");
   res = res.replace(/\bHill Corridor\b/gi, "পাহাড়ি করিডোর");
   res = res.replace(/\bBay of Bengal Estuary\b/gi, "বঙ্গোপসাগর মোহনা");
+  res = res.replace(/\bEstuary Projection\b/gi, "মোহনা প্রক্ষেপণ");
+  res = res.replace(/\bActive Channel\b/gi, "সক্রিয় চ্যানেল");
+  res = res.replace(/\bFlood Channel\b/gi, "প্লাবন চ্যানেল");
+  res = res.replace(/\bSari-Goyain River\b/gi, "সারি-গোয়াইন নদী");
+  res = res.replace(/\bDholai River\b/gi, "ধলাই নদী");
+  res = res.replace(/\bSurma River\b/gi, "সুরমা নদী");
+  res = res.replace(/\bJamuna River\b/gi, "যমুনা নদী");
+  res = res.replace(/\bBrahmaputra River\b/gi, "ব্রহ্মপুত্র নদী");
+  res = res.replace(/\bPadma River\b/gi, "পদ্মা নদী");
+  res = res.replace(/\bMeghna River\b/gi, "মেঘনা নদী");
   return res;
 }
 
@@ -1250,10 +1394,26 @@ export function getLocalizedPeriodLabel(period: string, lang: Language): string 
   res = res.replace(/Years?/gi, "বছর");
   res = res.replace(/Months?/gi, "মাস");
   res = res.replace(/Multi-Year Analysis/gi, "বহুবর্ষীয় বিশ্লেষণ");
+  res = res.replace(/Multi-Temporal Satellite Model/gi, "বহু-সময়কালীন উপগ্রহ মডেল");
   res = res.replace(/Monsoonal Slope Rupture/gi, "বর্ষাকালীন ঢাল ধস");
+  res = res.replace(/Monsoon Deep Learning Model/gi, "বর্ষাকালীন ডিপ লার্নিং মডেল");
   res = res.replace(/Cadastral Evolution/gi, "ক্যাডাস্ট্রাল বিবর্তন");
+  res = res.replace(/Estuarine Dynamics Projection/gi, "মোহনা গতিশীলতা প্রক্ষেপণ");
+  res = res.replace(/Inundation Event/gi, "প্লাবন ঘটনা");
+  res = res.replace(/Model Projection/gi, "মডেল প্রক্ষেপণ");
+  res = res.replace(/Monsoon/gi, "বর্ষা");
+  res = res.replace(/January/gi, "জানুয়ারি");
+  res = res.replace(/February/gi, "ফেব্রুয়ারি");
+  res = res.replace(/March/gi, "মার্চ");
+  res = res.replace(/April/gi, "এপ্রিল");
+  res = res.replace(/May/gi, "মে");
   res = res.replace(/June/gi, "জুন");
+  res = res.replace(/July/gi, "জুলাই");
+  res = res.replace(/August/gi, "আগস্ট");
+  res = res.replace(/September/gi, "সেপ্টেম্বর");
   res = res.replace(/October/gi, "অক্টোবর");
+  res = res.replace(/November/gi, "নভেম্বর");
+  res = res.replace(/December/gi, "ডিসেম্বর");
   return res;
 }
 
@@ -1261,10 +1421,15 @@ export function getLocalizedAssessmentTitle(title: string, lang: Language): stri
   if (lang !== "bn" || !title) return title;
   let res = title;
   res = res.replace(/\s+Riverside Bank Erosion Assessment\b/gi, " নদীভাঙন সমীক্ষা ও মূল্যায়ন");
+  res = res.replace(/\s+Riverside Bank Erosion Risk Projection\b/gi, " নদীভাঙন ঝুঁকি প্রক্ষেপণ");
   res = res.replace(/\s+Flash Flood Submersion Assessment\b/gi, " আকস্মিক প্লাবন ও ক্ষতি সমীক্ষা");
+  res = res.replace(/\s+Flood Inundation & Siltation Assessment\b/gi, " প্লাবন ও পলি সঞ্চয়ন মূল্যায়ন");
   res = res.replace(/\s+Slope Failure & Mass Wasting\b/gi, " পাহাড়ের ঢাল ধস ও মাটি স্খলন");
+  res = res.replace(/\s+Mass-Movement Susceptibility Forecast\b/gi, " পাহাড়ি মাটি স্থানচ্যুতি সংবেদনশীলতা পূর্বাভাস");
   res = res.replace(/\s+Accretion & Consolidation\b/gi, " পলি সঞ্চয়ন ও চরের স্থায়িত্ব");
+  res = res.replace(/\s+Morphological Evolution & Stability Projection\b/gi, " ভূমিরূপ বিবর্তন ও স্থায়িত্ব প্রক্ষেপণ");
   res = res.replace(/\s+Estuarine Shoreline Migration\b/gi, " মোহনা তীররেখার স্থানান্তর");
+  res = res.replace(/\s+Coastal Shoreline Shift & Accretion Projection\b/gi, " উপকূলীয় তীররেখা স্থানান্তর ও পয়স্তি প্রক্ষেপণ");
   res = res.replace(/\bMouza\b/gi, "মৌজা");
   for (const [en, bn] of Object.entries(MOUZAS_BN)) {
     res = res.replace(new RegExp(`\\b${en}\\b`, "gi"), bn);
@@ -1274,6 +1439,7 @@ export function getLocalizedAssessmentTitle(title: string, lang: Language): stri
   }
   res = res.replace(/\bChar\s+([A-Za-z]+)\s+Island\s+North\b/gi, (_, name) => `উত্তর চর ${name}`);
   res = res.replace(/\bChar\s+([A-Za-z]+)\s+Island\s+South\b/gi, (_, name) => `দক্ষিণ চর ${name}`);
+  res = res.replace(/\bChar\s+([A-Za-z]+)\b/gi, (_, name) => `চর ${name}`);
   return res;
 }
 
@@ -1347,6 +1513,46 @@ export function formatDateLocalized(dateStr: string | undefined | null, lang: La
   }
   return formatNumberLocalized(dateStr, "bn");
 }
+
+export function getLocalizedOwnerId(ownerId: string, lang: Language): string {
+  if (!ownerId) return "";
+  const num = ownerId.replace(/^owner_?/i, "");
+  if (lang === "bn") {
+    return `মালিক নং ${formatNumberLocalized(num, "bn")}`;
+  }
+  return `Owner #${num}`;
+}
+
+export function getLocalizedBankName(bankName: string | undefined, lang: Language): string {
+  if (!bankName) return lang === "bn" ? "তথ্য পাওয়া যায়নি" : "Information Not Available";
+  if (lang === "bn") {
+    return bankName;
+  }
+  const match = bankName.match(/\(([^)]+)\)/);
+  if (match && match[1]) {
+    return match[1];
+  }
+  return bankName;
+}
+
+export function getLocalizedLoanStatus(
+  status: "active" | "released" | "closed" | "disputed" | "unknown" | undefined,
+  hasMortgage: boolean | null | undefined,
+  lang: Language
+): string {
+  if (hasMortgage === true || status === "active") {
+    return lang === "bn" ? "বন্ধককৃত (ঋণের বিপরীতে দায়বদ্ধ)" : "Mortgaged (Pledged for Loan)";
+  }
+  if (status === "released" || status === "closed") {
+    return lang === "bn" ? "বন্ধক অবমুক্ত (পরিশোধিত)" : "Mortgage Released (Repaid)";
+  }
+  if (hasMortgage === false) {
+    return lang === "bn" ? "কোনো বন্ধক রেকর্ড পাওয়া যায়নি" : "No Mortgage Record Found";
+  }
+  return lang === "bn" ? "তথ্য পাওয়া যায়নি / যাচাই করা সম্ভব হয়নি" : "Information Not Available / Unable to Verify";
+}
+
+
 
 
 

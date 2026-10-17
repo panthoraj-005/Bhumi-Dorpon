@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import {
   Mountain,
   ArrowRight,
@@ -14,24 +13,12 @@ import {
 } from "lucide-react";
 import { AppHeader } from "@/components/AppHeader";
 import { ForecastBadge } from "@/components/ForecastBadge";
-import { MountainEventSelector } from "@/components/MountainEventSelector";
 import { useAppStore } from "@/stores/appStore";
 import { formatArea } from "@/lib/units";
 import { t, formatNumberLocalized } from "@/lib/translations";
-import { getHills } from "@/lib/data";
-import { Hill } from "@/lib/types";
-import { useQuery } from "@tanstack/react-query";
-import { LandslideEventRecord } from "@/lib/landslideEvents";
 
 export default function LandslideLandingPage() {
-  const router = useRouter();
   const { unit, language } = useAppStore();
-  const [selectedHillId, setSelectedHillId] = useState<string>("ghagra");
-
-  const { data: hills = [] } = useQuery<Hill[]>({
-    queryKey: ["hills"],
-    queryFn: () => getHills(),
-  });
 
   return (
     <div className="flex-1 flex flex-col pb-16">
@@ -132,19 +119,6 @@ export default function LandslideLandingPage() {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* TWO-STEP MOUNTAIN & EVENT SELECTOR PREVIEW */}
-        <div className="space-y-3">
-          <MountainEventSelector
-            mode="recorded"
-            hills={hills}
-            selectedHillId={selectedHillId}
-            onSelectMountain={(id) => setSelectedHillId(id)}
-            onSelectEvent={(ev) => {
-              // Can navigate to detail if clicked
-            }}
-          />
         </div>
 
         {/* Option A & Option B */}

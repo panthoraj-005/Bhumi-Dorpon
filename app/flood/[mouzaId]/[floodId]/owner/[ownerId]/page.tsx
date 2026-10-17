@@ -734,10 +734,10 @@ export default function OwnerLandDetailPage() {
                                       {c.rowLabel}
                                     </td>
                                     <td className="py-1.5 px-3 text-ink font-semibold tabular-nums">
-                                      {c.lat.toFixed(6)}
+                                      {formatNumberLocalized(c.lat.toFixed(6), language)}
                                     </td>
                                     <td className="py-1.5 px-3 text-secondary font-medium tabular-nums">
-                                      {c.lon.toFixed(6)}
+                                      {formatNumberLocalized(c.lon.toFixed(6), language)}
                                     </td>
                                   </tr>
                                 ))}

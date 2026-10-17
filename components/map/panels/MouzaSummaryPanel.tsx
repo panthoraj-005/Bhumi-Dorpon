@@ -84,7 +84,11 @@ export function MouzaSummaryPanel({
         "bg-surface rounded-xl border border-border shadow-xs flex flex-col overflow-hidden text-ink",
         className
       )}
-      aria-label="Mouza-wise area impact summary table"
+      aria-label={
+        isBn
+          ? "মৌজাওয়ারী এলাকা প্রভাব সারসংক্ষেপ সারণী"
+          : "Mouza-wise area impact summary table"
+      }
     >
       {/* Panel Header */}
       <div className="p-3 border-b border-border/70 bg-[#F8FAFC] flex items-center justify-between">

@@ -23,7 +23,7 @@ describe("STEP 3: Selector Hierarchy & getOptions Integration", () => {
 
     expect(getStepsForHazard("river_erosion").map((s) => s.key)).toEqual(["d", "u", "r", "m"]);
     expect(getStepsForHazard("flood").map((s) => s.key)).toEqual(["d", "u", "m", "year"]);
-    expect(getStepsForHazard("landslide").map((s) => s.key)).toEqual(["d", "u", "h"]);
+    expect(getStepsForHazard("landslide").map((s) => s.key)).toEqual(["d", "u", "h", "ev"]);
     expect(getStepsForHazard("char").map((s) => s.key)).toEqual(["d", "u", "r", "m"]);
     expect(getStepsForHazard("coastal").map((s) => s.key)).toEqual(["d", "u", "m"]);
   });

@@ -26,6 +26,7 @@ import {
   Info,
   CheckCircle,
   HelpCircle,
+  Building2,
 } from "lucide-react";
 import { AppHeader } from "@/components/AppHeader";
 import { useAppStore } from "@/stores/appStore";
@@ -41,12 +42,15 @@ import {
   getLocalizedLandClass,
   getLocalizedRiskLevel,
   getLocalizedCornerLabel,
+  getLocalizedBankName,
+  getLocalizedLoanStatus,
 } from "@/lib/translations";
 import { formatArea, formatCurrencyBDT } from "@/lib/units";
 import {
   searchLandInformation,
   LandInformationReport,
   DataStatusBadge,
+  LandLoanMortgageInfo,
 } from "@/lib/landSearch";
 import { getDistricts, getUpazilas, getMouzas } from "@/lib/data";
 import { District, Upazila, Mouza } from "@/lib/types";
@@ -551,10 +555,10 @@ export default function LandInformationPage() {
                     {language === "bn" ? "৪ কোণ স্থানাঙ্ক" : "4 Corners Coordinates"}
                   </div>
                   <div className="grid grid-cols-2 gap-1.5 text-[10px] font-mono text-muted">
-                    <div>{getLocalizedCornerLabel("NW", language)}: {report.identification.corners[0].lat}, {report.identification.corners[0].lon}</div>
-                    <div>{getLocalizedCornerLabel("NE", language)}: {report.identification.corners[1].lat}, {report.identification.corners[1].lon}</div>
-                    <div>{getLocalizedCornerLabel("SE", language)}: {report.identification.corners[2].lat}, {report.identification.corners[2].lon}</div>
-                    <div>{getLocalizedCornerLabel("SW", language)}: {report.identification.corners[3].lat}, {report.identification.corners[3].lon}</div>
+                    <div>{getLocalizedCornerLabel("NW", language)}: {formatNumberLocalized(report.identification.corners[0].lat, language)}, {formatNumberLocalized(report.identification.corners[0].lon, language)}</div>
+                    <div>{getLocalizedCornerLabel("NE", language)}: {formatNumberLocalized(report.identification.corners[1].lat, language)}, {formatNumberLocalized(report.identification.corners[1].lon, language)}</div>
+                    <div>{getLocalizedCornerLabel("SE", language)}: {formatNumberLocalized(report.identification.corners[2].lat, language)}, {formatNumberLocalized(report.identification.corners[2].lon, language)}</div>
+                    <div>{getLocalizedCornerLabel("SW", language)}: {formatNumberLocalized(report.identification.corners[3].lat, language)}, {formatNumberLocalized(report.identification.corners[3].lon, language)}</div>
                   </div>
                 </div>
               </div>
@@ -732,7 +736,7 @@ export default function LandInformationPage() {
                       <span className="text-muted">
                         {language === "bn" ? "বকেয়া করের পরিমাণ" : "Outstanding Tax"}
                       </span>
-                      <span className="font-mono font-bold text-ink">৳ ০.০০</span>
+                      <span className="font-mono font-bold text-ink">{language === "bn" ? "৳ ০.০০" : "৳ 0.00"}</span>
                     </div>
                     <div className="flex items-center justify-between py-1">
                       <span className="text-muted">
@@ -797,6 +801,113 @@ export default function LandInformationPage() {
                     {language === "bn" ? "মাটির বৈশিষ্ট্য:" : "Soil Condition:"}
                   </div>
                   <div className="leading-snug">{report.history.soilCondition}</div>
+                </div>
+              </div>
+
+              {/* SECTION G: LAND MORTGAGE & BANK LOAN INFORMATION (SECTION 7) */}
+              <div className="bhumidorpon-card p-5 space-y-4 flex flex-col justify-between">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between border-b border-border pb-2.5">
+                    <div className="flex items-center gap-2">
+                      <Building2 className="w-4 h-4 text-accent-deep" />
+                      <h3 className="text-sm font-bold text-ink">
+                        {t("secMortgage", language)}
+                      </h3>
+                    </div>
+                    {renderStatusBadge(
+                      report.loanMortgageInfo?.statusBadge || "external_required"
+                    )}
+                  </div>
+
+                  <div className="space-y-2 text-xs">
+                    {/* 1. Mortgage or Loan Status */}
+                    <div className="flex items-center justify-between py-1 border-b border-border/50">
+                      <span className="text-muted">{t("mortgageStatusLabel", language)}</span>
+                      <span
+                        className={`font-semibold ${
+                          report.loanMortgageInfo?.hasMortgageOrLoanCharge === true
+                            ? "text-warn"
+                            : report.loanMortgageInfo?.loanStatus === "released"
+                            ? "text-gain"
+                            : "text-secondary"
+                        }`}
+                      >
+                        {getLocalizedLoanStatus(
+                          report.loanMortgageInfo?.loanStatus,
+                          report.loanMortgageInfo?.hasMortgageOrLoanCharge,
+                          language
+                        )}
+                      </span>
+                    </div>
+
+                    {/* 2. Bank or Financial Institution */}
+                    <div className="flex items-center justify-between py-1 border-b border-border/50">
+                      <span className="text-muted">{t("bankNameLabel", language)}</span>
+                      <span className="font-semibold text-ink text-right">
+                        {report.loanMortgageInfo?.bankName
+                          ? getLocalizedBankName(report.loanMortgageInfo.bankName, language)
+                          : t("bankNameNotAvailable", language)}
+                      </span>
+                    </div>
+
+                    {/* 3. Masked Loan / Mortgage Reference */}
+                    <div className="flex items-center justify-between py-1 border-b border-border/50">
+                      <span className="text-muted">{t("loanRefLabel", language)}</span>
+                      <span className="font-mono text-ink">
+                        {report.loanMortgageInfo?.loanReferenceMasked || t("loanRefNotAvailable", language)}
+                      </span>
+                    </div>
+
+                    {/* 4. Mortgage Deed No. */}
+                    <div className="flex items-center justify-between py-1 border-b border-border/50">
+                      <span className="text-muted">{t("mortgageDeedLabel", language)}</span>
+                      <span className="font-mono text-ink">
+                        {report.loanMortgageInfo?.mortgageDeedNo || (language === "bn" ? "প্রযোজ্য নয়" : "N/A")}
+                      </span>
+                    </div>
+
+                    {/* 5. Record / Update Date */}
+                    <div className="flex items-center justify-between py-1 border-b border-border/50">
+                      <span className="text-muted">{t("mortgageRecordDateLabel", language)}</span>
+                      <span className="text-ink">
+                        {report.loanMortgageInfo?.recordDate || t("bankNameNotAvailable", language)}
+                      </span>
+                    </div>
+
+                    {/* 6. Release & Clearance Info */}
+                    <div className="flex items-center justify-between py-1">
+                      <span className="text-muted">{t("releaseInfoLabel", language)}</span>
+                      <span className="text-secondary font-medium">
+                        {report.loanMortgageInfo?.releaseDate
+                          ? `${language === "bn" ? "অবমুক্ত: " : "Released: "}${report.loanMortgageInfo.releaseDate}`
+                          : report.loanMortgageInfo?.loanStatus === "active"
+                          ? t("releaseInfoActive", language)
+                          : report.loanMortgageInfo?.loanStatus === "released"
+                          ? t("releaseInfoReleased", language)
+                          : t("releaseInfoUnavailable", language)}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Data Source & Integrity Notes */}
+                <div className="p-3 rounded-xl bg-surface-alt border border-border text-[11px] text-muted space-y-1">
+                  <div className="font-semibold text-secondary">
+                    {language === "bn" ? "উৎস সূত্র:" : "Data Source:"}
+                  </div>
+                  <div className="leading-snug">
+                    {report.loanMortgageInfo?.dataSource ||
+                      (language === "bn"
+                        ? "জাতীয় বন্ধক নিবন্ধন ও সিআইবি নেটওয়ার্ক (অসংযুক্ত)"
+                        : "National Mortgage Registry & CIB Network (Disconnected)")}
+                  </div>
+                  {(report.loanMortgageInfo?.notesBn || report.loanMortgageInfo?.notesEn) && (
+                    <div className="pt-1 border-t border-border/60 text-[10px] text-secondary">
+                      {language === "bn"
+                        ? report.loanMortgageInfo.notesBn
+                        : report.loanMortgageInfo.notesEn}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

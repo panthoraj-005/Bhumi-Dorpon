@@ -25,13 +25,16 @@ import { EmptyState } from "@/components/EmptyState";
 import { SegmentedToggle } from "@/components/SegmentedToggle";
 import { Skeleton } from "@/components/Skeleton";
 import { LandslideMap } from "@/components/LandslideMap";
-import { MountainEventSelector } from "@/components/MountainEventSelector";
 import { useAppStore } from "@/stores/appStore";
 import { formatArea } from "@/lib/units";
-import { getHazardResult, getHills } from "@/lib/data";
-import { HazardResult, DataMode, Hill } from "@/lib/types";
+import { getHazardResult } from "@/lib/data";
+import { HazardResult, DataMode } from "@/lib/types";
 import { useSelection } from "@/lib/useSelection";
-import { LandslideEventRecord } from "@/lib/landslideEvents";
+import {
+  LandslideEventRecord,
+  getEventsForMountain,
+  getLandslideEventById,
+} from "@/lib/landslideEvents";
 import {
   t,
   formatNumberLocalized,
@@ -62,6 +65,7 @@ export default function LandslideDetailPage() {
     d,
     u,
     h,
+    ev,
     setStep,
     resetToDefault,
     isFinalStepSet,
@@ -73,13 +77,21 @@ export default function LandslideDetailPage() {
   });
 
   const [focusedPlotNo, setFocusedPlotNo] = useState<string | null>(null);
-  const [selectedEvent, setSelectedEvent] = useState<LandslideEventRecord | null>(null);
 
-  // Load Hills for MountainEventSelector
-  const { data: hills = [] } = useQuery<Hill[]>({
-    queryKey: ["hills"],
-    queryFn: () => getHills(),
-  });
+  const hillEvents = React.useMemo(() => {
+    return h ? getEventsForMountain(h, mode) : [];
+  }, [h, mode]);
+
+  const activeEvent: LandslideEventRecord | null = React.useMemo(() => {
+    if (ev) {
+      const found = getLandslideEventById(ev);
+      if (found && (!h || found.hillId === h) && found.mode === mode) return found;
+    }
+    if (hillEvents.length > 0) {
+      return [...hillEvents].sort((a, b) => b.year - a.year)[0];
+    }
+    return null;
+  }, [ev, h, mode, hillEvents]);
 
   // 2. Load Results via TanStack Query
   const {
@@ -106,29 +118,27 @@ export default function LandslideDetailPage() {
     router.push(`/landslide/${newMode}${queryString ? `?${queryString}` : ""}`);
   };
 
-  const currentHillId = h || "ghagra";
-
   // Event-augmented values
-  const displayTitle = selectedEvent
+  const displayTitle = activeEvent
     ? language === "bn"
-      ? selectedEvent.eventNameBn
-      : selectedEvent.eventNameEn
+      ? activeEvent.eventNameBn
+      : activeEvent.eventNameEn
     : getLocalizedAssessmentTitle(result?.title || "Landslide Hazard", language);
 
-  const displayPeriod = selectedEvent
-    ? selectedEvent.eventDate
+  const displayPeriod = activeEvent
+    ? activeEvent.eventDate
     : getLocalizedPeriodLabel(result?.periodLabel || "2024 Event", language);
 
-  const displayLoss = selectedEvent
-    ? selectedEvent.affectedSlopeAreaDecimal
+  const displayLoss = activeEvent
+    ? activeEvent.affectedSlopeAreaDecimal
     : result?.totalLossDecimal || 117.6;
 
-  const displayDebrisVolume = selectedEvent
-    ? `${formatNumberLocalized(selectedEvent.debrisVolumeM3.toLocaleString(), language)} ${language === "bn" ? "ঘনমিটার" : "m³"}`
+  const displayDebrisVolume = activeEvent
+    ? `${formatNumberLocalized(activeEvent.debrisVolumeM3.toLocaleString(), language)} ${language === "bn" ? "ঘনমিটার" : "m³"}`
     : language === "bn" ? "৪৩,২০১ ঘনমিটার" : "43,201 m³";
 
-  const displaySlopeAngle = selectedEvent
-    ? `${formatNumberLocalized(selectedEvent.slopeGradientDeg, language)}° ${language === "bn" ? "কোণ" : "Angle"}`
+  const displaySlopeAngle = activeEvent
+    ? `${formatNumberLocalized(activeEvent.slopeGradientDeg, language)}° ${language === "bn" ? "কোণ" : "Angle"}`
     : language === "bn" ? "৪২° কোণ" : "42° Angle";
 
   return (
@@ -193,25 +203,7 @@ export default function LandslideDetailPage() {
           {isForecast && <ForecastBadge label="InSAR & Slope Model" />}
         </div>
 
-        {/* TWO-STEP MOUNTAIN & HISTORICAL EVENT SELECTOR */}
-        <MountainEventSelector
-          mode={mode}
-          hills={hills}
-          selectedHillId={currentHillId}
-          selectedEventId={selectedEvent?.id}
-          onSelectMountain={(newHillId) => {
-            // Find parent upazila and district of the hill
-            const matchedHill = hills.find((hItem) => hItem.id === newHillId);
-            if (matchedHill) {
-              setStep("h", newHillId);
-            }
-          }}
-          onSelectEvent={(ev) => {
-            setSelectedEvent(ev);
-          }}
-        />
-
-        {/* REBUILD SELECTOR CHAIN (DISTRICT -> UPAZILA -> HILL) */}
+        {/* SINGLE SELECTOR CHAIN (DISTRICT -> UPAZILA -> HILL -> EVENT) */}
         <SelectorChain
           hazard="landslide"
           mode={mode}
@@ -309,7 +301,7 @@ export default function LandslideDetailPage() {
                   {isForecast && (
                     <ConfidenceBadge
                       level={result.confidence?.level || "High"}
-                      scorePercent={selectedEvent?.modelConfidenceScore || result.confidence?.scorePercent || 86}
+                      scorePercent={activeEvent?.modelConfidenceScore || result.confidence?.scorePercent || 86}
                     />
                   )}
                 </div>
@@ -408,10 +400,10 @@ export default function LandslideDetailPage() {
                   {displaySlopeAngle}
                 </div>
                 <div className="text-[11px] text-secondary">
-                  {selectedEvent
+                  {activeEvent
                     ? language === "bn"
-                      ? `বৃষ্টিপাত: ${formatNumberLocalized(selectedEvent.rainfallMm24h, language)} মিমি/২৪ ঘণ্টা`
-                      : `Rainfall: ${selectedEvent.rainfallMm24h} mm/24h`
+                      ? `বৃষ্টিপাত: ${formatNumberLocalized(activeEvent.rainfallMm24h, language)} মিমি/২৪ ঘণ্টা`
+                      : `Rainfall: ${activeEvent.rainfallMm24h} mm/24h`
                     : language === "bn"
                     ? "মৌসুমী অতিবৃষ্টির থ্রেশহোল্ড"
                     : "High risk monsoonal threshold"}
@@ -426,10 +418,10 @@ export default function LandslideDetailPage() {
                   {displayDebrisVolume}
                 </div>
                 <div className="text-[11px] text-secondary">
-                  {selectedEvent
+                  {activeEvent
                     ? language === "bn"
-                      ? (selectedEvent.impactSummaryBn || selectedEvent.impactSummaryEn).slice(0, 40) + "..."
-                      : selectedEvent.impactSummaryEn.slice(0, 40) + "..."
+                      ? (activeEvent.impactSummaryBn || activeEvent.impactSummaryEn).slice(0, 40) + "..."
+                      : activeEvent.impactSummaryEn.slice(0, 40) + "..."
                     : language === "bn"
                     ? "পাহাড়ের মাটি স্খলন"
                     : "Colluvial soil collapse"}
@@ -441,21 +433,36 @@ export default function LandslideDetailPage() {
                   {language === "bn" ? "বাফারের ভেতরে ঝুঁকিপূর্ণ বসতি" : "Homesteads Inside Buffer"}
                 </span>
                 <div className="text-xl font-bold text-ink tabular-nums">
-                  {selectedEvent
-                    ? `${formatNumberLocalized(selectedEvent.homesteadsAtRisk, language)} ${language === "bn" ? "টি বসতবাড়ি" : "Homesteads"}`
+                  {activeEvent
+                    ? `${formatNumberLocalized(activeEvent.homesteadsAtRisk, language)} ${language === "bn" ? "টি বসতবাড়ি" : "Homesteads"}`
                     : `${formatNumberLocalized(result.owners.length, language)} ${language === "bn" ? "টি বসতবাড়ি" : "Homesteads"}`}
                 </div>
                 <div className="text-[11px] text-secondary">
-                  {selectedEvent
+                  {activeEvent
                     ? language === "bn"
-                      ? `পূর্ব সতর্কবার্তা: ${formatNumberLocalized(selectedEvent.casualtiesAvoidedFamilies, language)}টি পরিবার`
-                      : `Early warning: ${selectedEvent.casualtiesAvoidedFamilies} families`
+                      ? `পূর্ব সতর্কবার্তা: ${formatNumberLocalized(activeEvent.casualtiesAvoidedFamilies, language)}টি পরিবার`
+                      : `Early warning: ${activeEvent.casualtiesAvoidedFamilies} families`
                     : language === "bn"
                     ? "৫০ মিটার ধ্বংসাবশেষ প্রবাহ বাফারে"
                     : "Within 50m runout zone"}
                 </div>
               </div>
             </div>
+
+            {/* IMPACT SUMMARY BANNER */}
+            {activeEvent && (
+              <div className="bhumidorpon-card p-4 bg-surface-alt/60 border border-border flex items-start gap-3">
+                <AlertCircle className="w-4 h-4 text-accent-deep shrink-0 mt-0.5" />
+                <div className="space-y-0.5 text-xs">
+                  <span className="font-semibold text-ink">
+                    {language === "bn" ? "প্রভাব ও ক্ষয়ক্ষতির সারসংক্ষেপ:" : "Impact & Damage Summary:"}
+                  </span>
+                  <p className="text-secondary leading-relaxed">
+                    {language === "bn" ? activeEvent.impactSummaryBn : activeEvent.impactSummaryEn}
+                  </p>
+                </div>
+              </div>
+            )}
 
             {/* 4. OWNER TABLE */}
             <div className="space-y-2">

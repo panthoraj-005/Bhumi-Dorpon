@@ -71,17 +71,22 @@ export function AppHeader({
   return (
     <header className="w-full bg-bg border-b border-border/80 px-4 sm:px-8 py-4 sm:py-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
       {/* Page Title with Space Grotesk */}
-      <div>
-        <h1 className="text-2xl sm:text-3xl font-display font-semibold tracking-tight text-ink">
+      <div className="min-w-0 shrink">
+        <h1
+          className={cn(
+            "text-2xl sm:text-3xl font-display font-semibold tracking-tight text-ink",
+            language === "bn" ? "leading-snug sm:leading-normal" : "leading-tight"
+          )}
+        >
           {title}
         </h1>
         {subtitle && (
-          <p className="text-xs sm:text-sm text-muted mt-0.5">{subtitle}</p>
+          <p className="text-xs sm:text-sm text-muted mt-1 sm:mt-1.5 leading-normal">{subtitle}</p>
         )}
       </div>
 
       {/* Action Controls Toolbar */}
-      <div className="flex flex-wrap items-center justify-start gap-2.5 sm:gap-3">
+      <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 justify-start md:justify-end md:flex-1 md:ml-auto">
         {/* Unit Toggle (শতাংশ | একর | হেক্টর) - Aligned to Far Left of toolbar */}
         <div className="inline-flex items-center shrink-0">
           <SegmentedToggle<AreaUnit>

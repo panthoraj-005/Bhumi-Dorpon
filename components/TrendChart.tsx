@@ -199,7 +199,14 @@ export function TrendChart({
           <span>{t("showAccessibleTable", language)}</span>
         </summary>
         <div className="mt-2.5 overflow-x-auto rounded-lg border border-border">
-          <table className="w-full text-left text-xs" aria-label={`Tabular data for ${displayTitle}`}>
+          <table
+            className="w-full text-left text-xs"
+            aria-label={
+              language === "bn"
+                ? `${displayTitle}-এর জন্য সারণী তথ্য`
+                : `Tabular data for ${displayTitle}`
+            }
+          >
             <thead className="bg-surface-alt text-ink font-semibold border-b border-border">
               <tr>
                 <th scope="col" className="py-2 px-3">{t("tableYearPeriod", language)}</th>

@@ -83,6 +83,20 @@ export interface LandRegistrationHistory {
   dataSource: string;
 }
 
+export interface LandLoanMortgageInfo {
+  hasMortgageOrLoanCharge: boolean | null; // null means unknown, not false
+  bankName?: string;
+  loanReferenceMasked?: string;
+  mortgageDeedNo?: string;
+  recordDate?: string;
+  loanStatus?: "active" | "released" | "closed" | "disputed" | "unknown";
+  releaseDate?: string;
+  dataSource: string;
+  statusBadge: DataStatusBadge;
+  notesBn?: string;
+  notesEn?: string;
+}
+
 export interface DisasterHazardHistory {
   eventDate: string;
   disasterType: "river_erosion" | "flood" | "landslide" | "char" | "coastal";
@@ -122,6 +136,7 @@ export interface LandInformationReport {
   legal: LandLegalInfo;
   tax: LandTaxInfo;
   history: LandRegistrationHistory;
+  loanMortgageInfo?: LandLoanMortgageInfo;
   disasterHistory: DisasterHazardHistory[];
   futurePredictions: FutureRiskPrediction[];
   isFound: boolean;
@@ -265,6 +280,68 @@ export async function searchLandInformation(criteria: {
   const fatherIdx = (matchedPlot.dagNo.charCodeAt(0) || 0) % fatherPrefixes.length;
   const fatherName = `${fatherPrefixes[fatherIdx]} ${owner.name.split(" ")[0] || "চৌধুরী"}`;
 
+  // Deterministic loan / mortgage information
+  let loanMortgageInfo: LandLoanMortgageInfo;
+  if (matchedPlot.dagNo === "101" || matchedPlot.dagNo === "0101") {
+    loanMortgageInfo = {
+      hasMortgageOrLoanCharge: true,
+      bankName: "সোনালী ব্যাংক পিএলসি (Sonali Bank PLC)",
+      loanReferenceMasked: "BL-****-8842",
+      mortgageDeedNo: "MORT-DEED-2021-9941",
+      recordDate: "২০২১-০৬-১৫ (15 Jun 2021)",
+      loanStatus: "active",
+      dataSource: "বাংলাদেশ ব্যাংক সিআইবি ও উপজেলা সাব-রেজিস্ট্রি বন্ধক রেজিস্টার",
+      statusBadge: "demo",
+      notesBn: "কৃষি উন্নয়ন ঋণের বিপরীতে জমিটি জামানত হিসেবে নিবন্ধিত রয়েছে। (ডেমো রেকর্ড)",
+      notesEn: "Land parcel is recorded as mortgaged for an agricultural development loan. (Demo record)",
+    };
+  } else if (matchedPlot.dagNo === "102") {
+    loanMortgageInfo = {
+      hasMortgageOrLoanCharge: false,
+      bankName: "বাংলাদেশ কৃষি ব্যাংক (Bangladesh Krishi Bank)",
+      loanReferenceMasked: "LN-****-1093",
+      mortgageDeedNo: "REL-DEED-2023-4120",
+      recordDate: "২০১৮-০৩-১০",
+      loanStatus: "released",
+      releaseDate: "২০২৩-১১-০২ (02 Nov 2023)",
+      dataSource: "উপজেলা সাব-রেজিস্ট্রি দায়মুক্তি ও অবমুক্তি রেজিস্টার",
+      statusBadge: "demo",
+      notesBn: "ঋণ সম্পূর্ণ পরিশোধ হওয়ায় বন্ধক অবমুক্তিপত্র (Release Deed) জারি হয়েছে।",
+      notesEn: "Mortgage release deed registered upon full repayment of loan liabilities.",
+    };
+  } else if (matchedPlot.dagNo === "103") {
+    loanMortgageInfo = {
+      hasMortgageOrLoanCharge: true,
+      bankName: "অগ্রণী ব্যাংক পিএলসি (Agrani Bank PLC)",
+      loanReferenceMasked: "AG-****-5521",
+      mortgageDeedNo: "MORT-DEED-2022-3104",
+      recordDate: "২০২২-০৮-২০",
+      loanStatus: "active",
+      dataSource: "স্থানীয় মৌজা খতিয়ান তল্লাশি (অযাচাইকৃত)",
+      statusBadge: "unverified",
+      notesBn: "স্থানীয় আবেদনের সূত্রে বন্ধক সংক্রান্ত তথ্য পাওয়া গেছে, তবে প্রাতিষ্ঠানিক সিআইবি যাচাই সম্পন্ন হয়নি।",
+      notesEn: "Mortgage reference noted from local records, pending formal institutional CIB verification.",
+    };
+  } else if (matchedPlot.dagNo === "104") {
+    loanMortgageInfo = {
+      hasMortgageOrLoanCharge: null,
+      loanStatus: "unknown",
+      dataSource: "উপজেলা সাব-রেজিস্ট্রি বন্ধক রেজিস্টার",
+      statusBadge: "unavailable",
+      notesBn: "নির্দিষ্ট মৌজা ও দাগে কোনো বন্ধক বা ঋণ তথ্য সংরক্ষিত নেই।",
+      notesEn: "No mortgage or loan charge information found for this parcel.",
+    };
+  } else {
+    loanMortgageInfo = {
+      hasMortgageOrLoanCharge: null,
+      loanStatus: "unknown",
+      dataSource: "জাতীয় বন্ধক নিবন্ধন ও সিআইবি নেটওয়ার্ক (অসংযুক্ত)",
+      statusBadge: "external_required",
+      notesBn: "অফিসিয়াল তথ্য যাচাইয়ের জন্য বাংলাদেশ ব্যাংক সিআইবি বা সংশ্লিষ্ট সাব-রেজিস্ট্রার কার্যালয়ের সমন্বয় ও বাহ্যিক ডেটা সংযোগ প্রয়োজন।",
+      notesEn: "Official verification requires external integration with Bangladesh Bank CIB or Sub-Registry archives.",
+    };
+  }
+
   // Report Construction
   const report: LandInformationReport = {
     isFound: true,
@@ -332,6 +409,8 @@ export async function searchLandInformation(criteria: {
       statusBadge: "demo",
       dataSource: "জেলা রেকর্ডরুম ও মৌজা খতিয়ান রেজিস্টার",
     },
+
+    loanMortgageInfo,
 
     disasterHistory: [
       {
