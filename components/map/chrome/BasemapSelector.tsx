@@ -3,7 +3,8 @@
 import React from "react";
 import { Map, Globe, Navigation } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { BasemapType, BASEMAP_PROVIDERS } from "@/lib/basemapConfig";
+import { BasemapType } from "@/lib/basemapConfig";
+import { useAppStore } from "@/stores/appStore";
 
 interface BasemapSelectorProps {
   value: BasemapType;
@@ -16,31 +17,34 @@ export function BasemapSelector({
   onChange,
   className,
 }: BasemapSelectorProps) {
+  const { language } = useAppStore();
+  const isBn = language === "bn";
+
   const options: { type: BasemapType; label: string; icon: React.ReactNode; title: string }[] = [
     {
       type: "light-gis",
-      label: "Light GIS",
+      label: isBn ? "জিআইএস" : "Light GIS",
       icon: <Map className="w-3.5 h-3.5" />,
-      title: "Authoritative Light-Themed GIS Basemap (MAP_SPEC.md)",
+      title: isBn ? "প্রামাণ্য জিআইএস বেইসম্যাপ" : "Authoritative Light-Themed GIS Basemap (MAP_SPEC.md)",
     },
     {
       type: "satellite",
-      label: "Satellite",
+      label: isBn ? "উপগ্রহ" : "Satellite",
       icon: <Globe className="w-3.5 h-3.5" />,
-      title: "Genuine Satellite Imagery (Esri World Imagery)",
+      title: isBn ? "প্রকৃত উপগ্রহ চিত্র (Esri World Imagery)" : "Genuine Satellite Imagery (Esri World Imagery)",
     },
     {
       type: "street",
-      label: "Street",
+      label: isBn ? "সড়ক" : "Street",
       icon: <Navigation className="w-3.5 h-3.5" />,
-      title: "Standard Street Basemap (OpenStreetMap)",
+      title: isBn ? "মানসম্মত সড়ক মানচিত্র (OpenStreetMap)" : "Standard Street Basemap (OpenStreetMap)",
     },
   ];
 
   return (
     <div
       role="group"
-      aria-label="Basemap type selector"
+      aria-label={isBn ? "বেইসম্যাপ নির্বাচক" : "Basemap type selector"}
       className={cn(
         "bg-surface/90 backdrop-blur-md p-1 rounded-pill border border-border/80 shadow-xs flex items-center gap-1",
         className

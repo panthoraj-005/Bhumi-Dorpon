@@ -6,6 +6,7 @@ import { useAppStore } from "@/stores/appStore";
 import { formatArea } from "@/lib/units";
 import { cn } from "@/lib/utils";
 import { Pin, ArrowUpRight } from "lucide-react";
+import { formatNumberLocalized, getLocalizedMouzaName } from "@/lib/translations";
 
 interface MouzaSummaryPanelProps {
   mouzas: MouzaSummary[];
@@ -26,8 +27,9 @@ export function MouzaSummaryPanel({
   mode = "recorded",
   className,
 }: MouzaSummaryPanelProps) {
-  const { unit } = useAppStore();
+  const { unit, language } = useAppStore();
   const isForecast = mode === "forecast";
+  const isBn = language === "bn";
 
   // Sort mouzas: selected pinned at top, then loss descending
   const { sortedMouzas, totals, maxLoss } = useMemo(() => {
@@ -88,13 +90,16 @@ export function MouzaSummaryPanel({
       <div className="p-3 border-b border-border/70 bg-[#F8FAFC] flex items-center justify-between">
         <div>
           <h4 className="text-xs font-bold text-ink uppercase tracking-wider flex items-center gap-1.5">
-            <span>Mouza-Wise Summary</span>
+            <span>{isBn ? "মৌজাওয়ারী সারসংক্ষেপ" : "Mouza-Wise Summary"}</span>
             <span className="text-[10px] font-normal text-muted lowercase">
-              ({mouzas.length} mouzas in reach)
+              ({formatNumberLocalized(mouzas.length, language)} {isBn ? "টি মৌজা" : "mouzas in reach"})
             </span>
           </h4>
           <p className="text-[11px] text-muted">
-            {isForecast ? "Projected land impact" : "Recorded cadastral impact"} across adjacent reach
+            {isForecast
+              ? isBn ? "প্রত্যাশিত ভূমির প্রভাব ও ঝুঁকি" : "Projected land impact"
+              : isBn ? "নথিভুক্ত ক্যাডাস্ট্রাল ভূমিক্ষয় ও পয়স্তি" : "Recorded cadastral impact"}{" "}
+            {isBn ? "(নিকটবর্তী এলাকা)" : "across adjacent reach"}
           </p>
         </div>
       </div>
@@ -104,11 +109,11 @@ export function MouzaSummaryPanel({
         <table className="w-full border-collapse text-left">
           <thead className="bg-[#F1F5F9]/60 text-[10px] font-bold text-muted uppercase tracking-wider sticky top-0 z-10 backdrop-blur-xs">
             <tr>
-              <th className="py-2 px-3">Mouza</th>
-              <th className="py-2 px-2 text-right">Loss</th>
-              <th className="py-2 px-2 text-right">Gain</th>
-              <th className="py-2 px-2 text-right">% Area</th>
-              <th className="py-2 px-3 text-right">Impact Bar</th>
+              <th className="py-2 px-3">{isBn ? "মৌজা" : "Mouza"}</th>
+              <th className="py-2 px-2 text-right">{isBn ? "ক্ষতি" : "Loss"}</th>
+              <th className="py-2 px-2 text-right">{isBn ? "বৃদ্ধি" : "Gain"}</th>
+              <th className="py-2 px-2 text-right">{isBn ? "% অনুপাত" : "% Area"}</th>
+              <th className="py-2 px-3 text-right">{isBn ? "প্রভাব বার" : "Impact Bar"}</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-border/40">
@@ -143,29 +148,29 @@ export function MouzaSummaryPanel({
                       {isSelected && (
                         <span className="inline-flex items-center gap-1 px-1.5 py-0.5 bg-primary/15 text-primary text-[9px] font-bold uppercase tracking-wider rounded border border-primary/20 shrink-0">
                           <Pin className="w-2.5 h-2.5 shrink-0" aria-hidden="true" />
-                          PINNED
+                          {isBn ? "নির্বাচিত" : "PINNED"}
                         </span>
                       )}
                       <div>
                         <div className="font-bold flex items-center gap-1">
-                          <span>{m.name}</span>
+                          <span>{getLocalizedMouzaName(m.id, m.name, language)}</span>
                           <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 text-muted transition-opacity" />
                         </div>
-                        <div className="text-[10px] text-muted font-normal">{m.jlNo}</div>
+                        <div className="text-[10px] text-muted font-normal">{formatNumberLocalized(m.jlNo, language)}</div>
                       </div>
                     </div>
                   </td>
 
                   <td className="py-2 px-2 text-right tabular-nums font-semibold text-loss">
-                    {lossVal > 0 ? `-${formatArea(lossVal, unit)}` : "—"}
+                    {lossVal > 0 ? `-${formatArea(lossVal, unit, language)}` : "—"}
                   </td>
 
                   <td className="py-2 px-2 text-right tabular-nums text-gain font-semibold">
-                    {gainVal > 0 ? `+${formatArea(gainVal, unit)}` : "—"}
+                    {gainVal > 0 ? `+${formatArea(gainVal, unit, language)}` : "—"}
                   </td>
 
                   <td className="py-2 px-2 text-right tabular-nums text-muted font-medium">
-                    {m.percent ? `${m.percent}%` : "—"}
+                    {m.percent ? `${formatNumberLocalized(m.percent, language)}%` : "—"}
                   </td>
 
                   <td className="py-2 px-3 text-right">
@@ -184,18 +189,18 @@ export function MouzaSummaryPanel({
           {/* Totals Row */}
           <tfoot className="bg-[#F8FAFC] font-bold border-t border-border text-[11px] sticky bottom-0">
             <tr>
-              <td className="py-2.5 px-3">Reach Total</td>
+              <td className="py-2.5 px-3">{isBn ? "মোট এলাকা প্রভাব" : "Reach Total"}</td>
               <td className="py-2.5 px-2 text-right tabular-nums text-loss">
-                {totals.loss > 0 ? `-${formatArea(totals.loss, unit)}` : "0"}
+                {totals.loss > 0 ? `-${formatArea(totals.loss, unit, language)}` : "0"}
               </td>
               <td className="py-2.5 px-2 text-right tabular-nums text-gain">
-                {totals.gain > 0 ? `+${formatArea(totals.gain, unit)}` : "0"}
+                {totals.gain > 0 ? `+${formatArea(totals.gain, unit, language)}` : "0"}
               </td>
               <td className="py-2.5 px-2 text-right tabular-nums text-muted">
-                {totals.area > 0 ? `${((totals.loss / totals.area) * 100).toFixed(1)}%` : "—"}
+                {totals.area > 0 ? `${formatNumberLocalized(((totals.loss / totals.area) * 100).toFixed(1), language)}%` : "—"}
               </td>
               <td className="py-2.5 px-3 text-right text-[10px] font-normal text-muted">
-                {formatArea(totals.area, unit)} reach
+                {formatArea(totals.area, unit, language)} {isBn ? "মোট জমি" : "reach"}
               </td>
             </tr>
           </tfoot>

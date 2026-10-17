@@ -15,6 +15,7 @@ import { HazardBreakdownItem } from "@/lib/types";
 import { useAppStore } from "@/stores/appStore";
 import { formatArea } from "@/lib/units";
 import { cn } from "@/lib/utils";
+import { t, getLocalizedHazardName } from "@/lib/translations";
 
 interface BarChartProps {
   data: HazardBreakdownItem[];
@@ -26,12 +27,34 @@ interface BarChartProps {
 
 export function BarChart({
   data,
-  title = "Hazard Impact Distribution",
+  title,
   isForecast = false,
   className,
   height = 320,
 }: BarChartProps) {
-  const { unit } = useAppStore();
+  const { unit, language } = useAppStore();
+  const defaultTitle = language === "bn" ? "দুর্যোগভিত্তিক প্রভাব বিস্তার" : "Hazard Impact Distribution";
+  const displayTitle = title || defaultTitle;
+
+  const localizedData = React.useMemo(() => {
+    return data.map((d) => ({
+      ...d,
+      label: getLocalizedHazardName(d.label || d.hazard, language),
+    }));
+  }, [data, language]);
+
+  const unitLabel =
+    unit === "decimal"
+      ? language === "bn"
+        ? "শতাংশ"
+        : "dec"
+      : unit === "acre"
+      ? language === "bn"
+        ? "একর"
+        : "acres"
+      : language === "bn"
+      ? "হেক্টর"
+      : "ha";
 
   const CustomTooltip = ({ active, payload, label }: any) => {
     if (active && payload && payload.length) {
@@ -47,7 +70,7 @@ export function BarChart({
                 />
                 <span className="text-white/70">{entry.name}:</span>
                 <span className="font-semibold text-white tabular-nums">
-                  {formatArea(entry.value, unit)}
+                  {formatArea(entry.value, unit, language)}
                 </span>
               </div>
             ))}
@@ -62,9 +85,11 @@ export function BarChart({
     <div className={cn("bhumidorpon-card p-5 sm:p-6 flex flex-col", className)}>
       <div className="flex items-center justify-between mb-4">
         <div>
-          <h3 className="text-sm sm:text-base font-semibold text-ink">{title}</h3>
+          <h3 className="text-sm sm:text-base font-semibold text-ink">{displayTitle}</h3>
           <p className="text-xs text-muted mt-0.5">
-            Comparative erosion vs accretion by hazard ({unit} units)
+            {language === "bn"
+              ? `দুর্যোগভিত্তিক ভাঙন বনাম বৃদ্ধির তুলনামূলক চিত্র (${unitLabel} এককে)`
+              : `Comparative erosion vs accretion by hazard (${unit} units)`}
           </p>
         </div>
       </div>
@@ -72,7 +97,7 @@ export function BarChart({
       <div style={{ width: "100%", height }}>
         <ResponsiveContainer width="100%" height="100%">
           <RechartsBarChart
-            data={data}
+            data={localizedData}
             margin={{ top: 10, right: 10, left: -20, bottom: 20 }}
           >
             <CartesianGrid
@@ -95,7 +120,7 @@ export function BarChart({
               fontSize={11}
               tickLine={false}
               axisLine={false}
-              tickFormatter={(val) => formatArea(val, unit, { includeUnit: false })}
+              tickFormatter={(val) => formatArea(val, unit, { includeUnit: false, language })}
             />
             <Tooltip content={<CustomTooltip />} />
             <Legend
@@ -106,14 +131,14 @@ export function BarChart({
             />
             <Bar
               dataKey="lossDecimal"
-              name="Loss"
+              name={language === "bn" ? "ক্ষতি (ভাঙন)" : "Loss"}
               fill="#E4604A"
               radius={[6, 6, 0, 0]}
               maxBarSize={32}
             />
             <Bar
               dataKey="gainDecimal"
-              name="Gain"
+              name={language === "bn" ? "বৃদ্ধি (পয়স্তি)" : "Gain"}
               fill="#2F9E62"
               radius={[6, 6, 0, 0]}
               maxBarSize={32}
@@ -124,29 +149,31 @@ export function BarChart({
 
       {/* Screen Reader Text Summary */}
       <div className="sr-only" aria-live="polite">
-        Text summary for {title}: Compares loss and accretion across hazards in {unit} units.
+        {language === "bn"
+          ? `${displayTitle}-এর বিবরণ: দুর্যোগভেদে ভাঙন ও পয়স্তির পরিমাণ (${unitLabel} এককে)`
+          : `Text summary for ${displayTitle}: Compares loss and accretion across hazards in ${unit} units.`}
       </div>
 
       {/* Accessible Data Table Alternative */}
       <details className="mt-4 pt-3 border-t border-border/80 text-xs text-muted group">
         <summary className="cursor-pointer font-medium hover:text-ink select-none inline-flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-1 rounded px-1 -mx-1">
-          <span>Show accessible data table</span>
+          <span>{t("showAccessibleTable", language)}</span>
         </summary>
         <div className="mt-2.5 overflow-x-auto rounded-lg border border-border">
-          <table className="w-full text-left text-xs" aria-label={`Tabular data for ${title}`}>
+          <table className="w-full text-left text-xs" aria-label={`Tabular data for ${displayTitle}`}>
             <thead className="bg-surface-alt text-ink font-semibold border-b border-border">
               <tr>
-                <th scope="col" className="py-2 px-3">Hazard Category</th>
-                <th scope="col" className="py-2 px-3 text-right">Erosion Loss (− {unit})</th>
-                <th scope="col" className="py-2 px-3 text-right">Accretion Gain (+ {unit})</th>
+                <th scope="col" className="py-2 px-3">{t("tableHazardCategory", language)}</th>
+                <th scope="col" className="py-2 px-3 text-right">{t("tableErosionLoss", language)} (− {unitLabel})</th>
+                <th scope="col" className="py-2 px-3 text-right">{t("tableAccretionGain", language)} (+ {unitLabel})</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border/60">
-              {data.map((row, idx) => (
+              {localizedData.map((row, idx) => (
                 <tr key={idx} className="hover:bg-surface-alt/40">
                   <td className="py-1.5 px-3 font-medium text-ink">{row.label}</td>
-                  <td className="py-1.5 px-3 text-right text-loss tabular-nums">−{formatArea(row.lossDecimal, unit)}</td>
-                  <td className="py-1.5 px-3 text-right text-gain tabular-nums">+{formatArea(row.gainDecimal, unit)}</td>
+                  <td className="py-1.5 px-3 text-right text-loss tabular-nums">−{formatArea(row.lossDecimal, unit, language)}</td>
+                  <td className="py-1.5 px-3 text-right text-gain tabular-nums">+{formatArea(row.gainDecimal, unit, language)}</td>
                 </tr>
               ))}
             </tbody>

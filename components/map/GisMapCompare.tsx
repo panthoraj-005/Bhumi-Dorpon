@@ -32,6 +32,7 @@ import { WaterStatusCard } from "./panels/WaterStatusCard";
 import { TerrainContextCard } from "./panels/TerrainContextCard";
 import { useLayerStore } from "./chrome/layerStore";
 import { useAppStore } from "@/stores/appStore";
+import { getLocalizedHazardName } from "@/lib/translations";
 
 export interface PlotGeometryItem {
   dagNo: string;
@@ -95,7 +96,7 @@ export function GisMapCompare({
   const finalAfterLabel =
     afterLabel || (isForecast ? "Projected Status (Forecast)" : "Current Status (After)");
 
-  const { unit } = useAppStore();
+  const { unit, language } = useAppStore();
   const layerStore = useLayerStore();
 
   const [mapArea, setMapArea] = useState<MapArea | null>(initialArea || null);
@@ -617,14 +618,14 @@ export function GisMapCompare({
           <span className="w-2.5 h-2.5 rounded-full bg-water animate-pulse" />
           <span className="text-sm font-bold text-ink">{title}</span>
           <span className="text-muted text-xs">•</span>
-          <span className="text-xs font-semibold text-secondary capitalize">{hazard.replace("_", " ")}</span>
+          <span className="text-xs font-semibold text-secondary">{getLocalizedHazardName(hazard, language)}</span>
           {isForecast ? (
             <span className="px-2 py-0.5 rounded-pill bg-[#6A5BD6]/10 text-[#6A5BD6] font-bold text-[10px] border border-[#6A5BD6]/20">
-              Forecast
+              {language === "bn" ? "পূর্বাভাস" : "Forecast"}
             </span>
           ) : (
             <span className="px-2 py-0.5 rounded-pill bg-emerald-500/10 text-emerald-700 font-bold text-[10px] border border-emerald-500/20">
-              Recorded
+              {language === "bn" ? "রেকর্ডকৃত" : "Recorded"}
             </span>
           )}
         </div>
@@ -687,7 +688,7 @@ export function GisMapCompare({
               <span className="w-2.5 h-2.5 rounded-full bg-blue-500 shadow-2xs" />
               <span className="text-xs font-bold text-ink">{beforeLabel}</span>
               <span className="text-[10px] font-semibold text-muted bg-surface-alt px-1.5 py-0.5 rounded border border-border/60">
-                Baseline
+                {language === "bn" ? "ভিত্তিরেখা" : "Baseline"}
               </span>
             </div>
 
@@ -774,7 +775,9 @@ export function GisMapCompare({
                     : "bg-emerald-500/10 text-emerald-700 border-emerald-500/20"
                 )}
               >
-                {isForecast ? "Forecast" : "Assessment"}
+                {isForecast
+                  ? language === "bn" ? "পূর্বাভাস" : "Forecast"
+                  : language === "bn" ? "মূল্যায়ন" : "Assessment"}
               </span>
             </div>
 
@@ -843,7 +846,7 @@ export function GisMapCompare({
           className="truncate max-w-[70%]"
         />
         <div className="shrink-0 flex items-center gap-2 font-mono text-[10px]">
-          <span>Synchronized dual Leaflet</span>
+          <span>{language === "bn" ? "সিঙ্ক্রোনাইজড ডুয়াল লিফলেট" : "Synchronized dual Leaflet"}</span>
           <span>•</span>
           <span>z{currentZoom}</span>
         </div>
@@ -860,7 +863,7 @@ export function GisMapCompare({
           )}
         >
           <Layers className="w-3.5 h-3.5" />
-          <span>Layers</span>
+          <span>{language === "bn" ? "লেয়ার" : "Layers"}</span>
         </button>
 
         <button
@@ -872,7 +875,7 @@ export function GisMapCompare({
           )}
         >
           <ListOrdered className="w-3.5 h-3.5" />
-          <span>Mouzas</span>
+          <span>{language === "bn" ? "মৌজা" : "Mouzas"}</span>
         </button>
 
         {mapArea?.context && (
@@ -887,12 +890,12 @@ export function GisMapCompare({
             {hazard === "landslide" ? (
               <>
                 <Mountain className="w-3.5 h-3.5" />
-                <span>Terrain</span>
+                <span>{language === "bn" ? "ভূসংস্থান" : "Terrain"}</span>
               </>
             ) : (
               <>
                 <Waves className="w-3.5 h-3.5" />
-                <span>Water</span>
+                <span>{language === "bn" ? "পানি" : "Water"}</span>
               </>
             )}
           </button>
@@ -905,12 +908,12 @@ export function GisMapCompare({
           <div className="flex items-center justify-between pb-2 border-b border-border/50 mb-3">
             <span className="text-xs font-bold text-ink uppercase tracking-wider">
               {activeMobileTab === "layers"
-                ? "Layer Controls"
+                ? language === "bn" ? "লেয়ার নিয়ন্ত্রণ" : "Layer Controls"
                 : activeMobileTab === "mouzas"
-                ? "Mouza Summary"
+                ? language === "bn" ? "মৌজার সারসংক্ষেপ" : "Mouza Summary"
                 : hazard === "landslide"
-                ? "Terrain Morphometry"
-                : "Water Status"}
+                ? language === "bn" ? "ভূসংস্থান বিশ্লেষণ" : "Terrain Morphometry"
+                : language === "bn" ? "পানির অবস্থা" : "Water Status"}
             </span>
             <button type="button" onClick={() => setActiveMobileTab("none")} className="p-1 text-muted hover:text-ink">
               <X className="w-4 h-4" />
@@ -955,8 +958,8 @@ export function GisMapCompare({
           <div className="lg:col-span-4 space-y-4">
             <div className="bhumidorpon-card p-4">
               <h3 className="text-xs font-bold text-ink uppercase tracking-wider mb-2.5 flex items-center justify-between">
-                <span>Map Legend</span>
-                <span className="text-[10px] text-muted font-normal capitalize">{hazard.replace("_", " ")}</span>
+                <span>{language === "bn" ? "মানচিত্র সংকেত" : "Map Legend"}</span>
+                <span className="text-[10px] text-muted font-normal">{getLocalizedHazardName(hazard, language)}</span>
               </h3>
               <MapLegend hazard={hazard} isForecast={isForecast} />
             </div>

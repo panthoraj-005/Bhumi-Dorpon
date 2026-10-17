@@ -4,9 +4,9 @@
 ---
 
 > **Document Status:** Authoritative Security & Privacy Posture Specification  
-> **Security Audit Status:** **INTERNAL SOURCE REVIEW (Zero High-Risk Vulnerabilities Detected)**  
-> **Architecture Model:** Client-Side Demonstration Prototype (Zero Backend Attack Surface)  
-> **Target Production Model:** Government-Grade Defense-in-Depth & PII Protection  
+> **Security Audit Status:** **INTERNAL SOURCE REVIEW & CLIENT AUTH AUDIT (v1.2 Release)**  
+> **Architecture Model:** Client-Side Demonstration Prototype with Isolated Demo Access Subsystem  
+> **Target Production Model:** Government-Grade Defense-in-Depth, Sovereign Cloud Infrastructure & PII Protection  
 > **Team:** GeoNeural  
 > **Last Updated:** October 2026  
 > **Cross-References:** [Main Documentation](MAIN_PROJECT_DOCUMENTATION.md) | [PRD](PRD.md) | [TRD](TRD.md) | [System Architecture](ARCHITECTURE.md) | [Auth Specification](AUTH_SPECIFICATION.md) | [Testing & QA](TESTING_QA.md)
@@ -19,11 +19,13 @@
 - [2. Information Asset Classification](#2-information-asset-classification)
 - [3. Trust Boundaries & Attack Surface Analysis](#3-trust-boundaries--attack-surface-analysis)
 - [4. Client-Side Privacy & Google Earth Data Boundaries](#4-client-side-privacy--google-earth-data-boundaries)
-- [5. Current Prototype Vulnerability Posture](#5-current-prototype-vulnerability-posture)
-  - [5.1 Absence of Server-Side Attack Vectors](#51-absence-of-server-side-attack-vectors)
+- [5. Current Prototype Vulnerability & Access Posture (v1.2)](#5-current-prototype-vulnerability--access-posture-v12)
+  - [5.1 Demo Mode Isolation & Privilege Escalation Defenses](#51-demo-mode-isolation--privilege-escalation-defenses)
   - [5.2 Client-Side Cross-Site Scripting (XSS) Mitigation](#52-client-side-cross-site-scripting-xss-mitigation)
-  - [5.3 Dependency Security Audit](#53-dependency-security-audit)
-- [6. Proposed Production Security Architecture](#6-proposed-production-architecture)
+  - [5.3 Input Sanitization & String Token Preservation](#53-input-sanitization--string-token-preservation)
+  - [5.4 Credential & Secret Management in Client Codebase](#54-credential--secret-management-in-client-codebase)
+  - [5.5 Dependency Security Audit](#55-dependency-security-audit)
+- [6. Proposed Production Security Architecture](#6-proposed-production-security-architecture)
   - [6.1 Secrets & Environment Variable Management](#61-secrets--environment-variable-management)
   - [6.2 SQL & Spatial Injection Defenses](#62-sql--spatial-injection-defenses)
   - [6.3 Content Security Policy (CSP) & HTTP Headers](#63-content-security-policy-csp--http-headers)
@@ -35,12 +37,13 @@
 
 ## 1. Security Scope & Threat Landscape
 
-This specification documents the current security, data privacy, and vulnerability posture of **BhumiDorpon**. Because the v1.1 demonstration release operates as a client-side web application without a backend server, database daemon, or authenticated user accounts, its attack surface is fundamentally different from a multi-tenant cloud SaaS platform.
+This specification documents the security, data privacy, and vulnerability posture of **BhumiDorpon**. The v1.2 release incorporates client-side authentication (`lib/auth.ts`), role-based demo isolation, cascading land parcel search (`lib/landSearch.ts`), and mountain-based landslide event analysis (`lib/landslideEvents.ts`).
 
 The primary security objectives are:
 1. **Zero Client Data Exfiltration:** Guarantee that user interactions, parcel coordinates, and exported files remain strictly on the client device.
-2. **Data Transparency & Integrity:** Ensure that mock datasets cannot be maliciously altered in memory to display fraudulent compensation liabilities.
-3. **Preparedness for Government Production:** Define comprehensive defense-in-depth specifications for future deployment within national land administration infrastructure.
+2. **Demo Privilege Containment:** Prevent unauthenticated or demo visitors from exercising administrative privileges or modifying simulated records.
+3. **Data Integrity & Attribution Transparency:** Clearly demarcate simulated demo data, unverified records, and deep-learning model forecasts from legally certified land surveys.
+4. **Zero Secret Exposure:** Guarantee that no live server credentials, private API keys, or production cryptographic secrets exist in frontend client code.
 
 ---
 
@@ -50,9 +53,10 @@ The primary security objectives are:
 |---|---|---|---|
 | **Cadastral Plot Geometries** | **Public / Non-Sensitive** | **Restricted / Public Cadastre** | Synthetic 4-corner polygons (`plots.json`). In production, official mouza sheets are public administrative records. |
 | **Landowner Identities** | **Public / Non-Sensitive** | **Confidential / PII** | Fictional names (*Abdul Karim*, *Rahima Begum*). In production, real citizen names and NIDs require strict masking. |
+| **Cadastral Search Queries** | **Ephemeral Client Data** | **Audited Query Records** | Alphanumeric Dag and Khatian numbers processed locally. In production, high-volume parcel searches require audit logging. |
 | **Compensation Sums** | **Public / Non-Sensitive** | **Restricted Financial Data** | Illustrative calculations based on standard formulas. In production, official disbursement records require tamper-proof audit trails. |
+| **Client Session Tokens** | **Low-Sensitivity Client Token** | **Confidential Bearer Token** | Prototype sessions in `localStorage` under `bhumidorpon_session`. In production, signed HTTP-only JWTs. |
 | **Application Source Code** | **Public Open Source** | **Protected Intellectual Property** | TypeScript, React, and Leaflet source code. Zero committed secrets or API tokens. |
-| **User Session Data** | **None** | **Confidential** | The application collects zero user credentials, passwords, session cookies, or IP tracking telemetry. |
 
 ---
 
@@ -65,10 +69,13 @@ graph TD
     end
 
     subgraph ClientSandbox ["Client Trust Boundary (Browser Sandbox)"]
+        AuthModal["Auth Interceptor (AuthModal / /login)"]
+        DemoSession["Demo Session State (isDemo: true)"]
         NextApp["BhumiDorpon React Application"]
         LeafletEngine["Leaflet SVG Mapping Engine"]
         LocalData["In-Memory Mock Store (public/mocks/*.json)"]
         GESerializer["Client KML Serializer (lib/googleEarth.ts)"]
+        LandSearchEngine["Land Search Engine (lib/landSearch.ts)"]
     end
 
     subgraph ExternalThirdParty ["External Third-Party Services (HTTPS)"]
@@ -77,10 +84,13 @@ graph TD
         GoogleEarthWeb["Google Earth Web (earth.google.com)"]
     end
 
-    UntrustedZone -->|Loads Static Assets| ClientSandbox
+    UntrustedZone -->|Loads Static Assets| AuthModal
+    AuthModal -->|Validates or Bypasses as Demo| DemoSession
+    DemoSession --> NextApp
     NextApp --> LeafletEngine
     NextApp --> LocalData
     NextApp --> GESerializer
+    NextApp --> LandSearchEngine
     LeafletEngine -.->|Anonymous Outbound Tile Requests| EsriTiles
     LeafletEngine -.->|Anonymous Outbound Tile Requests| OSMTiles
     GESerializer -.->|Launches Camera Tab (Centroid Only)| GoogleEarthWeb
@@ -104,31 +114,33 @@ The "Open in Google Earth" workflow on the Flood Owner Land Detail page enforces
 
 ---
 
-## 5. Current Prototype Vulnerability Posture
+## 5. Current Prototype Vulnerability & Access Posture (v1.2)
 
-### 5.1 Absence of Server-Side Attack Vectors
-Because BhumiDorpon does not expose an HTTP backend server or SQL database:
-- **SQL Injection (SQLi):** **Non-Existent.** (No database connection exists).
-- **Server-Side Request Forgery (SSRF):** **Non-Existent.** (No server-side fetching).
-- **Authentication Bypass / Broken Object Level Authorization (BOLA):** **Non-Existent.** (No user sessions or access control headers).
-- **Remote Code Execution (RCE):** **Non-Existent.** (No backend evaluation or command execution).
+### 5.1 Demo Mode Isolation & Privilege Escalation Defenses
+- **Ephemeral Session Flagging:** When a user enters via the **"Demo / ডেমো হিসেবে প্রবেশ করুন"** button, the generated session contains `isDemo: true`.
+- **Privilege Gate (`canPerformAdministrativeAction`):** Administrative and mutation routines verify:
+  ```typescript
+  export function canPerformAdministrativeAction(user: User | null): boolean {
+    if (!user || user.isDemo) return false;
+    return user.role === "surveyor_acland" || user.role === "sys_admin";
+  }
+  ```
+  This guarantees that demo evaluators cannot approve compensation claims, re-survey parcel coordinates, or trigger data ingestion workflows.
+- **Top-Level Banner Reminder:** A prominent bar informs users that they are in unprivileged demonstration mode.
 
 ### 5.2 Client-Side Cross-Site Scripting (XSS) Mitigation
 - **React Escaping:** Next.js and React automatically encode all JSX string interpolations, preventing DOM-based XSS attacks.
-- **XML Escaping in KML Serializer:** In [`lib/googleEarth.ts`](file:///d:/Project/Antigravity/BhumiDorpon/lib/googleEarth.ts), the `escapeXml()` function strictly sanitizes all user metadata before embedding into KML Placemarks:
-  ```typescript
-  export function escapeXml(text: string): string {
-    return text
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&apos;");
-  }
-  ```
+- **XML Escaping in KML Serializer:** In [`lib/googleEarth.ts`](file:///d:/Project/Antigravity/BhumiDorpon/lib/googleEarth.ts), the `escapeXml()` function strictly sanitizes all user metadata before embedding into KML Placemarks (`&`, `<`, `>`, `"`, `'`).
 - **Leaflet HTML Injection:** Leaflet tooltips and popups avoid raw string concatenation, binding properties safely through verified text content setters.
 
-### 5.3 Dependency Security Audit
+### 5.3 Input Sanitization & String Token Preservation
+- In the Land Information Search (`/land-information`), Dag No. and Khatian No. inputs are sanitized against whitespace and control characters while preserving string representations verbatim (e.g., `"0101"` is never parsed as integer `101`).
+
+### 5.4 Credential & Secret Management in Client Codebase
+- Inspection of the codebase confirms **zero committed production credentials, API secrets, or private keys**.
+- Seeded test accounts in `lib/auth.ts` (`surveyor`, `citizen`, `admin`) are strictly intended for local demonstration and automated testing in offline environments.
+
+### 5.5 Dependency Security Audit
 - All packages in `package.json` are pinned to secure, modern versions.
 - Running `npm audit` confirms zero critical or high-severity vulnerabilities across active dependencies.
 

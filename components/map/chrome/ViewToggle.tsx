@@ -4,6 +4,7 @@ import React from "react";
 import { Maximize2, Map } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLayerStore, ViewTarget } from "./layerStore";
+import { useAppStore } from "@/stores/appStore";
 
 interface ViewToggleProps {
   onFitReach: () => void;
@@ -13,6 +14,8 @@ interface ViewToggleProps {
 
 export function ViewToggle({ onFitReach, onFitMouza, className }: ViewToggleProps) {
   const { viewTarget, setViewTarget } = useLayerStore();
+  const { language } = useAppStore();
+  const isBn = language === "bn";
 
   const handleSelect = (target: ViewTarget) => {
     setViewTarget(target);
@@ -39,9 +42,9 @@ export function ViewToggle({ onFitReach, onFitMouza, className }: ViewToggleProp
             ? "bg-ink text-surface shadow-xs"
             : "text-muted hover:text-ink"
         )}
-        title="Focus on selected mouza with adjacent mouza context"
+        title={isBn ? "নির্বাচিত মৌজায় ফোকাস করুন" : "Focus on selected mouza with adjacent mouza context"}
       >
-        <span>Mouza view</span>
+        <span>{isBn ? "মৌজা দৃশ্য" : "Mouza view"}</span>
       </button>
 
       <button
@@ -53,20 +56,9 @@ export function ViewToggle({ onFitReach, onFitMouza, className }: ViewToggleProp
             ? "bg-ink text-surface shadow-xs"
             : "text-muted hover:text-ink"
         )}
-        title="View complete reach across all area mouzas"
+        title={isBn ? "সমগ্র এলাকার মৌজাগুলো দেখুন" : "View complete reach across all area mouzas"}
       >
-        <span>Reach view</span>
-      </button>
-
-      <div className="h-3 w-px bg-border/60 mx-0.5" />
-
-      <button
-        type="button"
-        onClick={onFitReach}
-        className="p-1 rounded-full text-muted hover:text-ink hover:bg-surface-alt transition-colors"
-        title="Fit entire reach to view"
-      >
-        <Maximize2 className="w-3.5 h-3.5" />
+        <span>{isBn ? "এলাকা দৃশ্য" : "Reach view"}</span>
       </button>
     </div>
   );

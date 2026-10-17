@@ -4,6 +4,7 @@ import React, { useMemo, useCallback } from "react";
 import { LandslideGeometry, OwnerRecord, MapArea } from "@/lib/types";
 import { GisMapCompare, PlotGeometryItem } from "./GisMapCompare";
 import { useLayerStore } from "./chrome/layerStore";
+import { useAppStore } from "@/stores/appStore";
 
 interface LandslideMapProps {
   geometry?: LandslideGeometry | null;
@@ -27,6 +28,7 @@ export function LandslideMap({
   className,
 }: LandslideMapProps) {
   const layerStore = useLayerStore();
+  const { language } = useAppStore();
 
   // Convert owner records into plot geometry items
   const plotGeometryItems = useMemo<PlotGeometryItem[]>(() => {
@@ -344,16 +346,24 @@ export function LandslideMap({
         }
       }
     },
-    [geometry, isForecast, layerStore.hazardOpacity, layerStore.slope, layerStore.elevationChange]
+    [geometry, isForecast, layerStore.hazardOpacity, layerStore.slope, layerStore.elevationChange, language]
   );
 
   return (
     <GisMapCompare
-      title="Landslide Slope Failure & Debris Runout"
+      title={language === "bn" ? "পাহাড়ধস ও ধ্বংসাবশেষ বিস্তার মানচিত্র" : "Landslide Slope Failure & Debris Runout"}
       hazard="landslide"
       mode={isForecast ? "forecast" : "recorded"}
-      beforeLabel="Pre-Failure Terrain (Before)"
-      afterLabel={isForecast ? "Susceptibility Projection (Forecast)" : "Failure Scarp & Debris Runout (After)"}
+      beforeLabel={language === "bn" ? "ধস পূর্ববর্তী ভূসংস্থান (পূর্বের)" : "Pre-Failure Terrain (Before)"}
+      afterLabel={
+        isForecast
+          ? language === "bn"
+            ? "ঝুঁকি প্রবণতা প্রক্ষেপণ (পূর্বাভাস)"
+            : "Susceptibility Projection (Forecast)"
+          : language === "bn"
+            ? "ধসের স্থান ও ধ্বংসাবশেষ বিস্তার (পরের)"
+            : "Failure Scarp & Debris Runout (After)"
+      }
       selectedPlotNo={selectedPlotNo}
       onSelectPlot={onSelectPlot}
       selectedMouzaId={selectedMouzaId}

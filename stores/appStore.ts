@@ -1,7 +1,19 @@
 import { create } from "zustand";
 import { AreaUnit, DataMode, HazardType, TimePeriod } from "@/lib/types";
+import { Language } from "@/lib/translations";
+import { AuthSession, getSavedSession } from "@/lib/auth";
 
 interface AppState {
+  // Global Language ('bn' default)
+  language: Language;
+  setLanguage: (lang: Language) => void;
+
+  // Authentication & Demo Session
+  authSession: AuthSession | null;
+  setAuthSession: (session: AuthSession | null) => void;
+  isAuthModalOpen: boolean;
+  setIsAuthModalOpen: (open: boolean) => void;
+
   // Global Unit & Period
   unit: AreaUnit;
   setUnit: (unit: AreaUnit) => void;
@@ -34,7 +46,32 @@ interface AppState {
   resetCascade: () => void;
 }
 
+function getInitialLanguage(): Language {
+  if (typeof window === "undefined") return "bn";
+  const saved = localStorage.getItem("bhumidorpon_language");
+  return saved === "en" ? "en" : "bn";
+}
+
 export const useAppStore = create<AppState>((set) => ({
+  // Default language is strictly Bangla ('bn')
+  language: "bn",
+  setLanguage: (language) => {
+    if (typeof window !== "undefined") {
+      try {
+        localStorage.setItem("bhumidorpon_language", language);
+      } catch (e) {
+        console.error("Failed to save language preference:", e);
+      }
+    }
+    set({ language });
+  },
+
+  // Auth session
+  authSession: null,
+  setAuthSession: (authSession) => set({ authSession }),
+  isAuthModalOpen: false,
+  setIsAuthModalOpen: (isAuthModalOpen) => set({ isAuthModalOpen }),
+
   unit: "decimal",
   setUnit: (unit) => set({ unit }),
 
@@ -82,3 +119,4 @@ export const useAppStore = create<AppState>((set) => ({
       selectedMouzaId: null,
     }),
 }));
+

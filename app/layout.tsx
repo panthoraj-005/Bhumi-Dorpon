@@ -4,6 +4,7 @@ import "./globals.css";
 import { QueryProvider } from "@/components/QueryProvider";
 import { DemoBanner } from "@/components/DemoBanner";
 import { AppSidebar } from "@/components/AppSidebar";
+import { AuthModal } from "@/components/auth/AuthModal";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,9 +30,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
+    <html lang="bn" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body className="bg-bg text-ink min-h-screen antialiased flex flex-col font-sans">
         <QueryProvider>
+          {/* Authentication Entry Modal on First Visit */}
+          <AuthModal />
+
           {/* Top Demo Banner across every page */}
           <DemoBanner />
 
@@ -50,3 +54,4 @@ export default function RootLayout({
     </html>
   );
 }
+

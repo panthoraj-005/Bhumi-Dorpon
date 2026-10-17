@@ -4,6 +4,7 @@ import React, { useMemo, useCallback } from "react";
 import { RiverErosionGeometry, OwnerRecord, MapArea } from "@/lib/types";
 import { GisMapCompare, PlotGeometryItem } from "./GisMapCompare";
 import { useLayerStore } from "./chrome/layerStore";
+import { useAppStore } from "@/stores/appStore";
 
 interface RiverErosionMapProps {
   geometry?: RiverErosionGeometry | null;
@@ -31,6 +32,7 @@ export function RiverErosionMap({
   className,
 }: RiverErosionMapProps) {
   const layerStore = useLayerStore();
+  const { language } = useAppStore();
 
   // Convert owner records into plot geometry items for interactive inspection
   const plotGeometryItems = useMemo<PlotGeometryItem[]>(() => {
@@ -195,15 +197,31 @@ export function RiverErosionMap({
   );
 
   const beforeTitle = isForecast
-    ? "Current Surveyed Bankline (Baseline)"
-    : `${beforeYear} Surveyed Bankline`;
+    ? language === "bn"
+      ? "বর্তমান জরিপকৃত তীররেখা (ভিত্তিরেখা)"
+      : "Current Surveyed Bankline (Baseline)"
+    : language === "bn"
+      ? `${beforeYear.toLocaleString("bn-BD")} জরিপকৃত তীররেখা`
+      : `${beforeYear} Surveyed Bankline`;
   const afterTitle = isForecast
-    ? `${afterYear} ML Projected Bankline`
-    : `${afterYear} Satellite Bankline`;
+    ? language === "bn"
+      ? `${afterYear.toLocaleString("bn-BD")} এমএল প্রক্ষেপিত তীররেখা`
+      : `${afterYear} ML Projected Bankline`
+    : language === "bn"
+      ? `${afterYear.toLocaleString("bn-BD")} উপগ্রহ তীররেখা`
+      : `${afterYear} Satellite Bankline`;
 
   return (
     <GisMapCompare
-      title={isForecast ? "Projected Bankline Retreat Model" : "Riverside Bank Erosion Assessment"}
+      title={
+        isForecast
+          ? language === "bn"
+            ? "প্রক্ষেপিত নদীভাঙন মডেল"
+            : "Projected Bankline Retreat Model"
+          : language === "bn"
+            ? "নদীভাঙন ও তীররেখা পরিবর্তন মূল্যায়ন"
+            : "Riverside Bank Erosion Assessment"
+      }
       hazard="river_erosion"
       mode={isForecast ? "forecast" : "recorded"}
       selectedMouzaId={selectedMouzaId}

@@ -1,6 +1,10 @@
+"use client";
+
 import React from "react";
 import { Sparkles, Info } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useAppStore } from "@/stores/appStore";
+import { t } from "@/lib/translations";
 
 interface ForecastBadgeProps {
   label?: string;
@@ -10,11 +14,14 @@ interface ForecastBadgeProps {
 }
 
 export function ForecastBadge({
-  label = "Forecast",
+  label,
   showDisclaimerNote = false,
   className,
   size = "md",
 }: ForecastBadgeProps) {
+  const { language } = useAppStore();
+  const displayLabel = label || (language === "bn" ? "পূর্বাভাস" : "Forecast");
+
   return (
     <div className={cn("inline-flex flex-col items-start gap-1", className)}>
       <div
@@ -24,13 +31,13 @@ export function ForecastBadge({
         )}
       >
         <Sparkles className={size === "sm" ? "w-3 h-3" : "w-3.5 h-3.5"} />
-        <span>{label}</span>
+        <span>{displayLabel}</span>
       </div>
 
       {showDisclaimerNote && (
         <p className="text-[11px] text-muted flex items-center gap-1 mt-0.5">
           <Info className="w-3 h-3 text-[#6A5BD6] flex-shrink-0" />
-          <span>This is a model-based estimate, not an official government record.</span>
+          <span>{t("disclaimerNote", language)}</span>
         </p>
       )}
     </div>

@@ -25,11 +25,21 @@ import { EmptyState } from "@/components/EmptyState";
 import { SegmentedToggle } from "@/components/SegmentedToggle";
 import { Skeleton } from "@/components/Skeleton";
 import { LandslideMap } from "@/components/LandslideMap";
+import { MountainEventSelector } from "@/components/MountainEventSelector";
 import { useAppStore } from "@/stores/appStore";
 import { formatArea } from "@/lib/units";
-import { getHazardResult } from "@/lib/data";
-import { HazardResult, DataMode } from "@/lib/types";
+import { getHazardResult, getHills } from "@/lib/data";
+import { HazardResult, DataMode, Hill } from "@/lib/types";
 import { useSelection } from "@/lib/useSelection";
+import { LandslideEventRecord } from "@/lib/landslideEvents";
+import {
+  t,
+  formatNumberLocalized,
+  getLocalizedLocationLabel,
+  getLocalizedPeriodLabel,
+  getLocalizedAssessmentTitle,
+  getLocalizedMetric,
+} from "@/lib/translations";
 
 const DEFAULT_LANDSLIDE_SELECTION = {
   d: "rangamati",
@@ -44,7 +54,7 @@ export default function LandslideDetailPage() {
   const mode: DataMode = rawMode === "forecast" ? "forecast" : "recorded";
   const isForecast = mode === "forecast";
 
-  const { unit } = useAppStore();
+  const { unit, language } = useAppStore();
 
   // 1. URL is single source of truth via useSelection
   const {
@@ -63,6 +73,13 @@ export default function LandslideDetailPage() {
   });
 
   const [focusedPlotNo, setFocusedPlotNo] = useState<string | null>(null);
+  const [selectedEvent, setSelectedEvent] = useState<LandslideEventRecord | null>(null);
+
+  // Load Hills for MountainEventSelector
+  const { data: hills = [] } = useQuery<Hill[]>({
+    queryKey: ["hills"],
+    queryFn: () => getHills(),
+  });
 
   // 2. Load Results via TanStack Query
   const {
@@ -89,21 +106,54 @@ export default function LandslideDetailPage() {
     router.push(`/landslide/${newMode}${queryString ? `?${queryString}` : ""}`);
   };
 
+  const currentHillId = h || "ghagra";
+
+  // Event-augmented values
+  const displayTitle = selectedEvent
+    ? language === "bn"
+      ? selectedEvent.eventNameBn
+      : selectedEvent.eventNameEn
+    : getLocalizedAssessmentTitle(result?.title || "Landslide Hazard", language);
+
+  const displayPeriod = selectedEvent
+    ? selectedEvent.eventDate
+    : getLocalizedPeriodLabel(result?.periodLabel || "2024 Event", language);
+
+  const displayLoss = selectedEvent
+    ? selectedEvent.affectedSlopeAreaDecimal
+    : result?.totalLossDecimal || 117.6;
+
+  const displayDebrisVolume = selectedEvent
+    ? `${formatNumberLocalized(selectedEvent.debrisVolumeM3.toLocaleString(), language)} ${language === "bn" ? "ঘনমিটার" : "m³"}`
+    : language === "bn" ? "৪৩,২০১ ঘনমিটার" : "43,201 m³";
+
+  const displaySlopeAngle = selectedEvent
+    ? `${formatNumberLocalized(selectedEvent.slopeGradientDeg, language)}° ${language === "bn" ? "কোণ" : "Angle"}`
+    : language === "bn" ? "৪২° কোণ" : "42° Angle";
+
   return (
     <div className="flex-1 flex flex-col pb-16">
       <AppHeader
-        title="Landslide Hazards & Slope Stability"
+        title={
+          language === "bn"
+            ? "ভূমিধস ঝুঁকি ও ঢাল স্থিতিশীলতা"
+            : "Landslide Hazards & Slope Stability"
+        }
         subtitle={
           isForecast
-            ? "Machine learning rainfall threshold & slope rupture susceptibility projection"
-            : "Chittagong Hill Tracts monsoonal slope rupture records and affected cadastral homesteads"
+            ? language === "bn"
+              ? "মেশিন লার্নিং বৃষ্টিপাত থ্রেশহোল্ড ও ঢাল ফাটল প্রক্ষেপণ"
+              : "Machine learning rainfall threshold & slope rupture susceptibility projection"
+            : language === "bn"
+              ? "পার্বত্য চট্টগ্রামের মৌসুমী ঢাল ধসের রেকর্ড এবং ক্ষতিগ্রস্ত ক্যাডাস্ট্রাল বসতবাড়ি"
+              : "Chittagong Hill Tracts monsoonal slope rupture records and affected cadastral homesteads"
         }
       >
         <div className="inline-flex items-center">
           <SegmentedToggle<DataMode>
             options={[
-              { id: "recorded", label: "A. Recorded Data" },
-              { id: "forecast", label: "B. Forecast (DL)" },
+              { id: "recorded", label: language === "bn" ? "ক. রেকর্ডকৃত তথ্য" : "A. Recorded Data" },
+              { id: "forecast", label: language === "bn" ? "খ. পূর্বাভাস (মডেল)" : "B. Forecast (DL)" },
             ]}
             value={mode}
             onChange={handleModeSwitch}
@@ -118,21 +168,23 @@ export default function LandslideDetailPage() {
         <div className="flex flex-wrap items-center justify-between gap-3 text-xs text-muted pb-1">
           <nav className="flex items-center gap-1.5 font-medium">
             <Link href="/" className="hover:text-ink transition-colors">
-              Home
+              {t("navHome", language)}
             </Link>
             <ChevronRight className="w-3.5 h-3.5" />
             <Link href="/landslide" className="hover:text-ink transition-colors">
-              Landslide
+              {t("navLandslide", language)}
             </Link>
             <ChevronRight className="w-3.5 h-3.5" />
             <span className="text-ink font-semibold">
-              {isForecast ? "Forecast Mode" : "Recorded Mode"}
+              {isForecast
+                ? language === "bn" ? "পূর্বাভাস মোড" : "Forecast Mode"
+                : language === "bn" ? "রেকর্ডকৃত মোড" : "Recorded Mode"}
             </span>
             {result && (
               <>
                 <ChevronRight className="w-3.5 h-3.5" />
                 <span className="text-accent-deep font-semibold">
-                  {result.title}
+                  {displayTitle}
                 </span>
               </>
             )}
@@ -141,7 +193,25 @@ export default function LandslideDetailPage() {
           {isForecast && <ForecastBadge label="InSAR & Slope Model" />}
         </div>
 
-        {/* REBUILD SELECTOR CHAIN */}
+        {/* TWO-STEP MOUNTAIN & HISTORICAL EVENT SELECTOR */}
+        <MountainEventSelector
+          mode={mode}
+          hills={hills}
+          selectedHillId={currentHillId}
+          selectedEventId={selectedEvent?.id}
+          onSelectMountain={(newHillId) => {
+            // Find parent upazila and district of the hill
+            const matchedHill = hills.find((hItem) => hItem.id === newHillId);
+            if (matchedHill) {
+              setStep("h", newHillId);
+            }
+          }}
+          onSelectEvent={(ev) => {
+            setSelectedEvent(ev);
+          }}
+        />
+
+        {/* REBUILD SELECTOR CHAIN (DISTRICT -> UPAZILA -> HILL) */}
         <SelectorChain
           hazard="landslide"
           mode={mode}
@@ -195,11 +265,19 @@ export default function LandslideDetailPage() {
             hazard="landslide"
             title={
               isForecast
-                ? "No landslide hazard is projected for this slope."
-                : "No historical landslide recorded on this slope."
+                ? language === "bn"
+                  ? "এই ঢালে ভূমিধসের কোনো পূর্বাভাস নেই।"
+                  : "No landslide hazard is projected for this slope."
+                : language === "bn"
+                  ? "এই ঢালে কোনো ঐতিহাসিক ভূমিধসের রেকর্ড নেই।"
+                  : "No historical landslide recorded on this slope."
             }
-            description="The selected feature lies outside high-hazard slope angles (>30°) and colluvial displacement zones."
-            actionLabel="Reset to Pilot Cluster"
+            description={
+              language === "bn"
+                ? "নির্বাচিত এলাকাটি উচ্চ ঝুঁকিপূর্ণ ঢাল কোণ (>৩০°) ও মাটি স্থানচ্যুতি অঞ্চলের বাইরে অবস্থিত।"
+                : "The selected feature lies outside high-hazard slope angles (>30°) and colluvial displacement zones."
+            }
+            actionLabel={language === "bn" ? "পাইলট ক্লাস্টারে ফিরুন" : "Reset to Pilot Cluster"}
             onAction={resetToDefault}
           />
         )}
@@ -207,9 +285,13 @@ export default function LandslideDetailPage() {
         {!isFinalStepSet && (
           <div className="bhumidorpon-card p-12 text-center space-y-3">
             <Info className="w-8 h-8 text-muted mx-auto" />
-            <h3 className="text-sm font-semibold text-ink">Please select a hill feature</h3>
+            <h3 className="text-sm font-semibold text-ink">
+              {language === "bn" ? "অনুগ্রহ করে একটি পাহাড়ি এলাকা নির্বাচন করুন" : "Please select a hill feature"}
+            </h3>
             <p className="text-xs text-muted max-w-md mx-auto">
-              Select District, Upazila, and Hill Corridor to view topographic elevation contours and slope failure demarcations.
+              {language === "bn"
+                ? "টপোগ্রাফিক উচ্চতার কনট্যুর এবং ঢাল ধসের সীমানা দেখতে জেলা, উপজেলা এবং পাহাড়ি করিডোর নির্বাচন করুন।"
+                : "Select District, Upazila, and Hill Corridor to view topographic elevation contours and slope failure demarcations."}
             </p>
           </div>
         )}
@@ -222,49 +304,58 @@ export default function LandslideDetailPage() {
               <div className="space-y-1">
                 <div className="flex items-center gap-2">
                   <span className="text-xs font-semibold text-muted">
-                    {result.locationLabel}
+                    {getLocalizedLocationLabel(result.locationLabel, language)}
                   </span>
                   {isForecast && (
                     <ConfidenceBadge
                       level={result.confidence?.level || "High"}
-                      scorePercent={result.confidence?.scorePercent || 86}
+                      scorePercent={selectedEvent?.modelConfidenceScore || result.confidence?.scorePercent || 86}
                     />
                   )}
                 </div>
                 <h2 className="text-xl sm:text-2xl font-display font-bold text-ink">
-                  {result.title}
+                  {displayTitle}
                 </h2>
                 <div className="text-xs text-muted flex items-center gap-2">
                   <Calendar className="w-3.5 h-3.5" />
-                  <span>Event: {result.periodLabel}</span>
+                  <span>{language === "bn" ? "ঘটনা:" : "Event:"} {displayPeriod}</span>
                   <span>•</span>
-                  <span>Displacement Rate: {formatArea(result.annualRateDecimal, unit)}/yr</span>
+                  <span>
+                    {language === "bn" ? "স্থানচ্যুতির বার্ষিক হার:" : "Displacement Rate:"}{" "}
+                    {formatArea(result.annualRateDecimal, unit, language)}/{language === "bn" ? "বছর" : "yr"}
+                  </span>
                 </div>
               </div>
 
               {/* Total Loss, Gain, Risk Level */}
               <div className="flex items-center gap-4 border-t md:border-t-0 md:border-l border-border pt-3 md:pt-0 md:pl-6">
                 <div>
-                  <div className="text-[11px] text-muted">Displaced Land</div>
+                  <div className="text-[11px] text-muted">
+                    {language === "bn" ? "স্থানান্তরিত পাহাড়ি জমি" : "Displaced Land"}
+                  </div>
                   <div className="text-xl font-bold text-loss tabular-nums">
-                    {formatArea(result.totalLossDecimal, unit)}
+                    {formatArea(displayLoss, unit, language)}
                   </div>
                 </div>
                 <div className="border-l border-border pl-4">
-                  <div className="text-[11px] text-muted">Total Gain</div>
+                  <div className="text-[11px] text-muted">
+                    {language === "bn" ? "মোট বৃদ্ধি" : "Total Gain"}
+                  </div>
                   <div className="text-xl font-bold text-ink tabular-nums">
-                    0 {unit}
+                    {formatArea(0, unit, language)}
                   </div>
                 </div>
                 <div className="border-l border-border pl-4">
-                  <div className="text-[11px] text-muted">Trend</div>
+                  <div className="text-[11px] text-muted">
+                    {language === "bn" ? "গতিধারা" : "Trend"}
+                  </div>
                   <div className="inline-flex items-center gap-1 text-xs font-bold text-loss capitalize">
                     {result.trendDirection === "increasing" ? (
                       <TrendingUp className="w-3.5 h-3.5" />
                     ) : (
                       <TrendingDown className="w-3.5 h-3.5" />
                     )}
-                    <span>Increasing</span>
+                    <span>{language === "bn" ? "ক্রমবর্ধমান" : "Increasing"}</span>
                   </div>
                 </div>
               </div>
@@ -275,14 +366,24 @@ export default function LandslideDetailPage() {
               <div className="flex items-center justify-between px-1">
                 <div>
                   <h3 className="text-sm font-semibold text-ink">
-                    Slope Topography & InSAR Deformation Map
+                    {language === "bn"
+                      ? "ঢালের ভূসংস্থান ও InSAR বিকৃতি মানচিত্র"
+                      : "Slope Topography & InSAR Deformation Map"}
                   </h3>
                   <p className="text-xs text-muted">
-                    Topographic elevation contours, failure scarp, debris runout zone, and settlement risk buffers
+                    {language === "bn"
+                      ? "টপোগ্রাফিক এলিভেশন কনট্যুর, ধসের ক্ষত, ধ্বংসাবশেষ প্রবাহ এবং বসতি সংবেদনশীল বাফার"
+                      : "Topographic elevation contours, failure scarp, debris runout zone, and settlement risk buffers"}
                   </p>
                 </div>
                 <div className="text-xs text-muted">
-                  {isForecast ? "Projected Slope Stability Envelope" : "Surveyed Slope Rupture"}
+                  {isForecast
+                    ? language === "bn"
+                      ? "প্রক্ষেপিত ঢাল স্থিতিশীলতা পরিসীমা"
+                      : "Projected Slope Stability Envelope"
+                    : language === "bn"
+                    ? "জরিপকৃত ঢাল স্খলন"
+                    : "Surveyed Slope Rupture"}
                 </div>
               </div>
 
@@ -300,47 +401,81 @@ export default function LandslideDetailPage() {
             {/* 3. INFO METRICS */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="bhumidorpon-card p-4 space-y-1">
-                <span className="text-xs font-medium text-muted">Slope Gradient</span>
+                <span className="text-xs font-medium text-muted">
+                  {language === "bn" ? "ঢাল নতিমাত্রা" : "Slope Gradient"}
+                </span>
                 <div className="text-xl font-bold text-amber-600 tabular-nums">
-                  42° Angle
+                  {displaySlopeAngle}
                 </div>
-                <div className="text-[11px] text-secondary">High risk monsoonal threshold</div>
+                <div className="text-[11px] text-secondary">
+                  {selectedEvent
+                    ? language === "bn"
+                      ? `বৃষ্টিপাত: ${formatNumberLocalized(selectedEvent.rainfallMm24h, language)} মিমি/২৪ ঘণ্টা`
+                      : `Rainfall: ${selectedEvent.rainfallMm24h} mm/24h`
+                    : language === "bn"
+                    ? "মৌসুমী অতিবৃষ্টির থ্রেশহোল্ড"
+                    : "High risk monsoonal threshold"}
+                </div>
               </div>
 
               <div className="bhumidorpon-card p-4 space-y-1">
-                <span className="text-xs font-medium text-muted">Homesteads Inside Buffer</span>
+                <span className="text-xs font-medium text-muted">
+                  {language === "bn" ? "স্থানান্তরিত ধ্বংসাবশেষ" : "Debris Volume Displaced"}
+                </span>
                 <div className="text-xl font-bold text-ink tabular-nums">
-                  {result.owners.length} Homesteads
+                  {displayDebrisVolume}
                 </div>
-                <div className="text-[11px] text-secondary">Within 50m runout zone</div>
+                <div className="text-[11px] text-secondary">
+                  {selectedEvent
+                    ? language === "bn"
+                      ? (selectedEvent.impactSummaryBn || selectedEvent.impactSummaryEn).slice(0, 40) + "..."
+                      : selectedEvent.impactSummaryEn.slice(0, 40) + "..."
+                    : language === "bn"
+                    ? "পাহাড়ের মাটি স্খলন"
+                    : "Colluvial soil collapse"}
+                </div>
               </div>
 
-              {result.metrics.slice(0, 1).map((mItem, idx) => (
-                <div key={idx} className="bhumidorpon-card p-4 space-y-1">
-                  <span className="text-xs font-medium text-muted">{mItem.label}</span>
-                  <div className="text-xl font-bold text-ink tabular-nums">
-                    {mItem.value}
-                  </div>
-                  {mItem.sublabel && (
-                    <div className="text-[11px] text-secondary">{mItem.sublabel}</div>
-                  )}
+              <div className="bhumidorpon-card p-4 space-y-1">
+                <span className="text-xs font-medium text-muted">
+                  {language === "bn" ? "বাফারের ভেতরে ঝুঁকিপূর্ণ বসতি" : "Homesteads Inside Buffer"}
+                </span>
+                <div className="text-xl font-bold text-ink tabular-nums">
+                  {selectedEvent
+                    ? `${formatNumberLocalized(selectedEvent.homesteadsAtRisk, language)} ${language === "bn" ? "টি বসতবাড়ি" : "Homesteads"}`
+                    : `${formatNumberLocalized(result.owners.length, language)} ${language === "bn" ? "টি বসতবাড়ি" : "Homesteads"}`}
                 </div>
-              ))}
+                <div className="text-[11px] text-secondary">
+                  {selectedEvent
+                    ? language === "bn"
+                      ? `পূর্ব সতর্কবার্তা: ${formatNumberLocalized(selectedEvent.casualtiesAvoidedFamilies, language)}টি পরিবার`
+                      : `Early warning: ${selectedEvent.casualtiesAvoidedFamilies} families`
+                    : language === "bn"
+                    ? "৫০ মিটার ধ্বংসাবশেষ প্রবাহ বাফারে"
+                    : "Within 50m runout zone"}
+                </div>
+              </div>
             </div>
 
-            {/* 4. OWNER TABLE (STEP 4) */}
+            {/* 4. OWNER TABLE */}
             <div className="space-y-2">
               <div className="flex items-center justify-between px-1">
                 <div>
                   <h3 className="text-sm font-semibold text-ink">
-                    Affected Slope Parcels & Homesteads
+                    {language === "bn"
+                      ? "ক্ষতিগ্রস্ত পাহাড়ি দাগ ও বসতবাড়ির তালিকা"
+                      : "Affected Slope Parcels & Homesteads"}
                   </h3>
                   <p className="text-xs text-muted">
-                    Cadastral plots situated within the rupture scarp and 50m downslope settlement risk buffer
+                    {language === "bn"
+                      ? "ধসের ক্ষত ও ৫০ মিটার নিম্নাঞ্চলীয় বাফারে অবস্থিত ক্যাডাস্ট্রাল দাগ"
+                      : "Cadastral plots situated within the rupture scarp and 50m downslope settlement risk buffer"}
                   </p>
                 </div>
                 <span className="text-xs text-muted tabular-nums">
-                  {result.owners.length} registered plots
+                  {language === "bn"
+                    ? `${formatNumberLocalized(result.owners.length, language)}টি নিবন্ধিত দাগ`
+                    : `${result.owners.length} registered plots`}
                 </span>
               </div>
 
@@ -349,6 +484,7 @@ export default function LandslideDetailPage() {
                 owners={result.owners}
                 selectedPlotNo={focusedPlotNo}
                 onSelectPlot={(dagNo) => setFocusedPlotNo(dagNo)}
+                language={language}
               />
             </div>
 
@@ -358,10 +494,10 @@ export default function LandslideDetailPage() {
                 <AlertCircle className="w-5 h-5 text-predicted shrink-0 mt-0.5" />
                 <div className="space-y-1">
                   <strong className="text-ink font-semibold block">
-                    Disclaimer:
+                    {language === "bn" ? "সতর্কবার্তা:" : "Disclaimer:"}
                   </strong>
                   <p className="leading-relaxed">
-                    This is a model-based estimate, not an official government record.
+                    {t("disclaimerNote", language)}
                   </p>
                 </div>
               </div>
@@ -372,3 +508,4 @@ export default function LandslideDetailPage() {
     </div>
   );
 }
+

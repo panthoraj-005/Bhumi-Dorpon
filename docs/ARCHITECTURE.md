@@ -4,287 +4,191 @@
 ---
 
 > **Document Status:** Authoritative Architectural Specification  
-> **System Version:** 1.1 (Demonstration Release)  
+> **System Version:** 1.2 (Enhanced Demonstration Release)  
 > **Team:** GeoNeural  
 > **Last Updated:** October 2026  
-> **Cross-References:** [Main Documentation](MAIN_PROJECT_DOCUMENTATION.md) | [PRD](PRD.md) | [TRD](TRD.md) | [App Flow & User Flow](APP_FLOW.md) | [Database Schema](DATABASE_SCHEMA.md) | [API Documentation](API_DOCUMENTATION.md) | [UI/UX Design System](UI_UX_DESIGN_SYSTEM.md) | [Testing & QA](TESTING_QA.md)
+> **Cross-References:** [Main Documentation](MAIN_PROJECT_DOCUMENTATION.md) | [PRD](PRD.md) | [TRD](TRD.md) | [App Flow & User Flow](APP_FLOW.md) | [Database Schema](DATABASE_SCHEMA.md) | [API Documentation](API_DOCUMENTATION.md) | [UI/UX Design System](UI_UX_DESIGN_SYSTEM.md) | [Authentication Specification](AUTH_SPECIFICATION.md) | [Testing & QA](TESTING_QA.md) | [Security Specification](SECURITY_SPECIFICATION.md)
 
 ---
 
 ## Table of Contents
 
 - [1. Architectural Overview](#1-architectural-overview)
-  - [1.1 Current Demonstration Architecture](#11-current-demonstration-architecture)
-  - [1.2 Proposed Production Architecture](#12-proposed-production-architecture)
-- [2. Current System Layered Architecture](#2-current-system-layered-architecture)
+  - [1.1 Current Demonstration Architecture (v1.2)](#11-current-demonstration-architecture-v12)
+  - [1.2 High-Level Architecture Diagram](#12-high-level-architecture-diagram)
+- [2. Subsystem Layer Architecture](#2-subsystem-layer-architecture)
   - [2.1 Presentation & UI Layer](#21-presentation--ui-layer)
-  - [2.2 Cartography & Mapping Layer](#22-cartography--mapping-layer)
-  - [2.3 Data Access Layer (lib/data.ts)](#23-data-access-layer-libdatats)
-  - [2.4 Serialization & Utility Layer (lib/googleEarth.ts)](#24-serialization--utility-layer-libgoogleearthts)
-  - [2.5 Five-Hazard Information Store](#25-five-hazard-information-store)
+  - [2.2 Authentication & Demo Access Gate (lib/auth.ts)](#22-authentication--demo-access-gate-libauthts)
+  - [2.3 Centralized Bilingual Localization Engine (lib/translations.ts)](#23-centralized-bilingual-localization-engine-libtranslationsts)
+  - [2.4 Global "Land Information" Search Subsystem (lib/landSearch.ts)](#24-global-land-information-search-subsystem-liblandsearchts)
+  - [2.5 Multi-Hazard Risk Prediction & Historical Quantification Engine](#25-multi-hazard-risk-prediction--historical-quantification-engine)
+  - [2.6 Landslide Mountain & Historical Event Engine (lib/landslideEvents.ts)](#26-landslide-mountain--historical-event-engine-liblandslideeventsts)
+  - [2.7 Geospatial Cartography & Dual-Map Synchronization Engine](#27-geospatial-cartography--dual-map-synchronization-engine)
+  - [2.8 3D Google Earth Client-Side Serializer (lib/googleEarth.ts)](#28-3d-google-earth-client-side-serializer-libgoogleearthts)
+  - [2.9 Deterministic Five-Hazard Information Store](#29-deterministic-five-hazard-information-store)
 - [3. Google Earth vs. Google Earth Engine Architectural Placement](#3-google-earth-vs-google-earth-engine-architectural-placement)
-  - [3.1 Google Earth (Client-Side Viewer Integration)](#31-google-earth-client-side-viewer-integration)
-  - [3.2 Google Earth Engine (Proposed Cloud Pipeline)](#32-google-earth-engine-proposed-cloud-pipeline)
-  - [3.3 Architectural Boundary Matrix](#33-architectural-boundary-matrix)
 - [4. Disaster Information Flow & Data Relationships](#4-disaster-information-flow--data-relationships)
-- [5. Synchronized Dual-Map Subsystem](#5-synchronized-dual-map-subsystem)
-- [6. Data Provenance and Single Source of Truth](#6-data-provenance-and-single-source-of-truth)
-- [7. Proposed Production Cloud Architecture](#7-proposed-production-cloud-architecture)
-  - [7.1 Online User Request Architecture](#71-online-user-request-architecture)
-  - [7.2 Offline Annual Earth Observation Pipeline](#72-offline-annual-earth-observation-pipeline)
-  - [7.3 Component Mapping: Prototype vs. Production](#73-component-mapping-prototype-vs-production)
+- [5. Proposed Enterprise Production Cloud Architecture](#5-proposed-enterprise-production-cloud-architecture)
+  - [5.1 Live Spatial Microservices](#51-live-spatial-microservices)
+  - [5.2 Automated Cloud Remote-Sensing Pipeline](#52-automated-cloud-remote-sensing-pipeline)
 
 ---
 
 ## 1. Architectural Overview
 
-### 1.1 Current Demonstration Architecture
-BhumiDorpon currently operates as a **high-performance, client-side geospatial web application** built with Next.js 14, TypeScript, Tailwind CSS, and pure Leaflet. The system executes entirely within the user's browser sandbox, querying a deterministic, relational mock JSON store through an asynchronous data access layer (`lib/data.ts`). There are no external databases, server processes, or live neural network inference engines required for operation.
+### 1.1 Current Demonstration Architecture (v1.2)
+BhumiDorpon v1.2 operates as a **high-performance, client-side geospatial web application** built with Next.js 14, TypeScript, Tailwind CSS, Zustand, and Leaflet. The system executes within the user's browser sandbox, querying a deterministic, relational mock JSON store through unified asynchronous services.
+
+The v1.2 architecture features 6 dedicated subsystems:
+1. **Authentication & Unprivileged Demo Access Subsystem:** Enforces initial session checks and isolates demo browsing.
+2. **Centralized Bilingual Localization Subsystem:** Drives default Bangla rendering with zero layout shift and Bengali numerals (`০-৯`).
+3. **5-Field Cadastral Land Search Subsystem:** Cascading search with leading zero preservation and 6-section structured reports.
+4. **Historical Land Change & Deep-Learning Risk Prediction Pipeline:** Quantifies physical loss/accretion and returns multi-hazard ConvLSTM predictions.
+5. **Two-Step Mountain and Historical Landslide Event Engine:** Connects mountains to discrete historical events and updates interface state dynamically.
+6. **Smooth Scroll Navigation Engine:** Rapid access to hazard options via `#disaster-options`.
+
+### 1.2 High-Level Architecture Diagram
 
 ```mermaid
 graph TD
     subgraph BrowserClient ["User Web Browser (Client Sandbox)"]
-        UI["Next.js App Router (React 18 + Tailwind)"]
-        Maps["Leaflet 1.9 GIS Mapping Engine (Pure SVG)"]
+        UI["Next.js 14 App Router (React 18 + Tailwind)"]
+        
+        subgraph CoreSubsystems ["v1.2 Enhanced Subsystems"]
+            AuthEngine["Auth & Demo Gate (lib/auth.ts)"]
+            LocEngine["Localization Engine (lib/translations.ts)"]
+            LandSearch["Land Search Service (lib/landSearch.ts)"]
+            SlideEngine["Landslide Mountain/Event (lib/landslideEvents.ts)"]
+            ZStore["Zustand App Store (stores/appStore.ts)"]
+        end
+        
+        subgraph GeoCartography ["Geospatial & Mapping Engine"]
+            DualMap["Synchronized Dual Leaflet Maps (Pure SVG)"]
+            GisBasemap["Offline Light GIS Vector Basemap"]
+            KMLGen["Google Earth KML 2.2 Serializer (lib/googleEarth.ts)"]
+        end
+        
         DAL["Data Access Layer (lib/data.ts)"]
-        GE["Google Earth Serializer (lib/googleEarth.ts)"]
     end
 
-    subgraph StaticStore ["Deterministic Five-Hazard Information Store"]
-        PublicMocks["public/mocks/*.json (Browser Fetch)"]
-        NodeMocks["mocks/*.json (Server / Vitest fs.readFileSync)"]
-        AreaPackages["public/mocks/areas/<hazard>/area_*.json"]
-        Rasters["public/mocks/rasters/ (DEM Hillshades)"]
+    subgraph DeterministicStore ["Deterministic Five-Hazard Information Store"]
+        PlotsMocks["mocks/plots.json (Cadastral Plots & 4 Corners)"]
+        OwnersMocks["mocks/owners.json (Landowner Khatians)"]
+        HillsMocks["mocks/hills.json & landslide.json"]
+        CommonMocks["mocks/common.json & mouzas.json"]
     end
 
-    subgraph ExternalTargets ["External Targets (HTTPS)"]
-        EsriTiles["Esri World Imagery (Optional Satellite Raster)"]
+    subgraph ExternalWeb ["External Web Targets (HTTPS)"]
+        EsriTiles["Esri World Imagery (Optional Satellite Tiles)"]
         EarthWeb["Google Earth Web (3D Parcel Inspection Target)"]
     end
 
-    UI --> Maps
-    UI --> DAL
-    UI --> GE
-    DAL -->|loadMockJson()| PublicMocks
-    DAL -->|areas_index.json| AreaPackages
-    Maps --> Rasters
-    Maps -.->|Optional Basemap Toggle| EsriTiles
-    GE -.->|Synchronous Camera Launch| EarthWeb
-    GE -->|Browser File Download| KMLFile[".kml File"]
+    UI --> AuthEngine
+    UI --> LocEngine
+    UI --> LandSearch
+    UI --> SlideEngine
+    UI --> DualMap
+    
+    LandSearch --> DAL
+    SlideEngine --> DAL
+    DualMap --> GisBasemap
+    DualMap -.->|Optional Basemap Toggle| EsriTiles
+    
+    DAL --> PlotsMocks
+    DAL --> OwnersMocks
+    DAL --> HillsMocks
+    DAL --> CommonMocks
+    
+    KMLGen -.->|Camera Launch| EarthWeb
+    KMLGen -->|Download| KMLFile[".kml File"]
 ```
-
-### 1.2 Proposed Production Architecture
-In full enterprise production, the client layer will connect via RESTful and vector tile endpoints to a scalable backend comprising:
-- **FastAPI (Python 3.11):** High-speed asynchronous spatial API service.
-- **PostgreSQL 16 + PostGIS 3.4:** Spatial relational database storing cadastral plots, boundaries, hazard events, and landownership registries.
-- **Redis 7:** In-memory caching for spatial bounding boxes and administrative hierarchies.
-- **Martin / Tippecanoe:** Dynamic Mapbox Vector Tile (`.pbf`) server.
-- **Google Earth Engine (GEE):** Cloud-scale automated ingestion pipeline for Sentinel-1/2 satellite data.
 
 ---
 
-## 2. Current System Layered Architecture
+## 2. Subsystem Layer Architecture
 
 ### 2.1 Presentation & UI Layer
-- **Framework:** Next.js 14 App Router utilizing React Server Components for layout shells and Client Components (`"use client"`) for interactive map viewports.
-- **Styling & Tokens:** Tailwind CSS utility classes linked to CSS variables in `app/globals.css`.
-- **Navigation:** Persistent fixed 72px icon sidebar (`AppSidebar.tsx`) with accessible tooltips and header controls (`AppHeader.tsx`).
-- **Data Visualizations:** Recharts SVG components rendering multi-year trend lines, comparative hazard breakdown bars, and top-affected district rankings.
+- **Framework:** Next.js 14 App Router with React Server and Client Components.
+- **Styling:** Tailwind CSS with a curated lime (`#D4F239`), ink (`#1A1A1A`), loss coral (`#EF4444`), and water blue (`#0284C7`) palette.
+- **Typography:** Space Grotesk for headings and data readouts; Inter for UI prose.
 
-### 2.2 Cartography & Mapping Layer
-- **Engine:** Pure Leaflet 1.9.4 and `react-leaflet`. All Mapbox GL JS and MapLibre dependencies have been removed in full adherence to competition rules.
-- **Offline Light GIS Basemap:** Renders entirely offline using client-rendered SVG vector geometries with zero external tile dependencies (`components/map/basemap/LightGisBasemap.tsx`).
-- **Cartographic Chrome:** Professional map chrome including degree graticules, dynamic metric scale bar (`L.control.scale`), north arrow compass, locator inset mini-map, and mouza loss/gain badges (`components/map/chrome/`).
-- **Custom Map Panes:** Enforces strict z-index separation (`waterPane` 250, `plotsPane` 300, `hazardPane` 350, `labelsPane` 450, `markersPane` 500).
-- **Hatch Patterns:** Dynamically injects SVG `<pattern>` elements for coral loss stripes, slate state khas cross-hatching, and purple forecast stripes.
+### 2.2 Authentication & Demo Access Gate (`lib/auth.ts`)
+- **Initialization:** Intercepts unauthenticated first-time visitors via `AuthModal.tsx`.
+- **Demo Access Isolation:** Employs `createDemoSession()` to assign `isDemo: true` and `role: "demo"`. The session is saved to `localStorage` (`bhumidorpon_auth_session`).
+- **Registration & Validation:** Enforces password confirmation, $\ge 6$ character length, and prevents duplicate accounts.
 
-### 2.3 Data Access Layer (`lib/data.ts`)
-- **Module Interface:** Exposes typed asynchronous methods (`getDashboardSummary`, `getOptions`, `listResults`, `getFlood`, `getFloodOwners`, `getOwnerPlots`, `getMapArea`).
-- **Caching & Latency Simulation:** Maintains an in-memory cache to eliminate duplicate network reads and introduces simulated latency (200–400ms) to validate loading skeletons.
-- **Rule 5 Guardrails:** Automatically strips all financial disbursement fields (`paidBDT`, `approvedBDT`, `pendingBDT`) when `mode === "forecast"`.
+### 2.3 Centralized Bilingual Localization Engine (`lib/translations.ts`)
+- **Dictionary:** Centralized `TRANSLATIONS` record mapping keys to `{ bn: string, en: string }`.
+- **Bangla Default:** `useAppStore` initializes with `language: "bn"`.
+- **Bengali Numerals:** `formatNumberLocalized(val, lang)` replaces ASCII digits $0-9$ with Bengali glyphs $০-৯$ when language is `'bn'`.
+- **Zero Layout Shifts:** CSS flex and grid tiers prevent text expansion from disrupting card dimensions.
 
-### 2.4 Serialization & Utility Layer (`lib/googleEarth.ts`)
-- **KML 2.2 Serializer:** Pure client-side functions synthesizing KML XML documents for cadastral parcels.
-- **Camera Parameter Engine:** Calculates geographic bounding-box centroids, camera altitude ranges, and perspective tilt angles to format Google Earth Web URLs.
-- **Unit Conversions (`lib/units.ts`):** Exact mathematical conversions between Decimals, Acres, Bighas, Kathas, and Hectares.
+### 2.4 Global "Land Information" Search Subsystem (`lib/landSearch.ts`)
+- **Cascading Resolution:** Resolves District &rarr; Upazila &rarr; Mouza &rarr; Dag No. &rarr; Khatian No.
+- **Leading Zero Preservation:** Dag (`"0101"`) and Khatian (`"RS-475"`) are handled strictly as strings.
+- **Structured 6-Section Report:** Assembles Identification, Ownership, Sale, Legal, Tax, Registration, and Disaster Risk data.
+- **Standardized Badges:** Applies `verified`, `demo`, `unverified`, `unavailable`, and `external_required` badges.
 
-### 2.5 Five-Hazard Information Store
-- **Single Source of Truth:** Structured JSON datasets in `public/mocks/` (runtime browser) and `mocks/` (server/Vitest) generated deterministically via `scripts/generate-mocks.ts`.
-- **Decoupled Datasets:** Each hazard maintains an isolated schema: `river_erosion.json`, `flood.json`, `landslide.json`, `char.json`, `coastal.json`.
+### 2.5 Multi-Hazard Risk Prediction & Historical Quantification Engine
+- **Historical Analysis:** Quantifies multi-temporal erosion, inundation, and sediment accretion.
+- **Deep-Learning Risk Inference:** Provides genuine model risk scores across hazards (GeoAI-BD ConvLSTM, HydroSAR, InSAR SlopeNet).
+- **Submerged Land Handling:** Physically submerged parcels are marked `historically_lost` while preserving deed area and former ownership.
+
+### 2.6 Landslide Mountain & Historical Event Engine (`lib/landslideEvents.ts`)
+- **Catalog:** Maps 12 Chittagong Hill Tracts mountains to historical events and forecast models.
+- **Two-Step Selector:** `MountainEventSelector.tsx` handles Mountain selection &rarr; Event selection &rarr; Dynamic update of debris volume, slope angle, rainfall threshold, and downslope plots.
+
+### 2.7 Geospatial Cartography & Dual-Map Synchronization Engine
+- **Engine:** Pure Leaflet 1.9 with SVG vector rendering.
+- **Basemaps:** Offline Light GIS vector basemap and optional Esri World Imagery.
+- **Dual Map Sync:** Synchronizes pan and zoom between Before and After maps with re-entrancy protection.
+
+### 2.8 3D Google Earth Client-Side Serializer (`lib/googleEarth.ts`)
+- Pure client-side KML 2.2 serializer generating 3D extruded parcel polygons and launching Google Earth Web.
+
+### 2.9 Deterministic Five-Hazard Information Store
+- Local JSON mock files (`mocks/*.json`) loaded asynchronously by `lib/data.ts`.
 
 ---
 
 ## 3. Google Earth vs. Google Earth Engine Architectural Placement
 
-A primary architectural requirement is maintaining strict conceptual and operational boundaries between **Google Earth** and **Google Earth Engine (GEE)**.
-
-```mermaid
-graph TD
-    subgraph ClientViewer ["Client-Side 3D Viewer Integration"]
-        BrowserApp["BhumiDorpon UI (/owner/[ownerId])"] -->|Invokes| GESerializer["lib/googleEarth.ts"]
-        GESerializer -->|1. window.open(Camera URL)| GEWeb["Google Earth Web (earth.google.com)"]
-        GESerializer -->|2. KML 2.2 Download| LocalKML["Local .kml Parcel File"]
-        LocalKML -.->|User Loads KML| GEWeb
-    end
-
-    subgraph CloudPipeline ["Proposed Cloud Processing Pipeline (Future)"]
-        GEEAPI["Google Earth Engine API (Python SDK)"] -->|Automated Query| Copernicus["ESA Copernicus Sentinel-1/2 Hub"]
-        Copernicus --> GEEProc["Cloud Masking, MNDWI, SAR Thresholding"]
-        GEEProc --> CloudVectors["Annual Hazard Geometries"]
-        CloudVectors --> SpatialDB["PostgreSQL 16 / PostGIS 3.4"]
-    end
-```
-
-### 3.1 Google Earth (Client-Side Viewer Integration)
-- **Role:** Interactive 3D visualization target for individual landowners and relief officers.
-- **Implementation Status:** **Fully Implemented and Verified** (`tests/google_earth_kml.test.ts`, 7 tests passing).
-- **Execution:** Pure client-side execution in `lib/googleEarth.ts`. Triggered by the "Open in Google Earth" button on the Flood Owner Land Detail page.
-- **Network Footprint:** Zero backend, zero database, zero API key. Only bounding-box center coordinates pass via the public Earth URL; landowner names, deeds, and geometry remain strictly on the local device.
-
-### 3.2 Google Earth Engine (Proposed Cloud Pipeline)
-- **Role:** Planetary-scale cloud geospatial analysis engine for automated satellite imagery ingestion, cloud-masking, flood water delineation, and riverbank retreat calculation.
-- **Implementation Status:** **Proposed Future Enhancement (Non-Operational)**.
-- **Execution:** Server-side batch processing executed offline annually or after major flood events via Python worker scripts.
-- **Credentials:** Requires Google Cloud Service Account and Earth Engine institutional access (documented for production migration).
-
-### 3.3 Architectural Boundary Matrix
-
-| Architectural Attribute | Google Earth Integration | Google Earth Engine (GEE) Pipeline |
+| Dimension | Google Earth (Implemented in Prototype) | Google Earth Engine (GEE - Planned Pipeline) |
 |---|---|---|
-| **Architectural Layer** | Client Presentation & Export Layer | External Data Ingestion & Cloud ETL Layer |
-| **Current Operational Status** | **Operational & Verified** (v1.1 Demo) | **Planned / Proposed Future Enhancement** |
-| **Execution Environment** | Client Web Browser | Google Cloud / Earth Engine Compute Infrastructure |
-| **Data Flow** | Parcel geometry exported from client &rarr; Google Earth | Satellite imagery processed in cloud &rarr; PostGIS database |
-| **API Keys & Secrets** | Zero credentials (Public URL scheme) | Google Cloud Service Account private keys required |
-| **Source Code File** | [`lib/googleEarth.ts`](file:///d:/Project/Antigravity/BhumiDorpon/lib/googleEarth.ts) | Documented in `TRD.md` & `PROJECT_ROADMAP.md` |
+| **Architectural Role** | Client-Side 3D Viewer & KML Export | Cloud Planetary Geospatial Compute Engine |
+| **Execution Environment** | User's Web Browser (`lib/googleEarth.ts`) | Google Cloud Infrastructure (Python/JavaScript API) |
+| **Input Data** | Micro-cadastral 4-corner GPS coordinates | Petabytes of Sentinel-1/2 & Landsat rasters |
+| **Output** | `.kml` file download and Earth Web launch | Cloud-Optimized GeoTIFFs (COGs) & Vector Polygons |
+| **Status in Prototype** | **Fully Implemented & Verified (7 Unit Tests)** | **Proposed Cloud Pipeline (Non-Operational)** |
 
 ---
 
 ## 4. Disaster Information Flow & Data Relationships
 
-Disaster records, cadastral parcels, and satellite assets maintain strict relational integrity across the architecture:
-
 ```mermaid
 erDiagram
     DISTRICT ||--o{ UPAZILA : contains
     UPAZILA ||--o{ MOUZA : contains
-    MOUZA ||--o{ CADASTRAL_PLOT : contains
-    LANDOWNER ||--o{ CADASTRAL_PLOT : owns
-    CADASTRAL_PLOT ||--|{ PLOT_CORNERS : defined_by
-    HAZARD_EVENT ||--o{ PLOT_IMPACT : causes
-    CADASTRAL_PLOT ||--o{ PLOT_IMPACT : suffers
-    HAZARD_EVENT ||--o{ TRANSECT : measures
-
-    HAZARD_EVENT {
-        string eventId PK
-        string hazardType "river_erosion | flood | landslide | char | coastal"
-        string mode "recorded | forecast"
-        date eventDate
-        string severity
-    }
-
-    CADASTRAL_PLOT {
-        string plotId PK
-        string mouzaId FK
-        string dagNo
-        string khatianNo
-        string landClass
-        float areaDecimal
-    }
-
-    PLOT_CORNERS {
-        string cornerId PK
-        string plotId FK
-        int cornerIndex "1=NW, 2=NE, 3=SE, 4=SW"
-        float latitude "6 decimal places"
-        float longitude "6 decimal places"
-    }
-
-    PLOT_IMPACT {
-        string impactId PK
-        string eventId FK
-        string plotId FK
-        string changeKind "loss | gain | submerged"
-        float affectedAreaDecimal
-        float estimatedCompensationBDT
-    }
+    UPAZILA ||--o{ RIVER : intersects
+    UPAZILA ||--o{ HILL : contains
+    
+    MOUZA ||--o{ PLOT : contains
+    OWNER ||--o{ PLOT : owns
+    
+    HILL ||--o{ LANDSLIDE_EVENT : records
+    LANDSLIDE_EVENT ||--o{ PLOT : impacts
+    
+    PLOT ||--o{ HAZARD_CHANGE : undergoes
+    PLOT ||--o{ RISK_PREDICTION : forecasts
 ```
-
-1. **Macro Boundary Isolation:** Natural disasters operate at geographic extents (e.g., Jamuna River corridor, Gowainghat Haor basin).
-2. **Micro Boundary Intersection:** Spatial intersections determine the exact affected area for each cadastral plot (`Dag No.`).
-3. **Tenure & Compensation Resolution:** Linking plots to ownership deeds (`Khatian No.`) resolves affected citizens and calculates compensation liabilities without corrupting cadastral geometry.
 
 ---
 
-## 5. Synchronized Dual-Map Subsystem
+## 5. Proposed Enterprise Production Cloud Architecture
 
-The dual Before/After map viewer (`GisMapCompare.tsx`) synchronizes viewports using an event-driven pub/sub architecture with active re-entrancy suppression:
-
-```mermaid
-sequenceDiagram
-    autonumber
-    actor User as User Interaction
-    participant MapA as Map Container A (Left: Before)
-    participant SyncGuard as Re-Entrancy Guard (isSyncing)
-    participant MapB as Map Container B (Right: After)
-
-    User->>MapA: Pans or Zooms Viewport
-    MapA->>SyncGuard: Check isSyncing Flag
-    Note over SyncGuard: isSyncing is FALSE
-    MapA->>SyncGuard: Set isSyncing = TRUE
-    MapA->>MapB: setView(center, zoom, { animate: false })
-    MapB->>SyncGuard: Check isSyncing Flag
-    Note over SyncGuard: isSyncing is TRUE -> Suppress Reciprocal Event
-    MapA->>SyncGuard: Set isSyncing = FALSE
-```
-
-This guarantees 60 fps fluid synchronization without infinite event recursion.
-
----
-
-## 6. Data Provenance and Single Source of Truth
-
-To prevent discrepancies across UI tables, map popups, copy actions, and exports:
-- **Single Source of Truth:** Four-corner parcel coordinates stored in `plots.json` and `flood.json` serve as the singular authority.
-- **Downstream Consumers:**
-  1. **Map Overlay:** Renders Leaflet SVG polygon rings.
-  2. **Owner Table:** Renders 4-corner coordinate cards with 6 decimal places.
-  3. **Clipboard Copy:** Copies formatted coordinates for legal recordkeeping.
-  4. **GeoJSON Export:** Exports standard RFC 7946 feature collections.
-  5. **Google Earth KML:** Exports KML 2.2 documents via `lib/googleEarth.ts`.
-
----
-
-## 7. Proposed Production Cloud Architecture
-
-### 7.1 Online User Request Architecture
-
-```mermaid
-graph TD
-    UserClient["Modern Web Browser"] --> CDN["Cloudflare CDN & Edge Caching"]
-    CDN --> NextFrontend["Next.js 14 Web Server (Node.js / Edge)"]
-    NextFrontend --> FastAPIGW["FastAPI Spatial Gateway (Python 3.11)"]
-    FastAPIGW --> RedisCache["Redis 7 Spatial Cache"]
-    FastAPIGW --> Martin["Martin Vector Tile Server (MVT .pbf)"]
-    FastAPIGW --> PostGISDB[("PostgreSQL 16 + PostGIS 3.4 Spatial DB")]
-```
-
-### 7.2 Offline Annual Earth Observation Pipeline
-- **Frequency:** Executed once annually (or immediately following national disaster declarations).
-- **Ingestion:** Automated Python workers query Copernicus Sentinel-1 (C-band SAR) and Sentinel-2 (optical) via the Google Earth Engine Python API.
-- **Deep Learning Inference:**
-  - **U-Net:** Water-body segmentation and bankline delineation.
-  - **ConvLSTM:** Spatiotemporal predictive modeling generating 1-year hazard envelopes.
-- **Vector Transformation:** Polygon extraction via GDAL/Rasterio and spatial intersection in PostGIS (`ST_Intersection(mouzas, plots)`).
-
-### 7.3 Component Mapping: Prototype vs. Production
-
-| Subsystem | Current Demonstration Prototype | Proposed Production Cloud Architecture |
-|---|---|---|
-| **Web Runtime** | Next.js 14 (Client-Side CSR / SSG) | Next.js 14 SSR + Edge Rendering |
-| **Data Store** | Static JSON (`public/mocks/*.json`) | PostgreSQL 16 + PostGIS 3.4 Spatial Database |
-| **Data Querying** | `lib/data.ts` in-memory queries | Asynchronous FastAPI REST / GraphQL endpoints |
-| **Vector Mapping** | Leaflet SVG vector polygons | Martin Vector Tile Server (`.pbf` via Tippecanoe) |
-| **Earth Observation** | Pre-rendered PNG hillshades & static contours | Automated Google Earth Engine (GEE) SAR/Optical Pipeline |
-| **AI Inference** | Pre-computed synthetic forecast envelopes | Offline GPU worker pipelines running U-Net & ConvLSTM |
-| **3D Earth View** | Client-side KML 2.2 serializer & URL launch | Hybrid KML export + Cloud-hosted KMZ spatial streaming |
+In enterprise production:
+- **Backend Service:** FastAPI (Python 3.11) with async endpoints.
+- **Spatial Database:** PostgreSQL 16 + PostGIS 3.4 with GiST spatial indexing.
+- **Tile Server:** Martin vector tile server streaming MVT tiles.
+- **Earth Observation Ingestion:** Cloud Functions triggering automated GEE pipelines upon Sentinel-1 SAR orbit passes.
+- **Deep Learning Workers:** Celery workers running ConvLSTM and U-Net models on GPU instances.

@@ -1,242 +1,192 @@
-# UI/UX Design System — BhumiDorpon
+# UI/UX Design System Specification — BhumiDorpon
 **Bangladesh Cadastral Land-Change Records & Multi-Hazard Geospatial Dashboard**
 
 ---
 
-> **Document Status:** Authoritative Visual Design & Cartographic Chrome Specification  
-> **Design Philosophy:** Minimalistic Light GIS | High-Contrast Readability | Governmental Credibility  
-> **Theme:** Light Mode Only (Zero Neon/Dark Clutter)  
+> **Document Status:** Authoritative Design System Specification  
+> **System Version:** 1.2 (Enhanced Demonstration Release)  
+> **Core Theme:** Modern Delta Cartographic (Light GIS & High-Resolution Satellite)  
+> **Primary Accent:** Cyber Lime (`#D4F239`) with Deep Ink (`#1A1A1A`)  
 > **Team:** GeoNeural  
 > **Last Updated:** October 2026  
-> **Cross-References:** [Main Documentation](MAIN_PROJECT_DOCUMENTATION.md) | [PRD](PRD.md) | [TRD](TRD.md) | [App Flow & User Flow](APP_FLOW.md) | [System Architecture](ARCHITECTURE.md) | [Testing & QA](TESTING_QA.md)
+> **Cross-References:** [Main Documentation](MAIN_PROJECT_DOCUMENTATION.md) | [PRD](PRD.md) | [TRD](TRD.md) | [App Flow & User Flow](APP_FLOW.md) | [System Architecture](ARCHITECTURE.md) | [Database Schema](DATABASE_SCHEMA.md) | [Testing & QA](TESTING_QA.md)
 
 ---
 
 ## Table of Contents
 
-- [1. Design Philosophy & Aesthetic Core](#1-design-philosophy--aesthetic-core)
-- [2. Color Palette and Design Tokens](#2-color-palette-and-design-tokens)
-  - [2.1 Base Neutrals & Surfaces](#21-base-neutrals--surfaces)
-  - [2.2 Hazard Category Accents](#22-hazard-category-accents)
-  - [2.3 Semantic Status & Alert Colors](#23-semantic-status--alert-colors)
-- [3. Typography System](#3-typography-system)
-  - [3.1 Font Families](#31-font-families)
-  - [3.2 Type Scale and Hierarchy](#32-type-scale-and-hierarchy)
-- [4. Layout Primitives, Spacing, and Elevation](#4-layout-primitives-spacing-and-elevation)
-  - [4.1 Spacing Scale](#41-spacing-scale)
-  - [4.2 Border Radii & Elevation](#42-border-radii--elevation)
-- [5. Cartographic & Mapping Design System](#5-cartographic--mapping-design-system)
-  - [5.1 Synchronized Dual-Map Container](#51-synchronized-dual-map-container)
-  - [5.2 Leaflet Custom Panes & Z-Order](#52-leaflet-custom-panes--z-order)
-  - [5.3 SVG Hatch Pattern Injection](#53-svg-hatch-pattern-injection)
-  - [5.4 Professional Cartographic Chrome](#54-professional-cartographic-chrome)
-  - [5.5 Direct-Click Zoom Controls](#55-direct-click-zoom-controls)
-  - [5.6 Basemap Switcher & Imagery Disclaimer](#56-basemap-switcher--imagery-disclaimer)
-- [6. Cadastral UI Components](#6-cadastral-ui-components)
-  - [6.1 Four-Corner Coordinate Cards](#61-four-corner-coordinate-cards)
-  - [6.2 "Open in Google Earth" Action Button](#62-open-in-google-earth-action-button)
-  - [6.3 Landowner Compensation Table](#63-landowner-compensation-table)
-- [7. Navigation Shell & Settings Hub](#7-navigation-shell--settings-hub)
-  - [7.1 Left-Hand Icon Navigation Bar](#71-left-hand-icon-navigation-bar)
-  - [7.2 Persistent Demo Banner](#72-persistent-demo-banner)
-  - [7.3 Settings Hub & Verified Sub-Pages](#73-settings-hub--verified-sub-pages)
-- [8. Accessibility & Responsiveness Guidelines](#8-accessibility--responsiveness-guidelines)
+- [1. Visual Identity & Design Philosophy](#1-visual-identity--design-philosophy)
+- [2. Color Palette & Semantic Token Architecture](#2-color-palette--semantic-token-architecture)
+  - [2.1 Core Neutral Palette](#21-core-neutral-palette)
+  - [2.2 Brand & Interaction Accents](#22-brand--interaction-accents)
+  - [2.3 Multi-Hazard Domain Palette](#23-multi-hazard-domain-palette)
+  - [2.4 Data Status Badge Tokens](#24-data-status-badge-tokens)
+- [3. Typography Hierarchy & Bilingual Font Stacks](#3-typography-hierarchy--bilingual-font-stacks)
+- [4. Layout Shell, Header, and Sidebar System](#4-layout-shell-header-and-sidebar-system)
+  - [4.1 Global Header (AppHeader.tsx)](#41-global-header-appheadertsx)
+  - [4.2 Fixed 72px Sidebar (AppSidebar.tsx)](#42-fixed-72px-sidebar-appsidebartsx)
+  - [4.3 Persistent Demo Banner (DemoBanner.tsx)](#43-persistent-demo-banner-demobannertsx)
+- [5. Authentication & Demo Access Entry Modal (AuthModal.tsx)](#5-authentication--demo-access-entry-modal-authmodaltsx)
+- [6. Global "Land Information" Search UI Design](#6-global-land-information-search-ui-design)
+  - [6.1 5-Level Cascading Search Form](#61-5-level-cascading-search-form)
+  - [6.2 6-Section Structured Cadastral Report Cards](#62-6-section-structured-cadastral-report-cards)
+  - [6.3 Disaster Change & Deep-Learning Risk Section Design](#63-disaster-change--deep-learning-risk-section-design)
+- [7. Landslide Mountain & Historical Event Selector (MountainEventSelector.tsx)](#7-landslide-mountain--historical-event-selector-mountaineventselectortsx)
+- [8. Top-Level "Explore Disasters" Scroll Button](#8-top-level-explore-disasters-scroll-button)
+- [9. Data Transparency & Rule 5 Visual Suppression](#9-data-transparency--rule-5-visual-suppression)
+- [10. Micro-Animations, Skeletons, and Interactive Feedback](#10-micro-animations-skeletons-and-interactive-feedback)
+- [11. Responsive Breakpoints & Mobile Adaptation](#11-responsive-breakpoints--mobile-adaptation)
 
 ---
 
-## 1. Design Philosophy & Aesthetic Core
+## 1. Visual Identity & Design Philosophy
 
-BhumiDorpon adopts a **Minimalistic Light GIS** design aesthetic engineered specifically for high-stakes governmental land administration, academic research, and citizen transparency:
-- **Calm & Uncluttered:** Uses crisp white surface cards (`#FFFFFF`) on a soft grayish-green canvas (`#EEF0E6`), subtle borders (`#E2E8F0`), and virtually zero heavy drop shadows.
-- **High-Contrast Readability:** Prioritizes maximum legibility for cadastral numbers (Dag and Khatian IDs) and 6-decimal GPS boundary coordinates.
-- **Color Independence:** Color is never the sole communicator of information. Every colored badge is paired with explicit text, arithmetic signs (`+` / `−`), or distinct SVG hatch patterns.
-- **English-Only Interface:** All UI text, navigation, buttons, and map chrome are strictly rendered in English to maintain consistent international evaluation standards.
-
----
-
-## 2. Color Palette and Design Tokens
-
-### 2.1 Base Neutrals & Surfaces
-
-| Token | Hex Value | CSS Variable | Usage |
-|---|---|---|---|
-| **Canvas Background** | `#EEF0E6` | `--background` | Global application background; default Leaflet map container fill. |
-| **Card Surface** | `#FFFFFF` | `--card` | Elevated card surfaces, data tables, and modal dialogs. |
-| **Surface Muted** | `#F8FAFC` | `--muted` | Table headers, secondary button backgrounds, input fills. |
-| **Border Subtle** | `#E2E8F0` | `--border` | 1px card borders, table dividers, selector separators. |
-| **Border Strong** | `#CBD5E1` | `--border-strong`| Map container perimeter, active input focus rings. |
-| **Text Primary** | `#0F172A` | `--foreground` | Main page titles, metric numbers, table data cells. |
-| **Text Secondary** | `#475569` | `--muted-foreground` | Subtitles, table headers, breadcrumbs, unit labels. |
-| **Text Tertiary** | `#94A3B8` | `--foreground-tertiary` | Inactive placeholders, watermark text, graticule labels. |
-
-### 2.2 Hazard Category Accents
-
-| Hazard Category | Accent Color | Hex Value | Cartographic Fill / Stroke |
-|---|---|---|---|
-| **River Erosion** | Ocean Blue | `#0284C7` | Transect lines, eroded banklines, active channel polygons. |
-| **Flood Monitoring** | Cobalt Blue | `#2563EB` | Shallow (`#93C5FD`), Moderate (`#3B82F6`), Deep (`#1D4ED8`) flood extents. |
-| **Landslides** | Terracotta Amber | `#D97706` | Hill contours, scarp polygons (`#EF4444`), runout buffer (`#F59E0B`). |
-| **Char Islands** | Emerald Green | `#059669` | Downstream accretion tips, stable vegetation cover. |
-| **Coastal Changes**| Marine Teal | `#0D9488` | Marine retreat vectors, tidal mudflat accretion blocks. |
-
-### 2.3 Semantic Status & Alert Colors
-
-| Status / Domain | Accent Color | Hex Value | Usage |
-|---|---|---|---|
-| **Territorial Loss** | Crimson Red | `#EF4444` | Negative area changes (`−42.5 Decimals`), erosion hatching. |
-| **Territorial Gain** | Forest Green | `#10B981` | Positive accretions (`+18.2 Decimals`), char accretion tips. |
-| **AI / Forecast** | Royal Violet | `#8B5CF6` | 1-Year predictive hazard envelopes, model forecast badges. |
-| **Demo Disclaimer** | Amber Gold | `#F59E0B` | Sticky top banner, synthetic data notices. |
+BhumiDorpon pairs **modern, minimalist administrative software** with **high-precision geospatial cartography**. It departs from cluttered legacy GIS portals by using:
+1. **Calm, High-Contrast Canvases:** Off-white background (`#F7F8F0`) with warm paper-white surfaces (`#FFFFFF`).
+2. **Vibrant Signal Accents:** Electric Lime (`#D4F239`) draws immediate visual focus to primary actions without visual fatigue.
+3. **Rigorous Visual Consistency:** All new features (Authentication, Language Switch, Land Search, Landslide Event Selector, and Disaster Scroll) maintain identical border radiuses, shadows, pill buttons, and font weightings.
+4. **Zero Layout Distortion on Language Toggle:** Toggling between Bangla and English preserves spacing, card heights, and grid ratios.
 
 ---
 
-## 3. Typography System
+## 2. Color Palette & Semantic Token Architecture
 
-### 3.1 Font Families
-- **Primary Body & UI Font:** `Inter`, system-ui, sans-serif — Clean, neutral grotesque typeface optimized for user interface controls and readability.
-- **Technical & Coordinate Font:** `Space Grotesk`, `ui-monospace`, monospace — Fixed-width, tabular figures (`font-variant-numeric: tabular-nums`) ensuring that GPS latitude/longitude numbers align cleanly in data tables.
+### 2.1 Core Neutral Palette
+- **Canvas Background (`--bg`):** `#F7F8F0` (Soft Delta sand off-white).
+- **Surface Card (`--surface`):** `#FFFFFF` (Pure crisp white).
+- **Surface Alt / Muted (`--surface-alt`):** `#F0F2E6` (Warm neutral backing for table rows and input backgrounds).
+- **Ink / Primary Text (`--ink`):** `#1A1A1A` (Deep charcoal obsidian).
+- **Secondary Text (`--secondary`):** `#4A4A4A` (Medium neutral for body text).
+- **Muted Text (`--muted`):** `#7A7A7A` (Desaturated slate for captions and helper labels).
+- **Border / Divider (`--border`):** `#E2E4D8` (Subtle 1px boundary line).
 
-### 3.2 Type Scale and Hierarchy
+### 2.2 Brand & Interaction Accents
+- **Cyber Lime Accent (`--accent`):** `#D4F239` (Primary action button fill).
+- **Accent Soft (`--accent-soft`):** `#F4FBD0` (Active navigation and pill background).
+- **Accent Deep (`--accent-deep`):** `#4D5C00` (High-contrast text and active state icon color).
+- **Accent Ink (`--accent-ink`):** `#1A1A1A` (Dark text label on lime buttons).
 
-| Hierarchy Level | Font Size | Line Height | Weight | Tailwind Class |
-|---|---|---|---|---|
-| **Display H1** | `24px (1.5rem)` | `32px` | Bold (`700`) | `text-2xl font-bold tracking-tight text-slate-900` |
-| **Section H2** | `18px (1.125rem)`| `24px` | Semibold (`600`)| `text-lg font-semibold text-slate-800` |
-| **Subheading H3**| `15px (0.9375rem)`| `20px`| Medium (`500`) | `text-sm font-medium text-slate-700` |
-| **Body Regular** | `14px (0.875rem)` | `20px` | Regular (`400`)| `text-sm font-normal text-slate-700` |
-| **Caption / Meta**| `12px (0.75rem)` | `16px` | Medium (`500`) | `text-xs font-medium text-slate-500` |
-| **Coordinates** | `13px (0.8125rem)`| `18px`| Monospace (`500`)| `text-xs font-mono tabular-nums text-slate-800` |
+### 2.3 Multi-Hazard Domain Palette
+- **River Erosion (Loss):** `#EF4444` (Coral red).
+- **Accretion / Alluvion (Gain):** `#10B981` (Emerald green).
+- **Flood Water / Inundation:** `#0284C7` (Sky blue).
+- **Landslides / Warning:** `#D97706` (Amber gold).
+- **Char Islands (Vegetation):** `#8B5CF6` (Violet).
+- **Deep-Learning Forecast Projections:** `#8B5CF6` (Royal purple dashed contours and forecast badge).
 
----
-
-## 4. Layout Primitives, Spacing, and Elevation
-
-### 4.1 Spacing Scale
-Layouts adhere to an 8-point harmonic grid:
-- `p-2` (8px): Button padding, badge margins.
-- `p-4` (16px): Compact metric cards, dropdown items.
-- `p-6` (24px): Standard card container padding, section dividers.
-- `gap-4` (16px) / `gap-6` (24px): Grid spacing between paired maps and metric tiles.
-
-### 4.2 Border Radii & Elevation
-- **Cards & Panels:** `rounded-xl` (12px) with `border border-slate-200 bg-white shadow-sm`.
-- **Map Viewport Containers:** `rounded-2xl` (20px) with `border border-slate-300 overflow-hidden`.
-- **Buttons & Action Pills:** `rounded-lg` (8px) with accessible hover and focus rings.
-- **Status Badges:** `rounded-full` (9999px) with `px-2.5 py-0.5 text-xs font-medium`.
+### 2.4 Data Status Badge Tokens
+- **Verified (`verified`):** Background `#ECFDF5`, Text `#059669`, Icon `CheckCircle`.
+- **Demo Data (`demo`):** Background `#F4FBD0`, Text `#4D5C00`, Icon `Sparkles`.
+- **Unverified (`unverified`):** Background `#FEF3C7`, Text `#D97706`, Icon `AlertTriangle`.
+- **Unavailable (`unavailable`):** Background `#F3F4F6`, Text `#6B7280`, Icon `HelpCircle`.
+- **External Connection Required (`external_required`):** Background `#F0F2E6`, Text `#4A4A4A`, Icon `ExternalLink`.
 
 ---
 
-## 5. Cartographic & Mapping Design System
+## 3. Typography Hierarchy & Bilingual Font Stacks
 
-### 5.1 Synchronized Dual-Map Container
-- **Desktop Layout ($\ge 1024\text{px}$):** Side-by-side grid split (50% / 50%). Left viewport displays Before baseline survey; Right viewport displays After observation or 1-Year Forecast.
-- **Mobile Layout ($< 1024\text{px}$):** Vertically stacked layout (Before on top, After on bottom).
-- **Default Height:** Fixed 480px–520px height (`min-h-[480px]`) guaranteeing consistent map aspect ratios across devices.
-
-### 5.2 Leaflet Custom Panes & Z-Order
-Map layers are assigned to custom Leaflet panes to prevent visual collision:
-1. `waterPane` ($z = 250$): Riverbeds, water bodies (*beels*), marine basins.
-2. `plotsPane` ($z = 300$): Cadastral plot boundary outlines.
-3. `hazardPane` ($z = 350$): Flood depth layers, erosion strips, landslide scars.
-4. `labelsPane` ($z = 450$): Transect distance tags, spot heights, graticule text.
-5. `markersPane` ($z = 500$): Interactive pins, 4-corner boundary points.
-
-### 5.3 SVG Hatch Pattern Injection
-Injected dynamically into each Leaflet SVG renderer instance:
-- `pattern-loss`: 45-degree diagonal red stripes (`stroke="#EF4444" strokeWidth="2"`) for permanent land loss.
-- `pattern-khas`: 45-degree slate cross-hatch (`stroke="#64748B" strokeWidth="1.5"`) for unowned state alluvial land.
-- `pattern-forecast`: 45-degree dashed purple stripes (`stroke="#8B5CF6" strokeDasharray="3,3"`) for 1-year predictive vulnerability.
-
-### 5.4 Professional Cartographic Chrome
-Every map container includes integrated, non-intrusive cartographic chrome:
-- **Graticules:** Thin geographic coordinate lines (`stroke="#CBD5E1" strokeWidth="0.5"`) with edge labels (e.g., `25.12° N`, `91.87° E`).
-- **Dynamic Scale Bar:** Native Leaflet metric scale bar (`L.control.scale({ imperial: false, metric: true })`) positioned in the bottom-left corner.
-- **North Arrow Compass:** Crisp SVG north arrow positioned in the upper-right corner.
-- **Locator Inset Mini-Map:** 100x100px overview map showing regional context within Bangladesh.
-- **Mouza Loss/Gain Badges:** Prominent metric chips displayed on the map header summarizing net shifts.
-
-### 5.5 Direct-Click Zoom Controls
-- Prominent `+` and `−` zoom buttons mounted on the upper-left map chrome.
-- **First-Click Execution:** Directly calls `map.zoomIn()` / `map.zoomOut()` without requiring tool selection or secondary click activations.
-
-### 5.6 Basemap Switcher & Imagery Disclaimer
-- **Toggle Switch:** Top-right pill switcher allowing instant toggle between `Light GIS` and `Satellite`.
-- **Persistent Disclaimer:** Whenever `Satellite` (Esri World Imagery) is active, a persistent notice banner appears:
-  ```text
-  Demo geometry — not survey-accurate
-  ```
-
----
-
-## 6. Cadastral UI Components
-
-### 6.1 Four-Corner Coordinate Cards
-On the Flood Owner Land Detail page, cadastral plots render a 4-card grid:
-
-```text
-┌─────────────────────────┐  ┌─────────────────────────┐
-│ Corner 1 (NW)           │  │ Corner 2 (NE)           │
-│ 25.123456, 91.876543    │  │ 25.123489, 91.877012    │
-└─────────────────────────┘  └─────────────────────────┘
-┌─────────────────────────┐  ┌─────────────────────────┐
-│ Corner 4 (SW)           │  │ Corner 3 (SE)           │
-│ 25.122954, 91.876578    │  │ 25.122987, 91.877045    │
-└─────────────────────────┘  └─────────────────────────┘
+### Font Family Declarations
+```css
+font-family: var(--font-space-grotesk), var(--font-inter), 'Noto Sans Bengali', 'SolaimanLipi', sans-serif;
 ```
+- **Display Headings:** Space Grotesk (`--font-space-grotesk`), weights 600 (Semibold) and 700 (Bold).
+- **Interface & Readouts:** Inter (`--font-inter`), weights 400 (Regular), 500 (Medium), and 600 (Semibold).
+- **Bengali Fallback:** High-legibility Bengali fonts ensuring zero text truncation when toggled to Bangla (`'bn'`).
 
-- Each card displays coordinate values in fixed-width font (`font-mono`).
-- Includes a dedicated "Copy 4 Corners" button that copies formatted coordinates with instant tooltip feedback ("Copied to clipboard!").
-
-### 6.2 "Open in Google Earth" Action Button
-Positioned directly beneath the Four Corner Coordinates table:
-- **Styling:** Full-width emerald button (`bg-emerald-600 hover:bg-emerald-700 text-white font-medium rounded-lg py-2.5 px-4 shadow-sm transition-colors`).
-- **Icon:** Lucide React `Globe` icon on the left.
-- **Label:** `Open in Google Earth`.
-- **Guidance Toast:** Triggered upon click, an amber/emerald toast appears for ~12 seconds:
-  ```text
-  In Google Earth choose New → Open local KML file and select the downloaded file to display the parcel outline (Earth Pro: double-click the file)
-  ```
-
-### 6.3 Landowner Compensation Table
-- Compact table displaying Dag No., Khatian No., Landowner Name, Total Area, Submersion Status, and Estimated Compensation.
-- Fully filterable via instant client-side search input (searches by Name or Dag No.).
-- Includes single-click "Export CSV" button.
+### Typographic Scales
+- **Display Hero:** `text-3xl sm:text-4xl` ($30\text{px} - 36\text{px}$, font-bold, tracking-tight).
+- **Page Titles:** `text-2xl sm:text-3xl` ($24\text{px} - 30\text{px}$, font-semibold).
+- **Card Headings:** `text-base sm:text-lg` ($16\text{px} - 18\text{px}$, font-semibold).
+- **Section Titles:** `text-sm sm:text-base` ($14\text{px} - 16\text{px}$, font-bold).
+- **Body Text:** `text-xs sm:text-sm` ($12\text{px} - 14\text{px}$, leading-relaxed).
+- **Micro Labels & Captions:** `text-[10px] sm:text-[11px]` ($10\text{px} - 11\text{px}$, tabular-nums).
 
 ---
 
-## 7. Navigation Shell & Settings Hub
+## 4. Layout Shell, Header, and Sidebar System
 
-### 7.1 Left-Hand Icon Navigation Bar
-- Fixed 72px left-hand sidebar (`w-[72px] bg-slate-900 border-r border-slate-800`).
-- Navigation icons:
-  - Dashboard (`Home`)
-  - River Erosion (`Waves`)
-  - Flood Monitoring (`CloudRain`)
-  - Landslides (`Mountain`)
-  - Char Islands (`Compass`)
-  - Coastal Changes (`Anchor`)
-  - Settings (`Settings`)
-- Active item indicator: Emerald pill indicator on the left edge with bright icon highlight.
+### 4.1 Global Header (`AppHeader.tsx`)
+- **Title Block:** Page title and localized subtitle.
+- **Action Controls Toolbar:**
+  1. **Land Information Search Button:** Pill button with `Search` icon and text `Land Information / ভূমির তথ্য`.
+  2. **Global Language Switcher:** Segmented control toggling `বাংলা` (default) and `English`.
+  3. **Explore Disasters Scroll Button:** Pill button with `Waves` icon linking to `#disaster-options`.
+  4. **Currency Indicator:** Badge `৳ (BDT)`.
+  5. **Period Dropdown:** 1y, 3y, 5y, All time with localized labels.
+  6. **Unit Segmented Control:** Decimal, Acre, Hectare.
+  7. **User Profile Badge:** Displays "ডেমো ব্যবহারকারী" or authenticated user name with Sign Out popover.
 
-### 7.2 Persistent Demo Banner
-Mounted at the very top of the application viewport:
-- **Styling:** Amber banner (`bg-amber-500 text-slate-950 font-medium py-1 px-4 text-xs text-center flex items-center justify-center gap-2`).
-- **Text:** *"Demo data: all names, plots and figures are fictional."*
+### 4.2 Fixed 72px Sidebar (`AppSidebar.tsx`)
+- Fixed left positioning with $72\text{px}$ width.
+- BD brand icon leading to `/`.
+- Icon navigation items for Dashboard, Land Information, River Erosion, Flood, Landslides, Char, and Coastal.
+- Tooltip popover on hover with localized labels.
 
-### 7.3 Settings Hub & Verified Sub-Pages
-The Settings route (`/settings`) presents two verified navigation cards:
-1. **About Project (`/settings/about`):** Detailed cards explaining system architecture, offline Leaflet cartography, five hazard modules, and mock data transparency.
-2. **Team Information (`/settings/team`):** Official team attribution cards displaying:
-   - Team Name: `GeoNeural`
-   - Team Leader: `Pantho Raj Biswas`
-   - Team Member: `Puja Paul`
-   - Copyright Notice: `© 2026 GeoNeural. All rights reserved.`
+### 4.3 Persistent Demo Banner (`DemoBanner.tsx`)
+- Top banner with amber accent disclosing: *"ডেমো ডাটাবেজ: প্রদর্শিত সব মালিকানার নাম, দাগ, খতিয়ান ও ক্ষতিপূরণের তথ্য একাডেমিক ও হ্যাকাথন মূল্যায়নের জন্য কৃত্রিমভাবে তৈরি।"*
 
 ---
 
-## 8. Accessibility & Responsiveness Guidelines
+## 5. Authentication & Demo Access Entry Modal (`AuthModal.tsx`)
 
-1. **Color Contrast:** All text meets WCAG 2.1 Level AA minimum contrast ratio of **4.5:1** against backgrounds (large headings meet **3:1**).
-2. **Focus Visibility:** Interactive elements feature explicit keyboard focus outlines (`focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2`).
-3. **Screen Readers:** Complex map visuals provide hidden collapsible data table alternatives and `aria-live="polite"` status announcements.
-4. **Touch Targets:** All mobile interactive targets maintain minimum touch dimensions of **44x44px**.
+- **Container:** Centered modal with glassmorphic backdrop (`bg-ink/70 backdrop-blur-sm`).
+- **Brand Ribbon:** Displays BD icon, app title, version pill, and tagline.
+- **Prominent Demo Access Banner:** Cyber lime banner with button **"Demo / ডেমো হিসেবে প্রবেশ করুন"** enabling 1-click exploration.
+- **Tabs:** Pill segmented control for `লগইন (Login)` and `নিবন্ধন (Sign Up)`.
+- **Inputs:** Clean rounded-xl inputs with icons (Mail, Lock, User) and password visibility toggles (`Eye` / `EyeOff`).
+- **Alerts:** Distinct loss-red error banners and gain-green success notifications.
+
+---
+
+## 6. Global "Land Information" Search UI Design
+
+### 6.1 5-Level Cascading Search Form
+- Layout: 5 responsive columns for District, Upazila, Mouza, Dag No., and Khatian No.
+- Form controls: Dropdown arrows, focus ring with lime highlight (`focus:ring-accent`), and text fields preserving leading zeros.
+- Action row: Reset button and lime Search Land button (`Search Land / অনুসন্ধান করুন`).
+
+### 6.2 6-Section Structured Cadastral Report Cards
+Structured 3-column responsive grid featuring:
+- **Card 1: জমির পরিচয় ও পরিমাপ (Land Identification):** Area, 4-corner GPS coordinates, physical status badge.
+- **Card 2: মালিকানা সংক্রান্ত তথ্য (Ownership):** Owner name, father's name, masked NID (`1985******3156`), 100% share.
+- **Card 3: বিক্রি ও হস্তান্তর সংক্রান্ত তথ্য (Sale & Listing):** Listing status and data source.
+- **Card 4: আইনি তথ্য ও বিরোধ (Legal Disputes):** Case status and injunctions.
+- **Card 5: ভূমি উন্নয়ন কর (Tax & Khajna):** Payment status, assessment year, receipt number.
+- **Card 6: নিবন্ধন ও জমির ব্যবহার ইতিহাস (Registration History):** Deed number, sub-registry office, soil condition.
+
+### 6.3 Disaster Change & Deep-Learning Risk Section Design
+- Full-width card with purple forecast border (`border-predicted/30`).
+- **5.1 Historical Land Loss:** 2-column cards detailing past disaster events, observation periods, and affected areas.
+- **5.2 Future Deep Learning Risk:** 4-column probability cards with animated progress bars (Loss red for high risk, amber for moderate, emerald for low).
+- **5.3 Submerged Parcel Notice:** Coral-tinted alert box preserving cadastral identity for permanently lost plots.
+
+---
+
+## 7. Landslide Mountain & Historical Event Selector (`MountainEventSelector.tsx`)
+
+- Two-step responsive grid:
+  - **Dropdown 1 (Mountain):** Mountain name, slope gradient ($^\circ$), and risk level.
+  - **Dropdown 2 (Event):** Populates automatically upon mountain selection, displaying event year and name.
+- Event Details Card: Displays date, location, affected slope area, displaced debris volume ($m^3$), 24h rainfall (mm), and downslope homesteads count.
+
+---
+
+## 8. Top-Level "Explore Disasters" Scroll Button
+
+- Pill button in `AppHeader` featuring `Waves` icon, chevron down indicator, and subtle hover transition.
+- Smoothly scrolls to `<div id="disaster-options" className="space-y-4 pt-6 scroll-mt-24">`.
+
+---
+
+## 9. Data Transparency & Rule 5 Visual Suppression
+
+- **Rule 5 Compliance:** When `dataMode === 'forecast'`, all paid, approved, and pending financial progress bars and figures are hidden. Only projected compensation budget is shown.
+- **Visual Disclaimers:** All forecast screens render the purple ForecastBadge and disclaimer: *"This is a model-based estimate, not an official government record."*
+
+---
+
+## 10. Responsive Breakpoints & Mobile Adaptation
+
+- **Desktop ($> 1280\text{px}$):** 12-column layout, side-by-side synchronized maps, 5-column search form.
+- **Tablet ($768\text{px} - 1279\text{px}$):** 2-column report cards, stacked dual maps, 2-column search form.
+- **Mobile ($< 768\text{px}$):** 1-column stacked cards, vertically stacked maps, touch-optimized button targets ($\ge 44\text{px}$).

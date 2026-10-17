@@ -7,6 +7,8 @@ import { useAppStore } from "@/stores/appStore";
 import { formatArea } from "@/lib/units";
 import { cn } from "@/lib/utils";
 
+import { getLocalizedDistrictName, formatNumberLocalized } from "@/lib/translations";
+
 interface RankedListProps {
   items: RankedDistrictItem[];
   title?: string;
@@ -18,13 +20,17 @@ interface RankedListProps {
 
 export function RankedList({
   items,
-  title = "Top Impacted Districts",
-  subtitle = "Ranked by net land erosion area",
+  title,
+  subtitle,
   onSelectItem,
   selectedId,
   className,
 }: RankedListProps) {
-  const { unit } = useAppStore();
+  const { unit, language } = useAppStore();
+  const defaultTitle = language === "bn" ? "সর্বাধিক ক্ষতিগ্রস্ত জেলাসমূহ" : "Top Impacted Districts";
+  const defaultSubtitle = language === "bn" ? "নিট ভাঙনের আয়তন অনুসারে ক্রম" : "Ranked by net land erosion area";
+  const displayTitle = title || defaultTitle;
+  const displaySubtitle = subtitle !== undefined ? subtitle : defaultSubtitle;
 
   const maxLoss = Math.max(...items.map((i) => i.lossDecimal), 1);
 
@@ -32,8 +38,8 @@ export function RankedList({
     <div className={cn("bhumidorpon-card p-5 sm:p-6 flex flex-col", className)}>
       <div className="flex items-center justify-between mb-4">
         <div>
-          <h3 className="text-sm sm:text-base font-semibold text-ink">{title}</h3>
-          {subtitle && <p className="text-xs text-muted mt-0.5">{subtitle}</p>}
+          <h3 className="text-sm sm:text-base font-semibold text-ink">{displayTitle}</h3>
+          {displaySubtitle && <p className="text-xs text-muted mt-0.5">{displaySubtitle}</p>}
         </div>
       </div>
 
@@ -41,6 +47,7 @@ export function RankedList({
         {items.map((item) => {
           const isSelected = selectedId === item.districtId;
           const barWidthPercent = (item.lossDecimal / maxLoss) * 100;
+          const localizedName = getLocalizedDistrictName(item.districtId, item.name, language);
 
           return (
             <div
@@ -63,16 +70,16 @@ export function RankedList({
                       : "bg-surface-alt text-ink border border-border"
                   )}
                 >
-                  {item.rank}
+                  {formatNumberLocalized(item.rank, language)}
                 </span>
 
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center justify-between gap-2 mb-1">
                     <span className="font-semibold text-sm text-ink group-hover:text-ink truncate">
-                      {item.name}
+                      {localizedName}
                     </span>
                     <span className="text-xs font-medium text-ink tabular-nums">
-                      {formatArea(item.lossDecimal, unit)}
+                      {formatArea(item.lossDecimal, unit, language)}
                     </span>
                   </div>
 
@@ -101,7 +108,7 @@ export function RankedList({
                   ) : (
                     <ArrowDownRight className="w-3 h-3" />
                   )}
-                  <span>{Math.abs(item.changeRate).toFixed(1)}%</span>
+                  <span>{formatNumberLocalized(Math.abs(item.changeRate).toFixed(1), language)}%</span>
                 </span>
 
                 <ChevronRight className="w-4 h-4 text-muted group-hover:text-ink group-hover:translate-x-0.5 transition-all" />

@@ -1,7 +1,10 @@
+"use client";
+
 import React from "react";
 import { CheckCircle2, Clock, Hourglass, MinusCircle, Ban } from "lucide-react";
 import { CompensationStatus } from "@/lib/types";
 import { cn } from "@/lib/utils";
+import { useAppStore } from "@/stores/appStore";
 
 interface StatusBadgeProps {
   status: CompensationStatus;
@@ -9,40 +12,43 @@ interface StatusBadgeProps {
 }
 
 export function StatusBadge({ status, className }: StatusBadgeProps) {
+  const { language } = useAppStore();
+  const isBn = language === "bn";
+
   const configs: Record<
     CompensationStatus,
     { label: string; bg: string; text: string; border: string; icon: React.ReactNode }
   > = {
     paid: {
-      label: "Paid",
+      label: isBn ? "পরিশোধিত" : "Paid",
       bg: "bg-[#DFF3E8]",
       text: "text-[#2F9E62]",
       border: "border-[#B2E4CB]",
       icon: <CheckCircle2 className="w-3.5 h-3.5" />,
     },
     approved: {
-      label: "Approved",
+      label: isBn ? "অনুমোদিত" : "Approved",
       bg: "bg-[#E0F2FE]",
       text: "text-[#0284C7]",
       border: "border-[#BAE6FD]",
       icon: <Clock className="w-3.5 h-3.5" />,
     },
     pending: {
-      label: "Pending",
+      label: isBn ? "বিচারাধীন" : "Pending",
       bg: "bg-[#FEF3C7]",
       text: "text-[#D97706]",
       border: "border-[#FDE68A]",
       icon: <Hourglass className="w-3.5 h-3.5" />,
     },
     not_applied: {
-      label: "Not applied",
+      label: isBn ? "আবেদন করা হয়নি" : "Not applied",
       bg: "bg-[#F0F2EA]",
       text: "text-[#4A5043]",
       border: "border-[#E4E7DC]",
       icon: <MinusCircle className="w-3.5 h-3.5" />,
     },
     not_applicable: {
-      label: "N/A (State Land)",
+      label: isBn ? "প্রযোজ্য নয় (খাস জমি)" : "N/A (State Land)",
       bg: "bg-[#F4F4F2]",
       text: "text-[#7B8274]",
       border: "border-dashed border-[#D7DACF]",

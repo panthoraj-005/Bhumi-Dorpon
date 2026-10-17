@@ -4,9 +4,10 @@
 ---
 
 > **Document Status:** Authoritative Database & Data Architecture Specification  
-> **Current Storage Implementation:** Static Relational JSON Store (`public/mocks/` and `mocks/`)  
+> **System Version:** 1.2 (Enhanced Demonstration Release)  
+> **Current Storage Implementation:** Static Relational JSON Store (`public/mocks/` and `mocks/`) + LocalStorage Session Engine  
 > **Target Production Database:** PostgreSQL 16 + PostGIS 3.4 Spatial Database  
-> **Target Coordinate Systems:** Storage: EPSG:4326 (WGS 84) | Area Calculations: EPSG:32646 (UTM Zone 46N)  
+> **Coordinate Systems:** Storage: EPSG:4326 (WGS 84) | Area Calculations: EPSG:32646 (UTM Zone 46N)  
 > **Team:** GeoNeural  
 > **Last Updated:** October 2026  
 > **Cross-References:** [Main Documentation](MAIN_PROJECT_DOCUMENTATION.md) | [PRD](PRD.md) | [TRD](TRD.md) | [System Architecture](ARCHITECTURE.md) | [API Documentation](API_DOCUMENTATION.md) | [UI/UX Design System](UI_UX_DESIGN_SYSTEM.md) | [Testing & QA](TESTING_QA.md)
@@ -18,493 +19,378 @@
 - [1. Data Architecture Strategy](#1-data-architecture-strategy)
   - [1.1 Current Implementation: Five-Hazard Information Store](#11-current-implementation-five-hazard-information-store)
   - [1.2 Target Implementation: PostgreSQL 16 + PostGIS 3.4](#12-target-implementation-postgresql-16--postgis-34)
-- [2. Current JSON Mock Store Schema](#2-current-json-mock-store-schema)
-  - [2.1 Administrative Schemas](#21-administrative-schemas)
-  - [2.2 Hazard Master Event Schemas](#22-hazard-master-event-schemas)
-  - [2.3 Cadastral Plot & 4-Corner Geometry Schema](#23-cadastral-plot--4-corner-geometry-schema)
-  - [2.4 Landowner & Multi-Owner Flood Schema](#24-landowner--multi-owner-flood-schema)
-- [3. Disaster Information Database Placement & Relationships](#3-disaster-information-database-placement--relationships)
+- [2. v1.2 Enhanced Schema Definitions](#2-v12-enhanced-schema-definitions)
+  - [2.1 User Accounts & Authentication Schema](#21-user-accounts--authentication-schema)
+  - [2.2 Cadastral Plot & 4-Corner Geometry Schema](#22-cadastral-plot--4-corner-geometry-schema)
+  - [2.3 Land Information Search & 6-Section Report Schemas](#23-land-information-search--6-section-report-schemas)
+  - [2.4 Disaster History & Deep-Learning Risk Prediction Schema](#24-disaster-history--deep-learning-risk-prediction-schema)
+  - [2.5 Landslide Mountains and Historical Events Catalog Schema](#25-landslide-mountains-and-historical-events-catalog-schema)
+  - [2.6 Standardized Data Status Badges](#26-standardized-data-status-badges)
+- [3. Core Administrative & Geographic Schemas](#3-core-administrative--geographic-schemas)
 - [4. Proposed Production PostgreSQL / PostGIS DDL](#4-proposed-production-postgresql--postgis-ddl)
   - [4.1 Database Extensions and Custom Enums](#41-database-extensions-and-custom-enums)
-  - [4.2 Administrative & Geographical Tables](#42-administrative--geographical-tables)
-  - [4.3 Cadastral Plots, Corners, and Ownership Tables](#43-cadastral-plots-corners-and-ownership-tables)
-  - [4.4 Hazard Events, Assets, and Impact Records](#44-hazard-events-assets-and-impact-records)
-  - [4.5 Transects and Predictive Envelopes](#45-transects-and-predictive-envelopes)
-- [5. Spatial Indexing and Performance Optimization](#5-spatial-indexing-and-performance-optimization)
-- [6. Analytical Views & Materialized Queries](#6-analytical-views--materialized-queries)
-- [7. Geospatial Area Calculations & Projection Transformations](#7-geospatial-area-calculations--projection-transformations)
-- [8. Schema Reconciliation and Terminology Alignment](#8-schema-reconciliation-and-terminology-alignment)
+  - [4.2 Users, Roles, and Sessions Tables](#42-users-roles-and-sessions-tables)
+  - [4.3 Cadastral Parcels, Plots, and Corners Tables](#43-cadastral-parcels-plots-and-corners-tables)
+  - [4.4 Ownership, Tax, Legal, and Sale Tables](#44-ownership-tax-legal-and-sale-tables)
+  - [4.5 Mountains and Landslide Events Tables](#45-mountains-and-landslide-events-tables)
+  - [4.6 Multi-Hazard Risk Predictions Table](#46-multi-hazard-risk-predictions-table)
+- [5. Spatial Indexing and Query Performance](#5-spatial-indexing-and-query-performance)
+- [6. Geospatial Area Calculations & Projection Transformations](#6-geospatial-area-calculations--projection-transformations)
 
 ---
 
 ## 1. Data Architecture Strategy
 
 ### 1.1 Current Implementation: Five-Hazard Information Store
-In the current v1.1 demonstration release, BhumiDorpon operates without a live SQL server or database daemon. All application state, geographical boundaries, hazard metrics, and cadastral plot records are persisted as structured, deterministic JSON files:
+In the v1.2 demonstration release, BhumiDorpon operates without a live SQL server or database daemon. All application state, geographical boundaries, hazard metrics, and cadastral plot records are persisted as structured, deterministic JSON files:
 - **Client Runtime (`public/mocks/*.json`):** Static assets fetched asynchronously via `loadMockJson()` in `lib/data.ts`.
 - **Node.js & Testing (`mocks/*.json`):** Synchronous source files read via `fs.readFileSync` in test environments.
-- **Seeded Mock Generator (`scripts/generate-mocks.ts`):** Guarantees 100% deterministic reproducibility across builds and test suites.
+- **Client Session Engine (`lib/auth.ts`):** Client-side session and user registration state persisted via `localStorage` under `bhumidorpon_auth_session` and `bhumidorpon_registered_users`.
 
 ### 1.2 Target Implementation: PostgreSQL 16 + PostGIS 3.4
 For enterprise cloud deployment, the data layer transitions to a production PostgreSQL 16 instance equipped with PostGIS 3.4. The relational schema is engineered to handle millions of cadastral plots across Bangladesh, supporting complex spatial queries (`ST_Intersects`, `ST_Intersection`, `ST_Difference`) and sub-millisecond bounding-box filtering.
 
 ---
 
-## 2. Current JSON Mock Store Schema
+## 2. v1.2 Enhanced Schema Definitions
 
-### 2.1 Administrative Schemas
-Administrative units follow a strict hierarchical structure from Division down to Mouza:
+### 2.1 User Accounts & Authentication Schema
 
 ```typescript
-// public/mocks/districts.json
-export interface DistrictRecord {
-  id: string;            // e.g. "dist-sirajganj"
-  name_en: string;       // "Sirajganj"
-  name_bn: string;       // "সিরাজগঞ্জ"
-  division_id: string;   // "div-rajshahi"
-  is_coastal: boolean;
-  is_hilly: boolean;
-  bounds: [number, number, number, number]; // [minLon, minLat, maxLon, maxLat]
+// lib/auth.ts
+export type UserRole = "citizen" | "surveyor" | "researcher" | "demo";
+
+export interface AuthUser {
+  id: string;               // e.g. "user_officer_01" or "demo_user_001"
+  email: string;            // e.g. "surveyor@bhumidorpon.gov.bd"
+  username: string;         // e.g. "surveyor"
+  fullName: string;         // e.g. "মো: আরিফুল ইসলাম (সার্ভেয়ার)"
+  role: UserRole;           // "citizen" | "surveyor" | "researcher" | "demo"
+  isDemo: boolean;          // true for unprivileged demo access
+  createdAt: string;        // ISO 8601 timestamp
+  district?: string;        // Assigned operational district
 }
 
-// public/mocks/mouzas.json
-export interface MouzaRecord {
-  id: string;            // e.g. "mouza-khanshama"
-  upazila_id: string;    // "upz-kazipur"
-  name_en: string;       // "Khanshama"
-  name_bn: string;       // "খানশামা"
-  jl_no: string;         // "42"
-  is_virtual?: boolean;  // true for newly accreted char/coastal land blocks
-  bounds: [number, number, number, number];
+export interface AuthSession {
+  user: AuthUser;
+  token: string;            // e.g. "auth_token_user_01_1729123456"
+  expiresAt: string;        // ISO 8601 expiration timestamp
 }
 ```
 
-### 2.2 Hazard Master Event Schemas
-Each hazard category maintains an isolated master JSON dataset:
+### 2.2 Cadastral Plot & 4-Corner Geometry Schema
 
 ```typescript
-// public/mocks/river_erosion.json, flood.json, landslide.json, etc.
-export interface HazardEventRecord {
-  eventId: string;
-  hazardType: "river_erosion" | "flood" | "landslide" | "char" | "coastal";
-  mode: "recorded" | "forecast";
-  title: string;
-  eventDate: string;     // ISO 8601 date string
+// mocks/plots.json & lib/types.ts
+export interface Corner {
+  label: "NW" | "NE" | "SE" | "SW";
+  lat: number;              // 6 decimal places (e.g. 24.556572)
+  lon: number;              // 6 decimal places (e.g. 89.627400)
+}
+
+export interface Plot {
+  id: string;               // e.g. "plot_101"
+  mouzaId: string;          // e.g. "mouza_kazipur_1"
+  dagNo: string;            // Strict string preserving leading zeros (e.g. "0101")
+  khatianNo: string;        // String identifier (e.g. "RS-475")
+  landClass: string;        // "agri" | "homestead" | "pond" | "commercial"
+  areaDecimal: number;      // Recorded land area in decimals
+  ownerId: string;          // Foreign key to owners.json
+  polygon: [number, number][][]; // GeoJSON polygon coordinates [lon, lat]
+  corners: [Corner, Corner, Corner, Corner]; // Exact 4 corners
+}
+```
+
+### 2.3 Land Information Search & 6-Section Report Schemas
+
+```typescript
+// lib/landSearch.ts
+export interface LandIdentification {
+  districtId: string;
+  districtName: string;
+  upazilaId: string;
+  upazilaName: string;
   mouzaId: string;
   mouzaName: string;
-  totalLossDecimal: number;
-  totalGainDecimal: number;
-  affectedPlotsCount: number;
-  affectedOwnersCount: number;
-  estimatedCompensationBDT: number;
-  paidBDT?: number;      // STRICTLY OMITTED in forecast mode
-  approvedBDT?: number;  // STRICTLY OMITTED in forecast mode
-  pendingBDT?: number;   // STRICTLY OMITTED in forecast mode
+  jlNo: string;
+  dagNo: string;            // String (preserves leading zeros)
+  khatianNo: string;        // String
+  plotId: string;
+  areaDecimal: number;
+  landClass: string;
+  physicalStatus: "existing" | "partially_affected" | "historically_lost" | "accreted";
+  corners: [Corner, Corner, Corner, Corner];
+  coordinates: [number, number]; // [centerLon, centerLat]
+  polygon?: [number, number][][];
 }
-```
 
-### 2.3 Cadastral Plot & 4-Corner Geometry Schema
-Cadastral plots enforce strict 4-corner quadrilateral boundary definitions:
-
-```typescript
-// public/mocks/plots.json & flood.json
-export interface CadastralPlot {
-  plotId: string;        // "plot-jaflong-101"
-  dagNo: string;         // "101"
-  khatianNo: string;     // "12"
-  mouzaId: string;
-  ownerId: string;
+export interface LandOwnership {
   ownerName: string;
-  landClass: "agri" | "homestead" | "commercial" | "pond" | "forest" | "khas";
-  areaDecimal: number;   // e.g. 33.0
-  corners: [             // Exactly 4 corners ordered NW, NE, SE, SW
-    { cornerIndex: 1; name: "NW"; lat: number; lng: number },
-    { cornerIndex: 2; name: "NE"; lat: number; lng: number },
-    { cornerIndex: 3; name: "SE"; lat: number; lng: number },
-    { cornerIndex: 4; name: "SW"; lat: number; lng: number }
-  ];
+  fatherName: string;
+  phone: string;
+  nidMasked: string;        // e.g. "1985******3156"
+  sharePercent: number;     // 100
+  recordedDate: string;
+  dataSource: string;
+  verificationStatus: DataStatusBadge;
+}
+
+export interface LandSaleListing {
+  isListedForSale: boolean;
+  listingStatus: string;
+  askingPriceBDT?: number;
+  listingDate?: string;
+  dataSource: string;
+  statusBadge: DataStatusBadge;
+}
+
+export interface LandLegalInfo {
+  hasPendingDispute: boolean;
+  caseStatus: string;
+  caseNumber?: string;
+  courtName?: string;
+  verificationStatus: DataStatusBadge;
+  dataSource: string;
+}
+
+export interface LandTaxInfo {
+  taxStatus: "up_to_date" | "outstanding" | "exempt" | "unknown";
+  assessmentYear: string;
+  outstandingAmountBDT: number;
+  lastPaymentDate?: string;
+  receiptNumber?: string;
+  statusBadge: DataStatusBadge;
+  dataSource: string;
+}
+
+export interface LandRegistrationHistory {
+  registrationDeedNo: string;
+  mutationKhatianNo: string;
+  registrationOffice: string;
+  registrationYear: number;
+  lastLandUse: string;
+  soilCondition: string;
+  statusBadge: DataStatusBadge;
+  dataSource: string;
 }
 ```
 
-### 2.4 Landowner & Multi-Owner Flood Schema
-Fictional landowner registries are linked to cadastral plots for compensation tracking:
+### 2.4 Disaster History & Deep-Learning Risk Prediction Schema
 
 ```typescript
-// public/mocks/owners.json
-export interface LandownerRecord {
-  ownerId: string;       // "owner-01"
-  name_en: string;       // "Abdul Karim"
-  father_name: string;   // "Late Rahim Uddin"
-  nid_hash: string;      // "8801928374615" (Simulated hashed NID)
-  contact_village: string;
-  totalOwnedDecimal: number;
-  plots: string[];       // Array of plotIds
+// lib/landSearch.ts
+export interface DisasterHazardHistory {
+  eventDate: string;
+  disasterType: "river_erosion" | "flood" | "landslide" | "char" | "coastal";
+  disasterNameBn: string;
+  disasterNameEn: string;
+  observationPeriod: string;
+  affectedAreaDecimal: number;
+  recordedPreviousAreaDecimal: number;
+  estimatedLandLossDecimal: number;
+  sedimentAccretionDecimal: number;
+  physicalImpact: "permanent_loss" | "temporary_inundation" | "active_erosion" | "sediment_deposition";
+  dataSource: string;
+  observationDate: string;
+  isHistoricallySubmerged: boolean;
+  historicalCoordinates?: [number, number];
 }
+
+export interface FutureRiskPrediction {
+  hazardType: "river_erosion" | "flood" | "landslide" | "coastal" | "char";
+  hazardNameBn: string;
+  hazardNameEn: string;
+  probabilityPercent: number; // e.g. 68
+  riskCategory: "Low" | "Moderate" | "High" | "Extreme";
+  forecastPeriod: string;     // e.g. "2025 – 2027"
+  modelName: string;          // e.g. "GeoAI-BD v2.4 (Multitemporal ConvLSTM)"
+  confidencePercent: number;  // e.g. 88
+  observationDate: string;
+  isModelEstimate: boolean;   // true
+  explanationBn: string;
+  explanationEn: string;
+}
+```
+
+### 2.5 Landslide Mountains and Historical Events Catalog Schema
+
+```typescript
+// mocks/hills.json & lib/landslideEvents.ts
+export interface Hill {
+  id: string;               // e.g. "ghagra", "furamon", "chimbuk"
+  name: string;             // "Ghagra Hill Corridor"
+  upazilaId: string;        // "kawkhali"
+  slopeAngleDeg: number;    // 42
+  soilType: string;         // "Colluvial sandy clay loam"
+  riskLevel: string;        // "Extreme"
+}
+
+export interface LandslideEventRecord {
+  id: string;               // e.g. "ev_ghagra_2024"
+  hillId: string;           // Foreign key to Hill.id
+  mode: "recorded" | "forecast";
+  mountainNameBn: string;
+  mountainNameEn: string;
+  eventNameBn: string;
+  eventNameEn: string;
+  eventDate: string;        // e.g. "১৮-২০ জুন ২০২৪"
+  year: number;             // 2024
+  locationBn: string;
+  locationEn: string;
+  affectedSlopeAreaDecimal: number; // 117.6
+  debrisVolumeM3: number;   // 43200
+  slopeGradientDeg: number; // 42
+  rainfallMm24h: number;    // 310
+  casualtiesAvoidedFamilies: number; // 17
+  homesteadsAtRisk: number; // 24
+  impactSummaryBn: string;
+  impactSummaryEn: string;
+  isDemo: boolean;
+  modelConfidenceScore?: number; // 90
+}
+```
+
+### 2.6 Standardized Data Status Badges
+
+```typescript
+export type DataStatusBadge =
+  | "verified"           // Verified official / surveyed fact
+  | "demo"               // Synthetic academic/hackathon prototype data
+  | "unverified"         // Unverified external record
+  | "unavailable"        // No data found in registry
+  | "external_required"; // Requires external live government database connection
 ```
 
 ---
 
-## 3. Disaster Information Database Placement & Relationships
+## 3. Core Administrative & Geographic Schemas
 
-In the BhumiDorpon architecture, disaster information is not treated as isolated map polygons; it is structurally integrated with cadastral records and administrative boundaries:
-
-```mermaid
-graph TD
-    subgraph GeoAdmin ["Geographical & Administrative Foundation"]
-        District["districts Table"] --> Upazila["upazilas Table"]
-        Upazila --> Mouza["mouzas Table"]
-        Mouza --> Plot["cadastral_plots Table"]
-        Plot --> Corners["plot_corners Table (4 Corners NW, NE, SE, SW)"]
-    end
-
-    subgraph HazardData ["Disaster & Environmental Hazard Domain"]
-        Event["hazard_events Table (River, Flood, Slide, Char, Coast)"]
-        Event --> Mode["mode: recorded vs. predicted"]
-        Event --> Envelope["forecast_envelopes Table (1-Yr AI Projections)"]
-        Event --> Assets["event_assets Table (Satellite / Contours / Rasters)"]
-        Event --> Transects["transects Table (Retreat Velocities)"]
-    end
-
-    subgraph CadastralImpact ["Tenure & Compensation Resolution"]
-        Event --> Impact["plot_impact_records Table"]
-        Plot --> Impact
-        Impact --> OwnerComp["owner_compensation_records Table"]
-        Owner["landowners Table"] --> OwnerComp
-    end
-```
-
-1. **Hazard Events Table (`hazard_events`):** Stores event metadata, dates, affected river/hill, and overall severity.
-2. **Impact Records Table (`plot_impact_records`):** Stores the spatial intersection between the hazard boundary and specific cadastral plots (`ST_Intersection`).
-3. **Compensation Table (`owner_compensation_records`):** Calculates financial liabilities by joining affected plots with deed ownerships (`Khatian No.`), applying land-use multipliers and upazila base rates.
+- **Districts (`mocks/common.json`):** `id`, `name`, `division`, `isCoastal`, `isHilly`, `hasChars`.
+- **Upazilas (`mocks/common.json`):** `id`, `districtId`, `name`, `rivers`, `hasChars`, `hasHills`.
+- **Mouzas (`mocks/mouzas.json`):** `id`, `upazilaId`, `districtId`, `name`, `jlNo`, `totalPlots`, `boundary`.
 
 ---
 
 ## 4. Proposed Production PostgreSQL / PostGIS DDL
 
-The following DDL defines the complete production database schema:
-
-### 4.1 Database Extensions and Custom Enums
-
 ```sql
--- Enable PostGIS spatial extension and pg_trgm for fuzzy owner name searching
-CREATE EXTENSION IF NOT EXISTS postgis;
-CREATE EXTENSION IF NOT EXISTS pg_trgm;
+-- PostgreSQL 16 + PostGIS 3.4 Spatial Schema
 
--- Enumerations
-CREATE TYPE hazard_type_enum AS ENUM (
-  'river_erosion',
-  'flood',
-  'landslide',
-  'char',
-  'coastal'
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+CREATE EXTENSION IF NOT EXISTS "postgis";
+
+-- 4.1 Custom Enumerations
+CREATE TYPE user_role AS ENUM ('citizen', 'surveyor', 'researcher', 'demo');
+CREATE TYPE hazard_type AS ENUM ('river_erosion', 'flood', 'landslide', 'char', 'coastal');
+CREATE TYPE data_mode AS ENUM ('recorded', 'forecast');
+CREATE TYPE land_physical_status AS ENUM ('existing', 'partially_affected', 'historically_lost', 'accreted');
+CREATE TYPE risk_category AS ENUM ('Low', 'Moderate', 'High', 'Extreme');
+
+-- 4.2 Users and Roles Table
+CREATE TABLE users (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    email VARCHAR(255) UNIQUE NOT NULL,
+    username VARCHAR(100) UNIQUE NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    full_name VARCHAR(255) NOT NULL,
+    role user_role DEFAULT 'citizen',
+    is_demo BOOLEAN DEFAULT FALSE,
+    district_id VARCHAR(50),
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TYPE data_mode_enum AS ENUM (
-  'recorded',
-  'predicted'  -- Maps to 'forecast' in UI
-);
-
-CREATE TYPE change_kind_enum AS ENUM (
-  'loss',
-  'gain',
-  'submerged',
-  'accreted'
-);
-
-CREATE TYPE compensation_status_enum AS ENUM (
-  'not_applicable',
-  'not_applied',
-  'pending',
-  'approved',
-  'paid'
-);
-
-CREATE TYPE land_class_enum AS ENUM (
-  'agri',
-  'homestead',
-  'pond',
-  'commercial',
-  'forest',
-  'khas',
-  'other'
-);
-
-CREATE TYPE flood_depth_class_enum AS ENUM (
-  'shallow',    -- < 0.5m
-  'moderate',   -- 0.5m - 1.5m
-  'deep'        -- > 1.5m
-);
-
-CREATE TYPE asset_kind_enum AS ENUM (
-  'satellite_raster',
-  'survey_cadastral_map',
-  'flood_extent_vector',
-  'dem_hillshade_raster',
-  'contour_vector'
-);
-```
-
-### 4.2 Administrative & Geographical Tables
-
-```sql
-CREATE TABLE districts (
-  id           SERIAL PRIMARY KEY,
-  code         VARCHAR(16) UNIQUE NOT NULL,
-  name_en      VARCHAR(64) NOT NULL,
-  name_bn      VARCHAR(64) NOT NULL,
-  division_en  VARCHAR(64) NOT NULL,
-  is_coastal   BOOLEAN DEFAULT FALSE,
-  is_hilly     BOOLEAN DEFAULT FALSE,
-  geom         GEOMETRY(MultiPolygon, 4326) NOT NULL
-);
-
-CREATE TABLE upazilas (
-  id           SERIAL PRIMARY KEY,
-  district_id  INT NOT NULL REFERENCES districts(id) ON DELETE CASCADE,
-  code         VARCHAR(16) UNIQUE NOT NULL,
-  name_en      VARCHAR(64) NOT NULL,
-  name_bn      VARCHAR(64) NOT NULL,
-  base_rate_bdt NUMERIC(10,2) DEFAULT 20000.00,
-  geom         GEOMETRY(MultiPolygon, 4326) NOT NULL
-);
-
-CREATE TABLE mouzas (
-  id           SERIAL PRIMARY KEY,
-  upazila_id   INT NOT NULL REFERENCES upazilas(id) ON DELETE CASCADE,
-  jl_no        VARCHAR(32) NOT NULL,
-  name_en      VARCHAR(64) NOT NULL,
-  name_bn      VARCHAR(64) NOT NULL,
-  is_virtual   BOOLEAN DEFAULT FALSE, -- Flag for unassigned char or coastal mudflats
-  geom         GEOMETRY(MultiPolygon, 4326) NOT NULL,
-  CONSTRAINT uq_mouza_jl UNIQUE (upazila_id, jl_no)
-);
-
-CREATE TABLE rivers (
-  id           SERIAL PRIMARY KEY,
-  name_en      VARCHAR(64) NOT NULL,
-  name_bn      VARCHAR(64) NOT NULL,
-  river_type   VARCHAR(32) DEFAULT 'braided',
-  geom         GEOMETRY(MultiLineString, 4326)
-);
-
-CREATE TABLE river_upazilas (
-  river_id     INT NOT NULL REFERENCES rivers(id) ON DELETE CASCADE,
-  upazila_id   INT NOT NULL REFERENCES upazilas(id) ON DELETE CASCADE,
-  PRIMARY KEY (river_id, upazila_id)
-);
-
-CREATE TABLE hills (
-  id           SERIAL PRIMARY KEY,
-  upazila_id   INT NOT NULL REFERENCES upazilas(id) ON DELETE CASCADE,
-  name_en      VARCHAR(64) NOT NULL,
-  name_bn      VARCHAR(64) NOT NULL,
-  peak_elevation_m NUMERIC(6,2),
-  average_slope_deg NUMERIC(4,1),
-  geom         GEOMETRY(Polygon, 4326)
-);
-```
-
-### 4.3 Cadastral Plots, Corners, and Ownership Tables
-
-```sql
+-- 4.3 Cadastral Plots Table with PostGIS Polygon Geometry
 CREATE TABLE cadastral_plots (
-  id           BIGSERIAL PRIMARY KEY,
-  mouza_id     INT NOT NULL REFERENCES mouzas(id) ON DELETE CASCADE,
-  dag_no       VARCHAR(32) NOT NULL,
-  khatian_no   VARCHAR(32) NOT NULL,
-  land_class   land_class_enum NOT NULL DEFAULT 'agri',
-  area_decimal NUMERIC(10,4) NOT NULL,
-  geom         GEOMETRY(Polygon, 4326) NOT NULL,
-  CONSTRAINT uq_mouza_dag UNIQUE (mouza_id, dag_no)
+    id VARCHAR(50) PRIMARY KEY,
+    mouza_id VARCHAR(50) NOT NULL,
+    dag_no VARCHAR(20) NOT NULL,             -- String preserving leading zeros
+    khatian_no VARCHAR(50) NOT NULL,
+    land_class VARCHAR(50) NOT NULL,
+    area_decimal NUMERIC(10, 2) NOT NULL,
+    owner_id VARCHAR(50),
+    physical_status land_physical_status DEFAULT 'existing',
+    geom GEOMETRY(Polygon, 4326) NOT NULL,  -- WGS 84 spatial boundary
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE plot_corners (
-  id           BIGSERIAL PRIMARY KEY,
-  plot_id      BIGINT NOT NULL REFERENCES cadastral_plots(id) ON DELETE CASCADE,
-  corner_index INT NOT NULL CHECK (corner_index BETWEEN 1 AND 4),
-  corner_label VARCHAR(8) NOT NULL CHECK (corner_label IN ('NW','NE','SE','SW')),
-  latitude     NUMERIC(9,6) NOT NULL,
-  longitude    NUMERIC(9,6) NOT NULL,
-  geom         GEOMETRY(Point, 4326) NOT NULL,
-  CONSTRAINT uq_plot_corner UNIQUE (plot_id, corner_index)
-);
-
-CREATE TABLE landowners (
-  id           BIGSERIAL PRIMARY KEY,
-  nid_hash     VARCHAR(64) UNIQUE NOT NULL,
-  name_en      VARCHAR(128) NOT NULL,
-  name_bn      VARCHAR(128),
-  father_name  VARCHAR(128),
-  village      VARCHAR(128)
-);
-
-CREATE TABLE plot_ownerships (
-  id           BIGSERIAL PRIMARY KEY,
-  plot_id      BIGINT NOT NULL REFERENCES cadastral_plots(id) ON DELETE CASCADE,
-  owner_id     BIGINT NOT NULL REFERENCES landowners(id) ON DELETE CASCADE,
-  share_ratio  NUMERIC(5,4) NOT NULL DEFAULT 1.0000,
-  CONSTRAINT uq_plot_owner UNIQUE (plot_id, owner_id)
-);
-```
-
-### 4.4 Hazard Events, Assets, and Impact Records
-
-```sql
-CREATE TABLE hazard_events (
-  id           BIGSERIAL PRIMARY KEY,
-  hazard_type  hazard_type_enum NOT NULL,
-  data_mode    data_mode_enum NOT NULL DEFAULT 'recorded',
-  mouza_id     INT NOT NULL REFERENCES mouzas(id) ON DELETE CASCADE,
-  title        VARCHAR(128) NOT NULL,
-  event_date   DATE NOT NULL,
-  severity     VARCHAR(32) DEFAULT 'moderate',
-  notes        TEXT,
-  created_at   TIMESTAMPTZ DEFAULT NOW()
-);
-
-CREATE TABLE event_assets (
-  id           BIGSERIAL PRIMARY KEY,
-  event_id     BIGINT NOT NULL REFERENCES hazard_events(id) ON DELETE CASCADE,
-  asset_kind   asset_kind_enum NOT NULL,
-  storage_url  VARCHAR(256) NOT NULL,
-  captured_at  TIMESTAMPTZ,
-  metadata_json JSONB
-);
-
-CREATE TABLE plot_impact_records (
-  id                 BIGSERIAL PRIMARY KEY,
-  event_id           BIGINT NOT NULL REFERENCES hazard_events(id) ON DELETE CASCADE,
-  plot_id            BIGINT NOT NULL REFERENCES cadastral_plots(id) ON DELETE CASCADE,
-  change_kind        change_kind_enum NOT NULL,
-  depth_class        flood_depth_class_enum,
-  affected_area_dec  NUMERIC(10,4) NOT NULL,
-  damage_percentage  NUMERIC(5,2) NOT NULL,
-  impact_geom        GEOMETRY(Geometry, 4326),
-  CONSTRAINT uq_event_plot UNIQUE (event_id, plot_id)
-);
-
-CREATE TABLE owner_compensation_records (
-  id                 BIGSERIAL PRIMARY KEY,
-  impact_id          BIGINT NOT NULL REFERENCES plot_impact_records(id) ON DELETE CASCADE,
-  owner_id           BIGINT NOT NULL REFERENCES landowners(id) ON DELETE CASCADE,
-  estimated_bdt      NUMERIC(12,2) NOT NULL,
-  status             compensation_status_enum NOT NULL DEFAULT 'pending',
-  approved_bdt       NUMERIC(12,2) DEFAULT 0.00,
-  paid_bdt           NUMERIC(12,2) DEFAULT 0.00,
-  disbursed_at       TIMESTAMPTZ
-);
-```
-
-### 4.5 Transects and Predictive Envelopes
-
-```sql
-CREATE TABLE river_transects (
-  id                 BIGSERIAL PRIMARY KEY,
-  event_id           BIGINT NOT NULL REFERENCES hazard_events(id) ON DELETE CASCADE,
-  transect_no        INT NOT NULL,
-  baseline_point     GEOMETRY(Point, 4326) NOT NULL,
-  current_point      GEOMETRY(Point, 4326) NOT NULL,
-  retreat_meters     NUMERIC(8,2) NOT NULL,
-  retreat_rate_m_yr  NUMERIC(6,2),
-  geom               GEOMETRY(LineString, 4326) NOT NULL
-);
-
-CREATE TABLE forecast_envelopes (
-  id                 BIGSERIAL PRIMARY KEY,
-  event_id           BIGINT NOT NULL REFERENCES hazard_events(id) ON DELETE CASCADE,
-  horizon_years      INT NOT NULL DEFAULT 1,
-  confidence_score   NUMERIC(4,3) CHECK (confidence_score BETWEEN 0.000 AND 1.000),
-  algorithm_name     VARCHAR(64) DEFAULT 'ConvLSTM-Delta-v2',
-  envelope_geom      GEOMETRY(Polygon, 4326) NOT NULL
-);
-```
-
----
-
-## 5. Spatial Indexing and Performance Optimization
-
-To guarantee high-speed spatial queries across millions of parcels, production PostGIS instances apply GIST indexes across all geometry columns:
-
-```sql
--- Spatial R-Tree (GIST) Indexes
-CREATE INDEX idx_districts_geom ON districts USING GIST(geom);
-CREATE INDEX idx_upazilas_geom ON upazilas USING GIST(geom);
-CREATE INDEX idx_mouzas_geom ON mouzas USING GIST(geom);
 CREATE INDEX idx_cadastral_plots_geom ON cadastral_plots USING GIST(geom);
-CREATE INDEX idx_plot_corners_geom ON plot_corners USING GIST(geom);
-CREATE INDEX idx_plot_impact_geom ON plot_impact_records USING GIST(impact_geom);
-CREATE INDEX idx_forecast_envelopes_geom ON forecast_envelopes USING GIST(envelope_geom);
-CREATE INDEX idx_river_transects_geom ON river_transects USING GIST(geom);
+CREATE INDEX idx_cadastral_plots_dag ON cadastral_plots(dag_no);
+CREATE INDEX idx_cadastral_plots_khatian ON cadastral_plots(khatian_no);
+CREATE INDEX idx_cadastral_plots_mouza ON cadastral_plots(mouza_id);
 
--- B-Tree Indexes on Foreign Keys and Query Filters
-CREATE INDEX idx_plots_mouza ON cadastral_plots(mouza_id);
-CREATE INDEX idx_plots_dag ON cadastral_plots(dag_no);
-CREATE INDEX idx_plots_khatian ON cadastral_plots(khatian_no);
-CREATE INDEX idx_events_mouza_hazard ON hazard_events(mouza_id, hazard_type, data_mode);
-CREATE INDEX idx_impact_event ON plot_impact_records(event_id);
-CREATE INDEX idx_impact_plot ON plot_impact_records(plot_id);
+-- 4.4 Four Corners GPS Coordinate Table
+CREATE TABLE cadastral_corners (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    plot_id VARCHAR(50) REFERENCES cadastral_plots(id) ON DELETE CASCADE,
+    corner_label VARCHAR(2) NOT NULL CHECK (corner_label IN ('NW', 'NE', 'SE', 'SW')),
+    latitude NUMERIC(9, 6) NOT NULL,
+    longitude NUMERIC(9, 6) NOT NULL,
+    point_geom GEOMETRY(Point, 4326) NOT NULL,
+    vertex_order INT NOT NULL CHECK (vertex_order BETWEEN 1 AND 4)
+);
 
--- GIN Trigram Index for Fuzzy Landowner Name Search
-CREATE INDEX idx_landowners_name_trgm ON landowners USING GIN(name_en gin_trgm_ops);
+CREATE INDEX idx_cadastral_corners_point ON cadastral_corners USING GIST(point_geom);
+
+-- 4.5 Mountains and Landslide Events Tables
+CREATE TABLE mountains (
+    id VARCHAR(50) PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    upazila_id VARCHAR(50) NOT NULL,
+    slope_angle_deg NUMERIC(4, 1) NOT NULL,
+    soil_type VARCHAR(100) NOT NULL,
+    risk_level VARCHAR(50) NOT NULL,
+    geom GEOMETRY(MultiPolygon, 4326)
+);
+
+CREATE TABLE landslide_events (
+    id VARCHAR(50) PRIMARY KEY,
+    hill_id VARCHAR(50) REFERENCES mountains(id) ON DELETE CASCADE,
+    mode data_mode NOT NULL,
+    event_name_bn VARCHAR(255) NOT NULL,
+    event_name_en VARCHAR(255) NOT NULL,
+    event_date VARCHAR(100) NOT NULL,
+    event_year INT NOT NULL,
+    affected_slope_area_decimal NUMERIC(10, 2) NOT NULL,
+    debris_volume_m3 NUMERIC(12, 2) NOT NULL,
+    slope_gradient_deg NUMERIC(4, 1) NOT NULL,
+    rainfall_mm_24h NUMERIC(6, 1),
+    homesteads_at_risk INT DEFAULT 0,
+    impact_summary_bn TEXT,
+    impact_summary_en TEXT,
+    is_demo BOOLEAN DEFAULT FALSE,
+    confidence_score INT
+);
+
+-- 4.6 Multi-Hazard Deep-Learning Risk Predictions Table
+CREATE TABLE hazard_risk_predictions (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    plot_id VARCHAR(50) REFERENCES cadastral_plots(id) ON DELETE CASCADE,
+    hazard hazard_type NOT NULL,
+    probability_percent INT NOT NULL CHECK (probability_percent BETWEEN 0 AND 100),
+    risk_category risk_category NOT NULL,
+    forecast_period VARCHAR(50) NOT NULL,
+    model_name VARCHAR(100) NOT NULL,
+    confidence_percent INT NOT NULL,
+    observation_date DATE NOT NULL,
+    is_model_estimate BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
 ```
 
 ---
 
-## 6. Analytical Views & Materialized Queries
+## 5. Spatial Indexing and Query Performance
 
-### 6.1 Mouza Hazard Summary View
-
-```sql
-CREATE OR REPLACE VIEW v_mouza_hazard_summary AS
-SELECT 
-  e.id AS event_id,
-  e.hazard_type,
-  e.data_mode,
-  m.id AS mouza_id,
-  m.name_en AS mouza_name,
-  u.name_en AS upazila_name,
-  d.name_en AS district_name,
-  COUNT(DISTINCT pir.plot_id) AS total_affected_plots,
-  COUNT(DISTINCT ocr.owner_id) AS total_affected_owners,
-  COALESCE(SUM(pir.affected_area_dec), 0) AS total_affected_area_decimal,
-  COALESCE(SUM(ocr.estimated_bdt), 0) AS total_estimated_compensation_bdt,
-  -- Suppress disbursement figures for forecast mode
-  CASE WHEN e.data_mode = 'forecast' THEN 0 ELSE COALESCE(SUM(ocr.paid_bdt), 0) END AS total_paid_bdt
-FROM hazard_events e
-JOIN mouzas m ON e.mouza_id = m.id
-JOIN upazilas u ON m.upazila_id = u.id
-JOIN districts d ON u.district_id = d.id
-LEFT JOIN plot_impact_records pir ON e.id = pir.event_id
-LEFT JOIN owner_compensation_records ocr ON pir.id = ocr.impact_id
-GROUP BY e.id, e.hazard_type, e.data_mode, m.id, m.name_en, u.name_en, d.name_en;
-```
+- **PostGIS GiST Indexes:** Applied to `cadastral_plots.geom`, `cadastral_corners.point_geom`, and `mountains.geom` ensuring $< 15\text{ms}$ spatial intersections.
+- **B-Tree Indexes:** Applied to `dag_no`, `khatian_no`, `mouza_id`, and `hill_id` guaranteeing instantaneous text lookups without string truncation.
 
 ---
 
-## 7. Geospatial Area Calculations & Projection Transformations
+## 6. Geospatial Area Calculations & Projection Transformations
 
-PostgreSQL stores coordinates in **EPSG:4326** (WGS 84 latitude and longitude). However, calculating true metric ground area or square meters requires projecting to **EPSG:32646** (WGS 84 / UTM Zone 46N), which spans Bangladesh:
-
-```sql
--- Area calculation function returning area in Decimals
-CREATE OR REPLACE FUNCTION fn_calculate_plot_area_decimal(geom_4326 GEOMETRY)
-RETURNS NUMERIC AS $$
-DECLARE
-  area_sqm NUMERIC;
-BEGIN
-  -- Transform geometry to UTM Zone 46N (Meters) and compute area
-  area_sqm := ST_Area(ST_Transform(geom_4326, 32646));
-  -- 1 Decimal = 40.4686 Square Meters
-  RETURN ROUND((area_sqm / 40.4686)::NUMERIC, 4);
-END;
-$$ LANGUAGE plpgsql IMMUTABLE;
-```
-
----
-
-## 8. Schema Reconciliation and Terminology Alignment
-
-To eliminate ambiguity across documentation and code:
-1. **`predicted` (Database) vs. `forecast` (Frontend UI):** In the database schema, the enum value is `predicted` to align with machine learning taxonomy. In the user interface, it is rendered exclusively as **Forecast** to provide friendly terminology for citizens and officials.
-2. **`dag_no` & `khatian_no`:** Retained in standard government cadastral naming convention (Dag No. = parcel boundary ID; Khatian No. = land record deed ID).
-3. **Four Corners Ordering:** Always persisted in strict clockwise order NW (`1`), NE (`2`), SE (`3`), SW (`4`).
+- **Storage:** EPSG:4326 (WGS 84 latitude/longitude degrees).
+- **Metric Area Transformation:**
+  $$\text{Area}_{\text{m}^2} = \text{ST\_Area}(\text{ST\_Transform}(\text{geom}, 32646))$$
+- **Decimal Conversion:**
+  $$\text{Area}_{\text{Decimal}} = \frac{\text{Area}_{\text{m}^2}}{40.468564224}$$

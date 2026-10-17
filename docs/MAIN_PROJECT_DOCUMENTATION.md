@@ -4,7 +4,7 @@
 ---
 
 > **Document Status:** Comprehensive Master System Reference  
-> **Product Version:** 1.1 (Demonstration Release)  
+> **Product Version:** 1.2 (Enhanced Multi-Hazard Release)  
 > **Team:** GeoNeural  
 > **Last Updated:** October 2026  
 > **Target Audience:** Hackathon Evaluators, Academic Researchers, Land Surveyors, Engineering Teams  
@@ -18,7 +18,7 @@
 - [1. Executive Summary & Project Identity](#1-executive-summary--project-identity)
   - [1.1 What is BhumiDorpon?](#11-what-is-bhumidorpon)
   - [1.2 Map-Centered Cadastral Exploration](#12-map-centered-cadastral-exploration)
-  - [1.3 Core Product Innovations](#13-core-product-innovations)
+  - [1.3 Core Product Innovations (v1.2 Release)](#13-core-product-innovations-v12-release)
 - [2. Geographical and Social Context of Bangladesh](#2-geographical-and-social-context-of-bangladesh)
   - [2.1 The Deltaic Reality](#21-the-deltaic-reality)
   - [2.2 Land Tenure Disruption & Boundary Loss](#22-land-tenure-disruption--boundary-loss)
@@ -29,47 +29,58 @@
   - [3.3 Module 3: Landslides (/landslide)](#33-module-3-landslides-landslide)
   - [3.4 Module 4: Char Island Dynamics (/char)](#34-module-4-char-island-dynamics-char)
   - [3.5 Module 5: Coastal Changes (/coastal)](#35-module-5-coastal-changes-coastal)
-- [4. Pure Leaflet Cartography & Dual-Map Synchronizer Subsystem](#4-pure-leaflet-cartography--dual-map-synchronizer-subsystem)
-  - [4.1 Offline Vector Basemap Architecture (Zero External Tiles)](#41-offline-vector-basemap-architecture-zero-external-tiles)
-  - [4.2 Bidirectional Dual-Map Synchronization](#42-bidirectional-dual-map-synchronization)
-  - [4.3 Cartographic Chrome & SVG Hatch Pattern Textures](#43-cartographic-chrome--svg-hatch-pattern-textures)
-  - [4.4 Dedicated In-Map Direct Zoom Controls](#44-dedicated-in-map-direct-zoom-controls)
-- [5. Cadastral Four-Corner GPS Boundary Readout Engine](#5-cadastral-four-corner-gps-boundary-readout-engine)
-  - [5.1 Micro-Cadastral Quadrilateral Standardization](#51-micro-cadastral-quadrilateral-standardization)
-  - [5.2 Six-Decimal Precision & Centroid Suppression](#52-six-decimal-precision--centroid-suppression)
-  - [5.3 Dedicated Flood Owner Land Detail Page](#53-dedicated-flood-owner-land-detail-page)
-- [6. Google Earth Parcel Outline Feature](#6-google-earth-parcel-outline-feature)
-  - [6.1 3D Spatial Bridge Workflow](#61-3d-spatial-bridge-workflow)
-  - [6.2 Client-Side KML 2.2 Serializer (lib/googleEarth.ts)](#62-client-side-kml-22-serializer-libgoogleearthts)
-  - [6.3 External Camera URL Formulation](#63-external-camera-url-formulation)
-  - [6.4 Zero-Backend Privacy Boundaries](#64-zero-backend-privacy-boundaries)
-- [7. Distinction: Google Earth vs. Google Earth Engine](#7-distinction-google-earth-vs-google-earth-engine)
-  - [7.1 Google Earth (Implemented 3D Viewer Integration)](#71-google-earth-implemented-3d-viewer-integration)
-  - [7.2 Google Earth Engine (Proposed Cloud Pipeline)](#72-google-earth-engine-proposed-cloud-pipeline)
-- [8. Five-Hazard Information Store Architecture](#8-five-hazard-information-store-architecture)
-  - [8.1 Dual Storage Model (Runtime vs. Source)](#81-dual-storage-model-runtime-vs-source)
-  - [8.2 Single Source of Truth Across Formats](#82-single-source-of-truth-across-formats)
-  - [8.3 Single Data Access Layer (lib/data.ts)](#83-single-data-access-layer-libdatats)
-- [9. GeoAI Forecasting & Rule 5 Compliance Disclosures](#9-geoai-forecasting--rule-5-compliance-disclosures)
-  - [9.1 1-Year Predictive Hazard Envelopes](#91-1-year-predictive-hazard-envelopes)
-  - [9.2 Rule 5 Guardrail Compliance (Disbursement Suppression)](#92-rule-5-guardrail-compliance-disbursement-suppression)
-  - [9.3 Synthetic Mock Data Provenance & Honesty Notice](#93-synthetic-mock-data-provenance--honesty-notice)
-- [10. Platform Settings Hub & Team Attribution](#10-platform-settings-hub--team-attribution)
-- [11. Technical Architecture & Technology Stack](#11-technical-architecture--technology-stack)
-- [12. Chronological Project Evolution & Update History](#12-chronological-project-evolution--update-history)
-- [13. Testing and Quality Assurance Verification](#13-testing-and-quality-assurance-verification)
-- [14. Complete Documentation Suite Index](#14-complete-documentation-suite-index)
-- [15. Academic References & Citations](#15-academic-references--citations)
-- [16. Team Information and Copyright](#16-team-information-and-copyright)
+- [4. Global Bangla Default & English Localization Engine](#4-global-bangla-default--english-localization-engine)
+  - [4.1 Centralized Translation Architecture (lib/translations.ts)](#41-centralized-translation-architecture-libtranslationsts)
+  - [4.2 Bengali Numeral Localization](#42-bengali-numeral-localization)
+  - [4.3 Persistent Zero-Layout-Shift Language Switcher](#43-persistent-zero-layout-shift-language-switcher)
+- [5. Entry Authentication, Registration & Demo Access Subsystem](#5-entry-authentication-registration--demo-access-subsystem)
+  - [5.1 Initial Entry Interceptor (AuthModal.tsx & /login)](#51-initial-entry-interceptor-authmodaltsx--login)
+  - [5.2 Form Validation & Password Controls](#52-form-validation--password-controls)
+  - [5.3 Isolated Demo Access Bypass](#53-isolated-demo-access-bypass)
+- [6. Global Land Information Cascading Search & Report Engine](#6-global-land-information-cascading-search--report-engine)
+  - [6.1 Five-Tier Cascading Identifier Model](#61-five-tier-cascading-identifier-model)
+  - [6.2 Leading Zero String Token Preservation](#62-leading-zero-string-token-preservation)
+  - [6.3 Structured Six-Section Land Report](#63-structured-six-section-land-report)
+  - [6.4 Standardized Data Availability & Attribution Badging](#64-standardized-data-availability--attribution-badging)
+- [7. Section 5: Disaster-Related Land Change & Deep-Learning Risk Analysis](#7-section-5-disaster-related-land-change--deep-learning-risk-analysis)
+  - [7.1 Historical Land Change & Loss-Gain Accounting](#71-historical-land-change--loss-gain-accounting)
+  - [7.2 Submerged Land Cadastral Preservation](#72-submerged-land-cadastral-preservation)
+  - [7.3 Deep-Learning Multi-Hazard Risk Prediction Pipeline](#73-deep-learning-multi-hazard-risk-prediction-pipeline)
+- [8. Landslide Mountain & Historical Event Selector](#8-landslide-mountain--historical-event-selector)
+  - [8.1 Two-Step Dependent Selection Workflow](#81-two-step-dependent-selection-workflow)
+  - [8.2 Dual-Mode Integration (Recorded vs. Forecast)](#82-dual-mode-integration-recorded-vs-forecast)
+- [9. Top-Level Scroll to Disasters Feature](#9-top-level-scroll-to-disasters-feature)
+- [10. Pure Leaflet Cartography & Dual-Map Synchronizer Subsystem](#10-pure-leaflet-cartography--dual-map-synchronizer-subsystem)
+  - [10.1 Offline Vector Basemap Architecture (Zero External Tiles)](#101-offline-vector-basemap-architecture-zero-external-tiles)
+  - [10.2 Bidirectional Dual-Map Synchronization](#102-bidirectional-dual-map-synchronization)
+  - [10.3 Cartographic Chrome & SVG Hatch Pattern Textures](#103-cartographic-chrome--svg-hatch-pattern-textures)
+  - [10.4 Dedicated In-Map Direct Zoom Controls](#104-dedicated-in-map-direct-zoom-controls)
+- [11. Cadastral Four-Corner GPS Boundary Readout Engine](#11-cadastral-four-corner-gps-boundary-readout-engine)
+  - [11.1 Micro-Cadastral Quadrilateral Standardization](#111-micro-cadastral-quadrilateral-standardization)
+  - [11.2 Six-Decimal Precision & Centroid Suppression](#112-six-decimal-precision--centroid-suppression)
+  - [11.3 Dedicated Flood Owner Land Detail Page](#113-dedicated-flood-owner-land-detail-page)
+- [12. Google Earth Parcel Outline Feature](#12-google-earth-parcel-outline-feature)
+  - [12.1 3D Spatial Bridge Workflow](#121-3d-spatial-bridge-workflow)
+  - [12.2 Client-Side KML 2.2 Serializer (lib/googleEarth.ts)](#122-client-side-kml-22-serializer-libgoogleearthts)
+  - [12.3 External Camera URL Formulation](#123-external-camera-url-formulation)
+  - [12.4 Zero-Backend Privacy Boundaries](#124-zero-backend-privacy-boundaries)
+- [13. Distinction: Google Earth vs. Google Earth Engine](#13-distinction-google-earth-vs-google-earth-engine)
+- [14. Five-Hazard Information Store Architecture](#14-five-hazard-information-store-architecture)
+- [15. GeoAI Forecasting & Rule 5 Compliance Disclosures](#15-geoai-forecasting--rule-5-compliance-disclosures)
+- [16. Platform Settings Hub & Team Attribution](#16-platform-settings-hub--team-attribution)
+- [17. Technical Architecture & Technology Stack](#17-technical-architecture--technology-stack)
+- [18. Chronological Project Evolution & Update History](#18-chronological-project-evolution--update-history)
+- [19. Testing and Quality Assurance Verification](#19-testing-and-quality-assurance-verification)
+- [20. Complete Documentation Suite Index](#20-complete-documentation-suite-index)
+- [21. Academic References & Citations](#21-academic-references--citations)
+- [22. Team Information and Copyright](#22-team-information-and-copyright)
 
 ---
 
 ## 1. Executive Summary & Project Identity
 
 ### 1.1 What is BhumiDorpon?
-**BhumiDorpon** (Bengali: ভূমিদর্পণ — literally *"Mirror of the Earth"*) is a specialized, map-centric geospatial web platform engineered to monitor, analyze, and visualize cadastral land changes, physical environmental hazards, and tenure displacement across Bangladesh. Built with modern web GIS technologies, it brings together parcel-level cadastral boundaries (Dag and Khatian numbers), historical environmental losses and accretion gains, and forward-looking hazard projections within an accessible, responsive light-mode user interface.
-
-The platform directly addresses one of Bangladesh's most pervasive socioeconomic vulnerabilities: the continuous, dynamic reshaping of the country's land surface by natural phenomena, and the resulting displacement experienced by rural landowners, tenant farmers, and land administration authorities.
+**BhumiDorpon** (Bengali: ভূমিদর্পণ — literally *"Mirror of the Earth"*) is a specialized, map-centric geospatial web platform engineered to monitor, analyze, and visualize cadastral land changes, physical environmental hazards, tenure displacement, and deep-learning disaster risks across Bangladesh. Built with modern web GIS technologies, it brings together parcel-level cadastral boundaries (Dag and Khatian numbers), historical environmental losses and accretion gains, forward-looking hazard projections, and cadastral intelligence within an accessible, responsive, bilingual user interface.
 
 ### 1.2 Map-Centered Cadastral Exploration
 In Bangladesh, land administration and disaster reporting have traditionally operated in disconnected silos:
@@ -78,13 +89,17 @@ In Bangladesh, land administration and disaster reporting have traditionally ope
 
 BhumiDorpon bridges this divide through **map-centered exploration**. Instead of presenting abstract statistical tables, the platform places interactive, geographically synchronized maps at the center of the user experience. Users navigate through administrative hierarchies (Division &rarr; District &rarr; Upazila &rarr; River/Hill/Mouza) and visually inspect how specific physical hazards intersect with cadastral plots, homesteads, agricultural parcels, and community infrastructure.
 
-### 1.3 Core Product Innovations
-1. **Five Unifed Hazard Modules:** River Erosion, Flood Inundation, Landslides, Char Island Dynamics, and Coastal Changes unified under consistent spatial schemas.
-2. **Synchronized Dual-Map Viewer:** Simultaneous side-by-side Before/After Leaflet maps with bidirectional zoom/pan synchronization and re-entrancy locks.
-3. **Offline Light GIS Basemap:** Custom high-contrast vector cartography rendering completely offline with zero external tile server dependencies.
-4. **Cadastral 4-Corner Boundary Readout:** Granular plot geometry featuring strict 4-corner GPS coordinates (NW, NE, SE, SW to 6 decimal places).
-5. **Google Earth 3D Parcel Bridge:** One-click "Open in Google Earth" button with client-side KML 2.2 export, automated camera positioning, and on-screen import guidance.
-6. **Strict Data Transparency & Rule 5 Compliance:** Complete separation of observed facts from predictive forecasts, strict suppression of financial disbursement fields on forecast views, and prominent synthetic mock data labeling.
+### 1.3 Core Product Innovations (v1.2 Release)
+1. **Global Bangla Default & English Localization:** Full bilingual experience with Bangla as the first-visit default, zero-layout-shift language toggle in the header, and Eastern Nagari numeral localization (`০-৯`).
+2. **First-Visit Authentication & Demo Access:** Entry gatekeeper with login, registration, password confirmation, validation, and a prominent **"Demo / ডেমো হিসেবে প্রবেশ করুন"** bypass button with strictly isolated permissions.
+3. **Global Land Information Search:** Dedicated top-level search route (`/land-information`) supporting 5 cascading fields (District, Upazila, Mouza, Dag No., Khatian No.) with leading zero string preservation.
+4. **Structured Six-Section Cadastral Report:** Comprehensive report covering Land ID (with 4-corner GPS coordinates), Ownership, Sale Status, Legal Disputes, Tax & Payment Records, and Registration History.
+5. **Section 5: Disaster-Related Land Change and Deep-Learning Risk Analysis:** Parcel-level historical loss-gain quantification, physical status preservation for submerged parcels (`Completely Submerged / নদীগর্ভে বিলীন`), and 4 deep-learning risk prediction models (ConvLSTM, HydroSAR, InSAR SlopeNet, CoastWatch).
+6. **Mountain and Historical Landslide Event Selector:** Two-step selector workflow on `/landslide` and `/landslide/[mode]` updating maps and telemetry based on selected mountains and historical landslide events.
+7. **Top-Level Scroll to Disasters Button:** Direct smooth-scroll navigation button on the homepage hero targeting `#disaster-options`.
+8. **Pure Leaflet Cartography & Dual-Map Synchronizer:** Side-by-side synchronized Before/After maps operating 100% offline without external vector tile servers.
+9. **Cadastral 4-Corner Boundary Readouts & Google Earth KML:** Individual parcel coordinates formatted to 6 decimal places with one-click Google Earth 3D export.
+10. **Rule 5 Compliance & Data Transparency:** Complete suppression of financial payout fields on forecast views, with transparent badging for demo data and unverified external records.
 
 ---
 
@@ -115,8 +130,6 @@ When environmental hazards strike, affected citizens and local administration of
 
 ## 3. The Five Core Hazard Domains in Depth
 
-BhumiDorpon unites five distinct yet geographically interconnected hazard modules:
-
 ### 3.1 Module 1: River Erosion (`/river-erosion`)
 - **Geographic Pilot:** Kazipur Upazila, Sirajganj District along the braided Jamuna River corridor.
 - **Physical Dynamics:** Braided river channels migrate hundreds of meters during monsoon flood surges, collapsing sand-silt riverbanks and swallowing entire mouzas.
@@ -130,10 +143,10 @@ BhumiDorpon unites five distinct yet geographically interconnected hazard module
 - **Cadastral Detail Flow:** Direct drill-down to individual Flood Owner Land Detail pages displaying 4-corner GPS coordinates, one-click copy buttons, GeoJSON export, and Google Earth KML export.
 
 ### 3.3 Module 3: Landslides (`/landslide`)
-- **Geographic Pilot:** Kawkhali Upazila, Rangamati District in the Chittagong Hill Tracts.
+- **Geographic Pilot:** Chittagong and Rangamati District in the Chittagong Hill Tracts.
 - **Physical Dynamics:** Saturated tertiary shale-sandstone slopes failing under intense localized monsoon downpours ($> 200\text{ mm}/24\text{h}$).
 - **Visual Cartography:** Synthetic DEM hillshade overlays, 10-meter index contour isolines, spot elevation tags, failure scarp polygons (red), and debris runout risk buffers (orange).
-- **Physical Metrics:** Displaced soil volume ($m^3$), slope angle ($38^\circ$–$44^\circ$), and trigger rainfall metrics.
+- **Two-Step Selector:** Interactive mountain selection (e.g., Batali Hill, Tiger Pass, Rangamati Sadar, Nilachal) followed by historical event selection (e.g., June 2007, June 2017).
 
 ### 3.4 Module 4: Char Island Dynamics (`/char`)
 - **Geographic Pilot:** Char Girish, Kazipur, Sirajganj along the Jamuna River.
@@ -149,177 +162,218 @@ BhumiDorpon unites five distinct yet geographically interconnected hazard module
 
 ---
 
-## 4. Pure Leaflet Cartography & Dual-Map Synchronizer Subsystem
+## 4. Global Bangla Default & English Localization Engine
 
-### 4.1 Offline Vector Basemap Architecture (Zero External Tiles)
-In full adherence to competition rules, BhumiDorpon eliminates all external vector tile server dependencies, Mapbox GL JS, and MapLibre imports:
-- Complete migration across all 5 hazard modules to pure **Leaflet 1.9.4**.
+### 4.1 Centralized Translation Architecture (`lib/translations.ts`)
+To eliminate scattered, hardcoded language checks, BhumiDorpon deploys a centralized dictionary:
+- Primary default language is set to **Bangla (`bn`)** on first visit.
+- Stored in `localStorage` under `bhumidorpon_lang` to remember user preference.
+- All translation keys are resolved via `t(key, lang)`.
+
+### 4.2 Bengali Numeral Localization
+The engine provides `formatNumberLocalized(num, lang)` which converts Arabic digits (`0-9`) into Eastern Nagari Bengali numerals (`০-৯`) when `lang === "bn"`, while formatting commas and decimal places appropriately.
+
+### 4.3 Persistent Zero-Layout-Shift Language Switcher
+The header mounts a button (`বাংলা | English`) that toggles language instantaneously without triggering page reloads, without disrupting map pan/zoom coordinates, and without resetting active cascading search filters.
+
+---
+
+## 5. Entry Authentication, Registration & Demo Access Subsystem
+
+### 5.1 Initial Entry Interceptor (`AuthModal.tsx` & `/login`)
+When an unauthenticated visitor enters the platform, `AuthModal.tsx` intercepts the view with a frosted glassmorphic card:
+- Supports Login with Username/Email and Password.
+- Supports Registration with Full Name, Username, Email, Password, Password Confirmation, and Intended Role.
+- Seeded test credentials:
+  - `surveyor` / `password123` (Surveyor Role)
+  - `citizen` / `citizen123` (Citizen Role)
+  - `admin` / `admin123` (Admin Role)
+
+### 5.2 Form Validation & Password Controls
+- Minimum 6 characters for passwords.
+- Real-time password confirmation matching.
+- Eye / EyeOff icon toggles for password visibility.
+- Bilingual error messaging on invalid credentials or duplicate usernames.
+
+### 5.3 Isolated Demo Access Bypass
+A prominent button **"Demo / ডেমো হিসেবে প্রবেশ করুন"** allows evaluators to explore all dashboard and cadastral visualization features immediately:
+- Generates an ephemeral session with `isDemo: true`.
+- Enforces strict read-only containment: `canPerformAdministrativeAction(user)` strictly evaluates to `false`.
+- A persistent top banner (`DemoBanner.tsx`) reminds users that they are in demo mode.
+
+---
+
+## 6. Global Land Information Cascading Search & Report Engine
+
+### 6.1 Five-Tier Cascading Identifier Model
+Located at `/land-information`, the search engine resolves parcels across 5 hierarchical fields:
+1. **District (জেলা):** Sirajganj, Sylhet, Rangpur, Cox's Bazar, Bhola, Chittagong.
+2. **Upazila (উপজেলা):** Filtered by selected District.
+3. **Mouza (মৌজা):** Filtered by selected Upazila with JL Numbers.
+4. **Dag Number (দাগ নম্বর):** Accepts alphanumeric or numeric strings.
+5. **Khatian Number (খতিয়ান নম্বর):** Accepts cadastral survey strings (e.g., `RS-475`, `SA-112`).
+
+### 6.2 Leading Zero String Token Preservation
+Cadastral parcel identifiers are stored and filtered strictly as string tokens (`dagNo.trim()`). Leading zeros (e.g., `"0101"`, `"0042"`) are never converted to numeric integers, ensuring complete cadastral authenticity.
+
+### 6.3 Structured Six-Section Land Report
+A successful search produces a comprehensive cadastral intelligence report:
+- **Section A: Land Identification:** District, Upazila, Mouza, JL No, Dag No, Khatian No, Area (Decimal & Acre), Land Classification, and 4-Corner GPS coordinates.
+- **Section B: Ownership Information:** Recorded owners, ownership shares, father's name, verification timestamp.
+- **Section C: Sale & Listing Status:** Active sale status, listing price, source attribution.
+- **Section D: Legal Disputes & Court Cases:** Civil suit reference numbers, dispute status, court jurisdiction.
+- **Section E: Land Development Tax (LD Tax):** Assessment period, outstanding balance, last payment date.
+- **Section F: Registration & Ownership History:** Transfer chain, mutation record dates, deed volumes.
+
+### 6.4 Standardized Data Availability & Attribution Badging
+Every section is marked with authoritative badges:
+- `যাচাই করা` (Verified Record)
+- `ডেমো ডেটা` (Demo Data)
+- `তথ্য পাওয়া যায়নি` (No Record Found)
+- `বাহ্যিক ডেটা সংযোগ প্রয়োজন` (External Connection Required)
+
+---
+
+## 7. Section 5: Disaster-Related Land Change & Deep-Learning Risk Analysis
+
+Directly beneath general land information, a specialized analysis section is rendered:
+**"দুর্যোগজনিত ভূমির পরিবর্তন ও ঝুঁকি বিশ্লেষণ" / "Disaster-Related Land Change and Risk Analysis"**
+
+### 7.1 Historical Land Change & Loss-Gain Accounting
+Displays chronological disaster impacts:
+- Event type (River Erosion, Flash Flood, Landslide, Coastal Surge).
+- Observation date and affected area (decimals / sq meters).
+- Measured net loss or sediment accretion.
+
+### 7.2 Submerged Land Cadastral Preservation
+When a parcel has been physically swallowed by a river (e.g., Dag `0101` in Kazipur):
+- The parcel is clearly designated as **"Completely Submerged / নদীগর্ভে বিলীন"**.
+- Physical loss is separated from legal tenure: the historical cadastral identity, deed, and ownership record are preserved to protect citizen re-emergence claims under national alluvial land laws (Section 86 of the State Acquisition and Tenancy Act).
+
+### 7.3 Deep-Learning Multi-Hazard Risk Prediction Pipeline
+For existing plots, the engine displays multi-hazard risk predictions across 4 specialized deep-learning models:
+1. **River Erosion:** ConvLSTM Spatiotemporal Sequence Model (1-year forecast, 82% confidence).
+2. **Flood Inundation:** HydroSAR Inundation Depth Network (Monsoon season forecast, 88% confidence).
+3. **Landslide Risk:** InSAR SlopeNet Displacement Predictor (Rainfall trigger forecast, 79% confidence).
+4. **Coastal Surge & Erosion:** CoastWatch Estuarine Retreat Model (1-year shoreline model, 75% confidence).
+
+---
+
+## 8. Landslide Mountain & Historical Event Selector
+
+### 8.1 Two-Step Dependent Selection Workflow
+On `/landslide` and `/landslide/[mode]`, the two-step selector allows precise historical inquiry:
+1. **Step 1 — Mountain Selection:** User selects a monitored mountain/hill (Batali Hill, Tiger Pass, Moti Jhorna, Rangamati Sadar, Kaptai, Nilachal).
+2. **Step 2 — Historical Event Selection:** Dynamically populates with historical events belonging to the selected mountain, displaying event date, name, affected area, rainfall trigger ($mm/24h$), and casualties.
+
+### 8.2 Dual-Mode Integration (Recorded vs. Forecast)
+- Selecting an event immediately updates map bounds, contour vectors, and telemetry cards.
+- Changing the mountain automatically resets any selected event that does not belong to the newly chosen mountain.
+
+---
+
+## 9. Top-Level Scroll to Disasters Feature
+
+A prominent button is mounted near the top of the Home Dashboard:
+- Bangla label: **"দুর্যোগসমূহ দেখুন"**
+- English label: **"Explore Disasters"**
+- Executes smooth browser scrolling (`behavior: "smooth"`) directly targeting the `#disaster-options` container.
+- Includes `scroll-mt-24` offset to ensure that the sticky header and demo banner never conceal the section heading.
+
+---
+
+## 10. Pure Leaflet Cartography & Dual-Map Synchronizer Subsystem
+
+### 10.1 Offline Vector Basemap Architecture (Zero External Tiles)
+- Pure **Leaflet 1.9.4** across all 5 hazard modules.
 - Custom **Light GIS Basemap** renders completely offline using client-rendered SVG vector paths (`components/map/basemap/LightGisBasemap.tsx`).
-- Background canvas styled in high-contrast neutral `#EEF0E6`, delivering superior legibility under varying screen conditions.
+- Background canvas styled in high-contrast neutral `#EEF0E6`.
 
-### 4.2 Bidirectional Dual-Map Synchronization
-Before and After maps are displayed side-by-side in simultaneous viewports (`components/map/HazardMapContainer.tsx` and `components/map/GisMapCompare.tsx`):
+### 10.2 Bidirectional Dual-Map Synchronization
+Before and After maps are displayed side-by-side in simultaneous viewports:
 - Panning or zooming either map immediately mirrors the viewport coordinates to the paired map.
-- Synchronized using Leaflet `move` and `zoom` event listeners guarded by an active re-entrancy lock (`isSyncing` flag) to prevent recursive loop stutter.
+- Guarded by an active re-entrancy lock (`isSyncing` flag) to prevent recursive loop stutter.
 
-### 4.3 Cartographic Chrome & SVG Hatch Pattern Textures
-Each map viewport features integrated professional cartographic chrome:
-- **Graticules:** Thin geographic coordinate lines with latitude/longitude degree tags.
-- **Dynamic Scale Bar:** Metric-only scale bar (`L.control.scale({ imperial: false, metric: true })`).
-- **North Arrow Compass:** Crisp SVG north arrow indicator.
-- **Locator Inset Mini-Map:** 100x100px overview inset displaying regional position within Bangladesh.
-- **SVG Hatch Pattern Injection:** Dynamic `<pattern>` definitions injected into the Leaflet SVG renderer (`pattern-loss` coral diagonal stripes, `pattern-khas` slate cross-hatch, `pattern-forecast` purple dashed stripes) ensuring non-color-dependent accessibility.
+### 10.3 Cartographic Chrome & SVG Hatch Pattern Textures
+- **Graticules, Dynamic Metric Scale Bar, North Arrow, Locator Inset Mini-Map**.
+- **SVG Hatch Pattern Injection:** Dynamic `<pattern>` definitions injected into the Leaflet SVG renderer (`pattern-loss` coral diagonal stripes, `pattern-khas` slate cross-hatch, `pattern-forecast` purple dashed stripes).
 
-### 4.4 Dedicated In-Map Direct Zoom Controls
-- High-visibility `+` and `−` zoom buttons mounted on the map chrome.
-- **Immediate First-Click Execution:** Directly invokes Leaflet `zoomIn()` / `zoomOut()` on the very first user click without requiring secondary activations.
+### 10.4 Dedicated In-Map Direct Zoom Controls
+- High-visibility `+` and `−` zoom buttons mounted on the map chrome with immediate first-click execution.
 
 ---
 
-## 5. Cadastral Four-Corner GPS Boundary Readout Engine
+## 11. Cadastral Four-Corner GPS Boundary Readout Engine
 
-### 5.1 Micro-Cadastral Quadrilateral Standardization
-To resolve boundary loss disputes after floods or riverbank erosion, BhumiDorpon standardizes cadastral parcels into strict 4-corner quadrilaterals:
-- Every plot boundary is defined by a closed ring of 5 coordinate tuples where the 5th point repeats the 1st.
-- Boundary vertices are sorted clockwise starting from the North-West:
-  1. **Corner 1 (NW):** North-West boundary stone.
-  2. **Corner 2 (NE):** North-East boundary stone.
-  3. **Corner 3 (SE):** South-East boundary stone.
-  4. **Corner 4 (SW):** South-West boundary stone.
+### 11.1 Micro-Cadastral Quadrilateral Standardization
+- Standardizes cadastral parcels into strict 4-corner quadrilaterals sorted clockwise: NW (`1`), NE (`2`), SE (`3`), SW (`4`).
+- Defined by a closed ring of 5 coordinate tuples where the 5th point repeats the 1st.
 
-### 5.2 Six-Decimal Precision & Centroid Suppression
-- All corner coordinates are formatted to **6 decimal places** of GPS latitude and longitude ($\sim 0.11\text{m}$ ground accuracy).
-- **Centroid Suppression:** Geometric centroids are intentionally removed from owner plot data to prevent confusion between boundary corners and plot centers.
+### 11.2 Six-Decimal Precision & Centroid Suppression
+- All corner coordinates formatted to 6 decimal places ($\sim 0.11\text{m}$ ground accuracy).
+- Centroid coordinates intentionally suppressed to eliminate geometric confusion.
 
-### 5.3 Dedicated Flood Owner Land Detail Page
-Located at `/flood/[mouzaId]/[floodId]/owner/[ownerId]`:
-- Displays landowner profile header (Name, Father's Name, NID hash, total land).
-- Individual parcel cards with Dag No., Khatian No., Land Class, and Submersion Status.
-- Interactive Four Corner Coordinates Table.
-- One-click copy buttons ("Copy 4 Corners", "Copy All Coordinates") with instant visual feedback.
-- One-click "Download GeoJSON" button.
+### 11.3 Dedicated Flood Owner Land Detail Page
+- Located at `/flood/[mouzaId]/[floodId]/owner/[ownerId]`.
+- Displays landowner profile header, 4-corner GPS table, one-click copy buttons, GeoJSON download, and Google Earth KML export.
 
 ---
 
-## 6. Google Earth Parcel Outline Feature
+## 12. Google Earth Parcel Outline Feature
 
-### 6.1 3D Spatial Bridge Workflow
-To enable landowners and surveyors to inspect parcels within 3D satellite terrain, BhumiDorpon features an **Open in Google Earth** button directly below the Four Corner Coordinates table on the Flood Owner Land Detail page.
+### 12.1 3D Spatial Bridge Workflow
+One-click "Open in Google Earth" button launches Google Earth Web centered at parcel bounding box and initiates automatic `.kml` download.
 
-```mermaid
-sequenceDiagram
-    autonumber
-    actor User as Citizen / Surveyor
-    participant Page as Flood Owner Page
-    participant Serializer as lib/googleEarth.ts
-    participant Browser as Browser
-    participant Earth as Google Earth (Web)
+### 12.2 Client-Side KML 2.2 Serializer (`lib/googleEarth.ts`)
+Generates valid OGC KML 2.2 XML strings with closed polygon geometry, 4 numbered corner pins, and comprehensive XML escaping.
 
-    User->>Page: Clicks "Open in Google Earth"
-    Page->>Serializer: openParcelInGoogleEarth(plot)
-    Note over Serializer: Computes bbox centroid & camera range
-    Serializer->>Browser: Synchronous window.open(earthUrl, '_blank')
-    Browser-->>Earth: Opens tab at earth.google.com/web/@lat,lon,...
-    Serializer->>Browser: Triggers KML file download (.kml)
-    Page->>Page: Displays 12-second on-screen guidance toast
-    User->>Earth: Menu → Open local KML file
-    Earth-->>User: Renders 3D parcel polygon & corner pins
-```
-
-### 6.2 Client-Side KML 2.2 Serializer (`lib/googleEarth.ts`)
-- Implemented as pure TypeScript functions generating valid OGC KML 2.2 XML strings.
-- **Polygon Styling:** Orange outline (`#ff0088ff`, 3px line width) with translucent fill (`#440088ff`).
-- **Corner Placemarks:** Four numbered placemark points (`1 (NW)`, `2 (NE)`, `3 (SE)`, `4 (SW)`).
-- **XML Sanitization:** Comprehensive XML escaping across all fields (`&amp;`, `&lt;`, `&gt;`, `&quot;`, `&apos;`).
-- **Metadata Table:** Embeds Dag No., Khatian No., Owner Name, Mouza, Area (decimals), and mandatory demo disclaimers into the placemark description.
-
-### 6.3 External Camera URL Formulation
-Google Earth Web is launched with mathematically calculated camera parameters:
+### 12.3 External Camera URL Formulation
 $$\text{URL} = \text{https://earth.google.com/web/@}\langle\text{lat}\rangle,\langle\text{lon}\rangle,0\text{a},\langle\text{range}\rangle\text{d},35\text{y},0\text{h},0\text{t},0\text{r}$$
-Where $\langle\text{lat}\rangle, \langle\text{lon}\rangle$ represent the bounding-box centroid, and $\langle\text{range}\rangle$ is set to $3\times$ the parcel dimension (minimum 60m), tilted at 35 degrees for perspective viewing.
 
-### 6.4 Zero-Backend Privacy Boundaries
-- Only the numeric coordinates for the parcel centroid and camera range pass via the external URL.
-- Landowner names, NID records, deeds, and boundary vertices remain strictly on the local device inside the generated KML file.
-- Verified by 7 automated unit tests in `tests/google_earth_kml.test.ts`.
+### 12.4 Zero-Backend Privacy Boundaries
+Only numeric centroid and camera range are transmitted via URL. Landowner identity and deed details remain strictly on the local device.
 
 ---
 
-## 7. Distinction: Google Earth vs. Google Earth Engine
-
-It is vital to distinguish between **Google Earth** and **Google Earth Engine (GEE)**:
+## 13. Distinction: Google Earth vs. Google Earth Engine
 
 | Dimension | Google Earth (Implemented Feature) | Google Earth Engine (Proposed Future Pipeline) |
 |---|---|---|
 | **Role & Purpose** | Client-side 3D geographic visualizer for parcel inspection. | Cloud-scale planetary geospatial computing platform for satellite data analysis. |
-| **Operational Status** | **Operational & Verified** in current v1.1 prototype. | **Proposed Future Enhancement** (Phase 3 Roadmap). |
+| **Operational Status** | **Operational & Verified** in current v1.2 release. | **Proposed Future Enhancement** (Phase 3 Roadmap). |
 | **Execution Environment**| User's web browser (`earth.google.com/web`). | Google Cloud / Earth Engine compute infrastructure. |
 | **Data Ingestion** | Reads client-downloaded KML 2.2 files locally. | Automates Sentinel-1 SAR and Sentinel-2 optical image ETL. |
-| **Credentials & Keys** | Zero credentials required (Public URL scheme). | Google Cloud Service Account and private keys required. |
-| **Source Implementation** | [`lib/googleEarth.ts`](file:///d:/Project/Antigravity/BhumiDorpon/lib/googleEarth.ts) | Documented in `TRD.md` and `PROJECT_ROADMAP.md`. |
 
 ---
 
-## 8. Five-Hazard Information Store Architecture
+## 14. Five-Hazard Information Store Architecture
 
-### 8.1 Dual Storage Model (Runtime vs. Source)
-All hazard information is maintained as static, deterministic JSON files without a live SQL database:
-- **Runtime Store (`public/mocks/*.json`):** Static assets served at `/mocks/*` and fetched by client components via `loadMockJson()` in `lib/data.ts`. Flat hazard datasets include `river_erosion.json`, `flood.json`, `landslide.json`, `char.json`, `coastal.json`, and administrative indices (`districts.json`, `upazilas.json`, `mouzas.json`).
+- **Runtime Store (`public/mocks/*.json`):** Static assets served at `/mocks/*` and fetched by client components via `loadMockJson()` in `lib/data.ts`.
 - **Source / Test Store (`mocks/*.json`):** Synchronous copy read by Node.js and Vitest test environments using `fs.readFileSync`.
 - **Per-Area Map Packages (`mocks/areas/<hazard>/` & `public/mocks/areas/<hazard>/`):** Modular spatial bundles resolved via `areas_index.json`.
 
-### 8.2 Single Source of Truth Across Formats
-Four-corner coordinates stored in `plots.json` and `flood.json` serve as the singular authority across:
-1. Cadastral map SVG polygon layers.
-2. Four Corner Coordinates tables.
-3. Clipboard copy actions.
-4. GeoJSON export files.
-5. Google Earth KML outlines.
+---
 
-### 8.3 Single Data Access Layer (`lib/data.ts`)
-All UI components interact strictly with typed helper methods (`getFlood()`, `getOwnerPlots()`, `getResult()`, `getMapArea()`). Raw `fetch()` calls from components are strictly prohibited.
+## 15. GeoAI Forecasting & Rule 5 Compliance Disclosures
+
+- **Rule 5 Guardrail Compliance:** In Forecast mode, all compensation disbursement fields (`Paid`, `Approved`, `Pending`) are strictly omitted, displaying only projected compensation metrics.
+- **Synthetic Mock Data Provenance:** All names, plot numbers, deed records, and figures are deterministic synthetic mock datasets. Persistent disclaimers separate model estimates from certified surveys.
 
 ---
 
-## 9. GeoAI Forecasting & Rule 5 Compliance Disclosures
+## 16. Platform Settings Hub & Team Attribution
 
-### 9.1 1-Year Predictive Hazard Envelopes
-BhumiDorpon features **GeoAI 1-Year Predictive Forecast Mode** as an exploratory demonstration showing where riverbank retreat, coastal erosion, and flood risks will intersect cadastral plots over the next 12 months.
-
-### 9.2 Rule 5 Guardrail Compliance (Disbursement Suppression)
-Under the LandTech Innovation Hackathon rules (**Rule 5**):
-- Predictive forecast models must never present financial disbursements as facts.
-- When `mode === "forecast"`, all compensation disbursement fields (`Paid`, `Approved`, `Pending`) are **strictly stripped** from dashboard cards, summary panels, and owner tables. Only `Projected Compensation` is displayed.
-- Verified by automated unit tests in `tests/step3_and_step4.test.ts`.
-
-### 9.3 Synthetic Mock Data Provenance & Honesty Notice
-- **Mock Data Disclosure:** All names, plot numbers, deed records, and figures are deterministic synthetic mock datasets generated via `scripts/generate-mocks.ts`.
-- **Honesty Banner:** A persistent amber banner remains visible across the top of every screen:
-  ```text
-  Demo data: all names, plots and figures are fictional.
-  ```
-- **Forecast Notice:** All forecast views conclude with the mandatory disclaimer:
-  ```text
-  This is a model-based estimate, not an official government record.
-  ```
+- **About Project (`/settings/about`):** Detailed architectural overview, hazard explanations, offline cartography notes, and mock disclosures.
+- **Team Information (`/settings/team`):** Official team attribution cards:
+  - **Team Name:** GeoNeural
+  - **Team Leader:** Pantho Raj Biswas
+  - **Team Member:** Puja Paul
+  - **Copyright:** © 2026 GeoNeural. All rights reserved.
 
 ---
 
-## 10. Platform Settings Hub & Team Attribution
+## 17. Technical Architecture & Technology Stack
 
-The Settings hub (`/settings`) provides access to exactly two verified views:
-1. **About Project (`/settings/about`):** Detailed architectural overview, five hazard explanations, offline cartography notes, and mock data transparency disclosures.
-2. **Team Information (`/settings/team`):** Official team attribution cards displaying:
-   - **Team Name:** GeoNeural
-   - **Team Leader:** Pantho Raj Biswas
-   - **Team Member:** Puja Paul
-   - **Copyright:** © 2026 GeoNeural. All rights reserved.
-
----
-
-## 11. Technical Architecture & Technology Stack
-
-The project technology stack is verified against `package.json`:
 - **Core Framework:** Next.js `14.2.15` (App Router).
 - **Language:** TypeScript `5.6.2` (Strict mode).
 - **Styling:** Tailwind CSS `3.4.13` with custom design tokens.
@@ -327,39 +381,43 @@ The project technology stack is verified against `package.json`:
 - **Spatial Analysis:** Turf.js `7.4.0`.
 - **State Store:** Zustand `4.5.5`.
 - **Data Caching:** TanStack React Query `5.59.0`.
-- **Unit Testing:** Vitest `4.1.11` (10 test suites, 61 unit tests).
+- **Unit Testing:** Vitest `4.1.11` (14 test suites, 78 unit tests).
 
 ---
 
-## 12. Chronological Project Evolution & Update History
-
-In accordance with hackathon documentation specifications, the complete 15-milestone evolution of BhumiDorpon is documented below:
+## 18. Chronological Project Evolution & Update History
 
 | Milestone / Version | Date | Key Enhancements & Modifications |
 |---|---|---|
-| **Initial Submission** | Oct 2026 | Initial prototype establishing the 5 core hazard modules (River Erosion, Flood, Landslide, Char Formation, Coastal Erosion), baseline side-by-side Before/After map comparison, and preliminary mock data models. |
-| **Data Architecture Refactoring & Deterministic Mock Engine** | Oct 2026 | Rebuilt core data architecture with deterministic mock generator (`scripts/generate-mocks.ts`), resolving empty cascading dropdowns and producing synchronized relational JSON stores across administrative hierarchies (Division, District, Upazila, Mouza) in `public/mocks/` and `mocks/`. |
-| **SelectorChain Cascading & Rule 5 Forecast Guardrails** | Oct 2026 | Refactored `SelectorChain` cascading dropdown hierarchy (`lib/data.ts`); implemented strict compliance with Rule 5 by suppressing all financial disbursement metrics (paid, approved, pending) on predictive forecast views, retaining only projected compensation metrics (`tests/step3_and_step4.test.ts`). |
-| **Flood Multi-Owner Flow & Landslide Terrain Overhaul** | Oct 2026 | Implemented flood event views with individual landowner plot color-coding and search by owner name / Dag number (`tests/step5_flood_flow.test.ts`); built landslide terrain engine with togglable elevation tints, hillshade rasters, index contour labels, and slope change metrics (`components/map/LandslideMap.tsx`). |
-| **Cadastral 4-Corner Boundary Readout & Owner Detail Page** | Oct 2026 | Standardized all cadastral parcels into strict 4-corner quadrilaterals with fixed NW, NE, SE, SW vertex ordering and 6-decimal GPS coordinate readouts (`tests/four_corners_geometry.test.ts`); launched dedicated Flood Owner Land Detail route (`/flood/[mouzaId]/[floodId]/owner/[ownerId]`) with one-click clipboard copying and centroid suppression. |
-| **Leaflet Migration & Offline Cartography (Zero External Tiles)** | Oct 2026 | Removed all external tile server dependencies and MapLibre/Mapbox imports in full adherence to hackathon competition rules; migrated the complete mapping engine across all hazard views and previews to pure Leaflet with client-rendered SVG vector geometry (`components/map/`). |
-| **Light-Themed GIS Basemap & Cartographic Chrome Upgrade** | Oct 2026 | Engineered custom high-contrast Light GIS basemap (`components/map/basemap/`), cartographic map chrome (graticules, dynamic scale bar, north arrow, locator inset mini-map in `components/map/chrome/`), mouza loss/gain badges, and `MouzaSummaryPanel` for river erosion, char, and coastal maps (`tests/change3_part1_gis_basemap.test.ts`). |
-| **Side-by-Side Dual Map Viewer, Dedicated Zoom & Basemap Switcher** | Oct 2026 | Upgraded Before/After comparison to simultaneous dual-panel synchronized layout (`components/map/HazardMapContainer.tsx`); introduced dedicated in-map zoom controls (+/-) and an interactive basemap switcher (Light GIS vs. Satellite Remote Sensing) (`tests/map_comparison_side_by_side.test.ts`). |
-| **Geographic Extent Bounds & Instant Dual-Zoom Synchronicity** | Oct 2026 | Configured regional bounding boxes per hazard (Kazipur, Sunamganj, Cox's Bazar, Bhashan Char, Kuakata in `tests/map_fixes.test.ts`); aligned geographic coordinate systems and implemented single-click simultaneous dual-map zoom synchronicity with active re-entrancy locks (`components/map/GisMapCompare.tsx`). |
-| **Settings Navigation Hub & Verified Team Attribution** | Oct 2026 | Added dedicated Settings Hub (`/settings`) featuring verified **About Project** (`/settings/about`) detailing project capabilities and mock disclosures, and **Team Information** (`/settings/team`) displaying official team attribution (Team GeoNeural: Pantho Raj Biswas, Puja Paul) (`tests/settings_information.test.ts`). |
-| **Comprehensive Technical Documentation Suite** | Oct 2026 | Published exhaustive engineering and specification suite in `/docs` (PRD, TRD, System Architecture, Database Schema, Security Specification, QA Testing Documentation, UI/UX Design System, API Documentation, and Roadmap). |
-| **GeoAI Forecast Highlighting & Technical Readme Enhancement** | Oct 2026 | Enhanced README with comprehensive GeoAI 1-year predictive forecast hazard envelope highlight, operational troubleshooting guide, and transparent disclosures that all predictive data is pre-computed mock/synthetic datasets generated via scripts rather than live neural network outputs. |
-| **Google Earth Parcel Outline Feature & Five-Hazard Information Store** | Oct 2026 | Implemented full-width "Open in Google Earth" button on Flood Owner Land Detail pages (`app/flood/[mouzaId]/[floodId]/owner/[ownerId]/page.tsx`) with pure client-side KML 2.2 serializer (`lib/googleEarth.ts`), synchronous Google Earth web launch, KML file download, on-screen guidance hint, and 7 automated tests (`tests/google_earth_kml.test.ts`, bringing suite to 61/61 passing tests); documented the deterministic Five-Hazard Information Store architecture. |
-| **Documentation Alignment & History Synchronization** | Oct 2026 | Re-audited and updated complete 14-milestone project update history in `README.md` and `docs/MAIN_PROJECT_DOCUMENTATION.md`; synchronized test counts across documentation to 10 test suites (61/61 passing unit tests). |
-| **Documentation Consolidation, Standardization & English Translation** | Oct 2026 | Audited entire documentation suite; consolidated 25 historical, prompt, and specification documents into exactly 12 authoritative Markdown specifications in `/docs`; translated all Bengali prose into professional English; clearly separated Google Earth client KML export from planned GEE pipelines; codified deterministic Five-Hazard Information Store architecture; verified all internal cross-references and zero regressions across 10 test suites (61/61 passing unit tests). |
+| **Initial Submission** | Oct 2026 | Initial prototype establishing the 5 core hazard modules, baseline side-by-side map comparison, and preliminary mock data models. |
+| **Data Architecture Refactoring** | Oct 2026 | Rebuilt core data architecture with deterministic mock generator (`scripts/generate-mocks.ts`), producing synchronized relational JSON stores in `public/mocks/` and `mocks/`. |
+| **Rule 5 Forecast Guardrails** | Oct 2026 | Refactored `SelectorChain` cascading dropdown hierarchy; implemented strict suppression of financial disbursement metrics on forecast views. |
+| **Flood Multi-Owner Flow & Landslides** | Oct 2026 | Implemented flood event views with individual landowner plot color-coding and search; built landslide terrain engine with hillshades and contours. |
+| **Cadastral 4-Corner Readouts** | Oct 2026 | Standardized parcels into 4-corner quadrilaterals with fixed NW, NE, SE, SW vertex ordering and 6-decimal GPS coordinate readouts; launched `/flood/.../owner/...` route. |
+| **Leaflet Migration & Offline Cartography** | Oct 2026 | Removed all external tile server dependencies and Mapbox imports; migrated complete mapping engine across all hazard views to pure Leaflet with SVG vector geometry. |
+| **Light GIS Basemap & Chrome Upgrade** | Oct 2026 | Engineered custom high-contrast Light GIS basemap, cartographic map chrome, mouza loss/gain badges, and `MouzaSummaryPanel`. |
+| **Side-by-Side Dual Map Viewer** | Oct 2026 | Upgraded comparison to simultaneous dual-panel synchronized layout; introduced dedicated in-map zoom controls (+/-) and basemap switcher. |
+| **Geographic Extent Bounds Alignment** | Oct 2026 | Configured regional bounding boxes per hazard; implemented single-click simultaneous dual-map zoom synchronicity with active re-entrancy locks. |
+| **Settings Navigation Hub** | Oct 2026 | Added Settings Hub (`/settings`) with verified About Project and Team Information views displaying official team attribution (Team GeoNeural). |
+| **Technical Documentation Suite** | Oct 2026 | Published engineering and specification suite in `/docs`. |
+| **GeoAI Forecast Highlighting** | Oct 2026 | Enhanced README with GeoAI forecast highlight, operational troubleshooting guide, and mock data disclosures. |
+| **Google Earth Parcel Outline Feature** | Oct 2026 | Implemented "Open in Google Earth" with client-side KML 2.2 serializer, camera URL calculation, and automated tests. |
+| **Documentation Alignment** | Oct 2026 | Synchronized project history and test counts to 10 test suites (61/61 passing unit tests). |
+| **Documentation Standardization** | Oct 2026 | Consolidated historical documents into 12 authoritative Markdown specifications in `/docs`; translated prose to English. |
+| **v1.2 Release: Auth, Localization, Land Search & Landslide Selectors** | Oct 2026 | Implemented global Bangla default with English toggle (`lib/translations.ts`); entry auth modal and isolated demo access (`lib/auth.ts`); cascading Land Information search across 5 fields with leading zero preservation (`lib/landSearch.ts`); Section 5 multi-hazard DL predictions and submerged parcel preservation; two-step mountain and landslide historical event selector (`lib/landslideEvents.ts`); top-level scroll-to-disasters button; expanded automated test suite to 14 test suites and 78 unit tests (100% passing). |
+| **Documentation Audit & Synchronization** | Oct 2026 | Comprehensive audit of all 14 documentation files; synchronized duplicate README and Master Documentation copies; aligned route signatures and verified 14 test suites (78/78 passing unit tests). |
 
 ---
 
-## 13. Testing and Quality Assurance Verification
+## 19. Testing and Quality Assurance Verification
 
-BhumiDorpon includes an automated Vitest test suite executing **10 test suites and 61 unit tests**:
+BhumiDorpon includes an automated Vitest test suite executing **14 test suites and 78 unit tests**:
 
 ```text
+ ✓ tests/localization.test.ts (4 tests)
+ ✓ tests/auth_demo_access.test.ts (4 tests)
+ ✓ tests/land_search.test.ts (4 tests)
+ ✓ tests/mountain_event_selector.test.ts (5 tests)
  ✓ tests/four_corners_geometry.test.ts (5 tests)
  ✓ tests/step5_flood_flow.test.ts (6 tests)
  ✓ tests/data_layer.test.ts (4 tests)
@@ -371,21 +429,21 @@ BhumiDorpon includes an automated Vitest test suite executing **10 test suites a
  ✓ tests/settings_information.test.ts (4 tests)
  ✓ tests/map_comparison_side_by_side.test.ts (3 tests)
 
- Test Files  10 passed (10)
-      Tests  61 passed (61)
-   Duration  22.14s
+ Test Files  14 passed (14)
+      Tests  78 passed (78)
+   Duration  24.32s
 ```
 
 Execution Commands:
-- `npm test`: Runs Vitest test runner across all 10 suites.
-- `npx tsc --noEmit`: Strict TypeScript compiler verification (0 errors).
-- `npm run lint`: Next.js ESLint and type check.
+- `npm test`: Runs Vitest test runner across all 14 suites.
+- `npm run lint` / `npx tsc --noEmit`: Strict TypeScript compiler verification (0 errors).
+- `npm run build`: Static production compilation of all 15 routes (0 errors).
 
 ---
 
-## 14. Complete Documentation Suite Index
+## 20. Complete Documentation Suite Index
 
-The `/docs` directory is organized into **exactly 12 authoritative Markdown documents**:
+The `/docs` directory is organized into **authoritative Markdown documents**:
 
 1. [`docs/PRD.md`](PRD.md) — Product Requirements Document
 2. [`docs/TRD.md`](TRD.md) — Technical Requirements Document
@@ -398,11 +456,13 @@ The `/docs` directory is organized into **exactly 12 authoritative Markdown docu
 9. [`docs/TESTING_QA.md`](TESTING_QA.md) — Testing & QA Documentation
 10. [`docs/SECURITY_SPECIFICATION.md`](SECURITY_SPECIFICATION.md) — Security Specification
 11. [`docs/PROJECT_ROADMAP.md`](PROJECT_ROADMAP.md) — Project Roadmap
-12. [`docs/MAIN_PROJECT_DOCUMENTATION.md`](MAIN_PROJECT_DOCUMENTATION.md) — Main Project Documentation
+12. [`docs/CHANGE_LOG.md`](CHANGE_LOG.md) — Project Change Log & Implementation Audit Trail
+13. [`docs/MAIN_PROJECT_DOCUMENTATION.md`](MAIN_PROJECT_DOCUMENTATION.md) — Main Project Documentation
+14. [`README.md`](../README.md) — System Overview & Developer Quickstart Guide
 
 ---
 
-## 15. Academic References & Citations
+## 21. Academic References & Citations
 
 1. **Center for Environmental and Geographic Information Services (CEGIS):** *Monitoring of River Morphological Changes and Riverbank Erosion Forecasting in Bangladesh*, Annual Technical Reports, Dhaka, Bangladesh. [https://www.cegisbd.com](https://www.cegisbd.com)
 2. **Bangladesh Water Development Board (BWDB) & Flood Forecasting and Warning Centre (FFWC):** *Annual Flood Report and Hydrological Bulletins*, Ministry of Water Resources, Government of the People's Republic of Bangladesh. [http://www.ffwc.gov.bd](http://www.ffwc.gov.bd)
@@ -418,7 +478,7 @@ The `/docs` directory is organized into **exactly 12 authoritative Markdown docu
 
 ---
 
-## 16. Team Information and Copyright
+## 22. Team Information and Copyright
 
 - **Team Name:** GeoNeural
 - **Team Leader:** Pantho Raj Biswas

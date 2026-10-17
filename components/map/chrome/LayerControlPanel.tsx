@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Layers, Sliders, ChevronDown, ChevronUp, Eye, EyeOff, Sparkles, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLayerStore, LayerPreset } from "./layerStore";
+import { useAppStore } from "@/stores/appStore";
 
 interface LayerControlPanelProps {
   hasTerrain?: boolean;
@@ -14,11 +15,25 @@ interface LayerControlPanelProps {
 export function LayerControlPanel({ hasTerrain = false, hazardName = "Hazard", className }: LayerControlPanelProps) {
   const [isOpen, setIsOpen] = useState(false);
   const store = useLayerStore();
+  const { language } = useAppStore();
+  const isBn = language === "bn";
 
   const presets: { id: LayerPreset; label: string; desc: string }[] = [
-    { id: "survey", label: "Survey", desc: "Cadastral focus + full basemap" },
-    { id: "analysis", label: "Analysis", desc: "Hazard highlighted + subtle basemap" },
-    { id: "clean", label: "Clean", desc: "Minimal basemap, pure hazard overview" },
+    {
+      id: "survey",
+      label: isBn ? "জরিপ" : "Survey",
+      desc: isBn ? "ক্যাডাস্ট্রাল দাগ ও পূর্ণাঙ্গ বেইসম্যাপ" : "Cadastral focus + full basemap",
+    },
+    {
+      id: "analysis",
+      label: isBn ? "বিশ্লেষণ" : "Analysis",
+      desc: isBn ? "দুর্যোগের তীব্রতা ও হালকা মানচিত্র" : "Hazard highlighted + subtle basemap",
+    },
+    {
+      id: "clean",
+      label: isBn ? "সাধারণ" : "Clean",
+      desc: isBn ? "ন্যূনতম বেইসম্যাপ, স্পষ্ট পর্যালোচনা" : "Minimal basemap, pure hazard overview",
+    },
   ];
 
   return (
@@ -35,7 +50,7 @@ export function LayerControlPanel({ hasTerrain = false, hazardName = "Hazard", c
         )}
       >
         <Layers className="w-3.5 h-3.5 text-secondary" />
-        <span>Layers</span>
+        <span>{isBn ? "লেয়ার" : "Layers"}</span>
         <span className="text-[10px] font-semibold text-muted uppercase">({store.preset})</span>
         {isOpen ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
       </button>
@@ -46,20 +61,22 @@ export function LayerControlPanel({ hasTerrain = false, hazardName = "Hazard", c
           {/* Header & Presets */}
           <div>
             <div className="flex items-center justify-between pb-2 border-b border-border/50">
-              <span className="text-xs font-bold text-ink">GIS Layer Controls</span>
+              <span className="text-xs font-bold text-ink">
+                {isBn ? "জিআইএস লেয়ার নিয়ন্ত্রণ" : "GIS Layer Controls"}
+              </span>
               <button
                 type="button"
                 onClick={store.resetLayers}
                 className="text-[10px] text-muted hover:text-ink font-semibold"
               >
-                Reset All
+                {isBn ? "রিসেট করুন" : "Reset All"}
               </button>
             </div>
 
             {/* Presets Row */}
             <div className="mt-2.5">
               <div className="text-[10px] font-semibold text-muted uppercase tracking-wider mb-1.5">
-                Display Presets
+                {isBn ? "প্রদর্শন প্রিসেট" : "Display Presets"}
               </div>
               <div className="grid grid-cols-3 gap-1 bg-[#F1F5F9]/80 p-1 rounded-lg">
                 {presets.map((p) => (
@@ -87,7 +104,7 @@ export function LayerControlPanel({ hasTerrain = false, hazardName = "Hazard", c
             <div className="flex items-center justify-between text-[11px]">
               <span className="font-semibold text-ink flex items-center gap-1">
                 <Sliders className="w-3 h-3 text-secondary" />
-                <span>Hazard Opacity</span>
+                <span>{isBn ? "দুর্যোগ স্তরের অস্বচ্ছতা" : "Hazard Opacity"}</span>
               </span>
               <span className="font-mono text-muted text-[10px]">{Math.round(store.hazardOpacity * 100)}%</span>
             </div>
@@ -105,61 +122,61 @@ export function LayerControlPanel({ hasTerrain = false, hazardName = "Hazard", c
           {/* 1. Basemap Group */}
           <div className="space-y-1">
             <div className="text-[10px] font-bold text-muted uppercase tracking-wider">
-              Basemap Elements
+              {isBn ? "বেইসম্যাপ উপাদান" : "Basemap Elements"}
             </div>
             <div className="grid grid-cols-2 gap-1 text-[11px]">
-              <LayerCheckbox label="Land Use" checked={store.landuse} onChange={() => store.toggleLayer("landuse")} />
-              <LayerCheckbox label="Roads" checked={store.roads} onChange={() => store.toggleLayer("roads")} />
-              <LayerCheckbox label="Buildings & POI" checked={store.buildings} onChange={() => store.toggleLayer("buildings")} />
-              <LayerCheckbox label="Embankments" checked={store.embankments} onChange={() => store.toggleLayer("embankments")} />
-              <LayerCheckbox label="Graticule Grid" checked={store.graticule} onChange={() => store.toggleLayer("graticule")} />
+              <LayerCheckbox label={isBn ? "ভূমির ব্যবহার" : "Land Use"} checked={store.landuse} onChange={() => store.toggleLayer("landuse")} />
+              <LayerCheckbox label={isBn ? "সড়ক নেটওয়ার্ক" : "Roads"} checked={store.roads} onChange={() => store.toggleLayer("roads")} />
+              <LayerCheckbox label={isBn ? "ভবন ও স্থাপনা" : "Buildings & POI"} checked={store.buildings} onChange={() => store.toggleLayer("buildings")} />
+              <LayerCheckbox label={isBn ? "বাঁধ / প্রতিরোধক" : "Embankments"} checked={store.embankments} onChange={() => store.toggleLayer("embankments")} />
+              <LayerCheckbox label={isBn ? "গ্র্যাটিকুল গ্রিড" : "Graticule Grid"} checked={store.graticule} onChange={() => store.toggleLayer("graticule")} />
             </div>
           </div>
 
           {/* 2. Administrative Group */}
           <div className="space-y-1">
             <div className="text-[10px] font-bold text-muted uppercase tracking-wider">
-              Administrative & Mouzas
+              {isBn ? "প্রশাসনিক ও মৌজা" : "Administrative & Mouzas"}
             </div>
             <div className="grid grid-cols-2 gap-1 text-[11px]">
-              <LayerCheckbox label="Upazila Line" checked={store.upazila} onChange={() => store.toggleLayer("upazila")} />
-              <LayerCheckbox label="Mouza Borders" checked={store.mouzaBoundaries} onChange={() => store.toggleLayer("mouzaBoundaries")} />
-              <LayerCheckbox label="Mouza Labels" checked={store.mouzaLabels} onChange={() => store.toggleLayer("mouzaLabels")} />
-              <LayerCheckbox label="Mouza Tints" checked={store.mouzaTint} onChange={() => store.toggleLayer("mouzaTint")} />
+              <LayerCheckbox label={isBn ? "উপজেলা সীমানা" : "Upazila Line"} checked={store.upazila} onChange={() => store.toggleLayer("upazila")} />
+              <LayerCheckbox label={isBn ? "মৌজা বর্ডার" : "Mouza Borders"} checked={store.mouzaBoundaries} onChange={() => store.toggleLayer("mouzaBoundaries")} />
+              <LayerCheckbox label={isBn ? "মৌজার নামফলক" : "Mouza Labels"} checked={store.mouzaLabels} onChange={() => store.toggleLayer("mouzaLabels")} />
+              <LayerCheckbox label={isBn ? "মৌজা কালার টিন্ট" : "Mouza Tints"} checked={store.mouzaTint} onChange={() => store.toggleLayer("mouzaTint")} />
             </div>
           </div>
 
           {/* 3. Hydrography Group */}
           <div className="space-y-1">
             <div className="text-[10px] font-bold text-muted uppercase tracking-wider">
-              Hydrography
+              {isBn ? "নদী ও জলাশয়" : "Hydrography"}
             </div>
             <div className="grid grid-cols-2 gap-1 text-[11px]">
-              <LayerCheckbox label="Waterbodies" checked={store.water} onChange={() => store.toggleLayer("water")} />
-              <LayerCheckbox label="River Labels" checked={store.waterLabels} onChange={() => store.toggleLayer("waterLabels")} />
+              <LayerCheckbox label={isBn ? "জলাশয় প্রবাহ" : "Waterbodies"} checked={store.water} onChange={() => store.toggleLayer("water")} />
+              <LayerCheckbox label={isBn ? "নদীর নামফলক" : "River Labels"} checked={store.waterLabels} onChange={() => store.toggleLayer("waterLabels")} />
             </div>
           </div>
 
           {/* 4. Parcels Group */}
           <div className="space-y-1">
             <div className="text-[10px] font-bold text-muted uppercase tracking-wider">
-              Cadastral Parcels
+              {isBn ? "ক্যাডাস্ট্রাল দাগ" : "Cadastral Parcels"}
             </div>
             <div className="grid grid-cols-2 gap-1 text-[11px]">
-              <LayerCheckbox label="Plot Polygons" checked={store.plots} onChange={() => store.toggleLayer("plots")} />
-              <LayerCheckbox label="Dag Numbers" checked={store.dagLabels} onChange={() => store.toggleLayer("dagLabels")} />
-              <LayerCheckbox label="Owner Colors" checked={store.ownerColours} onChange={() => store.toggleLayer("ownerColours")} />
+              <LayerCheckbox label={isBn ? "দাগ বহুভুজ" : "Plot Polygons"} checked={store.plots} onChange={() => store.toggleLayer("plots")} />
+              <LayerCheckbox label={isBn ? "দাগ নম্বর" : "Dag Numbers"} checked={store.dagLabels} onChange={() => store.toggleLayer("dagLabels")} />
+              <LayerCheckbox label={isBn ? "মালিকানার রঙ" : "Owner Colors"} checked={store.ownerColours} onChange={() => store.toggleLayer("ownerColours")} />
             </div>
           </div>
 
           {/* 5. Hazard Layers */}
           <div className="space-y-1">
             <div className="text-[10px] font-bold text-muted uppercase tracking-wider">
-              {hazardName} Thematics
+              {hazardName} {isBn ? "থিমেটিক স্তর" : "Thematics"}
             </div>
             <div className="grid grid-cols-2 gap-1 text-[11px]">
-              <LayerCheckbox label="Hazard Overlays" checked={store.hazardLayers} onChange={() => store.toggleLayer("hazardLayers")} />
-              <LayerCheckbox label="Retreat History" checked={store.historyLines} onChange={() => store.toggleLayer("historyLines")} />
+              <LayerCheckbox label={isBn ? "দুর্যোগ ওভারলে" : "Hazard Overlays"} checked={store.hazardLayers} onChange={() => store.toggleLayer("hazardLayers")} />
+              <LayerCheckbox label={isBn ? "ভাঙন ইতিহাস রেখা" : "Retreat History"} checked={store.historyLines} onChange={() => store.toggleLayer("historyLines")} />
             </div>
           </div>
 
@@ -167,14 +184,14 @@ export function LayerControlPanel({ hasTerrain = false, hazardName = "Hazard", c
           {hasTerrain && (
             <div className="space-y-1 pt-1 border-t border-border/50">
               <div className="text-[10px] font-bold text-muted uppercase tracking-wider">
-                Digital Elevation Model
+                {isBn ? "ডিজিটাল এলিভেশন মডেল (DEM)" : "Digital Elevation Model"}
               </div>
               <div className="grid grid-cols-2 gap-1 text-[11px]">
-                <LayerCheckbox label="Elevation Tint" checked={store.elevationTint} onChange={() => store.toggleLayer("elevationTint")} />
-                <LayerCheckbox label="Hillshade" checked={store.hillshade} onChange={() => store.toggleLayer("hillshade")} />
-                <LayerCheckbox label="Contours" checked={store.contours} onChange={() => store.toggleLayer("contours")} />
-                <LayerCheckbox label="Slope Classes" checked={store.slope} onChange={() => store.toggleLayer("slope")} />
-                <LayerCheckbox label="Cut / Fill" checked={store.elevationChange} onChange={() => store.toggleLayer("elevationChange")} />
+                <LayerCheckbox label={isBn ? "উচ্চতা স্তর রঙ" : "Elevation Tint"} checked={store.elevationTint} onChange={() => store.toggleLayer("elevationTint")} />
+                <LayerCheckbox label={isBn ? "হিলশেড ছায়া" : "Hillshade"} checked={store.hillshade} onChange={() => store.toggleLayer("hillshade")} />
+                <LayerCheckbox label={isBn ? "কন্ট্যুর রেখা" : "Contours"} checked={store.contours} onChange={() => store.toggleLayer("contours")} />
+                <LayerCheckbox label={isBn ? "ঢাল শ্রেণি" : "Slope Classes"} checked={store.slope} onChange={() => store.toggleLayer("slope")} />
+                <LayerCheckbox label={isBn ? "মাটি ভরাট / কাটা" : "Cut / Fill"} checked={store.elevationChange} onChange={() => store.toggleLayer("elevationChange")} />
               </div>
             </div>
           )}
@@ -184,16 +201,24 @@ export function LayerControlPanel({ hasTerrain = false, hazardName = "Hazard", c
   );
 }
 
-function LayerCheckbox({ label, checked, onChange }: { label: string; checked: boolean; onChange: () => void }) {
+function LayerCheckbox({
+  label,
+  checked,
+  onChange,
+}: {
+  label: string;
+  checked: boolean;
+  onChange: () => void;
+}) {
   return (
-    <label className="flex items-center gap-1.5 p-1 rounded hover:bg-[#F8FAFC] cursor-pointer select-none">
+    <label className="flex items-center gap-1.5 p-1 rounded hover:bg-surface-alt/70 cursor-pointer">
       <input
         type="checkbox"
         checked={checked}
         onChange={onChange}
-        className="w-3.5 h-3.5 rounded border-border text-ink accent-ink cursor-pointer"
+        className="w-3.5 h-3.5 rounded text-ink accent-ink focus:ring-0 cursor-pointer"
       />
-      <span className={cn("text-[11px]", checked ? "text-ink font-medium" : "text-muted")}>
+      <span className={cn("text-[11px] truncate", checked ? "text-ink font-medium" : "text-muted")}>
         {label}
       </span>
     </label>

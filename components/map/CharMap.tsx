@@ -4,6 +4,7 @@ import React, { useMemo, useCallback } from "react";
 import { CharGeometry, OwnerRecord, MapArea } from "@/lib/types";
 import { GisMapCompare, PlotGeometryItem } from "./GisMapCompare";
 import { useLayerStore } from "./chrome/layerStore";
+import { useAppStore } from "@/stores/appStore";
 
 interface CharMapProps {
   geometry?: CharGeometry | null;
@@ -27,6 +28,7 @@ export function CharMap({
   className,
 }: CharMapProps) {
   const layerStore = useLayerStore();
+  const { language } = useAppStore();
 
   // Convert owner records into plot geometry items
   const plotGeometryItems = useMemo<PlotGeometryItem[]>(() => {
@@ -205,11 +207,12 @@ export function CharMap({
       if (!hasAssignedMouza && area.bounds) {
         const centerLat = (area.bounds[1] + area.bounds[3]) / 2;
         const centerLon = (area.bounds[0] + area.bounds[2]) / 2;
+        const unassignedLabel = language === "bn" ? "অনির্ধারিত চর" : "Unassigned Char";
         const unassignedIcon = L.divIcon({
           className: "gis-unassigned-char-badge",
           html: `
             <div class="px-2 py-0.5 rounded border border-dashed border-slate-500 bg-white/95 text-[10px] font-bold text-slate-800 shadow-2xs whitespace-nowrap">
-              Unassigned Char
+              ${unassignedLabel}
             </div>
           `,
           iconSize: [84, 20],
@@ -222,12 +225,20 @@ export function CharMap({
         }).addTo(map);
       }
     },
-    [geometry, isForecast]
+    [geometry, isForecast, language]
   );
 
   return (
     <GisMapCompare
-      title={isForecast ? "Predictive Alluvial Consolidation Model" : "Char Formation & Alluvial Accretion Survey"}
+      title={
+        isForecast
+          ? language === "bn"
+            ? "পূর্বাভাস ভিত্তিক পলিজ সংহতি মডেল"
+            : "Predictive Alluvial Consolidation Model"
+          : language === "bn"
+            ? "চর গঠন ও পলিজ বৃদ্ধি জরিপ"
+            : "Char Formation & Alluvial Accretion Survey"
+      }
       hazard="char"
       mode={isForecast ? "forecast" : "recorded"}
       selectedMouzaId={selectedMouzaId}
@@ -237,8 +248,16 @@ export function CharMap({
       plots={plotGeometryItems}
       setupBeforeHazard={setupBeforeHazard}
       setupAfterHazard={setupAfterHazard}
-      beforeLabel="Baseline Char Survey (Before)"
-      afterLabel={isForecast ? "1-Year Morphological Projection" : "Current Accretion State (After)"}
+      beforeLabel={language === "bn" ? "ভিত্তিরেখা চর জরিপ (পূর্বের)" : "Baseline Char Survey (Before)"}
+      afterLabel={
+        isForecast
+          ? language === "bn"
+            ? "১ বছরের রূপগত প্রক্ষেপণ"
+            : "1-Year Morphological Projection"
+          : language === "bn"
+            ? "বর্তমান বৃদ্ধির অবস্থা (পরের)"
+            : "Current Accretion State (After)"
+      }
       className={className}
     />
   );

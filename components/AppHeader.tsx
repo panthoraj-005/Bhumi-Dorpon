@@ -1,11 +1,19 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import { ChevronDown, Calendar, Check, Coins } from "lucide-react";
+import Link from "next/link";
+import {
+  ChevronDown,
+  Calendar,
+  Check,
+  Search,
+  Coins,
+} from "lucide-react";
 import { useAppStore } from "@/stores/appStore";
 import { AreaUnit, TimePeriod } from "@/lib/types";
 import { SegmentedToggle } from "./SegmentedToggle";
 import { cn } from "@/lib/utils";
+import { t, Language } from "@/lib/translations";
 
 interface AppHeaderProps {
   title?: string;
@@ -13,29 +21,24 @@ interface AppHeaderProps {
   children?: React.ReactNode;
 }
 
-const PERIOD_OPTIONS: { id: TimePeriod; label: string }[] = [
-  { id: "1y", label: "Last 1 year" },
-  { id: "3y", label: "Last 3 years" },
-  { id: "5y", label: "Last 5 years" },
-  { id: "all", label: "All time" },
-];
-
-const UNIT_OPTIONS: { id: AreaUnit; label: string }[] = [
-  { id: "decimal", label: "Decimal" },
-  { id: "acre", label: "Acre" },
-  { id: "hectare", label: "Hectare" },
-];
-
 export function AppHeader({
   title = "Overview",
   subtitle,
   children,
 }: AppHeaderProps) {
-  const { unit, setUnit, period, setPeriod } = useAppStore();
+  const {
+    unit,
+    setUnit,
+    period,
+    setPeriod,
+    language,
+    setLanguage,
+  } = useAppStore();
+
   const [periodOpen, setPeriodOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Close period dropdown on click outside
+  // Close dropdowns on click outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
@@ -49,11 +52,24 @@ export function AppHeader({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const PERIOD_OPTIONS: { id: TimePeriod; label: string }[] = [
+    { id: "1y", label: t("period1y", language) },
+    { id: "3y", label: t("period3y", language) },
+    { id: "5y", label: t("period5y", language) },
+    { id: "all", label: t("periodAll", language) },
+  ];
+
+  const UNIT_OPTIONS: { id: AreaUnit; label: string }[] = [
+    { id: "decimal", label: t("unitDecimal", language) },
+    { id: "acre", label: t("unitAcre", language) },
+    { id: "hectare", label: t("unitHectare", language) },
+  ];
+
   const currentPeriodLabel =
-    PERIOD_OPTIONS.find((p) => p.id === period)?.label || "Last 1 year";
+    PERIOD_OPTIONS.find((p) => p.id === period)?.label || PERIOD_OPTIONS[0].label;
 
   return (
-    <header className="w-full bg-bg border-b border-border/80 px-4 sm:px-8 py-5 sm:py-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+    <header className="w-full bg-bg border-b border-border/80 px-4 sm:px-8 py-4 sm:py-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
       {/* Page Title with Space Grotesk */}
       <div>
         <h1 className="text-2xl sm:text-3xl font-display font-semibold tracking-tight text-ink">
@@ -65,8 +81,62 @@ export function AppHeader({
       </div>
 
       {/* Action Controls Toolbar */}
-      <div className="flex flex-wrap items-center gap-3">
+      <div className="flex flex-wrap items-center justify-start gap-2.5 sm:gap-3">
+        {/* Unit Toggle (শতাংশ | একর | হেক্টর) - Aligned to Far Left of toolbar */}
+        <div className="inline-flex items-center shrink-0">
+          <SegmentedToggle<AreaUnit>
+            options={UNIT_OPTIONS}
+            value={unit}
+            onChange={(newUnit) => setUnit(newUnit)}
+            size="sm"
+            variant="lime"
+          />
+        </div>
+
         {children}
+
+        {/* PROMINENT "LAND INFORMATION / ভূমির তথ্য" SEARCH BUTTON */}
+        <Link
+          href="/land-information"
+          className="h-10 px-3.5 rounded-pill bg-surface hover:bg-surface-alt border border-border hover:border-ink/30 text-ink text-xs sm:text-sm font-semibold inline-flex items-center gap-2 shadow-subtle transition-all group"
+          title={t("landInfoSearchTitle", language)}
+        >
+          <Search className="w-3.5 h-3.5 text-accent-deep group-hover:scale-110 transition-transform" />
+          <span>{t("navLandInfo", language)}</span>
+          <span className="hidden xl:inline text-[10px] text-muted font-normal">
+            ({language === "bn" ? "দাগ ও খতিয়ান" : "Dag & Khatian"})
+          </span>
+        </Link>
+
+        {/* GLOBAL BANGLA / ENGLISH LANGUAGE SWITCH */}
+        <div className="inline-flex items-center rounded-pill bg-surface border border-border p-1 shadow-subtle">
+          <button
+            type="button"
+            onClick={() => setLanguage("bn")}
+            className={cn(
+              "px-2.5 py-1 rounded-pill text-xs font-semibold transition-all",
+              language === "bn"
+                ? "bg-accent text-accent-ink shadow-xs"
+                : "text-muted hover:text-ink"
+            )}
+            title="বাংলা ইন্টারফেস"
+          >
+            বাংলা
+          </button>
+          <button
+            type="button"
+            onClick={() => setLanguage("en")}
+            className={cn(
+              "px-2.5 py-1 rounded-pill text-xs font-semibold transition-all",
+              language === "en"
+                ? "bg-accent text-accent-ink shadow-xs"
+                : "text-muted hover:text-ink"
+            )}
+            title="English interface"
+          >
+            English
+          </button>
+        </div>
 
         {/* Currency Badge */}
         <div className="hidden lg:flex items-center gap-1.5 px-3 py-1.5 rounded-pill bg-surface border border-border text-xs font-medium text-ink tabular-nums">
@@ -120,15 +190,6 @@ export function AppHeader({
             </div>
           )}
         </div>
-
-        {/* Unit Toggle (Decimal | Acre | Hectare) */}
-        <SegmentedToggle<AreaUnit>
-          options={UNIT_OPTIONS}
-          value={unit}
-          onChange={(newUnit) => setUnit(newUnit)}
-          size="sm"
-          variant="lime"
-        />
       </div>
     </header>
   );

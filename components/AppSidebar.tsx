@@ -12,27 +12,32 @@ import {
   Anchor,
   Settings,
   Component,
+  FileSearch,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useAppStore } from "@/stores/appStore";
+import { t, TranslationKey } from "@/lib/translations";
 
 interface NavItem {
   id: string;
-  label: string;
+  transKey: TranslationKey;
   href: string;
   icon: React.ComponentType<{ className?: string }>;
 }
 
 const NAV_ITEMS: NavItem[] = [
-  { id: "home", label: "Home Dashboard", href: "/", icon: LayoutGrid },
-  { id: "river-erosion", label: "River Erosion", href: "/river-erosion", icon: Waves },
-  { id: "flood", label: "Flood Monitoring", href: "/flood", icon: CloudRain },
-  { id: "landslide", label: "Landslide Hazards", href: "/landslide", icon: Mountain },
-  { id: "char", label: "Char Islands", href: "/char", icon: Compass },
-  { id: "coastal", label: "Coastal Erosion", href: "/coastal", icon: Anchor },
+  { id: "home", transKey: "navHome", href: "/", icon: LayoutGrid },
+  { id: "land-info", transKey: "navLandInfo", href: "/land-information", icon: FileSearch },
+  { id: "river-erosion", transKey: "navRiverErosion", href: "/river-erosion", icon: Waves },
+  { id: "flood", transKey: "navFlood", href: "/flood", icon: CloudRain },
+  { id: "landslide", transKey: "navLandslide", href: "/landslide", icon: Mountain },
+  { id: "char", transKey: "navChar", href: "/char", icon: Compass },
+  { id: "coastal", transKey: "navCoastal", href: "/coastal", icon: Anchor },
 ];
 
 export function AppSidebar() {
   const pathname = usePathname();
+  const { language } = useAppStore();
 
   return (
     <aside
@@ -59,6 +64,7 @@ export function AppSidebar() {
               item.href === "/"
                 ? pathname === "/"
                 : pathname.startsWith(item.href);
+            const label = t(item.transKey, language);
 
             return (
               <div key={item.id} className="relative group">
@@ -70,7 +76,7 @@ export function AppSidebar() {
                       ? "bg-accent-soft text-accent-deep font-semibold"
                       : "text-muted hover:text-ink hover:bg-surface-alt"
                   )}
-                  aria-label={item.label}
+                  aria-label={label}
                   aria-current={isActive ? "page" : undefined}
                 >
                   <Icon className="w-5 h-5" />
@@ -78,7 +84,7 @@ export function AppSidebar() {
 
                 {/* Tooltip on hover */}
                 <div className="absolute left-[calc(100%+12px)] top-1/2 -translate-y-1/2 px-2.5 py-1 bg-ink text-surface text-xs font-medium rounded-md whitespace-nowrap shadow-popover pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity z-50">
-                  {item.label}
+                  {label}
                 </div>
               </div>
             );
@@ -103,7 +109,7 @@ export function AppSidebar() {
             <Component className="w-5 h-5" />
           </Link>
           <div className="absolute left-[calc(100%+12px)] top-1/2 -translate-y-1/2 px-2.5 py-1 bg-ink text-surface text-xs font-medium rounded-md whitespace-nowrap shadow-popover pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity z-50">
-            UI Components (/dev)
+            {t("navDev", language)}
           </div>
         </div>
 
@@ -123,7 +129,7 @@ export function AppSidebar() {
             <Settings className="w-5 h-5" />
           </Link>
           <div className="absolute left-[calc(100%+12px)] top-1/2 -translate-y-1/2 px-2.5 py-1 bg-ink text-surface text-xs font-medium rounded-md whitespace-nowrap shadow-popover pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity z-50">
-            Settings
+            {t("navSettings", language)}
           </div>
         </div>
       </div>

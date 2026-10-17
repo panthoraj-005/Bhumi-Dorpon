@@ -5,6 +5,7 @@ import { Waves, TrendingDown, TrendingUp, Navigation, Compass, AlertCircle } fro
 import { ContextCard, HazardType, DataMode } from "@/lib/types";
 import { useAppStore } from "@/stores/appStore";
 import { formatArea } from "@/lib/units";
+import { formatNumberLocalized } from "@/lib/translations";
 import { cn } from "@/lib/utils";
 
 interface WaterStatusCardProps {
@@ -15,8 +16,9 @@ interface WaterStatusCardProps {
 }
 
 export function WaterStatusCard({ context, hazard, mode = "recorded", className }: WaterStatusCardProps) {
-  const { unit } = useAppStore();
+  const { unit, language } = useAppStore();
   const isForecast = mode === "forecast" || Boolean((context as any)?.isProjected);
+  const isBn = language === "bn";
 
   if (!context) return null;
 
@@ -33,20 +35,22 @@ export function WaterStatusCard({ context, hazard, mode = "recorded", className 
             <Waves className="w-4 h-4 text-water" />
           </div>
           <div>
-            <h4 className="text-xs font-bold text-ink">Water Status</h4>
+            <h4 className="text-xs font-bold text-ink">
+              {isBn ? "নদী ও জলের গতিপ্রকৃতি" : "Water Status"}
+            </h4>
             <p className="text-[10px] text-muted">
               {hazard === "river_erosion"
-                ? "Active channel dynamics & transects"
+                ? isBn ? "সক্রিয় নদীর গতিপ্রকৃতি ও ট্রান্সসেক্ট" : "Active channel dynamics & transects"
                 : hazard === "char"
-                ? "Alluvial braiding & active channel"
-                : "Estuarine shoreline dynamics"}
+                ? isBn ? "পলি সঞ্চয়ন ও সক্রিয় চ্যানেল" : "Alluvial braiding & active channel"
+                : isBn ? "মোহনা তীররেখার পরিবর্তন" : "Estuarine shoreline dynamics"}
             </p>
           </div>
         </div>
 
         {isForecast && (
           <span className="px-2 py-0.5 rounded-pill bg-[#6A5BD6]/10 text-[#6A5BD6] font-bold text-[10px] border border-[#6A5BD6]/20">
-            Projected
+            {isBn ? "প্রক্ষেপিত" : "Projected"}
           </span>
         )}
       </div>
@@ -58,14 +62,16 @@ export function WaterStatusCard({ context, hazard, mode = "recorded", className 
           {context.transects && context.transects.length > 0 && (
             <div>
               <span className="text-[10px] font-bold text-muted uppercase tracking-wider block mb-1">
-                Channel Widths (3 Transects)
+                {isBn ? "চ্যানেলের প্রস্থ (৩টি ট্রান্সসেক্ট)" : "Channel Widths (3 Transects)"}
               </span>
               <div className="grid grid-cols-3 gap-2">
                 {context.transects.map((t, idx) => (
                   <div key={idx} className="bg-surface p-2 rounded-lg border border-border/60">
-                    <div className="text-[10px] text-muted font-semibold">{t.label}</div>
+                    <div className="text-[10px] text-muted font-semibold">
+                      {isBn ? `ট্রান্সসেক্ট ${formatNumberLocalized(idx + 1, language)}` : t.label}
+                    </div>
                     <div className="text-xs font-bold text-ink tabular-nums mt-0.5">
-                      {t.widthM.toLocaleString()} m
+                      {formatNumberLocalized(t.widthM.toLocaleString(), language)} {isBn ? "মি." : "m"}
                     </div>
                     <div
                       className={cn(
@@ -73,7 +79,10 @@ export function WaterStatusCard({ context, hazard, mode = "recorded", className 
                         t.changeM < 0 ? "text-loss" : "text-gain"
                       )}
                     >
-                      {t.changeM > 0 ? `+${t.changeM} m` : `${t.changeM} m`} vs prior
+                      {t.changeM > 0
+                        ? `+${formatNumberLocalized(t.changeM, language)} ${isBn ? "মি." : "m"}`
+                        : `${formatNumberLocalized(t.changeM, language)} ${isBn ? "মি." : "m"}`}{" "}
+                      {isBn ? "পূর্বে তুলনায়" : "vs prior"}
                     </div>
                   </div>
                 ))}
@@ -84,15 +93,20 @@ export function WaterStatusCard({ context, hazard, mode = "recorded", className 
           {/* Thalweg shift & Mean Migration */}
           <div className="grid grid-cols-2 gap-2 pt-1 border-t border-border/40">
             <div className="space-y-0.5">
-              <span className="text-[10px] text-muted font-medium">Thalweg (Deep Flow) Shift</span>
+              <span className="text-[10px] text-muted font-medium">
+                {isBn ? "গভীরতম প্রবাহরেখার (Thalweg) পরিবর্তন" : "Thalweg (Deep Flow) Shift"}
+              </span>
               <div className="text-sm font-bold text-ink tabular-nums">
-                {context.thalwegShiftM || 68} m {isForecast ? "(est.)" : "lateral"}
+                {formatNumberLocalized(context.thalwegShiftM || 68, language)} {isBn ? "মিটার" : "m"}{" "}
+                {isForecast ? (isBn ? "(অনুমান)" : "(est.)") : (isBn ? "(পার্শ্বীয়)" : "lateral")}
               </div>
             </div>
             <div className="space-y-0.5">
-              <span className="text-[10px] text-muted font-medium">Mean Bank Migration</span>
+              <span className="text-[10px] text-muted font-medium">
+                {isBn ? "গড় তীরভাঙন / সরণ হার" : "Mean Bank Migration"}
+              </span>
               <div className="text-sm font-bold text-loss tabular-nums">
-                {context.meanMigrationRateMYr ?? (context as any).meanBankMigrationMYr ?? 32.5} m/yr
+                {formatNumberLocalized(context.meanMigrationRateMYr ?? (context as any).meanBankMigrationMYr ?? 32.5, language)} {isBn ? "মি./বছর" : "m/yr"}
               </div>
             </div>
           </div>
@@ -103,25 +117,31 @@ export function WaterStatusCard({ context, hazard, mode = "recorded", className 
       {context.type === "char" && (
         <div className="grid grid-cols-3 gap-2 text-[11px]">
           <div className="bg-surface p-2 rounded-lg border border-border/60 space-y-0.5">
-            <span className="text-[10px] text-muted font-semibold">Active Channel Width</span>
+            <span className="text-[10px] text-muted font-semibold">
+              {isBn ? "সক্রিয় চ্যানেলের প্রস্থ" : "Active Channel Width"}
+            </span>
             <div className="text-sm font-bold text-ink tabular-nums">
-              {(context.activeChannelWidthM || 2150).toLocaleString()} m
+              {formatNumberLocalized((context.activeChannelWidthM || 2150).toLocaleString(), language)} {isBn ? "মিটার" : "m"}
             </div>
-            <div className="text-[10px] text-muted">Braided reach span</div>
+            <div className="text-[10px] text-muted">{isBn ? "শাখানদীর বিস্তার" : "Braided reach span"}</div>
           </div>
 
           <div className="bg-surface p-2 rounded-lg border border-border/60 space-y-0.5">
-            <span className="text-[10px] text-muted font-semibold">Current Char Footprint</span>
+            <span className="text-[10px] text-muted font-semibold">
+              {isBn ? "বর্তমান চরের আয়তন" : "Current Char Footprint"}
+            </span>
             <div className="text-sm font-bold text-ink tabular-nums">
-              {formatArea(context.charAreaCurrentDec || 420.5, unit)}
+              {formatArea(context.charAreaCurrentDec || 420.5, unit, language)}
             </div>
             <div className="text-[10px] text-muted">
-              Prior: {formatArea(context.charAreaPreviousDec || 388.2, unit)}
+              {isBn ? "পূর্বে:" : "Prior:"} {formatArea(context.charAreaPreviousDec || 388.2, unit, language)}
             </div>
           </div>
 
           <div className="bg-surface p-2 rounded-lg border border-border/60 space-y-0.5">
-            <span className="text-[10px] text-muted font-semibold">Net Land Change</span>
+            <span className="text-[10px] text-muted font-semibold">
+              {isBn ? "নিট ভূমির পরিবর্তন" : "Net Land Change"}
+            </span>
             <div
               className={cn(
                 "text-sm font-bold tabular-nums",
@@ -129,10 +149,10 @@ export function WaterStatusCard({ context, hazard, mode = "recorded", className 
               )}
             >
               {(context.netChangeDec || 0) >= 0
-                ? `+${formatArea(context.netChangeDec || 0, unit)}`
-                : `-${formatArea(Math.abs(context.netChangeDec || 0), unit)}`}
+                ? `+${formatArea(context.netChangeDec || 0, unit, language)}`
+                : `-${formatArea(Math.abs(context.netChangeDec || 0), unit, language)}`}
             </div>
-            <div className="text-[10px] text-secondary">Accretion balance</div>
+            <div className="text-[10px] text-secondary">{isBn ? "পয়স্তির ভারসাম্য" : "Accretion balance"}</div>
           </div>
         </div>
       )}
@@ -141,36 +161,47 @@ export function WaterStatusCard({ context, hazard, mode = "recorded", className 
       {context.type === "coastal" && (
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-[11px]">
           <div className="bg-surface p-2 rounded-lg border border-border/60 space-y-0.5">
-            <span className="text-[10px] text-muted font-semibold">Shoreline Change Rate</span>
+            <span className="text-[10px] text-muted font-semibold">
+              {isBn ? "তীররেখা পরিবর্তনের হার" : "Shoreline Change Rate"}
+            </span>
             <div
               className={cn(
                 "text-sm font-bold tabular-nums",
                 (context.shorelineChangeMYr || 0) < 0 ? "text-loss" : "text-gain"
               )}
             >
-              {(context.shorelineChangeMYr || -34.5) > 0 ? `+${context.shorelineChangeMYr}` : context.shorelineChangeMYr} m/yr
+              {(context.shorelineChangeMYr || -34.5) > 0
+                ? `+${formatNumberLocalized(context.shorelineChangeMYr || 0, language)}`
+                : formatNumberLocalized(context.shorelineChangeMYr || -34.5, language)}{" "}
+              {isBn ? "মি./বছর" : "m/yr"}
             </div>
-            <div className="text-[10px] text-muted">Transgression vector</div>
+            <div className="text-[10px] text-muted">{isBn ? "তীর অপসারণের দিক" : "Transgression vector"}</div>
           </div>
 
           <div className="bg-surface p-2 rounded-lg border border-border/60 space-y-0.5">
-            <span className="text-[10px] text-muted font-semibold">Tidal Flat Area</span>
+            <span className="text-[10px] text-muted font-semibold">
+              {isBn ? "জোয়ার-ভাটা প্লাবিত এলাকা" : "Tidal Flat Area"}
+            </span>
             <div className="text-sm font-bold text-ink tabular-nums">
-              {formatArea(context.tidalFlatAreaDec || 840.5, unit)}
+              {formatArea(context.tidalFlatAreaDec || 840.5, unit, language)}
             </div>
-            <div className="text-[10px] text-muted">Intertidal mudflat</div>
+            <div className="text-[10px] text-muted">{isBn ? "উপকূলীয় পলিময় কাদাভূমি" : "Intertidal mudflat"}</div>
           </div>
 
           <div className="bg-surface p-2 rounded-lg border border-border/60 space-y-0.5">
-            <span className="text-[10px] text-muted font-semibold">Spring Tidal Range</span>
+            <span className="text-[10px] text-muted font-semibold">
+              {isBn ? "ভরা কটালের জোয়ারের বিস্তার" : "Spring Tidal Range"}
+            </span>
             <div className="text-sm font-bold text-ink tabular-nums">
-              {context.tidalRangeM || 3.2} m
+              {formatNumberLocalized(context.tidalRangeM || 3.2, language)} {isBn ? "মিটার" : "m"}
             </div>
-            <div className="text-[10px] text-muted">Semi-diurnal cycle</div>
+            <div className="text-[10px] text-muted">{isBn ? "অর্ধ-দৈনিক চক্র" : "Semi-diurnal cycle"}</div>
           </div>
 
           <div className="bg-surface p-2 rounded-lg border border-border/60 space-y-0.5">
-            <span className="text-[10px] text-muted font-semibold">Net Land Change</span>
+            <span className="text-[10px] text-muted font-semibold">
+              {isBn ? "নিট ভূমির পরিবর্তন" : "Net Land Change"}
+            </span>
             <div
               className={cn(
                 "text-sm font-bold tabular-nums",
@@ -178,10 +209,10 @@ export function WaterStatusCard({ context, hazard, mode = "recorded", className 
               )}
             >
               {(context.netLandChangeDec || 125.4) >= 0
-                ? `+${formatArea(context.netLandChangeDec || 125.4, unit)}`
-                : `-${formatArea(Math.abs(context.netLandChangeDec || 125.4), unit)}`}
+                ? `+${formatArea(context.netLandChangeDec || 125.4, unit, language)}`
+                : `-${formatArea(Math.abs(context.netLandChangeDec || 125.4), unit, language)}`}
             </div>
-            <div className="text-[10px] text-secondary">Sediment accretion</div>
+            <div className="text-[10px] text-secondary">{isBn ? "পলিমাটি পয়স্তি" : "Sediment accretion"}</div>
           </div>
         </div>
       )}

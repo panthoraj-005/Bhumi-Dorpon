@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import {
   FileQuestion,
@@ -11,6 +13,7 @@ import {
 } from "lucide-react";
 import { HazardType } from "@/lib/types";
 import { cn } from "@/lib/utils";
+import { useAppStore } from "@/stores/appStore";
 
 interface EmptyStateProps {
   title?: string;
@@ -23,14 +26,25 @@ interface EmptyStateProps {
 }
 
 export function EmptyState({
-  title = "No data available for this selection",
-  description = "Try selecting another district, upazila, or mouza to view recorded land change records.",
+  title,
+  description,
   hazard,
   icon,
-  actionLabel = "Choose another area",
+  actionLabel,
   onAction,
   className,
 }: EmptyStateProps) {
+  const { language } = useAppStore();
+  const isBn = language === "bn";
+
+  const displayTitle = title || (isBn ? "কোনো তথ্য পাওয়া যায়নি" : "No data available for this selection");
+  const displayDescription =
+    description ||
+    (isBn
+      ? "নথিভুক্ত ভূমির পরিবর্তন দেখতে অন্য কোনো জেলা, উপজেলা বা মৌজা নির্বাচন করুন।"
+      : "Try selecting another district, upazila, or mouza to view recorded land change records.");
+  const displayActionLabel = actionLabel || (isBn ? "অন্য এলাকা নির্বাচন করুন" : "Choose another area");
+
   const getDefaultIcon = () => {
     if (icon) return icon;
     const iconClass = "w-16 h-16 text-muted stroke-[1.25]";
@@ -61,9 +75,9 @@ export function EmptyState({
         {getDefaultIcon()}
       </div>
 
-      <h3 className="text-lg font-semibold text-ink mb-1.5">{title}</h3>
+      <h3 className="text-lg font-semibold text-ink mb-1.5">{displayTitle}</h3>
       <p className="text-sm text-muted max-w-sm mb-6 leading-relaxed">
-        {description}
+        {displayDescription}
       </p>
 
       {onAction && (
@@ -73,7 +87,7 @@ export function EmptyState({
           className="btn-lime px-5 py-2.5 text-xs sm:text-sm font-semibold inline-flex items-center gap-2"
         >
           <RotateCcw className="w-4 h-4" />
-          <span>{actionLabel}</span>
+          <span>{displayActionLabel}</span>
         </button>
       )}
     </div>

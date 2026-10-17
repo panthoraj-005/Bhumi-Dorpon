@@ -6,6 +6,7 @@ import { GisMapCompare, PlotGeometryItem } from "./GisMapCompare";
 import { OwnerLegendPanel, OwnerLegendItem, getOwnerColorStyle, FLOOD_OWNER_COLORS } from "./panels/OwnerLegendPanel";
 import { FloodContextCard } from "./panels/FloodContextCard";
 import { useLayerStore } from "./chrome/layerStore";
+import { useAppStore } from "@/stores/appStore";
 
 interface FloodMapProps {
   floodEvent?: FloodEvent | null;
@@ -44,6 +45,7 @@ export function FloodMap({
   className,
   isForecast = false,
 }: FloodMapProps) {
+  const { language } = useAppStore();
   const [internalIsolatedOwnerId, setInternalIsolatedOwnerId] = useState<string | null>(null);
   const [hoveredOwnerId, setHoveredOwnerId] = useState<string | null>(null);
 
@@ -340,7 +342,11 @@ export function FloodMap({
   return (
     <div className="space-y-4">
       <GisMapCompare
-        title="Flood Inundation & Plot Submersion Map"
+        title={
+          language === "bn"
+            ? "বন্যা প্লাবন ও দাগ নিমজ্জন মানচিত্র"
+            : "Flood Inundation & Plot Submersion Map"
+        }
         hazard="flood"
         mode={isForecast ? "forecast" : "recorded"}
         selectedMouzaId={selectedMouzaId || floodEvent?.mouzaId}
@@ -350,8 +356,20 @@ export function FloodMap({
         plots={plotGeometryItems}
         setupBeforeHazard={setupBeforeHazard}
         setupAfterHazard={setupAfterHazard}
-        beforeLabel="Normal Waterbodies & Cadastre (Before)"
-        afterLabel={isForecast ? "Projected Flood Inundation" : "Inundation Extent & Depth Bands (After)"}
+        beforeLabel={
+          language === "bn"
+            ? "স্বাভাবিক জলাশয় ও ক্যাডাস্ট্রাল জরিপ (পূর্বের)"
+            : "Normal Waterbodies & Cadastre (Before)"
+        }
+        afterLabel={
+          isForecast
+            ? language === "bn"
+              ? "প্রক্ষেপিত বন্যা প্লাবন"
+              : "Projected Flood Inundation"
+            : language === "bn"
+              ? "প্লাবনের বিস্তার ও গভীরতার মাত্রা (পরের)"
+              : "Inundation Extent & Depth Bands (After)"
+        }
         className={className}
       />
 

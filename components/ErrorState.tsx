@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import { AlertCircle, RotateCcw } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useAppStore } from "@/stores/appStore";
 
 interface ErrorStateProps {
   title?: string;
@@ -10,11 +13,22 @@ interface ErrorStateProps {
 }
 
 export function ErrorState({
-  title = "Failed to load land records",
-  message = "An error occurred while loading cadastral survey and remote sensing data. Please try again.",
+  title,
+  message,
   onRetry,
   className,
 }: ErrorStateProps) {
+  const { language } = useAppStore();
+  const isBn = language === "bn";
+
+  const displayTitle = title || (isBn ? "তথ্যের রেকর্ড লোড করা যায়নি" : "Failed to load land records");
+  const displayMessage =
+    message ||
+    (isBn
+      ? "ক্যাডাস্ট্রাল জরিপ ও রিমোট সেন্সিং তথ্য লোড করার সময় একটি ত্রুটি ঘটেছে। অনুগ্রহ করে আবার চেষ্টা করুন।"
+      : "An error occurred while loading cadastral survey and remote sensing data. Please try again.");
+  const displayRetry = isBn ? "পুনরায় চেষ্টা করুন" : "Retry";
+
   return (
     <div
       role="alert"
@@ -29,10 +43,10 @@ export function ErrorState({
       </div>
 
       <h3 className="text-base sm:text-lg font-semibold text-ink mb-1.5">
-        {title}
+        {displayTitle}
       </h3>
       <p className="text-xs sm:text-sm text-secondary max-w-sm mb-6 leading-relaxed">
-        {message}
+        {displayMessage}
       </p>
 
       {onRetry && (
@@ -42,7 +56,7 @@ export function ErrorState({
           className="btn-lime px-5 py-2.5 text-xs sm:text-sm font-semibold inline-flex items-center gap-2 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2"
         >
           <RotateCcw className="w-4 h-4" />
-          <span>Retry</span>
+          <span>{displayRetry}</span>
         </button>
       )}
     </div>

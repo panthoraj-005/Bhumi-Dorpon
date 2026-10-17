@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { HazardType } from "@/lib/types";
+import { useAppStore } from "@/stores/appStore";
 
 interface MapLegendProps {
   hazard: HazardType;
@@ -11,6 +12,8 @@ interface MapLegendProps {
 
 export function MapLegend({ hazard, isForecast = false }: MapLegendProps) {
   const [collapsed, setCollapsed] = useState(false);
+  const { language } = useAppStore();
+  const isBn = language === "bn";
 
   return (
     <div className="bg-surface/90 backdrop-blur-md rounded-lg border border-border/80 shadow-md p-2.5 max-w-[210px] select-none text-[11px] space-y-1.5 pointer-events-auto">
@@ -18,7 +21,7 @@ export function MapLegend({ hazard, isForecast = false }: MapLegendProps) {
         onClick={() => setCollapsed(!collapsed)}
         className="flex items-center justify-between font-bold text-ink cursor-pointer text-xs pb-1 border-b border-border/50"
       >
-        <span>Legend</span>
+        <span>{isBn ? "নির্দেশিকা (Legend)" : "Legend"}</span>
         {collapsed ? <ChevronDown className="w-3 h-3 text-muted" /> : <ChevronUp className="w-3 h-3 text-muted" />}
       </div>
 
@@ -29,11 +32,11 @@ export function MapLegend({ hazard, isForecast = false }: MapLegendProps) {
             <>
               <LegendItem
                 icon={<span className="w-3.5 h-2.5 rounded-xs bg-[#BFD9EC] border border-[#9DC1DA]" />}
-                label="River Channel"
+                label={isBn ? "নদী প্রবাহ" : "River Channel"}
               />
               <LegendItem
                 icon={<span className="w-3.5 h-0.5 bg-[#1E3A8A]" />}
-                label="Surveyed Bankline"
+                label={isBn ? "জরিপকৃত তীররেখা" : "Surveyed Bankline"}
               />
               <LegendItem
                 icon={
@@ -44,11 +47,11 @@ export function MapLegend({ hazard, isForecast = false }: MapLegendProps) {
                     }}
                   />
                 }
-                label="Lost Land (Erosion)"
+                label={isBn ? "বিলীন জমি (ভাঙন)" : "Lost Land (Erosion)"}
               />
               <LegendItem
                 icon={<span className="w-3 h-1 bg-[#D97706]" />}
-                label="Transect Displacement"
+                label={isBn ? "ট্রান্সেক্ট সরণ" : "Transect Displacement"}
               />
               {isForecast && (
                 <LegendItem
@@ -60,7 +63,7 @@ export function MapLegend({ hazard, isForecast = false }: MapLegendProps) {
                       }}
                     />
                   }
-                  label="Projected Retreat"
+                  label={isBn ? "প্রত্যাশিত তীররেখা" : "Projected Retreat"}
                 />
               )}
             </>
@@ -71,15 +74,15 @@ export function MapLegend({ hazard, isForecast = false }: MapLegendProps) {
             <>
               <LegendItem
                 icon={<span className="w-3.5 h-2.5 rounded-xs bg-[#EADFC0] border border-[#D5CAA7]" />}
-                label="Baseline Sandbar"
+                label={isBn ? "ভিত্তিরেখা বালুচর" : "Baseline Sandbar"}
               />
               <LegendItem
                 icon={<span className="w-3.5 h-2.5 rounded-xs bg-[#2F9E62] border border-[#23814F]" />}
-                label="Accretion (+Gain)"
+                label={isBn ? "পয়স্তি (+বৃদ্ধি)" : "Accretion (+Gain)"}
               />
               <LegendItem
                 icon={<span className="w-3.5 h-2.5 rounded-xs bg-[#E4604A] border border-[#C84934]" />}
-                label="Scoured Flank (−Loss)"
+                label={isBn ? "শিকস্তি (−ক্ষয়)" : "Scoured Flank (−Loss)"}
               />
               <LegendItem
                 icon={
@@ -90,12 +93,12 @@ export function MapLegend({ hazard, isForecast = false }: MapLegendProps) {
                     }}
                   />
                 }
-                label="Unowned (State Khas)"
+                label={isBn ? "খাস জমি (সরকারি)" : "Unowned (State Khas)"}
               />
               {isForecast && (
                 <LegendItem
                   icon={<span className="w-3.5 h-0.5 border-b border-dashed border-[#6A5BD6]" />}
-                  label="Projected Sandbar Shift"
+                  label={isBn ? "প্রত্যাশিত চরের রূপান্তর" : "Projected Sandbar Shift"}
                 />
               )}
             </>
@@ -106,27 +109,27 @@ export function MapLegend({ hazard, isForecast = false }: MapLegendProps) {
             <>
               <LegendItem
                 icon={<span className="w-3.5 h-0.5 bg-[#0284C7]" />}
-                label="Active Coastline"
+                label={isBn ? "সক্রিয় উপকূলরেখা" : "Active Coastline"}
               />
               <LegendItem
                 icon={<span className="w-3.5 h-2.5 rounded-xs bg-[#2F9E62]" />}
-                label="Accreted Land (+Gain)"
+                label={isBn ? "নবগঠিত ভূমি (+পয়স্তি)" : "Accreted Land (+Gain)"}
               />
               <LegendItem
                 icon={<span className="w-3.5 h-2.5 rounded-xs bg-[#E4604A]" />}
-                label="Marine Erosion (−Loss)"
+                label={isBn ? "উপকূলীয় ক্ষয় (−ক্ষতি)" : "Marine Erosion (−Loss)"}
               />
               <LegendItem
                 icon={<span className="w-3.5 h-2.5 rounded-xs bg-[#E8E4D2] border border-[#C8C0AA]" />}
-                label="Tidal Mudflat"
+                label={isBn ? "জোয়ার-ভাটার কাদাভূমি" : "Tidal Mudflat"}
               />
               <LegendItem
                 icon={<span className="w-3.5 h-2.5 rounded-xs bg-[#5E8C31]" />}
-                label="Mangrove Greenbelt"
+                label={isBn ? "ম্যানগ্রোভ সবুজ বেষ্টনী" : "Mangrove Greenbelt"}
               />
               <LegendItem
                 icon={<span className="w-3.5 h-0.5 border-b border-dashed border-[#6B6F66]" />}
-                label="Polder Embankment"
+                label={isBn ? "পোল্ডার বাঁধ" : "Polder Embankment"}
               />
             </>
           )}
@@ -136,15 +139,15 @@ export function MapLegend({ hazard, isForecast = false }: MapLegendProps) {
             <>
               <LegendItem
                 icon={<span className="w-3.5 h-2.5 rounded-xs bg-[#CFE3F0] border border-[#9DC1DA]" />}
-                label="Shallow (<0.5m)"
+                label={isBn ? "অগভীর (<০.৫ মি.)" : "Shallow (<0.5m)"}
               />
               <LegendItem
                 icon={<span className="w-3.5 h-2.5 rounded-xs bg-[#9CC3DE] border border-[#7BA9CA]" />}
-                label="Moderate (0.5–1.5m)"
+                label={isBn ? "মাঝারি (০.৫–১.৫ মি.)" : "Moderate (0.5–1.5m)"}
               />
               <LegendItem
                 icon={<span className="w-3.5 h-2.5 rounded-xs bg-[#5B9BC8] border border-[#3E82B2]" />}
-                label="Deep (>1.5m)"
+                label={isBn ? "গভীর (>১.৫ মি.)" : "Deep (>1.5m)"}
               />
               <LegendItem
                 icon={
@@ -155,11 +158,11 @@ export function MapLegend({ hazard, isForecast = false }: MapLegendProps) {
                     }}
                   />
                 }
-                label="Submerged Parcel"
+                label={isBn ? "জলমগ্ন দাগ" : "Submerged Parcel"}
               />
               <LegendItem
                 icon={<span className="w-3.5 h-2.5 rounded-xs bg-[#9AA091] border border-[#7D8473]" />}
-                label="Unowned (State Khas)"
+                label={isBn ? "খাস জমি (সরকারি)" : "Unowned (State Khas)"}
               />
             </>
           )}
@@ -176,11 +179,11 @@ export function MapLegend({ hazard, isForecast = false }: MapLegendProps) {
                     }}
                   />
                 }
-                label="Elevation Relief"
+                label={isBn ? "ভূ-উচ্চতা রিলিফ" : "Elevation Relief"}
               />
               <LegendItem
                 icon={<span className="w-3.5 h-2.5 rounded-xs bg-[#78350F] border border-[#451A03]" />}
-                label="Failure Scar"
+                label={isBn ? "ধসের মূল দাগ" : "Failure Scar"}
               />
               <LegendItem
                 icon={
@@ -191,29 +194,29 @@ export function MapLegend({ hazard, isForecast = false }: MapLegendProps) {
                     }}
                   />
                 }
-                label="Debris Runout"
+                label={isBn ? "ধ্বংসাবশেষ প্রবাহ" : "Debris Runout"}
               />
               <LegendItem
                 icon={<span className="w-3.5 h-2.5 rounded-xs bg-[#15803D] border border-[#14532D]" />}
-                label="Intact Slope"
+                label={isBn ? "স্থিতিশীল ঢাল" : "Intact Slope"}
               />
               <LegendItem
                 icon={<span className="w-3.5 h-0.5 border-b border-dashed border-[#475569]" />}
-                label="Contours (10m)"
+                label={isBn ? "উচ্চতা রেখা (১০ মি.)" : "Contours (10m)"}
               />
               <LegendItem
                 icon={<span className="text-[10px] text-amber-600 font-bold leading-none">▲</span>}
-                label="Spot Height Peak"
+                label={isBn ? "শৃঙ্গ বিন্দু" : "Spot Height Peak"}
               />
               {isForecast && (
                 <>
                   <LegendItem
                     icon={<span className="w-3.5 h-2.5 rounded-xs bg-[#EF4444] border border-[#B91C1C]" />}
-                    label="High Susceptibility"
+                    label={isBn ? "উচ্চ ধস ঝুঁকি" : "High Susceptibility"}
                   />
                   <LegendItem
                     icon={<span className="w-3.5 h-0.5 border-b-2 border-dashed border-[#DC2626]" />}
-                    label="Predicted Scar"
+                    label={isBn ? "পূর্বাভাসিত ধস ক্ষেত্র" : "Predicted Scar"}
                   />
                 </>
               )}

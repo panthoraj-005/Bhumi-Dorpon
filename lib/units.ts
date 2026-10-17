@@ -1,4 +1,5 @@
 import { AreaUnit } from "./types";
+import { formatNumberLocalized, Language } from "./translations";
 
 /**
  * Standard Bangladesh land conversion ratios:
@@ -20,14 +21,28 @@ export function convertArea(
   return valueInDecimal;
 }
 
+export type FormatAreaOptions = {
+  maximumFractionDigits?: number;
+  includeUnit?: boolean;
+  language?: Language;
+  useBnDigits?: boolean;
+};
+
 export function formatArea(
   valueInDecimal: number,
   unit: AreaUnit,
-  options?: { maximumFractionDigits?: number; includeUnit?: boolean }
+  optionsOrLang?: Language | FormatAreaOptions
 ): string {
   const converted = convertArea(valueInDecimal, unit);
+
+  const options: FormatAreaOptions =
+    typeof optionsOrLang === "string"
+      ? { language: optionsOrLang }
+      : optionsOrLang || {};
+
+  const lang = options.language || "en";
   const maxDigits =
-    options?.maximumFractionDigits ??
+    options.maximumFractionDigits ??
     (unit === "decimal" ? 1 : unit === "acre" ? 2 : 2);
 
   const formattedNum = new Intl.NumberFormat("en-US", {
@@ -35,32 +50,62 @@ export function formatArea(
     maximumFractionDigits: maxDigits,
   }).format(converted);
 
-  if (options?.includeUnit === false) {
-    return formattedNum;
+  const displayNum =
+    options.useBnDigits && lang === "bn"
+      ? formatNumberLocalized(formattedNum, "bn")
+      : formattedNum;
+
+  if (options.includeUnit === false) {
+    return displayNum;
   }
 
-  const unitLabels: Record<AreaUnit, string> = {
+  const unitLabelsBn: Record<AreaUnit, string> = {
+    decimal: "শতাংশ",
+    acre: "একর",
+    hectare: "হেক্টর",
+  };
+
+  const unitLabelsEn: Record<AreaUnit, string> = {
     decimal: "dec",
     acre: "acres",
     hectare: "ha",
   };
 
-  return `${formattedNum} ${unitLabels[unit]}`;
+  const unitLabels = lang === "bn" ? unitLabelsBn : unitLabelsEn;
+
+  return `${displayNum} ${unitLabels[unit]}`;
 }
 
 export function formatCurrencyBDT(
   amount: number,
-  options?: { compact?: boolean }
+  options?: { compact?: boolean; language?: Language; useBnDigits?: boolean }
 ): string {
+  const lang = options?.language || "en";
+
   if (options?.compact) {
     if (amount >= 10000000) {
-      return `৳${(amount / 10000000).toFixed(2)} Cr`;
+      const val = (amount / 10000000).toFixed(2);
+      const displayVal =
+        options?.useBnDigits && lang === "bn"
+          ? formatNumberLocalized(val, "bn")
+          : val;
+      return lang === "bn" ? `৳${displayVal} কোটি` : `৳${val} Cr`;
     }
     if (amount >= 100000) {
-      return `৳${(amount / 100000).toFixed(1)} Lakh`;
+      const val = (amount / 100000).toFixed(1);
+      const displayVal =
+        options?.useBnDigits && lang === "bn"
+          ? formatNumberLocalized(val, "bn")
+          : val;
+      return lang === "bn" ? `৳${displayVal} লাখ` : `৳${val} Lakh`;
     }
     if (amount >= 1000) {
-      return `৳${(amount / 1000).toFixed(1)}k`;
+      const val = (amount / 1000).toFixed(1);
+      const displayVal =
+        options?.useBnDigits && lang === "bn"
+          ? formatNumberLocalized(val, "bn")
+          : val;
+      return lang === "bn" ? `৳${displayVal} হাজার` : `৳${val}k`;
     }
   }
 
@@ -68,13 +113,21 @@ export function formatCurrencyBDT(
     maximumFractionDigits: 0,
   }).format(amount);
 
-  return `৳${formatted}`;
+  const displayFormatted =
+    options?.useBnDigits && lang === "bn"
+      ? formatNumberLocalized(formatted, "bn")
+      : formatted;
+
+  return `৳${displayFormatted}`;
 }
 
 export function formatPercentage(
   percent: number,
-  options?: { includeSign?: boolean }
+  options?: { includeSign?: boolean; language?: Language }
 ): string {
+  const lang = options?.language || "en";
   const prefix = options?.includeSign && percent > 0 ? "+" : "";
-  return `${prefix}${percent.toFixed(1)}%`;
+  const formatted = `${prefix}${percent.toFixed(1)}%`;
+  return lang === "bn" ? formatNumberLocalized(formatted, "bn") : formatted;
 }
+

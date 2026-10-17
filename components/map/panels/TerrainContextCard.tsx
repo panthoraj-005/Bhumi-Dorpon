@@ -2,6 +2,8 @@
 
 import React from "react";
 import { Mountain, CloudRain, Activity, Layers, Compass } from "lucide-react";
+import { useAppStore } from "@/stores/appStore";
+import { formatNumberLocalized } from "@/lib/translations";
 import { ContextCard, LandslideContextCard } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
@@ -26,6 +28,8 @@ export function TerrainContextCard({
   triggerRainfallMm,
   className,
 }: TerrainContextCardProps) {
+  const { language } = useAppStore();
+  const isBn = language === "bn";
   const tc = context && "minElevationM" in context ? (context as LandslideContextCard) : null;
 
   const minElev = minElevationM ?? tc?.minElevationM ?? 120;
@@ -50,13 +54,15 @@ export function TerrainContextCard({
           </div>
           <div>
             <h4 className="text-xs font-bold text-ink uppercase tracking-wider">
-              Terrain Morphometry & Geotechnics
+              {isBn ? "ভূ-প্রাকৃতিক পরিমাপ ও ভূতাত্ত্বিক তথ্য" : "Terrain Morphometry & Geotechnics"}
             </h4>
-            <p className="text-[11px] text-muted">Hypsometric relief & displacement volume</p>
+            <p className="text-[11px] text-muted">
+              {isBn ? "উচ্চতামিতিক রূপরেখা ও স্থানান্তরিত মাটির আয়তন" : "Hypsometric relief & displacement volume"}
+            </p>
           </div>
         </div>
         <span className="px-2 py-0.5 rounded-pill text-[10px] font-bold border bg-amber-50 text-amber-700 border-amber-200">
-          Steep Escarpment
+          {isBn ? "খাড়া পাহাড়ি ঢাল" : "Steep Escarpment"}
         </span>
       </div>
 
@@ -65,48 +71,50 @@ export function TerrainContextCard({
         <div className="p-2.5 rounded-lg bg-[#F8FAFC] border border-border/50">
           <div className="flex items-center gap-1 text-[10px] text-muted mb-1 font-medium">
             <Layers className="w-3 h-3 text-muted" />
-            <span>Elevation Relief</span>
+            <span>{isBn ? "উচ্চতার পরিসর" : "Elevation Relief"}</span>
           </div>
           <div className="text-sm font-bold text-ink tabular-nums">
-            {minElev} – {maxElev} m
+            {formatNumberLocalized(minElev, language)} – {formatNumberLocalized(maxElev, language)} {isBn ? "মি." : "m"}
           </div>
-          <div className="text-[9px] text-muted">DEM Hypsometry</div>
+          <div className="text-[9px] text-muted">{isBn ? "ডিজিটাল এলিভেশন মডেল" : "DEM Hypsometry"}</div>
         </div>
 
         {/* Metric 2: Mean & Scar Slope */}
         <div className="p-2.5 rounded-lg bg-[#F8FAFC] border border-border/50">
           <div className="flex items-center gap-1 text-[10px] text-muted mb-1 font-medium">
             <Compass className="w-3 h-3 text-loss" />
-            <span>Scar Slope</span>
+            <span>{isBn ? "ধসের ক্ষত ঢাল" : "Scar Slope"}</span>
           </div>
           <div className="text-sm font-bold text-loss tabular-nums">
-            {scarSlope.toFixed(1)}°
+            {formatNumberLocalized(scarSlope.toFixed(1), language)}°
           </div>
-          <div className="text-[9px] text-muted">Slope avg: {slope.toFixed(1)}°</div>
+          <div className="text-[9px] text-muted">
+            {isBn ? `গড় ঢাল: ${formatNumberLocalized(slope.toFixed(1), language)}°` : `Slope avg: ${slope.toFixed(1)}°`}
+          </div>
         </div>
 
         {/* Metric 3: Soil Volume */}
         <div className="p-2.5 rounded-lg bg-[#F8FAFC] border border-border/50">
           <div className="flex items-center gap-1 text-[10px] text-muted mb-1 font-medium">
             <Activity className="w-3 h-3 text-muted" />
-            <span>Debris Volume</span>
+            <span>{isBn ? "স্থানান্তরিত ধ্বংসাবশেষ" : "Debris Volume"}</span>
           </div>
           <div className="text-sm font-bold text-ink tabular-nums">
-            {volume.toLocaleString()} m³
+            {formatNumberLocalized(volume.toLocaleString(), language)} m³
           </div>
-          <div className="text-[9px] text-muted">Cut/Fill verified</div>
+          <div className="text-[9px] text-muted">{isBn ? "কাট/ফিল যাচাইকৃত" : "Cut/Fill verified"}</div>
         </div>
 
         {/* Metric 4: Trigger Rainfall */}
         <div className="p-2.5 rounded-lg bg-[#F8FAFC] border border-border/50">
           <div className="flex items-center gap-1 text-[10px] text-muted mb-1 font-medium">
             <CloudRain className="w-3 h-3 text-water" />
-            <span>Trigger Rainfall</span>
+            <span>{isBn ? "ধস-উদ্বুদ্ধকারী বৃষ্টিপাত" : "Trigger Rainfall"}</span>
           </div>
           <div className="text-sm font-bold text-water tabular-nums">
-            {rainfall} mm
+            {formatNumberLocalized(rainfall, language)} mm
           </div>
-          <div className="text-[9px] text-muted">24h Cumulative</div>
+          <div className="text-[9px] text-muted">{isBn ? "২৪ ঘণ্টার মোট বৃষ্টি" : "24h Cumulative"}</div>
         </div>
       </div>
     </div>

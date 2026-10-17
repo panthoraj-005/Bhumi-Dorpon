@@ -7,7 +7,7 @@
     "build": "node --max-old-space-size=1536 ./node_modules/next/dist/bin/next build",
     "start": "node --max-old-space-size=1536 ./node_modules/next/dist/bin/next start",
     "lint": "node --max-old-space-size=1536 ./node_modules/typescript/bin/tsc --noEmit",
-    "test": "node --max-old-space-size=1536 ./node_modules/vitest/vitest.mjs run",
+    "test": "node --max-old-space-size=2048 ./node_modules/vitest/vitest.mjs run",
     "test:e2e": "node --max-old-space-size=1536 ./node_modules/@playwright/test/cli.js test",
     "generate:mocks": "node --max-old-space-size=1536 ./node_modules/tsx/dist/cli.mjs scripts/generate-mocks.ts"
   },

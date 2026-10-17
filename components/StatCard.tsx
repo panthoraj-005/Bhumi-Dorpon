@@ -1,6 +1,10 @@
+"use client";
+
 import React from "react";
 import { ArrowUpRight, ArrowDownRight, Minus } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useAppStore } from "@/stores/appStore";
+import { formatNumberLocalized } from "@/lib/translations";
 
 interface StatCardProps {
   label: string;
@@ -27,6 +31,7 @@ export function StatCard({
   badge,
   className,
 }: StatCardProps) {
+  const { language } = useAppStore();
   // Determine color of change pill
   // If changeIsGain is explicitly set: true = green gain, false = red/coral loss
   const isPositiveGain = changeIsGain ?? (changePercent ? changePercent > 0 : false);
@@ -77,7 +82,7 @@ export function StatCard({
               ) : (
                 <Minus className="w-3.5 h-3.5" />
               )}
-              <span>{Math.abs(changePercent).toFixed(1)}%</span>
+              <span>{formatNumberLocalized(Math.abs(changePercent).toFixed(1), language)}%</span>
             </span>
           )}
           {subtext && <span className="text-muted truncate">{subtext}</span>}

@@ -8,7 +8,7 @@ const nextConfig = {
   },
   experimental: {
     cpus: 1,
-    workerThreads: false,
+    workerThreads: true,
   },
   async redirects() {
     return [

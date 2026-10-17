@@ -4,14 +4,25 @@ import React from "react";
 import Link from "next/link";
 import { ArrowLeft, Users, UserCheck, Shield } from "lucide-react";
 import { AppHeader } from "@/components/AppHeader";
+import { useAppStore } from "@/stores/appStore";
 
 export default function TeamInformationPage() {
+  const { language } = useAppStore();
+
   return (
     <div className="flex-1 flex flex-col min-h-screen bg-bg">
       {/* Page Header */}
       <AppHeader
-        title="Team Information"
-        subtitle="Project development team and copyright"
+        title={
+          language === "bn"
+            ? "টিম পরিচিতি (Team Information)"
+            : "Team Information"
+        }
+        subtitle={
+          language === "bn"
+            ? "প্রকল্প ডেভেলপার দল ও কপিরাইট"
+            : "Project development team and copyright"
+        }
       />
 
       {/* Main Content Area */}
@@ -23,10 +34,16 @@ export default function TeamInformationPage() {
             className="inline-flex items-center gap-2 px-3.5 py-2 rounded-pill bg-surface border border-border hover:border-ink/30 text-ink text-xs sm:text-sm font-medium transition-all shadow-subtle group"
           >
             <ArrowLeft className="w-4 h-4 text-muted group-hover:text-ink group-hover:-translate-x-0.5 transition-transform" />
-            <span>Back to Settings</span>
+            <span>
+              {language === "bn"
+                ? "সেটিংসে ফিরে যান (Back to Settings)"
+                : "Back to Settings"}
+            </span>
           </Link>
           <span className="text-xs text-muted font-medium">
-            Settings / Team Information
+            {language === "bn"
+              ? "সেটিংস / টিম পরিচিতি (Settings / Team Information)"
+              : "Settings / Team Information"}
           </span>
         </div>
 
@@ -38,7 +55,7 @@ export default function TeamInformationPage() {
             </div>
             <div>
               <span className="text-xs font-semibold text-accent-deep tracking-wider uppercase">
-                Project Team
+                {language === "bn" ? "প্রকল্প টিম" : "Project Team"}
               </span>
               <h2 className="text-2xl sm:text-3xl font-display font-semibold text-ink mt-0.5">
                 GeoNeural
@@ -55,15 +72,15 @@ export default function TeamInformationPage() {
                 </div>
                 <div>
                   <span className="text-xs text-muted font-medium block">
-                    Team Leader
+                    {language === "bn" ? "টিম লিডার" : "Team Leader"}
                   </span>
                   <span className="text-base sm:text-lg font-semibold text-ink">
-                    Pantho Raj Biswas
+                    {language === "bn" ? "পান্থ রাজ বিশ্বাস" : "Pantho Raj Biswas"}
                   </span>
                 </div>
               </div>
               <span className="text-xs font-semibold px-3 py-1 rounded-pill bg-accent-soft text-accent-deep border border-accent/30">
-                Lead
+                {language === "bn" ? "নেতৃত্ব" : "Lead"}
               </span>
             </div>
 
@@ -74,15 +91,15 @@ export default function TeamInformationPage() {
                 </div>
                 <div>
                   <span className="text-xs text-muted font-medium block">
-                    Team Member
+                    {language === "bn" ? "টিম সদস্য" : "Team Member"}
                   </span>
                   <span className="text-base sm:text-lg font-semibold text-ink">
-                    Puja Paul
+                    {language === "bn" ? "পূজা পাল" : "Puja Paul"}
                   </span>
                 </div>
               </div>
               <span className="text-xs font-semibold px-3 py-1 rounded-pill bg-surface-alt text-ink-2 border border-border">
-                Member
+                {language === "bn" ? "সদস্য" : "Member"}
               </span>
             </div>
           </div>
@@ -90,13 +107,13 @@ export default function TeamInformationPage() {
           {/* Exact Information Summary Box */}
           <div className="mt-8 p-5 rounded-xl bg-surface-alt border border-border space-y-2">
             <p className="text-xs sm:text-sm text-ink-2 font-medium">
-              Team Name: GeoNeural
+              {language === "bn" ? "টিমের নাম: GeoNeural" : "Team Name: GeoNeural"}
             </p>
             <p className="text-xs sm:text-sm text-ink-2 font-medium">
-              Team Leader: Pantho Raj Biswas
+              {language === "bn" ? "টিম লিডার: পান্থ রাজ বিশ্বাস (Pantho Raj Biswas)" : "Team Leader: Pantho Raj Biswas"}
             </p>
             <p className="text-xs sm:text-sm text-ink-2 font-medium">
-              Team Member: Puja Paul
+              {language === "bn" ? "টিম সদস্য: পূজা পাল (Puja Paul)" : "Team Member: Puja Paul"}
             </p>
           </div>
 
@@ -104,7 +121,7 @@ export default function TeamInformationPage() {
           <div className="mt-8 pt-6 border-t border-border flex items-center gap-3 text-xs sm:text-sm text-muted">
             <Shield className="w-4 h-4 text-muted shrink-0" />
             <p className="font-medium text-ink-2">
-              © 2026 GeoNeural. All rights reserved.
+              {language === "bn" ? "© ২০২৬ GeoNeural। সর্বস্বত্ব সংরক্ষিত।" : "© 2026 GeoNeural. All rights reserved."}
             </p>
           </div>
         </div>
@@ -116,7 +133,7 @@ export default function TeamInformationPage() {
             className="inline-flex items-center gap-2 px-6 py-3 rounded-pill bg-accent text-accent-ink hover:bg-[#BBE825] font-semibold text-sm transition-all shadow-subtle group"
           >
             <ArrowLeft className="w-4 h-4 text-accent-ink group-hover:-translate-x-1 transition-transform" />
-            <span>Return to Settings</span>
+            <span>{language === "bn" ? "সেটিংসে ফিরে যান" : "Return to Settings"}</span>
           </Link>
         </div>
       </main>

@@ -6,6 +6,11 @@ import { Search, Eye, EyeOff, UserCheck, ExternalLink, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { formatArea } from "@/lib/units";
 import { useAppStore } from "@/stores/appStore";
+import {
+  getLocalizedOwnerName,
+  getLocalizedFatherName,
+  formatNumberLocalized,
+} from "@/lib/translations";
 
 export const FLOOD_OWNER_COLORS = [
   "#E0A100",
@@ -55,7 +60,7 @@ export function OwnerLegendPanel({
   onHoverOwner,
   className,
 }: OwnerLegendPanelProps) {
-  const { unit } = useAppStore();
+  const { unit, language } = useAppStore();
   const [search, setSearch] = useState("");
 
   const filteredOwners = useMemo(() => {
@@ -64,7 +69,10 @@ export function OwnerLegendPanel({
     return owners.filter(
       (o) =>
         o.name.toLowerCase().includes(q) ||
-        (o.fatherName && o.fatherName.toLowerCase().includes(q)) ||
+        getLocalizedOwnerName(o.name, "bn").toLowerCase().includes(q) ||
+        (o.fatherName &&
+          (o.fatherName.toLowerCase().includes(q) ||
+            getLocalizedFatherName(o.fatherName, "bn").toLowerCase().includes(q))) ||
         o.ownerId.toLowerCase().includes(q)
     );
   }, [owners, search]);
@@ -82,13 +90,15 @@ export function OwnerLegendPanel({
         <div className="flex items-center justify-between">
           <div>
             <h4 className="text-xs font-bold text-ink uppercase tracking-wider flex items-center gap-1.5">
-              <span>Owner Parcel Legend</span>
+              <span>{language === "bn" ? "মালিকানা দাগ লেজেন্ড" : "Owner Parcel Legend"}</span>
               <span className="text-[10px] font-normal text-muted lowercase">
-                ({owners.length} owners)
+                ({formatNumberLocalized(owners.length, language)} {language === "bn" ? "জন মালিক" : "owners"})
               </span>
             </h4>
             <p className="text-[11px] text-muted">
-              Click an owner to isolate their plots on the map
+              {language === "bn"
+                ? "মানচিত্রে দাগ আলাদা করতে মালিকের নামে ক্লিক করুন"
+                : "Click an owner to isolate their plots on the map"}
             </p>
           </div>
           {isolatedOwnerId && (
@@ -98,7 +108,7 @@ export function OwnerLegendPanel({
               className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-bold bg-ink text-surface hover:bg-ink/80 transition-colors shadow-2xs"
             >
               <X className="w-3 h-3" />
-              <span>Clear Filter</span>
+              <span>{language === "bn" ? "ফিল্টার মুছুন" : "Clear Filter"}</span>
             </button>
           )}
         </div>
@@ -110,7 +120,7 @@ export function OwnerLegendPanel({
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search by owner name..."
+            placeholder={language === "bn" ? "মালিকের নাম দিয়ে খুঁজুন..." : "Search by owner name..."}
             className="w-full pl-8 pr-3 py-1.5 text-xs bg-surface border border-border rounded-lg text-ink placeholder:text-muted focus:outline-none focus:ring-1 focus:ring-primary"
           />
         </div>
@@ -119,7 +129,9 @@ export function OwnerLegendPanel({
       {/* Owner Items List */}
       <div className="overflow-y-auto max-h-[380px] divide-y divide-border/50 text-[11px]">
         {filteredOwners.length === 0 ? (
-          <div className="p-4 text-center text-xs text-muted">No owners match "{search}"</div>
+          <div className="p-4 text-center text-xs text-muted">
+            {language === "bn" ? `"${search}" দিয়ে কোনো মালিক পাওয়া যায়নি` : `No owners match "${search}"`}
+          </div>
         ) : (
           filteredOwners.map((owner) => {
             const isIsolated = isolatedOwnerId === owner.ownerId;
@@ -159,16 +171,18 @@ export function OwnerLegendPanel({
                   </div>
                   <div className="min-w-0">
                     <div className="font-bold text-ink truncate flex items-center gap-1">
-                      <span>{owner.name}</span>
+                      <span>{getLocalizedOwnerName(owner.name, language)}</span>
                       {isIsolated && (
                         <span className="text-[9px] px-1 bg-ink text-surface rounded uppercase font-bold">
-                          Isolated
+                          {language === "bn" ? "নির্দিষ্ট" : "Isolated"}
                         </span>
                       )}
                     </div>
                     {owner.fatherName && (
                       <div className="text-[10px] text-muted truncate">
-                        s/o {owner.fatherName}
+                        {language === "bn"
+                          ? `পিতা: ${getLocalizedFatherName(owner.fatherName, language)}`
+                          : `s/o ${owner.fatherName}`}
                       </div>
                     )}
                   </div>
@@ -178,10 +192,10 @@ export function OwnerLegendPanel({
                 <div className="flex items-center gap-3 shrink-0 text-right">
                   <div>
                     <div className="font-bold text-ink tabular-nums">
-                      {formatArea(owner.floodedAreaDecimal, unit)}
+                      {formatArea(owner.floodedAreaDecimal, unit, language)}
                     </div>
                     <div className="text-[10px] text-muted">
-                      {owner.plotCount} plot{owner.plotCount !== 1 ? "s" : ""}
+                      {formatNumberLocalized(owner.plotCount, language)} {language === "bn" ? "টি দাগ" : owner.plotCount !== 1 ? "plots" : "plot"}
                     </div>
                   </div>
 
@@ -190,7 +204,7 @@ export function OwnerLegendPanel({
                       href={`/flood/${owner.mouzaId}/${owner.floodId}/owner/${owner.ownerId}`}
                       onClick={(e) => e.stopPropagation()}
                       className="p-1 rounded text-muted hover:text-ink hover:bg-slate-200 transition-colors"
-                      title="View owner plot dossier"
+                      title={language === "bn" ? "মালিকের জমির পাতা দেখুন" : "View owner plot dossier"}
                     >
                       <ExternalLink className="w-3.5 h-3.5" />
                     </Link>
@@ -204,8 +218,8 @@ export function OwnerLegendPanel({
 
       {/* Footer / Legend Note */}
       <div className="p-2.5 bg-[#F8FAFC] border-t border-border/70 text-[10px] text-muted flex items-center justify-between">
-        <span>Grey plots: Unowned / Khas</span>
-        <span>Wave hatch: 100% Submerged</span>
+        <span>{language === "bn" ? "ধূসর দাগ: মালিকানাহীন / খাস জমি" : "Grey plots: Unowned / Khas"}</span>
+        <span>{language === "bn" ? "ঢেউ দাগ: ১০০% নিমজ্জিত" : "Wave hatch: 100% Submerged"}</span>
       </div>
     </div>
   );

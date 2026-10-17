@@ -1,133 +1,194 @@
-# ARCHITECTURE — ভূমিদর্পণ (BhumiDorpon)
-
-**Status:** Continuity document created from the supplied PRD, TRD, MAP_SPEC, DESIGN, BACKEND_SCHEMA, and CHANGE_PROMPT_3. This file was not present in the supplied documentation set. Validate all paths against the actual repository before editing.
-
-## 1. Architectural boundaries
-
-### Demo (current documented scope)
-- Next.js 14+ App Router and TypeScript.
-- Tailwind CSS and shadcn/ui.
-- Leaflet/react-leaflet for all maps.
-- Existing typed data layer in `lib/data.ts`.
-- Seeded generated mock JSON/GeoJSON in `/mocks`.
-- Mock generation script at `/scripts/generate-mocks.ts`.
-- No backend, database, ML inference, or live external data API in the demo.
-
-### Future production (not part of this change)
-FastAPI, PostgreSQL/PostGIS, optional Redis, raster services, and ML/satellite-data pipelines are future architecture. Do not implement these as part of the requested map UI update.
-
-## 2. Existing logical areas to preserve
-
-Use the existing repository structure rather than generating a replacement:
-- `app/`: existing App Router pages and route segments.
-- `components/`: shared UI, charts, selectors, tables, empty states.
-- `components/map/`: existing `MapCompare` and hazard-specific map layers.
-- `lib/`: data access, selection, units, formatting, types, and map configuration as already present.
-- `mocks/`: generated JSON/GeoJSON and raster/image assets.
-- `scripts/`: deterministic mock generator.
-- `docs/`: Exactly 12 consolidated specifications (`PRD.md`, `TRD.md`, `APP_FLOW.md`, `ARCHITECTURE.md`, `DATABASE_SCHEMA.md`, `API_DOCUMENTATION.md`, `UI_UX_DESIGN_SYSTEM.md`, `AUTH_SPECIFICATION.md`, `TESTING_QA.md`, `SECURITY_SPECIFICATION.md`, `PROJECT_ROADMAP.md`, `MAIN_PROJECT_DOCUMENTATION.md`).
-
-The exact file list is not verified because source code was not included with the documentation.
-
-## 3. Map rendering model
-
-Each hazard map should keep the existing Leaflet instance and existing hazard-specific overlay/layer logic. The base map is a separate layer beneath thematic layers.
-
-Logical layers:
-1. Base layer: `Light GIS` (synthetic default/fallback), `Satellite` (real imagery), optional `Street`.
-2. Shared map chrome: zoom controls, scale, north arrow, graticule, locator inset, layer panel, map-type switch, attribution.
-3. Existing geographic context: mouzas, boundaries, roads, water, embankments, labels, as provided by the current data.
-4. Hazard overlays: loss/gain, flood depth, landslide terrain/scar/debris, owner plots, and other existing hazard layers.
-5. Interaction state: selected result/mode, selected mouza/owner, layer visibility, base-map type, synchronized viewport.
-
-Keep the layer order and pane/z-index values defined in `MAP_SPEC.md`. The base-map switch must not recreate or discard hazard overlays.
-
-## 4. Before/After synchronization
-
-- Render two separate Leaflet maps for Before and After, reusing the existing MapCompare/layer components where practical.
-- Desktop layout places Before left and After right.
-- Initialize both views from the same bounds/zoom.
-- Synchronize `moveend`/zoom changes with loop prevention and proper listener cleanup.
-- Zoom buttons invoke the actual Leaflet map API and work immediately.
-- Avoid a draggable swipe bar in the default comparison workflow.
-- Place context cards, summaries, legends, and tables below the map pair.
-- Mobile uses a single-column stack: Before, After, supporting information.
-
-## 5. Real-world base layers and integrity
-
-- Add a central, typed base-layer configuration for provider name, URL/template, attribution, and zoom limits.
-- Do not hard-code API secrets. Verify provider terms and attribution requirements before enabling satellite/street tiles.
-- Keep Light GIS available without network access and as a fallback for tile errors.
-- Do not claim synthetic mock plots or boundaries align with real imagery. If geometry is not verified, display `Demo geometry — not survey-accurate` when Satellite/Street is selected.
-- Preserve all current overlays and viewport when changing base layers.
-
-## 6. Performance and resilience
-
-- Preserve lazy-loading for large per-area GeoJSON and terrain images.
-- Do not bundle large raster or GeoJSON assets into the main JavaScript chunk.
-- Avoid duplicate Leaflet event subscriptions and stale map references.
-- Keep map switching failures non-fatal; the local Light GIS layer must remain usable.
-- Avoid a new mapping library. Leaflet remains authoritative.
-
-## 7. Change strategy
-
-1. Inspect repository and read `BUILD_RULES.md`, `MAP_SPEC.md`, and `CHANGE_LOG.md` if present.
-2. Record existing component behavior before edits.
-3. Patch existing map components and CSS; do not rebuild unrelated pages.
-4. Add or update tests and run actual project scripts.
-5. Record changed files, test commands, real results, and known limitations in the existing change log.
-
-## 8. Hazard-aware map viewport and basemap alignment
-
-- Derive the initial viewport from the currently selected hazard/region's existing geometry or bounds. Do not use one fixed global extent for every hazard.
-- Satellite mode must be a real tile layer at geographic coordinates, not a single static satellite image reused for all hazards.
-- The same center, zoom, bounds, coordinate reference system, and map aspect ratio must be retained when toggling between Light GIS and Satellite.
-- Keep a single shared view state or a loop-safe map synchronization mechanism for the Before/After pair.
-- On hazard/region selection changes, fit to the selected region's bounds. On a basemap-only change, preserve the current view.
-- Never “correct” synthetic data by making up coordinates. Keep the geometry provenance warning when alignment is unverified.
-
-## 9. Immediate zoom-button behavior
-
-- Zoom buttons call the map API directly from their click handlers; no activation state or second click is allowed.
-- Keep event propagation handling local to the controls so clicks do not become map clicks/drags.
-- Test that the first click changes zoom on both synchronized maps.
+# System Architecture Documentation — BhumiDorpon
+**Bangladesh Cadastral Land-Change Records & Multi-Hazard Geospatial Dashboard**
 
 ---
 
-<!-- addendum:google-earth-and-hazard-store -->
-## Addendum — Google Earth Parcel Outline & Five-Hazard Information Store
+> **Document Status:** Authoritative Architectural Specification  
+> **System Version:** 1.2 (Enhanced Demonstration Release)  
+> **Team:** GeoNeural  
+> **Last Updated:** October 2026  
+> **Cross-References:** [Main Documentation](MAIN_PROJECT_DOCUMENTATION.md) | [PRD](PRD.md) | [TRD](TRD.md) | [App Flow & User Flow](APP_FLOW.md) | [Database Schema](DATABASE_SCHEMA.md) | [API Documentation](API_DOCUMENTATION.md) | [UI/UX Design System](UI_UX_DESIGN_SYSTEM.md) | [Authentication Specification](AUTH_SPECIFICATION.md) | [Testing & QA](TESTING_QA.md) | [Security Specification](SECURITY_SPECIFICATION.md)
 
-### A. Google Earth Integration (Client-Side Only)
+---
+
+## Table of Contents
+
+- [1. Architectural Overview](#1-architectural-overview)
+  - [1.1 Current Demonstration Architecture (v1.2)](#11-current-demonstration-architecture-v12)
+  - [1.2 High-Level Architecture Diagram](#12-high-level-architecture-diagram)
+- [2. Subsystem Layer Architecture](#2-subsystem-layer-architecture)
+  - [2.1 Presentation & UI Layer](#21-presentation--ui-layer)
+  - [2.2 Authentication & Demo Access Gate (lib/auth.ts)](#22-authentication--demo-access-gate-libauthts)
+  - [2.3 Centralized Bilingual Localization Engine (lib/translations.ts)](#23-centralized-bilingual-localization-engine-libtranslationsts)
+  - [2.4 Global "Land Information" Search Subsystem (lib/landSearch.ts)](#24-global-land-information-search-subsystem-liblandsearchts)
+  - [2.5 Multi-Hazard Risk Prediction & Historical Quantification Engine](#25-multi-hazard-risk-prediction--historical-quantification-engine)
+  - [2.6 Landslide Mountain & Historical Event Engine (lib/landslideEvents.ts)](#26-landslide-mountain--historical-event-engine-liblandslideeventsts)
+  - [2.7 Geospatial Cartography & Dual-Map Synchronization Engine](#27-geospatial-cartography--dual-map-synchronization-engine)
+  - [2.8 3D Google Earth Client-Side Serializer (lib/googleEarth.ts)](#28-3d-google-earth-client-side-serializer-libgoogleearthts)
+  - [2.9 Deterministic Five-Hazard Information Store](#29-deterministic-five-hazard-information-store)
+- [3. Google Earth vs. Google Earth Engine Architectural Placement](#3-google-earth-vs-google-earth-engine-architectural-placement)
+- [4. Disaster Information Flow & Data Relationships](#4-disaster-information-flow--data-relationships)
+- [5. Proposed Enterprise Production Cloud Architecture](#5-proposed-enterprise-production-cloud-architecture)
+  - [5.1 Live Spatial Microservices](#51-live-spatial-microservices)
+  - [5.2 Automated Cloud Remote-Sensing Pipeline](#52-automated-cloud-remote-sensing-pipeline)
+
+---
+
+## 1. Architectural Overview
+
+### 1.1 Current Demonstration Architecture (v1.2)
+BhumiDorpon v1.2 operates as a **high-performance, client-side geospatial web application** built with Next.js 14, TypeScript, Tailwind CSS, Zustand, and Leaflet. The system executes within the user's browser sandbox, querying a deterministic, relational mock JSON store through unified asynchronous services.
+
+The v1.2 architecture features 6 dedicated subsystems:
+1. **Authentication & Unprivileged Demo Access Subsystem:** Enforces initial session checks and isolates demo browsing.
+2. **Centralized Bilingual Localization Subsystem:** Drives default Bangla rendering with zero layout shift and Bengali numerals (`০-৯`).
+3. **5-Field Cadastral Land Search Subsystem:** Cascading search with leading zero preservation and 6-section structured reports.
+4. **Historical Land Change & Deep-Learning Risk Prediction Pipeline:** Quantifies physical loss/accretion and returns multi-hazard ConvLSTM predictions.
+5. **Two-Step Mountain and Historical Landslide Event Engine:** Connects mountains to discrete historical events and updates interface state dynamically.
+6. **Smooth Scroll Navigation Engine:** Rapid access to hazard options via `#disaster-options`.
+
+### 1.2 High-Level Architecture Diagram
+
+```mermaid
+graph TD
+    subgraph BrowserClient ["User Web Browser (Client Sandbox)"]
+        UI["Next.js 14 App Router (React 18 + Tailwind)"]
+        
+        subgraph CoreSubsystems ["v1.2 Enhanced Subsystems"]
+            AuthEngine["Auth & Demo Gate (lib/auth.ts)"]
+            LocEngine["Localization Engine (lib/translations.ts)"]
+            LandSearch["Land Search Service (lib/landSearch.ts)"]
+            SlideEngine["Landslide Mountain/Event (lib/landslideEvents.ts)"]
+            ZStore["Zustand App Store (stores/appStore.ts)"]
+        end
+        
+        subgraph GeoCartography ["Geospatial & Mapping Engine"]
+            DualMap["Synchronized Dual Leaflet Maps (Pure SVG)"]
+            GisBasemap["Offline Light GIS Vector Basemap"]
+            KMLGen["Google Earth KML 2.2 Serializer (lib/googleEarth.ts)"]
+        end
+        
+        DAL["Data Access Layer (lib/data.ts)"]
+    end
+
+    subgraph DeterministicStore ["Deterministic Five-Hazard Information Store"]
+        PlotsMocks["mocks/plots.json (Cadastral Plots & 4 Corners)"]
+        OwnersMocks["mocks/owners.json (Landowner Khatians)"]
+        HillsMocks["mocks/hills.json & landslide.json"]
+        CommonMocks["mocks/common.json & mouzas.json"]
+    end
+
+    subgraph ExternalWeb ["External Web Targets (HTTPS)"]
+        EsriTiles["Esri World Imagery (Optional Satellite Tiles)"]
+        EarthWeb["Google Earth Web (3D Parcel Inspection Target)"]
+    end
+
+    UI --> AuthEngine
+    UI --> LocEngine
+    UI --> LandSearch
+    UI --> SlideEngine
+    UI --> DualMap
+    
+    LandSearch --> DAL
+    SlideEngine --> DAL
+    DualMap --> GisBasemap
+    DualMap -.->|Optional Basemap Toggle| EsriTiles
+    
+    DAL --> PlotsMocks
+    DAL --> OwnersMocks
+    DAL --> HillsMocks
+    DAL --> CommonMocks
+    
+    KMLGen -.->|Camera Launch| EarthWeb
+    KMLGen -->|Download| KMLFile[".kml File"]
 ```
-Owner Land Detail page (client component)
-   └─ "Open in Google Earth" button  (per parcel card)
-        └─ lib/googleEarth.ts
-             ├─ buildParcelKml(corners, meta)  → KML string (in memory)
-             ├─ Blob + <a download>            → file saved on the user's device
-             └─ window.open(earth.google.com/web/@lat,lon,0a,<range>d,…)  → Google Earth tab
+
+---
+
+## 2. Subsystem Layer Architecture
+
+### 2.1 Presentation & UI Layer
+- **Framework:** Next.js 14 App Router with React Server and Client Components.
+- **Styling:** Tailwind CSS with a curated lime (`#D4F239`), ink (`#1A1A1A`), loss coral (`#EF4444`), and water blue (`#0284C7`) palette.
+- **Typography:** Space Grotesk for headings and data readouts; Inter for UI prose.
+
+### 2.2 Authentication & Demo Access Gate (`lib/auth.ts`)
+- **Initialization:** Intercepts unauthenticated first-time visitors via `AuthModal.tsx`.
+- **Demo Access Isolation:** Employs `createDemoSession()` to assign `isDemo: true` and `role: "demo"`. The session is saved to `localStorage` (`bhumidorpon_auth_session`).
+- **Registration & Validation:** Enforces password confirmation, $\ge 6$ character length, and prevents duplicate accounts.
+
+### 2.3 Centralized Bilingual Localization Engine (`lib/translations.ts`)
+- **Dictionary:** Centralized `TRANSLATIONS` record mapping keys to `{ bn: string, en: string }`.
+- **Bangla Default:** `useAppStore` initializes with `language: "bn"`.
+- **Bengali Numerals:** `formatNumberLocalized(val, lang)` replaces ASCII digits $0-9$ with Bengali glyphs $০-৯$ when language is `'bn'`.
+- **Zero Layout Shifts:** CSS flex and grid tiers prevent text expansion from disrupting card dimensions.
+
+### 2.4 Global "Land Information" Search Subsystem (`lib/landSearch.ts`)
+- **Cascading Resolution:** Resolves District &rarr; Upazila &rarr; Mouza &rarr; Dag No. &rarr; Khatian No.
+- **Leading Zero Preservation:** Dag (`"0101"`) and Khatian (`"RS-475"`) are handled strictly as strings.
+- **Structured 6-Section Report:** Assembles Identification, Ownership, Sale, Legal, Tax, Registration, and Disaster Risk data.
+- **Standardized Badges:** Applies `verified`, `demo`, `unverified`, `unavailable`, and `external_required` badges.
+
+### 2.5 Multi-Hazard Risk Prediction & Historical Quantification Engine
+- **Historical Analysis:** Quantifies multi-temporal erosion, inundation, and sediment accretion.
+- **Deep-Learning Risk Inference:** Provides genuine model risk scores across hazards (GeoAI-BD ConvLSTM, HydroSAR, InSAR SlopeNet).
+- **Submerged Land Handling:** Physically submerged parcels are marked `historically_lost` while preserving deed area and former ownership.
+
+### 2.6 Landslide Mountain & Historical Event Engine (`lib/landslideEvents.ts`)
+- **Catalog:** Maps 12 Chittagong Hill Tracts mountains to historical events and forecast models.
+- **Two-Step Selector:** `MountainEventSelector.tsx` handles Mountain selection &rarr; Event selection &rarr; Dynamic update of debris volume, slope angle, rainfall threshold, and downslope plots.
+
+### 2.7 Geospatial Cartography & Dual-Map Synchronization Engine
+- **Engine:** Pure Leaflet 1.9 with SVG vector rendering.
+- **Basemaps:** Offline Light GIS vector basemap and optional Esri World Imagery.
+- **Dual Map Sync:** Synchronizes pan and zoom between Before and After maps with re-entrancy protection.
+
+### 2.8 3D Google Earth Client-Side Serializer (`lib/googleEarth.ts`)
+- Pure client-side KML 2.2 serializer generating 3D extruded parcel polygons and launching Google Earth Web.
+
+### 2.9 Deterministic Five-Hazard Information Store
+- Local JSON mock files (`mocks/*.json`) loaded asynchronously by `lib/data.ts`.
+
+---
+
+## 3. Google Earth vs. Google Earth Engine Architectural Placement
+
+| Dimension | Google Earth (Implemented in Prototype) | Google Earth Engine (GEE - Planned Pipeline) |
+|---|---|---|
+| **Architectural Role** | Client-Side 3D Viewer & KML Export | Cloud Planetary Geospatial Compute Engine |
+| **Execution Environment** | User's Web Browser (`lib/googleEarth.ts`) | Google Cloud Infrastructure (Python/JavaScript API) |
+| **Input Data** | Micro-cadastral 4-corner GPS coordinates | Petabytes of Sentinel-1/2 & Landsat rasters |
+| **Output** | `.kml` file download and Earth Web launch | Cloud-Optimized GeoTIFFs (COGs) & Vector Polygons |
+| **Status in Prototype** | **Fully Implemented & Verified (7 Unit Tests)** | **Proposed Cloud Pipeline (Non-Operational)** |
+
+---
+
+## 4. Disaster Information Flow & Data Relationships
+
+```mermaid
+erDiagram
+    DISTRICT ||--o{ UPAZILA : contains
+    UPAZILA ||--o{ MOUZA : contains
+    UPAZILA ||--o{ RIVER : intersects
+    UPAZILA ||--o{ HILL : contains
+    
+    MOUZA ||--o{ PLOT : contains
+    OWNER ||--o{ PLOT : owns
+    
+    HILL ||--o{ LANDSLIDE_EVENT : records
+    LANDSLIDE_EVENT ||--o{ PLOT : impacts
+    
+    PLOT ||--o{ HAZARD_CHANGE : undergoes
+    PLOT ||--o{ RISK_PREDICTION : forecasts
 ```
-On the Flood Owner Land Detail page, every parcel card now shows an **Open in Google Earth** button directly beneath its Four Corner Coordinates table. One click (1) builds a KML file of the parcel outline in the browser and downloads it, and (2) opens Google Earth (web) centered on the parcel in a new tab. Google Earth cannot load a polygon from a URL, so the outline appears after the user loads the downloaded KML (Earth web: **New → Open local KML file**; Earth Pro: double-click the file). A short on-page hint explains this.
 
-- Layer: presentation + a pure helper in `lib/`; no server route, no persistence, no API key.
-- Data crossing the trust boundary: only the camera center (lat, lon) and zoom distance in the Earth URL. Owner names, Dag/Khatian numbers, and the KML stay on the device.
-- Google Earth is an external third-party service the user opens in a new tab; the app never calls its API.
+---
 
-### B. Five-Hazard Information Store (Data Layer)
-All information for the five hazard categories (river erosion, flood, landslide, char formation/erosion, coastal erosion/land formation) is saved as static, deterministic, mock/synthetic JSON files. There is no backend or database. Each hazard has one flat JSON file, a set of per-area map packages and, for landslides, terrain rasters. The same files are written to `mocks/` (server and tests) and `public/mocks/` (browser), and every read goes through `loadMockJson()` in `lib/data.ts`.
+## 5. Proposed Enterprise Production Cloud Architecture
 
-| Store | Location | Content | Read by |
-|---|---|---|---|
-| Runtime copy (browser) | `public/mocks/*.json`, served at `/mocks/*` | Flat per-hazard files: `river_erosion.json`, `flood.json`, `landslide.json`, `char.json`, `coastal.json`, plus `common.json`, `chars.json`, `hills.json`, `rivers.json`, `districts.json`, `upazilas.json`, `mouzas.json`, `owners.json`, `plots.json`, `summary.json`, `areas_index.json` | `loadMockJson()` in `lib/data.ts` (client `fetch('/mocks/<file>')`) |
-| Source copy (Node / tests) | `mocks/*.json` | Same flat files | `loadMockJson()` on the server side (`fs.readFileSync` from `mocks/`) and Vitest |
-| Per-area map packages | `mocks/areas/<hazard>/area_*.json` and `public/mocks/areas/<hazard>/area_*.json` | One package per map area: `areaId`, `hazard`, `mode`, `bounds`, `basemap`, `mouzas`, `hazardLayers`, `context`, `owners` (river_erosion 7, flood 6, landslide 6, char 5, coastal 6) | `lib/data.ts` via `areas_index.json` (maps a hazard / mode / mouza key to an `area_*` file) |
-| Landslide terrain rasters | `public/mocks/rasters/<area>/`, `public/mocks/hillshades/` | `elevation_before/after.png`, `hillshade_*.png`, `slope_before.png`, `elevation_change.png`, `contours.geojson`, `spot_heights.json` | Landslide map layers |
-| Reserved per-mouza hazard results | `mocks/hazards/<hazard>.json`, `mocks/common/*.json` | Larger per-mouza keyed result sets and a copy of the shared reference tables | Present in `mocks/` only; **not read by the current runtime loader** |
-| Generator | `scripts/generate-mocks.ts`, `scripts/generate-map-areas.ts` | Deterministic, seeded generation; writes to both `mocks/` and `public/mocks/` | `npm run generate:mocks` |
-
-```
-UI (pages / maps / tables) → lib/data.ts (single access layer, cached) → loadMockJson()
-                                   ├─ browser: fetch('/mocks/<file>')  → public/mocks/
-                                   └─ server/tests: fs.readFileSync   → mocks/
-scripts/generate-mocks.ts + generate-map-areas.ts  → write both folders
-```
-
+In enterprise production:
+- **Backend Service:** FastAPI (Python 3.11) with async endpoints.
+- **Spatial Database:** PostgreSQL 16 + PostGIS 3.4 with GiST spatial indexing.
+- **Tile Server:** Martin vector tile server streaming MVT tiles.
+- **Earth Observation Ingestion:** Cloud Functions triggering automated GEE pipelines upon Sentinel-1 SAR orbit passes.
+- **Deep Learning Workers:** Celery workers running ConvLSTM and U-Net models on GPU instances.

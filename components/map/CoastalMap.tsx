@@ -4,6 +4,7 @@ import React, { useMemo, useCallback } from "react";
 import { CoastalGeometry, OwnerRecord, MapArea } from "@/lib/types";
 import { GisMapCompare, PlotGeometryItem } from "./GisMapCompare";
 import { useLayerStore } from "./chrome/layerStore";
+import { useAppStore } from "@/stores/appStore";
 
 interface CoastalMapProps {
   geometry?: CoastalGeometry | null;
@@ -27,6 +28,7 @@ export function CoastalMap({
   className,
 }: CoastalMapProps) {
   const layerStore = useLayerStore();
+  const { language } = useAppStore();
 
   // Convert owner records into plot geometry items
   const plotGeometryItems = useMemo<PlotGeometryItem[]>(() => {
@@ -219,11 +221,12 @@ export function CoastalMap({
         ? [(area.bounds[1] + area.bounds[3]) / 2, (area.bounds[0] + area.bounds[2]) / 2]
         : [22.18, 90.69]);
 
+      const noMouzaLabel = language === "bn" ? "মৌজা বিহীন" : "No mouza";
       const noMouzaIcon = L.divIcon({
         className: "gis-no-mouza-badge",
         html: `
           <div class="px-2 py-0.5 rounded border border-dashed border-slate-500 bg-white/95 text-[10px] font-bold text-slate-800 shadow-2xs whitespace-nowrap">
-            No mouza
+            ${noMouzaLabel}
           </div>
         `,
         iconSize: [68, 20],
@@ -249,12 +252,20 @@ export function CoastalMap({
         }).addTo(map);
       }
     },
-    [geometry, isForecast]
+    [geometry, isForecast, language]
   );
 
   return (
     <GisMapCompare
-      title={isForecast ? "Predictive Coastal Shoreline Retreat" : "Coastal Shoreline & Accretion Dynamics"}
+      title={
+        isForecast
+          ? language === "bn"
+            ? "উপকূলীয় তীররেখা পরিবর্তনের পূর্বাভাস"
+            : "Predictive Coastal Shoreline Retreat"
+          : language === "bn"
+            ? "উপকূলীয় তীররেখা ও পলিজ বৃদ্ধি জরিপ"
+            : "Coastal Shoreline & Accretion Dynamics"
+      }
       hazard="coastal"
       mode={isForecast ? "forecast" : "recorded"}
       selectedMouzaId={selectedMouzaId}
@@ -264,8 +275,16 @@ export function CoastalMap({
       plots={plotGeometryItems}
       setupBeforeHazard={setupBeforeHazard}
       setupAfterHazard={setupAfterHazard}
-      beforeLabel="Baseline Shoreline Survey (Before)"
-      afterLabel={isForecast ? "Forecast Shoreline Retreat" : "Current Shoreline & Accretion (After)"}
+      beforeLabel={language === "bn" ? "ভিত্তিরেখা উপকূল জরিপ (পূর্বের)" : "Baseline Shoreline Survey (Before)"}
+      afterLabel={
+        isForecast
+          ? language === "bn"
+            ? "উপকূলীয় পরিবর্তনের পূর্বাভাস"
+            : "Forecast Shoreline Retreat"
+          : language === "bn"
+            ? "বর্তমান তীররেখা ও বৃদ্ধি (পরের)"
+            : "Current Shoreline & Accretion (After)"
+      }
       className={className}
     />
   );

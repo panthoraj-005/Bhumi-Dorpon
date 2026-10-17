@@ -2,6 +2,8 @@
 
 import React from "react";
 import { Waves, AlertTriangle, Clock, Percent, Droplets } from "lucide-react";
+import { useAppStore } from "@/stores/appStore";
+import { formatNumberLocalized } from "@/lib/translations";
 import { ContextCard, FloodContextCard as FloodContextCardType } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
@@ -22,6 +24,8 @@ export function FloodContextCard({
   percentFlooded,
   className,
 }: FloodContextCardProps) {
+  const { language } = useAppStore();
+  const isBn = language === "bn";
   const fc = context && "peakWaterLevelDiffM" in context ? (context as FloodContextCardType) : null;
 
   const peakDiff =
@@ -56,9 +60,11 @@ export function FloodContextCard({
           </div>
           <div>
             <h4 className="text-xs font-bold text-ink uppercase tracking-wider">
-              Flood Hydrology Status
+              {isBn ? "বন্যা ও হাইড্রোলজি অবস্থা" : "Flood Hydrology Status"}
             </h4>
-            <p className="text-[11px] text-muted">Gauge reading & submersion duration</p>
+            <p className="text-[11px] text-muted">
+              {isBn ? "গেজ রিডিং ও প্লাবনের স্থায়িত্বকাল" : "Gauge reading & submersion duration"}
+            </p>
           </div>
         </div>
         <span
@@ -69,7 +75,9 @@ export function FloodContextCard({
               : "bg-blue-50 text-blue-700 border-blue-200"
           )}
         >
-          {isAboveDanger ? "Danger Exceeded" : "Within Danger Margin"}
+          {isAboveDanger
+            ? isBn ? "বিপদসীমার উপরে" : "Danger Exceeded"
+            : isBn ? "বিপদসীমার নিচে" : "Within Danger Margin"}
         </span>
       </div>
 
@@ -78,36 +86,36 @@ export function FloodContextCard({
         <div className="p-2.5 rounded-lg bg-[#F8FAFC] border border-border/50">
           <div className="flex items-center gap-1 text-[10px] text-muted mb-1 font-medium">
             <Waves className="w-3 h-3 text-water" />
-            <span>Peak vs Danger</span>
+            <span>{isBn ? "বিপদসীমার সাথে তুলনা" : "Peak vs Danger"}</span>
           </div>
           <div className="text-base font-bold text-loss tabular-nums">
-            {peakDiff > 0 ? `+${peakDiff.toFixed(2)}` : peakDiff.toFixed(2)} m
+            {peakDiff > 0 ? `+${formatNumberLocalized(peakDiff.toFixed(2), language)}` : formatNumberLocalized(peakDiff.toFixed(2), language)} {isBn ? "মি." : "m"}
           </div>
-          <div className="text-[9px] text-muted">Rel. to threshold</div>
+          <div className="text-[9px] text-muted">{isBn ? "বিপদসীমার সাপেক্ষে" : "Rel. to threshold"}</div>
         </div>
 
         {/* Metric 2: Submersion Duration */}
         <div className="p-2.5 rounded-lg bg-[#F8FAFC] border border-border/50">
           <div className="flex items-center gap-1 text-[10px] text-muted mb-1 font-medium">
             <Clock className="w-3 h-3 text-muted" />
-            <span>Duration</span>
+            <span>{isBn ? "প্লাবনের মেয়াদ" : "Duration"}</span>
           </div>
           <div className="text-base font-bold text-ink tabular-nums">
-            {duration} Days
+            {formatNumberLocalized(duration, language)} {isBn ? "দিন" : "Days"}
           </div>
-          <div className="text-[9px] text-muted">Continuous flood</div>
+          <div className="text-[9px] text-muted">{isBn ? "টানা প্লাবন" : "Continuous flood"}</div>
         </div>
 
         {/* Metric 3: Mouza Flooded Percent */}
         <div className="p-2.5 rounded-lg bg-[#F8FAFC] border border-border/50">
           <div className="flex items-center gap-1 text-[10px] text-muted mb-1 font-medium">
             <Percent className="w-3 h-3 text-water" />
-            <span>Mouza Inundated</span>
+            <span>{isBn ? "মৌজা প্লাবিত" : "Mouza Inundated"}</span>
           </div>
           <div className="text-base font-bold text-water tabular-nums">
-            {pct.toFixed(1)}%
+            {formatNumberLocalized(pct.toFixed(1), language)}%
           </div>
-          <div className="text-[9px] text-muted">Of total territory</div>
+          <div className="text-[9px] text-muted">{isBn ? "মোট মৌজার আয়তনের" : "Of total territory"}</div>
         </div>
       </div>
     </div>
