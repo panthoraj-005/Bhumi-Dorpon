@@ -50,10 +50,10 @@ export function formatArea(
     maximumFractionDigits: maxDigits,
   }).format(converted);
 
-  const displayNum =
-    options.useBnDigits && lang === "bn"
-      ? formatNumberLocalized(formattedNum, "bn")
-      : formattedNum;
+  const useBn = (options.useBnDigits ?? (lang === "bn")) && lang === "bn";
+  const displayNum = useBn
+    ? formatNumberLocalized(formattedNum, "bn")
+    : formattedNum;
 
   if (options.includeUnit === false) {
     return displayNum;
@@ -81,30 +81,22 @@ export function formatCurrencyBDT(
   options?: { compact?: boolean; language?: Language; useBnDigits?: boolean }
 ): string {
   const lang = options?.language || "en";
+  const useBn = (options?.useBnDigits ?? (lang === "bn")) && lang === "bn";
 
   if (options?.compact) {
     if (amount >= 10000000) {
       const val = (amount / 10000000).toFixed(2);
-      const displayVal =
-        options?.useBnDigits && lang === "bn"
-          ? formatNumberLocalized(val, "bn")
-          : val;
+      const displayVal = useBn ? formatNumberLocalized(val, "bn") : val;
       return lang === "bn" ? `৳${displayVal} কোটি` : `৳${val} Cr`;
     }
     if (amount >= 100000) {
       const val = (amount / 100000).toFixed(1);
-      const displayVal =
-        options?.useBnDigits && lang === "bn"
-          ? formatNumberLocalized(val, "bn")
-          : val;
+      const displayVal = useBn ? formatNumberLocalized(val, "bn") : val;
       return lang === "bn" ? `৳${displayVal} লাখ` : `৳${val} Lakh`;
     }
     if (amount >= 1000) {
       const val = (amount / 1000).toFixed(1);
-      const displayVal =
-        options?.useBnDigits && lang === "bn"
-          ? formatNumberLocalized(val, "bn")
-          : val;
+      const displayVal = useBn ? formatNumberLocalized(val, "bn") : val;
       return lang === "bn" ? `৳${displayVal} হাজার` : `৳${val}k`;
     }
   }
@@ -113,10 +105,9 @@ export function formatCurrencyBDT(
     maximumFractionDigits: 0,
   }).format(amount);
 
-  const displayFormatted =
-    options?.useBnDigits && lang === "bn"
-      ? formatNumberLocalized(formatted, "bn")
-      : formatted;
+  const displayFormatted = useBn
+    ? formatNumberLocalized(formatted, "bn")
+    : formatted;
 
   return `৳${displayFormatted}`;
 }

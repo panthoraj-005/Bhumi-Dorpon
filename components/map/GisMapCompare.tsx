@@ -32,7 +32,8 @@ import { WaterStatusCard } from "./panels/WaterStatusCard";
 import { TerrainContextCard } from "./panels/TerrainContextCard";
 import { useLayerStore } from "./chrome/layerStore";
 import { useAppStore } from "@/stores/appStore";
-import { getLocalizedHazardName } from "@/lib/translations";
+import { getLocalizedHazardName, formatNumberLocalized } from "@/lib/translations";
+import { formatArea } from "@/lib/units";
 
 export interface PlotGeometryItem {
   dagNo: string;
@@ -447,11 +448,15 @@ export function GisMapCompare({
       setCurrentZoom(map1.getZoom());
 
       // Build Light GIS Basemaps on both maps
+      const formatAreaText = (d: number) => formatArea(d, unit, language);
+
       const b1 = createBasemapLayers(map1, L, mapArea.basemap, mapArea.mouzas, {
         mapIdPrefix: mapIdBefore,
         selectedMouzaId,
         onSelectMouza,
         onHoverMouza: (mId) => layerStore.setHoveredMouzaId(mId),
+        formatAreaText,
+        language,
       });
 
       const b2 = createBasemapLayers(map2, L, mapArea.basemap, mapArea.mouzas, {
@@ -459,6 +464,8 @@ export function GisMapCompare({
         selectedMouzaId,
         onSelectMouza,
         onHoverMouza: (mId) => layerStore.setHoveredMouzaId(mId),
+        formatAreaText,
+        language,
       });
 
       basemap1CtrlRef.current = b1;
@@ -475,7 +482,9 @@ export function GisMapCompare({
         hazard,
         mode,
         unit,
+        formatAreaText,
         onSelectMouza,
+        language,
       });
 
       const l2 = createMouzaLabelsLayer(map2, L, mapArea.mouzas, {
@@ -483,7 +492,9 @@ export function GisMapCompare({
         hazard,
         mode,
         unit,
+        formatAreaText,
         onSelectMouza,
+        language,
       });
 
       labels1CtrlRef.current = l1;
@@ -652,11 +663,13 @@ export function GisMapCompare({
         <div className="bg-amber-500/10 border border-amber-500/30 text-amber-900 rounded-xl px-3.5 py-2 flex items-center justify-between text-xs font-medium animate-in fade-in">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-amber-500" />
-            <span className="font-bold">{DEMO_GEOMETRY_DISCLAIMER}</span>
-            <span className="text-amber-800/80 hidden md:inline">— Plot overlays and boundaries represent synthetic demonstration geometries.</span>
+            <span className="font-bold">{language === "bn" ? "ডেমো জ্যামিতি — জরিপ-নির্ভুল নয়" : DEMO_GEOMETRY_DISCLAIMER}</span>
+            <span className="text-amber-800/80 hidden md:inline">
+              {language === "bn" ? "— প্রদর্শিত দাগ ও সীমানা কাল্পনিক ডেমো জ্যামিতি।" : "— Plot overlays and boundaries represent synthetic demonstration geometries."}
+            </span>
           </div>
           <span className="text-[11px] text-amber-800 font-semibold px-2 py-0.5 bg-amber-500/15 rounded-md">
-            {BASEMAP_PROVIDERS[basemapType].name} Imagery
+            {basemapType === "satellite" ? (language === "bn" ? "উপগ্রহ চিত্র" : "Satellite Imagery") : (language === "bn" ? "সড়ক চিত্র" : "Street Imagery")}
           </span>
         </div>
       )}
@@ -673,7 +686,7 @@ export function GisMapCompare({
             onClick={() => handleSelectBasemap("light-gis")}
             className="px-2.5 py-1 bg-ink text-surface rounded-lg text-xs font-bold hover:bg-ink/90 transition-colors"
           >
-            Switch to Light GIS
+            {language === "bn" ? "জিআইএস মানচিত্রে ফিরুন" : "Switch to Light GIS"}
           </button>
         </div>
       )}
@@ -727,7 +740,9 @@ export function GisMapCompare({
                   <Minus className="w-3.5 h-3.5" />
                 </button>
               </div>
-              <span className="text-[10px] font-mono text-muted tabular-nums hidden sm:inline">z{currentZoom}</span>
+              <span className="text-[10px] font-mono text-muted tabular-nums hidden sm:inline">
+                {language === "bn" ? `জুম ${formatNumberLocalized(currentZoom, language)}` : `z${currentZoom}`}
+              </span>
             </div>
           </div>
 
@@ -816,7 +831,9 @@ export function GisMapCompare({
                   <Minus className="w-3.5 h-3.5" />
                 </button>
               </div>
-              <span className="text-[10px] font-mono text-muted tabular-nums hidden sm:inline">z{currentZoom}</span>
+              <span className="text-[10px] font-mono text-muted tabular-nums hidden sm:inline">
+                {language === "bn" ? `জুম ${formatNumberLocalized(currentZoom, language)}` : `z${currentZoom}`}
+              </span>
             </div>
           </div>
 
@@ -848,7 +865,7 @@ export function GisMapCompare({
         <div className="shrink-0 flex items-center gap-2 font-mono text-[10px]">
           <span>{language === "bn" ? "সিঙ্ক্রোনাইজড ডুয়াল লিফলেট" : "Synchronized dual Leaflet"}</span>
           <span>•</span>
-          <span>z{currentZoom}</span>
+          <span>{language === "bn" ? `জুম ${formatNumberLocalized(currentZoom, language)}` : `z${currentZoom}`}</span>
         </div>
       </div>
 

@@ -21,7 +21,7 @@ export function MapLegend({ hazard, isForecast = false }: MapLegendProps) {
         onClick={() => setCollapsed(!collapsed)}
         className="flex items-center justify-between font-bold text-ink cursor-pointer text-xs pb-1 border-b border-border/50"
       >
-        <span>{isBn ? "নির্দেশিকা (Legend)" : "Legend"}</span>
+        <span>{isBn ? "মানচিত্র নির্দেশিকা" : "Legend"}</span>
         {collapsed ? <ChevronDown className="w-3 h-3 text-muted" /> : <ChevronUp className="w-3 h-3 text-muted" />}
       </div>
 

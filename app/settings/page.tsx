@@ -94,7 +94,7 @@ export default function SettingsPage() {
                   id="account-section-heading"
                   className="text-lg sm:text-xl font-display font-bold text-ink"
                 >
-                  {t("account", language)} ({t("accountProfile", language)})
+                  {language === "bn" ? "অ্যাকাউন্ট ও প্রোফাইল" : "Account & Profile"}
                 </h3>
                 <p className="text-xs text-muted">
                   {language === "bn"

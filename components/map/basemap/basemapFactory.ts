@@ -1,5 +1,6 @@
 import { Basemap, MouzaSummary } from "@/lib/types";
 import { GIS_COLORS } from "./constants";
+import { Language, formatNumberLocalized, getLocalizedMouzaName } from "@/lib/translations";
 
 export interface BasemapOptions {
   mapIdPrefix: string;
@@ -7,6 +8,7 @@ export interface BasemapOptions {
   onSelectMouza?: (mouzaId: string) => void;
   onHoverMouza?: (mouzaId: string | null) => void;
   formatAreaText?: (decimal: number) => string;
+  language?: Language;
 }
 
 export interface BasemapController {
@@ -75,21 +77,49 @@ export function createBasemapLayers(
     });
 
     // Accessible Tooltip
-    const totalAreaStr = formatAreaText ? formatAreaText(m.areaDecimal) : `${m.areaDecimal} dec`;
-    const lossStr = m.lossDecimal ? (formatAreaText ? formatAreaText(m.lossDecimal) : `${m.lossDecimal} dec`) : "0 dec";
-    const gainStr = m.gainDecimal ? (formatAreaText ? formatAreaText(m.gainDecimal) : `${m.gainDecimal} dec`) : "0 dec";
+    const isBn = options.language === "bn";
+    const totalAreaStr = formatAreaText
+      ? formatAreaText(m.areaDecimal)
+      : isBn
+      ? `${formatNumberLocalized(m.areaDecimal, "bn")} শতাংশ`
+      : `${m.areaDecimal} dec`;
+    const lossStr = m.lossDecimal
+      ? formatAreaText
+        ? formatAreaText(m.lossDecimal)
+        : isBn
+        ? `${formatNumberLocalized(m.lossDecimal, "bn")} শতাংশ`
+        : `${m.lossDecimal} dec`
+      : isBn
+      ? "০ শতাংশ"
+      : "0 dec";
+    const gainStr = m.gainDecimal
+      ? formatAreaText
+        ? formatAreaText(m.gainDecimal)
+        : isBn
+        ? `${formatNumberLocalized(m.gainDecimal, "bn")} শতাংশ`
+        : `${m.gainDecimal} dec`
+      : isBn
+      ? "০ শতাংশ"
+      : "0 dec";
+
+    const mouzaTitle = isBn ? getLocalizedMouzaName(m.id, m.name, "bn") : m.name;
+    const jlText = isBn ? formatNumberLocalized(m.jlNo, "bn") : m.jlNo;
+    const pctText = isBn ? formatNumberLocalized(m.percent || 0, "bn") : `${m.percent || 0}`;
+    const ownersText = isBn
+      ? `${formatNumberLocalized(m.affectedOwnersCount, "bn")} জন মালিক`
+      : `${m.affectedOwnersCount} owners`;
 
     const tooltipHtml = `
       <div class="px-2 py-1.5 text-xs font-sans text-ink leading-tight">
         <div class="font-bold flex items-center justify-between gap-3 text-[13px]">
-          <span>${m.name}</span>
-          <span class="text-secondary text-[11px] font-normal">${m.jlNo}</span>
+          <span>${mouzaTitle}</span>
+          <span class="text-secondary text-[11px] font-normal">${jlText}</span>
         </div>
         <div class="mt-1 text-[11px] text-muted space-y-0.5">
-          <div>Area: <span class="font-semibold text-ink">${totalAreaStr}</span> (${m.percent || 0}%)</div>
-          ${m.lossDecimal ? `<div>Loss: <span class="font-bold text-loss">-${lossStr}</span></div>` : ""}
-          ${m.gainDecimal ? `<div>Gain: <span class="font-bold text-gain">+${gainStr}</span></div>` : ""}
-          ${m.affectedOwnersCount ? `<div>Affected: <span class="font-semibold text-ink">${m.affectedOwnersCount} owners</span></div>` : ""}
+          <div>${isBn ? "জমির পরিমাণ:" : "Area:"} <span class="font-semibold text-ink">${totalAreaStr}</span> (${pctText}%)</div>
+          ${m.lossDecimal ? `<div>${isBn ? "ভাঙন/ক্ষতি:" : "Loss:"} <span class="font-bold text-loss">-${lossStr}</span></div>` : ""}
+          ${m.gainDecimal ? `<div>${isBn ? "পয়স্তি/বৃদ্ধি:" : "Gain:"} <span class="font-bold text-gain">+${gainStr}</span></div>` : ""}
+          ${m.affectedOwnersCount ? `<div>${isBn ? "ক্ষতিগ্রস্ত:" : "Affected:"} <span class="font-semibold text-ink">${ownersText}</span></div>` : ""}
         </div>
       </div>
     `;

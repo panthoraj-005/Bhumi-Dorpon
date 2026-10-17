@@ -49,7 +49,7 @@ export function AppSidebar() {
         <Link
           href="/"
           className="w-11 h-11 rounded-2xl bg-accent flex items-center justify-center text-accent-ink shadow-sm hover:scale-105 transition-transform"
-          title="BhumiDorpon Land Records"
+          title={language === "bn" ? "ভূমিদর্পণ ভূমির রেকর্ড" : "BhumiDorpon Land Records"}
         >
           <div className="flex flex-col items-center font-display font-black text-xs leading-none tracking-tighter">
             <span>BD</span>
@@ -104,7 +104,7 @@ export function AppSidebar() {
                 ? "bg-accent text-accent-ink font-semibold"
                 : "text-muted hover:text-ink hover:bg-surface-alt"
             )}
-            title="Component Library Showcase"
+            title={language === "bn" ? "কম্পোনেন্ট লাইব্রেরি" : "Component Library Showcase"}
           >
             <Component className="w-5 h-5" />
           </Link>
@@ -123,8 +123,8 @@ export function AppSidebar() {
                 ? "bg-accent-soft text-accent-deep font-semibold"
                 : "text-muted hover:text-ink hover:bg-surface-alt"
             )}
-            title="Settings"
-            aria-label="Settings"
+            title={t("navSettings", language)}
+            aria-label={t("navSettings", language)}
           >
             <Settings className="w-5 h-5" />
           </Link>

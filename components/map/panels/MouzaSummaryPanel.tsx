@@ -195,10 +195,10 @@ export function MouzaSummaryPanel({
             <tr>
               <td className="py-2.5 px-3">{isBn ? "মোট এলাকা প্রভাব" : "Reach Total"}</td>
               <td className="py-2.5 px-2 text-right tabular-nums text-loss">
-                {totals.loss > 0 ? `-${formatArea(totals.loss, unit, language)}` : "0"}
+                {totals.loss > 0 ? `-${formatArea(totals.loss, unit, language)}` : (isBn ? "০" : "0")}
               </td>
               <td className="py-2.5 px-2 text-right tabular-nums text-gain">
-                {totals.gain > 0 ? `+${formatArea(totals.gain, unit, language)}` : "0"}
+                {totals.gain > 0 ? `+${formatArea(totals.gain, unit, language)}` : (isBn ? "০" : "0")}
               </td>
               <td className="py-2.5 px-2 text-right tabular-nums text-muted">
                 {totals.area > 0 ? `${formatNumberLocalized(((totals.loss / totals.area) * 100).toFixed(1), language)}%` : "—"}

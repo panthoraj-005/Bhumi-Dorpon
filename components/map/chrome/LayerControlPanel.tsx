@@ -5,6 +5,7 @@ import { Layers, Sliders, ChevronDown, ChevronUp, Eye, EyeOff, Sparkles, Check }
 import { cn } from "@/lib/utils";
 import { useLayerStore, LayerPreset } from "./layerStore";
 import { useAppStore } from "@/stores/appStore";
+import { formatNumberLocalized } from "@/lib/translations";
 
 interface LayerControlPanelProps {
   hasTerrain?: boolean;
@@ -36,6 +37,12 @@ export function LayerControlPanel({ hasTerrain = false, hazardName = "Hazard", c
     },
   ];
 
+  const presetLabelsBn: Record<LayerPreset, string> = {
+    survey: "জরিপ",
+    analysis: "বিশ্লেষণ",
+    clean: "সাধারণ",
+  };
+
   return (
     <div className={cn("relative z-[1010] select-none", className)}>
       {/* Trigger Button */}
@@ -51,7 +58,9 @@ export function LayerControlPanel({ hasTerrain = false, hazardName = "Hazard", c
       >
         <Layers className="w-3.5 h-3.5 text-secondary" />
         <span>{isBn ? "লেয়ার" : "Layers"}</span>
-        <span className="text-[10px] font-semibold text-muted uppercase">({store.preset})</span>
+        <span className="text-[10px] font-semibold text-muted">
+          ({isBn ? presetLabelsBn[store.preset] : store.preset})
+        </span>
         {isOpen ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
       </button>
 
@@ -106,7 +115,9 @@ export function LayerControlPanel({ hasTerrain = false, hazardName = "Hazard", c
                 <Sliders className="w-3 h-3 text-secondary" />
                 <span>{isBn ? "দুর্যোগ স্তরের অস্বচ্ছতা" : "Hazard Opacity"}</span>
               </span>
-              <span className="font-mono text-muted text-[10px]">{Math.round(store.hazardOpacity * 100)}%</span>
+              <span className="font-mono text-muted text-[10px]">
+                {formatNumberLocalized(Math.round(store.hazardOpacity * 100), language)}%
+              </span>
             </div>
             <input
               type="range"

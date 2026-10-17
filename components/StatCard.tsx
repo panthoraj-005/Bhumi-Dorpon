@@ -57,7 +57,9 @@ export function StatCard({
 
       <div className="flex items-baseline gap-2 my-1">
         <span className="text-2xl sm:text-3xl lg:text-[34px] font-semibold text-ink tracking-tight tabular-nums">
-          {value}
+          {typeof value === "number" || typeof value === "string"
+            ? formatNumberLocalized(value, language)
+            : value}
         </span>
         {unitLabel && (
           <span className="text-sm font-medium text-muted">{unitLabel}</span>
@@ -85,7 +87,11 @@ export function StatCard({
               <span>{formatNumberLocalized(Math.abs(changePercent).toFixed(1), language)}%</span>
             </span>
           )}
-          {subtext && <span className="text-muted truncate">{subtext}</span>}
+          {subtext && (
+            <span className="text-muted truncate">
+              {language === "bn" ? formatNumberLocalized(subtext, language) : subtext}
+            </span>
+          )}
         </div>
       )}
     </div>

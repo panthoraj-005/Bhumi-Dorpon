@@ -30,7 +30,7 @@ export default function AboutProjectPage() {
       <AppHeader
         title={
           language === "bn"
-            ? "প্রকল্প পরিচিতি (About Project)"
+            ? "প্রকল্প পরিচিতি"
             : "About Project"
         }
         subtitle={
@@ -51,13 +51,13 @@ export default function AboutProjectPage() {
             <ArrowLeft className="w-4 h-4 text-muted group-hover:text-ink group-hover:-translate-x-0.5 transition-transform" />
             <span>
               {language === "bn"
-                ? "সেটিংসে ফিরে যান (Back to Settings)"
+                ? "সেটিংসে ফিরে যান"
                 : "Back to Settings"}
             </span>
           </Link>
           <span className="text-xs text-muted font-medium">
             {language === "bn"
-              ? "সেটিংস / প্রকল্প পরিচিতি (Settings / About Project)"
+              ? "সেটিংস / প্রকল্প পরিচিতি"
               : "Settings / About Project"}
           </span>
         </div>

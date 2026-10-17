@@ -5,6 +5,7 @@ import { RiverErosionGeometry, OwnerRecord, MapArea } from "@/lib/types";
 import { GisMapCompare, PlotGeometryItem } from "./GisMapCompare";
 import { useLayerStore } from "./chrome/layerStore";
 import { useAppStore } from "@/stores/appStore";
+import { formatNumberLocalized } from "@/lib/translations";
 
 interface RiverErosionMapProps {
   geometry?: RiverErosionGeometry | null;
@@ -147,11 +148,15 @@ export function RiverErosionMap({
           const midLat = (t.start[1] + t.end[1]) / 2;
           const midLon = (t.start[0] + t.end[0]) / 2;
 
+          const distStr = language === "bn"
+            ? `${formatNumberLocalized(t.retreatDistanceM, language)} মি.`
+            : `${t.retreatDistanceM} m`;
+
           const labelIcon = L.divIcon({
             className: "gis-transect-badge",
             html: `
               <div class="bg-amber-600 text-white font-bold text-[10px] px-1.5 py-0.5 rounded shadow-xs border border-white whitespace-nowrap select-none">
-                ${t.retreatDistanceM} m
+                ${distStr}
               </div>
             `,
             iconSize: [42, 18],
@@ -193,7 +198,7 @@ export function RiverErosionMap({
         }
       }
     },
-    [geometry, isForecast]
+    [geometry, isForecast, language]
   );
 
   const beforeTitle = isForecast
@@ -201,14 +206,14 @@ export function RiverErosionMap({
       ? "বর্তমান জরিপকৃত তীররেখা (ভিত্তিরেখা)"
       : "Current Surveyed Bankline (Baseline)"
     : language === "bn"
-      ? `${beforeYear.toLocaleString("bn-BD")} জরিপকৃত তীররেখা`
+      ? `${formatNumberLocalized(beforeYear, language)} জরিপকৃত তীররেখা`
       : `${beforeYear} Surveyed Bankline`;
   const afterTitle = isForecast
     ? language === "bn"
-      ? `${afterYear.toLocaleString("bn-BD")} এমএল প্রক্ষেপিত তীররেখা`
+      ? `${formatNumberLocalized(afterYear, language)} পূর্বাভাষিত তীররেখা`
       : `${afterYear} ML Projected Bankline`
     : language === "bn"
-      ? `${afterYear.toLocaleString("bn-BD")} উপগ্রহ তীররেখা`
+      ? `${formatNumberLocalized(afterYear, language)} উপগ্রহ তীররেখা`
       : `${afterYear} Satellite Bankline`;
 
   return (

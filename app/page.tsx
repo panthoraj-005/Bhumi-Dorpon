@@ -242,7 +242,7 @@ export default function HomeDashboardPage() {
               </span>
             </div>
             <div className="text-[11px] text-muted whitespace-nowrap">
-              {isBn ? "মডেল: GeoAI-BD v2.4 • মাল্টি-টেম্পোরাল ConvLSTM" : "Model: GeoAI-BD v2.4 • Multitemporal ConvLSTM"}
+              {isBn ? "মডেল: GeoAI-BD v২.৪ • মাল্টি-টেম্পোরাল ConvLSTM" : "Model: GeoAI-BD v2.4 • Multitemporal ConvLSTM"}
             </div>
           </div>
         )}
@@ -259,7 +259,7 @@ export default function HomeDashboardPage() {
                   <div className="space-y-1">
                     <div className="flex items-center gap-2">
                       <span className="text-xs font-medium text-muted">
-                        {isForecast ? (isBn ? "প্রত্যাশিত মোট ভূমিক্ষয়" : "Projected Total Land Loss") : (isBn ? "মোট ভূমিক্ষয় / ক্ষতি" : "Total Land Loss")}
+                        {isForecast ? (isBn ? "জমি সরে যাওয়ার সম্ভাব্য পরিমাণ" : "Projected Total Land Loss") : (isBn ? "মোট জমির ক্ষতি" : "Total Land Loss")}
                       </span>
                       {isForecast ? (
                         <ForecastBadge />
@@ -623,7 +623,7 @@ export default function HomeDashboardPage() {
                 </div>
 
                 <div className="absolute bottom-3 right-3 z-1000 px-2 py-0.5 rounded-full bg-ink/80 text-surface text-[10px] font-medium pointer-events-none">
-                  Leaflet Preview
+                  {isBn ? "মানচিত্র প্রিভিউ" : "Leaflet Preview"}
                 </div>
               </div>
 

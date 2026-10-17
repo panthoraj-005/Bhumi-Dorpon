@@ -37,7 +37,7 @@ export const TRANSLATIONS = {
 
   // Navigation Items
   navHome: {
-    bn: "হোম ড্যাশবোর্ড",
+    bn: "মূল পাতা",
     en: "Home Dashboard",
   },
   navRiverErosion: {
@@ -283,11 +283,11 @@ export const TRANSLATIONS = {
     en: "Explore Disasters",
   },
   totalLandLoss: {
-    bn: "মোট ভূমিক্ষয় / ক্ষতি",
+    bn: "মোট জমির ক্ষতি",
     en: "Total Land Loss",
   },
   projectedTotalLoss: {
-    bn: "প্রত্যাশিত মোট ভূমিক্ষয়",
+    bn: "জমি সরে যাওয়ার সম্ভাব্য পরিমাণ",
     en: "Projected Total Land Loss",
   },
   landAccretion: {
@@ -691,7 +691,7 @@ export const TRANSLATIONS = {
     en: "Download GeoJSON",
   },
   exportCsv: {
-    bn: "সিএসভি এক্সপোর্ট",
+    bn: "ডাউনলোড করুন (সিএসভি)",
     en: "Export CSV",
   },
   viewOnMap: {
@@ -705,7 +705,7 @@ export const TRANSLATIONS = {
 
   // Accessible Table & Grid Localization
   showAccessibleTable: {
-    bn: "ডেটা টেবিল দেখুন",
+    bn: "সারণী তথ্য দেখুন",
     en: "Show accessible data table",
   },
   tableHazardCategory: {
@@ -797,7 +797,8 @@ export function t(key: TranslationKey, lang: Language): string {
 /**
  * Format numerals to Bengali numerals if language is 'bn'
  */
-export function formatNumberLocalized(num: number | string, lang: Language): string {
+export function formatNumberLocalized(num: number | string | null | undefined, lang: Language): string {
+  if (num === null || num === undefined) return "";
   const str = String(num);
   if (lang !== "bn") {
     return str;

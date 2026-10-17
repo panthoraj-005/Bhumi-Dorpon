@@ -13,6 +13,8 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { BasemapType, BASEMAP_PROVIDERS, DEMO_GEOMETRY_DISCLAIMER } from "@/lib/basemapConfig";
+import { useAppStore } from "@/stores/appStore";
+import { formatNumberLocalized } from "@/lib/translations";
 
 interface MapCompareProps {
   beforeYear?: number;
@@ -31,6 +33,7 @@ export function MapCompare({
   onSelectPlot,
   className,
 }: MapCompareProps) {
+  const { language } = useAppStore();
   // Synchronized zoom level between Before and After
   const [zoomLevel, setZoomLevel] = useState<number>(14);
 
@@ -73,12 +76,12 @@ export function MapCompare({
       <div className="p-4 border-b border-border bg-surface flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-2">
           <span className="text-xs font-semibold uppercase tracking-wider text-muted">
-            Cadastral Change Comparison
+            {language === "bn" ? "ক্যাডাস্ট্রাল পরিবর্তন তুলনা" : "Cadastral Change Comparison"}
           </span>
           {isForecast && (
             <span className="inline-flex items-center gap-1 text-[11px] font-medium px-2 py-0.5 rounded-pill bg-[#ECE9FB] text-[#6A5BD6] border border-dashed border-[#6A5BD6]">
               <Sparkles className="w-3 h-3" />
-              <span>Forecast Mode</span>
+              <span>{language === "bn" ? "পূর্বাভাস মোড" : "Forecast Mode"}</span>
             </span>
           )}
         </div>
@@ -96,7 +99,7 @@ export function MapCompare({
               )}
             >
               <Map className="w-3 h-3" />
-              <span>Light GIS</span>
+              <span>{language === "bn" ? "জিআইএস মানচিত্র" : "Light GIS"}</span>
             </button>
             <button
               type="button"
@@ -107,7 +110,7 @@ export function MapCompare({
               )}
             >
               <Globe className="w-3 h-3" />
-              <span>Satellite</span>
+              <span>{language === "bn" ? "উপগ্রহ চিত্র" : "Satellite"}</span>
             </button>
             <button
               type="button"
@@ -118,7 +121,7 @@ export function MapCompare({
               )}
             >
               <Navigation className="w-3 h-3" />
-              <span>Street</span>
+              <span>{language === "bn" ? "সড়ক মানচিত্র" : "Street"}</span>
             </button>
           </div>
         </div>
@@ -127,8 +130,8 @@ export function MapCompare({
       {/* Non-Light GIS Disclaimer */}
       {basemapType !== "light-gis" && (
         <div className="bg-amber-500/10 border-b border-amber-500/30 text-amber-900 px-4 py-1.5 flex items-center justify-between text-xs">
-          <span>{DEMO_GEOMETRY_DISCLAIMER}</span>
-          <span className="font-semibold text-[11px]">{BASEMAP_PROVIDERS[basemapType].name} mode</span>
+          <span>{language === "bn" ? "ডেমো জ্যামিতি — জরিপ-নির্ভুল নয়" : DEMO_GEOMETRY_DISCLAIMER}</span>
+          <span className="font-semibold text-[11px]">{basemapType === "satellite" ? (language === "bn" ? "উপগ্রহ মোড" : "Satellite mode") : (language === "bn" ? "সড়ক মোড" : "Street mode")}</span>
         </div>
       )}
 
@@ -140,7 +143,9 @@ export function MapCompare({
           <div className="p-2.5 bg-surface/90 backdrop-blur-md border-b border-border/70 flex items-center justify-between z-10">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-blue-500" />
-              <span className="text-xs font-bold text-ink">Baseline ({beforeYear})</span>
+              <span className="text-xs font-bold text-ink">
+                {language === "bn" ? `ভিত্তিরেখা (${formatNumberLocalized(beforeYear, language)})` : `Baseline (${beforeYear})`}
+              </span>
             </div>
 
             {/* Before Map Zoom Controls */}
@@ -172,7 +177,9 @@ export function MapCompare({
                   <Minus className="w-3 h-3" />
                 </button>
               </div>
-              <span className="text-[10px] font-mono text-muted tabular-nums">z{zoomLevel}</span>
+              <span className="text-[10px] font-mono text-muted tabular-nums">
+                {language === "bn" ? `জুম ${formatNumberLocalized(zoomLevel, language)}` : `z${zoomLevel}`}
+              </span>
             </div>
           </div>
 
@@ -247,17 +254,27 @@ export function MapCompare({
                 </g>
               )}
 
-              <text x="140" y="90" fontSize="11" fill="#4A5043" fontWeight="bold">Plot 101</text>
-              <text x="300" y="90" fontSize="11" fill="#4A5043" fontWeight="bold">Plot 104</text>
-              <text x="460" y="90" fontSize="11" fill="#4A5043" fontWeight="bold">Plot 108 (Intact)</text>
-              <text x="440" y="220" fontSize="11" fill="#4A5043" fontWeight="bold">Plot 112</text>
-              <text x="660" y="120" fontSize="13" fill="#1C537C" fontWeight="bold">Jamuna River</text>
+              <text x="140" y="90" fontSize="11" fill="#4A5043" fontWeight="bold">
+                {language === "bn" ? "দাগ ১০১" : "Plot 101"}
+              </text>
+              <text x="300" y="90" fontSize="11" fill="#4A5043" fontWeight="bold">
+                {language === "bn" ? "দাগ ১০৪" : "Plot 104"}
+              </text>
+              <text x="460" y="90" fontSize="11" fill="#4A5043" fontWeight="bold">
+                {language === "bn" ? "দাগ ১০৮ (অক্ষত)" : "Plot 108 (Intact)"}
+              </text>
+              <text x="440" y="220" fontSize="11" fill="#4A5043" fontWeight="bold">
+                {language === "bn" ? "দাগ ১১২" : "Plot 112"}
+              </text>
+              <text x="660" y="120" fontSize="13" fill="#1C537C" fontWeight="bold">
+                {language === "bn" ? "যমুনা নদী" : "Jamuna River"}
+              </text>
             </svg>
 
             {/* Bottom Scale */}
             <div className="absolute bottom-2.5 left-2.5 bg-surface/85 backdrop-blur-sm px-2 py-0.5 rounded border border-border text-[10px] text-muted flex items-center gap-1.5 font-mono">
               <Compass className="w-3 h-3 text-ink" />
-              <span>Scale: 1:3,500</span>
+              <span>{language === "bn" ? "স্কেল: ১:৩,৫০০" : "Scale: 1:3,500"}</span>
             </div>
           </div>
         </div>
@@ -274,7 +291,9 @@ export function MapCompare({
                 )}
               />
               <span className="text-xs font-bold text-ink">
-                {isForecast ? `Forecast (${afterYear})` : `Recorded (${afterYear})`}
+                {isForecast
+                  ? (language === "bn" ? `পূর্বাভাস (${formatNumberLocalized(afterYear, language)})` : `Forecast (${afterYear})`)
+                  : (language === "bn" ? `রেকর্ডকৃত (${formatNumberLocalized(afterYear, language)})` : `Recorded (${afterYear})`)}
               </span>
             </div>
 
@@ -307,7 +326,9 @@ export function MapCompare({
                   <Minus className="w-3 h-3" />
                 </button>
               </div>
-              <span className="text-[10px] font-mono text-muted tabular-nums">z{zoomLevel}</span>
+              <span className="text-[10px] font-mono text-muted tabular-nums">
+                {language === "bn" ? `জুম ${formatNumberLocalized(zoomLevel, language)}` : `z${zoomLevel}`}
+              </span>
             </div>
           </div>
 
@@ -384,17 +405,27 @@ export function MapCompare({
                 </g>
               )}
 
-              <text x="140" y="90" fontSize="11" fill="#4A5043" fontWeight="bold">Plot 101</text>
-              <text x="300" y="90" fontSize="11" fill="#4A5043" fontWeight="bold">Plot 104</text>
-              <text x="460" y="90" fontSize="11" fill="#E4604A" fontWeight="bold">Plot 108 (Lost)</text>
-              <text x="440" y="220" fontSize="11" fill="#E4604A" fontWeight="bold">Plot 112 (Lost)</text>
-              <text x="660" y="120" fontSize="13" fill="#1C537C" fontWeight="bold">Jamuna River</text>
+              <text x="140" y="90" fontSize="11" fill="#4A5043" fontWeight="bold">
+                {language === "bn" ? "দাগ ১০১" : "Plot 101"}
+              </text>
+              <text x="300" y="90" fontSize="11" fill="#4A5043" fontWeight="bold">
+                {language === "bn" ? "দাগ ১০৪" : "Plot 104"}
+              </text>
+              <text x="460" y="90" fontSize="11" fill="#E4604A" fontWeight="bold">
+                {language === "bn" ? "দাগ ১০৮ (ভাঙন)" : "Plot 108 (Lost)"}
+              </text>
+              <text x="440" y="220" fontSize="11" fill="#E4604A" fontWeight="bold">
+                {language === "bn" ? "দাগ ১১২ (ভাঙন)" : "Plot 112 (Lost)"}
+              </text>
+              <text x="660" y="120" fontSize="13" fill="#1C537C" fontWeight="bold">
+                {language === "bn" ? "যমুনা নদী" : "Jamuna River"}
+              </text>
             </svg>
 
             {/* Bottom Scale */}
             <div className="absolute bottom-2.5 left-2.5 bg-surface/85 backdrop-blur-sm px-2 py-0.5 rounded border border-border text-[10px] text-muted flex items-center gap-1.5 font-mono">
               <Compass className="w-3 h-3 text-ink" />
-              <span>Scale: 1:3,500</span>
+              <span>{language === "bn" ? "স্কেল: ১:৩,৫০০" : "Scale: 1:3,500"}</span>
             </div>
           </div>
         </div>
@@ -405,7 +436,7 @@ export function MapCompare({
         <div className="flex flex-wrap items-center gap-2">
           <div className="flex items-center gap-1.5 text-xs text-muted font-medium mr-1">
             <Layers className="w-3.5 h-3.5" />
-            <span>Overlays:</span>
+            <span>{language === "bn" ? "লেয়ার:" : "Overlays:"}</span>
           </div>
 
           <button
@@ -416,7 +447,7 @@ export function MapCompare({
               layers.boundary ? "bg-surface-alt border-ink text-ink font-semibold" : "bg-surface border-border text-muted"
             )}
           >
-            Mouza boundary
+            {language === "bn" ? "মৌজা সীমানা" : "Mouza boundary"}
           </button>
 
           <button
@@ -427,7 +458,7 @@ export function MapCompare({
               layers.plots ? "bg-surface-alt border-ink text-ink font-semibold" : "bg-surface border-border text-muted"
             )}
           >
-            Plots
+            {language === "bn" ? "দাগসমূহ" : "Plots"}
           </button>
 
           <button
@@ -439,7 +470,7 @@ export function MapCompare({
             )}
           >
             <span className="w-2 h-2 rounded-full bg-[#E4604A]" />
-            <span>Loss</span>
+            <span>{language === "bn" ? "ভাঙন" : "Loss"}</span>
           </button>
 
           <button
@@ -451,7 +482,7 @@ export function MapCompare({
             )}
           >
             <span className="w-2 h-2 rounded-full bg-[#2F9E62]" />
-            <span>Gain</span>
+            <span>{language === "bn" ? "পয়স্তি" : "Gain"}</span>
           </button>
 
           {isForecast && (
@@ -464,7 +495,7 @@ export function MapCompare({
               )}
             >
               <span className="w-2 h-2 rounded-full bg-[#6A5BD6]" />
-              <span>Projected</span>
+              <span>{language === "bn" ? "প্রক্ষেপণ" : "Projected"}</span>
             </button>
           )}
         </div>

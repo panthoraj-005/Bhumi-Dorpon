@@ -589,28 +589,28 @@ export default function OwnerLandDetailPage() {
                     {
                       num: 1,
                       label: "NW",
-                      rowLabel: language === "bn" ? "১ (উত্তর-পশ্চিম / NW)" : "1 (NW)",
+                      rowLabel: language === "bn" ? "১ (উত্তর-পশ্চিম)" : "1 (NW)",
                       lat: plot.corners[0].lat,
                       lon: plot.corners[0].lon,
                     },
                     {
                       num: 2,
                       label: "NE",
-                      rowLabel: language === "bn" ? "২ (উত্তর-পূর্ব / NE)" : "2 (NE)",
+                      rowLabel: language === "bn" ? "২ (উত্তর-পূর্ব)" : "2 (NE)",
                       lat: plot.corners[1].lat,
                       lon: plot.corners[1].lon,
                     },
                     {
                       num: 3,
                       label: "SE",
-                      rowLabel: language === "bn" ? "৩ (দক্ষিণ-পূর্ব / SE)" : "3 (SE)",
+                      rowLabel: language === "bn" ? "৩ (দক্ষিণ-পূর্ব)" : "3 (SE)",
                       lat: plot.corners[2].lat,
                       lon: plot.corners[2].lon,
                     },
                     {
                       num: 4,
                       label: "SW",
-                      rowLabel: language === "bn" ? "৪ (দক্ষিণ-পশ্চিম / SW)" : "4 (SW)",
+                      rowLabel: language === "bn" ? "৪ (দক্ষিণ-পশ্চিম)" : "4 (SW)",
                       lat: plot.corners[3].lat,
                       lon: plot.corners[3].lon,
                     },
@@ -758,7 +758,7 @@ export default function OwnerLandDetailPage() {
                             className="w-full inline-flex items-center justify-center gap-2 px-3 py-2 rounded-xl border border-water/40 bg-water/10 hover:bg-water/20 text-water text-xs font-bold transition-colors shadow-2xs"
                           >
                             <Globe className="w-3.5 h-3.5" />
-                            <span>{language === "bn" ? "গুগল আর্থে দেখুন (Google Earth)" : "Open in Google Earth"}</span>
+                            <span>{language === "bn" ? "গুগল আর্থে দেখুন" : "Open in Google Earth"}</span>
                           </button>
 
                           {earthHint && earthHint.plotId === plot.plotId && (

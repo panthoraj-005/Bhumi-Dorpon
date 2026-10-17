@@ -5,6 +5,7 @@ import { LandslideGeometry, OwnerRecord, MapArea } from "@/lib/types";
 import { GisMapCompare, PlotGeometryItem } from "./GisMapCompare";
 import { useLayerStore } from "./chrome/layerStore";
 import { useAppStore } from "@/stores/appStore";
+import { formatNumberLocalized } from "@/lib/translations";
 
 interface LandslideMapProps {
   geometry?: LandslideGeometry | null;
@@ -96,11 +97,12 @@ export function LandslideMap({
 
             if (isIndex && coords.length > 6) {
               const midCoord = coords[Math.floor(coords.length / 2)];
+              const elevStr = language === "bn" ? `${formatNumberLocalized(elev, "bn")} মি.` : `${elev} m`;
               const elevIcon = L.divIcon({
                 className: "gis-contour-label",
-                html: `<span class="text-[9px] font-bold text-slate-700 bg-white/85 px-1 py-0.5 rounded shadow-2xs border border-slate-300">${elev} m</span>`,
-                iconSize: [38, 14],
-                iconAnchor: [19, 7],
+                html: `<span class="text-[9px] font-bold text-slate-700 bg-white/85 px-1 py-0.5 rounded shadow-2xs border border-slate-300">${elevStr}</span>`,
+                iconSize: [42, 14],
+                iconAnchor: [21, 7],
               });
               L.marker(midCoord, { icon: elevIcon, pane: "terrain", interactive: false }).addTo(map);
             }
@@ -112,13 +114,14 @@ export function LandslideMap({
           area.terrain.spotHeightsGeoJson.features.forEach((feat: any) => {
             const [lon, lat] = feat.geometry.coordinates;
             const elev = feat.properties?.elevation;
+            const peakStr = language === "bn" ? `${formatNumberLocalized(elev, "bn")} মি.` : `${elev}m`;
             const peakIcon = L.divIcon({
               className: "gis-spot-height-label",
               html: `<div class="flex items-center gap-0.5 text-[9px] font-bold text-slate-800 bg-white/90 px-1 rounded shadow-2xs border border-slate-300">
-                <span class="text-amber-600">▲</span><span>${elev}m</span>
+                <span class="text-amber-600">▲</span><span>${peakStr}</span>
               </div>`,
-              iconSize: [44, 16],
-              iconAnchor: [22, 8],
+              iconSize: [48, 16],
+              iconAnchor: [24, 8],
             });
             L.marker([lat, lon], { icon: peakIcon, pane: "terrain", interactive: false }).addTo(map);
           });
@@ -230,13 +233,14 @@ export function LandslideMap({
           area.terrain.spotHeightsGeoJson.features.forEach((feat: any) => {
             const [lon, lat] = feat.geometry.coordinates;
             const elev = feat.properties?.elevation;
+            const peakStr = language === "bn" ? `${formatNumberLocalized(elev, "bn")} মি.` : `${elev}m`;
             const peakIcon = L.divIcon({
               className: "gis-spot-height-label",
               html: `<div class="flex items-center gap-0.5 text-[9px] font-bold text-slate-800 bg-white/90 px-1 rounded shadow-2xs border border-slate-300">
-                <span class="text-amber-600">▲</span><span>${elev}m</span>
+                <span class="text-amber-600">▲</span><span>${peakStr}</span>
               </div>`,
-              iconSize: [44, 16],
-              iconAnchor: [22, 8],
+              iconSize: [48, 16],
+              iconAnchor: [24, 8],
             });
             L.marker([lat, lon], { icon: peakIcon, pane: "terrain", interactive: false }).addTo(map);
           });

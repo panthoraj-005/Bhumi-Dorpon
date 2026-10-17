@@ -1,4 +1,5 @@
 import { MouzaSummary, HazardType, DataMode } from "@/lib/types";
+import { Language, formatNumberLocalized, getLocalizedMouzaName } from "@/lib/translations";
 
 export interface MouzaLabelsOptions {
   selectedMouzaId?: string | null;
@@ -7,6 +8,7 @@ export interface MouzaLabelsOptions {
   unit?: string;
   formatAreaText?: (decimal: number) => string;
   onSelectMouza?: (mouzaId: string) => void;
+  language?: Language;
 }
 
 export function createMouzaLabelsLayer(
@@ -23,7 +25,8 @@ export function createMouzaLabelsLayer(
     if (!map) return;
 
     const isForecast = options.mode === "forecast";
-    const formatArea = options.formatAreaText || ((d: number) => `${d} dec`);
+    const isBn = options.language === "bn";
+    const formatArea = options.formatAreaText || ((d: number) => (isBn ? `${formatNumberLocalized(d, "bn")} শতাংশ` : `${d} dec`));
 
     // 1. Calculate screen size & bounding boxes
     const candidateMouzas: Array<{
@@ -115,7 +118,7 @@ export function createMouzaLabelsLayer(
 
       let badgeHtml = "";
       if (lossVal > 0) {
-        const lossText = `−${formatArea(lossVal)}${isForecast ? " proj." : ""}`;
+        const lossText = `−${formatArea(lossVal)}${isForecast ? (isBn ? " অনুমান" : " proj.") : ""}`;
         badgeHtml += `
           <span class="inline-flex items-center px-1.5 py-0.2 rounded text-[10px] font-bold ${
             isForecast ? "bg-[#6A5BD6] text-white" : "bg-[#E4604A] text-white"
@@ -125,13 +128,16 @@ export function createMouzaLabelsLayer(
         `;
       }
       if (gainVal > 0) {
-        const gainText = `+${formatArea(gainVal)}${isForecast ? " proj." : ""}`;
+        const gainText = `+${formatArea(gainVal)}${isForecast ? (isBn ? " অনুমান" : " proj.") : ""}`;
         badgeHtml += `
           <span class="inline-flex items-center px-1.5 py-0.2 rounded text-[10px] font-bold bg-[#2F9E62] text-white shadow-2xs">
             ${gainText}
           </span>
         `;
       }
+
+      const mouzaNameStr = isBn ? getLocalizedMouzaName(m.id, m.name, "bn") : m.name;
+      const jlNoStr = isBn ? formatNumberLocalized(m.jlNo, "bn") : m.jlNo;
 
       const iconHtml = `
         <div class="pointer-events-auto cursor-pointer select-none text-center transform -translate-x-1/2 -translate-y-1/2">
@@ -145,10 +151,10 @@ export function createMouzaLabelsLayer(
               <span class="${
                 isSelected ? "text-[12px] font-extrabold text-ink" : "text-[11px] font-bold text-[#3E4339]"
               }" style="text-shadow: 0 0 4px #FFFFFF, 0 0 2px #FFFFFF, 1px 1px 0 #FFFFFF, -1px -1px 0 #FFFFFF;">
-                ${m.name}
+                ${mouzaNameStr}
               </span>
               <span class="text-[9px] font-medium text-muted/90 ml-1" style="text-shadow: 0 0 3px #FFFFFF;">
-                ${m.jlNo}
+                ${jlNoStr}
               </span>
             </div>
 

@@ -5,6 +5,8 @@ import { OwnerPlotDetail } from "@/lib/data";
 import { Corner } from "@/lib/types";
 import { Maximize2 } from "lucide-react";
 import { FLOOD_OWNER_COLORS } from "./panels/OwnerLegendPanel";
+import { useAppStore } from "@/stores/appStore";
+import { formatNumberLocalized } from "@/lib/translations";
 
 interface OwnerPlotsLeafletMapProps {
   plots: OwnerPlotDetail[];
@@ -21,6 +23,8 @@ export function OwnerPlotsLeafletMap({
   mouzaName,
   className = "",
 }: OwnerPlotsLeafletMapProps) {
+  const { language } = useAppStore();
+  const isBn = language === "bn";
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapInstanceRef = useRef<any>(null);
   const LRef = useRef<any>(null);
@@ -140,11 +144,14 @@ export function OwnerPlotsLeafletMap({
 
     // Mouza Name Marker
     if (mouzaName) {
+      const mouzaLabelText = isBn
+        ? (mouzaName.includes("মৌজা") ? mouzaName : `${mouzaName} মৌজা`)
+        : `${mouzaName} Mouza`;
       const mouzaLabelIcon = L.divIcon({
         className: "bg-transparent border-0",
         html: `
           <div class="px-2.5 py-1 rounded bg-white/95 text-slate-900 font-extrabold text-xs shadow-md border border-slate-300 filter drop-shadow">
-            ${mouzaName} Mouza
+            ${mouzaLabelText}
           </div>
         `,
         iconSize: [120, 28],
@@ -182,11 +189,15 @@ export function OwnerPlotsLeafletMap({
         className: "cursor-pointer transition-all",
       });
 
+      const dagNoStr = isBn ? formatNumberLocalized(plot.dagNo, "bn") : plot.dagNo;
+      const khatianNoStr = isBn ? formatNumberLocalized(plot.khatianNo, "bn") : plot.khatianNo;
+      const areaStr = isBn ? formatNumberLocalized(plot.areaDecimal, "bn") : plot.areaDecimal;
+
       polygon.bindTooltip(
         `<div class="p-1 text-xs">
-          <div class="font-bold text-slate-900">Dag ${plot.dagNo} • Khatian ${plot.khatianNo}</div>
-          <div class="text-[11px] text-slate-600">Land Class: ${plot.landClass}</div>
-          <div class="text-[11px] text-slate-600">Area: ${plot.areaDecimal} dec (${isSubmerged ? "Submerged" : "Dry"})</div>
+          <div class="font-bold text-slate-900">${isBn ? `দাগ ${dagNoStr} • খতিয়ান ${khatianNoStr}` : `Dag ${plot.dagNo} • Khatian ${plot.khatianNo}`}</div>
+          <div class="text-[11px] text-slate-600">${isBn ? `জমির শ্রেণি: ${plot.landClass}` : `Land Class: ${plot.landClass}`}</div>
+          <div class="text-[11px] text-slate-600">${isBn ? `জমির পরিমাণ: ${areaStr} শতাংশ (${isSubmerged ? "জলমগ্ন" : "শুকনো"})` : `Area: ${plot.areaDecimal} dec (${isSubmerged ? "Submerged" : "Dry"})`}</div>
         </div>`,
         { sticky: true }
       );
@@ -203,6 +214,7 @@ export function OwnerPlotsLeafletMap({
       const centerLon =
         (plot.corners[0].lon + plot.corners[1].lon + plot.corners[2].lon + plot.corners[3].lon) / 4;
 
+      const badgeNumStr = isBn ? formatNumberLocalized(plotIdx + 1, "bn") : `${plotIdx + 1}`;
       const centerIcon = L.divIcon({
         className: "bg-transparent border-0",
         html: `
@@ -210,10 +222,10 @@ export function OwnerPlotsLeafletMap({
             <div class="w-7 h-7 rounded-full ${
               isSelected ? "bg-slate-900 ring-2 ring-white" : isSubmerged ? "bg-[#0284C7]" : "bg-[#16A34A]"
             } text-white font-bold text-xs flex items-center justify-center shadow-md">
-              ${plotIdx + 1}
+              ${badgeNumStr}
             </div>
             <span class="text-[10px] font-bold text-slate-800 bg-white/95 px-1.5 py-0.2 rounded shadow-2xs mt-0.5 border border-slate-200">
-              Dag ${plot.dagNo}
+              ${isBn ? `দাগ ${dagNoStr}` : `Dag ${plot.dagNo}`}
             </span>
           </div>
         `,
@@ -233,11 +245,12 @@ export function OwnerPlotsLeafletMap({
       // FOUR CORNER MARKERS: 1=NW, 2=NE, 3=SE, 4=SW
       plot.corners.forEach((c: Corner, cIdx: number) => {
         const cornerNum = cIdx + 1;
+        const cornerNumStr = isBn ? formatNumberLocalized(cornerNum, "bn") : `${cornerNum}`;
         const cornerIcon = L.divIcon({
           className: "bg-transparent border-0",
           html: `
             <div id="corner-marker-${plot.dagNo}-${cornerNum}" class="w-5 h-5 rounded-full bg-slate-900 text-white font-bold text-[10px] flex items-center justify-center border-2 border-white shadow-md select-none">
-              ${cornerNum}
+              ${cornerNumStr}
             </div>
           `,
           iconSize: [20, 20],
@@ -292,15 +305,15 @@ export function OwnerPlotsLeafletMap({
         type="button"
         onClick={handleFitAll}
         className="absolute top-3 left-3 z-1000 inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-surface/95 backdrop-blur-sm border border-border text-xs font-semibold text-ink hover:bg-surface-alt shadow-xs transition-colors"
-        title="Fit all owner plots"
+        title={isBn ? "সব দাগ একনজরে দেখুন" : "Fit all owner plots"}
       >
         <Maximize2 className="w-3.5 h-3.5 text-secondary" />
-        <span>Fit All Plots</span>
+        <span>{isBn ? "সব দাগ দেখুন" : "Fit All Plots"}</span>
       </button>
 
       {/* Synthetic demo geometry note */}
       <div className="absolute bottom-2 right-3 z-1000 px-2 py-0.5 rounded bg-surface/85 backdrop-blur-xs border border-border/80 text-[10px] text-muted shadow-2xs pointer-events-none">
-        Synthetic cadastral geometry • Metric survey
+        {isBn ? "ক্যাডাস্ট্রাল নকশা • মেট্রিক জরিপ" : "Synthetic cadastral geometry • Metric survey"}
       </div>
     </div>
   );

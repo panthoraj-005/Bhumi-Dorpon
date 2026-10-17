@@ -7,6 +7,7 @@ import { OwnerLegendPanel, OwnerLegendItem, getOwnerColorStyle, FLOOD_OWNER_COLO
 import { FloodContextCard } from "./panels/FloodContextCard";
 import { useLayerStore } from "./chrome/layerStore";
 import { useAppStore } from "@/stores/appStore";
+import { formatNumberLocalized, getLocalizedOwnerName } from "@/lib/translations";
 
 interface FloodMapProps {
   floodEvent?: FloodEvent | null;
@@ -171,12 +172,19 @@ export function FloodMap({
           pane: "plots",
         }).addTo(map);
 
+        const ownerDisplayName = ps.ownerName
+          ? (language === "bn" ? getLocalizedOwnerName(ps.ownerName, language) : ps.ownerName)
+          : (language === "bn" ? "খাস / সরকারি জমি" : "Unowned");
+        const dagStr = language === "bn" ? formatNumberLocalized(ps.dagNo, language) : ps.dagNo;
+        const khatianStr = language === "bn" ? formatNumberLocalized(ps.khatianNo, language) : ps.khatianNo;
+        const areaStr = language === "bn" ? formatNumberLocalized(ps.totalAreaDecimal, language) : ps.totalAreaDecimal;
+
         polygon.bindTooltip(
           `
           <div class="text-xs p-1">
-            <div class="font-bold text-slate-900">${ps.ownerName || "Unowned"}</div>
-            <div class="text-slate-600">Dag No. ${ps.dagNo} · Khatian ${ps.khatianNo}</div>
-            <div class="text-slate-500">Area: ${ps.totalAreaDecimal} dec</div>
+            <div class="font-bold text-slate-900">${ownerDisplayName}</div>
+            <div class="text-slate-600">${language === "bn" ? `দাগ নং ${dagStr} · খতিয়ান ${khatianStr}` : `Dag No. ${ps.dagNo} · Khatian ${ps.khatianNo}`}</div>
+            <div class="text-slate-500">${language === "bn" ? `জমির পরিমাণ: ${areaStr} শতাংশ` : `Area: ${ps.totalAreaDecimal} dec`}</div>
           </div>
           `,
           { sticky: true, opacity: 0.95 }
@@ -188,7 +196,7 @@ export function FloodMap({
           className: "gis-plot-dag-label",
           html: `
             <div class="px-1 py-0.2 rounded bg-white/90 text-[9px] font-bold text-slate-800 shadow-2xs border border-slate-300 leading-tight">
-              ${ps.dagNo}
+              ${dagStr}
             </div>
           `,
           iconSize: [32, 14],
@@ -197,7 +205,7 @@ export function FloodMap({
         L.marker(center, { icon: labelIcon, pane: "markers", interactive: false }).addTo(map);
       });
     },
-    [effectivePlots, isolatedOwnerId, hoveredOwnerId]
+    [effectivePlots, isolatedOwnerId, hoveredOwnerId, language]
   );
 
   // Setup Leaflet Map 2 (After - 3 Depth Bands in flood pane BELOW plots, 45% plots with blue show-through, wave hatch)
@@ -310,12 +318,22 @@ export function FloodMap({
           }).addTo(map);
         }
 
+        const ownerDisplayName = ps.ownerName
+          ? (language === "bn" ? getLocalizedOwnerName(ps.ownerName, language) : ps.ownerName)
+          : (language === "bn" ? "খাস / সরকারি জমি" : "Unowned");
+        const dagStr = language === "bn" ? formatNumberLocalized(ps.dagNo, language) : ps.dagNo;
+        const khatianStr = language === "bn" ? formatNumberLocalized(ps.khatianNo, language) : ps.khatianNo;
+        const floodedAreaStr = language === "bn" ? formatNumberLocalized(ps.floodedAreaDecimal, language) : ps.floodedAreaDecimal;
+        const depthStr = language === "bn"
+          ? (ps.depthClass === "deep" ? "গভীর" : ps.depthClass === "shallow" ? "অগভীর" : "মাঝারি")
+          : (ps.depthClass || "Moderate");
+
         polygon.bindTooltip(
           `
           <div class="text-xs p-1">
-            <div class="font-bold text-slate-900">${ps.ownerName || "Unowned"}</div>
-            <div class="text-slate-600">Dag No. ${ps.dagNo} · Khatian ${ps.khatianNo}</div>
-            <div class="text-slate-500">Submerged: ${ps.floodedAreaDecimal} dec (${ps.depthClass || "Moderate"})</div>
+            <div class="font-bold text-slate-900">${ownerDisplayName}</div>
+            <div class="text-slate-600">${language === "bn" ? `দাগ নং ${dagStr} · খতিয়ান ${khatianStr}` : `Dag No. ${ps.dagNo} · Khatian ${ps.khatianNo}`}</div>
+            <div class="text-slate-500">${language === "bn" ? `জলমগ্ন: ${floodedAreaStr} শতাংশ (${depthStr})` : `Submerged: ${ps.floodedAreaDecimal} dec (${ps.depthClass || "Moderate"})`}</div>
           </div>
           `,
           { sticky: true, opacity: 0.95 }
@@ -327,7 +345,7 @@ export function FloodMap({
           className: "gis-plot-dag-label",
           html: `
             <div class="px-1 py-0.2 rounded bg-white/90 text-[9px] font-bold text-slate-800 shadow-2xs border border-slate-300 leading-tight">
-              ${ps.dagNo}
+              ${dagStr}
             </div>
           `,
           iconSize: [32, 14],
@@ -336,7 +354,7 @@ export function FloodMap({
         L.marker(center, { icon: labelIcon, pane: "markers", interactive: false }).addTo(map);
       });
     },
-    [effectivePlots, isolatedOwnerId, hoveredOwnerId]
+    [effectivePlots, isolatedOwnerId, hoveredOwnerId, language]
   );
 
   return (

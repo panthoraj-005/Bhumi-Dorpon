@@ -146,7 +146,7 @@ export function AppHeader({
         {/* Currency Badge */}
         <div className="hidden lg:flex items-center gap-1.5 px-3 py-1.5 rounded-pill bg-surface border border-border text-xs font-medium text-ink tabular-nums">
           <Coins className="w-3.5 h-3.5 text-muted" />
-          <span>৳ (BDT)</span>
+          <span>{language === "bn" ? "৳ (টাকা)" : "৳ (BDT)"}</span>
         </div>
 
         {/* Period Filter Dropdown */}

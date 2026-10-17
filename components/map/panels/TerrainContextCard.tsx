@@ -100,7 +100,7 @@ export function TerrainContextCard({
             <span>{isBn ? "স্থানান্তরিত ধ্বংসাবশেষ" : "Debris Volume"}</span>
           </div>
           <div className="text-sm font-bold text-ink tabular-nums">
-            {formatNumberLocalized(volume.toLocaleString(), language)} m³
+            {formatNumberLocalized(volume.toLocaleString(), language)} {isBn ? "ঘনমিটার" : "m³"}
           </div>
           <div className="text-[9px] text-muted">{isBn ? "কাট/ফিল যাচাইকৃত" : "Cut/Fill verified"}</div>
         </div>
@@ -112,7 +112,7 @@ export function TerrainContextCard({
             <span>{isBn ? "ধস-উদ্বুদ্ধকারী বৃষ্টিপাত" : "Trigger Rainfall"}</span>
           </div>
           <div className="text-sm font-bold text-water tabular-nums">
-            {formatNumberLocalized(rainfall, language)} mm
+            {formatNumberLocalized(rainfall, language)} {isBn ? "মি.মি." : "mm"}
           </div>
           <div className="text-[9px] text-muted">{isBn ? "২৪ ঘণ্টার মোট বৃষ্টি" : "24h Cumulative"}</div>
         </div>

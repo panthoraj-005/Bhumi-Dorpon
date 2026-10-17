@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useMemo } from "react";
 import { Basemap } from "@/lib/types";
+import { useAppStore } from "@/stores/appStore";
 
 interface LocatorInsetProps {
   mapInstance: any;
@@ -10,6 +11,7 @@ interface LocatorInsetProps {
 }
 
 export function LocatorInset({ mapInstance, basemap, areaBounds }: LocatorInsetProps) {
+  const { language } = useAppStore();
   const [viewBounds, setViewBounds] = useState<[number, number, number, number] | null>(null);
 
   useEffect(() => {
@@ -102,11 +104,13 @@ export function LocatorInset({ mapInstance, basemap, areaBounds }: LocatorInsetP
   return (
     <div
       className="bg-surface/90 backdrop-blur-md rounded-lg border border-border/80 shadow-md p-1.5 w-[140px] pointer-events-none select-none"
-      title="Regional Locator Inset"
+      title={language === "bn" ? "আঞ্চলিক অবস্থান নির্দেশক" : "Regional Locator Inset"}
     >
       <div className="flex items-center justify-between pb-1 border-b border-border/40 text-[9px] font-bold text-muted uppercase tracking-wider">
-        <span>Locator</span>
-        <span className="text-[8px] font-normal text-secondary lowercase">regional context</span>
+        <span>{language === "bn" ? "অবস্থান মানচিত্র" : "Locator"}</span>
+        <span className="text-[8px] font-normal text-secondary lowercase">
+          {language === "bn" ? "আঞ্চলিক প্রসঙ্গ" : "regional context"}
+        </span>
       </div>
       <div className="relative w-[136px] h-[92px] mt-1 bg-[#EEF2F6]/60 rounded overflow-hidden">
         <svg width="136" height="92" viewBox="0 0 136 96" className="w-full h-full">

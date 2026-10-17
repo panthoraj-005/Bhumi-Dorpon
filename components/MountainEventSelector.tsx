@@ -279,7 +279,7 @@ export function MountainEventSelector({
               <div className="text-xs text-muted flex flex-wrap items-center gap-3">
                 <span className="flex items-center gap-1">
                   <Calendar className="w-3.5 h-3.5 text-accent-deep" />
-                  <span><strong>{language === "bn" ? "ঘটনার তারিখ:" : "Event Date:"}</strong> {activeEvent.eventDate}</span>
+                  <span><strong>{language === "bn" ? "ঘটনার তারিখ:" : "Event Date:"}</strong> {formatNumberLocalized(activeEvent.eventDate, language)}</span>
                 </span>
                 <span>•</span>
                 <span className="flex items-center gap-1">
@@ -319,7 +319,7 @@ export function MountainEventSelector({
                 {language === "bn" ? "স্থানান্তরিত ধ্বংসাবশেষ" : "Debris Volume"}
               </span>
               <span className="font-bold text-ink tabular-nums text-sm sm:text-base">
-                {formatNumberLocalized(activeEvent.debrisVolumeM3, language)} m³
+                {formatNumberLocalized(activeEvent.debrisVolumeM3, language)} {language === "bn" ? "ঘনমিটার" : "m³"}
               </span>
             </div>
 
@@ -328,7 +328,7 @@ export function MountainEventSelector({
                 {language === "bn" ? "২৪ ঘণ্টার বৃষ্টিপাত" : "24h Rainfall"}
               </span>
               <span className="font-bold text-water tabular-nums text-sm sm:text-base">
-                {formatNumberLocalized(activeEvent.rainfallMm24h, language)} mm
+                {formatNumberLocalized(activeEvent.rainfallMm24h, language)} {language === "bn" ? "মি.মি." : "mm"}
               </span>
             </div>
 

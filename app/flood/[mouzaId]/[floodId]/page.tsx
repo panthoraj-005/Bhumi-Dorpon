@@ -367,7 +367,7 @@ export default function FloodEventDetailPage() {
                 </div>
                 {focusedDagNo && (
                   <span className="text-xs bg-water/10 text-water font-semibold px-2.5 py-1 rounded-pill">
-                    {language === "bn" ? `নির্বাচিত দাগ নং ${focusedDagNo}` : `Focused Dag No. ${focusedDagNo}`}
+                    {language === "bn" ? `নির্বাচিত দাগ নং ${formatNumberLocalized(focusedDagNo, language)}` : `Focused Dag No. ${focusedDagNo}`}
                   </span>
                 )}
               </div>

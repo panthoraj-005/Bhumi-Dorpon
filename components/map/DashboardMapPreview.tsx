@@ -127,15 +127,16 @@ export function DashboardMapPreview({ className = "" }: { className?: string }) 
       }).addTo(map);
 
       // Mouza Label Marker (Highlighted Mouza Name with white halo)
+      const isBn = true;
       const labelIcon = L.divIcon({
         className: "bg-transparent border-0",
         html: `
           <div class="flex flex-col items-center pointer-events-none select-none">
             <div class="px-2 py-0.5 rounded-md bg-white/95 text-slate-900 font-extrabold text-[11px] shadow-sm border border-slate-300 filter drop-shadow">
-              Meghai <span class="text-[9px] font-normal text-slate-600">JL 42</span>
+              মেঘাই <span class="text-[9px] font-normal text-slate-600">জেএল ৪২</span>
             </div>
             <div class="mt-0.5 px-1.5 py-0.2 rounded-pill bg-[#E4604A] text-white text-[9px] font-bold shadow-2xs">
-              -842 dec
+              -৮৪২ শতাংশ
             </div>
           </div>
         `,
@@ -158,7 +159,7 @@ export function DashboardMapPreview({ className = "" }: { className?: string }) 
     <div className={`relative w-full h-full bg-[#F4F3EE] overflow-hidden select-none ${className}`}>
       <div ref={containerRef} className="w-full h-full" />
       <div className="absolute bottom-2 right-2 z-10 pointer-events-none px-2 py-0.5 rounded bg-surface/85 backdrop-blur-xs text-[9px] font-semibold text-muted border border-border/60">
-        Synthetic GIS Basemap • Leaflet
+        জিআইএস মানচিত্র প্রিভিউ
       </div>
     </div>
   );

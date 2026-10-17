@@ -15,7 +15,7 @@ export default function TeamInformationPage() {
       <AppHeader
         title={
           language === "bn"
-            ? "টিম পরিচিতি (Team Information)"
+            ? "টিম পরিচিতি"
             : "Team Information"
         }
         subtitle={
@@ -36,13 +36,13 @@ export default function TeamInformationPage() {
             <ArrowLeft className="w-4 h-4 text-muted group-hover:text-ink group-hover:-translate-x-0.5 transition-transform" />
             <span>
               {language === "bn"
-                ? "সেটিংসে ফিরে যান (Back to Settings)"
+                ? "সেটিংসে ফিরে যান"
                 : "Back to Settings"}
             </span>
           </Link>
           <span className="text-xs text-muted font-medium">
             {language === "bn"
-              ? "সেটিংস / টিম পরিচিতি (Settings / Team Information)"
+              ? "সেটিংস / টিম পরিচিতি"
               : "Settings / Team Information"}
           </span>
         </div>
@@ -110,10 +110,10 @@ export default function TeamInformationPage() {
               {language === "bn" ? "টিমের নাম: GeoNeural" : "Team Name: GeoNeural"}
             </p>
             <p className="text-xs sm:text-sm text-ink-2 font-medium">
-              {language === "bn" ? "টিম লিডার: পান্থ রাজ বিশ্বাস (Pantho Raj Biswas)" : "Team Leader: Pantho Raj Biswas"}
+              {language === "bn" ? "টিম লিডার: পান্থ রাজ বিশ্বাস" : "Team Leader: Pantho Raj Biswas"}
             </p>
             <p className="text-xs sm:text-sm text-ink-2 font-medium">
-              {language === "bn" ? "টিম সদস্য: পূজা পাল (Puja Paul)" : "Team Member: Puja Paul"}
+              {language === "bn" ? "টিম সদস্য: পূজা পাল" : "Team Member: Puja Paul"}
             </p>
           </div>
 

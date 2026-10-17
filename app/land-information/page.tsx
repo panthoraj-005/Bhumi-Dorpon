@@ -595,13 +595,13 @@ export default function LandInformationPage() {
                       <span className="text-muted">
                         {language === "bn" ? "এনআইডি নম্বর (সুরক্ষিত)" : "NID Number (Masked)"}
                       </span>
-                      <span className="font-mono text-ink">{report.ownership.nidMasked}</span>
+                      <span className="font-mono text-ink">{formatNumberLocalized(report.ownership.nidMasked, language)}</span>
                     </div>
                     <div className="flex items-center justify-between py-1">
                       <span className="text-muted">
                         {language === "bn" ? "রেকর্ডের তারিখ" : "Record Date"}
                       </span>
-                      <span className="text-ink">{report.ownership.recordedDate}</span>
+                      <span className="text-ink">{formatNumberLocalized(report.ownership.recordedDate, language)}</span>
                     </div>
                   </div>
                 </div>
@@ -730,7 +730,7 @@ export default function LandInformationPage() {
                       <span className="text-muted">
                         {language === "bn" ? "কর নির্ধারণ বছর" : "Assessment Year"}
                       </span>
-                      <span className="font-medium text-ink">{report.tax.assessmentYear}</span>
+                      <span className="font-medium text-ink">{formatNumberLocalized(report.tax.assessmentYear, language)}</span>
                     </div>
                     <div className="flex items-center justify-between py-1 border-b border-border/50">
                       <span className="text-muted">
@@ -742,7 +742,7 @@ export default function LandInformationPage() {
                       <span className="text-muted">
                         {language === "bn" ? "সর্বশেষ দাখিলা রসিদ" : "Latest Receipt No."}
                       </span>
-                      <span className="font-mono text-ink">{report.tax.receiptNumber}</span>
+                      <span className="font-mono text-ink">{formatNumberLocalized(report.tax.receiptNumber, language)}</span>
                     </div>
                   </div>
                 </div>
@@ -773,13 +773,13 @@ export default function LandInformationPage() {
                       <span className="text-muted">
                         {language === "bn" ? "মূল দলিল নম্বর" : "Original Deed No."}
                       </span>
-                      <span className="font-mono font-bold text-ink">{report.history.registrationDeedNo}</span>
+                      <span className="font-mono font-bold text-ink">{formatNumberLocalized(report.history.registrationDeedNo, language)}</span>
                     </div>
                     <div className="flex items-center justify-between py-1 border-b border-border/50">
                       <span className="text-muted">
                         {language === "bn" ? "নামজারি জমাভাগ খতিয়ান" : "Mutation Khatian No."}
                       </span>
-                      <span className="font-mono font-semibold text-ink">{report.history.mutationKhatianNo}</span>
+                      <span className="font-mono font-semibold text-ink">{formatNumberLocalized(report.history.mutationKhatianNo, language)}</span>
                     </div>
                     <div className="flex items-center justify-between py-1 border-b border-border/50">
                       <span className="text-muted">
@@ -854,7 +854,9 @@ export default function LandInformationPage() {
                     <div className="flex items-center justify-between py-1 border-b border-border/50">
                       <span className="text-muted">{t("loanRefLabel", language)}</span>
                       <span className="font-mono text-ink">
-                        {report.loanMortgageInfo?.loanReferenceMasked || t("loanRefNotAvailable", language)}
+                        {report.loanMortgageInfo?.loanReferenceMasked
+                          ? formatNumberLocalized(report.loanMortgageInfo.loanReferenceMasked, language)
+                          : t("loanRefNotAvailable", language)}
                       </span>
                     </div>
 
@@ -862,7 +864,9 @@ export default function LandInformationPage() {
                     <div className="flex items-center justify-between py-1 border-b border-border/50">
                       <span className="text-muted">{t("mortgageDeedLabel", language)}</span>
                       <span className="font-mono text-ink">
-                        {report.loanMortgageInfo?.mortgageDeedNo || (language === "bn" ? "প্রযোজ্য নয়" : "N/A")}
+                        {report.loanMortgageInfo?.mortgageDeedNo
+                          ? formatNumberLocalized(report.loanMortgageInfo.mortgageDeedNo, language)
+                          : (language === "bn" ? "প্রযোজ্য নয়" : "N/A")}
                       </span>
                     </div>
 
@@ -870,7 +874,9 @@ export default function LandInformationPage() {
                     <div className="flex items-center justify-between py-1 border-b border-border/50">
                       <span className="text-muted">{t("mortgageRecordDateLabel", language)}</span>
                       <span className="text-ink">
-                        {report.loanMortgageInfo?.recordDate || t("bankNameNotAvailable", language)}
+                        {report.loanMortgageInfo?.recordDate
+                          ? formatNumberLocalized(report.loanMortgageInfo.recordDate, language)
+                          : t("bankNameNotAvailable", language)}
                       </span>
                     </div>
 
@@ -879,7 +885,7 @@ export default function LandInformationPage() {
                       <span className="text-muted">{t("releaseInfoLabel", language)}</span>
                       <span className="text-secondary font-medium">
                         {report.loanMortgageInfo?.releaseDate
-                          ? `${language === "bn" ? "অবমুক্ত: " : "Released: "}${report.loanMortgageInfo.releaseDate}`
+                          ? `${language === "bn" ? "অবমুক্ত: " : "Released: "}${formatNumberLocalized(report.loanMortgageInfo.releaseDate, language)}`
                           : report.loanMortgageInfo?.loanStatus === "active"
                           ? t("releaseInfoActive", language)
                           : report.loanMortgageInfo?.loanStatus === "released"
@@ -961,7 +967,7 @@ export default function LandInformationPage() {
                             </span>
                             <div className="text-[11px] text-muted flex items-center gap-1.5">
                               <Calendar className="w-3 h-3" />
-                              <span>{item.eventDate}</span>
+                              <span>{formatNumberLocalized(item.eventDate, language)}</span>
                             </div>
                           </div>
 
@@ -1008,7 +1014,7 @@ export default function LandInformationPage() {
                         <div className="text-[10px] text-muted flex items-center gap-1 pt-1">
                           <Info className="w-3 h-3 shrink-0" />
                           <span>
-                            {language === "bn" ? "উৎস:" : "Source:"} {item.dataSource} ({language === "bn" ? "পর্যবেক্ষণ:" : "Obs:"} {item.observationDate})
+                            {language === "bn" ? "উৎস:" : "Source:"} {item.dataSource} ({language === "bn" ? "পর্যবেক্ষণ:" : "Obs:"} {formatNumberLocalized(item.observationDate, language)})
                           </span>
                         </div>
                       </div>
@@ -1090,7 +1096,7 @@ export default function LandInformationPage() {
                     <div className="space-y-0.5">
                       <strong className="text-ink font-semibold block">
                         {language === "bn"
-                          ? "মডেল পূর্বাভাসের সীমাবদ্ধতা ও সত্যতা নোটিশ (Integrity Note):"
+                          ? "মডেল পূর্বাভাসের সীমাবদ্ধতা ও সত্যতা নোটিশ:"
                           : "Model Forecast Integrity & Limitation Notice:"}
                       </strong>
                       <p className="text-[11px] leading-relaxed">
