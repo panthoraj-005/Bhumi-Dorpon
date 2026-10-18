@@ -4,7 +4,7 @@
 ---
 
 > **Document Status:** Comprehensive Master System Reference  
-> **Product Version:** 1.2 (Enhanced Multi-Hazard Release)  
+> **Product Version:** v1  
 > **Team:** GeoNeural  
 > **Last Updated:** October 2026  
 > **Target Audience:** Hackathon Evaluators, Academic Researchers, Land Surveyors, Engineering Teams  
@@ -18,17 +18,19 @@
 - [1. Executive Summary & Project Identity](#1-executive-summary--project-identity)
   - [1.1 What is BhumiDorpon?](#11-what-is-bhumidorpon)
   - [1.2 Map-Centered Cadastral Exploration](#12-map-centered-cadastral-exploration)
-  - [1.3 Core Product Innovations (v1.2 Release)](#13-core-product-innovations-v12-release)
+  - [1.3 Core Product Innovations (v1 Release)](#13-core-product-innovations-v1-release)
 - [2. Geographical and Social Context of Bangladesh](#2-geographical-and-social-context-of-bangladesh)
   - [2.1 The Deltaic Reality](#21-the-deltaic-reality)
   - [2.2 Land Tenure Disruption & Boundary Loss](#22-land-tenure-disruption--boundary-loss)
-  - [2.3 The Macro-Micro Information Gap](#23-the-macro-micro-information-gap)
-- [3. The Five Core Hazard Domains in Depth](#3-the-five-core-hazard-domains-in-depth)
+  - [2.3 The Macro-Micro Information Gap — Disaster Records](#23-the-macro-micro-information-gap--disaster-records)
+  - [2.4 Scattered Land Records and Pre-Purchase Risk](#24-scattered-land-records-and-pre-purchase-risk)
+- [3. Disaster Monitoring and Land Information Systems](#3-disaster-monitoring-and-land-information-systems)
   - [3.1 Module 1: River Erosion (/river-erosion)](#31-module-1-river-erosion-river-erosion)
   - [3.2 Module 2: Flood Monitoring (/flood)](#32-module-2-flood-monitoring-flood)
   - [3.3 Module 3: Landslides (/landslide)](#33-module-3-landslides-landslide)
   - [3.4 Module 4: Char Island Dynamics (/char)](#34-module-4-char-island-dynamics-char)
   - [3.5 Module 5: Coastal Changes (/coastal)](#35-module-5-coastal-changes-coastal)
+  - [3.6 Module 6: Land Information Search and Pre-Purchase Review (/land-information)](#36-module-6-land-information-search-and-pre-purchase-review-land-information)
 - [4. Global Bangla Default & English Localization Engine](#4-global-bangla-default--english-localization-engine)
   - [4.1 Centralized Translation Architecture (lib/translations.ts)](#41-centralized-translation-architecture-libtranslationsts)
   - [4.2 Bengali Numeral Localization](#42-bengali-numeral-localization)
@@ -65,7 +67,7 @@
   - [12.3 External Camera URL Formulation](#123-external-camera-url-formulation)
   - [12.4 Zero-Backend Privacy Boundaries](#124-zero-backend-privacy-boundaries)
 - [13. Distinction: Google Earth vs. Google Earth Engine](#13-distinction-google-earth-vs-google-earth-engine)
-- [14. Five-Hazard Information Store Architecture](#14-five-hazard-information-store-architecture)
+- [14. Combined Disaster and Land Information Store Architecture](#14-combined-disaster-and-land-information-store-architecture)
 - [15. GeoAI Forecasting & Rule 5 Compliance Disclosures](#15-geoai-forecasting--rule-5-compliance-disclosures)
 - [16. Platform Settings Hub & Team Attribution](#16-platform-settings-hub--team-attribution)
 - [17. Technical Architecture & Technology Stack](#17-technical-architecture--technology-stack)
@@ -89,19 +91,20 @@ In Bangladesh, land administration and disaster reporting have traditionally ope
 
 BhumiDorpon bridges this divide through **map-centered exploration**. Instead of presenting abstract statistical tables, the platform places interactive, geographically synchronized maps at the center of the user experience. Users navigate through administrative hierarchies (Division &rarr; District &rarr; Upazila &rarr; River/Hill/Mouza) and visually inspect how specific physical hazards intersect with cadastral plots, homesteads, agricultural parcels, and community infrastructure.
 
-### 1.3 Core Product Innovations (v1.2 Release)
-1. **Global Bangla Default & English Localization:** Full bilingual experience with Bangla as the first-visit default, zero-layout-shift language toggle in the header, and Eastern Nagari numeral localization (`০-৯`).
-2. **First-Visit Authentication & Demo Access:** Entry gatekeeper with login, registration, password confirmation, validation, and a prominent **"Demo / ডেমো হিসেবে প্রবেশ করুন"** bypass button with strictly isolated permissions.
-3. **Global Land Information Search:** Dedicated top-level search route (`/land-information`) supporting 5 cascading fields (District, Upazila, Mouza, Dag No., Khatian No.) with leading zero string preservation.
-4. **Structured Six-Section Cadastral Report:** Comprehensive report covering Land ID (with 4-corner GPS coordinates), Ownership, Sale Status, Legal Disputes, Tax & Payment Records, and Registration History.
-5. **Section 5: Disaster-Related Land Change and Deep-Learning Risk Analysis:** Parcel-level historical loss-gain quantification, physical status preservation for submerged parcels (`Completely Submerged / নদীগর্ভে বিলীন`), and 4 deep-learning risk prediction models (ConvLSTM, HydroSAR, InSAR SlopeNet, CoastWatch).
-6. **Four-Step Landslide Hierarchy & Event Selector:** Four-step cascading selector (District &rarr; Upazila &rarr; Hill &rarr; Landslide Event) embedded in `SelectorChain.tsx` with URL state synchronization (`?d&u&h&ev`), newest-first sorting, automatic default event selection, and honest empty states for hills without events.
-7. **Top-Level Scroll to Disasters Button:** Direct smooth-scroll navigation button on the homepage hero targeting `#disaster-options`.
-8. **Pure Leaflet Cartography & Dual-Map Synchronizer:** Side-by-side synchronized Before/After maps operating 100% offline without external vector tile servers.
-9. **Cadastral 4-Corner Boundary Readouts & Google Earth KML:** Individual parcel coordinates formatted to 6 decimal places with one-click Google Earth 3D export.
-10. **Rule 5 Compliance & Data Transparency:** Complete suppression of financial payout fields on forecast views, with transparent badging for demo data and unverified external records.
-11. **Right-Aligned Header Toolbar:** Responsive header toolbar layout right-aligning action controls on desktop (`md:justify-end`) with multi-line overflow wrapping directly below the language toggle, maintaining left-alignment on mobile, with non-overlapping Bengali heading line-height.
-12. **Complete Table & Data Localization:** Comprehensive Bengali localization of all tabular data, headers, cells, status badges, sublabels, chart `aria-label`s, and data-derived strings (hill names, risk zone suffixes like *High Risk Slope Zone*, plot IDs, survey types, dates, Eastern Nagari numbers), while strictly preserving allowlisted technical acronyms (GIS, InSAR, KML, GeoJSON, CSV, BDT/৳, DL, m, mm, km).
+### 1.3 Core Product Innovations (v1 Release)
+1. **Two-System Design:** Separates the five-module disaster monitoring system from the land-information search system used to review available parcel and transaction records before purchase.
+2. **Global Bangla Default & English Localization:** Full bilingual experience with Bangla as the first-visit default, zero-layout-shift language toggle in the header, and Eastern Nagari numeral localization (`০-৯`).
+3. **First-Visit Authentication & Demo Access:** Entry gatekeeper with login, registration, password confirmation, validation, and a prominent **"Demo / ডেমো হিসেবে প্রবেশ করুন"** bypass button with strictly isolated permissions.
+4. **Global Land Information Search:** Dedicated top-level search route (`/land-information`) supporting 5 cascading fields (District, Upazila, Mouza, Dag No., Khatian No.) with leading zero string preservation.
+5. **Structured Six-Section Cadastral Report:** Comprehensive report covering Land ID (with 4-corner GPS coordinates), Ownership, Sale Status, Legal Disputes, Tax & Payment Records, and Registration History.
+6. **Section 5: Disaster-Related Land Change and Deep-Learning Risk Analysis:** Parcel-level historical loss-gain quantification, physical status preservation for submerged parcels (`Completely Submerged / নদীগর্ভে বিলীন`), and 4 deep-learning risk prediction models (ConvLSTM, HydroSAR, InSAR SlopeNet, CoastWatch).
+7. **Four-Step Landslide Hierarchy & Event Selector:** Four-step cascading selector (District &rarr; Upazila &rarr; Hill &rarr; Landslide Event) embedded in `SelectorChain.tsx` with URL state synchronization (`?d&u&h&ev`), newest-first sorting, automatic default event selection, and honest empty states for hills without events.
+8. **Top-Level Scroll to Disasters Button:** Direct smooth-scroll navigation button on the homepage hero targeting `#disaster-options`.
+9. **Pure Leaflet Cartography & Dual-Map Synchronizer:** Side-by-side synchronized Before/After maps operating 100% offline without external vector tile servers.
+10. **Cadastral 4-Corner Boundary Readouts & Google Earth KML:** Individual parcel coordinates formatted to 6 decimal places with one-click Google Earth 3D export.
+11. **Rule 5 Compliance & Data Transparency:** Complete suppression of financial payout fields on forecast views, with transparent badging for demo data and unverified external records.
+12. **Right-Aligned Header Toolbar:** Responsive header toolbar layout right-aligning action controls on desktop (`md:justify-end`) with multi-line overflow wrapping directly below the language toggle, maintaining left-alignment on mobile, with non-overlapping Bengali heading line-height.
+13. **Complete Table & Data Localization:** Comprehensive Bengali localization of all tabular data, headers, cells, status badges, sublabels, chart `aria-label`s, and data-derived strings (hill names, risk zone suffixes like *High Risk Slope Zone*, plot IDs, survey types, dates, Eastern Nagari numbers), while strictly preserving allowlisted technical acronyms (GIS, InSAR, KML, GeoJSON, CSV, BDT/৳, DL, m, mm, km).
 
 ---
 
@@ -122,7 +125,7 @@ In a country with a population density exceeding 1,100 people per square kilomet
 - Landowners lose physical possession of their ancestral plots.
 - When water recedes or new char islands emerge, violent land disputes erupt between displaced original owners and land grabbers due to the absence of verifiable spatial boundary coordinates.
 
-### 2.3 The Macro-Micro Information Gap
+### 2.3 The Macro-Micro Information Gap — Disaster Records
 When environmental hazards strike, affected citizens and local administration officials face a critical information void:
 - Citizens cannot verify which specific Dag numbers were lost or submerged.
 - Assistant Commissioners of Land (AC Land) and Upazila Surveyors lack spatial tools to rapidly compute aggregate loss areas for disaster relief compensation.
@@ -130,7 +133,19 @@ When environmental hazards strike, affected citizens and local administration of
 
 ---
 
-## 3. The Five Core Hazard Domains in Depth
+### 2.4 Scattered Land Records and Pre-Purchase Risk
+
+- **Scattered Land Records:** Deeds, ownership details, sale information, mutation history, land development tax, mortgage/loan indicators, and court-dispute information may be maintained in different places.
+- **Difficulty in Verification:** Prospective buyers may find it difficult to collect and cross-check available records, increasing the risk of delays, disputes, or discovering problems only after purchase.
+- **Disaster-Related Land Changes:** Disasters may physically alter or erase land while older documents continue to describe its previous condition.
+- **Two Complementary Systems:** BhumiDorpon keeps two functions distinct:
+  - **Disaster Monitoring:** Describes physical land changes caused by disasters.
+  - **Land Information Search:** Organizes available parcel and transaction information to support pre-purchase review.
+- **Prototype Limitation:** BhumiDorpon does not certify land records or replace official verification.
+
+## 3. Disaster Monitoring and Land Information Systems
+
+BhumiDorpon contains two related but separate systems. **The disaster monitoring system** covers five hazard modules (Sections 3.1–3.5) and focuses on physical land changes, loss/gain, and hazard exposure. **The land information system** (Section 3.6) focuses on locating a parcel and reviewing available ownership and transaction-related information before purchase. These are presented separately so environmental change information is not confused with legal or transaction records.
 
 ### 3.1 Module 1: River Erosion (`/river-erosion`)
 - **Geographic Pilot:** Kazipur Upazila, Sirajganj District along the braided Jamuna River corridor.
@@ -163,6 +178,16 @@ When environmental hazards strike, affected citizens and local administration of
 - **Revenue Protection:** Dedicated card tracking unassigned offshore mudflats for state revenue administration.
 
 ---
+
+
+### 3.6 Module 6: Land Information Search and Pre-Purchase Review (`/land-information`)
+
+- **Purpose:** Addresses the difficulty of checking land before purchase when deeds, ownership details, mutation history, tax information, sale status, mortgage/loan indicators, and legal-dispute information may be scattered across separate records.
+- **Search Hierarchy:** District → Upazila → Mouza → Dag No. → Khatian No. The selected administrative area filters the next field, and Dag/Khatian identifiers are retained as text to preserve leading zeros.
+- **Structured Parcel Report:** Groups the available information into six sections: (A) land identification and area, (B) ownership, (C) sale/listing status, (D) legal disputes and court cases, (E) land development tax, and (F) registration and mutation history. Available loan/mortgage indicators can also be reviewed as part of pre-purchase checks where the dataset provides them.
+- **Separate Disaster Context:** Disaster-related loss/gain history and risk forecasts remain in their own analysis section; they are not merged with ownership or transaction records.
+- **User Benefit:** Gives prospective buyers one place to review the available information and identify issues that need official follow-up before paying or completing a transaction.
+- **Data and Legal Scope:** The current prototype uses synthetic demo records and does not connect to live government databases or certify a deed, ownership, mortgage status, or legal title. All displayed information must be verified with the relevant official authorities before purchase.
 
 ## 4. Global Bangla Default & English Localization Engine
 
@@ -352,17 +377,18 @@ Only numeric centroid and camera range are transmitted via URL. Landowner identi
 | Dimension | Google Earth (Implemented Feature) | Google Earth Engine (Proposed Future Pipeline) |
 |---|---|---|
 | **Role & Purpose** | Client-side 3D geographic visualizer for parcel inspection. | Cloud-scale planetary geospatial computing platform for satellite data analysis. |
-| **Operational Status** | **Operational & Verified** in current v1.2 release. | **Proposed Future Enhancement** (Phase 3 Roadmap). |
+| **Operational Status** | **Operational & Verified** in current v1 release. | **Proposed Future Enhancement** (Phase 3 Roadmap). |
 | **Execution Environment**| User's web browser (`earth.google.com/web`). | Google Cloud / Earth Engine compute infrastructure. |
 | **Data Ingestion** | Reads client-downloaded KML 2.2 files locally. | Automates Sentinel-1 SAR and Sentinel-2 optical image ETL. |
 
 ---
 
-## 14. Five-Hazard Information Store Architecture
+## 14. Combined Disaster and Land Information Store Architecture
 
 - **Runtime Store (`public/mocks/*.json`):** Static assets served at `/mocks/*` and fetched by client components via `loadMockJson()` in `lib/data.ts`.
 - **Source / Test Store (`mocks/*.json`):** Synchronous copy read by Node.js and Vitest test environments using `fs.readFileSync`.
 - **Per-Area Map Packages (`mocks/areas/<hazard>/` & `public/mocks/areas/<hazard>/`):** Modular spatial bundles resolved via `areas_index.json`.
+- **Land Information Records:** The `/land-information` search/report engine uses parcel identifiers and structured mock records for ownership, sale status, legal disputes, tax, and registration/mutation history. Loan/mortgage indicators are included where the available dataset supports them. This record-search domain is distinct from the five hazard-specific map packages.
 
 ---
 
@@ -416,7 +442,7 @@ Only numeric centroid and camera range are transmitted via URL. Landowner identi
 | **Google Earth Parcel Outline Feature** | Oct 2026 | Implemented "Open in Google Earth" with client-side KML 2.2 serializer, camera URL calculation, and automated tests. |
 | **Documentation Alignment** | Oct 2026 | Synchronized project history and test counts to 10 test suites (61/61 passing unit tests). |
 | **Documentation Standardization** | Oct 2026 | Consolidated historical documents into 10 authoritative Markdown specifications in `/docs`; translated prose to English. |
-| **v1.2 Release: Auth, Localization, Land Search & Landslide Selectors** | Oct 2026 | Implemented global Bangla default with English toggle (`lib/translations.ts`); entry auth modal and isolated demo access (`lib/auth.ts`); cascading Land Information search across 5 fields with leading zero preservation (`lib/landSearch.ts`); Section 5 multi-hazard DL predictions and submerged parcel preservation; two-step mountain and landslide historical event selector (`lib/landslideEvents.ts`); top-level scroll-to-disasters button; expanded automated test suite to 14 test suites and 78 unit tests (100% passing). |
+| **v1 Release: Auth, Localization, Land Search & Landslide Selectors** | Oct 2026 | Implemented global Bangla default with English toggle (`lib/translations.ts`); entry auth modal and isolated demo access (`lib/auth.ts`); cascading Land Information search across 5 fields with leading zero preservation (`lib/landSearch.ts`); Section 5 multi-hazard DL predictions and submerged parcel preservation; two-step mountain and landslide historical event selector (`lib/landslideEvents.ts`); top-level scroll-to-disasters button; expanded automated test suite to 14 test suites and 78 unit tests (100% passing). |
 | **Documentation Audit & Synchronization** | Oct 2026 | Comprehensive audit of all 10 documentation specifications in `/docs`; synchronized duplicate README and Master Documentation copies; aligned route signatures and verified 14 test suites (78/78 passing unit tests). |
 | **Change 4: Landslide Event Step, Header Toolbar & Bangla Table Localization** | Oct 2026 | Added 4th dependent step (Landslide Event) to `SelectorChain.tsx` with URL param `ev`, newest-first sorting, auto-selection, and honest empty states; right-aligned header toolbar on `md+` with wrapping under language toggle and Bengali heading line-height fix; comprehensive Bangla table and data localization across all tables and charts; expanded test suite to 16 suites and 92 passing unit tests. |
 
@@ -495,4 +521,4 @@ The `/docs` directory is organized into **10 authoritative Markdown documents**:
 - **Team Member:** Puja Paul
 
 **Copyright:** © 2026 GeoNeural. All rights reserved.  
-*BhumiDorpon is developed and maintained by Team GeoNeural as an advanced geospatial research and demonstration platform for cadastral hazard monitoring in Bangladesh.*
+*BhumiDorpon is developed and maintained by Team GeoNeural as an geospatial research and demonstration platform combining disaster-related land-change monitoring with land-information search for pre-purchase review in Bangladesh.*
